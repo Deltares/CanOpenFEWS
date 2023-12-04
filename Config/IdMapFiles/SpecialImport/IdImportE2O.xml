@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idMap version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/idMap.xsd">
+	<parameter internal="QR.sim" external="run"/>
+	<parameter internal="QR.sim" external="inw"/>
+	<parameter internal="HG.sim" external="lev"/>
+	<parameter internal="PC.obs" external="P"/>
+	<parameter internal="PC.obs" external="Rainf"/>
+	<parameter internal="PC.obs" external="Snowf"/>
+	<parameter internal="PET.obs" external="PET"/>
+	<parameter internal="TA.obs" external="TEMP"/>
+	<parameter internal="TA.obs" external="Tair"/>
+</idMap>

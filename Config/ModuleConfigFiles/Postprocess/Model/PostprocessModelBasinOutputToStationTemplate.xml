@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
+<transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd" version="1.0">
+	<!--Input-->
+	<variable>
+		<variableId>Polygon_parameter</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>$PARAMETER$</parameterId>
+			<locationSetId>$MODELOUTPUTLOCATION$</locationSetId>
+			<timeSeriesType>$TIMESERIESTYPE$</timeSeriesType>
+			<timeStep unit="day"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME$" end="$ENDTIME$" startOverrulable="true" endOverrulable="false"/>
+			<readWriteMode>read only</readWriteMode>
+			<ensembleId>$ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<!--Input-->
+	<variable>
+		<variableId>Station_parameter</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>$PARAMETER$</parameterId>
+			<locationSetId>$STATIONLOCATIONS$</locationSetId>
+			<timeSeriesType>$TIMESERIESTYPE$</timeSeriesType>
+			<timeStep unit="day"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME$" end="$ENDTIME$" startOverrulable="true" endOverrulable="false"/>
+			<readWriteMode>read only</readWriteMode>
+			<ensembleId>$ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<!--Transformations-->
+	<transformation id="station_parameter_transformation">
+		<interpolationSpatial>
+		<containingPolygon>
+			<inputVariable>
+				<variableId>Polygon_parameter</variableId>
+			</inputVariable>
+			<outputVariable>
+				<variableId>Station_parameter</variableId>
+			</outputVariable>
+		</containingPolygon>
+		</interpolationSpatial>
+	</transformation>
+</transformationModule>

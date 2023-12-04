@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
+	<import>
+		<general>
+			<importType>CanadaMeteo</importType>
+			<serverUrl>https://dd.meteo.gc.ca/observations/xml</serverUrl>
+			<!-- Time period has to be configured for the importer to work -->
+			<relativeViewPeriod unit="day" start="$STARTTIME$" end="$ENDTIME$" startOverrulable="true" endOverrulable="true"/>
+			<idMapId>IdImportECCCScalar</idMapId>
+			<importTimeZone>
+				<timeZoneName>$TIMEZONE$</timeZoneName>
+			</importTimeZone>
+			<dataFeedId>$LOCATIONSET$</dataFeedId>
+		</general>
+		<properties>
+			<!--Optional configuration field. Value is a comma separated string of the region folder to be included.-->
+			<!--If it is not configured, data will be fetched from all folders for the specified time. Case sensitive.-->
+			<!--Possible choices: AB, BC, MB, NB, NL, NS, NT, NU, ON, PE, QC, SK, YT-->
+			<string key="RegionDirectory" value="AB"/>
+			<!--Optional configuration field. Value is a comma separated string of the time folders to be included.-->
+			<!--If it is not configured, data will be fetched from all folders for the specified time.-->
+			<!--Possible choices: "hourly", "today", "yesterday"-->
+			<string key="TimeDirectory" value="today, yesterday"/>
+		</properties>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.obs</parameterId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmax.obs</parameterId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmin.obs</parameterId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.obs</parameterId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</import>
+</timeSeriesImportRun>

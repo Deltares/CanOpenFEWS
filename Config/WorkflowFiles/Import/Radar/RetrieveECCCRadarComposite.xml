@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.1">
+	<!-- Retrieve Composite Radar from Environment Canada -->
+	<activity>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>RetrieveECCCRadarComposite</moduleInstanceId>
+	</activity>
+	<activity>
+		<runIndependent>false</runIndependent>
+		<moduleInstanceId>ImportECCCRadarComposite</moduleInstanceId>
+	</activity>
+	<activity>
+		<properties>
+			<string key="PARAMETER" value="PC.sim"/>
+			<string key="TIMESERIESTYPE" value="external historical"/>
+			<string key="OUTPUTGRID" value="BowRadarGrid"/>
+		</properties>
+		<runIndependent>false</runIndependent>
+		<moduleInstanceId>PreprocessECCCRadarBow</moduleInstanceId>
+		<moduleConfigFileName>PreprocessECCCRadarCompositeTemplate</moduleConfigFileName>
+	</activity>
+</workflow>

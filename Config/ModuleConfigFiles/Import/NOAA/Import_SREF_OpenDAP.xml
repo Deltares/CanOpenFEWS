@@ -1,0 +1,1096 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 (x64) (http://www.altova.com) by Deltares USA (Deltares USA) -->
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
+	<import>
+		<general>
+			<importType>NETCDF-CF_GRID</importType>
+			<serverUrl>http://nomads.ncep.noaa.gov:80/dods/sref/sref%RELATIVE_TIME_IN_SECONDS(yyyyMMdd,-14400)%/sref_na_arw_ctl_%RELATIVE_TIME_IN_SECONDS(HH,-14400)%z</serverUrl>
+			<idMapId>IdImportSREF</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<missingValue>-3.402823E38</missingValue>
+			<importTimeZone>
+				<timeZoneName>GMT</timeZoneName>
+			</importTimeZone>
+			<dataFeedId>SREF.Server</dataFeedId>
+			<expiryTime unit="day" multiplier="3"/>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="3"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>0</ensembleMemberId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="3"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>0</ensembleMemberId>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="kg m-2"/>
+		<externUnit parameterId="TA.nwp" unit="K"/>
+	</import>
+	<import>
+		<general>
+			<importType>NETCDF-CF_GRID</importType>
+			<serverUrl>http://nomads.ncep.noaa.gov:80/dods/sref/sref%RELATIVE_TIME_IN_SECONDS(yyyyMMdd,-14400)%/sref_na_arw_n1_%RELATIVE_TIME_IN_SECONDS(HH,-14400)%z</serverUrl>
+			<idMapId>IdImportSREF</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<missingValue>-3.402823E38</missingValue>
+			<importTimeZone>
+				<timeZoneName>GMT</timeZoneName>
+			</importTimeZone>
+			<dataFeedId>SREF.Server</dataFeedId>
+			<expiryTime unit="day" multiplier="3"/>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="3"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>1</ensembleMemberId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="3"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>1</ensembleMemberId>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="kg m-2"/>
+		<externUnit parameterId="TA.nwp" unit="K"/>
+	</import>
+	<import>
+		<general>
+			<importType>NETCDF-CF_GRID</importType>
+			<serverUrl>http://nomads.ncep.noaa.gov:80/dods/sref/sref%RELATIVE_TIME_IN_SECONDS(yyyyMMdd,-14400)%/sref_na_arw_n2_%RELATIVE_TIME_IN_SECONDS(HH,-14400)%z</serverUrl>
+			<idMapId>IdImportSREF</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<missingValue>-3.402823E38</missingValue>
+			<importTimeZone>
+				<timeZoneName>GMT</timeZoneName>
+			</importTimeZone>
+			<dataFeedId>SREF.Server</dataFeedId>
+			<expiryTime unit="day" multiplier="3"/>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="3"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>2</ensembleMemberId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="3"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>2</ensembleMemberId>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="kg m-2"/>
+		<externUnit parameterId="TA.nwp" unit="K"/>
+	</import>
+	<import>
+		<general>
+			<importType>NETCDF-CF_GRID</importType>
+			<serverUrl>http://nomads.ncep.noaa.gov:80/dods/sref/sref%RELATIVE_TIME_IN_SECONDS(yyyyMMdd,-14400)%/sref_na_arw_n3_%RELATIVE_TIME_IN_SECONDS(HH,-14400)%z</serverUrl>
+			<idMapId>IdImportSREF</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<missingValue>-3.402823E38</missingValue>
+			<importTimeZone>
+				<timeZoneName>GMT</timeZoneName>
+			</importTimeZone>
+			<dataFeedId>SREF.Server</dataFeedId>
+			<expiryTime unit="day" multiplier="3"/>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="3"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>3</ensembleMemberId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="3"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>3</ensembleMemberId>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="kg m-2"/>
+		<externUnit parameterId="TA.nwp" unit="K"/>
+	</import>
+	<import>
+		<general>
+			<importType>NETCDF-CF_GRID</importType>
+			<serverUrl>http://nomads.ncep.noaa.gov:80/dods/sref/sref%RELATIVE_TIME_IN_SECONDS(yyyyMMdd,-14400)%/sref_na_arw_n4_%RELATIVE_TIME_IN_SECONDS(HH,-14400)%z</serverUrl>
+			<idMapId>IdImportSREF</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<missingValue>-3.402823E38</missingValue>
+			<importTimeZone>
+				<timeZoneName>GMT</timeZoneName>
+			</importTimeZone>
+			<dataFeedId>SREF.Server</dataFeedId>
+			<expiryTime unit="day" multiplier="3"/>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="3"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>4</ensembleMemberId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="3"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>4</ensembleMemberId>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="kg m-2"/>
+		<externUnit parameterId="TA.nwp" unit="K"/>
+	</import>
+	<import>
+		<general>
+			<importType>NETCDF-CF_GRID</importType>
+			<serverUrl>http://nomads.ncep.noaa.gov:80/dods/sref/sref%RELATIVE_TIME_IN_SECONDS(yyyyMMdd,-14400)%/sref_na_arw_n5_%RELATIVE_TIME_IN_SECONDS(HH,-14400)%z</serverUrl>
+			<idMapId>IdImportSREF</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<missingValue>-3.402823E38</missingValue>
+			<importTimeZone>
+				<timeZoneName>GMT</timeZoneName>
+			</importTimeZone>
+			<dataFeedId>SREF.Server</dataFeedId>
+			<expiryTime unit="day" multiplier="3"/>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="3"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>5</ensembleMemberId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="3"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>5</ensembleMemberId>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="kg m-2"/>
+		<externUnit parameterId="TA.nwp" unit="K"/>
+	</import>
+	<import>
+		<general>
+			<importType>NETCDF-CF_GRID</importType>
+			<serverUrl>http://nomads.ncep.noaa.gov:80/dods/sref/sref%RELATIVE_TIME_IN_SECONDS(yyyyMMdd,-14400)%/sref_na_arw_n6_%RELATIVE_TIME_IN_SECONDS(HH,-14400)%z</serverUrl>
+			<idMapId>IdImportSREF</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<missingValue>-3.402823E38</missingValue>
+			<importTimeZone>
+				<timeZoneName>GMT</timeZoneName>
+			</importTimeZone>
+			<dataFeedId>SREF.Server</dataFeedId>
+			<expiryTime unit="day" multiplier="3"/>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="3"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>6</ensembleMemberId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="3"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>6</ensembleMemberId>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="kg m-2"/>
+		<externUnit parameterId="TA.nwp" unit="K"/>
+	</import>
+	<import>
+		<general>
+			<importType>NETCDF-CF_GRID</importType>
+			<serverUrl>http://nomads.ncep.noaa.gov:80/dods/sref/sref%RELATIVE_TIME_IN_SECONDS(yyyyMMdd,-14400)%/sref_na_arw_p1_%RELATIVE_TIME_IN_SECONDS(HH,-14400)%z</serverUrl>
+			<idMapId>IdImportSREF</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<missingValue>-3.402823E38</missingValue>
+			<importTimeZone>
+				<timeZoneName>GMT</timeZoneName>
+			</importTimeZone>
+			<dataFeedId>SREF.Server</dataFeedId>
+			<expiryTime unit="day" multiplier="3"/>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="3"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>7</ensembleMemberId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="3"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>7</ensembleMemberId>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="kg m-2"/>
+		<externUnit parameterId="TA.nwp" unit="K"/>
+	</import>
+	<import>
+		<general>
+			<importType>NETCDF-CF_GRID</importType>
+			<serverUrl>http://nomads.ncep.noaa.gov:80/dods/sref/sref%RELATIVE_TIME_IN_SECONDS(yyyyMMdd,-14400)%/sref_na_arw_p2_%RELATIVE_TIME_IN_SECONDS(HH,-14400)%z</serverUrl>
+			<idMapId>IdImportSREF</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<missingValue>-3.402823E38</missingValue>
+			<importTimeZone>
+				<timeZoneName>GMT</timeZoneName>
+			</importTimeZone>
+			<dataFeedId>SREF.Server</dataFeedId>
+			<expiryTime unit="day" multiplier="3"/>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="3"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>8</ensembleMemberId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="3"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>8</ensembleMemberId>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="kg m-2"/>
+		<externUnit parameterId="TA.nwp" unit="K"/>
+	</import>
+	<import>
+		<general>
+			<importType>NETCDF-CF_GRID</importType>
+			<serverUrl>http://nomads.ncep.noaa.gov:80/dods/sref/sref%RELATIVE_TIME_IN_SECONDS(yyyyMMdd,-14400)%/sref_na_arw_p3_%RELATIVE_TIME_IN_SECONDS(HH,-14400)%z</serverUrl>
+			<idMapId>IdImportSREF</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<missingValue>-3.402823E38</missingValue>
+			<importTimeZone>
+				<timeZoneName>GMT</timeZoneName>
+			</importTimeZone>
+			<dataFeedId>SREF.Server</dataFeedId>
+			<expiryTime unit="day" multiplier="3"/>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="3"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>9</ensembleMemberId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="3"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>9</ensembleMemberId>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="kg m-2"/>
+		<externUnit parameterId="TA.nwp" unit="K"/>
+	</import>
+	<import>
+		<general>
+			<importType>NETCDF-CF_GRID</importType>
+			<serverUrl>http://nomads.ncep.noaa.gov:80/dods/sref/sref%RELATIVE_TIME_IN_SECONDS(yyyyMMdd,-14400)%/sref_na_arw_p4_%RELATIVE_TIME_IN_SECONDS(HH,-14400)%z</serverUrl>
+			<idMapId>IdImportSREF</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<missingValue>-3.402823E38</missingValue>
+			<importTimeZone>
+				<timeZoneName>GMT</timeZoneName>
+			</importTimeZone>
+			<dataFeedId>SREF.Server</dataFeedId>
+			<expiryTime unit="day" multiplier="3"/>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="3"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>10</ensembleMemberId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="3"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>10</ensembleMemberId>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="kg m-2"/>
+		<externUnit parameterId="TA.nwp" unit="K"/>
+	</import>
+	<import>
+		<general>
+			<importType>NETCDF-CF_GRID</importType>
+			<serverUrl>http://nomads.ncep.noaa.gov:80/dods/sref/sref%RELATIVE_TIME_IN_SECONDS(yyyyMMdd,-14400)%/sref_na_arw_p5_%RELATIVE_TIME_IN_SECONDS(HH,-14400)%z</serverUrl>
+			<idMapId>IdImportSREF</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<missingValue>-3.402823E38</missingValue>
+			<importTimeZone>
+				<timeZoneName>GMT</timeZoneName>
+			</importTimeZone>
+			<dataFeedId>SREF.Server</dataFeedId>
+			<expiryTime unit="day" multiplier="3"/>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="3"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>11</ensembleMemberId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="3"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>11</ensembleMemberId>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="kg m-2"/>
+		<externUnit parameterId="TA.nwp" unit="K"/>
+	</import>
+	<import>
+		<general>
+			<importType>NETCDF-CF_GRID</importType>
+			<serverUrl>http://nomads.ncep.noaa.gov:80/dods/sref/sref%RELATIVE_TIME_IN_SECONDS(yyyyMMdd,-14400)%/sref_na_arw_p6_%RELATIVE_TIME_IN_SECONDS(HH,-14400)%z</serverUrl>
+			<idMapId>IdImportSREF</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<missingValue>-3.402823E38</missingValue>
+			<importTimeZone>
+				<timeZoneName>GMT</timeZoneName>
+			</importTimeZone>
+			<dataFeedId>SREF.Server</dataFeedId>
+			<expiryTime unit="day" multiplier="3"/>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="3"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>12</ensembleMemberId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="3"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>12</ensembleMemberId>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="kg m-2"/>
+		<externUnit parameterId="TA.nwp" unit="K"/>
+	</import>
+	<import>
+		<general>
+			<importType>NETCDF-CF_GRID</importType>
+			<serverUrl>http://nomads.ncep.noaa.gov:80/dods/sref/sref%RELATIVE_TIME_IN_SECONDS(yyyyMMdd,-14400)%/sref_na_nmb_ctl_%RELATIVE_TIME_IN_SECONDS(HH,-14400)%z</serverUrl>
+			<idMapId>IdImportSREF</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<missingValue>-3.402823E38</missingValue>
+			<importTimeZone>
+				<timeZoneName>GMT</timeZoneName>
+			</importTimeZone>
+			<dataFeedId>SREF.Server</dataFeedId>
+			<expiryTime unit="day" multiplier="3"/>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="3"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>13</ensembleMemberId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="3"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>13</ensembleMemberId>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="kg m-2"/>
+		<externUnit parameterId="TA.nwp" unit="K"/>
+	</import>
+	<import>
+		<general>
+			<importType>NETCDF-CF_GRID</importType>
+			<serverUrl>http://nomads.ncep.noaa.gov:80/dods/sref/sref%RELATIVE_TIME_IN_SECONDS(yyyyMMdd,-14400)%/sref_na_nmb_n1_%RELATIVE_TIME_IN_SECONDS(HH,-14400)%z</serverUrl>
+			<idMapId>IdImportSREF</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<missingValue>-3.402823E38</missingValue>
+			<importTimeZone>
+				<timeZoneName>GMT</timeZoneName>
+			</importTimeZone>
+			<dataFeedId>SREF.Server</dataFeedId>
+			<expiryTime unit="day" multiplier="3"/>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="3"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>14</ensembleMemberId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="3"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>14</ensembleMemberId>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="kg m-2"/>
+		<externUnit parameterId="TA.nwp" unit="K"/>
+	</import>
+	<import>
+		<general>
+			<importType>NETCDF-CF_GRID</importType>
+			<serverUrl>http://nomads.ncep.noaa.gov:80/dods/sref/sref%RELATIVE_TIME_IN_SECONDS(yyyyMMdd,-14400)%/sref_na_nmb_n2_%RELATIVE_TIME_IN_SECONDS(HH,-14400)%z</serverUrl>
+			<idMapId>IdImportSREF</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<missingValue>-3.402823E38</missingValue>
+			<importTimeZone>
+				<timeZoneName>GMT</timeZoneName>
+			</importTimeZone>
+			<dataFeedId>SREF.Server</dataFeedId>
+			<expiryTime unit="day" multiplier="3"/>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="3"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>15</ensembleMemberId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="3"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>15</ensembleMemberId>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="kg m-2"/>
+		<externUnit parameterId="TA.nwp" unit="K"/>
+	</import>
+	<import>
+		<general>
+			<importType>NETCDF-CF_GRID</importType>
+			<serverUrl>http://nomads.ncep.noaa.gov:80/dods/sref/sref%RELATIVE_TIME_IN_SECONDS(yyyyMMdd,-14400)%/sref_na_nmb_n3_%RELATIVE_TIME_IN_SECONDS(HH,-14400)%z</serverUrl>
+			<idMapId>IdImportSREF</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<missingValue>-3.402823E38</missingValue>
+			<importTimeZone>
+				<timeZoneName>GMT</timeZoneName>
+			</importTimeZone>
+			<dataFeedId>SREF.Server</dataFeedId>
+			<expiryTime unit="day" multiplier="3"/>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="3"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>16</ensembleMemberId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="3"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>16</ensembleMemberId>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="kg m-2"/>
+		<externUnit parameterId="TA.nwp" unit="K"/>
+	</import>
+	<import>
+		<general>
+			<importType>NETCDF-CF_GRID</importType>
+			<serverUrl>http://nomads.ncep.noaa.gov:80/dods/sref/sref%RELATIVE_TIME_IN_SECONDS(yyyyMMdd,-14400)%/sref_na_nmb_n4_%RELATIVE_TIME_IN_SECONDS(HH,-14400)%z</serverUrl>
+			<idMapId>IdImportSREF</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<missingValue>-3.402823E38</missingValue>
+			<importTimeZone>
+				<timeZoneName>GMT</timeZoneName>
+			</importTimeZone>
+			<dataFeedId>SREF.Server</dataFeedId>
+			<expiryTime unit="day" multiplier="3"/>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="3"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>17</ensembleMemberId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="3"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>17</ensembleMemberId>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="kg m-2"/>
+		<externUnit parameterId="TA.nwp" unit="K"/>
+	</import>
+	<import>
+		<general>
+			<importType>NETCDF-CF_GRID</importType>
+			<serverUrl>http://nomads.ncep.noaa.gov:80/dods/sref/sref%RELATIVE_TIME_IN_SECONDS(yyyyMMdd,-14400)%/sref_na_nmb_n5_%RELATIVE_TIME_IN_SECONDS(HH,-14400)%z</serverUrl>
+			<idMapId>IdImportSREF</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<missingValue>-3.402823E38</missingValue>
+			<importTimeZone>
+				<timeZoneName>GMT</timeZoneName>
+			</importTimeZone>
+			<dataFeedId>SREF.Server</dataFeedId>
+			<expiryTime unit="day" multiplier="3"/>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="3"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>18</ensembleMemberId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="3"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>18</ensembleMemberId>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="kg m-2"/>
+		<externUnit parameterId="TA.nwp" unit="K"/>
+	</import>
+	<import>
+		<general>
+			<importType>NETCDF-CF_GRID</importType>
+			<serverUrl>http://nomads.ncep.noaa.gov:80/dods/sref/sref%RELATIVE_TIME_IN_SECONDS(yyyyMMdd,-14400)%/sref_na_nmb_n6_%RELATIVE_TIME_IN_SECONDS(HH,-14400)%z</serverUrl>
+			<idMapId>IdImportSREF</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<missingValue>-3.402823E38</missingValue>
+			<importTimeZone>
+				<timeZoneName>GMT</timeZoneName>
+			</importTimeZone>
+			<dataFeedId>SREF.Server</dataFeedId>
+			<expiryTime unit="day" multiplier="3"/>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="3"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>19</ensembleMemberId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="3"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>19</ensembleMemberId>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="kg m-2"/>
+		<externUnit parameterId="TA.nwp" unit="K"/>
+	</import>
+	<import>
+		<general>
+			<importType>NETCDF-CF_GRID</importType>
+			<serverUrl>http://nomads.ncep.noaa.gov:80/dods/sref/sref%RELATIVE_TIME_IN_SECONDS(yyyyMMdd,-14400)%/sref_na_nmb_p1_%RELATIVE_TIME_IN_SECONDS(HH,-14400)%z</serverUrl>
+			<idMapId>IdImportSREF</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<missingValue>-3.402823E38</missingValue>
+			<importTimeZone>
+				<timeZoneName>GMT</timeZoneName>
+			</importTimeZone>
+			<dataFeedId>SREF.Server</dataFeedId>
+			<expiryTime unit="day" multiplier="3"/>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="3"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>20</ensembleMemberId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="3"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>20</ensembleMemberId>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="kg m-2"/>
+		<externUnit parameterId="TA.nwp" unit="K"/>
+	</import>
+	<import>
+		<general>
+			<importType>NETCDF-CF_GRID</importType>
+			<serverUrl>http://nomads.ncep.noaa.gov:80/dods/sref/sref%RELATIVE_TIME_IN_SECONDS(yyyyMMdd,-14400)%/sref_na_nmb_p2_%RELATIVE_TIME_IN_SECONDS(HH,-14400)%z</serverUrl>
+			<idMapId>IdImportSREF</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<missingValue>-3.402823E38</missingValue>
+			<importTimeZone>
+				<timeZoneName>GMT</timeZoneName>
+			</importTimeZone>
+			<dataFeedId>SREF.Server</dataFeedId>
+			<expiryTime unit="day" multiplier="3"/>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="3"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>21</ensembleMemberId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="3"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>21</ensembleMemberId>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="kg m-2"/>
+		<externUnit parameterId="TA.nwp" unit="K"/>
+	</import>
+	<import>
+		<general>
+			<importType>NETCDF-CF_GRID</importType>
+			<serverUrl>http://nomads.ncep.noaa.gov:80/dods/sref/sref%RELATIVE_TIME_IN_SECONDS(yyyyMMdd,-14400)%/sref_na_nmb_p3_%RELATIVE_TIME_IN_SECONDS(HH,-14400)%z</serverUrl>
+			<idMapId>IdImportSREF</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<missingValue>-3.402823E38</missingValue>
+			<importTimeZone>
+				<timeZoneName>GMT</timeZoneName>
+			</importTimeZone>
+			<dataFeedId>SREF.Server</dataFeedId>
+			<expiryTime unit="day" multiplier="3"/>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="3"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>22</ensembleMemberId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="3"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>22</ensembleMemberId>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="kg m-2"/>
+		<externUnit parameterId="TA.nwp" unit="K"/>
+	</import>
+	<import>
+		<general>
+			<importType>NETCDF-CF_GRID</importType>
+			<serverUrl>http://nomads.ncep.noaa.gov:80/dods/sref/sref%RELATIVE_TIME_IN_SECONDS(yyyyMMdd,-14400)%/sref_na_nmb_p4_%RELATIVE_TIME_IN_SECONDS(HH,-14400)%z</serverUrl>
+			<idMapId>IdImportSREF</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<missingValue>-3.402823E38</missingValue>
+			<importTimeZone>
+				<timeZoneName>GMT</timeZoneName>
+			</importTimeZone>
+			<dataFeedId>SREF.Server</dataFeedId>
+			<expiryTime unit="day" multiplier="3"/>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="3"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>23</ensembleMemberId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="3"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>23</ensembleMemberId>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="kg m-2"/>
+		<externUnit parameterId="TA.nwp" unit="K"/>
+	</import>
+	<import>
+		<general>
+			<importType>NETCDF-CF_GRID</importType>
+			<serverUrl>http://nomads.ncep.noaa.gov:80/dods/sref/sref%RELATIVE_TIME_IN_SECONDS(yyyyMMdd,-14400)%/sref_na_nmb_p5_%RELATIVE_TIME_IN_SECONDS(HH,-14400)%z</serverUrl>
+			<idMapId>IdImportSREF</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<missingValue>-3.402823E38</missingValue>
+			<importTimeZone>
+				<timeZoneName>GMT</timeZoneName>
+			</importTimeZone>
+			<dataFeedId>SREF.Server</dataFeedId>
+			<expiryTime unit="day" multiplier="3"/>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="3"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>24</ensembleMemberId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="3"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>24</ensembleMemberId>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="kg m-2"/>
+		<externUnit parameterId="TA.nwp" unit="K"/>
+	</import>
+	<import>
+		<general>
+			<importType>NETCDF-CF_GRID</importType>
+			<serverUrl>http://nomads.ncep.noaa.gov:80/dods/sref/sref%RELATIVE_TIME_IN_SECONDS(yyyyMMdd,-14400)%/sref_na_nmb_p6_%RELATIVE_TIME_IN_SECONDS(HH,-14400)%z</serverUrl>
+			<idMapId>IdImportSREF</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<missingValue>-3.402823E38</missingValue>
+			<importTimeZone>
+				<timeZoneName>GMT</timeZoneName>
+			</importTimeZone>
+			<dataFeedId>SREF.Server</dataFeedId>
+			<expiryTime unit="day" multiplier="3"/>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="3"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>25</ensembleMemberId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="3"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>25</ensembleMemberId>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="kg m-2"/>
+		<externUnit parameterId="TA.nwp" unit="K"/>
+	</import>
+</timeSeriesImportRun>

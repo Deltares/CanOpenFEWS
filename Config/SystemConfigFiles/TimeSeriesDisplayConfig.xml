@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 sp1 (http://www.altova.com) by Afdeling ICT (Stichting Deltares) -->
+<timeSeriesDisplay xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesDisplay.xsd" version="1.0">
+	<defaultViewPeriod unit="day" start="-10" end="5"/>
+	<classBreaks>
+		<classBreaks id="Class.Precipitation">
+			<color color="white" opaquenessPercentage="30" lowerValue="0"/>
+			<color color="070268" opaquenessPercentage="40" lowerValue="0.01"/>
+			<color color="0900AE" opaquenessPercentage="40" lowerValue="0.125"/>
+			<color color="4040FF" opaquenessPercentage="40" lowerValue="0.25"/>
+			<color color="0080C0" opaquenessPercentage="40" lowerValue="0.5"/>
+			<color color="129FFE" opaquenessPercentage="40" lowerValue="1.0"/>
+			<color color="00FF40" opaquenessPercentage="40" lowerValue="2.0"/>
+			<color color="FFFF00" opaquenessPercentage="40" lowerValue="4.0"/>
+			<color color="FF8000" opaquenessPercentage="40" lowerValue="8.0"/>
+			<color color="FF0000" opaquenessPercentage="40" lowerValue="16.0"/>
+			<color color="FF0080" opaquenessPercentage="40" lowerValue="32.0"/>
+			<color color="FFFFFF" opaquenessPercentage="40" lowerValue="64.0"/>
+		</classBreaks>
+		<classBreaks id="Class.Temperature">
+			<lowerColor>blue3</lowerColor>
+			<upperColor>light blue1</upperColor>
+			<lowerOpaquenessPercentage>40</lowerOpaquenessPercentage>
+			<upperOpaquenessPercentage>40</upperOpaquenessPercentage>
+			<lowerValue>-50</lowerValue>
+			<lowerValue>-40</lowerValue>
+			<lowerValue>-30</lowerValue>
+			<lowerValue>-20</lowerValue>
+			<lowerValue>-10</lowerValue>
+			<lowerValue>-5</lowerValue>
+			<lowerValue>-0.5</lowerValue>
+			<lowerColor>pale green1</lowerColor>
+			<upperColor>red</upperColor>
+			<lowerOpaquenessPercentage>40</lowerOpaquenessPercentage>
+			<upperOpaquenessPercentage>40</upperOpaquenessPercentage>
+			<lowerValue>0.5</lowerValue>
+			<lowerValue>5</lowerValue>
+			<lowerValue>10</lowerValue>
+			<lowerValue>15</lowerValue>
+			<lowerValue>20</lowerValue>
+			<lowerValue>25</lowerValue>
+			<lowerValue>30</lowerValue>
+			<lowerValue>35</lowerValue>
+			<lowerValue>40</lowerValue>
+		</classBreaks>
+		<classBreaks id="Class.Evaporation">
+			<color color="white" opaquenessPercentage="30" lowerValue="0"/>
+			<color color="070268" lowerValue="0.01"/>
+			<color color="0900AE" lowerValue="0.125"/>
+			<color color="4040FF" lowerValue="0.25"/>
+			<color color="0080C0" lowerValue="0.5"/>
+			<color color="129FFE" lowerValue="1.0"/>
+			<color color="00FF40" lowerValue="3.0"/>
+			<color color="FFFF00" lowerValue="4.0"/>
+			<color color="FF8000" lowerValue="5.0"/>
+			<color color="FF0000" lowerValue="6.0"/>
+			<color color="FF0080" lowerValue="7.0"/>
+			<color color="FFFFFF" lowerValue="8.0"/>
+		</classBreaks>
+		<classBreaks id="Class.Discharge">
+			<color color="E2E2E2" lowerValue="0" label="&gt;=0" opaquenessPercentage="80"/>
+			<color color="DED783" lowerValue="5" label="&gt;=5" opaquenessPercentage="80"/>
+			<color color="9BC856" lowerValue="10" label="&gt;=10" opaquenessPercentage="80"/>
+			<color color="00C9A6" lowerValue="25" label="&gt;=25" opaquenessPercentage="80"/>
+			<color color="00BAC3" lowerValue="50" label="&gt;=50" opaquenessPercentage="80"/>
+			<color color="008EC4" lowerValue="75" label="&gt;=75" opaquenessPercentage="80"/>
+			<color color="0065CA" lowerValue="100" label="&gt;=1,00" opaquenessPercentage="80"/>
+			<color color="0040FE" lowerValue="250" label="&gt;=250" opaquenessPercentage="80"/>
+			<color color="0022AA" lowerValue="500" label="&gt;=500" opaquenessPercentage="80"/>
+		</classBreaks>
+		<classBreaks id="Class.Runoff">
+			<color color="FFFFFF" lowerValue="0" label="&gt;=0" opaquenessPercentage="10"/>
+			<color color="E2E2E2" lowerValue="0.1" label="&gt;=0.1" opaquenessPercentage="80"/>
+			<color color="DED783" lowerValue="0.2" label="&gt;=0.2" opaquenessPercentage="80"/>
+			<color color="9BC856" lowerValue="0.3" label="&gt;=0.3" opaquenessPercentage="80"/>
+			<color color="00C9A6" lowerValue="0.4" label="&gt;=0.4" opaquenessPercentage="80"/>
+			<color color="00BAC3" lowerValue="0.5" label="&gt;=0.5" opaquenessPercentage="80"/>
+			<color color="008EC4" lowerValue="1" label="&gt;=1" opaquenessPercentage="80"/>
+			<color color="0065CA" lowerValue="2.5" label="&gt;=2.5" opaquenessPercentage="80"/>
+			<color color="0040FE" lowerValue="5" label="&gt;=5" opaquenessPercentage="80"/>
+			<color color="0022AA" lowerValue="10" label="&gt;=10" opaquenessPercentage="80"/>
+		</classBreaks>
+		<classBreaks id="Class.Windspeed">
+			<lowerColor>green</lowerColor>
+			<upperColor>red</upperColor>
+			<lowerOpaquenessPercentage>20</lowerOpaquenessPercentage>
+			<upperOpaquenessPercentage>50</upperOpaquenessPercentage>
+			<lowerSymbolSize>10</lowerSymbolSize>
+			<upperSymbolSize>30</upperSymbolSize>
+			<lowerValue>0</lowerValue>
+			<lowerValue>0.3</lowerValue>
+			<lowerValue>1.6</lowerValue>
+			<lowerValue>3.4</lowerValue>
+			<lowerValue>5.5</lowerValue>
+			<lowerValue>8.0</lowerValue>
+			<lowerValue>10.8</lowerValue>
+			<lowerValue>13.9</lowerValue>
+			<lowerValue>17.2</lowerValue>
+			<lowerValue>20.8</lowerValue>
+			<lowerValue>24.5</lowerValue>
+			<lowerValue>28.5</lowerValue>
+			<lowerValue>32.6</lowerValue>
+		</classBreaks>
+		<classBreaks id="Class.Pressure">
+			<lowerColor>green</lowerColor>
+			<upperColor>red</upperColor>
+			<lowerOpaquenessPercentage>20</lowerOpaquenessPercentage>
+			<upperOpaquenessPercentage>50</upperOpaquenessPercentage>
+			<lowerValue>60</lowerValue>
+			<lowerValue>65</lowerValue>
+			<lowerValue>70</lowerValue>
+			<lowerValue>75</lowerValue>
+			<lowerValue>80</lowerValue>
+			<lowerValue>85</lowerValue>
+			<lowerValue>90</lowerValue>
+			<lowerValue>95</lowerValue>
+			<lowerValue>100</lowerValue>
+			<lowerValue>105</lowerValue>
+			<lowerValue>110</lowerValue>
+		</classBreaks>
+		<classBreaks id="Class.SpecificHumidity">
+			<lowerColor>white</lowerColor>
+			<upperColor>blue</upperColor>
+			<lowerOpaquenessPercentage>20</lowerOpaquenessPercentage>
+			<upperOpaquenessPercentage>50</upperOpaquenessPercentage>
+			<lowerValue>0</lowerValue>
+			<lowerValue>0.0000001</lowerValue>
+			<lowerValue>0.00000015</lowerValue>
+			<lowerValue>0.0000002</lowerValue>
+			<lowerValue>0.00000025</lowerValue>
+			<lowerValue>0.0000003</lowerValue>
+			<lowerValue>0.00000035</lowerValue>
+			<lowerValue>0.0000004</lowerValue>
+			<lowerValue>0.00000045</lowerValue>
+			<lowerValue>0.0000005</lowerValue>
+		</classBreaks>
+		<classBreaks id="Class.ShortWaveRadiation">
+			<lowerColor>blue</lowerColor>
+			<upperColor>red</upperColor>
+			<lowerOpaquenessPercentage>20</lowerOpaquenessPercentage>
+			<upperOpaquenessPercentage>50</upperOpaquenessPercentage>
+			<lowerValue>0</lowerValue>
+			<lowerValue>100</lowerValue>
+			<lowerValue>200</lowerValue>
+			<lowerValue>300</lowerValue>
+			<lowerValue>400</lowerValue>
+			<lowerValue>500</lowerValue>
+			<lowerValue>600</lowerValue>
+			<lowerValue>700</lowerValue>
+			<lowerValue>800</lowerValue>
+			<lowerValue>900</lowerValue>
+			<lowerValue>1000</lowerValue>
+		</classBreaks>
+		<classBreaks id="Class.LongWaveRadiation">
+			<lowerColor>blue</lowerColor>
+			<upperColor>red</upperColor>
+			<lowerOpaquenessPercentage>20</lowerOpaquenessPercentage>
+			<upperOpaquenessPercentage>50</upperOpaquenessPercentage>
+			<lowerValue>120</lowerValue>
+			<lowerValue>140</lowerValue>
+			<lowerValue>160</lowerValue>
+			<lowerValue>180</lowerValue>
+			<lowerValue>200</lowerValue>
+			<lowerValue>220</lowerValue>
+			<lowerValue>240</lowerValue>
+			<lowerValue>260</lowerValue>
+			<lowerValue>280</lowerValue>
+			<lowerValue>300</lowerValue>
+			<lowerValue>320</lowerValue>
+		</classBreaks>
+		<classBreaks id="Class.SWE">
+			<color lowerValue="0" color="white" opaquenessPercentage="80"/>
+			<color lowerValue="1" color="070268" opaquenessPercentage="80"/>
+			<color lowerValue="2" color="0900AE" opaquenessPercentage="80"/>
+			<color lowerValue="5" color="4040FF" opaquenessPercentage="80"/>
+			<color lowerValue="10" color="0080C0" opaquenessPercentage="80"/>
+			<color lowerValue="20" color="129FFE" opaquenessPercentage="80"/>
+			<color lowerValue="50" color="00FF40" opaquenessPercentage="80"/>
+			<color lowerValue="100" color="FFFF00" opaquenessPercentage="80"/>
+			<color lowerValue="200" color="FF8000" opaquenessPercentage="80"/>
+			<color lowerValue="300" color="FF0000" opaquenessPercentage="80"/>
+			<color lowerValue="400" color="FF0080" opaquenessPercentage="80"/>
+			<color lowerValue="500" color="7931DF" opaquenessPercentage="80"/>
+		</classBreaks>
+			<classBreaks id="Class.SD">
+			<color lowerValue="0" color="white" opaquenessPercentage="80"/>
+			<color lowerValue="0.1" color="070268" opaquenessPercentage="80"/>
+			<color lowerValue="0.2" color="0900AE" opaquenessPercentage="80"/>
+			<color lowerValue="0.3" color="4040FF" opaquenessPercentage="80"/>
+			<color lowerValue="0.4" color="0080C0" opaquenessPercentage="80"/>
+			<color lowerValue="0.5" color="129FFE" opaquenessPercentage="80"/>
+			<color lowerValue="1" color="00FF40" opaquenessPercentage="80"/>
+			<color lowerValue="1.5" color="FFFF00" opaquenessPercentage="80"/>
+			<color lowerValue="2" color="FF8000" opaquenessPercentage="80"/>
+			<color lowerValue="2.5" color="FF0000" opaquenessPercentage="80"/>
+			<color lowerValue="3" color="FF0080" opaquenessPercentage="80"/>
+			<color lowerValue="5" color="7931DF" opaquenessPercentage="80"/>
+		</classBreaks>
+		<classBreaks id="Class.SM">
+			<color lowerValue="0" color="white" opaquenessPercentage="80"/>
+			<color lowerValue="0.1" color="070268" opaquenessPercentage="80"/>
+			<color lowerValue="0.2" color="0900AE" opaquenessPercentage="80"/>
+			<color lowerValue="0.3" color="4040FF" opaquenessPercentage="80"/>
+			<color lowerValue="0.4" color="0080C0" opaquenessPercentage="80"/>
+			<color lowerValue="0.5" color="129FFE" opaquenessPercentage="80"/>
+			<color lowerValue="1" color="00FF40" opaquenessPercentage="80"/>
+			<color lowerValue="1.5" color="FFFF00" opaquenessPercentage="80"/>
+			<color lowerValue="2" color="FF8000" opaquenessPercentage="80"/>
+			<color lowerValue="2.5" color="FF0000" opaquenessPercentage="80"/>
+			<color lowerValue="3" color="FF0080" opaquenessPercentage="80"/>
+			<color lowerValue="5" color="7931DF" opaquenessPercentage="80"/>
+		</classBreaks>
+		<classBreaks id="PrecipitationRadarMSC">
+			<unitVisible>true</unitVisible>
+			<break color="87CEFA" lowerValue="0.1" label="0.1 - 0.9 mm" opaquenessPercentage="80"/>
+			<break color="1E90FF" lowerValue="1" label="1 - 1.9 mm" opaquenessPercentage="80"/>
+			<break color="00FF00" lowerValue="2" label="2 - 3.0mm" opaquenessPercentage="80"/>
+			<break color="12AD2B" lowerValue="4" label="4 - 7.9 mm" opaquenessPercentage="80"/>
+			<break color="008000" lowerValue="8" label="8 - 11.9 mm" opaquenessPercentage="80"/>
+			<break color="254117" lowerValue="12" label="12 - 15.9 mm" opaquenessPercentage="80"/>
+			<break color="FFFF33" lowerValue="16" label="16 - 23.9 mm" opaquenessPercentage="80"/>
+			<break color="FBB917" lowerValue="24" label="24 - 31.9 mm" opaquenessPercentage="80"/>
+			<break color="FF8C00" lowerValue="32" label="32 - 49.9 mm" opaquenessPercentage="95"/>
+			<break color="FF4500" lowerValue="50" label="50 - 63.9 mm" opaquenessPercentage="95"/>
+			<break color="red" lowerValue="64" label="64 - 99.9 mm" opaquenessPercentage="80"/>
+			<break color="FD349C" lowerValue="100" label="100 - 124.9 mm" opaquenessPercentage="80"/>
+			<break color="6C2DC7" lowerValue="125" label="125 - 199.9 mm" opaquenessPercentage="80"/>
+			<break color="461B7E" lowerValue="200" label="&gt;200 mm" opaquenessPercentage="80"/>
+		</classBreaks>
+		<classBreaks id="PrecipitationRadarNowcast">
+			<unitVisible>true</unitVisible>
+			<break lowerValue="0" color="FFFFFF" label="0 mm/hr" opaquenessPercentage="25"/>
+			<break lowerValue="0.01" color="B0E2FF" label="0.1" opaquenessPercentage="60"/>
+			<break lowerValue="0.03" color="00BFFF" label="0.3" opaquenessPercentage="65"/>
+			<break lowerValue="0.1" color="0000FF" label="1" opaquenessPercentage="70"/>
+			<break lowerValue="0.2" color="0000CD" label="2" opaquenessPercentage="75"/>
+			<break lowerValue="0.5" color="FFFF00" label="5" opaquenessPercentage="80"/>
+			<break lowerValue="1.5" color="FFD700" label="10" opaquenessPercentage="90"/>
+			<break lowerValue="2.5" color="FF8C00" label="25" opaquenessPercentage="90"/>
+			<break lowerValue="5.0" color="FF0000" label="50" opaquenessPercentage="90"/>
+			<break lowerValue="10.0" color="FF0000" label="100" opaquenessPercentage="90"/>
+		</classBreaks>
+	</classBreaks>
+	<timeMarkersDisplayConfig>
+		<timeMarkerDisplayOptions marker="systemTime">
+			<color>green</color>
+			<lineStyle>solid</lineStyle>
+		</timeMarkerDisplayOptions>
+		<timeMarkerDisplayOptions marker="timeZero">
+			<color>gray</color>
+			<lineStyle>dotted</lineStyle>
+		</timeMarkerDisplayOptions>
+		<timeMarkerDisplayOptions marker="displayTime">
+			<color>red</color>
+			<lineStyle>solid</lineStyle>
+		</timeMarkerDisplayOptions>
+		<timeMarkerDisplayOptions marker="threshold">
+			<color>orange</color>
+			<lineStyle>dashed</lineStyle>
+		</timeMarkerDisplayOptions>
+	</timeMarkersDisplayConfig>
+	<parametersDisplayConfig>
+		<parameterDisplayOptions id="QR.obs">
+			<preferredColor>black</preferredColor>
+			<lineStyle>dashdot</lineStyle>
+			<markerStyle>x</markerStyle>
+			<markerSize>2</markerSize>
+		</parameterDisplayOptions>
+		<parameterDisplayOptions id="PC.obs">
+			<preferredColor>blue</preferredColor>
+			<lineStyle>bar</lineStyle>
+			<min>0</min>
+			<max>2</max>
+			<inverted>true</inverted>
+		</parameterDisplayOptions>
+		<parameterDisplayOptions id="PC.obs.acc">
+			<preferredColor>black</preferredColor>
+			<lineStyle>solid</lineStyle>
+			<min>0</min>
+		</parameterDisplayOptions>
+		<parameterDisplayOptions id="PC.nwp">
+			<preferredColor>light blue</preferredColor>
+			<lineStyle>bar</lineStyle>
+			<min>0</min>
+			<max>2</max>
+			<inverted>true</inverted>
+		</parameterDisplayOptions>
+		<parameterDisplayOptions id="PC.cpa">
+			<preferredColor>blue3</preferredColor>
+			<lineStyle>bar</lineStyle>
+			<min>0</min>
+			<max>2</max>
+			<inverted>true</inverted>
+		</parameterDisplayOptions>
+		<parameterDisplayOptions id="PR.cpa">
+			<preferredColor>blue3</preferredColor>
+			<lineStyle>bar</lineStyle>
+			<min>0</min>
+			<max>2</max>
+			<inverted>true</inverted>
+		</parameterDisplayOptions>
+		<parameterDisplayOptions id="PC.sim">
+			<preferredColor>blue violet</preferredColor>
+			<lineStyle>bar</lineStyle>
+			<min>0</min>
+			<max>2</max>
+			<inverted>true</inverted>
+		</parameterDisplayOptions>
+	</parametersDisplayConfig>
+	<statisticalFunctions>
+		<statisticalFunction function="scatterPlot"/>
+		<statisticalFunction function="doubleMassCurve"/>
+		<statisticalFunction function="durationExceedence"/>
+		<statisticalFunction function="cumulative">
+			<lineStyle>solid;thick</lineStyle>
+		</statisticalFunction>
+		<statisticalFunction function="boxPlot" ignoreMissings="true">
+			<timeStep id="daily"/>
+			<timeStep id="weekly"/>
+			<timeStep id="monthly"/>
+		</statisticalFunction>
+		<statisticalFunction function="calendarAggregation">
+			<movingAccumulationTimeSpan unit="hour" multiplier="1"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="3"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="6"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="12"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="1"/>
+			<movingAccumulationTimeSpan unit="week" multiplier="1"/>
+			<movingAccumulationTimeSpan unit="week" multiplier="2"/>
+			<movingAccumulationTimeSpan unit="week" multiplier="4"/>
+			<movingAccumulationTimeSpan unit="week" multiplier="12"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="365"/>
+		</statisticalFunction>
+		<statisticalFunction function="accumulationInterval">
+			<movingAccumulationTimeSpan unit="hour" multiplier="1"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="3"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="6"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="12"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="1"/>
+			<movingAccumulationTimeSpan unit="week" multiplier="1"/>
+			<movingAccumulationTimeSpan unit="week" multiplier="2"/>
+			<movingAccumulationTimeSpan unit="week" multiplier="4"/>
+			<movingAccumulationTimeSpan unit="week" multiplier="12"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="365"/>
+		</statisticalFunction>
+		<statisticalFunction function="accumulationAggregation">
+			<movingAccumulationTimeSpan unit="hour" multiplier="1"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="3"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="6"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="12"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="1"/>
+			<movingAccumulationTimeSpan unit="week" multiplier="1"/>
+			<movingAccumulationTimeSpan unit="week" multiplier="2"/>
+			<movingAccumulationTimeSpan unit="week" multiplier="4"/>
+			<movingAccumulationTimeSpan unit="week" multiplier="12"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="365"/>
+		</statisticalFunction>
+		<statisticalFunction function="relativeAggregation">
+			<movingAccumulationTimeSpan unit="hour" multiplier="1"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="3"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="6"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="12"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="1"/>
+			<movingAccumulationTimeSpan unit="week" multiplier="1"/>
+			<movingAccumulationTimeSpan unit="week" multiplier="2"/>
+			<movingAccumulationTimeSpan unit="week" multiplier="4"/>
+			<movingAccumulationTimeSpan unit="week" multiplier="12"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="365"/>
+		</statisticalFunction>
+		<statisticalFunction function="movingAverage">
+			<movingAccumulationTimeSpan unit="hour" multiplier="1"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="3"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="6"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="12"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="1"/>
+			<movingAccumulationTimeSpan unit="week" multiplier="1"/>
+			<movingAccumulationTimeSpan unit="week" multiplier="2"/>
+			<movingAccumulationTimeSpan unit="week" multiplier="4"/>
+			<movingAccumulationTimeSpan unit="week" multiplier="12"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="365"/>
+		</statisticalFunction>
+		<statisticalFunction function="centralMovingAverage">
+			<movingAccumulationTimeSpan unit="hour" multiplier="1"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="3"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="6"/>
+			<movingAccumulationTimeSpan unit="hour" multiplier="12"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="1"/>
+			<movingAccumulationTimeSpan unit="week" multiplier="1"/>
+			<movingAccumulationTimeSpan unit="week" multiplier="2"/>
+			<movingAccumulationTimeSpan unit="week" multiplier="4"/>
+			<movingAccumulationTimeSpan unit="week" multiplier="12"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="365"/>
+		</statisticalFunction>
+	</statisticalFunctions>
+	<descriptiveFunctionGroups>
+		<descriptiveFunctionGroup name="Basic statistics">
+			<descriptiveFunction function="infoLocationId" ignoreMissings="true"/>
+			<descriptiveFunction function="infoLocationName" ignoreMissings="true"/>
+			<descriptiveFunction function="infoParameterId" ignoreMissings="true"/>
+			<descriptiveFunction function="infoParameterName" ignoreMissings="true"/>
+			<descriptiveFunction function="startTime" ignoreMissings="true"/>
+			<descriptiveFunction function="endTime" ignoreMissings="true"/>
+			<descriptiveFunction function="mean" ignoreMissings="true"/>
+			<descriptiveFunction function="min" ignoreMissings="true"/>
+			<descriptiveFunction function="max" ignoreMissings="true"/>
+			<descriptiveFunction function="sum" ignoreMissings="true"/>
+			<descriptiveFunction function="missings" ignoreMissings="true"/>
+			<descriptiveFunction function="unreliables" ignoreMissings="true"/>
+			<descriptiveFunction function="doubtfuls" ignoreMissings="true"/>
+			<descriptiveFunction function="completed" ignoreMissings="true"/>
+			<descriptiveFunction function="corrected" ignoreMissings="true"/>
+			<descriptiveFunction function="count" ignoreMissings="true"/>
+			<descriptiveFunction function="standardDeviation" ignoreMissings="true"/>
+		</descriptiveFunctionGroup>
+	</descriptiveFunctionGroups>
+	<defaultGraphicalEditMode>adjustShapeTimeSeriesByDragging</defaultGraphicalEditMode>
+	<buttonSettings>
+		<showDisplayGroups/>
+		<showTable/>
+		<showTwentyFourHour visible="false"/>
+		<showChart/>
+		<showStatistics/>
+		<rotateChartAndTable/>
+		<zoomIn/>
+		<zoomOut/>
+		<zoomToDefault/>
+		<selectPreviousZoomLevel/>
+		<selectNextZoomLevel/>
+		<moveBackOneViewPeriod/>
+		<moveBackHalfViewPeriod/>
+		<moveForwardHalfViewPeriod/>
+		<moveForwardOneViewPeriod/>
+		<showAllData/>
+		<switchReferenceLevel/>
+		<setViewPeriod/>
+		<copyTimeSeries/>
+		<pasteTimeSeries/>
+		<lockSelection/>
+		<runWorkflow visible="false"/>
+		<undoTimeSeriesChanges visible="false"/>
+		<saveTimeSeriesChanges/>
+		<setTimeSeriesEditableByClicking visible="false"/>
+		<showThresholdWarningLevels visible="false"/>
+		<printChart/>
+		<saveChartAsPicture/>
+		<showLongTermScroller/>
+		<searchAndSelectForecasts/>
+		<setTimeSeriesVisibility/>
+		<showValidationRules visible="false"/>
+	</buttonSettings>
+</timeSeriesDisplay>

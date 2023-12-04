@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
+	<import>
+		<general>
+			<importType>NETCDF-CF_GRID</importType>
+			<serverUrl>https://nomads.ncep.noaa.gov/dods/nam/nam%RELATIVE_TIME_IN_SECONDS(yyyyMMdd, -10800 )%/nam_%RELATIVE_TIME_IN_SECONDS(HH, -10800 )%z</serverUrl>
+			<idMapId>IdImportNAM</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<missingValue>-3.402823E38</missingValue>
+			<importTimeZone>
+				<timeZoneName>GMT</timeZoneName>
+			</importTimeZone>
+			<dataFeedId>NAM.Server</dataFeedId>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportNAM</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>NAM</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportNAM</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>NAM</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="mm"/>
+		<externUnit parameterId="TA.nwp" unit="K"/>
+	</import>
+</timeSeriesImportRun>

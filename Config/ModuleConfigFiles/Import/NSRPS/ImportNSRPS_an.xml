@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
+	<import>
+		<general>
+			<importType>CanadaMeteoWCS</importType>
+			<serverUrl>https://geo.weather.gc.ca/geomet?SERVICE=WCS&amp;VERSION=2.0.1&amp;REQUEST=GetCoverage</serverUrl>
+			<user>$NSRPS_USER$</user>
+			<password>$NSRPS_PASS$</password>
+			<relativeViewPeriod unit="day" start="0" end="0" startOverrulable="true" endOverrulable="true"/>
+			<idMapId>IdImportNSRPS</idMapId>
+		</general>
+		<properties>
+			<string key="subsettingCrs" value="EPSG:4326"/>
+		</properties>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportNSRPS</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationId>NSRPS</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</import>
+</timeSeriesImportRun>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
+<transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd" version="1.0">
+	<!--Input-->
+	<variable>
+		<variableId>ECCC_input</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportECCCRadarComposite</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.sim</parameterId>
+			<locationId>ECCCRadarComposite</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="6"/>
+			<relativeViewPeriod unit="hour" start="-3" end="0" startOverrulable="true" endOverrulable="false"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<!--Output-->
+	<variable>
+		<variableId>Gridded_parameter_clipped</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>$PARAMETER$</parameterId>
+			<locationId>$OUTPUTGRID$</locationId>
+			<timeSeriesType>$TIMESERIESTYPE$</timeSeriesType>
+			<timeStep unit="minute" multiplier="6"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<!--Transformations-->
+	<transformation id="clip_parameter">
+		<interpolationSpatial>
+			<closestDistance>
+				<inputVariable>
+					<variableId>ECCC_input</variableId>
+				</inputVariable>
+				<distanceGeoDatum>$DISTANCEGEODATUM$</distanceGeoDatum>
+				<outputVariable>
+					<variableId>Gridded_parameter_clipped</variableId>
+				</outputVariable>
+			</closestDistance>
+		</interpolationSpatial>
+	</transformation>
+</transformationModule>

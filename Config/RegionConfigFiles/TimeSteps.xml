@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timeSteps xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSteps.xsd">
+	<timeStep id="daily" unit="day" timeZone="GMT"/>
+	<timeStep id="weekly" unit="week" timeZone="GMT"/>
+	<timeStep id="monthly" unit="month" timeZone="GMT"/>
+	<timeStep id="$DAY_TIMESTEP$" unit="day" timeZone="$TIMEZONE$"/>
+
+	<timeStep id="GMT_3hourly" times="00:00 03:00 06:00 09:00 12:00 15:00 18:00 21:00" timeZone="GMT"/>
+	<timeStep id="GMT_6hourly" times="00:00 06:00 12:00 18:00" timeZone="GMT"/>
+	<timeStep id="GMT_12hourly" times="00:00 12:00" timeZone="GMT"/>
+	<timeStep id="GMT_24hourly" times="00:00" timeZone="GMT"/>
+	<!--<timeStep id="day_GMT" unit="day" timeZone="GMT"/>-->
+<!-- Model specific timesteps-->
+	<timeStep id="BowWflow" unit="day" timeZone="$TIMEZONE$"/>
+	<timeStep id="BowRaven" unit="day" timeZone="$TIMEZONE$"/>
+<!-- Other timesteps -->
+	<timeStep id="day_1200MST" times="12:00" timeZone="MST"/>
+</timeSteps>

@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 sp1 (http://www.altova.com) by Afdeling ICT (Stichting Deltares) -->
+<grids xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/grids.xsd">
+	<regular locationId="HRDPA">
+		<rows>1222</rows>
+		<columns>2500</columns>
+		<polarStereographic>
+			<originLatitude>90.0</originLatitude>
+			<originLongitude>-115.0</originLongitude>
+			<scaleAtOrigin>0.9330127018922193</scaleAtOrigin>
+			<equatorRadius>6371229.0</equatorRadius>
+			<poleRadius>6371229.0</poleRadius>
+		</polarStereographic>
+		<firstCellCenter>
+			<x>-1458642.4560546875</x>
+			<y>-2003453.61328125</y>
+			<z>0.0</z>
+		</firstCellCenter>
+		<xCellSize>2500.0</xCellSize>
+		<yCellSize>2500.0</yCellSize>
+	</regular>
+	<regular locationId="RDPA">
+		<rows>824</rows>
+		<columns>935</columns>
+		<polarStereographic>
+			<originLatitude>90.0</originLatitude>
+			<originLongitude>249.0</originLongitude>
+			<scaleAtOrigin>0.9330127018922193</scaleAtOrigin>
+			<equatorRadius>6371229.0</equatorRadius>
+			<poleRadius>6371229.0</poleRadius>
+		</polarStereographic>
+		<gridCorners>
+			<geoDatum>WGS 1984</geoDatum>
+			<upperLeft>
+				<x>147.57653032124486</x>
+				<y>47.289183285578574</y>
+				<z>0.0</z>
+			</upperLeft>
+			<lowerRight>
+				<x>-77.77846054786623</x>
+				<y>17.299437426457636</y>
+				<z>0.0</z>
+			</lowerRight>
+		</gridCorners>
+	</regular>
+	<regular locationId="HRDPS">
+		<rows>1290</rows>
+		<columns>2540</columns>
+		<rotatedNorthPole>
+			<latitude>36.08852005004883</latitude>
+			<longitude>-114.69488525390625</longitude>
+		</rotatedNorthPole>
+		<firstCellCenter>
+			<x>-14.82122802734375</x>
+			<y>16.69999885559082</y>
+			<z>0.0</z>
+		</firstCellCenter>
+		<xCellSize>0.0225</xCellSize>
+		<yCellSize>0.0225</yCellSize>
+	</regular>
+	<regular locationId="RDPS">
+		<rows>824</rows>
+		<columns>935</columns>
+		<polarStereographic>
+			<originLatitude>90.0</originLatitude>
+			<originLongitude>249.0</originLongitude>
+			<scaleAtOrigin>0.9330127018922193</scaleAtOrigin>
+			<equatorRadius>6371229.0</equatorRadius>
+			<poleRadius>6371229.0</poleRadius>
+		</polarStereographic>
+		<gridCorners>
+			<geoDatum>WGS 1984</geoDatum>
+			<upperLeft>
+				<x>147.57653032124486</x>
+				<y>47.289183285578574</y>
+				<z>0.0</z>
+			</upperLeft>
+			<lowerRight>
+				<x>-77.77846054786623</x>
+				<y>17.299437426457636</y>
+				<z>0.0</z>
+			</lowerRight>
+		</gridCorners>
+	</regular>
+	<regular locationId="GDPS">
+		<rows>1201</rows>
+		<columns>2400</columns>
+		<geoDatum>WGS 1984</geoDatum>
+		<firstCellCenter>
+			<x>180.0</x>
+			<y>90.00000762939453</y>
+			<z>0.0</z>
+		</firstCellCenter>
+		<xCellSize>0.15000002</xCellSize>
+		<yCellSize>0.15000001</yCellSize>
+	</regular>
+	<regular locationId="REPS">
+		<rows>960</rows>
+		<columns>908</columns>
+		<rotatedNorthPole>
+			<latitude>25.647279739379883</latitude>
+			<longitude>89.55551147460938</longitude>
+		</rotatedNorthPole>
+		<firstCellCenter>
+			<x>-47.710540771484375</x>
+			<y>35.54999923706055</y>
+			<z>0.0</z>
+		</firstCellCenter>
+		<xCellSize>0.09</xCellSize>
+		<yCellSize>0.09</yCellSize>
+	</regular>
+	<regular locationId="GEPS">
+		<rows>361</rows>
+		<columns>720</columns>
+		<geoDatum>WGS 1984</geoDatum>
+		<firstCellCenter>
+			<x>0.0</x>
+			<y>90.0</y>
+			<z>0.0</z>
+		</firstCellCenter>
+		<xCellSize>0.5</xCellSize>
+		<yCellSize>0.5</yCellSize>
+	</regular>
+	<irregular locationId="GLOBSNOW">
+		<rows>721</rows>
+		<columns>721</columns>
+		<csvFile>
+			<file>GlobSnow_SWE_L3A_v.1.0.csv</file>
+			<geoDatum>WGS 1984</geoDatum>
+			<x>%X%</x>
+			<y>%Y%</y>
+		</csvFile>
+	</irregular>
+	<regular locationId="SREF">
+		<rows>287</rows>
+		<columns>708</columns>
+		<geoDatum>WGS 1984</geoDatum>
+		<firstCellCenter>
+			<x>148.640594</x>
+			<y>85.301359</y>
+			<z>0.0</z>
+		</firstCellCenter>
+		<xCellSize>0.29516314</xCellSize>
+		<yCellSize>0.29511818</yCellSize>
+	</regular>
+	<regular locationId="GFS">
+		<rows>140</rows>
+		<columns>420</columns>
+		<geoDatum>WGS 1984</geoDatum>
+		<firstCellCenter>
+			<x>-152</x>
+			<y>75</y>
+		</firstCellCenter>
+		<xCellSize>0.25</xCellSize>
+		<yCellSize>0.25</yCellSize>
+	</regular>
+	<regular locationId="ERA5">
+		<rows>140</rows>
+		<columns>420</columns>
+		<geoDatum>WGS 1984</geoDatum>
+		<firstCellCenter>
+			<x>-152</x>
+			<y>75</y>
+			<z>0</z>
+		</firstCellCenter>
+		<xCellSize>0.25</xCellSize>
+		<yCellSize>0.25</yCellSize>
+	</regular>
+	<regular locationId="NAM">
+		<rows>443</rows>
+		<columns>913</columns>
+		<geoDatum>WGS 1984</geoDatum>
+		<gridCorners>
+			<upperLeft>
+				<x>-152.87862300000</x>
+				<y>61.20556254545</y>
+				<z>0.0</z>
+			</upperLeft>
+			<lowerRight>
+				<x> -49.47263081081</x>
+				<y>12.21990800000</y>
+				<z>0.0</z>
+			</lowerRight>
+		</gridCorners>
+	</regular>
+    <regular locationId="SNODAS">
+        <rows>4096</rows>
+        <columns>8192</columns>
+        <geoDatum>WGS 1984</geoDatum>
+        <firstCellCenter>
+            <x>-130.5124969482422</x>
+            <y>58.22916793823242</y>
+            <z>0.0</z>
+        </firstCellCenter>
+        <xCellSize>0.00833333</xCellSize>
+        <yCellSize>0.00833333</yCellSize>
+    </regular>
+	<regular locationId="Snowcast_GWF">
+		<!--original pre 10-26-2022 <rows>262</rows>
+		<columns>241</columns>-->
+		<rows>265</rows>
+		<columns>616</columns>
+		<geoDatum>WGS 1984</geoDatum>
+		<gridCorners>
+			<!--	original pre 10-26-2022 <lowerLeft>
+				<x>-118.891692796615</x>
+				<y>46.570596864239</y>
+			</lowerLeft>-->
+			<lowerLeft>
+				<x>-131.995202834714</x>
+				<y>46.458059701484</y>
+			</lowerLeft>
+			<!--original pre 10-26-2022 <upperRight>
+				<x>-113.099</x>
+				<y>52.868</y>
+			</upperRight>-->
+			<upperRight>
+				<x>-109.8192</x>
+				<y>55.99806</y>
+			</upperRight>
+		</gridCorners>
+		<!--<firstCellCenter>
+			<x>-118.891692796615</x>
+			<y>46.570596864239</y>
+		</firstCellCenter>
+		<xCellSize>0.024034932267</xCellSize>
+		<yCellSize>0.024034932267</yCellSize>-->
+	</regular>
+	<regular locationId="ECCCRadarComposite">
+		<rows>5584</rows>
+		<columns>6525</columns>
+		<geoDatum>WGS 1984</geoDatum>
+		<firstCellCenter>
+			<x>-170.323855000000008</x>
+			<y>67.1906100000000066</y>
+		</firstCellCenter>
+		<xCellSize>0.01844000000000000153</xCellSize>
+		<yCellSize>0.009000000000000001055</yCellSize>
+	</regular>
+	<regular locationId="BowRadarGrid">
+		<rows>512</rows>
+		<columns>512</columns>
+		<geoDatum>WGS 1984</geoDatum>
+		<firstCellCenter>
+			<x>-119.8720150000000046</x>
+			<y>53.2046100000000024</y>
+		</firstCellCenter>
+		<xCellSize>0.01844000000000000153</xCellSize>
+		<yCellSize>0.009000000000000001055</yCellSize>
+	</regular>
+	<regular locationId="BowGrid">
+		<rows>189</rows>
+		<columns>342</columns>
+		<geoDatum>WGS 1984</geoDatum>
+		<firstCellCenter>
+			<x>-116.5291666667244</x>
+			<y>51.7291666666402</y>
+			<z>0.0</z>
+		</firstCellCenter>
+		<xCellSize>0.00833333</xCellSize>
+		<yCellSize>0.00833333</yCellSize>
+	</regular>
+	<regular locationId="ModelGrid">
+		<rows>189</rows>
+		<columns>342</columns>
+		<geoDatum>WGS 1984</geoDatum>
+		<firstCellCenter>
+			<x>-116.5291666667244</x>
+			<y>51.7291666666402</y>
+			<z>0.0</z>
+		</firstCellCenter>
+		<xCellSize>0.00833333</xCellSize>
+		<yCellSize>0.00833333</yCellSize>
+	</regular>
+	<regular locationId="NSRPS">
+		<rows>1800</rows>
+		<columns>1800</columns>
+		<geoDatum>WGS 1984</geoDatum>
+		<firstCellCenter>
+			<x>-121.99583333333334</x>
+			<y>61.99583333333334</y>
+			<z>0.0</z>
+		</firstCellCenter>
+		<xCellSize>0.00833333</xCellSize>
+		<yCellSize>0.00833333</yCellSize>
+	</regular>
+	<regular locationId="NSRPS_reps">
+		<rows>1200</rows>
+		<columns>2640</columns>
+		<geoDatum>WGS 1984</geoDatum>
+		<firstCellCenter>
+			<x>-94.99583333333334</x>
+			<y>50.99583333333334</y>
+			<z>0.0</z>
+		</firstCellCenter>
+		<xCellSize>0.00833333</xCellSize>
+		<yCellSize>0.00833333</yCellSize>
+	</regular>
+</grids>

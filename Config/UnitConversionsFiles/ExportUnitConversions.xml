@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
+<unitConversions xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/unitConversions.xsd">
+	<unitConversion>
+		<inputUnitType>kPa</inputUnitType>
+		<outputUnitType>Pa</outputUnitType>
+		<multiplier>1000</multiplier>
+		<incrementer>0</incrementer>
+	</unitConversion>
+	<unitConversion>
+		<inputUnitType>oC</inputUnitType>
+		<outputUnitType>K</outputUnitType>
+		<multiplier>1</multiplier>
+		<incrementer>273.15</incrementer>
+	</unitConversion>
+	<unitConversion>
+		<inputUnitType>mm</inputUnitType>
+		<outputUnitType>kg_m2s-1</outputUnitType>
+		<multiplier>2.77777E-4</multiplier>
+		<incrementer>0</incrementer>
+	</unitConversion>
+	<unitConversion>
+		<inputUnitType>J/m2</inputUnitType>
+		<outputUnitType>W/m2</outputUnitType>
+		<multiplier>2.77777E-4</multiplier>
+		<incrementer>0</incrementer>
+	</unitConversion>
+</unitConversions>

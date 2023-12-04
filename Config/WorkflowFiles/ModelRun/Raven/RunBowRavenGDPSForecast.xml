@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.1">
+	<!-- Run Model Forecast -->
+	<properties>
+		<string key="FORECAST" value="GDPS"/>
+		<string key="STARTTIME" value="-5"/>
+		<string key="ENDTIME" value="7"/>
+		<string key="TIMESTEP" value="DAY_TIMESTEP"/>
+		 <string key="HISTORICMODULEINSTANCE" value="ImportECCCScalar"/>
+		<string key="FORECASTMODULEINSTANCE" value="PreprocessGDPS"/>
+		<string key="MODEL" value="Raven"/>
+		<string key="ENSEMBLE" value="main"/>
+		<string key="EXPORTDATASET" value="RavenForecast"/>
+	</properties>
+	
+<!--Set Forecast Length-->
+	<activity>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>SetForecastLengthGDPS</moduleInstanceId>
+		<moduleConfigFileName>SetForecastLengthTemplate</moduleConfigFileName>
+	</activity>
+<!--Set Merge Historic and Forecast Data-->
+	<activity>
+		<properties>
+		<string key="LOCATIONSET" value="RavenBasins"/>
+	</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PreprocessGDPS</moduleInstanceId>
+		<moduleConfigFileName>MergeForecastGridsTemplate</moduleConfigFileName>
+	</activity>
+<!--Run model in for GDPS Forecast --> 
+	<activity>
+	<properties>
+		<string key="INPUTMODULEINSTANCEMETEO" value="PreprocessGDPS"/>
+	</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>RavenGDPSForecast</moduleInstanceId>
+		<moduleConfigFileName>RavenForecastTemplate</moduleConfigFileName>
+	</activity>
+	
+<!-- Postprocess Model Results-->
+	<activity>
+	<properties>
+		<string key="TIMESERIESTYPE" value="simulated forecasting"/>
+		<string key="PARAMETER" value="QR.sim"/>
+		<string key="ENSEMBLE" value="main"/>
+		<string key="MODELOUTPUTLOCATION" value="RavenSubBasins"/>
+		<string key="STATIONLOCATIONS" value="RavenHydroStations"/>
+		<string key="TIMESTEP" value="$DAY_TIMESTEP$"/>
+	</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>RavenGDPSForecast</moduleInstanceId>
+		<moduleConfigFileName>PostprocessModelBasinOutputToStationTemplate</moduleConfigFileName>
+	</activity>
+</workflow>

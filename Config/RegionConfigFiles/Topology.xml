@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 sp1 (http://www.altova.com) by Afdeling ICT (Stichting Deltares) -->
+<topology xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/topology.xsd">
+	<enableAutoRun>false</enableAutoRun>
+	<enableAutoSelectParameters>true</enableAutoSelectParameters>
+	<enableSelectNodesFromMap>false</enableSelectNodesFromMap>
+	<nodes id="Information_Sources" name="Information Sources">
+		<nodes id="Delft-FEWS">
+			<node id="Delft-FEWS_Wiki" name="Delft-FEWS Documentation">
+				<url>https://publicwiki.deltares.nl/display/FEWSDOC/Home</url>
+			</node>
+			<node id="Delft-FEWS_UserGuide" name="Delft-FEWS User Guide">
+				<url>https://publicwiki.deltares.nl/display/FEWSDOC/Using+Delft-FEWS+-+User+Guide</url>
+			</node>
+			<node id="Delft_FEWS" name="Delft-FEWS Software Community">
+				<url>http://oss.deltares.nl/web/delft-fews/</url>
+			</node>
+		</nodes>
+		<nodes id="Operational Data">
+			<node id="ECCC" name="Environment and Climate Change Canada">
+				<url>https://weather.gc.ca/</url>
+			</node>
+			<node id="WSC" name="Water Survey of Canada">
+				<url>https://wateroffice.ec.gc.ca/</url>
+			</node>
+		</nodes>
+	</nodes>
+	<!--	<nodes id="RScripts" name="R Scripts">
+		<node id="InstallUpdateRLibraries" name="Install or update R libraries">
+			<workflowId>InstallUpdateRLibraries</workflowId>
+		</node>
+		<node id="HelloWorld" name="Hello World Example!">
+			<workflowId>HelloWorld</workflowId>
+		</node>
+	</nodes>
+	<nodes id="HYDAT" name="Import Hydrological Data from HYDAT">
+		<node id="DownloadUpdateHYDAT" name="Download or Update HYDAT Database">
+			<workflowId>DownloadUpdateHYDAT</workflowId>
+			<graceTime unit="day" multiplier="30"/>
+		</node>
+		<node id="DownloadHistoricalHydrometricData" name="Import Historical Hydrometric Data from HYDAT">
+			<workflowId>DownloadHistoricalHydrometricData</workflowId>
+			<graceTime unit="hour" multiplier="24"/>
+			<localRun>false</localRun>
+		</node>
+		<node id="DownloadRealTimeHydrometricData" name="Import Real Time Hydrometric Data from HYDAT">
+			<workflowId>DownloadRealTimeHydrometricData</workflowId>
+			<graceTime unit="hour" multiplier="24"/>
+			<localRun>false</localRun>
+		</node>
+	</nodes>-->
+	<!-- Workflows below not included, in preference of the R Scripting. These workflows pull directly from the DataMart CSV files-->
+	<nodes id="ImportWSC" name="Import Hydrological Data from DataMart">
+		<node id="ImportWSCHourly" name="Import Past Days Hydrometric Data from DataMart">
+			<workflowId>ImportWSCHourly</workflowId>
+			<graceTime unit="hour" multiplier="24"/>
+			<localRun>false</localRun>
+		</node>
+		<node id="ImportWSCDaily" name="Import Past Month Hydrometric Data from DataMart">
+			<workflowId>ImportWSCDaily</workflowId>
+			<graceTime unit="hour" multiplier="24"/>
+			<localRun>false</localRun>
+		</node>
+	</nodes>
+	<nodes id="ImportECCCStationNodes" name="Import Meteorological Data">
+		<node id="ImportECCCRecent" name="Import Recent Meteo Station Data from DataMart">
+			<workflowId>ImportECCCScalar</workflowId>
+			<graceTime unit="hour" multiplier="24"/>
+			<localRun>false</localRun>
+		</node>
+		<node id="ImportERA5" name="Import ERA5 Reanalysis Data">
+			<workflowId>ImportERA5</workflowId>
+			<graceTime unit="hour" multiplier="24"/>
+			<localRun>false</localRun>
+		</node>
+	</nodes>
+	<nodes id="PreprocessObs" name="Preprocess Observational Data">
+		<node id="PreprocessWSC" name="Preprocess Hydro Observations">
+			<workflowId>PreprocessWSC</workflowId>
+			<graceTime unit="hour" multiplier="24"/>
+			<localRun>false</localRun>
+		</node>
+		<node id="PreprocessECCCStationsRecent" name="Preprocess Meteo Observations (Last 30 Days)">
+			<workflowId>PreprocessECCCMeteoRecent</workflowId>
+			<graceTime unit="hour" multiplier="24"/>
+			<localRun>false</localRun>
+		</node>
+	</nodes>
+	<nodes id="Import Radar" name="Import Radar ">
+		<node id="ImportRadarComposite" name="Import Radar Composite">
+			<workflowId>RetrieveECCCRadarComposite</workflowId>
+			<graceTime unit="hour" multiplier="6"/>
+			<localRun>false</localRun>
+		</node>
+	</nodes>
+	<nodes id="ImportECCCPrecipNodes" name="Import Re-Analysis Precipitation">
+		<node id="ImportHRDPA" name="Import HRDPA">
+			<workflowId>ImportHRDPAGrids</workflowId>
+			<graceTime unit="hour" multiplier="6"/>
+			<localRun>false</localRun>
+		</node>
+		<node id="ImportRDPA" name="Import RDPA">
+			<workflowId>ImportRDPAGrids</workflowId>
+			<graceTime unit="hour" multiplier="6"/>
+			<localRun>false</localRun>
+		</node>
+	</nodes>
+	<nodes id="ImportECCCGridNodes" name="Import ECCC NWP Forecasts">
+		<node id="ImportHRDPS" name="Import HRDPS Forecast">
+			<workflowId>ImportHRDPSGrids</workflowId>
+			<graceTime unit="hour" multiplier="24"/>
+			<localRun>false</localRun>
+		</node>
+		<node id="ImportRDPS" name="Import RDPS Forecast">
+			<workflowId>ImportRDPSGrids</workflowId>
+			<graceTime unit="hour" multiplier="24"/>
+			<localRun>false</localRun>
+		</node>
+		<node id="ImportGDPS" name="Import GDPS Forecast">
+			<workflowId>ImportGDPSGrids</workflowId>
+			<graceTime unit="hour" multiplier="24"/>
+			<localRun>false</localRun>
+		</node>
+		<node id="ImportREPS" name="Import REPS Forecast">
+			<workflowId>ImportREPSGrids</workflowId>
+			<graceTime unit="hour" multiplier="24"/>
+			<localRun>false</localRun>
+		</node>
+		<node id="ImportGEPS" name="Import GEPS Forecast">
+			<workflowId>ImportGEPSGrids</workflowId>
+			<graceTime unit="hour" multiplier="24"/>
+			<localRun>false</localRun>
+		</node>
+	</nodes>
+	<nodes id="ImportSnow" name="Import Snow Data">
+		<node id="ImportSnowCast" name="Import SnowCast">
+			<workflowId>ImportSnowcastGrids</workflowId>
+			<graceTime unit="hour" multiplier="24"/>
+			<localRun>false</localRun>
+		</node>
+		<node id="ImportSNODAS" name="Import SNODAS">
+			<workflowId>ImportSNODASGrids</workflowId>
+			<graceTime unit="hour" multiplier="24"/>
+			<localRun>false</localRun>
+		</node>
+		<node id="ImportGLOBSNOW" name="Import GLOBSNOW">
+			<workflowId>ImportGLOBSNOWGrids</workflowId>
+			<graceTime unit="hour" multiplier="24"/>
+			<localRun>false</localRun>
+		</node>
+	</nodes>
+	<nodes id="Nowcasting" name="Nowcasting">
+		<node id="ECCCRadarNowcast" name="STEPS rainfall nowcast using ECCC radar data">
+			<workflowId>ECCCRadarNowcast</workflowId>
+			<localRun>false</localRun>
+		</node>
+	</nodes>
+	<nodes id="SnowSummaryPlots" name="Snow Summary Plots">
+		<node id="SummarySnowStation" name="Snow @ Stations"/>
+		<node id="SummarySnowBasin" name="Snow @ Basins"/>
+	</nodes>
+	<nodes id="BasinSummaryPlots" name="Precip and Temp Summary Plots">
+		<node id="SummaryPlotPrecip" name="Precipitation Summary Plots"/>
+		<node id="SummaryPlotTemp" name="Temperature Summary Plots"/>
+	</nodes>
+	<nodes id="ModelNodes" name="Run Bow Wflow Models">
+		<node id="BowWflowRadarUpdate" name="Run Bow Wflow (Radar Update)">
+			<workflowId>BowWflowRadarUpdate</workflowId>
+			<localRun>false</localRun>
+		</node>
+		<node id="BowWflowHRDPAUpdate1h" name="Run Bow Wflow (HRDPA Update)">
+			<workflowId>BowWflowHRDPAUpdate1h</workflowId>
+			<localRun>false</localRun>
+		</node>
+		<node id="BowWflowGDPSForecast1h" name="Run Bow Wflow (GDPS Forecast)">
+			<workflowId>BowWflowGDPSForecast1h</workflowId>
+			<localRun>false</localRun>
+		</node>
+		<node id="BowWflowGEPSForecast1h" name="Run Bow Wflow (GEPS Forecast)">
+			<workflowId>BowWflowGEPSForecast1h</workflowId>
+			<localRun>false</localRun>
+		</node>
+		<node id="BowWflowRDPSForecast1h" name="Run Bow Wflow (RDPS Forecast)">
+			<workflowId>BowWflowRDPSForecast1h</workflowId>
+			<localRun>false</localRun>
+		</node>
+		<node id="BowWflowREPSForecast1h" name="Run Bow Wflow (REPS Forecast)">
+			<workflowId>BowWflowREPSForecast1h</workflowId>
+			<localRun>false</localRun>
+		</node>
+		<node id="BowWflowHRDPSForecast1h" name="Run Bow Wflow (HRDPS Forecast)">
+			<workflowId>BowWflowHRDPSForecast1h</workflowId>
+			<localRun>false</localRun>
+		</node>
+		<node id="BowWflowRadarForecast" name="Run Bow Wflow (Radar Forecast)">
+			<workflowId>BowWflowRadarForecast</workflowId>
+			<localRun>false</localRun>
+		</node>
+	</nodes>
+</topology>

@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
+<transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd" version="1.0">
+	<!--Input-->
+	<variable>
+		<variableId>gridded_precip</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$INPUTMODULEINSTANCE$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>$INPUTGRID$</locationId>
+			<timeSeriesType>$TIMESERIESTYPE$</timeSeriesType>
+			<timeStep unit="hour" multiplier="$TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>gridded_temperature</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$INPUTMODULEINSTANCE$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>$INPUTGRID$</locationId>
+			<timeSeriesType>$TIMESERIESTYPE$</timeSeriesType>
+			<timeStep unit="hour" multiplier="$TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<!--Output-->
+	<!-- Precipitation Output-->
+	<variable>
+		<variableId>basin_precip</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationSetId>$BASINLOCATIONS$</locationSetId>
+			<timeSeriesType>$TIMESERIESTYPE$</timeSeriesType>
+			<timeStep unit="hour" multiplier="$TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>basin_precip_daily</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationSetId>$BASINLOCATIONS$</locationSetId>
+			<timeSeriesType>$TIMESERIESTYPE$</timeSeriesType>
+			<timeStep id="$DAY_TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>station_precip</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationSetId>$STATIONLOCATIONS$</locationSetId>
+			<timeSeriesType>$TIMESERIESTYPE$</timeSeriesType>
+			<timeStep unit="hour" multiplier="$TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+		<!-- Temperature Output-->
+	<variable>
+		<variableId>basin_temperature</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationSetId>$BASINLOCATIONS$</locationSetId>
+			<timeSeriesType>$TIMESERIESTYPE$</timeSeriesType>
+			<timeStep unit="hour" multiplier="$TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>basin_temperature_daily</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationSetId>$BASINLOCATIONS$</locationSetId>
+			<timeSeriesType>$TIMESERIESTYPE$</timeSeriesType>
+			<timeStep id="$DAY_TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>basin_temperature_daily_max</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<qualifierId>max</qualifierId>
+			<locationSetId>$BASINLOCATIONS$</locationSetId>
+			<timeSeriesType>$TIMESERIESTYPE$</timeSeriesType>
+			<timeStep id="$DAY_TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>basin_temperature_daily_min</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<qualifierId>min</qualifierId>
+			<locationSetId>$BASINLOCATIONS$</locationSetId>
+			<timeSeriesType>$TIMESERIESTYPE$</timeSeriesType>
+			<timeStep id="$DAY_TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>station_temperature</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationSetId>$STATIONLOCATIONS$</locationSetId>
+			<timeSeriesType>$TIMESERIESTYPE$</timeSeriesType>
+			<timeStep unit="hour" multiplier="$TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<!--Transformations - precip-->
+	<transformation id="basin_precip">
+		<interpolationSpatial>
+			<average>
+				<inputVariable>
+					<variableId>gridded_precip</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>basin_precip</variableId>
+				</outputVariable>
+			</average>
+		</interpolationSpatial>
+	</transformation>
+	<transformation id="basin_precip_daily">
+	<aggregation>
+			<accumulative>
+				<inputVariable>
+					<variableId>basin_precip</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>basin_precip_daily</variableId>
+				</outputVariable>
+			</accumulative>
+	</aggregation>
+	</transformation>
+	<transformation id="station_precip">
+		<interpolationSpatial>
+			<closestDistance>
+				<inputVariable>
+					<variableId>gridded_precip</variableId>
+				</inputVariable>
+				<distanceGeoDatum>$DISTANCEGEODATUM$</distanceGeoDatum>
+				<outputVariable>
+					<variableId>station_precip</variableId>
+				</outputVariable>
+			</closestDistance>
+		</interpolationSpatial>
+	</transformation>
+		<!--Transformations-->
+	<transformation id="basin_temperature">
+		<interpolationSpatial>
+			<average>
+				<inputVariable>
+					<variableId>gridded_temperature</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>basin_temperature</variableId>
+				</outputVariable>
+			</average>
+		</interpolationSpatial>
+	</transformation>
+	<transformation id="basin_temperature_daily">
+	<aggregation>
+			<accumulative>
+				<inputVariable>
+					<variableId>basin_temperature</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>basin_temperature_daily</variableId>
+				</outputVariable>
+			</accumulative>
+	</aggregation>
+	</transformation>
+		<transformation id="basin_temp_daily_max">
+		<statisticsSerial>
+			<max>
+				<inputVariable>
+					<variableId>basin_temperature</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>basin_temperature_daily_max</variableId>
+				</outputVariable>
+			</max>
+		</statisticsSerial>
+	</transformation>
+	<transformation id="basin_temp_daily_min">
+		<statisticsSerial>
+			<min>
+				<inputVariable>
+					<variableId>basin_temperature</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>basin_temperature_daily_min</variableId>
+				</outputVariable>
+			</min>
+		</statisticsSerial>
+	</transformation>
+	<transformation id="station_temperature">
+		<interpolationSpatial>
+			<closestDistance>
+				<inputVariable>
+					<variableId>gridded_temperature</variableId>
+				</inputVariable>
+				<distanceGeoDatum>$DISTANCEGEODATUM$</distanceGeoDatum>
+				<outputVariable>
+					<variableId>station_temperature</variableId>
+				</outputVariable>
+			</closestDistance>
+		</interpolationSpatial>
+	</transformation>
+</transformationModule>

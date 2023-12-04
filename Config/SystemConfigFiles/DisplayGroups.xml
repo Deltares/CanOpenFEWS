@@ -1,0 +1,1871 @@
+<!-- edited with XMLSpy v2014 rel. 2 sp1 (http://www.altova.com) by Afdeling ICT (Stichting Deltares) -->
+<displayGroups xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/displayGroups.xsd" version="1.0">
+	<!--Plot Templates Section-->
+	<!--Plot Template - WSC Data Data-->
+	<plot id="WSCTemplate">
+		<subplot>
+			<line>
+				<color>red</color>
+				<lineStyle>constant</lineStyle>
+				<label>NRT (5-min) Data  @ID@</label>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportWSC</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.obs</parameterId>
+					<locationSetId>DownloadHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="minute" multiplier="5"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<color>black</color>
+				<lineStyle>constant</lineStyle>
+				<label>Daily Data @ID@</label>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportWSC</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.obs</parameterId>
+					<locationSetId>DownloadHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="$DAY_TIMESTEP$"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<color>slate gray</color>
+				<lineStyle>dashed</lineStyle>
+				<label>Historic Mean @ID@</label>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessWSC</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.obs</parameterId>
+					<qualifierId>mean</qualifierId>
+					<locationSetId>DownloadHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="$DAY_TIMESTEP$"/>
+					<cycle unit="year"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<area>
+				<color>slate gray1</color>
+				<opaquenessPercentage>30</opaquenessPercentage>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessWSC</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.obs</parameterId>
+					<qualifierId>max</qualifierId>
+					<locationSetId>DownloadHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="$DAY_TIMESTEP$"/>
+					<cycle unit="year"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessWSC</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.obs</parameterId>
+					<qualifierId>min</qualifierId>
+					<locationSetId>DownloadHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="$DAY_TIMESTEP$"/>
+					<cycle unit="year"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+			</area>
+			<area>
+				<color>slate gray2</color>
+				<opaquenessPercentage>30</opaquenessPercentage>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessWSC</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.obs</parameterId>
+					<qualifierId>90</qualifierId>
+					<locationSetId>DownloadHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="$DAY_TIMESTEP$"/>
+					<cycle unit="year"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessWSC</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.obs</parameterId>
+					<qualifierId>10</qualifierId>
+					<locationSetId>DownloadHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="$DAY_TIMESTEP$"/>
+					<cycle unit="year"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+			</area>
+			<area>
+				<color>slate gray3</color>
+				<opaquenessPercentage>30</opaquenessPercentage>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessWSC</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.obs</parameterId>
+					<qualifierId>75</qualifierId>
+					<locationSetId>DownloadHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="$DAY_TIMESTEP$"/>
+					<cycle unit="year"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessWSC</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.obs</parameterId>
+					<qualifierId>25</qualifierId>
+					<locationSetId>DownloadHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="$DAY_TIMESTEP$"/>
+					<cycle unit="year"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+			</area>
+		</subplot>
+		<subplot>
+			<line>
+				<color>red</color>
+				<lineStyle>constant</lineStyle>
+				<label>NRT (5-min) Data  @ID@</label>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportWSC</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>HG.obs</parameterId>
+					<locationSetId>DownloadHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="minute" multiplier="5"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<color>black</color>
+				<lineStyle>constant</lineStyle>
+				<label>Daily Data @ID@</label>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportWSC</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>HG.obs</parameterId>
+					<locationSetId>DownloadHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="$DAY_TIMESTEP$"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<color>light blue</color>
+				<lineStyle>dashed</lineStyle>
+				<label>HG.obs mean @ID@</label>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessWSC</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>HG.obs</parameterId>
+					<qualifierId>mean</qualifierId>
+					<locationSetId>DownloadHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="$DAY_TIMESTEP$"/>
+					<cycle unit="year"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<area>
+				<color>slate blue1</color>
+				<opaquenessPercentage>30</opaquenessPercentage>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessWSC</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>HG.obs</parameterId>
+					<qualifierId>max</qualifierId>
+					<locationSetId>DownloadHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="$DAY_TIMESTEP$"/>
+					<cycle unit="year"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessWSC</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>HG.obs</parameterId>
+					<qualifierId>min</qualifierId>
+					<locationSetId>DownloadHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="$DAY_TIMESTEP$"/>
+					<cycle unit="year"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+			</area>
+			<area>
+				<color>slate blue2</color>
+				<opaquenessPercentage>30</opaquenessPercentage>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessWSC</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>HG.obs</parameterId>
+					<qualifierId>90</qualifierId>
+					<locationSetId>DownloadHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="$DAY_TIMESTEP$"/>
+					<cycle unit="year"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessWSC</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>HG.obs</parameterId>
+					<qualifierId>10</qualifierId>
+					<locationSetId>DownloadHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="$DAY_TIMESTEP$"/>
+					<cycle unit="year"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+			</area>
+			<area>
+				<color>slate blue3</color>
+				<opaquenessPercentage>30</opaquenessPercentage>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessWSC</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>HG.obs</parameterId>
+					<qualifierId>75</qualifierId>
+					<locationSetId>DownloadHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="$DAY_TIMESTEP$"/>
+					<cycle unit="year"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessWSC</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>HG.obs</parameterId>
+					<qualifierId>25</qualifierId>
+					<locationSetId>DownloadHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="$DAY_TIMESTEP$"/>
+					<cycle unit="year"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+			</area>
+		</subplot>
+	</plot>
+	<!--Plot Template - ECCC Data-->
+	<plot id="ECCCMeteoHistoricTemplate">
+		<subplot>
+			<line>
+				<color>purple</color>
+				<label>Precipitation [mm]</label>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>PC.obs</parameterId>
+					<locationSetId>ModelMeteoStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="$DAY_TIMESTEP$"/>
+					<relativeViewPeriod unit="day" start="-3650" end="0"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+			</line>
+		</subplot>
+		<subplot>
+			<line>
+				<color>red</color>
+				<lineStyle>dashed;thick</lineStyle>
+				<label>Temperature (mean) [C]</label>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>TA.obs</parameterId>
+					<locationSetId>ModelMeteoStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="$DAY_TIMESTEP$"/>
+					<relativeViewPeriod unit="day" start="-3650" end="0"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<area>
+				<color>blue</color>
+				<opaquenessPercentage>25</opaquenessPercentage>
+				<label>Temperature (max-min range) [C]</label>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>TAmax.obs</parameterId>
+					<locationSetId>ModelMeteoStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="$DAY_TIMESTEP$"/>
+					<relativeViewPeriod unit="day" start="-3650" end="0"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>TAmin.obs</parameterId>
+					<locationSetId>ModelMeteoStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="$DAY_TIMESTEP$"/>
+					<relativeViewPeriod unit="day" start="-3650" end="0"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+			</area>
+		</subplot>
+	</plot>
+	<plot id="ECCCMeteoRecentTemplate">
+		<subplot>
+			<line>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>PC.obs</parameterId>
+					<locationSetId>DisplayMeteoStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="$DAY_TIMESTEP$"/>
+					<relativeViewPeriod unit="day" start="-15" end="0"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+			</line>
+		</subplot>
+		<subplot>
+			<area>
+				<opaquenessPercentage>30</opaquenessPercentage>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>TAmax.obs</parameterId>
+					<locationSetId>DisplayMeteoStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="$DAY_TIMESTEP$"/>
+					<relativeViewPeriod unit="day" start="-15" end="0"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>TAmin.obs</parameterId>
+					<locationSetId>DisplayMeteoStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="$DAY_TIMESTEP$"/>
+					<relativeViewPeriod unit="day" start="-15" end="0"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+			</area>
+		</subplot>
+	</plot>
+	<plot id="ECCCMeteoProcessedTemplate">
+		<subplot>
+			<line>
+				<color>purple</color>
+				<label>Precipitation [mm]</label>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>PC.obs</parameterId>
+					<locationSetId>ModelBasins</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="$DAY_TIMESTEP$"/>
+					<relativeViewPeriod unit="day" start="-365" end="0"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+			</line>
+		</subplot>
+		<subplot>
+			<line>
+				<color>red</color>
+				<lineStyle>dashed;thick</lineStyle>
+				<label>Temperature (mean) [C]</label>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>TA.obs</parameterId>
+					<locationSetId>ModelBasins</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="$DAY_TIMESTEP$"/>
+					<relativeViewPeriod unit="day" start="-365" end="0"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<area>
+				<color>blue</color>
+				<opaquenessPercentage>25</opaquenessPercentage>
+				<label>Temperature (max-min range) [C]</label>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>TAmax.obs</parameterId>
+					<locationSetId>ModelBasins</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="$DAY_TIMESTEP$"/>
+					<relativeViewPeriod unit="day" start="-365" end="0"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>TAmin.obs</parameterId>
+					<locationSetId>ModelBasins</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="$DAY_TIMESTEP$"/>
+					<relativeViewPeriod unit="day" start="-365" end="0"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+			</area>
+		</subplot>
+	</plot>
+	<!--Plot Template - RDPA Data-->
+	<plot id="RDPATemplate">
+		<subplot>
+			<line>
+				<color>purple</color>
+				<lineStyle>bar</lineStyle>
+				<axis>left</axis>
+				<label>HRDPA Precipitation [mm/hr]</label>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessHRDPA</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>PC.sim</parameterId>
+					<locationSetId>ModelMeteoStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="hour" multiplier="6"/>
+					<relativeViewPeriod unit="day" start="-14" end="0"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+			</line>
+		</subplot>
+		<subplot>
+			<line>
+				<color>blue</color>
+				<lineStyle>bar</lineStyle>
+				<axis>left</axis>
+				<label>Observed Precipitation [mm/hr]</label>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>PC.obs</parameterId>
+					<locationSetId>DisplayMeteoStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="$DAY_TIMESTEP$"/>
+					<relativeViewPeriod unit="day" start="-14" end="0"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+			</line>
+		</subplot>
+	</plot>
+	<!--Plot Templates - NWP Data -->
+	<plot id="HRDPSTemplate">
+		<subplot>
+			<line>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessHRDPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>PC.nwp</parameterId>
+					<locationSetId>ModelMeteoStations</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+		</subplot>
+		<subplot>
+			<line>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessHRDPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>TA.nwp</parameterId>
+					<locationSetId>ModelMeteoStations</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+		</subplot>
+	</plot>
+	<plot id="RDPSTemplate">
+		<subplot>
+			<line>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessRDPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>PC.nwp</parameterId>
+					<locationSetId>ModelMeteoStations</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+		</subplot>
+		<subplot>
+			<line>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessRDPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>TA.nwp</parameterId>
+					<locationSetId>ModelMeteoStations</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+		</subplot>
+	</plot>
+	<plot id="GDPSTemplate">
+		<subplot>
+			<line>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessGDPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>PC.nwp</parameterId>
+					<locationSetId>ModelMeteoStations</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+		</subplot>
+		<subplot>
+			<line>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessGDPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>TA.nwp</parameterId>
+					<locationSetId>ModelMeteoStations</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+		</subplot>
+	</plot>
+	<plot id="REPSTemplate">
+		<subplot>
+			<line>
+				<color>blue</color>
+				<lineStyle>solid;thick</lineStyle>
+				<axis>left</axis>
+				<label>mean</label>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessREPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>PC.nwp.acc</parameterId>
+					<qualifierId>mean</qualifierId>
+					<locationSetId>ModelMeteoStations</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<area>
+				<color>blue</color>
+				<opaquenessPercentage>50</opaquenessPercentage>
+				<label>25%-75%</label>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessREPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>PC.nwp.acc</parameterId>
+					<qualifierId>25%</qualifierId>
+					<locationSetId>ModelMeteoStations</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessREPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>PC.nwp.acc</parameterId>
+					<qualifierId>75%</qualifierId>
+					<locationSetId>ModelMeteoStations</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</area>
+			<area>
+				<color>light blue</color>
+				<opaquenessPercentage>50</opaquenessPercentage>
+				<label>Min-Max</label>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessREPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>PC.nwp.acc</parameterId>
+					<qualifierId>min</qualifierId>
+					<locationSetId>ModelMeteoStations</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessREPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>PC.nwp.acc</parameterId>
+					<qualifierId>max</qualifierId>
+					<locationSetId>ModelMeteoStations</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</area>
+		</subplot>
+		<subplot>
+			<line>
+				<color>green</color>
+				<lineStyle>solid;thick</lineStyle>
+				<axis>left</axis>
+				<label>mean</label>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessREPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>TA.nwp</parameterId>
+					<qualifierId>mean</qualifierId>
+					<locationSetId>ModelMeteoStations</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<area>
+				<color>green</color>
+				<opaquenessPercentage>50</opaquenessPercentage>
+				<label>25%-75%</label>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessREPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>TA.nwp</parameterId>
+					<qualifierId>25%</qualifierId>
+					<locationSetId>ModelMeteoStations</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessREPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>TA.nwp</parameterId>
+					<qualifierId>75%</qualifierId>
+					<locationSetId>ModelMeteoStations</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</area>
+			<area>
+				<color>green1</color>
+				<opaquenessPercentage>50</opaquenessPercentage>
+				<label>Min-Max</label>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessREPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>TA.nwp</parameterId>
+					<qualifierId>min</qualifierId>
+					<locationSetId>ModelMeteoStations</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessREPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>TA.nwp</parameterId>
+					<qualifierId>max</qualifierId>
+					<locationSetId>ModelMeteoStations</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</area>
+		</subplot>
+	</plot>
+	<plot id="GEPSTemplate">
+		<subplot>
+			<line>
+				<color>blue</color>
+				<lineStyle>solid;thick</lineStyle>
+				<axis>left</axis>
+				<label>mean</label>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessGEPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>PC.nwp.acc</parameterId>
+					<qualifierId>mean</qualifierId>
+					<locationSetId>ModelMeteoStations</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="6"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<area>
+				<color>blue</color>
+				<opaquenessPercentage>50</opaquenessPercentage>
+				<label>25%-75%</label>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessGEPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>PC.nwp.acc</parameterId>
+					<qualifierId>25%</qualifierId>
+					<locationSetId>ModelMeteoStations</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="6"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessGEPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>PC.nwp.acc</parameterId>
+					<qualifierId>75%</qualifierId>
+					<locationSetId>ModelMeteoStations</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="6"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</area>
+			<area>
+				<color>light blue</color>
+				<opaquenessPercentage>50</opaquenessPercentage>
+				<label>Min-Max</label>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessGEPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>PC.nwp.acc</parameterId>
+					<qualifierId>min</qualifierId>
+					<locationSetId>ModelMeteoStations</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="6"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessGEPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>PC.nwp.acc</parameterId>
+					<qualifierId>max</qualifierId>
+					<locationSetId>ModelMeteoStations</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="6"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</area>
+		</subplot>
+		<subplot>
+			<line>
+				<color>green</color>
+				<lineStyle>solid;thick</lineStyle>
+				<axis>left</axis>
+				<label>mean</label>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessGEPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>TA.nwp</parameterId>
+					<qualifierId>mean</qualifierId>
+					<locationSetId>ModelMeteoStations</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="6"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<area>
+				<color>green</color>
+				<opaquenessPercentage>50</opaquenessPercentage>
+				<label>25%-75%</label>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessGEPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>TA.nwp</parameterId>
+					<qualifierId>25%</qualifierId>
+					<locationSetId>ModelMeteoStations</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="6"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessGEPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>TA.nwp</parameterId>
+					<qualifierId>75%</qualifierId>
+					<locationSetId>ModelMeteoStations</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="6"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</area>
+			<area>
+				<color>green1</color>
+				<opaquenessPercentage>50</opaquenessPercentage>
+				<label>Min-Max</label>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessGEPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>TA.nwp</parameterId>
+					<qualifierId>min</qualifierId>
+					<locationSetId>ModelMeteoStations</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="6"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessGEPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>TA.nwp</parameterId>
+					<qualifierId>max</qualifierId>
+					<locationSetId>ModelMeteoStations</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="6"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</area>
+		</subplot>
+	</plot>
+	<plot id="ECCC_Basin_Precip">
+		<subplot>
+			<line>
+				<color>blue4</color>
+				<lineStyle>solid;thick</lineStyle>
+				<axis>left</axis>
+				<label>GEPS (mean)</label>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessGEPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>PC.nwp.acc</parameterId>
+					<qualifierId>mean</qualifierId>
+					<locationSetId>DisplayBasins</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="6"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<color>blue</color>
+				<lineStyle>solid;thick</lineStyle>
+				<axis>left</axis>
+				<label>RDPS-Acc</label>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessRDPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>PC.nwp.acc</parameterId>
+					<locationSetId>DisplayBasins</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<color>green</color>
+				<lineStyle>solid;thick</lineStyle>
+				<axis>left</axis>
+				<label>GDPS-Acc</label>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessGDPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>PC.nwp.acc</parameterId>
+					<locationSetId>DisplayBasins</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<area>
+				<color>blue</color>
+				<opaquenessPercentage>50</opaquenessPercentage>
+				<label>GEPS (min-max)</label>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessGEPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>PC.nwp.acc</parameterId>
+					<qualifierId>max</qualifierId>
+					<locationSetId>DisplayBasins</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="6"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessGEPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>PC.nwp.acc</parameterId>
+					<qualifierId>min</qualifierId>
+					<locationSetId>DisplayBasins</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="6"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</area>
+			<area>
+				<color>blue</color>
+				<opaquenessPercentage>50</opaquenessPercentage>
+				<label>GEPS (25%-75%)</label>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessGEPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>PC.nwp.acc</parameterId>
+					<qualifierId>75%</qualifierId>
+					<locationSetId>DisplayBasins</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="6"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessGEPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>PC.nwp.acc</parameterId>
+					<qualifierId>25%</qualifierId>
+					<locationSetId>DisplayBasins</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="6"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</area>
+		</subplot>
+	</plot>
+	<plot id="ECCC_Basin_Temp">
+		<subplot>
+			<line>
+				<color>red</color>
+				<lineStyle>solid;thick</lineStyle>
+				<axis>left</axis>
+				<label>GEPS (mean)</label>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessGEPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>TA.nwp</parameterId>
+					<qualifierId>mean</qualifierId>
+					<locationSetId>DisplayBasins</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="6"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<color>blue</color>
+				<lineStyle>constant</lineStyle>
+				<axis>left</axis>
+				<label>RDPS</label>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessRDPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>TA.nwp</parameterId>
+					<locationSetId>DisplayBasins</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<color>green</color>
+				<lineStyle>constant</lineStyle>
+				<axis>left</axis>
+				<label>GDPS</label>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessGDPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>TA.nwp</parameterId>
+					<locationSetId>DisplayBasins</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<area>
+				<color>red</color>
+				<opaquenessPercentage>25</opaquenessPercentage>
+				<label>GEPS (min-max)</label>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessGEPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>TA.nwp</parameterId>
+					<qualifierId>max</qualifierId>
+					<locationSetId>DisplayBasins</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="6"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessGEPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>TA.nwp</parameterId>
+					<qualifierId>min</qualifierId>
+					<locationSetId>DisplayBasins</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="6"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</area>
+			<area>
+				<color>red</color>
+				<opaquenessPercentage>25</opaquenessPercentage>
+				<label>GEPS (25%-75%)</label>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessGEPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>TA.nwp</parameterId>
+					<qualifierId>75%</qualifierId>
+					<locationSetId>DisplayBasins</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="6"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessGEPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>TA.nwp</parameterId>
+					<qualifierId>25%</qualifierId>
+					<locationSetId>DisplayBasins</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="6"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</area>
+		</subplot>
+	</plot>
+	<!--Plot Templates - Snow Data-->
+	<plot id="SnowStationsTemplate">
+		<subplot>
+			<line>
+				<color>red</color>
+				<lineStyle>constant</lineStyle>
+				<axis>left</axis>
+				<label>SNODAS</label>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessSNODAS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>SWE.sim</parameterId>
+					<locationSetId>SnowStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="day"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<color>blue</color>
+				<lineStyle>constant</lineStyle>
+				<axis>left</axis>
+				<label>SnowCast</label>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessSnowcast</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>SWE.sim</parameterId>
+					<locationSetId>SnowStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="day_1200MST"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<color>green</color>
+				<lineStyle>constant</lineStyle>
+				<axis>left</axis>
+				<label>GlobSnow</label>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessGLOBSNOW</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>SWE.sim</parameterId>
+					<locationSetId>SnowStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="day"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+		</subplot>
+	</plot>
+	<plot id="SnowBasinsTemplate">
+		<subplot>
+			<line>
+				<color>red</color>
+				<lineStyle>constant</lineStyle>
+				<axis>left</axis>
+				<label>SNODAS</label>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessSNODAS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>SWE.sim</parameterId>
+					<locationSetId>DisplayBasins</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="day"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<color>blue</color>
+				<lineStyle>constant</lineStyle>
+				<axis>left</axis>
+				<label>SnowCast</label>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessSnowcast</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>SWE.sim</parameterId>
+					<locationSetId>DisplayBasins</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="day_1200MST"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<color>green</color>
+				<lineStyle>constant</lineStyle>
+				<axis>left</axis>
+				<label>GlobSnow</label>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessGLOBSNOW</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>SWE.sim</parameterId>
+					<locationSetId>DisplayBasins</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="day"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+		</subplot>
+	</plot>
+	<!--Plot Templates - Model Results-->
+	<plot id="BowWflowHistoricTemplate">
+		<subplot>
+			<line>
+				<label>NRT 5 Min Data</label>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportWSC</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.obs</parameterId>
+					<locationSetId>BowHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="minute" multiplier="5"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>QR.measured @ID@</label>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportWSC</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.obs</parameterId>
+					<locationSetId>BowHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="$DAY_TIMESTEP$"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>QR.modelled @ID@</label>
+				<timeSeriesSet>
+					<moduleInstanceId>BowWflowHistoric</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.sim</parameterId>
+					<locationSetId>BowHydroStations</locationSetId>
+					<timeSeriesType>simulated historical</timeSeriesType>
+					<timeStep unit="day"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<color>gray60</color>
+				<lineStyle>dashed</lineStyle>
+				<label>QR.obs mean @ID@</label>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessWSC</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.obs</parameterId>
+					<qualifierId>mean</qualifierId>
+					<locationSetId>BowHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="$DAY_TIMESTEP$"/>
+					<cycle unit="year"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+			</line>
+		</subplot>
+		<subplot>
+			<line>
+				<label>HG NRT 5 Min Data</label>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportWSC</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>HG.obs</parameterId>
+					<locationSetId>BowHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="minute" multiplier="5"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>HG.measured @ID@</label>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportWSC</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>HG.obs</parameterId>
+					<locationSetId>BowHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="$DAY_TIMESTEP$"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>HG.modelled @ID@</label>
+				<timeSeriesSet>
+					<moduleInstanceId>BowWflowHistoric</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>HG.sim</parameterId>
+					<locationSetId>BowHydroStations</locationSetId>
+					<timeSeriesType>simulated historical</timeSeriesType>
+					<timeStep unit="day"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<color>light blue</color>
+				<lineStyle>dashed</lineStyle>
+				<label>HG.obs mean @ID@</label>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessWSC</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>HG.obs</parameterId>
+					<qualifierId>mean</qualifierId>
+					<locationSetId>BowHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="$DAY_TIMESTEP$"/>
+					<cycle unit="year"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<area>
+				<color>slate blue1</color>
+				<opaquenessPercentage>30</opaquenessPercentage>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessWSC</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>HG.obs</parameterId>
+					<qualifierId>max</qualifierId>
+					<locationSetId>BowHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="$DAY_TIMESTEP$"/>
+					<cycle unit="year"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessWSC</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>HG.obs</parameterId>
+					<qualifierId>min</qualifierId>
+					<locationSetId>BowHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="$DAY_TIMESTEP$"/>
+					<cycle unit="year"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+			</area>
+			<area>
+				<color>slate blue2</color>
+				<opaquenessPercentage>30</opaquenessPercentage>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessWSC</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>HG.obs</parameterId>
+					<qualifierId>90</qualifierId>
+					<locationSetId>BowHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="$DAY_TIMESTEP$"/>
+					<cycle unit="year"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessWSC</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>HG.obs</parameterId>
+					<qualifierId>10</qualifierId>
+					<locationSetId>BowHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="$DAY_TIMESTEP$"/>
+					<cycle unit="year"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+			</area>
+			<area>
+				<color>slate blue3</color>
+				<opaquenessPercentage>30</opaquenessPercentage>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessWSC</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>HG.obs</parameterId>
+					<qualifierId>75</qualifierId>
+					<locationSetId>BowHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="$DAY_TIMESTEP$"/>
+					<cycle unit="year"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessWSC</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>HG.obs</parameterId>
+					<qualifierId>25</qualifierId>
+					<locationSetId>BowHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="$DAY_TIMESTEP$"/>
+					<cycle unit="year"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+			</area>
+		</subplot>
+		<subplot>
+			<line>
+				<timeSeriesSet>
+					<moduleInstanceId>BowWflowHistoric</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>SWE.sim</parameterId>
+					<locationSetId>ModelBasins</locationSetId>
+					<timeSeriesType>simulated historical</timeSeriesType>
+					<timeStep id="$DAY_TIMESTEP$"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+		</subplot>
+	</plot>
+	<plot id="BowWflowForecastTemplate">
+		<subplot>
+			<line>
+				<label>NRT 5 Min Data</label>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportWSC</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.obs</parameterId>
+					<locationSetId>BowHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="minute" multiplier="5"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>Daily Measured Data</label>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportWSC</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.obs</parameterId>
+					<locationSetId>BowHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="$DAY_TIMESTEP$"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>Historic Model Run @ID@</label>
+				<timeSeriesSet>
+					<moduleInstanceId>BowWflowHistoric</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.sim</parameterId>
+					<locationSetId>BowHydroStations</locationSetId>
+					<timeSeriesType>simulated historical</timeSeriesType>
+					<timeStep id="$DAY_TIMESTEP$"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>RDPS Forecast @ID@</label>
+				<timeSeriesSet>
+					<moduleInstanceId>BowWflowRDPSForecast</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.sim</parameterId>
+					<locationSetId>BowHydroStations</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep id="$DAY_TIMESTEP$"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>GDPS Forecast @ID@</label>
+				<timeSeriesSet>
+					<moduleInstanceId>BowWflowGDPSForecast</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.sim</parameterId>
+					<locationSetId>BowHydroStations</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep id="$DAY_TIMESTEP$"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>REPS Forecast @ID@</label>
+				<timeSeriesSet>
+					<moduleInstanceId>BowWflowREPSForecast</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.sim</parameterId>
+					<locationSetId>BowHydroStations</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep id="$DAY_TIMESTEP$"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+					<ensembleId>REPS</ensembleId>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<label>GEPS Forecast @ID@</label>
+				<timeSeriesSet>
+					<moduleInstanceId>BowWflowGEPSForecast</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.sim</parameterId>
+					<locationSetId>BowHydroStations</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep id="$DAY_TIMESTEP$"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+					<ensembleId>GEPS</ensembleId>
+				</timeSeriesSet>
+			</line>
+			<area>
+				<color>slate gray1</color>
+				<opaquenessPercentage>30</opaquenessPercentage>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessWSC</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.obs</parameterId>
+					<qualifierId>max</qualifierId>
+					<locationSetId>BowHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="$DAY_TIMESTEP$"/>
+					<cycle unit="year"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessWSC</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.obs</parameterId>
+					<qualifierId>min</qualifierId>
+					<locationSetId>BowHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="$DAY_TIMESTEP$"/>
+					<cycle unit="year"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+			</area>
+			<area>
+				<color>slate gray2</color>
+				<opaquenessPercentage>30</opaquenessPercentage>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessWSC</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.obs</parameterId>
+					<qualifierId>90</qualifierId>
+					<locationSetId>BowHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="$DAY_TIMESTEP$"/>
+					<cycle unit="year"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessWSC</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.obs</parameterId>
+					<qualifierId>10</qualifierId>
+					<locationSetId>BowHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="$DAY_TIMESTEP$"/>
+					<cycle unit="year"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+			</area>
+			<area>
+				<color>slate gray3</color>
+				<opaquenessPercentage>30</opaquenessPercentage>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessWSC</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.obs</parameterId>
+					<qualifierId>75</qualifierId>
+					<locationSetId>BowHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="$DAY_TIMESTEP$"/>
+					<cycle unit="year"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessWSC</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.obs</parameterId>
+					<qualifierId>25</qualifierId>
+					<locationSetId>BowHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="$DAY_TIMESTEP$"/>
+					<cycle unit="year"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+			</area>
+		</subplot>
+		<subplot>
+			<line>
+				<color>red</color>
+				<lineStyle>solid;thick</lineStyle>
+				<axis>left</axis>
+				<label>GEPS (mean)</label>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessGEPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>TA.nwp</parameterId>
+					<qualifierId>mean</qualifierId>
+					<locationSetId>ModelBasins</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="6"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<color>blue</color>
+				<lineStyle>constant</lineStyle>
+				<axis>left</axis>
+				<label>RDPS</label>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessRDPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>TA.nwp</parameterId>
+					<locationSetId>ModelBasins</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<color>green</color>
+				<lineStyle>constant</lineStyle>
+				<axis>left</axis>
+				<label>GDPS</label>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessGDPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>TA.nwp</parameterId>
+					<locationSetId>ModelBasins</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<area>
+				<color>red</color>
+				<opaquenessPercentage>25</opaquenessPercentage>
+				<label>GEPS (min-max)</label>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessGEPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>TA.nwp</parameterId>
+					<qualifierId>max</qualifierId>
+					<locationSetId>ModelBasins</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="6"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessGEPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>TA.nwp</parameterId>
+					<qualifierId>min</qualifierId>
+					<locationSetId>ModelBasins</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="6"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</area>
+			<area>
+				<color>red</color>
+				<opaquenessPercentage>25</opaquenessPercentage>
+				<label>GEPS (25%-75%)</label>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessGEPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>TA.nwp</parameterId>
+					<qualifierId>75%</qualifierId>
+					<locationSetId>ModelBasins</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="6"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessGEPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>TA.nwp</parameterId>
+					<qualifierId>25%</qualifierId>
+					<locationSetId>ModelBasins</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="6"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</area>
+		</subplot>
+		<subplot>
+			<line>
+				<color>blue4</color>
+				<lineStyle>solid;thick</lineStyle>
+				<axis>left</axis>
+				<label>GEPS (mean)</label>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessGEPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>PC.nwp.acc</parameterId>
+					<qualifierId>mean</qualifierId>
+					<locationSetId>ModelBasins</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="6"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<color>blue</color>
+				<lineStyle>solid;thick</lineStyle>
+				<axis>left</axis>
+				<label>RDPS-Acc</label>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessRDPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>PC.nwp.acc</parameterId>
+					<locationSetId>ModelBasins</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<color>green</color>
+				<lineStyle>solid;thick</lineStyle>
+				<axis>left</axis>
+				<label>GDPS-Acc</label>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessGDPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>PC.nwp.acc</parameterId>
+					<locationSetId>ModelBasins</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<area>
+				<color>blue</color>
+				<opaquenessPercentage>50</opaquenessPercentage>
+				<label>GEPS (min-max)</label>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessGEPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>PC.nwp.acc</parameterId>
+					<qualifierId>max</qualifierId>
+					<locationSetId>ModelBasins</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="6"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessGEPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>PC.nwp.acc</parameterId>
+					<qualifierId>min</qualifierId>
+					<locationSetId>ModelBasins</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="6"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</area>
+			<area>
+				<color>blue</color>
+				<opaquenessPercentage>50</opaquenessPercentage>
+				<label>GEPS (25%-75%)</label>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessGEPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>PC.nwp.acc</parameterId>
+					<qualifierId>75%</qualifierId>
+					<locationSetId>ModelBasins</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="6"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessGEPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>PC.nwp.acc</parameterId>
+					<qualifierId>25%</qualifierId>
+					<locationSetId>ModelBasins</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="6"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</area>
+		</subplot>
+	</plot>
+	<!--Display Groups -->
+	<displayGroup id="ImportHYDATHistoric" name="HYDAT Stations Historic">
+		<nodeId>DownloadHistoricalHydrometricData</nodeId>
+		<singleLocationDisplays>
+			<locationSetId>DownloadHydroStations</locationSetId>
+			<plotId>WSCTemplate</plotId>
+		</singleLocationDisplays>
+	</displayGroup>
+	<displayGroup id="ImportHYDATRecent" name="HYDAT Stations Recent">
+		<nodeId>DownloadRealTimeHydrometricData</nodeId>
+		<singleLocationDisplays>
+			<locationSetId>DownloadHydroStations</locationSetId>
+			<plotId>WSCTemplate</plotId>
+		</singleLocationDisplays>
+	</displayGroup>
+	<displayGroup id="ImportWSCHourly" name="WSC Stations Recent">
+		<nodeId>ImportWSCHourly</nodeId>
+		<singleLocationDisplays>
+			<locationSetId>DownloadHydroStations</locationSetId>
+			<plotId>WSCTemplate</plotId>
+		</singleLocationDisplays>
+	</displayGroup>
+	<displayGroup id="ImportWSCDaily" name="WSC Stations Recent">
+		<nodeId>ImportWSCDaily</nodeId>
+		<singleLocationDisplays>
+			<locationSetId>DownloadHydroStations</locationSetId>
+			<plotId>WSCTemplate</plotId>
+		</singleLocationDisplays>
+	</displayGroup>
+	<displayGroup id="PreprocessWSC" name="PreprocessWSC">
+		<nodeId>PreprocessWSC</nodeId>
+		<singleLocationDisplays>
+			<locationSetId>DownloadHydroStations</locationSetId>
+			<plotId>WSCTemplate</plotId>
+		</singleLocationDisplays>
+	</displayGroup>
+	<displayGroup id="ImportECCCRecent" name="ECCC Stations Recent">
+		<nodeId>ImportECCCRecent</nodeId>
+		<singleLocationDisplays>
+			<locationSetId>DisplayMeteoStations</locationSetId>
+			<plotId>ECCCMeteoRecentTemplate</plotId>
+		</singleLocationDisplays>
+	</displayGroup>
+	<displayGroup id="ImportECCCHistoric" name="ECCC Stations Historic">
+		<nodeId>ImportECCCHistoric</nodeId>
+		<singleLocationDisplays>
+			<locationSetId>ModelMeteoStations</locationSetId>
+			<plotId>ECCCMeteoHistoricTemplate</plotId>
+		</singleLocationDisplays>
+	</displayGroup>
+	<displayGroup id="ImportECCCPreprocessed" name="ECCC Stations Preprocessed">
+		<nodeId>PreprocessECCCStations</nodeId>
+		<singleLocationDisplays>
+			<locationSetId>DisplayBasins</locationSetId>
+			<plotId>ECCCMeteoProcessedTemplate</plotId>
+		</singleLocationDisplays>
+		<display>
+			<plotId>ECCCMeteoProcessedTemplate</plotId>
+		</display>
+	</displayGroup>
+	<displayGroup name="RDPA">
+		<nodeId>RDPA</nodeId>
+		<displayGroup id="RDPA" name="RDPA">
+			<nodeId>ImportRDPA</nodeId>
+			<singleLocationDisplays>
+				<locationSetId>ModelMeteoStations</locationSetId>
+				<plotId>RDPATemplate</plotId>
+			</singleLocationDisplays>
+		</displayGroup>
+	</displayGroup>
+	<displayGroup name="RDPS">
+		<nodeId>RDPS</nodeId>
+		<displayGroup id="RDPS" name="RDPS">
+			<nodeId>ImportRDPS</nodeId>
+			<singleLocationDisplays>
+				<locationSetId>ModelMeteoStations</locationSetId>
+				<plotId>RDPSTemplate</plotId>
+			</singleLocationDisplays>
+		</displayGroup>
+	</displayGroup>
+	<displayGroup name="GDPS">
+		<nodeId>GDPS</nodeId>
+		<displayGroup id="GDPS" name="GDPS">
+			<nodeId>ImportGDPS</nodeId>
+			<singleLocationDisplays>
+				<locationSetId>ModelMeteoStations</locationSetId>
+				<plotId>GDPSTemplate</plotId>
+			</singleLocationDisplays>
+		</displayGroup>
+	</displayGroup>
+	<displayGroup name="REPSEnsemble">
+		<nodeId>REPSEnsemble</nodeId>
+		<displayGroup id="REPSEnsemble" name="REPSEnsemble">
+			<nodeId>ImportREPS</nodeId>
+			<singleLocationDisplays>
+				<locationSetId>ModelMeteoStations</locationSetId>
+				<plotId>REPSTemplate</plotId>
+			</singleLocationDisplays>
+		</displayGroup>
+	</displayGroup>
+	<displayGroup name="GEPSEnsemble">
+		<nodeId>GEPSEnsemble</nodeId>
+		<displayGroup id="GEPSEnsemble" name="GEPSEnsemble">
+			<nodeId>ImportGEPS</nodeId>
+			<singleLocationDisplays>
+				<locationSetId>ModelMeteoStations</locationSetId>
+				<plotId>GEPSTemplate</plotId>
+			</singleLocationDisplays>
+		</displayGroup>
+	</displayGroup>
+	<displayGroup id="SummarySnowStation" name="SummarySnowStation">
+		<nodeId>SummarySnowStation</nodeId>
+		<singleLocationDisplays>
+			<locationSetId>SnowStations</locationSetId>
+			<plotId>SnowStationsTemplate</plotId>
+		</singleLocationDisplays>
+	</displayGroup>
+	<displayGroup id="SummarySnowBasin" name="SummarySnowBasin">
+		<nodeId>SummarySnowBasin</nodeId>
+		<singleLocationDisplays>
+			<locationSetId>BowBasins</locationSetId>
+			<plotId>SnowBasinsTemplate</plotId>
+		</singleLocationDisplays>
+	</displayGroup>
+	<displayGroup id="SummaryPlotPrecip" name="SummaryPlotPrecip">
+		<nodeId>SummaryPlotPrecip</nodeId>
+		<singleLocationDisplays>
+			<locationSetId>DisplayBasins</locationSetId>
+			<plotId>ECCC_Basin_Precip</plotId>
+		</singleLocationDisplays>
+	</displayGroup>
+	<displayGroup id="SummaryPlotTemp" name="SummaryPlotTemp">
+		<nodeId>SummaryPlotTemp</nodeId>
+		<singleLocationDisplays>
+			<locationSetId>DisplayBasins</locationSetId>
+			<plotId>ECCC_Basin_Temp</plotId>
+		</singleLocationDisplays>
+	</displayGroup>
+	<!-- Model Result Displays-->
+	<displayGroup id="BowWflowHistoric" name="BowWflowHistoric">
+		<nodeId>BowWflowHistoric</nodeId>
+		<singleLocationDisplays>
+			<locationSetId>ModelForecastLocations</locationSetId>
+			<plotId>BowWflowHistoricTemplate</plotId>
+		</singleLocationDisplays>
+		<singleLocationDisplays>
+			<plotId>BowWflowHistoricTemplate</plotId>
+		</singleLocationDisplays>
+	</displayGroup>
+	<displayGroup id="BowWflowRDPSForecast" name="BowWflowRDPSForecast">
+		<nodeId>BowWflowRDPSForecast</nodeId>
+		<singleLocationDisplays>
+			<locationSetId>BowForecastLocations</locationSetId>
+			<plotId>BowWflowForecastTemplate</plotId>
+		</singleLocationDisplays>
+		<singleLocationDisplays>
+			<plotId>BowWflowForecastTemplate</plotId>
+		</singleLocationDisplays>
+	</displayGroup>
+	<displayGroup id="BowWflowGDPSForecast" name="BowWflowGDPSForecast">
+		<nodeId>BowWflowGDPSForecast</nodeId>
+		<singleLocationDisplays>
+			<locationSetId>BowForecastLocations</locationSetId>
+			<plotId>BowWflowForecastTemplate</plotId>
+		</singleLocationDisplays>
+		<singleLocationDisplays>
+			<plotId>BowWflowForecastTemplate</plotId>
+		</singleLocationDisplays>
+	</displayGroup>
+	<displayGroup id="BowWflowREPSForecast" name="BowWflowREPSForecast">
+		<nodeId>BowWflowREPSForecast</nodeId>
+		<singleLocationDisplays>
+			<locationSetId>BowForecastLocations</locationSetId>
+			<plotId>BowWflowForecastTemplate</plotId>
+		</singleLocationDisplays>
+		<singleLocationDisplays>
+			<plotId>BowWflowForecastTemplate</plotId>
+		</singleLocationDisplays>
+	</displayGroup>
+	<displayGroup id="BowWflowGEPSForecast" name="BowWflowGEPSForecast">
+		<nodeId>BowWflowGEPSForecast</nodeId>
+		<singleLocationDisplays>
+			<locationSetId>BowForecastLocations</locationSetId>
+			<plotId>BowWflowForecastTemplate</plotId>
+		</singleLocationDisplays>
+		<singleLocationDisplays>
+			<plotId>BowWflowForecastTemplate</plotId>
+		</singleLocationDisplays>
+	</displayGroup>
+</displayGroups>

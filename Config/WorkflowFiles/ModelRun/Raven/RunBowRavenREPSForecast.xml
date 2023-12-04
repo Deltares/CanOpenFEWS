@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.1">
+	<!-- Run Model Forecast -->
+	<properties>
+		<string key="FORECAST" value="REPS"/>
+		<string key="STARTTIME" value="-1"/>
+		<string key="ENDTIME" value="7"/>
+		<string key="PARAMETER1" value="TA.nwp"/>
+		<string key="PARAMETER2" value="PC.nwp"/>
+		<string key="OUTPUTTIMESERIES" value="RavenREPSForecast"/>
+		<string key="PARAMETER4" value="QR.sim"/>
+		<string key="TYPE1" value="external forecasting"/>
+		<string key="TYPE2" value="simulated forecasting"/>
+		<string key="HISTORICMODULEINSTANCE" value="ImportECCCScalar"/>
+		<string key="FORECASTMODULEINSTANCE" value="PreprocessREPS"/>
+		<string key="ENSEMBLE" value="REPS"/>
+		<string key="EXPORTDATASET" value="RavenForecastEns"/>
+	</properties>
+	<!--Set Forecast Length-->
+	<activity>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>SetForecastLengthREPS</moduleInstanceId>
+		<moduleConfigFileName>SetForecastLengthTemplate</moduleConfigFileName>
+	</activity>
+	<!--Set Merge Historic and Forecast Data-->
+	<activity>
+		<properties>
+			<string key="LOCATIONSET" value="RavenBasins"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PreprocessREPS</moduleInstanceId>
+		<moduleConfigFileName>MergeForecastGridsTemplate</moduleConfigFileName>
+		<ensemble>
+			<ensembleId>REPS</ensembleId>
+			<runInLoop>true</runInLoop>
+		</ensemble>
+	</activity>
+	<!--Run model in for REPS Forecast -->
+	<activity>
+		<properties>
+			<string key="INPUTMODULEINSTANCEMETEO" value="PreprocessREPS"/>
+			<string key="MODULEDATASET" value="RavenForecastEns"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>RavenREPSForecast</moduleInstanceId>
+		<moduleConfigFileName>RavenForecastTemplate</moduleConfigFileName>
+		<ensemble>
+			<ensembleId>REPS</ensembleId>
+			<runInLoop>true</runInLoop>
+		</ensemble>
+	</activity>
+	<!-- Postprocess Model Results-->
+	<activity>
+		<properties>
+			<string key="TIMESERIESTYPE" value="simulated forecasting"/>
+			<string key="PARAMETER" value="QR.sim"/>
+			<string key="ENSEMBLE" value="REPS"/>
+			<string key="MODELOUTPUTLOCATION" value="RavenSubBasins"/>
+			<string key="STATIONLOCATIONS" value="RavenHydroStations"/>
+			<string key="TIMESTEP" value="$DAY_TIMESTEP$"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>RavenREPSForecast</moduleInstanceId>
+		<moduleConfigFileName>PostprocessModelBasinOutputToStationTemplate</moduleConfigFileName>
+		<ensemble>
+			<ensembleId>REPS</ensembleId>
+			<runInLoop>true</runInLoop>
+		</ensemble>
+	</activity>
+</workflow>

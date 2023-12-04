@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 sp1 (http://www.altova.com) by Afdeling ICT (Stichting Deltares) -->
+<generalAdapterRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/generalAdapterRun.xsd">
+	<general>
+		<rootDir>%TEMP_DIR%</rootDir>
+		<workDir>%ROOT_DIR%</workDir>
+		<exportDir>%WORK_DIR%</exportDir>
+		<exportDataSetDir>%ROOT_DIR%</exportDataSetDir>
+		<exportIdMap>IdExportWFLOWForecast</exportIdMap>
+		<importDir>%WORK_DIR%/run_default</importDir>
+		<importIdMap>IdImportWFLOW</importIdMap>
+		<dumpFileDir>%REGION_HOME%/Dumpfiles</dumpFileDir>
+		<dumpDir>%WORK_DIR%</dumpDir>
+		<diagnosticFile>%WORK_DIR%/wflow_diag.xml</diagnosticFile>
+		<!--<missVal>-999.0</missVal>-->
+		<convertDatum>true</convertDatum>
+	</general>
+	<activities>
+		<startUpActivities>
+			<purgeActivity>
+				<filter>%WORK_DIR%\instate\*.*</filter>
+			</purgeActivity>
+			<purgeActivity>
+				<filter>%WORK_DIR%\intbl\*.*</filter>
+			</purgeActivity>
+			<purgeActivity>
+				<filter>%WORK_DIR%\outstate\*.*</filter>
+			</purgeActivity>
+			<purgeActivity>
+				<filter>%WORK_DIR%\staticmaps\*.*</filter>
+			</purgeActivity>
+			<purgeActivity>
+				<filter>%WORK_DIR%\run_default\outmaps\*.*</filter>
+			</purgeActivity>
+			<purgeActivity>
+				<filter>%WORK_DIR%\run_default\outstate\*.*</filter>
+			</purgeActivity>
+			<purgeActivity>
+				<filter>%WORK_DIR%\run_default\outsum\*.*</filter>
+			</purgeActivity>
+			<purgeActivity>
+				<filter>%WORK_DIR%\run_default\*.*</filter>
+			</purgeActivity>
+		</startUpActivities>
+		<exportActivities>
+			<exportStateActivity>
+				<moduleInstanceId>$STATE_TIMESERIES$</moduleInstanceId>
+				<stateExportDir>%WORK_DIR%/instate</stateExportDir>
+				<stateSelection>
+					<warmState>
+						<stateSearchPeriod unit="minute" start="$STARTDATE_MINUTES$" end="0" startOverrulable="true"/>
+					</warmState>
+				</stateSelection>
+			</exportStateActivity>
+			<exportDataSetActivity>
+				<moduleInstanceId>$MODEL_NAME$</moduleInstanceId>
+			</exportDataSetActivity>
+			<exportNetcdfActivity>
+				<exportFile>forcing.nc</exportFile>
+				<netcdfFormat>netcdf4</netcdfFormat>
+				<timeSeriesSets>
+					<timeSeriesSet>
+						<moduleInstanceId>$INPUTTIMESERIES_P$</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>$PRECIP_PARAMETER$</parameterId>
+						<locationId>$LOCATION$</locationId>
+						<timeSeriesType>$FORCING_TYPE$</timeSeriesType>
+						<timeStep unit="minute" multiplier="6"/>
+						<relativeViewPeriod unit="hour" start="$STARTDATE$" end="$ENDDATE$" startOverrulable="false"/>
+						<readWriteMode>read only</readWriteMode>
+						<ensembleId>$ENS_ID$</ensembleId>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>$TS_T$</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>$TEMP_PARAMETER$</parameterId>
+						<locationId>$LOCATION$</locationId>
+						<timeSeriesType>$FORCING_TYPE$</timeSeriesType>
+						<timeStep unit="minute" multiplier="6"/>
+						<relativeViewPeriod unit="hour" start="$STARTDATE$" end="$ENDDATE$" startOverrulable="false"/>
+						<readWriteMode>read only</readWriteMode>
+						<ensembleId>main</ensembleId>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>$INPUTTIMESERIES_PET$</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>$PET_PARAMETER$</parameterId>
+						<locationId>$LOCATION$</locationId>
+						<timeSeriesType>$FORCING_TYPE$</timeSeriesType>
+						<timeStep unit="minute" multiplier="6"/>
+						<relativeViewPeriod unit="hour" start="$STARTDATE$" end="$ENDDATE$" startOverrulable="false"/>
+						<readWriteMode>read only</readWriteMode>
+						<ensembleId>main</ensembleId>
+					</timeSeriesSet>
+				</timeSeriesSets>
+			</exportNetcdfActivity>
+			<exportRunFileActivity>
+				<exportFile>%WORK_DIR%/run_info.xml</exportFile>
+			</exportRunFileActivity>
+		</exportActivities>
+		<executeActivities>
+			<executeActivity>
+				<description>Run wflow_sbm</description>
+				<command>
+					<executable>$WFLOW_EXE$</executable>
+				</command>
+				<arguments>
+					<argument>$TOML$.toml</argument>
+				</arguments>
+				<timeOut>72000000</timeOut>
+				<ignoreDiagnostics>true</ignoreDiagnostics>
+			</executeActivity>
+		</executeActivities>
+		<importActivities>
+			<importNetcdfActivity>
+				<importFile>%WORK_DIR%/run_default/output_scalar.nc</importFile>
+				<timeSeriesSets>
+					<timeSeriesSet>
+						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>QR.sim.fc</parameterId>
+						<locationSetId>$display_points$</locationSetId>
+						<timeSeriesType>$OUTPUT_TYPE$</timeSeriesType>
+						<timeStep unit="minute" multiplier="6"/>
+						<readWriteMode>add originals</readWriteMode>
+						<expiryTime unit="day" multiplier="$EXPIRY_TIME$"/>
+					</timeSeriesSet>
+				</timeSeriesSets>
+			</importNetcdfActivity>
+		</importActivities>
+	</activities>
+</generalAdapterRun>

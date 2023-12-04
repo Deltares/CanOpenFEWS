@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.1">
+	<!--Define Properties for Templates-->
+	<properties>
+		<string key="BASINLOCATIONS" value="ModelBasins"/>
+		<string key="STATIONLOCATIONS" value="ModelMeteoStations"/>
+		<string key="STARTTIME" value="-15000"/>
+	</properties>	
+<!-- Preprocess Forecast Data for Input to Raven-->
+	<activity>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PreprocessECCCScalarRavenInput</moduleInstanceId>
+	</activity>
+</workflow>

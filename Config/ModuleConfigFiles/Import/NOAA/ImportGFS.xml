@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
+	<import>
+		<general>
+			<importType>NETCDF-CF_GRID</importType>
+<serverUrl>https://nomads.ncep.noaa.gov/dods/gfs_0p25/gfs%RELATIVE_TIME_IN_SECONDS(yyyyMMdd, -18000 )%/gfs_0p25_%RELATIVE_TIME_IN_SECONDS(HH,-18000)%z</serverUrl>
+			<idMapId>IdImportGFS</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<missingValue>-3.402823E38</missingValue>
+			<importTimeZone>
+				<timeZoneName>GMT</timeZoneName>
+			</importTimeZone>
+			<dataFeedId>GFS.Server</dataFeedId>
+		</general>
+		<startTimeShift>
+			<parameterId>PC.nwp</parameterId>
+			<relativePeriod unit="hour" start="-3" end="0"></relativePeriod>
+		</startTimeShift>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportGFS</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>GFS</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportGFS</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>GFS</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="mm" cumulativeSum="true"/>
+		<externUnit parameterId="TA.nwp" unit="K"/>
+	</import>
+</timeSeriesImportRun>

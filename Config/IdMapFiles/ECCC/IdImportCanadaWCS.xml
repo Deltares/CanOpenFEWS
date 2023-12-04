@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 sp1 (http://www.altova.com) by Afdeling ICT (Stichting Deltares) -->
+<idMap version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/idMap.xsd">
+	<!-- This Id Mapping is for the Import of Gridded Data Products from the Meterological Service of Canada (MSC) Geomet Services -->
+	<!-- Regional Deterministic Precipitation Analysis (RDPA) -->
+	<map internalLocation="RDPA" internalParameter="PC.sim" externalLocation="RDPA" externalParameter="RDPA.6F_PR"/>
+	<!-- Regional Deterministic Prediction System  (RDPS) -->
+	<map internalLocation="RDPS" internalParameter="PC.nwp" externalLocation="none" externalParameter="RDPS.ETA_PR"/>
+	<map internalLocation="RDPS" internalParameter="TA.nwp" externalLocation="none" externalParameter="RDPS.ETA_TT"/>
+	<!-- Global Deterministic Prediction System (GDPS) -->
+	<map internalLocation="GDPS" internalParameter="PC.nwp" externalLocation="none" externalParameter="GDPS.ETA_PR"/>
+	<map internalLocation="GDPS" internalParameter="TA.nwp" externalLocation="none" externalParameter="GDPS.ETA_TT"/>
+	<!-- Regional Ensemble Prediction System (REPS) - Surface Precipitation-->
+	<map internalLocation="REPS" internalParameter="PC.nwp" internalEnsemble="REPS" internalEnsembleMemberId="0" externalLocation="none" externalParameter="REPS.MEM.ETA_PR.01"/>
+	<map internalLocation="REPS" internalParameter="PC.nwp" internalEnsemble="REPS" internalEnsembleMemberId="1" externalLocation="none" externalParameter="REPS.MEM.ETA_PR.02"/>
+	<map internalLocation="REPS" internalParameter="PC.nwp" internalEnsemble="REPS" internalEnsembleMemberId="2" externalLocation="none" externalParameter="REPS.MEM.ETA_PR.03"/>
+	<map internalLocation="REPS" internalParameter="PC.nwp" internalEnsemble="REPS" internalEnsembleMemberId="3" externalLocation="none" externalParameter="REPS.MEM.ETA_PR.04"/>
+	<map internalLocation="REPS" internalParameter="PC.nwp" internalEnsemble="REPS" internalEnsembleMemberId="4" externalLocation="none" externalParameter="REPS.MEM.ETA_PR.05"/>
+	<map internalLocation="REPS" internalParameter="PC.nwp" internalEnsemble="REPS" internalEnsembleMemberId="5" externalLocation="none" externalParameter="REPS.MEM.ETA_PR.06"/>
+	<map internalLocation="REPS" internalParameter="PC.nwp" internalEnsemble="REPS" internalEnsembleMemberId="6" externalLocation="none" externalParameter="REPS.MEM.ETA_PR.07"/>
+	<map internalLocation="REPS" internalParameter="PC.nwp" internalEnsemble="REPS" internalEnsembleMemberId="7" externalLocation="none" externalParameter="REPS.MEM.ETA_PR.08"/>
+	<map internalLocation="REPS" internalParameter="PC.nwp" internalEnsemble="REPS" internalEnsembleMemberId="8" externalLocation="none" externalParameter="REPS.MEM.ETA_PR.09"/>
+	<map internalLocation="REPS" internalParameter="PC.nwp" internalEnsemble="REPS" internalEnsembleMemberId="9" externalLocation="none" externalParameter="REPS.MEM.ETA_PR.10"/>
+	<map internalLocation="REPS" internalParameter="PC.nwp" internalEnsemble="REPS" internalEnsembleMemberId="10" externalLocation="none" externalParameter="REPS.MEM.ETA_PR.11"/>
+	<map internalLocation="REPS" internalParameter="PC.nwp" internalEnsemble="REPS" internalEnsembleMemberId="11" externalLocation="none" externalParameter="REPS.MEM.ETA_PR.12"/>
+	<map internalLocation="REPS" internalParameter="PC.nwp" internalEnsemble="REPS" internalEnsembleMemberId="12" externalLocation="none" externalParameter="REPS.MEM.ETA_PR.13"/>
+	<map internalLocation="REPS" internalParameter="PC.nwp" internalEnsemble="REPS" internalEnsembleMemberId="13" externalLocation="none" externalParameter="REPS.MEM.ETA_PR.14"/>
+	<map internalLocation="REPS" internalParameter="PC.nwp" internalEnsemble="REPS" internalEnsembleMemberId="14" externalLocation="none" externalParameter="REPS.MEM.ETA_PR.15"/>
+	<map internalLocation="REPS" internalParameter="PC.nwp" internalEnsemble="REPS" internalEnsembleMemberId="15" externalLocation="none" externalParameter="REPS.MEM.ETA_PR.16"/>
+	<map internalLocation="REPS" internalParameter="PC.nwp" internalEnsemble="REPS" internalEnsembleMemberId="16" externalLocation="none" externalParameter="REPS.MEM.ETA_PR.17"/>
+	<map internalLocation="REPS" internalParameter="PC.nwp" internalEnsemble="REPS" internalEnsembleMemberId="17" externalLocation="none" externalParameter="REPS.MEM.ETA_PR.18"/>
+	<map internalLocation="REPS" internalParameter="PC.nwp" internalEnsemble="REPS" internalEnsembleMemberId="18" externalLocation="none" externalParameter="REPS.MEM.ETA_PR.19"/>
+	<map internalLocation="REPS" internalParameter="PC.nwp" internalEnsemble="REPS" internalEnsembleMemberId="19" externalLocation="none" externalParameter="REPS.MEM.ETA_PR.20"/>
+	<map internalLocation="REPS" internalParameter="PC.nwp" internalEnsemble="REPS" internalEnsembleMemberId="20" externalLocation="none" externalParameter="REPS.MEM.ETA_PR.21"/>
+	<!-- Regional Ensemble Prediction System (REPS) - Surface Temperature-->
+	<map internalLocation="REPS" internalParameter="TA.nwp" internalEnsemble="REPS" internalEnsembleMemberId="0" externalLocation="none" externalParameter="REPS.MEM.ETA_TT.01"/>
+	<map internalLocation="REPS" internalParameter="TA.nwp" internalEnsemble="REPS" internalEnsembleMemberId="1" externalLocation="none" externalParameter="REPS.MEM.ETA_TT.02"/>
+	<map internalLocation="REPS" internalParameter="TA.nwp" internalEnsemble="REPS" internalEnsembleMemberId="2" externalLocation="none" externalParameter="REPS.MEM.ETA_TT.03"/>
+	<map internalLocation="REPS" internalParameter="TA.nwp" internalEnsemble="REPS" internalEnsembleMemberId="3" externalLocation="none" externalParameter="REPS.MEM.ETA_TT.04"/>
+	<map internalLocation="REPS" internalParameter="TA.nwp" internalEnsemble="REPS" internalEnsembleMemberId="4" externalLocation="none" externalParameter="REPS.MEM.ETA_TT.05"/>
+	<map internalLocation="REPS" internalParameter="TA.nwp" internalEnsemble="REPS" internalEnsembleMemberId="5" externalLocation="none" externalParameter="REPS.MEM.ETA_TT.06"/>
+	<map internalLocation="REPS" internalParameter="TA.nwp" internalEnsemble="REPS" internalEnsembleMemberId="6" externalLocation="none" externalParameter="REPS.MEM.ETA_TT.07"/>
+	<map internalLocation="REPS" internalParameter="TA.nwp" internalEnsemble="REPS" internalEnsembleMemberId="7" externalLocation="none" externalParameter="REPS.MEM.ETA_TT.08"/>
+	<map internalLocation="REPS" internalParameter="TA.nwp" internalEnsemble="REPS" internalEnsembleMemberId="8" externalLocation="none" externalParameter="REPS.MEM.ETA_TT.09"/>
+	<map internalLocation="REPS" internalParameter="TA.nwp" internalEnsemble="REPS" internalEnsembleMemberId="9" externalLocation="none" externalParameter="REPS.MEM.ETA_TT.10"/>
+	<map internalLocation="REPS" internalParameter="TA.nwp" internalEnsemble="REPS" internalEnsembleMemberId="10" externalLocation="none" externalParameter="REPS.MEM.ETA_TT.11"/>
+	<map internalLocation="REPS" internalParameter="TA.nwp" internalEnsemble="REPS" internalEnsembleMemberId="11" externalLocation="none" externalParameter="REPS.MEM.ETA_TT.12"/>
+	<map internalLocation="REPS" internalParameter="TA.nwp" internalEnsemble="REPS" internalEnsembleMemberId="12" externalLocation="none" externalParameter="REPS.MEM.ETA_TT.13"/>
+	<map internalLocation="REPS" internalParameter="TA.nwp" internalEnsemble="REPS" internalEnsembleMemberId="13" externalLocation="none" externalParameter="REPS.MEM.ETA_TT.14"/>
+	<map internalLocation="REPS" internalParameter="TA.nwp" internalEnsemble="REPS" internalEnsembleMemberId="14" externalLocation="none" externalParameter="REPS.MEM.ETA_TT.15"/>
+	<map internalLocation="REPS" internalParameter="TA.nwp" internalEnsemble="REPS" internalEnsembleMemberId="15" externalLocation="none" externalParameter="REPS.MEM.ETA_TT.16"/>
+	<map internalLocation="REPS" internalParameter="TA.nwp" internalEnsemble="REPS" internalEnsembleMemberId="16" externalLocation="none" externalParameter="REPS.MEM.ETA_TT.17"/>
+	<map internalLocation="REPS" internalParameter="TA.nwp" internalEnsemble="REPS" internalEnsembleMemberId="17" externalLocation="none" externalParameter="REPS.MEM.ETA_TT.18"/>
+	<map internalLocation="REPS" internalParameter="TA.nwp" internalEnsemble="REPS" internalEnsembleMemberId="18" externalLocation="none" externalParameter="REPS.MEM.ETA_TT.19"/>
+	<map internalLocation="REPS" internalParameter="TA.nwp" internalEnsemble="REPS" internalEnsembleMemberId="19" externalLocation="none" externalParameter="REPS.MEM.ETA_TT.20"/>
+	<map internalLocation="REPS" internalParameter="TA.nwp" internalEnsemble="REPS" internalEnsembleMemberId="20" externalLocation="none" externalParameter="REPS.MEM.ETA_TT.21"/>
+</idMap>

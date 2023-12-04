@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
+	<import>
+		<general>
+			<importType>grib2</importType>
+			<folder>$IMPORT_FOLDER$/HRDPS</folder>
+			<idMapId>IdImportHRDPS</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<importTimeZone>
+				<timeZoneName>GMT+0</timeZoneName>
+			</importTimeZone>
+			<dataFeedId>HRDPS</dataFeedId>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportHRDPS</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>HRDPS</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="$FORECAST_IMPORT_EXPIRY_TIME$"/>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportHRDPS</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>HRDPS</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="$FORECAST_IMPORT_EXPIRY_TIME$"/>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportHRDPS</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>RS.nwp</parameterId>
+			<locationId>HRDPS</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="$FORECAST_IMPORT_EXPIRY_TIME$"/>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportHRDPS</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>RSext.nwp</parameterId>
+			<locationId>HRDPS</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="$FORECAST_IMPORT_EXPIRY_TIME$"/>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportHRDPS</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PA.nwp</parameterId>
+			<locationId>HRDPS</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="$FORECAST_IMPORT_EXPIRY_TIME$"/>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="kg m-2" cumulativeSum="true"/>
+		<externUnit parameterId="TA.nwp" unit="K"/>
+		<externUnit parameterId="RS.nwp" unit="J/m2" cumulativeSum="true"/>
+		<externUnit parameterId="RSext.nwp" unit="J/m2" cumulativeSum="true"/>
+		<externUnit parameterId="PA.nwp" unit="Pa"/>
+	</import>
+</timeSeriesImportRun>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
+<transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd" version="1.0">
+	<!--Input-->
+	<variable>
+		<variableId>Gridded_parameter</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$INPUTMODULEINSTANCE$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>$PARAMETER$</parameterId>
+			<locationId>$INPUTGRID$</locationId>
+			<timeSeriesType>$TIMESERIESTYPE$</timeSeriesType>
+			<timeStep unit="hour" multiplier="$TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<!--Output-->
+	<variable>
+		<variableId>Gridded_parameter_disaggregated</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$INPUTMODULEINSTANCE$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>$PARAMETER$</parameterId>
+			<locationId>$INPUTGRID$</locationId>
+			<timeSeriesType>$TIMESERIESTYPE$</timeSeriesType>
+			<timeStep unit="hour" multiplier="$TIMESTEP_NEW$"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<!--Transformations-->
+	<transformation id="grid_parameter_daily">
+		<disaggregation>
+			<accumulative>
+				<inputVariable>
+					<variableId>Gridded_parameter</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Gridded_parameter_disaggregated</variableId>
+				</outputVariable>
+			</accumulative>
+		</disaggregation>
+	</transformation>
+</transformationModule>

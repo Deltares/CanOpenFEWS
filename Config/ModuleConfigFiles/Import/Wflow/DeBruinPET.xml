@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
+<pcrTransformationSets xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews
+http://fews.wldelft.nl/schemas/version1.0/pcrTransformationSets.xsd" version="1.1">
+	<pcrTransformationSet id="Compute De Bruin (2016) potential reference evapotranspiration">
+		<areaMap>
+			<locationId>$LOCATION_ID_IN$</locationId>
+		</areaMap>
+		<definitions>
+			<dataExchange>memory</dataExchange>
+			<inputVariable variableId="p" dataType="scalar" convertDatum="false" spatialType="spatial">
+				<timeSeriesSet>
+					<moduleInstanceId>$INPUTSERIES$</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>$PAR_PRESSURE$</parameterId>
+					<locationId>$LOCATION_ID_IN$</locationId>
+					<timeSeriesType>$TIMESERIES_TYPE$</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<relativeViewPeriod unit="day" start="$START$" startOverrulable="true" end="$END$"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+			</inputVariable>			
+			<inputVariable variableId="Rs" dataType="scalar" convertDatum="false" spatialType="spatial">
+				<timeSeriesSet>
+					<moduleInstanceId>$INPUTSERIES$</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>$PAR_RS$</parameterId>
+					<locationId>$LOCATION_ID_IN$</locationId>
+					<timeSeriesType>$TIMESERIES_TYPE$</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<relativeViewPeriod unit="day" start="$START$" startOverrulable="true" end="$END$"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+			</inputVariable>
+			<inputVariable variableId="Kext" dataType="scalar" convertDatum="false" spatialType="spatial">
+				<timeSeriesSet>
+					<moduleInstanceId>$INPUTSERIES$</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>$PAR_KEXT$</parameterId>
+					<locationId>$LOCATION_ID_IN$</locationId>
+					<timeSeriesType>$TIMESERIES_TYPE$</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<relativeViewPeriod unit="day" start="$START$" startOverrulable="true" end="$END$"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+			</inputVariable>
+			<inputVariable variableId="T" dataType="scalar" convertDatum="false" spatialType="spatial">
+				<timeSeriesSet>
+					<moduleInstanceId>$INPUTSERIES$</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>$PAR_TEMP$</parameterId>
+					<locationId>$LOCATION_ID_IN$</locationId>
+					<timeSeriesType>$TIMESERIES_TYPE$</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<relativeViewPeriod unit="day" start="$START$" startOverrulable="true" end="$END$"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+			</inputVariable>		
+			<outputVariable variableId="Ep" dataType="scalar" convertDatum="false">
+				<timeSeriesSet>
+					<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>$PARAMETER_OUT$</parameterId>
+					<locationId>$LOCATION_ID_IN$</locationId>
+					<timeSeriesType>$TIMESERIES_TYPE$</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<relativeViewPeriod unit="day" start="$START$" startOverrulable="true" end="$END$"/>
+					<readWriteMode>add originals</readWriteMode>
+					<expiryTime unit="day" multiplier="$EXPIRY_TIME$"/>
+				</timeSeriesSet>
+			</outputVariable>
+		</definitions>
+		<pcrModel id="cover">
+			<text><![CDATA[
+			# This scripts determines De Bruin (2016) reference evaporation
+			# inputs:
+			# - Rs -> global (=short wave incoming) radiation [W m-2]
+			# - T -> air temperature [deg. C]
+			# - p -> pressure at surface [kPa]
+			# - Kext -> Extra terrestrial radiation [W m-2] --> downwelling shortwave radiation constant at the top of the atmosphere
+			# constants
+			TimestepSecs=3600; 	# timestep in seconds
+			convmm = 1000; # conversion from meters to millimeters
+			cp = 1005;	# standard cp [J kg-1 K-1]
+			beta = 20;  # correction constant [W m-2]
+			Cs = 110;  # emperical constant [W m-2]
+			#p = 101325; # general mean surface level pressure [Pa]
+			# convert kPa to hPa
+			pha = p * 10;
+			# convert deg. celsius to deg. kelvin
+			Tkel = T + 273.15;
+			# global radiation
+			Kin = Rs; # [W m-2]
+			# saturation and actual vapour pressure at given temperature [Pa]
+			esat = 6.112*exp((17.67 * T)/(T+243.5));
+			# slope of vapour pressure curve
+			Slope = esat*(17.269/(T+243.5))*(1-(T/(T + 243.5)));
+			# compute latent heat of vapourization [J kg-1]
+			lambda = (2.502*10**6)-(2250* T);
+			Gamma = (cp * pha)/(0.622 * lambda);
+			# compute ref. evaporation (with global radiation, therefore calling it potential) in J m-2 over whole period
+			Ep_Joule = ((Slope/(Slope+Gamma))*(((1-0.23)*Kin)-(Cs*(Kin/(Kext+0.00001)))))+beta;
+			Ep_Joule = if((Kext eq 0),scalar(0),(Ep_Joule));
+			Ep = max((Ep_Joule/lambda)*TimestepSecs,0);
+
+
+]]></text>
+		</pcrModel>
+	</pcrTransformationSet>
+</pcrTransformationSets>

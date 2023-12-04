@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.1">
+<!--Build historical forcing by blending RDPS P006-P017 from 00z, RDPS P006-P017 from 12z. -->
+<!--Define Properties for Templates-->
+	<properties>
+		<!-- NWP Name-->
+		<string key="FORECAST" value="RDPS"/>
+		<!-- NWP Timestep-->
+		<string key="TIMESTEP" value="1"/>
+		<!-- Expiry Timestep-->
+		<string key="EXPIRYTIME" value="7"/>
+		<!-- Input Grid-->
+		<string key="INPUTGRID" value="RDPS"/>
+		<!-- Output Grid-->
+		<string key="OUTPUTGRID" value="SnareGrid"/>
+		<!-- Module Instance ID to be given to  Timeseries-->
+		<string key="INPUTMODULEINSTANCE" value="ImportRDPSforHistoricMerge"/>
+		<!-- EnsembleID if needed-->
+		<string key="ENSEMBLE" value="main"/>
+		<!--Basin Location-->
+		<string key="BASINLOCATIONS" value="SnareBasins"/>
+		<!--Station Locations-->
+		<string key="STATIONLOCATIONS" value="ECCCStations$REGION$"/>
+		<!--Time Series Type-->
+		<string key="TIMESERIESTYPE" value="external forecasting"/>
+		<string key="STARTTIME" value="-30"/>
+		<string key="ENDTIME" value="0"/>
+	</properties>	
+<!-- Retrieve NWP grids from Environment Canada -->
+	<activity>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>RetrieveRDPSforHistoricMerge</moduleInstanceId>
+	</activity>
+	<activity>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>ImportRDPSforHistoricMerge</moduleInstanceId>
+	</activity>	
+	<!--Preprocess all variables-->
+	<!-- Preprocess Precipitation-->
+	<activity>
+		<properties>
+			<string key="PARAMETER" value="PC.nwp"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PreprocessRDPSforHistoricMerge</moduleInstanceId>
+		<moduleConfigFileName>PreprocessAccumulatedParametersNWPTemplate</moduleConfigFileName>
+	</activity>
+		<!-- Accumulate Precipitation-->
+		<activity>
+		<properties>
+			<string key="LOCATIONSET" value="SnareBasins"/>
+			<string key="INPUTMODULEINSTANCE" value="PreprocessRDPSforHistoricMerge"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PreprocessRDPSforHistoricMerge</moduleInstanceId>
+		<moduleConfigFileName>AccumulateForecastPrecipTemplate</moduleConfigFileName>
+	</activity>
+	<!-- Preprocess Temperature-->
+	<activity>
+		<properties>
+			<string key="PARAMETER" value="TA.nwp"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PreprocessRDPSforHistoricMerge</moduleInstanceId>
+		<moduleConfigFileName>PreprocessInstantaneousParametersNWPTemplate</moduleConfigFileName>
+	</activity>
+	<!-- Merge Historic Gridded Data to Create Model Input-->
+	<activity>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>MergeHistoricGrids</moduleInstanceId>
+	</activity>
+
+</workflow>

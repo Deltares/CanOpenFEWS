@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 sp1 (http://www.altova.com) by Afdeling ICT (Stichting Deltares) -->
+<moduleInstanceDescriptors xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/moduleInstanceDescriptors.xsd" version="1.0">
+	<!--R Scripts-->
+	<moduleInstanceDescriptor id="HelloWorld">
+		<description>Using R Script to Write Hello World</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="InstallUpdateRLibraries">
+		<description>Using R Scripts to install/update requried R libraries</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="DownloadUpdateHYDAT">
+		<description>Using R Scripts download or update HYDAT database</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="DownloadHistoricalHydrometricData">
+		<description>Using R Scripts download historical Hydrometric Data with tidyhydat</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="DownloadRealTimeHydrometricData">
+		<description>Using R Scripts download real time Hydrometric Data with tidyhydat.ws</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="DownloadHydrometricData">
+		<description>Using R Scripts download real time Hydrometric Data with tidyhydat.ws</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportHYDATHistorical">
+		<description>Using R Scripts download real time Hydrometric Data with tidyhydat.ws</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportHYDATRecent">
+		<description>Using R Scripts download real time Hydrometric Data with tidyhydat.ws</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="GenerateHydrometricReport">
+		<description>Using R Scripts to generate hydrometric report</description>
+	</moduleInstanceDescriptor>
+	<!--Import Scalar Data-->
+	<moduleInstanceDescriptor id="ImportWSCHistoric">
+		<description>Import Station data from Local Directory</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportWSCHourly">
+		<description>Import Station data from http://dd.weather.gc.ca server</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportWSCDaily">
+		<description>Import Station data from http://dd.weather.gc.ca server</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportWSC">
+		<description>ID assigned  to WSC imports</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportECCCScalar">
+		<description>Import Station data from dd.meteo.gc.ca server</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportECCCHistoric">
+		<description>Import Station data from dd.meteo.gc.ca server</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportRavenNetCDF">
+		<description>Import Raven NetCDF from Local Source</description>
+	</moduleInstanceDescriptor>
+	<!-- Export-->
+	<moduleInstanceDescriptor id="ExportHYDATtoCSV">
+		<description>Export HYDAT data to CSV to generate reports</description>
+	</moduleInstanceDescriptor>
+	<!--Preprocess Scalar Data-->
+	<moduleInstanceDescriptor id="PreprocessECCCScalar">
+		<description>Preprocess Station data from dd.meteo.gc.ca server</description>
+	</moduleInstanceDescriptor>
+	<!--ModuleDataSets-->
+	<moduleInstanceDescriptor id="SnowDownload">
+		<description>Snow Download module - for purpose of maintaining single moduleDataSet file</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="RavenParameters">
+		<description>Module Instance for Transfer of Raven Boolean Parameters from FEWS</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="RavenBinaries">
+		<description>Module Instance for Raven Binaries Export</description>
+	</moduleInstanceDescriptor>
+	<!--Download Snow Products-->
+	<moduleInstanceDescriptor id="RetrieveSNODAS">
+		<description>Download SNODAS grib2 files</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="RetrieveGLOBSNOW">
+		<description>Download GlobSnow netcdf files</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="RetrieveSnowcast">
+		<description>Retrieve swe data from Snowcast ASC files</description>
+	</moduleInstanceDescriptor>
+	<!-- Download ECCC NWP forecast grids-->
+	<moduleInstanceDescriptor id="RetrieveRDPA">
+		<description>Retrieve RDPA GRIB2 files</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="RetrieveHRDPA">
+		<description>Retrieve HRDPA GRIB2 files</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="RetrieveRDPS">
+		<description>Retrieve GRIB2 files for regional model</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="RetrieveHRDPS">
+		<description>Retrieve GRIB2 files for regional model</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="RetrieveGDPS">
+		<description>Retrieve GRIB2 files for global model</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="RetrieveGDPSHistorical">
+		<description>Retrieve GRIB2 files for global model from HFPX website</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="RetrieveREPS">
+		<description>Retrieve GRIB2 files for Ensemble Forecast model</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="RetrieveGEPS">
+		<description>Retrieve GRIB2 files for Ensemble Forecast model</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="RetrieveECCCRadarComposite">
+		<description>Retrieve Composite Radar Images</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportECCCRadarComposite">
+		<description>Import Composite Radar Images</description>
+	</moduleInstanceDescriptor>
+	<!-- Gridded Data Import Modules-->
+	<moduleInstanceDescriptor id="ImportNSRPS">
+		<description>Import for NSRPS</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportNSRPS_an">
+		<description>Import for NSRPS</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportNSRPS_det">
+		<description>Import for NSRPS</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportNSRPS_reps">
+		<description>Import for NSRPS</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportNSRPS_runoff">
+		<description>Import for NSRPS</description>
+	</moduleInstanceDescriptor>
+	<!--Merge Historic and Forecast Gridded Data -->
+	<moduleInstanceDescriptor id="MergeRDPS">
+		<description>Merge for Regional Deterministic Prediction System</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="MergeGDPS">
+		<description>Merge for Global Deterministic Prediction System</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="MergeREPS">
+		<description>Merge for Global Ensemble Prediction System</description>
+	</moduleInstanceDescriptor>
+	<!--Download Snow Products-->
+	<!--Imports Gridded Data - GeoMet-->
+	<moduleInstanceDescriptor id="ImportRDPA">
+		<description>Import for ECCC Precipitation Re-Analysis</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportHRDPA">
+		<description>Import for ECCC Precipitation Re-Analysis</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportRDPS">
+		<description>Import for Regional Deterministic Prediction System</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportHRDPS">
+		<description>Import for High Resolution Regional Deterministic Prediction System</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportGDPS">
+		<description>Import for Global Deterministic Prediction System</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportREPS">
+		<description>Import for Regional Ensemble Prediction System</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportGEPS">
+		<description>Import for Regional Ensemble Prediction System</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportECCC">
+		<description>Import for All ECCC (GeoMet)</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportDEM">
+		<description>Import DEM on wflow grid</description>
+	</moduleInstanceDescriptor>
+	<!--Post-process Model Results -->
+	<moduleInstanceDescriptor id="PostprocessREPS">
+		<description>Calculate Ensemble Statistics for REPS</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="PostprocessGEPS">
+		<description>Calculate Ensemble Statistics for GEPS</description>
+	</moduleInstanceDescriptor>
+	<!-- Import NOAA NWP forecast grids-->
+	<moduleInstanceDescriptor id="ImportGFS">
+		<description>Import Global Forecast System from NOAA</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportNAM">
+		<description>Import North American Meso-scale Data from NOAA</description>
+	</moduleInstanceDescriptor>
+	<!--Import ERA5 Reanalysis data-->
+	<moduleInstanceDescriptor id="DownloadERA5Slice">
+		<description>Download the ERA5 data</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportERA5">
+		<description>Import the ERA5 variables on the predefined grid</description>
+	</moduleInstanceDescriptor>
+	<!--Preprocess NWP Inputs-->
+	<moduleInstanceDescriptor id="PreprocessRDPA">
+		<description>Preprocess for ECCC Precipitation Re-Analysis</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="PreprocessHRDPA">
+		<description>Preprocess for ECCC High Resolution Precipitation Re-Analysis</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="PreprocessHRDPS">
+		<description>Preprocess for High Resolution Deterministic Prediction System</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="PreprocessRDPS">
+		<description>Preprocess for Regional Deterministic Prediction System</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="PreprocessGDPS">
+		<description>Preprocess for Global Deterministic Prediction System</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="PreprocessREPS">
+		<description>Preprocess for Regional Ensemble Prediction System</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="PreprocessGEPS">
+		<description>Preprocess for Global Ensemble Prediction System</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="PreprocessWSC">
+		<description>Preprocess WSC data</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="PreprocessECCCScalarRavenInput">
+		<description>Preprocess WSC data</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="PreprocessNSRPS">
+		<description>Preprocess NSRPS</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="PreprocessDisaggAccumParametersNWP">
+		<description>Preprocess disaggregate the accumulative NWP parameters</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="PreprocessDisaggInstantParametersNWP">
+		<description>Preprocess disaggregate the instantaneous NWP parameters</description>
+	</moduleInstanceDescriptor>
+	<!--Preprocess Radar data-->
+	<moduleInstanceDescriptor id="PreprocessECCCRadarBow">
+		<description>Preprocess the ECCC radar data to a smaller grid around the Bow River</description>
+	</moduleInstanceDescriptor>
+	<!--Set Forecast Length for Forecasts -->
+	<moduleInstanceDescriptor id="SetForecastLengthRDPS">
+		<description>Set Forecast Length based on available RDPS data</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="SetForecastLengthGDPS">
+		<description>Set Forecast Length based on available GDPS data</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="SetForecastLengthREPS">
+		<description>Set Forecast Length based on available REPS data</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="SetForecastLengthGEPS">
+		<description>Set Forecast Length based on available GEPS data</description>
+	</moduleInstanceDescriptor>
+	<!--Modify Historic and Forecast Gridded Data -->
+	<moduleInstanceDescriptor id="ModifyRDPS">
+		<description>Modify for Regional Deterministic Prediction System</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ModifyGDPS">
+		<description>Modify for Global Deterministic Prediction System</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ModifyREPS">
+		<description>Modify for Regional Ensemble Prediction System</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ModifyGEPS">
+		<description>Modify for Global Ensemble Prediction System</description>
+	</moduleInstanceDescriptor>
+	<!-- Import Snow grids-->
+	<moduleInstanceDescriptor id="ImportSNODAS">
+		<description>Import for SNODAS grids from NOHRSC</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportGLOBSNOW">
+		<description>Import for GlobSnow grids from Finnish Meteorological Institute</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportSnowcast">
+		<description>Import swe data from Snowcast GeoTIF files</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportNETCDF">
+		<description>Import NETCDF (generic)</description>
+	</moduleInstanceDescriptor>
+	<!--Preprocess Snow grids-->
+	<moduleInstanceDescriptor id="PreprocessSNODAS">
+		<description>Preprocess for SNODAS grids from NOHRSC</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="PreprocessGLOBSNOW">
+		<description>Preprocess for GlobSnow grids from Finnish Meteorological Institute</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="PreprocessSnowcast">
+		<description>Preprocess swe data from Snowcast GeoTIF files</description>
+	</moduleInstanceDescriptor>
+	<!--Merging of Gridded Data-->
+	<moduleInstanceDescriptor id="MergeHistoricGrids">
+		<description>Merge Grids for Historic Model Run</description>
+	</moduleInstanceDescriptor>
+	<!--Modify of Gridded Data-->
+	<moduleInstanceDescriptor id="ModifyHistoricGrids">
+		<description>Modify Grids for Historic Model Run</description>
+	</moduleInstanceDescriptor>
+	<!-- Model Binaries-->
+	<moduleInstanceDescriptor id="Bow">
+		<description>ModuleDataSet for Bow</description>
+	</moduleInstanceDescriptor>
+	<!-- Model Run Module Instances - Generic -->
+	<moduleInstanceDescriptor id="BowHistoricUpdate">
+		<description>ModuleInstanceId holder for Model</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="BowHistoric">
+		<description>Run the Bow model with Historic Data</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="BowForecast">
+		<description>Run the Bow model with Forecast Data</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="BowRDPSForecast">
+		<description>Run the Bow model with RDPS Forecast Data</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="BowGDPSForecast">
+		<description>Run the Bow model with GDPS Forecast Data</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="BowREPSForecast">
+		<description>Run the Bow model with REPS Forecast Data</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="BowGEPSForecast">
+		<description>Run the Bow model with REPS Forecast Data</description>
+	</moduleInstanceDescriptor>
+	<!-- Model Run Module Instances - Raven -->
+	<moduleInstanceDescriptor id="BowRavenHistoricUpdate">
+		<description>ModuleInstanceId holder for Model</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="BowRavenHistoric">
+		<description>Run the Bow model with Historic Data</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="BowRavenForecast">
+		<description>Run the Bow model with Forecast Data</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="BowRavenRDPSForecast">
+		<description>Run the Bow model with RDPS Forecast Data</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="BowRavenGDPSForecast">
+		<description>Run the Bow model with GDPS Forecast Data</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="BowRavenREPSForecast">
+		<description>Run the Bow model with REPS Forecast Data</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="BowRavenGEPSForecast">
+		<description>Run the Bow model with REPS Forecast Data</description>
+	</moduleInstanceDescriptor>
+	<!-- Wflow Model Preprocessing-->
+	<moduleInstanceDescriptor id="DeBruinPET">
+		<description>PET estimation using the De Bruin method</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="RevisedMakkinkPET">
+		<description>PET estimation using the revised Makkink method</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="WflowPrepare">
+		<description>Prepare forcing data for wflow on 6-min time step</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="WflowPrepareForecast">
+		<description>Prepare forcing data for wflowforecast on 6-min time step</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="WflowPrepare1h">
+		<description>Prepare forcing data for wflow on 1-h time step</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="WflowPrepareForecast1h">
+		<description>Prepare forcing data for wflow forecast on 1-h time step</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="DownscaleTemperatureModelGrid">
+		<description>Downscale temperature forcing data on 6-min time step to the wflow model grid size</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="DownscaleTemperatureModelGridForecast">
+		<description>Downscale temperature forecast data on 6-min time step to the wflow model grid size</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="DownscaleTemperatureModelGridForecast1h">
+		<description>Downscale temperature forecast data on 1-h time step to the wflow model grid size</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="DownscaleTemperatureModelGrid1h">
+		<description>Downscale temperature forcing data on 1-h time step to the wflow model grid size</description>
+	</moduleInstanceDescriptor>
+	<!-- Wflow Model Run Module Instances-->
+	<moduleInstanceDescriptor id="BowWflow">
+		<description>ModuleDataSet for wflow_sbm model of Bow River</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="BowWflowRadarUpdate">
+		<description>Wflow_sbm update run for the Bow River using 6-min radar data</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="BowWflowRadarForecast">
+		<description>Wflow_sbm forecast run for the Bow River using 6-min radar nowcasts</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="BowWflowHRDPAUpdate1h">
+		<description>Wflow_sbm update run for the Bow River using 1-h HRDPA + ERA5 reanalysis data</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="BowWflowRDPSForecast1h">
+		<description>Wflow_sbm forecast run for the Bow River using 1-h RDPS forecasts</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="BowWflowGDPSForecast1h">
+		<description>Wflow_sbm forecast run for the Bow River using 1-h GDPS forecasts</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="BowWflowREPSForecast1h">
+		<description>Wflow_sbm forecast run for the Bow River using 1-h REPS forecasts</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="BowWflowGEPSForecast1h">
+		<description>Wflow_sbm forecast run for the Bow River using 1-h GEPS forecasts</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="BowWflowHRDPSForecast1h">
+		<description>Wflow_sbm forecast run for the Bow River using 1-h HRDPS forecasts</description>
+	</moduleInstanceDescriptor>
+	<!--Nowcasting-->
+	<moduleInstanceDescriptor id="ECCCRadarNowcast">
+		<description>pysteps radar nowcast using the ECCC radar data</description>
+	</moduleInstanceDescriptor>
+</moduleInstanceDescriptors>

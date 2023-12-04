@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idMap version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/idMap.xsd">
+	<map internalLocation="NSRPS_reps" internalParameter="QR.fcst" internalEnsemble="REPS" externalLocation="NSRPS_reps" externalParameter="EHPS_1km_RiverDischarge_Mem01" internalEnsembleMemberId="1"/>
+	<map internalLocation="NSRPS_reps" internalParameter="QR.fcst" internalEnsemble="REPS" externalLocation="NSRPS_reps" externalParameter="EHPS_1km_RiverDischarge_Mem02" internalEnsembleMemberId="2"/>
+	<map internalLocation="NSRPS_reps" internalParameter="QR.fcst" internalEnsemble="REPS" externalLocation="NSRPS_reps" externalParameter="EHPS_1km_RiverDischarge_Mem03" internalEnsembleMemberId="3"/>
+	<map internalLocation="NSRPS_reps" internalParameter="QR.fcst" internalEnsemble="REPS" externalLocation="NSRPS_reps" externalParameter="EHPS_1km_RiverDischarge_Mem04" internalEnsembleMemberId="4"/>
+	<map internalLocation="NSRPS_reps" internalParameter="QR.fcst" internalEnsemble="REPS" externalLocation="NSRPS_reps" externalParameter="EHPS_1km_RiverDischarge_Mem05" internalEnsembleMemberId="5"/>
+	<map internalLocation="NSRPS_reps" internalParameter="QR.fcst" internalEnsemble="REPS" externalLocation="NSRPS_reps" externalParameter="EHPS_1km_RiverDischarge_Mem06" internalEnsembleMemberId="6"/>
+	<map internalLocation="NSRPS_reps" internalParameter="QR.fcst" internalEnsemble="REPS" externalLocation="NSRPS_reps" externalParameter="EHPS_1km_RiverDischarge_Mem07" internalEnsembleMemberId="7"/>
+	<map internalLocation="NSRPS_reps" internalParameter="QR.fcst" internalEnsemble="REPS" externalLocation="NSRPS_reps" externalParameter="EHPS_1km_RiverDischarge_Mem08" internalEnsembleMemberId="8"/>
+	<map internalLocation="NSRPS_reps" internalParameter="QR.fcst" internalEnsemble="REPS" externalLocation="NSRPS_reps" externalParameter="EHPS_1km_RiverDischarge_Mem09" internalEnsembleMemberId="9"/>
+	<map internalLocation="NSRPS_reps" internalParameter="QR.fcst" internalEnsemble="REPS" externalLocation="NSRPS_reps" externalParameter="EHPS_1km_RiverDischarge_Mem10" internalEnsembleMemberId="10"/>
+	<map internalLocation="NSRPS_reps" internalParameter="QR.fcst" internalEnsemble="REPS" externalLocation="NSRPS_reps" externalParameter="EHPS_1km_RiverDischarge_Mem11" internalEnsembleMemberId="11"/>
+	<map internalLocation="NSRPS_reps" internalParameter="QR.fcst" internalEnsemble="REPS" externalLocation="NSRPS_reps" externalParameter="EHPS_1km_RiverDischarge_Mem12" internalEnsembleMemberId="12"/>
+	<map internalLocation="NSRPS_reps" internalParameter="QR.fcst" internalEnsemble="REPS" externalLocation="NSRPS_reps" externalParameter="EHPS_1km_RiverDischarge_Mem13" internalEnsembleMemberId="13"/>
+	<map internalLocation="NSRPS_reps" internalParameter="QR.fcst" internalEnsemble="REPS" externalLocation="NSRPS_reps" externalParameter="EHPS_1km_RiverDischarge_Mem14" internalEnsembleMemberId="14"/>
+	<map internalLocation="NSRPS_reps" internalParameter="QR.fcst" internalEnsemble="REPS" externalLocation="NSRPS_reps" externalParameter="EHPS_1km_RiverDischarge_Mem15" internalEnsembleMemberId="15"/>
+	<map internalLocation="NSRPS_reps" internalParameter="QR.fcst" internalEnsemble="REPS" externalLocation="NSRPS_reps" externalParameter="EHPS_1km_RiverDischarge_Mem16" internalEnsembleMemberId="16"/>
+	<map internalLocation="NSRPS_reps" internalParameter="QR.fcst" internalEnsemble="REPS" externalLocation="NSRPS_reps" externalParameter="EHPS_1km_RiverDischarge_Mem17" internalEnsembleMemberId="17"/>
+	<map internalLocation="NSRPS_reps" internalParameter="QR.fcst" internalEnsemble="REPS" externalLocation="NSRPS_reps" externalParameter="EHPS_1km_RiverDischarge_Mem18" internalEnsembleMemberId="18"/>
+	<map internalLocation="NSRPS_reps" internalParameter="QR.fcst" internalEnsemble="REPS" externalLocation="NSRPS_reps" externalParameter="EHPS_1km_RiverDischarge_Mem19" internalEnsembleMemberId="19"/>
+	<map internalLocation="NSRPS_reps" internalParameter="QR.fcst" internalEnsemble="REPS" externalLocation="NSRPS_reps" externalParameter="EHPS_1km_RiverDischarge_Mem20" internalEnsembleMemberId="20"/>
+	<map internalLocation="NSRPS_reps" internalParameter="QR.fcst" internalEnsemble="REPS" externalLocation="NSRPS_reps" externalParameter="EHPS_1km_RiverDischarge_Mem21" internalEnsembleMemberId="21"/>
+	<map internalLocation="NSRPS" internalParameter="QR.fcst" externalLocation="NSRPS" externalParameter="DHPS_1km_RiverDischarge"/>
+	<map internalLocation="NSRPS" internalParameter="QR.sim" externalLocation="NSRPS" externalParameter="DHPS-Analysis_1km_RiverDischarge"/>
+	<map internalLocation="NSRPS" internalParameter="ROF.sim" externalLocation="NSRPS" externalParameter="DHPS-Analysis_1km_TotalRunoff-Avg12h"/>
+</idMap>

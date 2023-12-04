@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<locations version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/locations.xsd">
+	<geoDatum>WGS 1984</geoDatum>
+	<!--Grid definitions - Complete Grid -->
+	<location id="HRDPA" name="High Resolution Deterministic Precipitation Analysis (HRDPA) 2.5m">
+		<shortName>RDPA</shortName>
+		<x>0</x>
+		<y>0</y>
+	</location>
+	<location id="RDPA" name="Regional Deterministic Precipitation Analysis (RDPA) 10km">
+		<shortName>RDPA</shortName>
+		<x>0</x>
+		<y>0</y>
+	</location>
+	<location id="HRDPS" name="High Resolution Deterministic Prediction System (2.5 km)">
+		<shortName>RDPS</shortName>
+		<x>0</x>
+		<y>0</y>
+	</location>
+	<location id="RDPS" name="Regional Deterministic Prediction System (10 km)">
+		<shortName>RDPS</shortName>
+		<x>-142.8968</x>
+		<y>18.1429</y>
+	</location>
+	<location id="GDPS" name="Global Deterministic Prediction System (25 km)">
+		<shortName>GDPS</shortName>
+		<x>-180</x>
+		<y>-90</y>
+	</location>
+	<location id="REPS" name="Regional Ensemble Prediction System">
+		<shortName>REPS</shortName>
+		<x>0</x>
+		<y>0</y>
+	</location>
+	<location id="GEPS" name="Global Ensemble Prediction System">
+		<shortName>GEPS</shortName>
+		<x>0</x>
+		<y>0</y>
+	</location>
+	<location id="ERA5" name="ERA5">
+		<shortName>ERA5</shortName>
+		<x>0</x>
+		<y>0</y>
+	</location>
+	<!--NOAA Grid Locations-->
+	<location id="GFS" name="GFS Forecast">
+		<x>0</x>
+		<y>0</y>
+	</location>
+	<location id="NAM" name="NAM Forecast">
+		<x>0</x>
+		<y>0</y>
+	</location>
+	<location id="SREF" name="SREF Forecast">
+		<x>0</x>
+		<y>0</y>
+	</location>
+	<location id="GLOBSNOW" name="Globsnow (ESA)">
+		<shortName>GLOBSNOW</shortName>
+		<x>-180</x>
+		<y>90</y>
+	</location>
+	<location id="SNODAS" name="SNODAS">
+		<x>0</x>
+		<y>0</y>
+	</location>
+	<location id="Snowcast_GWF" name="SnowCast GWF Tiff ">
+		<shortName>Snowcast</shortName>
+		<!--original domain 
+              <x>-118.891692796615018</x>
+              <y>52.867749118272918</y>-->
+		<!--UpperLeft x-->
+		<x>-131.995202834714</x>
+		<!--UpperRight y-->
+		<y>55.998059701484</y>
+	</location>
+	<location id="ECCCRadarComposite" name="ECCCRadarComposite">
+		<x>0</x>
+		<y>0</y>
+	</location>
+	<location id="BowRadarGrid" name="BowRadarGrid">
+		<x>0</x>
+		<y>0</y>
+	</location>
+	<location id="BowGrid" name="BowGrid">
+		<x>0</x>
+		<y>0</y>
+	</location>
+	<location id="ModelGrid" name="ModelGrid">
+		<x>0</x>
+		<y>0</y>
+	</location>
+	<location id="NSRPS" name="NSRPS">
+		<shortName>EC (NSRPS)</shortName>
+		<x>0</x>
+		<y>0</y>
+	</location>
+	<location id="NSRPS_reps" name="NSRPS">
+		<shortName>EC (NSRPS)</shortName>
+		<x>0</x>
+		<y>0</y>
+	</location>
+</locations>

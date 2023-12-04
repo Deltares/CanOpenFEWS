@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
+<unitConversions xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/unitConversions.xsd">
+	<unitConversion>
+		<inputUnitType>K</inputUnitType>
+		<outputUnitType>oC</outputUnitType>
+		<multiplier>1</multiplier>
+		<incrementer>-273.15</incrementer>
+	</unitConversion>
+	<unitConversion>
+		<inputUnitType>kg/m2/s</inputUnitType>
+		<outputUnitType>mm</outputUnitType>
+		<multiplier>10800</multiplier>
+		<incrementer>0</incrementer>
+	</unitConversion>
+	<unitConversion>
+		<inputUnitType>m</inputUnitType>
+		<outputUnitType>mm</outputUnitType>
+		<multiplier>1000</multiplier>
+		<incrementer>0</incrementer>
+	</unitConversion>
+	<unitConversion>
+		<inputUnitType>Pa</inputUnitType>
+		<outputUnitType>kPa</outputUnitType>
+		<multiplier>0.001</multiplier>
+		<incrementer>0</incrementer>
+	</unitConversion>
+	<unitConversion>
+		<inputUnitType>Jm-2</inputUnitType>
+		<outputUnitType>Wm-2</outputUnitType>
+		<multiplier>0.0002777777777777778</multiplier>
+		<incrementer>0</incrementer>
+	</unitConversion>
+	<unitConversion>
+		<inputUnitType>mm/day</inputUnitType>
+		<outputUnitType>mm</outputUnitType>
+		<multiplier>1</multiplier>
+		<incrementer>0</incrementer>
+	</unitConversion>
+</unitConversions>
+
+
+
+
+

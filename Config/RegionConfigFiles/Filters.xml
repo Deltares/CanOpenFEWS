@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 sp1 (http://www.altova.com) by Afdeling ICT (Stichting Deltares) -->
+<filters version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/filters.xsd">
+	<!-- Add default filter Id -->
+	<defaultFilterId>HydroStations</defaultFilterId>
+	<!-- Timeseries Sets -->
+	<!-- Timeseries Sets - Water Survey of Canada -->
+	<timeSeriesSets id="HydroStations">
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessWSC</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>HG.obs</parameterId>
+			<locationSetId>DisplayHydroStations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="5"/>
+			<relativeViewPeriod unit="day" start="-5" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>5</synchLevel>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportWSC</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.obs</parameterId>
+			<locationSetId>DisplayHydroStations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="5"/>
+			<relativeViewPeriod unit="day" start="-5" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>5</synchLevel>
+		</timeSeriesSet>
+	</timeSeriesSets>
+	<!-- Timeseries Sets - ECCC Meteo Stations -->
+	<timeSeriesSets id="MeteoStations">
+		<timeSeriesSet>
+			<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.obs</parameterId>
+			<locationSetId>DisplayMeteoStations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="$DAY_TIMESTEP$"/>
+			<relativeViewPeriod unit="day" start="-5" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>5</synchLevel>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmax.obs</parameterId>
+			<locationSetId>DisplayMeteoStations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="$DAY_TIMESTEP$"/>
+			<relativeViewPeriod unit="day" start="-5" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>5</synchLevel>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmin.obs</parameterId>
+			<locationSetId>DisplayMeteoStations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="$DAY_TIMESTEP$"/>
+			<relativeViewPeriod unit="day" start="-5" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>5</synchLevel>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.obs</parameterId>
+			<locationSetId>DisplayMeteoStations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-5" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>5</synchLevel>
+		</timeSeriesSet>
+	</timeSeriesSets>
+	<!-- Timeseries Sets - Forecast @ Basins-->
+	<timeSeriesSets id="HRDPABasins">
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessHRDPA</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.sim</parameterId>
+			<locationSetId>DisplayBasins</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</timeSeriesSets>
+	<timeSeriesSets id="RDPABasins">
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessRDPA</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.sim</parameterId>
+			<locationSetId>DisplayBasins</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</timeSeriesSets>
+	<timeSeriesSets id="RDPSBasins">
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessRDPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationSetId>DisplayBasins</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessRDPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationSetId>DisplayBasins</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</timeSeriesSets>
+	<timeSeriesSets id="GDPSBasins">
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessGDPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationSetId>DisplayBasins</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessGDPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationSetId>DisplayBasins</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</timeSeriesSets>
+	<timeSeriesSets id="REPSBasins">
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessREPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationSetId>DisplayBasins</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>REPS</ensembleId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessREPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationSetId>DisplayBasins</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>REPS</ensembleId>
+		</timeSeriesSet>
+	</timeSeriesSets>
+	<!-- Timeseries Sets @ Forecast Stations-->
+	<timeSeriesSets id="HRDPAStations">
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessHRDPA</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.sim</parameterId>
+			<locationSetId>DisplayMeteoStations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</timeSeriesSets>
+	<timeSeriesSets id="RDPAStations">
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessRDPA</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.sim</parameterId>
+			<locationSetId>DisplayMeteoStations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</timeSeriesSets>
+	<timeSeriesSets id="RDPSStations">
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessRDPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationSetId>DisplayMeteoStations</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessRDPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationSetId>DisplayMeteoStations</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</timeSeriesSets>
+	<timeSeriesSets id="GDPSStations">
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessGDPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationSetId>DisplayMeteoStations</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessGDPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationSetId>DisplayMeteoStations</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</timeSeriesSets>
+	<timeSeriesSets id="REPSStations">
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessREPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationSetId>DisplayMeteoStations</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>REPS</ensembleId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessREPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationSetId>DisplayMeteoStations</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>REPS</ensembleId>
+		</timeSeriesSet>
+	</timeSeriesSets>
+	<!-- Snow Data @ Stations -->
+	<timeSeriesSets id="SnowStationsSNODAS">
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessSNODAS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>SWE.sim</parameterId>
+			<locationSetId>SnowStations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="day"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</timeSeriesSets>
+	<timeSeriesSets id="SnowStationsSnowcast">
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessSnowcast</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>SWE.sim</parameterId>
+			<locationSetId>SnowStations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="day_1200MST"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</timeSeriesSets>
+	<!-- Snow Data @ Basins -->
+	<timeSeriesSets id="SnowBasinsSNODAS">
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessSNODAS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>SWE.sim</parameterId>
+			<locationSetId>DisplayBasins</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="day"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</timeSeriesSets>
+	<timeSeriesSets id="SnowBasinsSnowcast">
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessSnowcast</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>SWE.sim</parameterId>
+			<locationSetId>DisplayBasins</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="day_1200MST"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</timeSeriesSets>
+	<!-- First Level Filters -->
+	<filter id="MeasuredData" name="Hydro and Meteo Station Data">
+		<mapExtentId>$REGION$</mapExtentId>
+		<child foreignKey="HydroStations"/>
+		<child foreignKey="MeteoStations"/>
+	</filter>
+	<filter id="Snow Data" name="Snow Data">
+		<mapExtentId>$REGION$</mapExtentId>
+		<child foreignKey="SnowStationsSnowcast"/>
+		<child foreignKey="SnowBasinsSnowcast"/>
+		<child foreignKey="SnowStationsSNODAS"/>
+		<child foreignKey="SnowBasinsSNODAS"/>
+	</filter>
+	<filter id="ForecastDataStation" name="Forecast Data - By Station">
+		<mapExtentId>$REGION$</mapExtentId>
+		<child foreignKey="HRDPAStations"/>
+		<child foreignKey="RDPAStations"/>
+		<child foreignKey="RDPSStations"/>
+		<child foreignKey="GDPSStations"/>
+		<child foreignKey="REPSStations"/>
+	</filter>
+	<filter id="ForecastDataBasin" name="Forecast Data - By Basin">
+		<mapExtentId>$REGION$</mapExtentId>
+		<child foreignKey="HRDPABasins"/>
+		<child foreignKey="RDPABasins"/>
+		<child foreignKey="RDPSBasins"/>
+		<child foreignKey="GDPSBasins"/>
+		<child foreignKey="REPSBasins"/>
+	</filter>
+	<!-- Second Level Filters -->
+	<filter id="HydroStations" name="Hydro Stations">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>HydroStations</timeSeriesSetsId>
+	</filter>
+	<filter id="MeteoStations" name="Meteo Stations">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>MeteoStations</timeSeriesSetsId>
+	</filter>
+	<filter id="RDPAStations" name="RDPA @ Stations">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>RDPAStations</timeSeriesSetsId>
+	</filter>
+	<filter id="RDPSStations" name="RDPS @ Stations">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>RDPSStations</timeSeriesSetsId>
+	</filter>
+	<filter id="GDPSStations" name="GDPS @ Stations">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>GDPSStations</timeSeriesSetsId>
+	</filter>
+	<filter id="REPSStations" name="REPS @ Stations">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>REPSStations</timeSeriesSetsId>
+	</filter>
+	<filter id="HRDPABasins" name="HRDPA @ Basins">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>RDPABasins</timeSeriesSetsId>
+	</filter>
+	<filter id="RDPABasins" name="RDPA @ Basins">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>RDPABasins</timeSeriesSetsId>
+	</filter>
+	<filter id="RDPSBasins" name="RDPS @ Basins">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>RDPSBasins</timeSeriesSetsId>
+	</filter>
+	<filter id="GDPSBasins" name="GDPS @ Basins">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>GDPSBasins</timeSeriesSetsId>
+	</filter>
+	<filter id="REPSBasins" name="REPS @ Basins">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>REPSBasins</timeSeriesSetsId>
+	</filter>
+	<filter id="SnowStationsSnowcast" name="Snowcast Snow @ Stations">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>SnowBasinsSnowcast</timeSeriesSetsId>
+	</filter>
+	<filter id="SnowStationsSNODAS" name="SNODAS Snow @ Stations">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>SnowBasinsSNODAS</timeSeriesSetsId>
+	</filter>
+	<filter id="SnowBasinsSnowcast" name="Snowcast Snow @ Basins">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>SnowBasinsSnowcast</timeSeriesSetsId>
+	</filter>
+	<filter id="SnowBasinsSNODAS" name="SNODAS Snow @ Basins">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>SnowBasinsSNODAS</timeSeriesSetsId>
+	</filter>
+	
+</filters>

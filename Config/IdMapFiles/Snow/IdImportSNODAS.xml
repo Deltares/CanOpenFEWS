@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idMap version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/idMap.xsd">
+	<map internalParameter="SWE.sim" internalLocation="SNODAS" externalParameter="Snow_depth_water_equivalent_surface" externalLocation="none"/>
+	<map internalParameter="SD.sim" internalLocation="SNODAS" externalParameter="Snow_depth_surface" externalLocation="none"/>
+	<map internalParameter="SM.sim" internalLocation="SNODAS" externalParameter="Snow_melt_surface" externalLocation="none"/>
+	<map internalParameter="SE.sim" internalLocation="SNODAS" externalParameter="Snow_temperature_depth-avg_surface" externalLocation="none"/>
+<enableOneToOneMapping/>
+</idMap>

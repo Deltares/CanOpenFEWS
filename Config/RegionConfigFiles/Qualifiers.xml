@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qualifiers xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/qualifiers.xsd">
+	<allowReferencingUndefinedQualifiers>false</allowReferencingUndefinedQualifiers>
+	<!--Ensemble Statistic Qualifiers-->
+	<qualifier id="mean" name="mean"/>
+	<qualifier id="max" name="max"/>
+	<qualifier id="min" name="min"/>
+	<qualifier id="25%" name="25%"/>
+	<qualifier id="75%" name="75%"/>
+	<qualifier id="10" name="25%"/>
+	<qualifier id="25" name="75%"/>
+	<qualifier id="75" name="75%"/>
+	<qualifier id="90" name="90%"/>
+	<!-- Additional Qualifiers-->
+	<qualifier id="Observed" name="Observed"/>
+	<qualifier id="GFS" name="GFS"/>
+	<qualifier id="E2O" name="E2O"/>
+	<qualifier id="rainonly" name="rainonly"/>
+	<qualifier id="snowonly" name="snowonly"/>
+	<qualifier id="historic" name="historic"/>
+	<qualifier id="nrt" name="nrt"/>
+</qualifiers>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idMap xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/idMap.xsd" version="1.1">
+	<map internalParameter="RSext" internalLocation="ERA5" externalParameter="tisr" externalLocation="ERA5"/>
+	<map internalParameter="PA" internalLocation="ERA5" externalParameter="sp" externalLocation="ERA5"/>
+	<map internalParameter="PC.sim" internalLocation="ERA5" externalParameter="tp" externalLocation="ERA5"/>
+	<map internalParameter="TA.obs" internalLocation="ERA5" externalParameter="t2m" externalLocation="ERA5"/>
+	<map internalParameter="PET.obs" internalLocation="ERA5" externalParameter="pev" externalLocation="ERA5"/>
+	<map internalParameter="RS" internalLocation="ERA5" externalParameter="ssrd" externalLocation="ERA5"/>
+</idMap>

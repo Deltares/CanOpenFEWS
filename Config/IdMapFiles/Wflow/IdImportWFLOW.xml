@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idMap xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/idMap.xsd" version="1.1">
+	<!--grids-->
+	<!--historical simulation-->
+	<map internalParameter="QR.sim.hist" internalLocation="BowGrid" externalParameter="q_river" externalLocation="BowGrid"/>
+	<!--forecast-->
+	<map internalParameter="QR.sim.fc" internalLocation="BowGrid" externalParameter="q_river" externalLocation="BowGrid"/>
+	<!--scalar parameters-->
+	<!--historical simulation-->
+	<function internalParameter="QR.sim.hist" internalLocationSet="WSCStations" externalParameterFunction="run.tss" externalLocationFunction="@wflow_code@"/>
+	<function internalParameter="QR.sim.hist" internalLocationSet="WSCStations" externalParameterFunction="Q_hydrometric_stations" externalLocationFunction="@wflow_code@"/>
+	<!--forecast-->
+	<function internalParameter="QR.sim.fc" internalLocationSet="WSCStations" externalParameterFunction="run.tss" externalLocationFunction="@wflow_code@"/>
+	<function internalParameter="QR.sim.fc" internalLocationSet="WSCStations" externalParameterFunction="Q_hydrometric_stations" externalLocationFunction="@wflow_code@"/>
+</idMap>
+
+
+

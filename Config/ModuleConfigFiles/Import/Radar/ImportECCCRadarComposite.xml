@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 sp1 (http://www.altova.com) by Afdeling ICT (Stichting Deltares) -->
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
+	<import>
+		<general>
+			<importType>GeoTiff</importType>
+			<folder>$IMPORT_FOLDER$\Radar</folder>
+			<fileNameObservationDateTimePattern>yyyyMMdd'T'HHmm'Z_MSC_Radar-Composite_MMHR_1km'</fileNameObservationDateTimePattern>
+			<deleteImportedFiles>true</deleteImportedFiles>
+			<importTimeZone>
+				<timeZoneName>GMT+0</timeZoneName>
+			</importTimeZone>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportECCCRadarComposite</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.sim</parameterId>
+			<locationId>ECCCRadarComposite</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="6"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</import>
+</timeSeriesImportRun>

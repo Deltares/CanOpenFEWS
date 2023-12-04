@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
+	<import>
+		<general>
+			<importType>ArcInfoAsciiGrid</importType>
+			<folder>$REGION_HOME$/Import/DEM/$catchment$</folder>
+			<deleteImportedFiles>false</deleteImportedFiles>
+			<idMapId>IdImportDEM</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<traceValue>-9999</traceValue>
+			<geoDatum>WGS 1984</geoDatum>
+			<dataFeedId>DEM</dataFeedId>
+		</general>
+		<tolerance locationId="$grid_id$" parameterId="TA.obs" timeUnit="day" unitCount="7"/>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportDEM</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.obs</parameterId>
+			<locationId>$grid_id$</locationId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep unit="$timestep_unit$" multiplier="$timestep$"/>
+			<cycle unit="$timestep_unit$" multiplier="$timestep$"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</import>
+</timeSeriesImportRun>
+
+
+
+

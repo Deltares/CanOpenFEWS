@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
+	<import>
+		<general>
+			<importType>grib2</importType>
+			<folder>$IMPORT_FOLDER$/RDPA</folder>
+			<idMapId>IdImportRDPA</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<importTimeZone>
+				<timeZoneName>MST</timeZoneName>
+			</importTimeZone>
+			<dataFeedId>RDPA</dataFeedId>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportRDPA</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.sim</parameterId>
+			<locationId>RDPA</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="6"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.sim" unit="kg m-2"/>
+	</import>
+</timeSeriesImportRun>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews
+http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
+	<import>
+		<general>
+			<importType>generalCSV</importType>
+			<folder>%REGION_HOME%/Import/ECCC/</folder>
+			<table>
+				<dateTimeColumn name="Date" pattern="yyyy-MM-dd"/>
+				<locationColumn name="SITE_ID"/>
+				<valueColumn name="TEMP_DAILY_AVE" unit="oC" parameterId="TA.obs"/>
+				<valueColumn name="TEMP_DAILY_MAX" unit="oC" parameterId="TAmax.obs"/>
+				<valueColumn name="TEMP_DAILY_MIN" unit="oC" parameterId="TAmin.obs"/>
+				<valueColumn name="PRECIP" unit="mm" parameterId="PC.obs"/>
+			</table>
+			<idMapId>IdImportECCCScalarHistoric</idMapId>
+			<expiryTime unit="day" multiplier="365"/>
+			<skipFirstLinesCount>0</skipFirstLinesCount>
+		</general>
+		<tolerance timeUnit="day" unitCount="2" parameterId="TA.obs"/>
+		<tolerance timeUnit="day" unitCount="2" parameterId="PC.obs"/>
+		<tolerance timeUnit="day" unitCount="2" parameterId="TAmax.obs"/>
+		<tolerance timeUnit="day" unitCount="2" parameterId="TAmin.obs"/>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.obs</parameterId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="$DAY_TIMESTEP$"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmax.obs</parameterId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="$DAY_TIMESTEP$"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmin.obs</parameterId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="$DAY_TIMESTEP$"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.obs</parameterId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="$DAY_TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</import>
+</timeSeriesImportRun>

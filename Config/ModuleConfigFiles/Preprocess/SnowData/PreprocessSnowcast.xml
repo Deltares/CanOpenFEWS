@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2019 rel. 3 sp1 (x64) (http://www.altova.com) by colleen.walford (Service Alberta - IMT Admin Svcs Ent Svcs) -->
+<transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd" version="1.0">
+	<!--Input-->
+	<variable>
+		<variableId>Gridded_Image</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSnowcast</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>SWE.sim</parameterId>
+			<locationId>Snowcast_GWF</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<!--<relativeViewPeriod unit="day" start="$STARTTIME$" end="$ENDTIME$" startOverrulable="true"/>-->
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<!--  SWE average / basin-->
+	<variable>
+		<variableId>Basin_swe_nonequidistant</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>SWE.sim</parameterId>
+			<locationSetId>$BASINLOCATION$</locationSetId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME$" end="$ENDTIME$" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+		<!--  SWE average / station-->
+	<variable>
+		<variableId>Station_swe_nonequidistant</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>SWE.sim</parameterId>
+			<locationSetId>$STATIONLOCATION$</locationSetId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME$" end="$ENDTIME$" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<!-- SWE average / station sampled to daily data at 12 Midday  -->
+	<variable>
+		<variableId>Basin_swe_daily</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>SWE.sim</parameterId>
+			<locationSetId>$BASINLOCATION$</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="day_1200MST"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME$" end="$ENDTIME$" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<!-- SWE average / station sampled to daily data at 12 Midday  -->
+	<variable>
+		<variableId>Station_swe_daily</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>SWE.sim</parameterId>
+			<locationSetId>$STATIONLOCATION$</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="day_1200MST"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME$" end="$ENDTIME$" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<transformation id="sample_swe_basins_nonequidistant">
+		<interpolationSpatial>
+			<average>
+				<inputVariable>
+					<variableId>Gridded_Image</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Basin_swe_nonequidistant</variableId>
+				</outputVariable>
+			</average>
+		</interpolationSpatial>
+	</transformation>
+	<transformation id="sample_swe_basins_daily">
+		<sample>
+			<nonEquidistant>
+				<nonEquidistantInputVariable>
+					<variableId>Basin_swe_nonequidistant</variableId>
+				</nonEquidistantInputVariable>
+				<interpolationType>previousTimeStep</interpolationType>
+				<outputVariable>
+					<variableId>Basin_swe_daily</variableId>
+				</outputVariable>
+			</nonEquidistant>
+		</sample>
+	</transformation>
+		<transformation id="sample_swe_stations_nonequidistant">
+		<interpolationSpatial>
+			<closestDistance>
+				<inputVariable>
+					<variableId>Gridded_Image</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Station_swe_nonequidistant</variableId>
+				</outputVariable>
+			</closestDistance>
+		</interpolationSpatial>
+	</transformation>
+	<transformation id="sample_swe_stations_daily">
+		<sample>
+			<nonEquidistant>
+				<nonEquidistantInputVariable>
+					<variableId>Station_swe_nonequidistant</variableId>
+				</nonEquidistantInputVariable>
+				<interpolationType>previousTimeStep</interpolationType>
+				<outputVariable>
+					<variableId>Station_swe_daily</variableId>
+				</outputVariable>
+			</nonEquidistant>
+		</sample>
+	</transformation>
+</transformationModule>

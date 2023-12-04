@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.1">
+	<!-- Download, Import, and clip SNODAS grids from NOHRSC -->
+	<properties>
+		<string key="SOURCE" value="SNODAS"/>
+		<string key="PARAMETER" value="SWE.sim"/>
+		<string key="BASINS" value="ProcessBasins"/>
+		<string key="STATIONS" value="SnowStations"/>
+	</properties>
+	<activity>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>RetrieveSNODAS</moduleInstanceId>
+	</activity>
+	<activity>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>ImportSNODAS</moduleInstanceId>
+	</activity>
+	<activity>
+		<properties>
+			<string key="PARAMETER" value="SWE.sim"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PreprocessSNODAS</moduleInstanceId>
+		<moduleConfigFileName>PreprocessSnowTemplate</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<string key="PARAMETER" value="SD.sim"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PreprocessSNODAS</moduleInstanceId>
+		<moduleConfigFileName>PreprocessSnowTemplate</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<string key="PARAMETER" value="SE.sim"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PreprocessSNODAS</moduleInstanceId>
+		<moduleConfigFileName>PreprocessSnowTemplate</moduleConfigFileName>
+	</activity>
+		<activity>
+		<properties>
+			<string key="PARAMETER" value="SM.sim"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PreprocessSNODAS</moduleInstanceId>
+		<moduleConfigFileName>PreprocessSnowTemplate</moduleConfigFileName>
+	</activity>
+</workflow>

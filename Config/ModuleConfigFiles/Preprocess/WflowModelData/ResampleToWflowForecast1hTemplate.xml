@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 sp1 (http://www.altova.com) by Afdeling ICT (Stichting Deltares) -->
+<transformationModule version="1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.wldelft.nl/fews" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd">
+	<variable>
+		<variableId>P_Input</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$ModID_P$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>$Par_P$</parameterId>
+			<locationId>$Grid_P$</locationId>
+			<timeSeriesType>$TYPE1$</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME_UPDATE$" startOverrulable="true" end="$ENDTIME_UPDATE$" endOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>P_wflow_merged</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>$Par_P_M$</parameterId>
+			<locationId>$Grid_M$</locationId>
+			<timeSeriesType>$TYPE3$</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME_UPDATE$" startOverrulable="true" end="$ENDTIME_UPDATE$" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>T_Input</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$ModID_T$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>$Par_T$</parameterId>
+			<locationId>$Grid_T$</locationId>
+			<timeSeriesType>$TYPE1$</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME_UPDATE$" startOverrulable="true" end="$ENDTIME_UPDATE$" endOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>T_wflow</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>$Par_T_M$</parameterId>
+			<locationId>$Grid_M$</locationId>
+			<timeSeriesType>$TYPE2$</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME_UPDATE$" startOverrulable="true" end="$ENDTIME_UPDATE$" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>PET_Input</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$ModID_PET$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>$Par_PET$</parameterId>
+			<locationId>$Grid_PET$</locationId>
+			<timeSeriesType>$TYPE1$</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME_UPDATE$" startOverrulable="true" end="$ENDTIME_UPDATE$" endOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>PET_wflow</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>$Par_PET$</parameterId>
+			<locationId>$Grid_M$</locationId>
+			<timeSeriesType>$TYPE3$</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME_UPDATE$" startOverrulable="true" end="$ENDTIME_UPDATE$" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<transformation id="P ERA5 2 ModelGrid">
+		<interpolationSpatial>
+			<closestDistance>
+				<inputVariable>
+					<variableId>P_Input</variableId>
+				</inputVariable>
+				<distanceGeoDatum>WGS 1984</distanceGeoDatum>
+				<outputVariable>
+					<variableId>P_wflow_merged</variableId>
+				</outputVariable>
+			</closestDistance>
+		</interpolationSpatial>
+	</transformation>
+	<transformation id="T2ModelGrid">
+		<interpolationSpatial>
+			<closestDistance>
+				<inputVariable>
+					<variableId>T_Input</variableId>
+				</inputVariable>
+				<distanceGeoDatum>WGS 1984</distanceGeoDatum>
+				<outputVariable>
+					<variableId>T_wflow</variableId>
+				</outputVariable>
+			</closestDistance>
+		</interpolationSpatial>
+	</transformation>
+	<transformation id="PET2ModelGrid">
+		<interpolationSpatial>
+			<closestDistance>
+				<inputVariable>
+					<variableId>PET_Input</variableId>
+				</inputVariable>
+				<distanceGeoDatum>WGS 1984</distanceGeoDatum>
+				<outputVariable>
+					<variableId>PET_wflow</variableId>
+				</outputVariable>
+			</closestDistance>
+		</interpolationSpatial>
+	</transformation>
+</transformationModule>

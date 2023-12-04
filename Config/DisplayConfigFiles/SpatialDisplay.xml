@@ -1,0 +1,1216 @@
+<gridDisplay xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews
+http://fews.wldelft.nl/schemas/version1.0/gridDisplay.xsd">
+	<title>Spatial Display</title>
+	<defaults>
+		<plotGroupId>WSC_Scalar_Download</plotGroupId>
+		<geoMap>
+			<geoDatum>WGS 1984</geoDatum>
+			<projection>web_mercator</projection>
+			<defaultExtent id="Alberta" name="Alberta">
+				<left>-128</left>
+				<right>-107</right>
+				<top>58</top>
+				<bottom>49.5</bottom>
+			</defaultExtent>
+			<extraExtent id="Bow Watershed">
+				<left>-117</left>
+				<right>-111</right>
+				<top>53</top>
+				<bottom>50</bottom>
+			</extraExtent>
+			<extraExtent id="Canada">
+				<left>-152</left>
+				<right>-47</right>
+				<top>40</top>
+				<bottom>75</bottom>
+			</extraExtent>
+			<scaleBarVisible>true</scaleBarVisible>
+			<northArrowVisible>true</northArrowVisible>
+			<labelsVisible>true</labelsVisible>
+			<backgroundColor>white</backgroundColor>
+			<openStreetMapLayer id="Open Street Map">
+				<url>http://tile.openstreetmap.org</url>
+				<visible>true</visible>
+				<cacheDir>$MAPLAYERSCACHE_FOLDER$/OSM</cacheDir>
+			</openStreetMapLayer>
+			<layer id="Satellite">
+				<className>nl.wldelft.libx.openmap.GenericTileServerLayer</className>
+				<visible>false</visible>
+				<properties>
+					<string key="tileUrlPattern" value="http://h%RIGHT(QUAD_KEY,1)%.ortho.tiles.virtualearth.net/tiles/h%QUAD_KEY%.jpeg?g=1"/>
+					<string key="cacheDir" value="$MAPLAYERSCACHE_FOLDER$/Satellite_Cache"/>
+					<int key="minZoomLevel" value="2"/>
+					<int key="maxZoomLevel" value="17"/>
+					<int key="topZoomLevel" value="19"/>
+					<int key="tileSize" value="256"/>
+				</properties>
+			</layer>
+			<layer id="Topografie" name="ArcGIS World Topo Map">
+				<className>nl.wldelft.libx.openmap.GenericTileServerLayer</className>
+				<visible>true</visible>
+				<properties>
+					<string key="tileUrlPattern" value="http://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/%ZOOM%/%ROW%/%COLUMN%"/>
+					<string key="cacheDir" value="$MAPLAYERSCACHE_FOLDER$/Esri_topo"/>
+					<int key="minZoomLevel" value="1"/>
+					<int key="maxZoomLevel" value="19"/>
+					<int key="topZoomLevel" value="21"/>
+					<int key="tileSize" value="256"/>
+				</properties>
+			</layer>
+			<layer id="Canvas" name="ArcGIS Canvas World LightGray Base">
+				<className>nl.wldelft.libx.openmap.GenericTileServerLayer</className>
+				<visible>false</visible>
+				<properties>
+					<string key="tileUrlPattern" value="http://server.arcgisonline.com/arcgis/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/%ZOOM%/%ROW%/%COLUMN%"/>
+					<string key="cacheDir" value="$MAPLAYERSCACHE_FOLDER$/Esri_Canvas_World_Light_Gray_Base"/>
+					<int key="minZoomLevel" value="1"/>
+					<int key="maxZoomLevel" value="19"/>
+					<int key="topZoomLevel" value="21"/>
+					<int key="tileSize" value="256"/>
+				</properties>
+			</layer>
+			<layer id="World" name="ArcGIS World Satellite Map">
+				<className>nl.wldelft.libx.openmap.GenericTileServerLayer</className>
+				<visible>true</visible>
+				<properties>
+					<string key="tileUrlPattern" value="http://server.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/tile/%ZOOM%/%ROW%/%COLUMN%"/>
+					<string key="cacheDir" value="$MAPLAYERSCACHE_FOLDER$/World_Imagery"/>
+					<int key="minZoomLevel" value="1"/>
+					<int key="maxZoomLevel" value="19"/>
+					<int key="topZoomLevel" value="21"/>
+					<int key="tileSize" value="256"/>
+				</properties>
+			</layer>
+			<layer id="NatGeo_World_Map" name="ArcGIS Physical Map">
+				<className>nl.wldelft.libx.openmap.GenericTileServerLayer</className>
+				<visible>false</visible>
+				<properties>
+					<string key="tileUrlPattern" value="http://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/%ZOOM%/%ROW%/%COLUMN%"/>
+					<string key="cacheDir" value="$MAPLAYERSCACHE_FOLDER$/NatGeo_World_Map"/>
+					<int key="minZoomLevel" value="1"/>
+					<int key="maxZoomLevel" value="14"/>
+					<int key="topZoomLevel" value="18"/>
+					<int key="tileSize" value="256"/>
+				</properties>
+			</layer>
+			<layer id="World_Shaded_Relief" name="ArcGIS Shaded Relief">
+				<className>nl.wldelft.libx.openmap.GenericTileServerLayer</className>
+				<visible>true</visible>
+				<properties>
+					<string key="tileUrlPattern" value="http://server.arcgisonline.com/ArcGIS/rest/services/World_Shaded_Relief/MapServer/tile/%ZOOM%/%ROW%/%COLUMN%"/>
+					<string key="cacheDir" value="$MAPLAYERSCACHE_FOLDER$/World_Shaded_Relief"/>
+					<int key="minZoomLevel" value="1"/>
+					<int key="maxZoomLevel" value="14"/>
+					<int key="topZoomLevel" value="21"/>
+					<int key="tileSize" value="256"/>
+				</properties>
+			</layer>
+			<esriShapeLayer id="Bow Basins">
+				<description>Bow Basins</description>
+				<file>Bow_Basins.shp</file>
+				<geoDatum>WGS 1984</geoDatum>
+				<visible>true</visible>
+				<toolTip>%NAME%</toolTip>
+				<lineColor>black</lineColor>
+				<fillRgbColor>FFFFFF</fillRgbColor>
+				<opaquenessPercentage>20</opaquenessPercentage>
+			</esriShapeLayer>
+			<esriShapeLayer id="Bow HRUs / Sub Basins">
+				<description>Bow Sub Basins</description>
+				<file>Bow_SubBasins_WGS84.shp</file>
+				<geoDatum>WGS 1984</geoDatum>
+				<visible>true</visible>
+				<toolTip>%HRU_ID%</toolTip>
+				<lineColor>black</lineColor>
+				<fillRgbColor>FFFFFF</fillRgbColor>
+				<opaquenessPercentage>20</opaquenessPercentage>
+			</esriShapeLayer>
+			<esriShapeLayer id="Bow Flow Lines">
+				<description>Bow Flow lines</description>
+				<file>Bow_Flowlines_WGS84.shp</file>
+				<geoDatum>WGS 1984</geoDatum>
+				<visible>true</visible>
+				<lineColor>blue</lineColor>
+				<opaquenessPercentage>50</opaquenessPercentage>
+			</esriShapeLayer>
+			<esriShapeLayer id="World Countries">
+				<description>World</description>
+				<file>WorldCountries.shp</file>
+				<geoDatum>WGS 1984</geoDatum>
+				<visible>false</visible>
+				<toolTip>%CNTRY_NAME%</toolTip>
+				<lineColor>black</lineColor>
+				<fillRgbColor>FFFFFF</fillRgbColor>
+				<opaquenessPercentage>20</opaquenessPercentage>
+			</esriShapeLayer>
+		</geoMap>
+		<timeDisplayLabels>bottomRight</timeDisplayLabels>
+	</defaults>
+	<defaults>
+		<commentPositioning>topLeft</commentPositioning>
+	</defaults>
+	<gridPlotGroup id="WSC_Scalar_Download" name="Hydro Stations">
+		<gridPlot id="RecentObservedDischarge" name="Recent Discharge[m3/s]">
+			<timeSeriesSet>
+				<moduleInstanceId>ImportWSC</moduleInstanceId>
+				<valueType>scalar</valueType>
+				<parameterId>QR.obs</parameterId>
+				<locationSetId>DisplayHydroStations</locationSetId>
+				<timeSeriesType>external historical</timeSeriesType>
+				<timeStep unit="minute" multiplier="5"/>
+				<relativeViewPeriod unit="day" start="-30" end="0"/>
+				<readWriteMode>add originals</readWriteMode>
+			</timeSeriesSet>
+			<showThumbnailsPanel>false</showThumbnailsPanel>
+			<classBreaksId>Class.Discharge</classBreaksId>
+		</gridPlot>
+		<gridPlot id="HistoricObservedDischarge" name="Historic Daily Discharge  [m3/s]">
+			<timeSeriesSet>
+				<moduleInstanceId>ImportWSC</moduleInstanceId>
+				<valueType>scalar</valueType>
+				<parameterId>QR.obs</parameterId>
+				<locationSetId>DisplayHydroStations</locationSetId>
+				<timeSeriesType>external historical</timeSeriesType>
+				<timeStep id="$DAY_TIMESTEP$"/>
+				<readWriteMode>read complete forecast</readWriteMode>
+			</timeSeriesSet>
+			<showThumbnailsPanel>false</showThumbnailsPanel>
+			<classBreaksId>Class.Discharge</classBreaksId>
+		</gridPlot>
+	</gridPlotGroup>
+	<gridPlotGroup id="ECCC_Scalar_Download" name="Meteo Stations">
+		<gridPlot id="PrecipitationECCC" name="Precipitation Daily @ Stations [mm]">
+			<dataLayer>
+				<onlyCircles>false</onlyCircles>
+				<circleSizeFunction>12</circleSizeFunction>
+				<circleBorderSize>1</circleBorderSize>
+				<circleBorderColor>gray</circleBorderColor>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>PC.obs</parameterId>
+					<locationSetId>DisplayMeteoStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="$DAY_TIMESTEP$"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</dataLayer>
+			<showThumbnailsPanel>false</showThumbnailsPanel>
+			<movieFrameDurationMillis>200</movieFrameDurationMillis>
+			<movingAccumulationTimeSpan unit="day" multiplier="1"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="2"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="3"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="4"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="5"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="8"/>
+			<classBreaksId>Class.Precipitation</classBreaksId>
+		</gridPlot>
+		<gridPlot id="TemperatureMaxECCC" name="Temperature Max Daily @ Stations [oC]">
+			<dataLayer>
+				<onlyCircles>false</onlyCircles>
+				<circleSizeFunction>12</circleSizeFunction>
+				<circleBorderSize>1</circleBorderSize>
+				<circleBorderColor>gray</circleBorderColor>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>TAmax.obs</parameterId>
+					<locationSetId>DisplayMeteoStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="$DAY_TIMESTEP$"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</dataLayer>
+			<classBreaksId>Class.Temperature</classBreaksId>
+		</gridPlot>
+		<gridPlot id="TemperatureMinECCC" name="Temperature Min Daily @ Stations [oC]">
+			<dataLayer>
+				<onlyCircles>false</onlyCircles>
+				<circleSizeFunction>12</circleSizeFunction>
+				<circleBorderSize>1</circleBorderSize>
+				<circleBorderColor>gray</circleBorderColor>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>TAmin.obs</parameterId>
+					<locationSetId>DisplayMeteoStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="$DAY_TIMESTEP$"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</dataLayer>
+			<classBreaksId>Class.Temperature</classBreaksId>
+		</gridPlot>
+	</gridPlotGroup>
+	<gridPlotGroup id="Radar" name="Radar">
+		<gridPlot id="MSC_Radar" name="Radar North American Composite">
+			<timeSeriesSet>
+				<moduleInstanceId>ImportECCCRadarComposite</moduleInstanceId>
+				<valueType>grid</valueType>
+				<parameterId>PC.sim</parameterId>
+				<locationId>ECCCRadarComposite</locationId>
+				<timeSeriesType>external historical</timeSeriesType>
+				<timeStep unit="minute" multiplier="6"/>
+				<relativeViewPeriod unit="hour" start="-24" end="1"/>
+				<readWriteMode>add originals</readWriteMode>
+			</timeSeriesSet>
+			<classBreaksId>PrecipitationRadarMSC</classBreaksId>
+		</gridPlot>
+	</gridPlotGroup>
+	<gridPlotGroup id="ECCC_Nowcast" name="Nowcasting">
+		<gridPlot id="ECCCRadarNowcast" name="STEPS radar nowcast">
+			<timeSeriesSet>
+				<moduleInstanceId>ECCCRadarNowcast</moduleInstanceId>
+				<valueType>grid</valueType>
+				<parameterId>PC.forecast.acc</parameterId>
+				<locationId>BowRadarGrid</locationId>
+				<timeSeriesType>simulated forecasting</timeSeriesType>
+				<timeStep unit="minute" multiplier="6"/>
+				<relativeViewPeriod unit="hour" start="0" end="12"/>
+				<readWriteMode>read complete forecast</readWriteMode>
+				<ensembleId>RadarNowcast</ensembleId>
+			</timeSeriesSet>
+			<classBreaksId>PrecipitationRadarNowcast</classBreaksId>
+		</gridPlot>
+	</gridPlotGroup>
+	<gridPlotGroup id="ECCC_Precip" name="Precipitation Grids">
+		<gridPlotGroup id="HRDPA" name="HRDPA">
+			<gridPlot id="HRDPAPrecipitation" name="Precipitation [mm]">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportHRDPA</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>PC.sim</parameterId>
+					<locationId>HRDPA</locationId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="hour" multiplier="6"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<showThumbnailsPanel>false</showThumbnailsPanel>
+				<numberOfRecentForecasts>3</numberOfRecentForecasts>
+				<movieFrameDurationMillis>200</movieFrameDurationMillis>
+				<classBreaksId>Class.Precipitation</classBreaksId>
+			</gridPlot>
+		</gridPlotGroup>
+		<gridPlotGroup id="RDPA" name="RDPA">
+			<gridPlot id="RDPAPrecipitation" name="Precipitation [mm]">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportRDPA</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>PC.sim</parameterId>
+					<locationId>RDPA</locationId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="hour" multiplier="6"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<showThumbnailsPanel>false</showThumbnailsPanel>
+				<numberOfRecentForecasts>3</numberOfRecentForecasts>
+				<movieFrameDurationMillis>200</movieFrameDurationMillis>
+				<classBreaksId>Class.Precipitation</classBreaksId>
+			</gridPlot>
+		</gridPlotGroup>
+	</gridPlotGroup>
+	<gridPlotGroup id="ECCC_Forecast" name="NWP Forecast Grids">
+		<gridPlotGroup id="HRDPS" name="HRDPS Forecast">
+			<gridPlot id="HRDPSPrecipitation " name="Precipitation (mm)">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportHRDPS</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>PC.nwp</parameterId>
+					<locationId>HRDPS</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.Precipitation</classBreaksId>
+			</gridPlot>
+			<gridPlot id="HRDPSTemperature " name="Temperature (C)">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportHRDPS</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>TA.nwp</parameterId>
+					<locationId>HRDPS</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.Temperature</classBreaksId>
+			</gridPlot>
+			<gridPlot id="HRDPSPressure" name="Temperature (C)">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportHRDPS</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>PA.nwp</parameterId>
+					<locationId>HRDPS</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.Pressure</classBreaksId>
+			</gridPlot>
+		</gridPlotGroup>
+		<gridPlotGroup id="RDPS" name="RDPS Forecast">
+			<gridPlot id="RDPSPrecipitation " name="Precipitation (mm)">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportRDPS</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>PC.nwp</parameterId>
+					<locationId>RDPS</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.Precipitation</classBreaksId>
+			</gridPlot>
+			<gridPlot id="RDPSTemperature " name="Temperature (C)">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportRDPS</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>TA.nwp</parameterId>
+					<locationId>RDPS</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.Temperature</classBreaksId>
+			</gridPlot>
+		</gridPlotGroup>
+		<gridPlotGroup id="GDPS" name="GDPS Forecast">
+			<gridPlot id="GDPSPrecipitation " name="Precipitation (mm)">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportGDPS</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>PC.nwp</parameterId>
+					<locationId>GDPS</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<movieFrameDurationMillis>200</movieFrameDurationMillis>
+				<classBreaksId>Class.Precipitation</classBreaksId>
+			</gridPlot>
+			<gridPlot id="GDPSTemperature " name="Temperature (degC)">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportGDPS</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>TA.nwp</parameterId>
+					<locationId>GDPS</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.Temperature</classBreaksId>
+			</gridPlot>
+		</gridPlotGroup>
+		<gridPlotGroup id="REPS" name="REPS Forecast">
+			<gridPlot id="REPSPrecipitation " name="Precipitation (mm)">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportREPS</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>PC.nwp</parameterId>
+					<locationId>REPS</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+					<ensembleId>REPS</ensembleId>
+				</timeSeriesSet>
+				<movieFrameDurationMillis>200</movieFrameDurationMillis>
+				<classBreaksId>Class.Precipitation</classBreaksId>
+			</gridPlot>
+			<gridPlot id="REPSTemperature " name="Temperature (degC)">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportREPS</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>TA.nwp</parameterId>
+					<locationId>REPS</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+					<ensembleId>REPS</ensembleId>
+				</timeSeriesSet>
+				<classBreaksId>Class.Temperature</classBreaksId>
+			</gridPlot>
+		</gridPlotGroup>
+		<gridPlotGroup id="GEPS" name="GEPS Forecast">
+			<gridPlot id="GEPSPrecipitation " name="Precipitation (mm)">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportGEPS</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>PC.nwp</parameterId>
+					<locationId>GEPS</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+					<ensembleId>GEPS</ensembleId>
+				</timeSeriesSet>
+				<movieFrameDurationMillis>200</movieFrameDurationMillis>
+				<classBreaksId>Class.Precipitation</classBreaksId>
+			</gridPlot>
+			<gridPlot id="GEPSTemperature " name="Temperature (degC)">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportGEPS</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>TA.nwp</parameterId>
+					<locationId>GEPS</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+					<ensembleId>GEPS</ensembleId>
+				</timeSeriesSet>
+				<classBreaksId>Class.Temperature</classBreaksId>
+			</gridPlot>
+		</gridPlotGroup>
+	</gridPlotGroup>
+	<gridPlotGroup id="ECCC_Processed" name="Catchment Data">
+		<gridPlotGroup id="HRDPAPreprocess" name="HRDPA">
+			<gridPlot id="HRDPAPreprocessPrecipitation" name="Precipitation [mm]">
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessHRDPA</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>PC.sim</parameterId>
+					<locationSetId>DisplayBasins</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="hour" multiplier="6"/>
+					<relativeViewPeriod unit="day" start="-7" end="0"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+				<numberOfRecentForecasts>3</numberOfRecentForecasts>
+				<movieFrameDurationMillis>200</movieFrameDurationMillis>
+				<movingAccumulationTimeSpan unit="day" multiplier="1"/>
+				<movingAccumulationTimeSpan unit="day" multiplier="2"/>
+				<movingAccumulationTimeSpan unit="day" multiplier="3"/>
+				<movingAccumulationTimeSpan unit="day" multiplier="4"/>
+				<movingAccumulationTimeSpan unit="day" multiplier="5"/>
+				<movingAccumulationTimeSpan unit="day" multiplier="8"/>
+				<classBreaksId>Class.Precipitation</classBreaksId>
+			</gridPlot>
+		</gridPlotGroup>
+		<gridPlotGroup id="RDPAPreprocess" name="RDPA">
+			<gridPlot id="RDPAPreprocessPrecipitation" name="Precipitation [mm]">
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessRDPA</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>PC.sim</parameterId>
+					<locationSetId>DisplayBasins</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="hour" multiplier="6"/>
+					<relativeViewPeriod unit="day" start="-7" end="0"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+				<numberOfRecentForecasts>3</numberOfRecentForecasts>
+				<movieFrameDurationMillis>200</movieFrameDurationMillis>
+				<movingAccumulationTimeSpan unit="day" multiplier="1"/>
+				<movingAccumulationTimeSpan unit="day" multiplier="2"/>
+				<movingAccumulationTimeSpan unit="day" multiplier="3"/>
+				<movingAccumulationTimeSpan unit="day" multiplier="4"/>
+				<movingAccumulationTimeSpan unit="day" multiplier="5"/>
+				<movingAccumulationTimeSpan unit="day" multiplier="8"/>
+				<classBreaksId>Class.Precipitation</classBreaksId>
+			</gridPlot>
+		</gridPlotGroup>
+		<gridPlotGroup id="HRDPSPreprocess" name="HRDPS Forecast">
+			<gridPlot id="HRDPSPreprocessPrecipitation " name="Precipitation [mm]">
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessHRDPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>PC.nwp</parameterId>
+					<locationSetId>DisplayBasins</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<numberOfRecentForecasts>3</numberOfRecentForecasts>
+				<movieFrameDurationMillis>200</movieFrameDurationMillis>
+				<movingAccumulationTimeSpan unit="day" multiplier="1"/>
+				<movingAccumulationTimeSpan unit="day" multiplier="2"/>
+				<movingAccumulationTimeSpan unit="day" multiplier="3"/>
+				<movingAccumulationTimeSpan unit="day" multiplier="4"/>
+				<movingAccumulationTimeSpan unit="day" multiplier="5"/>
+				<movingAccumulationTimeSpan unit="day" multiplier="8"/>
+				<classBreaksId>Class.Precipitation</classBreaksId>
+			</gridPlot>
+			<gridPlot id="HRDPSPreprocessTemperature  " name="Temperature (degC)">
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessHRDPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>TA.nwp</parameterId>
+					<locationSetId>DisplayBasins</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<numberOfRecentForecasts>4</numberOfRecentForecasts>
+				<classBreaksId>Class.Temperature</classBreaksId>
+			</gridPlot>
+		</gridPlotGroup>
+		<gridPlotGroup id="RDPSPreprocess" name="RDPS Forecast">
+			<gridPlot id="RDPSPreprocessPrecipitation " name="Precipitation [mm]">
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessRDPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>PC.nwp</parameterId>
+					<locationSetId>DisplayBasins</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<numberOfRecentForecasts>3</numberOfRecentForecasts>
+				<movieFrameDurationMillis>200</movieFrameDurationMillis>
+				<movingAccumulationTimeSpan unit="day" multiplier="1"/>
+				<movingAccumulationTimeSpan unit="day" multiplier="2"/>
+				<movingAccumulationTimeSpan unit="day" multiplier="3"/>
+				<movingAccumulationTimeSpan unit="day" multiplier="4"/>
+				<movingAccumulationTimeSpan unit="day" multiplier="5"/>
+				<movingAccumulationTimeSpan unit="day" multiplier="8"/>
+				<classBreaksId>Class.Precipitation</classBreaksId>
+			</gridPlot>
+			<gridPlot id="RDPSPreprocessTemperature  " name="Temperature (degC)">
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessRDPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>TA.nwp</parameterId>
+					<locationSetId>DisplayBasins</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<numberOfRecentForecasts>4</numberOfRecentForecasts>
+				<classBreaksId>Class.Temperature</classBreaksId>
+			</gridPlot>
+		</gridPlotGroup>
+		<gridPlotGroup id="GDPSPreprocess" name="GDPS Forecast">
+			<gridPlot id="GDPSPreprocessPrecipitation " name="Precipitation [mm]">
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessGDPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>PC.nwp</parameterId>
+					<locationSetId>DisplayBasins</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<numberOfRecentForecasts>3</numberOfRecentForecasts>
+				<movieFrameDurationMillis>200</movieFrameDurationMillis>
+				<movingAccumulationTimeSpan unit="day" multiplier="1"/>
+				<movingAccumulationTimeSpan unit="day" multiplier="2"/>
+				<movingAccumulationTimeSpan unit="day" multiplier="3"/>
+				<movingAccumulationTimeSpan unit="day" multiplier="4"/>
+				<movingAccumulationTimeSpan unit="day" multiplier="5"/>
+				<movingAccumulationTimeSpan unit="day" multiplier="8"/>
+				<classBreaksId>Class.Precipitation</classBreaksId>
+			</gridPlot>
+			<gridPlot id="GDPSPreprocessTemperature  " name="Temperature (degC)">
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessGDPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>TA.nwp</parameterId>
+					<locationSetId>DisplayBasins</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<numberOfRecentForecasts>4</numberOfRecentForecasts>
+				<classBreaksId>Class.Temperature</classBreaksId>
+			</gridPlot>
+		</gridPlotGroup>
+		<gridPlotGroup id="REPSPreprocess" name="REPS Forecast">
+			<gridPlot id="REPSPreprocessPrecipitation " name="Precipitation (mm) ">
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessREPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>PC.nwp</parameterId>
+					<locationSetId>DisplayBasins</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+					<ensembleId>REPS</ensembleId>
+				</timeSeriesSet>
+				<numberOfRecentForecasts>2</numberOfRecentForecasts>
+				<movieFrameDurationMillis>200</movieFrameDurationMillis>
+				<classBreaksId>Class.Precipitation</classBreaksId>
+			</gridPlot>
+			<gridPlot id="REPSPreprocessTemperature  " name="Temperature (degC) ">
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessREPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>TA.nwp</parameterId>
+					<locationSetId>DisplayBasins</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+					<ensembleId>REPS</ensembleId>
+				</timeSeriesSet>
+				<numberOfRecentForecasts>2</numberOfRecentForecasts>
+				<classBreaksId>Class.Temperature</classBreaksId>
+			</gridPlot>
+		</gridPlotGroup>
+	</gridPlotGroup>
+	<gridPlotGroup id="Snow_Data" name="Snow Data">
+		<gridPlotGroup id="GLOBSNOW" name="Globsnow (ESA)">
+			<gridPlot id="Snow Water Equivalent - GlobSnow [mm]">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportGLOBSNOW</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>SWE.sim</parameterId>
+					<locationId>GLOBSNOW</locationId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="day"/>
+					<relativeViewPeriod unit="day" start="-10" end="1"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+				<movieFrameDurationMillis>200</movieFrameDurationMillis>
+				<classBreaksId>Class.SWE</classBreaksId>
+			</gridPlot>
+		</gridPlotGroup>
+		<gridPlotGroup id="Snowcast" name="Snowcast">
+			<gridPlot id="Snow Water Equivalent - Snowcast [mm]">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportSnowcast</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>SWE.sim</parameterId>
+					<locationId>Snowcast_GWF</locationId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="nonequidistant"/>
+					<relativeViewPeriod unit="day" end="0" start="-60"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+				<showThumbnailsPanel>false</showThumbnailsPanel>
+				<movieFrameDurationMillis>200</movieFrameDurationMillis>
+				<classBreaksId>Class.SWE</classBreaksId>
+			</gridPlot>
+			<gridPlot id="SWE Basin Average - Snowcast [mm]">
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessSnowcast</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>SWE.sim</parameterId>
+					<locationSetId>ModelBasins</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="day_1200MST"/>
+					<relativeViewPeriod unit="day" end="0" start="-60"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.SWE</classBreaksId>
+			</gridPlot>
+		</gridPlotGroup>
+		<gridPlotGroup id="SNODAS" name="SNODAS">
+			<gridPlot id="SWE - Grid [mm]">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportSNODAS</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>SWE.sim</parameterId>
+					<locationId>SNODAS</locationId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="day"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.SWE</classBreaksId>
+			</gridPlot>
+			<gridPlot id="SWE - Basin [mm]">
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessSNODAS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>SWE.sim</parameterId>
+					<locationSetId>ModelBasins</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="day"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.SWE</classBreaksId>
+			</gridPlot>
+			<gridPlot id="Snow Depth - Grid [m]">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportSNODAS</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>SD.sim</parameterId>
+					<locationId>SNODAS</locationId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="day"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.SD</classBreaksId>
+			</gridPlot>
+			<gridPlot id="Snow Depth - Basin  [m]">
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessSNODAS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>SD.sim</parameterId>
+					<locationSetId>ModelBasins</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="day"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.SD</classBreaksId>
+			</gridPlot>
+			<gridPlot id="Snow Melt - Grid [m]">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportSNODAS</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>SM.sim</parameterId>
+					<locationId>SNODAS</locationId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="day"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.SM</classBreaksId>
+			</gridPlot>
+			<gridPlot id="Snow Melt - Basin  [m]">
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessSNODAS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>SM.sim</parameterId>
+					<locationSetId>ModelBasins</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="day"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.SM</classBreaksId>
+			</gridPlot>
+			<gridPlot id="Snow Temperature  - Grid [degC]">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportSNODAS</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>SE.sim</parameterId>
+					<locationId>SNODAS</locationId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="day"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.Temperature</classBreaksId>
+			</gridPlot>
+			<gridPlot id="Snow Temperature  - Basin [degC]">
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessSNODAS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>SE.sim</parameterId>
+					<locationSetId>ModelBasins</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="day"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.Temperature</classBreaksId>
+			</gridPlot>
+		</gridPlotGroup>
+	</gridPlotGroup>
+	<gridPlotGroup id="BowWflow_Results" name="BowWflow">
+		<gridPlotGroup id="BowHistoric" name="Historic Model Run">
+			<gridPlotGroup id="HistoricInputBow" name="Input Data">
+				<gridPlot id="HistoricPrecipitationInputBow" name="Precipitation (mm)">
+					<timeSeriesSet>
+						<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>PC.obs</parameterId>
+						<locationSetId>ModelBasins</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep id="$DAY_TIMESTEP$"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<classBreaksId>Class.Precipitation</classBreaksId>
+				</gridPlot>
+				<gridPlot id="HistoricTemperatureInput MeanBow" name="Mean Temperature (degC)">
+					<timeSeriesSet>
+						<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>TA.obs</parameterId>
+						<locationSetId>BowMeteoStations</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep id="$DAY_TIMESTEP$"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<classBreaksId>Class.Temperature</classBreaksId>
+				</gridPlot>
+				<gridPlot id="HistoricTemperatureInput MaxBow" name="Max Temperature (degC)">
+					<timeSeriesSet>
+						<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>TAmax.obs</parameterId>
+						<locationSetId>BowMeteoStations</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep id="$DAY_TIMESTEP$"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<classBreaksId>Class.Temperature</classBreaksId>
+				</gridPlot>
+				<gridPlot id="HistoricTemperatureInputMinBow" name="Min Temperature (degC)">
+					<timeSeriesSet>
+						<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>TAmin.obs</parameterId>
+						<locationSetId>BowMeteoStations</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep id="$DAY_TIMESTEP$"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<classBreaksId>Class.Temperature</classBreaksId>
+				</gridPlot>
+			</gridPlotGroup>
+			<gridPlotGroup id="HistoricGridResultBow" name="Gridded Results">
+				<gridPlot id="HistoricGridResultQRBow" name="Outflow [m3/s]">
+					<timeSeriesSet>
+						<moduleInstanceId>BowHistoric</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>QR.sim</parameterId>
+						<locationSetId>ModelBasins</locationSetId>
+						<timeSeriesType>simulated historical</timeSeriesType>
+						<timeStep unit="day"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<classBreaksId>Class.Discharge</classBreaksId>
+				</gridPlot>
+				<gridPlot id="HistoricGridResultSWEBow" name="SWE [mm]">
+					<timeSeriesSet>
+						<moduleInstanceId>BowHistoric</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>SWE.sim</parameterId>
+						<locationSetId>ModelBasins</locationSetId>
+						<timeSeriesType>simulated historical</timeSeriesType>
+						<timeStep unit="day"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<classBreaksId>Class.SWE</classBreaksId>
+				</gridPlot>
+				<gridPlot id="HistoricGridResultSWELiquidBow" name="SWE Melt [mm]">
+					<timeSeriesSet>
+						<moduleInstanceId>BowHistoric</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>SWE.mlt</parameterId>
+						<locationSetId>ModelBasins</locationSetId>
+						<timeSeriesType>simulated historical</timeSeriesType>
+						<timeStep unit="day"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<classBreaksId>Class.SWE</classBreaksId>
+				</gridPlot>
+				<gridPlot id="HistoricGridResultSMIBow" name="Soil Moisture [mm]">
+					<timeSeriesSet>
+						<moduleInstanceId>BowHistoric</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>SMI.sim</parameterId>
+						<locationSetId>ModelBasins</locationSetId>
+						<timeSeriesType>simulated historical</timeSeriesType>
+						<timeStep unit="day"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+				</gridPlot>
+			</gridPlotGroup>
+		</gridPlotGroup>
+		<gridPlotGroup id="BowRDPSForecast" name="RDPS Model Run">
+			<gridPlotGroup id="HistoricInputBow" name="Input Data">
+				<gridPlot id="ForecastRDPSPrecipitationInputBow" name="Precipitation (mm)">
+					<timeSeriesSet>
+						<moduleInstanceId>PreprocessRDPS</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>PC.nwp</parameterId>
+						<locationSetId>ModelBasins</locationSetId>
+						<timeSeriesType>external forecasting</timeSeriesType>
+						<timeStep unit="day"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<classBreaksId>Class.Precipitation</classBreaksId>
+				</gridPlot>
+				<gridPlot id="ForecastRDPSTemperatureInputBow" name="Temperature  (degC)">
+					<timeSeriesSet>
+						<moduleInstanceId>PreprocessRDPS</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>TA.nwp</parameterId>
+						<locationSetId>ModelBasins</locationSetId>
+						<timeSeriesType>external forecasting</timeSeriesType>
+						<timeStep unit="day"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<classBreaksId>Class.Temperature</classBreaksId>
+				</gridPlot>
+			</gridPlotGroup>
+			<gridPlotGroup id="HistoricGridResultBow" name="Gridded Results">
+				<gridPlot id="ForecastRDPSResultQRBow" name="Outflow [m3/s]">
+					<timeSeriesSet>
+						<moduleInstanceId>BowRDPSForecast</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>QR.sim</parameterId>
+						<locationSetId>ModelBasins</locationSetId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep unit="day"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<classBreaksId>Class.Discharge</classBreaksId>
+				</gridPlot>
+				<gridPlot id="ForecastRDPSResultSWEBow" name="SWE [mm]">
+					<timeSeriesSet>
+						<moduleInstanceId>BowRDPSForecast</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>SWE.sim</parameterId>
+						<locationSetId>ModelBasins</locationSetId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep unit="day"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<classBreaksId>Class.SWE</classBreaksId>
+				</gridPlot>
+				<gridPlot id="ForecastRDPSResultSWELiquidBow" name="SWE Melt [mm]">
+					<timeSeriesSet>
+						<moduleInstanceId>BowRDPSForecast</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>SWE.mlt</parameterId>
+						<locationSetId>ModelBasins</locationSetId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep unit="day"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<classBreaksId>Class.SWE</classBreaksId>
+				</gridPlot>
+				<gridPlot id="ForecastRDPSResultSMIBow" name="Soil Moisture [mm]">
+					<timeSeriesSet>
+						<moduleInstanceId>BowRDPSForecast</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>SMI.sim</parameterId>
+						<locationSetId>ModelBasins</locationSetId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep unit="day"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+				</gridPlot>
+			</gridPlotGroup>
+		</gridPlotGroup>
+		<gridPlotGroup id="BowGDPSForecast" name="GDPS Model Run">
+			<gridPlotGroup id="HistoricInputBow" name="Input Data">
+				<gridPlot id="ForecastGDPSPrecipitationInputBow" name="Precipitation (mm)">
+					<timeSeriesSet>
+						<moduleInstanceId>PreprocessGDPS</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>PC.nwp</parameterId>
+						<locationSetId>ModelBasins</locationSetId>
+						<timeSeriesType>external forecasting</timeSeriesType>
+						<timeStep unit="day"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<classBreaksId>Class.Precipitation</classBreaksId>
+				</gridPlot>
+				<gridPlot id="ForecastGDPSTemperatureInputBow" name="Temperature  (degC)">
+					<timeSeriesSet>
+						<moduleInstanceId>PreprocessGDPS</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>TA.nwp</parameterId>
+						<locationSetId>ModelBasins</locationSetId>
+						<timeSeriesType>external forecasting</timeSeriesType>
+						<timeStep unit="day"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<classBreaksId>Class.Temperature</classBreaksId>
+				</gridPlot>
+			</gridPlotGroup>
+			<gridPlotGroup id="HistoricGridResultBow" name="Gridded Results">
+				<gridPlot id="ForecastGDPSResultQRBow" name="Outflow [m3/s]">
+					<timeSeriesSet>
+						<moduleInstanceId>BowGDPSForecast</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>QR.sim</parameterId>
+						<locationSetId>ModelBasins</locationSetId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep unit="day"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<classBreaksId>Class.Discharge</classBreaksId>
+				</gridPlot>
+				<gridPlot id="ForecastGDPSResultSWEBow" name="SWE [mm]">
+					<timeSeriesSet>
+						<moduleInstanceId>BowGDPSForecast</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>SWE.sim</parameterId>
+						<locationSetId>ModelBasins</locationSetId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep unit="day"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<classBreaksId>Class.SWE</classBreaksId>
+				</gridPlot>
+				<gridPlot id="ForecastGDPSResultSWELiquidBow" name="SWE Melt [mm]">
+					<timeSeriesSet>
+						<moduleInstanceId>BowGDPSForecast</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>SWE.mlt</parameterId>
+						<locationSetId>ModelBasins</locationSetId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep unit="day"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<classBreaksId>Class.SWE</classBreaksId>
+				</gridPlot>
+				<gridPlot id="ForecastGDPSResultSMIBow" name="Soil Moisture [mm]">
+					<timeSeriesSet>
+						<moduleInstanceId>BowGDPSForecast</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>SMI.sim</parameterId>
+						<locationSetId>ModelBasins</locationSetId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep unit="day"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+				</gridPlot>
+			</gridPlotGroup>
+		</gridPlotGroup>
+		<gridPlotGroup id="BowREPSForecast" name="REPS Model Run">
+			<gridPlotGroup id="HistoricInputBow" name="Input Data">
+				<gridPlot id="ForecastREPSPrecipitationInputBow" name="Precipitation (mm)">
+					<timeSeriesSet>
+						<moduleInstanceId>PreprocessREPS</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>PC.nwp</parameterId>
+						<locationSetId>ModelBasins</locationSetId>
+						<timeSeriesType>external forecasting</timeSeriesType>
+						<timeStep unit="day"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+						<ensembleId>REPS</ensembleId>
+					</timeSeriesSet>
+					<classBreaksId>Class.Precipitation</classBreaksId>
+				</gridPlot>
+				<gridPlot id="ForecastREPSTemperatureInputBow" name="Temperature  (degC)">
+					<timeSeriesSet>
+						<moduleInstanceId>PreprocessREPS</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>TA.nwp</parameterId>
+						<locationSetId>ModelBasins</locationSetId>
+						<timeSeriesType>external forecasting</timeSeriesType>
+						<timeStep unit="day"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+						<ensembleId>REPS</ensembleId>
+					</timeSeriesSet>
+					<classBreaksId>Class.Temperature</classBreaksId>
+				</gridPlot>
+			</gridPlotGroup>
+			<gridPlotGroup id="HistoricGridResultBow" name="Gridded Results">
+				<gridPlot id="ForecastREPSResultQRBow" name="Outflow [m3/s]">
+					<timeSeriesSet>
+						<moduleInstanceId>BowREPSForecast</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>QR.sim</parameterId>
+						<locationSetId>ModelBasins</locationSetId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep unit="day"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+						<ensembleId>REPS</ensembleId>
+					</timeSeriesSet>
+					<classBreaksId>Class.Discharge</classBreaksId>
+				</gridPlot>
+				<gridPlot id="ForecastREPSResultSWEBow" name="SWE [mm]">
+					<timeSeriesSet>
+						<moduleInstanceId>BowREPSForecast</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>SWE.sim</parameterId>
+						<locationSetId>ModelBasins</locationSetId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep unit="day"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+						<ensembleId>REPS</ensembleId>
+					</timeSeriesSet>
+					<classBreaksId>Class.SWE</classBreaksId>
+				</gridPlot>
+				<gridPlot id="ForecastREPSResultSWELiquidBow" name="SWE Melt [mm]">
+					<timeSeriesSet>
+						<moduleInstanceId>BowREPSForecast</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>SWE.mlt</parameterId>
+						<locationSetId>ModelBasins</locationSetId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep unit="day"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+						<ensembleId>REPS</ensembleId>
+					</timeSeriesSet>
+					<classBreaksId>Class.SWE</classBreaksId>
+				</gridPlot>
+				<gridPlot id="ForecastREPSResultSMIBow" name="Soil Moisture [mm]">
+					<timeSeriesSet>
+						<moduleInstanceId>BowREPSForecast</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>SMI.sim</parameterId>
+						<locationSetId>ModelBasins</locationSetId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep unit="day"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+						<ensembleId>REPS</ensembleId>
+					</timeSeriesSet>
+				</gridPlot>
+			</gridPlotGroup>
+		</gridPlotGroup>
+		<gridPlotGroup id="BowGEPSForecast" name="GEPS Model Run">
+			<gridPlotGroup id="HistoricInputBow" name="Input Data">
+				<gridPlot id="ForecastGEPSPrecipitationInputBow" name="Precipitation (mm)">
+					<timeSeriesSet>
+						<moduleInstanceId>PreprocessGEPS</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>PC.nwp</parameterId>
+						<locationSetId>ModelBasins</locationSetId>
+						<timeSeriesType>external forecasting</timeSeriesType>
+						<timeStep unit="day"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+						<ensembleId>GEPS</ensembleId>
+					</timeSeriesSet>
+					<classBreaksId>Class.Precipitation</classBreaksId>
+				</gridPlot>
+				<gridPlot id="ForecastGEPSTemperatureInputBow" name="Temperature  (degC)">
+					<timeSeriesSet>
+						<moduleInstanceId>PreprocessGEPS</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>TA.nwp</parameterId>
+						<locationSetId>ModelBasins</locationSetId>
+						<timeSeriesType>external forecasting</timeSeriesType>
+						<timeStep unit="day"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+						<ensembleId>GEPS</ensembleId>
+					</timeSeriesSet>
+					<classBreaksId>Class.Temperature</classBreaksId>
+				</gridPlot>
+			</gridPlotGroup>
+			<gridPlotGroup id="HistoricGridResultBow" name="Gridded Results">
+				<gridPlot id="ForecastGEPSResultQRBow" name="Outflow [m3/s]">
+					<timeSeriesSet>
+						<moduleInstanceId>BowGEPSForecast</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>QR.sim</parameterId>
+						<locationSetId>ModelBasins</locationSetId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep unit="day"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+						<ensembleId>GEPS</ensembleId>
+					</timeSeriesSet>
+					<classBreaksId>Class.Discharge</classBreaksId>
+				</gridPlot>
+				<gridPlot id="ForecastGEPSResultSWEBow" name="SWE [mm]">
+					<timeSeriesSet>
+						<moduleInstanceId>BowGEPSForecast</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>SWE.sim</parameterId>
+						<locationSetId>ModelBasins</locationSetId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep unit="day"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+						<ensembleId>GEPS</ensembleId>
+					</timeSeriesSet>
+					<classBreaksId>Class.SWE</classBreaksId>
+				</gridPlot>
+				<gridPlot id="ForecastGEPSResultSWELiquidBow" name="SWE Melt [mm]">
+					<timeSeriesSet>
+						<moduleInstanceId>BowGEPSForecast</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>SWE.mlt</parameterId>
+						<locationSetId>ModelBasins</locationSetId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep unit="day"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+						<ensembleId>GEPS</ensembleId>
+					</timeSeriesSet>
+					<classBreaksId>Class.SWE</classBreaksId>
+				</gridPlot>
+				<gridPlot id="ForecastGEPSResultSMIBow" name="Soil Moisture [mm]">
+					<timeSeriesSet>
+						<moduleInstanceId>BowGEPSForecast</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>SMI.sim</parameterId>
+						<locationSetId>ModelBasins</locationSetId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep unit="day"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+						<ensembleId>GEPS</ensembleId>
+					</timeSeriesSet>
+				</gridPlot>
+			</gridPlotGroup>
+		</gridPlotGroup>
+	</gridPlotGroup>
+</gridDisplay>

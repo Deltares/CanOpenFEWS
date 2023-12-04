@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 sp1 (http://www.altova.com) by Afdeling ICT (Stichting Deltares) -->
+<transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd" version="1.0">
+	<!--This module modifies Input Historic Data-->
+	<!--Input-->
+	<!--PC-->
+	<variable>
+		<variableId>Historic_PC</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$HISTORICMODULEINSTANCE$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>$LOCATION$</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<!--TA-->
+	<variable>
+		<variableId>Historic_TA</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$HISTORICMODULEINSTANCE$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>$LOCATION$</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<!-- Modifiers -->
+	<variable>
+		<variableId>PC_NWP_multiplier</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.nwp.multiplier</parameterId>
+			<locationId>$LOCATION$</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="$TIMESTEP$"/>
+			<relativeViewPeriod unit="day" startOverrulable="true" endOverrulable="true" start="$STARTTIME$" end="$ENDTIME$"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>PC_NWP_multiplier_grid</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp.multiplier</parameterId>
+			<locationId>$LOCATION$</locationId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep unit="hour" multiplier="$TIMESTEP$"/>
+			<relativeViewPeriod unit="day" startOverrulable="true" endOverrulable="true" start="$STARTTIME$" end="$ENDTIME$"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>TA_NWP_incrementer</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.nwp.incrementer</parameterId>
+			<locationId>$LOCATION$</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="$TIMESTEP$"/>
+			<relativeViewPeriod unit="day" startOverrulable="true" endOverrulable="true" start="$STARTTIME$" end="$ENDTIME$"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>TA_NWP_incrementer_grid</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp.incrementer</parameterId>
+			<locationId>$LOCATION$</locationId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep unit="hour" multiplier="$TIMESTEP$"/>
+			<relativeViewPeriod unit="day" startOverrulable="true" endOverrulable="true" start="$STARTTIME$" end="$ENDTIME$"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<!--Output-->
+	<!--PC-->
+	<variable>
+		<variableId>Historic_PC_mod</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>$LOCATION$</locationId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<!--TA-->
+	<variable>
+		<variableId>Historic_TA_mod</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>$LOCATION$</locationId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<!--Transformations-->
+	<!-- PC Multiplier-->
+	<transformation id="PC_muliplier_NWP">
+		<user>
+			<simple>
+				<expression>1 </expression>
+				<outputVariable>
+					<variableId>PC_NWP_multiplier</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="PC_muliplier_NWP_grid">
+		<interpolationSpatial>
+			<closestDistance>
+				<inputVariable>
+					<variableId>PC_NWP_multiplier</variableId>
+				</inputVariable>
+				<distanceGeoDatum>$DISTANCEGEODATUM$</distanceGeoDatum>
+				<outputVariable>
+					<variableId>PC_NWP_multiplier_grid</variableId>
+				</outputVariable>
+			</closestDistance>
+		</interpolationSpatial>
+	</transformation>
+	<transformation id="PC_muliplier_NWP_applied">
+		<user>
+			<simple>
+				<expression>Historic_PC * PC_NWP_multiplier_grid </expression>
+				<outputVariable>
+					<variableId>Historic_PC_mod</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<!--TA Incrementer -->
+	<transformation id="TA_incrementer_NWP">
+		<user>
+			<simple>
+				<expression>0</expression>
+				<outputVariable>
+					<variableId>TA_NWP_incrementer</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="TA_incrementer_NWP_grid">
+		<interpolationSpatial>
+			<closestDistance>
+				<inputVariable>
+					<variableId>TA_NWP_incrementer</variableId>
+				</inputVariable>
+				<distanceGeoDatum>$DISTANCEGEODATUM$</distanceGeoDatum>
+				<outputVariable>
+					<variableId>TA_NWP_incrementer_grid</variableId>
+				</outputVariable>
+			</closestDistance>
+		</interpolationSpatial>
+	</transformation>
+	<transformation id="TA_incrementer_NWP_applied">
+		<user>
+			<simple>
+				<expression>Historic_TA + TA_NWP_incrementer_grid</expression>
+				<outputVariable>
+					<variableId>Historic_TA_mod</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+</transformationModule>

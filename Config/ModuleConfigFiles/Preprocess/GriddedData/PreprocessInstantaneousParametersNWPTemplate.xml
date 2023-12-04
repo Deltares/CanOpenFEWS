@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
+<transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd" version="1.0">
+	<!--Input-->
+	<variable>
+		<variableId>Gridded_parameter</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$INPUTMODULEINSTANCE$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>$PARAMETER$</parameterId>
+			<locationId>$INPUTGRID$</locationId>
+			<timeSeriesType>$TIMESERIESTYPE$</timeSeriesType>
+			<timeStep unit="hour" multiplier="$TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<!--Output-->
+	<variable>
+		<variableId>Gridded_parameter_clipped</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$INPUTMODULEINSTANCE$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>$PARAMETER$</parameterId>
+			<locationId>$OUTPUTGRID$</locationId>
+			<timeSeriesType>$TIMESERIESTYPE$</timeSeriesType>
+			<timeStep unit="hour" multiplier="$TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Gridded_parameter_clipped_daily</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$INPUTMODULEINSTANCE$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>$PARAMETER$</parameterId>
+			<locationId>$OUTPUTGRID$</locationId>
+			<timeSeriesType>$TIMESERIESTYPE$</timeSeriesType>
+			<timeStep unit="day"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Basin_parameter</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>$PARAMETER$</parameterId>
+			<locationSetId>$BASINLOCATIONS$</locationSetId>
+			<timeSeriesType>$TIMESERIESTYPE$</timeSeriesType>
+			<timeStep unit="hour" multiplier="$TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Station_parameter</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>$PARAMETER$</parameterId>
+			<locationSetId>$STATIONLOCATIONS$</locationSetId>
+			<timeSeriesType>$TIMESERIESTYPE$</timeSeriesType>
+			<timeStep unit="hour" multiplier="$TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<!--Transformations-->
+	<transformation id="clip_parameter">
+		<interpolationSpatial>
+			<closestDistance>
+				<inputVariable>
+					<variableId>Gridded_parameter</variableId>
+				</inputVariable>
+				<distanceGeoDatum>$DISTANCEGEODATUM$</distanceGeoDatum>
+				<outputVariable>
+					<variableId>Gridded_parameter_clipped</variableId>
+				</outputVariable>
+			</closestDistance>
+		</interpolationSpatial>
+	</transformation>
+	<transformation id="grid_parameter_daily">
+	<aggregation>
+			<instantaneous>
+				<inputVariable>
+					<variableId>Gridded_parameter_clipped</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Gridded_parameter_clipped_daily</variableId>
+				</outputVariable>
+			</instantaneous>
+</aggregation>
+	</transformation>
+	<transformation id="basin_parameter">
+		<interpolationSpatial>
+			<average>
+				<inputVariable>
+					<variableId>Gridded_parameter</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Basin_parameter</variableId>
+				</outputVariable>
+			</average>
+		</interpolationSpatial>
+	</transformation>
+	<transformation id="station_parameter">
+		<interpolationSpatial>
+			<closestDistance>
+				<inputVariable>
+					<variableId>Gridded_parameter</variableId>
+				</inputVariable>
+				<distanceGeoDatum>$DISTANCEGEODATUM$</distanceGeoDatum>
+				<outputVariable>
+					<variableId>Station_parameter</variableId>
+				</outputVariable>
+			</closestDistance>
+		</interpolationSpatial>
+	</transformation>
+</transformationModule>

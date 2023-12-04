@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 sp1 (http://www.altova.com) by Afdeling ICT (Stichting Deltares) -->
+<transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd" version="1.0">
+	<!--Input-->
+	<variable>
+		<variableId>grid</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportNSRPS</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>QR.fcst</parameterId>
+			<locationId>NSRPS</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>grid_reps</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportNSRPS</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>QR.fcst</parameterId>
+			<locationId>NSRPS_reps</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>REPS</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<!--Output-->
+	<variable>
+		<variableId>stations</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessNSRPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.fcst</parameterId>
+			<locationSetId>ModelStations</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>stations_reps</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessNSRPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.fcst</parameterId>
+			<locationSetId>ModelStations</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>REPS</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>stations_reps_min</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessNSRPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.fcst</parameterId>
+			<qualifierId>min</qualifierId>
+			<locationSetId>ModelStations</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>stations_reps_25</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessNSRPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.fcst</parameterId>
+			<qualifierId>25%</qualifierId>
+			<locationSetId>ModelStations</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>stations_reps_50</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessNSRPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.fcst</parameterId>
+			<qualifierId>50%</qualifierId>
+			<locationSetId>ModelStations</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>stations_reps_75</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessNSRPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.fcst</parameterId>
+			<qualifierId>75%</qualifierId>
+			<locationSetId>ModelStations</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>stations_reps_max</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessNSRPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.fcst</parameterId>
+			<qualifierId>max</qualifierId>
+			<locationSetId>ModelStations</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<transformation id="sample_precip_basins">
+		<interpolationSpatial>
+			<closestDistance>
+				<inputVariable>
+					<variableId>grid</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>stations</variableId>
+				</outputVariable>
+			</closestDistance>
+		</interpolationSpatial>
+	</transformation>
+	<transformation id="sample_precip_basins_reps">
+		<interpolationSpatial>
+			<closestDistance>
+				<inputVariable>
+					<variableId>grid_reps</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>stations_reps</variableId>
+				</outputVariable>
+			</closestDistance>
+		</interpolationSpatial>
+	</transformation>
+	<transformation id="FlowEnsembleMedian">
+		<statisticsEnsemble>
+			<median>
+				<inputVariable>
+					<variableId>stations_reps</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>stations_reps_50</variableId>
+				</outputVariable>
+			</median>
+		</statisticsEnsemble>
+	</transformation>
+	<transformation id="FlowEnsemble25">
+		<statisticsEnsemble>
+			<percentileExceedence>
+				<inputVariable>
+					<variableId>stations_reps</variableId>
+				</inputVariable>
+				<value>25</value>
+				<outputVariable>
+					<variableId>stations_reps_25</variableId>
+				</outputVariable>
+			</percentileExceedence>
+		</statisticsEnsemble>
+	</transformation>
+	<transformation id="FlowEnsemble75">
+		<statisticsEnsemble>
+			<percentileExceedence>
+				<inputVariable>
+					<variableId>stations_reps</variableId>
+				</inputVariable>
+				<value>75</value>
+				<outputVariable>
+					<variableId>stations_reps_75</variableId>
+				</outputVariable>
+			</percentileExceedence>
+		</statisticsEnsemble>
+	</transformation>
+	<transformation id="FlowEnsembleMin">
+		<statisticsEnsemble>
+			<min>
+				<inputVariable>
+					<variableId>stations_reps</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>stations_reps_min</variableId>
+				</outputVariable>
+			</min>
+		</statisticsEnsemble>
+	</transformation>
+	<transformation id="FlowEnsembleMax">
+		<statisticsEnsemble>
+			<max>
+				<inputVariable>
+					<variableId>stations_reps</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>stations_reps_max</variableId>
+				</outputVariable>
+			</max>
+		</statisticsEnsemble>
+	</transformation>
+</transformationModule>

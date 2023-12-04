@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<forecastLengthEstimator xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/forecastLengthEstimator.xsd">
+<externalForecastTimeSeries>
+	<moduleInstanceId>$FORECASTMODULEINSTANCE$</moduleInstanceId>
+	<valueType>scalar</valueType>
+	<parameterId>PC.nwp</parameterId>
+	<locationId>LiardExtent</locationId>
+	<timeSeriesType>external forecasting</timeSeriesType>
+	<timeStep id="$DAY_TIMESTEP$"/>
+	<readWriteMode>read complete forecast</readWriteMode>
+	<ensembleId>$ENSEMBLE$</ensembleId>
+</externalForecastTimeSeries>
+	<minForecastLength unit="day" multiplier="1"/>
+</forecastLengthEstimator>

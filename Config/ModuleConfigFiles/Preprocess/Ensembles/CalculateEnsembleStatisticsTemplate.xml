@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd" version="1.0">
+<!-- This template is used to calculate summary statistics for a ensemble scalar input-->
+<!--Tags required are: $INPUTMODULEINSTANCE$, $PARAMETER$, $LOCATIONSET$, $TIMESERIESTYPE$, $TIMESTEP$, $ENSEMBLE$-->
+<!--Inputs-->
+	<variable>
+		<variableId>input_variable</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$INPUTMODULEINSTANCE$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>$PARAMETER$</parameterId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>$TIMESERIESTYPE$</timeSeriesType>
+			<timeStep unit="hour" multiplier="$TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<!--Outputs-->
+	<variable>
+		<variableId>output_mean</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>$PARAMETER$</parameterId>
+			<qualifierId>mean</qualifierId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>$TIMESERIESTYPE$</timeSeriesType>
+			<timeStep unit="hour" multiplier="$TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>output_max</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>$PARAMETER$</parameterId>
+			<qualifierId>max</qualifierId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>$TIMESERIESTYPE$</timeSeriesType>
+			<timeStep unit="hour" multiplier="$TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>output_min</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>$PARAMETER$</parameterId>
+			<qualifierId>min</qualifierId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>$TIMESERIESTYPE$</timeSeriesType>
+			<timeStep unit="hour" multiplier="$TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>output_25</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>$PARAMETER$</parameterId>
+			<qualifierId>25%</qualifierId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>$TIMESERIESTYPE$</timeSeriesType>
+			<timeStep unit="hour" multiplier="$TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>output_75</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>$PARAMETER$</parameterId>
+			<qualifierId>75%</qualifierId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>$TIMESERIESTYPE$</timeSeriesType>
+			<timeStep unit="hour" multiplier="$TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+
+	<!--Transformations-->
+	<transformation id="mean_transform">
+		<statisticsEnsemble>
+			<mean>
+				<inputVariable>
+					<variableId>input_variable</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>output_mean</variableId>
+				</outputVariable>
+			</mean>
+		</statisticsEnsemble>
+	</transformation>
+	<transformation id="min_transform">
+		<statisticsEnsemble>
+			<min>
+				<inputVariable>
+					<variableId>input_variable</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>output_min</variableId>
+				</outputVariable>
+			</min>
+		</statisticsEnsemble>
+	</transformation>
+	<transformation id="max_transform">
+		<statisticsEnsemble>
+			<max>
+				<inputVariable>
+					<variableId>input_variable</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>output_max</variableId>
+				</outputVariable>
+			</max>
+		</statisticsEnsemble>
+	</transformation>
+	<transformation id="25_transform">
+		<statisticsEnsemble>
+			<percentileExceedence>
+				<inputVariable>
+					<variableId>input_variable</variableId>
+				</inputVariable>
+				<value>25</value>
+				<outputVariable>
+					<variableId>output_25</variableId>
+				</outputVariable>
+			</percentileExceedence>
+		</statisticsEnsemble>
+	</transformation>
+	<transformation id="75_transform">
+		<statisticsEnsemble>
+			<percentileExceedence>
+				<inputVariable>
+					<variableId>input_variable</variableId>
+				</inputVariable>
+				<value>75</value>
+				<outputVariable>
+					<variableId>output_75</variableId>
+				</outputVariable>
+			</percentileExceedence>
+		</statisticsEnsemble>
+	</transformation>
+</transformationModule>

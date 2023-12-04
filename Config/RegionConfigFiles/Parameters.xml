@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
+<parameterGroups version="1.0" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews
+http://fews.wldelft.nl/schemas/version1.0/parameters.xsd">
+	<parameterGroup id="Height">
+		<parameterType>instantaneous</parameterType>
+		<unit>m</unit>
+		<valueResolution>0.001</valueResolution>
+		<usesDatum>true</usesDatum>
+		<parameter id="HF.obs" name="HF.obs">
+			<shortName>HF.obs</shortName>
+			<description>Height, stage, elevation of the water surface within the forebay of a generating station above a datum</description>
+		</parameter>
+		<parameter id="HG.obs" name="HG.obs">
+			<shortName>HG.obs</shortName>
+			<description>Height, stage, elevation of the water surface at a specified station above a datum</description>
+		</parameter>
+		<parameter id="HT.obs" name="HT.obs">
+			<shortName>HT.obs</shortName>
+			<description>Height, stage, elevation of the water surface within the tailrace of a generating station above a datum</description>
+		</parameter>
+		<parameter id="HF.sim" name="HF.sim">
+			<shortName>HF.sim</shortName>
+			<description>Height, stage, elevation of the water surface within the forebay of a generating station above a datum</description>
+		</parameter>
+		<parameter id="HG.sim" name="HG.sim">
+			<shortName>HG.sim</shortName>
+			<description>Height, stage, elevation of the water surface at a specified station above a datum</description>
+		</parameter>
+		<parameter id="HT.sim" name="HT.sim">
+			<shortName>HT.sim</shortName>
+			<description>Height, stage, elevation of the water surface within the tailrace of a generating station above a datum</description>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Discharge">
+		<parameterType>instantaneous</parameterType>
+		<unit>m3/s</unit>
+		<valueResolution>0.001</valueResolution>
+		<parameter id="QI.obs" name="QI.obs">
+			<shortName>QI.obs</shortName>
+			<description>Inflow</description>
+		</parameter>
+		<parameter id="QI.sim" name="QI.sim">
+			<shortName>QI.sim</shortName>
+			<description>Inflow</description>
+		</parameter>
+		<parameter id="QL.obs" name="QL.obs">
+			<shortName>QL.obs</shortName>
+			<description>Local Flow (Observed)</description>
+		</parameter>
+		<parameter id="QL.sim" name="QL.sim">
+			<shortName>QLsim</shortName>
+			<description>Local Flow (Simulated)</description>
+		</parameter>
+		<parameter id="QO.obs" name="QO.obs">
+			<shortName>QO.obs</shortName>
+			<description>Outflow (Observed)</description>
+		</parameter>
+		<parameter id="QO.sim" name="QO.sim">
+			<shortName>QO.obs</shortName>
+			<description>Outflow (Simulated)</description>
+		</parameter>
+		<parameter id="QS.obs" name="QS.obs">
+			<shortName>QS.obs</shortName>
+			<description>Discharge, spillway - flow measured at a structure which bypasses the streamflow at the dam after the reservoir has been filled to capacity.</description>
+		</parameter>
+		<parameter id="QS.sim" name="QS.sim">
+			<shortName>QS.sim</shortName>
+			<description>Discharge, spillway - flow measured at a structure which bypasses the streamflow at the dam after the reservoir has been filled to capacity.</description>
+		</parameter>
+		<parameter id="QR.obs" name="QR.obs">
+			<shortName>QR.obs</shortName>
+			<description>Discharge, river – flow measured at points along a watercourse</description>
+		</parameter>
+		<parameter id="QR.sim" name="QR.sim">
+			<shortName>QR.sim </shortName>
+			<description>Discharge, river – model simulated flow</description>
+		</parameter>
+		<parameter id="QR.sim.hist" name="QR.sim.hist">
+			<shortName>QR.sim.hist </shortName>
+			<description>Discharge, river – model simulated historical flow</description>
+		</parameter>
+		<parameter id="QR.sim.fc" name="QR.sim.fc">
+			<shortName>QR.sim.fc </shortName>
+			<description>Discharge, river – model forecast flow</description>
+		</parameter>
+		<parameter id="QT.obs" name="QT.obs">
+			<shortName>QT.obs</shortName>
+			<description>Discharge, total – the total flow measured through the turbines and spillway structure at a generating station (QT = QG + QS)</description>
+		</parameter>
+		<parameter id="QT.sim" name="QT.sim">
+			<shortName>QT..sim</shortName>
+			<description>Discharge, total – the total flow measured through the turbines and spillway structure at a generating station (QT = QG + QS)</description>
+		</parameter>
+		<parameter id="QG.obs" name="QG.obs">
+			<shortName>QG.obs</shortName>
+			<description>Discharge from power generation - flow passing through turbines generating power.</description>
+		</parameter>
+		<parameter id="QG.sim" name="QG.sim">
+			<shortName>QG.sim</shortName>
+			<description>Discharge from power generation - flow passing through turbines generating power.</description>
+		</parameter>
+			<parameter id="QR.fcst" name="QR.fcst">
+			<shortName>QR.fcst</shortName>
+			<description>Discharge - Forecast</description>
+		</parameter>
+
+	</parameterGroup>
+	<parameterGroup id="Precipitation">
+		<parameterType>accumulative</parameterType>
+		<unit>mm</unit>
+		<valueResolution>0.0001</valueResolution>
+		<parameter id="PC.obs" name="PC.obs">
+			<shortName>PC.obs</shortName>
+			<description>Precipitation, accumulator - summation of precipitation collected beginning at a specified date</description>
+		</parameter>
+		<parameter id="PP.obs" name="PP.obs">
+			<shortName>PP.obs</shortName>
+			<description>Precipitation (secondary), accumulator - summation of precipitation collected beginning at a specified date</description>
+		</parameter>
+		<parameter id="PU.obs" name="PU.obs">
+			<shortName>PU.obs</shortName>
+			<description>Precipitation (tertiary), accumulator - summation of precipitation collected beginning at a specified date</description>
+		</parameter>
+		<parameter id="PC.sim" name="PC.sim">
+			<shortName>PC.sim</shortName>
+		</parameter>
+		<parameter id="PC.nwp" name="PC.nwp">
+			<shortName>PC.nwp</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Precipitation (acc)">
+		<parameterType>accumulative</parameterType>
+		<unit>mm</unit>
+		<valueResolution>0.01</valueResolution>
+		<parameter id="PC.obs.acc" name="Accumulated Precipitation (Observed)">
+			<shortName>PC.obs.acc</shortName>
+		</parameter>
+		<parameter id="PC.nwp.acc" name="Accumulated Precipitation (NWP)">
+			<shortName>PC.nwp.acc</shortName>
+		</parameter>
+		<parameter id="PC.sim.acc" name="Accumulated Precipitation (Model)">
+			<shortName>PC.sim.acc</shortName>
+		</parameter>
+		<parameter id="PC.forecast.acc" name="Accumulated Precipitation (forecast)">
+			<shortName>PC.forecast.acc</shortName>
+		</parameter>
+		<parameter id="PP.obs.acc" name="Accumulated Precipitation (Observed) (Secondary)">
+			<shortName>PP.obs.acc</shortName>
+		</parameter>
+		<parameter id="PP.nwp.acc" name="Accumulated Precipitation (NWP) (Secondary)">
+			<shortName>PP.nwp.acc</shortName>
+		</parameter>
+		<parameter id="PP.sim.acc" name="Accumulated Precipitation (Model) (Secondary)">
+			<shortName>PP.sim.acc</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Runoff">
+		<parameterType>instantaneous</parameterType>
+		<unit>mm</unit>
+		<valueResolution>0.01</valueResolution>
+		<parameter id="ROF.sim" name="ROF (Total runoff from the surface and subsurface)">
+			<shortName>ROF.sim</shortName>
+			<description>Total runoff from the surface and subsurface</description>
+		</parameter>
+		<parameter id="RFF.sim" name="RFF (Total runoff to the channel)">
+			<shortName>RFF.sim</shortName>
+			<description>Total runoff to the channel</description>
+		</parameter>
+		<parameter id="RCHG.sim" name="RCHG (Total recharge to the channel)">
+			<shortName>RCHG.sim</shortName>
+			<description>Total recharge to the channel</description>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Soil Moisture">
+		<parameterType>mean</parameterType>
+		<unit>mm</unit>
+		<valueResolution>0.01</valueResolution>
+		<parameter id="SMI.sim" name="Soil Moisture (Model)">
+			<shortName>SMI.sim</shortName>
+		</parameter>
+		<parameter id="SMI.mod" name="Soil Moisture (Modifier)">
+			<shortName>SMI.mod</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Evaporation">
+		<parameterType>accumulative</parameterType>
+		<unit>mm</unit>
+		<valueResolution>0.01</valueResolution>
+		<parameter id="ET.sim.acc" name="Accumulated Evaporation (Model)">
+			<shortName>ET.sim.acc</shortName>
+		</parameter>
+		<parameter id="PET.obs" name="Potential Evapotranspiration">
+			<shortName>PET.obs</shortName>
+		</parameter>
+		<parameter id="PET.sim" name="Potential Evapotranspiration">
+			<shortName>PET.sim</shortName>
+		</parameter>
+		<parameter id="PET.forecast" name="Potential Evapotranspiration">
+			<shortName>PET.forecast</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Snow Water Equivalent">
+		<parameterType>instantaneous</parameterType>
+		<unit>mm</unit>
+		<valueResolution>0.01</valueResolution>
+		<parameter id="SWE.obs" name="SW.obs">
+			<shortName>SWE.obs</shortName>
+			<description>Snow Water Equivalent (Observed)</description>
+		</parameter>
+		<parameter id="SWE.sim" name="SWE.sim">
+			<shortName>SWE.sim</shortName>
+			<description>Snow Water Equivalent (Model)</description>
+		</parameter>
+		<parameter id="SWE.sat" name="Snow Water Equivalent (Satellite)">
+			<shortName>SW.sat</shortName>
+		</parameter>
+		<parameter id="SWE.add" name="Snow Water Equivalent (additive mod)">
+			<shortName>SWE.add</shortName>
+		</parameter>
+		<parameter id="SWE.mlt" name="Snow Melt">
+			<shortName>SWE.mlt</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Snow Depth">
+		<parameterType>instantaneous</parameterType>
+		<unit>cm</unit>
+		<valueResolution>0.01</valueResolution>
+		<parameter id="SD.obs" name="SD.obs">
+			<shortName>SD.obs</shortName>
+			<description>Snow Depth (Observed)</description>
+		</parameter>
+		<parameter id="SD.sim" name="SD.sim">
+			<shortName>SD.sim</shortName>
+			<description>Snow Depth (Model)</description>
+		</parameter>
+		<parameter id="SD.forecast" name="Snow Depth (Model Forecast)">
+			<shortName>SD.forecast</shortName>
+		</parameter>
+		<parameter id="SD.sat" name="Snow Depth (Satellite)">
+			<shortName>SD.sat</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Snow Density">
+		<parameterType>instantaneous</parameterType>
+		<unit>cm</unit>
+		<valueResolution>0.01</valueResolution>
+		<parameter id="SS.obs" name="Snow Density (Observed)">
+			<shortName>SS.obs</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Snow Melt">
+		<parameterType>accumulative</parameterType>
+		<unit>mm</unit>
+		<valueResolution>0.01</valueResolution>
+		<parameter id="SM.sim" name="Snow Melt (Model)">
+			<shortName>SM.sim</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Snowpack Temperature">
+		<parameterType>instantaneous</parameterType>
+		<unit>oC</unit>
+		<valueResolution>0.1</valueResolution>
+		<parameter id="SE.sim" name="Snow Temperature (Model)">
+			<shortName>SE.sim</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Snow Cover Area">
+		<parameterType>instantaneous</parameterType>
+		<unit>%</unit>
+		<valueResolution>0.01</valueResolution>
+		<parameter id="SCA.sim" name="Snow Cover Area (Model)">
+			<shortName>SCA.sim</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Snow Water Equivalent Multiplier">
+		<parameterType>instantaneous</parameterType>
+		<unit>-</unit>
+		<valueResolution>0.01</valueResolution>
+		<parameter id="SWE.mult" name="Snow Water Equivalent (multiplicative mod)">
+			<shortName>SWE.mult</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Temperature">
+		<parameterType>instantaneous</parameterType>
+		<unit>oC</unit>
+		<valueResolution>0.1</valueResolution>
+		<parameter id="TA.obs" name="TA.obs">
+			<shortName>TA.obs</shortName>
+		</parameter>
+		<parameter id="TA.nwp" name="TA.nwp">
+			<shortName>TA.nwp</shortName>
+		</parameter>
+		<parameter id="TA.sim" name="TA.sim">
+			<shortName>TA.sim</shortName>
+		</parameter>
+		<parameter id="TAmax.obs" name="TAmax.obs">
+			<shortName>TAmax.obs</shortName>
+		</parameter>
+		<parameter id="TAmin.obs" name="TAmin.obs">
+			<shortName>TAmin.obs</shortName>
+		</parameter>
+		<parameter id="TAmin.forecast" name="TAmin.forecast">
+			<shortName>TAmin.forecast</shortName>
+		</parameter>
+		<parameter id="TAmax.forecast" name="TAmax.forecast">
+			<shortName>TAmax.forecast</shortName>
+		</parameter>
+		<parameter id="TA.forecast" name="TA.forecast">
+			<shortName>TA.forecast</shortName>
+		</parameter>
+		<parameter id="TA.corr" name="TA.corr">
+			<shortName>TA.corr</shortName>
+		</parameter>
+		<parameter id="TG.obs" name="TG.obs">
+			<shortName>TG.obs</shortName>
+			<description>Temperature, secondary temperature of water at a specified depth</description>
+		</parameter>
+		<parameter id="TW.obs" name="TW.obs">
+			<shortName>TW.obs</shortName>
+			<description>Temperature, temperature of water at a specified depth</description>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Melt Rate">
+		<parameterType>instantaneous</parameterType>
+		<unit>-</unit>
+		<valueResolution>0.01</valueResolution>
+		<parameter id="MR.obs" name="Melt Rate (observed)">
+			<shortName>MR.obs</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Wind speed">
+		<parameterType>instantaneous</parameterType>
+		<unit>m/s</unit>
+		<valueResolution>0.01</valueResolution>
+		<parameter id="US" name="Wind, speed">
+			<shortName>US</shortName>
+			<description>Wind, speed – 2 minute average before the top of the hour – at 10 m height</description>
+		</parameter>
+		<parameter id="US.nwp" name="Wind, speed">
+			<shortName>US.nwp</shortName>
+			<description>Wind, speed – 2 minute average before the top of the hour – at 10 m height (NWP)</description>
+		</parameter>
+		<parameter id="US2" name="Wind, speed">
+			<shortName>US2</shortName>
+			<description>Wind, speed – 2 minute average before the top of the hour – at 10 m height</description>
+		</parameter>
+		<parameter id="US10" name="Wind, speed">
+			<shortName>US10</shortName>
+			<description>Wind, speed – 2 minute average before the top of the hour – at 10 m height</description>
+		</parameter>
+		<parameter id="UG" name="Wind, gust speed">
+			<shortName>UG</shortName>
+			<description>Wind, gust speed – only recorded when certain criteria are met</description>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Wind direction">
+		<parameterType>instantaneous</parameterType>
+		<unit>degrees</unit>
+		<valueResolution>0.01</valueResolution>
+		<parameter id="UD" name="Wind, direction">
+			<shortName>UD</shortName>
+			<description>Wind, direction – 2 minute average before the top of the hour – at 10 m height</description>
+		</parameter>
+		<parameter id="UD2" name="Wind, direction">
+			<shortName>UD2</shortName>
+			<description>Wind, direction – 2 minute average before the top of the hour – at 10 m height</description>
+		</parameter>
+		<parameter id="UD10" name="Wind, direction">
+			<shortName>UD10</shortName>
+			<description>Wind, direction – 2 minute average before the top of the hour – at 10 m height</description>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Pressure">
+		<parameterType>instantaneous</parameterType>
+		<unit>kPa</unit>
+		<valueResolution>0.01</valueResolution>
+		<parameter id="PA" name="Pressure">
+			<shortName>PA</shortName>
+		</parameter>
+		<parameter id="PA.nwp" name="Pressure (NWP)">
+			<shortName>PA.nwp</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Radiation">
+		<parameterType>accumulative</parameterType>
+		<unit>W/m2-h</unit>
+		<valueResolution>0.01</valueResolution>
+		<parameter id="RS" name="Shortwave Radiation">
+			<shortName>RS</shortName>
+		</parameter>
+		<parameter id="RSext" name="Extraterrestial Shortwave Radiation (NWP)">
+			<shortName>RSext</shortName>
+		</parameter>
+		<parameter id="RS.nwp" name="Shortwave Radiation (NWP)">
+			<shortName>RS.nwp</shortName>
+		</parameter>
+		<parameter id="RSext.nwp" name="Extraterrestial Shortwave Radiation (NWP)">
+			<shortName>RSext.nwp</shortName>
+		</parameter>
+		<parameter id="RL" name="Longwave Radiation">
+			<shortName>RL</shortName>
+		</parameter>
+		<parameter id="RL.nwp" name="Longwave Radiation (NWP)">
+			<shortName>RL.nwp</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Open water percentage">
+		<parameterType>instantaneous</parameterType>
+		<unit>%</unit>
+		<valueResolution>0.01</valueResolution>
+		<parameter id="OP" name="Open water percentage">
+			<shortName>OP</shortName>
+		</parameter>
+		<parameter id="OP.obs" name="Open water percentage (observed)">
+			<shortName>OP</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Rating Curve Parameter">
+		<parameterType>instantaneous</parameterType>
+		<unit>m3/s</unit>
+		<valueResolution>0.01</valueResolution>
+		<parameter id="OW" name="Rating curve flow parameter">
+			<shortName>OW</shortName>
+		</parameter>
+		<parameter id="OW.obs" name="Rating curve flow parameter (observed)">
+			<shortName>OW</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Specific humidity">
+		<parameterType>instantaneous</parameterType>
+		<unit>kg/kg</unit>
+		<valueResolution>0.00000000000000000001</valueResolution>
+		<parameter id="XS" name="Specific humidity">
+			<shortName>XS</shortName>
+		</parameter>
+		<parameter id="XS.nwp" name="Specific humidity (NWP">
+			<shortName>XS.nwp</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Relative humidity">
+		<parameterType>instantaneous</parameterType>
+		<unit>kg/kg</unit>
+		<valueResolution>0.00000000000000000001</valueResolution>
+		<parameter id="XR" name="Relative humidity">
+			<shortName>XR</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Dimensionless">
+		<parameterType>instantaneous</parameterType>
+		<unit>-</unit>
+		<valueResolution>0.01</valueResolution>
+		<parameter id="PC.nwp.multiplier" name="PC.nwp.multiplier">
+			<shortName>PC.nwp.multiplier</shortName>
+		</parameter>
+		<parameter id="PC.nwp.incrementer" name="PC.nwp.incrementer">
+			<shortName>PC.nwp.incrementer</shortName>
+		</parameter>
+		<parameter id="TA.nwp.multiplier" name="TA.nwp.multiplier">
+			<shortName>TA.nwp.multiplier</shortName>
+		</parameter>
+		<parameter id="TA.nwp.incrementer" name="TA.nwp.incrementer">
+			<shortName>TA.nwp.incrementer</shortName>
+		</parameter>
+		<parameter id="WF.weight" name="WF.weight">
+			<shortName>WF.weight</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Reservoir Storage">
+		<parameterType>instantaneous</parameterType>
+		<unit>CMSD</unit>
+		<valueResolution>0.001</valueResolution>
+		<parameter id="LS.obs" name="Storage">
+			<shortName>LS.obs</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Performance Indicators PC">
+		<parameterType>instantaneous</parameterType>
+		<unit>mm</unit>
+		<valueResolution>0.01</valueResolution>
+		<parameter id="PC.bias" name="Bias">
+			<shortName>PC.bias</shortName>
+		</parameter>
+		<parameter id="PC.rmse" name="Root Mean Squared Error">
+			<shortName>PC.rmse</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="Performance Indicators TA">
+		<parameterType>instantaneous</parameterType>
+		<unit>oC</unit>
+		<valueResolution>0.1</valueResolution>
+		<parameter id="TA.bias" name="Bias">
+			<shortName>TA.bias</shortName>
+		</parameter>
+		<parameter id="TA.rmse" name="Root Mean Squared Error">
+			<shortName>TA.rmse</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="dummy" name="dummy parameter">
+		<parameterType>accumulative</parameterType>
+		<unit/>
+		<valueResolution>0.1</valueResolution>
+		<parameter id="dummy" name="dummy">
+			<shortName>dummy</shortName>
+		</parameter>
+	</parameterGroup>
+</parameterGroups>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 sp1 (http://www.altova.com) by Afdeling ICT (Stichting Deltares) -->
+<generalAdapterRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews https://fewsdocs.deltares.nl/schemas/version1.0/generalAdapterRun.xsd">
+	<general>
+		<rootDir>$REGION_HOME$/Modules/pysteps</rootDir>
+		<workDir>%ROOT_DIR%/scripts</workDir>
+		<exportDir>%ROOT_DIR%/Input</exportDir>
+		<exportIdMap>IdMapRadarNowcast</exportIdMap>
+		<importDir>%ROOT_DIR%/Output</importDir>
+		<importIdMap>IdMapRadarNowcast</importIdMap>
+		<dumpFileDir>%REGION_HOME%/Dumpfiles</dumpFileDir>
+		<dumpDir>%WORK_DIR%</dumpDir>
+		<diagnosticFile>%ROOT_DIR%/Logs/pysteps_nowcast_log.xml</diagnosticFile>
+		<modelTimeStep unit="minute" multiplier="6"/>
+	</general>
+	<activities>
+		<startUpActivities>
+			<purgeActivity>
+				<filter>%ROOT_DIR%/Input/*.*</filter>
+			</purgeActivity>
+			<purgeActivity>
+				<filter>%ROOT_DIR%/Output/*.*</filter>
+			</purgeActivity>
+			<purgeActivity>
+				<filter>%ROOT_DIR%/Logs/*.*</filter>
+			</purgeActivity>
+		</startUpActivities>
+		<exportActivities>
+			<exportNetcdfActivity>
+				<exportFile>Radar_data.nc</exportFile>
+				<netcdfFormat>netcdf4</netcdfFormat>
+				<timeSeriesSets>
+					<timeSeriesSet>
+						<moduleInstanceId>$SOURCE_MODULEINSTANCE_ID$</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>PC.sim</parameterId>
+						<locationId>$GRID$</locationId>
+						<timeSeriesType>$TIMESERIES_TYPE$</timeSeriesType>
+						<timeStep multiplier="6" unit="minute"/>
+						<relativeViewPeriod unit="hour" start="-2" end="0" startOverrulable="true" endOverrulable="false"/>
+						<readWriteMode>read only</readWriteMode>
+					</timeSeriesSet>
+				</timeSeriesSets>
+				<checkMissing>true</checkMissing>
+			</exportNetcdfActivity>
+			<exportRunFileActivity>
+				<exportFile>radar_nowcast_settings.xml</exportFile>
+				<properties>
+					<string key="import_parameter_id" value="$IMPORT_PARAMETER_ID$"/>
+					<string key="export_parameter_id" value="$EXPORT_PARAMETER_ID$"/>
+					<bool key="ensemble" value="$ENSEMBLE_BOOL$"/>
+					<int key="ensemble_members" value="$ENSEMBLE_MEMBERS$"/>
+					<int key="n_lead_times_hr" value="$N_LEAD_TIMES_HR$"/>
+					<int key="num_cores" value="$NUM_CORES$"/>
+				</properties>
+			</exportRunFileActivity>
+		</exportActivities>
+		<executeActivities>
+			<executeActivity>
+				<command>
+					<executable>$PYTHON_EXE$</executable>
+				</command>
+				<arguments>
+					<argument>EnsembleNowcast_pysteps_FEWS.py</argument>
+				</arguments>
+				<logFile>
+					<file>%ROOT_DIR%/Logs/%TIME0%_log.txt</file>
+					<errorLinePattern>*ERROR*</errorLinePattern>
+					<debugLinePattern>*</debugLinePattern>
+				</logFile>
+				<timeOut>1800000</timeOut>
+				<ignoreDiagnostics>true</ignoreDiagnostics>
+				<ignoreExitCode>true</ignoreExitCode>
+			</executeActivity>
+		</executeActivities>
+		<importActivities>
+			<importNetcdfActivity>
+				<importFile>%ROOT_DIR%/output/%TIME0%_nowcast.nc</importFile>
+				<timeSeriesSets>
+					<timeSeriesSet>
+						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>PC.forecast.acc</parameterId>
+						<locationId>$GRID$</locationId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep multiplier="6" unit="minute"/>
+						<readWriteMode>add originals</readWriteMode>
+						<ensembleId>$ENSEMBLE_ID$</ensembleId>
+					</timeSeriesSet>
+				</timeSeriesSets>
+			</importNetcdfActivity>
+		</importActivities>
+	</activities>
+</generalAdapterRun>

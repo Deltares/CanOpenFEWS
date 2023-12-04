@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 sp1 (http://www.altova.com) by Afdeling ICT (Stichting Deltares) -->
+<transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd" version="1.0">
+	<variable>
+		<variableId>fine_dem</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$INPUTTIMESERIES_DEM$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>$PARAMETER_DEM$</parameterId>
+			<locationId>$grid_id$</locationId>
+			<timeSeriesType>$TIMESERIESTYPE$</timeSeriesType>
+			<timeStep unit="$timestep_unit$" multiplier="$timestep$"/>
+			<cycle unit="$timestep_unit$" multiplier="$timestep$"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME_UPDATE$" startOverrulable="true" end="$ENDTIME_UPDATE$"/>
+			<readWriteMode>read only</readWriteMode>
+			<ensembleId>main</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>coarse_dem</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$INPUTTIMESERIES_DEM$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>$PARAMETER_DEM$</parameterId>
+			<locationId>$coarse_dem$</locationId>
+			<timeSeriesType>$TIMESERIESTYPE$</timeSeriesType>
+			<timeStep unit="$timestep_unit$" multiplier="$timestep$"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME_UPDATE$" startOverrulable="true" end="$ENDTIME_UPDATE$"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>main</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>T_in</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$SERIES2$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>$PARAMETER_RDRS$</parameterId>
+			<locationId>$coarse_dem$</locationId>
+			<timeSeriesType>$TIMESERIESTYPE2$</timeSeriesType>
+			<timeStep unit="$timestep_unit$" multiplier="$timestep$"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME_UPDATE$" startOverrulable="true" end="$ENDTIME_UPDATE$"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>T_Temp_coarse</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$SERIES$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>$PARAMETER_RDRS$</parameterId>
+			<locationId>$coarse_dem$</locationId>
+			<timeSeriesType>$TIMESERIESTYPE$</timeSeriesType>
+			<timeStep unit="$timestep_unit$" multiplier="$timestep$"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME_UPDATE$" startOverrulable="true" end="$ENDTIME_UPDATE$"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>T_Temp_fine</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$SERIES$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>$PARAMETER_RDRS$</parameterId>
+			<locationId>$grid_id$</locationId>
+			<timeSeriesType>$TIMESERIESTYPE$</timeSeriesType>
+			<timeStep unit="$timestep_unit$" multiplier="$timestep$"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME_UPDATE$" startOverrulable="true" end="$ENDTIME_UPDATE$"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>T_out</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$OUTPUTTIMESERIES$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>$PARAMETER_RDRS$</parameterId>
+			<locationId>$grid_id$</locationId>
+			<timeSeriesType>$TIMESERIESTYPE$</timeSeriesType>
+			<timeStep unit="$timestep_unit$" multiplier="$timestep$"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME_UPDATE$" startOverrulable="true" end="$ENDTIME_UPDATE$"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<transformation id="fine2coarse">
+		<interpolationSpatial>
+			<average>
+				<inputVariable>
+					<variableId>fine_dem</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>coarse_dem</variableId>
+				</outputVariable>
+			</average>
+		</interpolationSpatial>
+	</transformation>
+	<transformation id="T_lapse_rate1">
+		<user>
+			<simple>
+				<expression>T_in+coarse_dem*0.65/100.0</expression>
+				<outputVariable>
+					<variableId>T_Temp_coarse</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="T_lapse_rate2">
+		<interpolationSpatial>
+			<closestDistance>
+				<inputVariable>
+					<variableId>T_Temp_coarse</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>T_Temp_fine</variableId>
+				</outputVariable>
+			</closestDistance>
+		</interpolationSpatial>
+	</transformation>
+	<transformation id="T_lapse_rate3">
+		<user>
+			<simple>
+				<expression>T_Temp_fine-fine_dem*0.65/100</expression>
+				<outputVariable>
+					<variableId>T_out</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+</transformationModule>

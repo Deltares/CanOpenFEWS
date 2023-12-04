@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- édité avec XMLSpy v2017 rel. 3 (http://www.altova.com) par Dominic Roussel (MIN. DU DEV. DURABLE, DE L'ENV) -->
+<modifierDisplay xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/modifierDisplay.xsd">
+	<showImportButton>false</showImportButton>
+	<showExportButton>false</showExportButton>
+	<showCreateModifierButton>true</showCreateModifierButton>
+	<showApplyToButton>false</showApplyToButton>
+	<createModifierButtons>
+		<modifierId>MultiplyPC_Historic</modifierId>
+		<modifierId>AdjustTA_Historic</modifierId>
+		<modifierId>MultiplyPC_RDPS</modifierId>
+		<modifierId>AdjustTA_RDPS</modifierId>
+		<modifierId>MultiplyPC_GDPS</modifierId>
+		<modifierId>AdjustTA_GDPS</modifierId>
+		<modifierId>MultiplyPC_REPS</modifierId>
+		<modifierId>AdjustTA_REPS</modifierId>
+	</createModifierButtons>
+	<timeSeriesModifiersDisplayConfig>
+		<showTimeShiftModifierButtons>true</showTimeShiftModifierButtons>
+		<showTablePanel>true</showTablePanel>
+		<showChartPanel>false</showChartPanel>
+		<defaultOperationType>Timeseries</defaultOperationType>
+	</timeSeriesModifiersDisplayConfig>
+</modifierDisplay>

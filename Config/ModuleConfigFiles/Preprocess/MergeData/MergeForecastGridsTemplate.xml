@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 sp1 (http://www.altova.com) by Afdeling ICT (Stichting Deltares) -->
+<transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd" version="1.0">
+	<!--This module merges the historic data with recent RDPS forecasts and RDPA precipitation to create Model Input Data-->
+	<!--Input-->
+	<variable>
+		<variableId>Historic_PC</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$HISTORICMODULEINSTANCE$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.obs</parameterId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="$DAY_TIMESTEP$"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME$" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>main</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Historic_TA_max</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$HISTORICMODULEINSTANCE$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmax.obs</parameterId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="$DAY_TIMESTEP$"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME$" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>main</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Historic_TA_min</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$HISTORICMODULEINSTANCE$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmin.obs</parameterId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="$DAY_TIMESTEP$"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME$" end="0" startOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>main</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<!--Forecast Timeseries-->
+	<variable>
+		<variableId>Forecast_PC</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$FORECASTMODULEINSTANCE$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep id="$DAY_TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Forecast_TA_max</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$FORECASTMODULEINSTANCE$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<qualifierId>max</qualifierId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep id="$DAY_TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Forecast_TA_min</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$FORECASTMODULEINSTANCE$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<qualifierId>min</qualifierId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep id="$DAY_TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<!--Timeseries for Model-->
+	<variable>
+		<variableId>Model_PC</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="$DAY_TIMESTEP$"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME$" end="$ENDTIME$" startOverrulable="true" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>$ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Model_TA_max_temp</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<qualifierId>max</qualifierId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep id="$DAY_TIMESTEP$"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME$" end="$ENDTIME$" startOverrulable="true" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>$ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Model_TA_min_temp</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<qualifierId>min</qualifierId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>temporary</timeSeriesType>
+			<timeStep id="$DAY_TIMESTEP$"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME$" end="$ENDTIME$" startOverrulable="true" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>$ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Model_TA_max</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<qualifierId>max</qualifierId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="$DAY_TIMESTEP$"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME$" end="$ENDTIME$" startOverrulable="true" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>$ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Model_TA_min</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<qualifierId>min</qualifierId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep id="$DAY_TIMESTEP$"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME$" end="$ENDTIME$" startOverrulable="true" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>$ENSEMBLE$</ensembleId>
+		</timeSeriesSet>
+	</variable>
+	<!--Transformations-->
+	<!-- PC Merge -->
+	<transformation id="merge_PC">
+		<merge>
+			<simple>
+				<inputVariable>
+					<variableId>Forecast_PC</variableId>
+				</inputVariable>
+				<inputVariable>
+					<variableId>Historic_PC</variableId>
+				</inputVariable>
+				<!-- Additional Gap Fill of Zero-->
+				<fillGapConstant>0</fillGapConstant>
+				<outputVariable>
+					<variableId>Model_PC</variableId>
+				</outputVariable>
+			</simple>
+		</merge>
+	</transformation>
+	<!--TA Merge -->
+	<transformation id="merge_TA_max">
+		<merge>
+			<simple>
+				<inputVariable>
+					<variableId>Forecast_TA_max</variableId>
+				</inputVariable>
+				<inputVariable>
+					<variableId>Historic_TA_max</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Model_TA_max_temp</variableId>
+				</outputVariable>
+			</simple>
+		</merge>
+	</transformation>
+	<transformation id="merge_TA_min">
+		<merge>
+			<simple>
+				<inputVariable>
+					<variableId>Forecast_TA_min</variableId>
+				</inputVariable>
+				<inputVariable>
+					<variableId>Historic_TA_min</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Model_TA_min_temp</variableId>
+				</outputVariable>
+			</simple>
+		</merge>
+	</transformation>
+	<transformation id="interpolate_TA_max">
+		<interpolationSerial>
+			<extrapolateConstant>
+				<inputVariable>
+					<variableId>Model_TA_max_temp</variableId>
+				</inputVariable>
+				<extrapolateDirection>both</extrapolateDirection>
+				<outputVariable>
+					<variableId>Model_TA_max</variableId>
+				</outputVariable>
+			</extrapolateConstant>
+		</interpolationSerial>
+	</transformation>
+	<transformation id="interpolate_TA_min">
+		<interpolationSerial>
+			<extrapolateConstant>
+				<inputVariable>
+					<variableId>Model_TA_min_temp</variableId>
+				</inputVariable>
+				<extrapolateDirection>both</extrapolateDirection>
+				<outputVariable>
+					<variableId>Model_TA_min</variableId>
+				</outputVariable>
+			</extrapolateConstant>
+		</interpolationSerial>
+	</transformation>
+</transformationModule>

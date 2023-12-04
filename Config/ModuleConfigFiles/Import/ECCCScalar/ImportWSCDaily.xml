@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews
+http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
+	<import>
+		<general>
+			<importType>generalCSV</importType>
+			<serverUrl>https://dd.weather.gc.ca/hydrometric/csv/$REGION$/daily/$REGION$_$LOOP_LOCATION_ID$_daily_hydrometric.csv</serverUrl>
+			<table>
+				<locationColumn name="ID"/>
+				<dateTimeColumn name="Date" pattern="yyyy-MM-dd'T'HH:mm:ss"/>
+				<valueColumn name="Water Level / Niveau d'eau (m)" unit="m" parameterId="HG.obs"/>
+				<valueColumn name="Discharge / DÃ©bit (cms)" unit="m3/s" parameterId="QR.obs"/>
+			</table>
+			<idMapId>IdImportWSC</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<importTimeZone>
+				<timeZoneOffset>+00:00</timeZoneOffset>
+			</importTimeZone>
+			<dataFeedId>WSC_daily_server</dataFeedId>
+			<expiryTime unit="day" multiplier="365"/>
+			<skipFirstLinesCount>0</skipFirstLinesCount>
+		</general>
+		<tolerance timeUnit="minute" unitCount="1" parameterId="HG.obs"/>
+		<tolerance timeUnit="minute" unitCount="1" parameterId="QR.obs"/>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportWSC</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>HG.obs</parameterId>
+			<locationSetId>DownloadHydroStations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="5"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportWSC</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.obs</parameterId>
+			<locationSetId>DownloadHydroStations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="5"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</import>
+</timeSeriesImportRun>

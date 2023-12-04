@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
+	<import>
+		<!--<general>
+			<importType>GrayscaleImage</importType>
+			<folder>$SNOWCAST_IMPORT_FOLDER$</folder>
+			<fileNameObservationDateTimePattern>'swe_2500x2500_'yyyyMMddHHmm'.tif'</fileNameObservationDateTimePattern>
+			<idMapId>idImportSnowcast</idMapId>
+			<importTimeZone>
+				<timeZoneName>MST</timeZoneName>
+			</importTimeZone>
+			<dataFeedId>Import.Snowcast</dataFeedId>
+		</general>-->
+		<general>
+			<importType>ArcInfoAsciiGrid</importType>
+			<folder>$SNOWCAST_IMPORT_FOLDER$</folder>
+			<!--<fileNameObservationDateTimePattern>'swe_2500x2500_'yyyyMMddHHmm'.tif'</fileNameObservationDateTimePattern>-->
+			<idMapId>idImportSnowcast</idMapId>
+			<geoDatum>WGS 1984</geoDatum>
+<!--			<importTimeZone>
+				<timeZoneName>MST</timeZoneName>
+			</importTimeZone>
+			<dataFeedId>Import.Snowcast</dataFeedId>-->
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSnowcast</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>SWE.sim</parameterId>
+			<locationId>Snowcast_GWF</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<readWriteMode>add originals</readWriteMode>
+			<!--<synchLevel>6</synchLevel>-->
+		</timeSeriesSet>
+		<!--<externUnit parameterId="SWE.gwf" unit="-" />-->
+	</import>
+</timeSeriesImportRun>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.1">
+	<!-- Retrieve NWP grids from Environment Canada -->
+	<properties>
+		<!-- Input Grid-->
+		<string key="INPUTGRID" value="RDPA"/>
+		<!-- Input Module Instance ID-->
+		<string key="INPUTMODULEINSTANCE" value="ImportRDPA"/>
+		<!-- Output Grid-->
+		<string key="OUTPUTGRID" value="RDPA"/>
+		<!--Basin Location-->
+		<string key="BASINLOCATIONS" value="ProcessBasins"/>
+		<!--Station Locations-->
+		<string key="STATIONLOCATIONS" value="ModelMeteoStations"/>
+		<!--Starttime-->
+		<string key="STARTTIME" value="-7"/>
+		<!--Endtime-->
+		<string key="ENDTIME" value="0"/>
+		<!--Timeseries Type-->
+		<string key="TIMESERIESTYPE" value="external historical"/>
+		<!--Timeseries Type-->
+		<string key="TIMESTEP" value="6"/>
+		<!--Parameter Type-->
+		<string key="PARAMETER" value="PC.sim"/>
+		<!--Ensemble ID-->
+		<string key="ENSEMBLE" value="main"/>
+	</properties>	
+		<!-- Retrieve NWP grids from Environment Canada -->
+	<activity>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>RetrieveRDPA</moduleInstanceId>
+    </activity>
+	<activity>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>ImportRDPA</moduleInstanceId>
+	</activity>
+	<activity>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PreprocessRDPA</moduleInstanceId>
+		<moduleConfigFileName>PreprocessAccumulatedParametersNWPTemplate</moduleConfigFileName>
+	</activity>
+	<!-- Accumulate Precipitation-->
+		<activity>
+		<properties>
+			<string key="LOCATIONSET" value="ProcessBasins"/>
+			<string key="INPUTMODULEINSTANCE" value="PreprocessRDPA"/>
+			<string key="INPUTPARAMETER" value="PC.sim"/>
+			<string key="ACCUMPARAMETER" value="PC.sim.acc"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PreprocessRDPA</moduleInstanceId>
+		<moduleConfigFileName>AccumulateForecastPrecipTemplate</moduleConfigFileName>
+	</activity>
+</workflow>

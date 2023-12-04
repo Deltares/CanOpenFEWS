@@ -1,0 +1,1044 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 sp1 (http://www.altova.com) by Afdeling ICT (Stichting Deltares) -->
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
+	<import>
+		<general>
+			<importType>grib2</importType>
+			<folder>$IMPORT_FOLDER$/SREF</folder>
+			<fileNamePatternFilter>sref_arw.t??z.pgrb221.ctl.*.grib2</fileNamePatternFilter>
+			<idMapId>IdImportSREF</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<importTimeZone>
+				<timeZoneName>GMT+0</timeZoneName>
+			</importTimeZone>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>0</ensembleMemberId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>0</ensembleMemberId>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="kg m-2"/>
+		<externUnit parameterId="TA.nwp" unit="K"/>
+	</import>
+	<import>
+		<general>
+			<importType>grib2</importType>
+			<folder>$IMPORT_FOLDER$/SREF</folder>
+			<fileNamePatternFilter>sref_arw.t??z.pgrb221.n1.*.grib2</fileNamePatternFilter>
+			<idMapId>IdImportSREF</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<importTimeZone>
+				<timeZoneName>GMT+0</timeZoneName>
+			</importTimeZone>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>1</ensembleMemberId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>1</ensembleMemberId>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="kg m-2"/>
+		<externUnit parameterId="TA.nwp" unit="K"/>
+	</import>
+	<import>
+		<general>
+			<importType>grib2</importType>
+			<folder>$IMPORT_FOLDER$/SREF</folder>
+			<fileNamePatternFilter>sref_arw.t??z.pgrb221.n2.*.grib2</fileNamePatternFilter>
+			<idMapId>IdImportSREF</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<importTimeZone>
+				<timeZoneName>GMT+0</timeZoneName>
+			</importTimeZone>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>2</ensembleMemberId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>2</ensembleMemberId>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="kg m-2"/>
+		<externUnit parameterId="TA.nwp" unit="K"/>
+	</import>
+	<import>
+		<general>
+			<importType>grib2</importType>
+			<folder>$IMPORT_FOLDER$/SREF</folder>
+			<fileNamePatternFilter>sref_arw.t??z.pgrb221.n3.*.grib2</fileNamePatternFilter>
+			<idMapId>IdImportSREF</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<importTimeZone>
+				<timeZoneName>GMT+0</timeZoneName>
+			</importTimeZone>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>3</ensembleMemberId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>3</ensembleMemberId>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="kg m-2"/>
+		<externUnit parameterId="TA.nwp" unit="K"/>
+	</import>
+	<import>
+		<general>
+			<importType>grib2</importType>
+			<folder>$IMPORT_FOLDER$/SREF</folder>
+			<fileNamePatternFilter>sref_arw.t??z.pgrb221.n4.*.grib2</fileNamePatternFilter>
+			<idMapId>IdImportSREF</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<importTimeZone>
+				<timeZoneName>GMT+0</timeZoneName>
+			</importTimeZone>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>4</ensembleMemberId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>4</ensembleMemberId>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="kg m-2"/>
+		<externUnit parameterId="TA.nwp" unit="K"/>
+	</import>
+	<import>
+		<general>
+			<importType>grib2</importType>
+			<folder>$IMPORT_FOLDER$/SREF</folder>
+			<fileNamePatternFilter>sref_arw.t??z.pgrb221.n5.*.grib2</fileNamePatternFilter>
+			<idMapId>IdImportSREF</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<importTimeZone>
+				<timeZoneName>GMT+0</timeZoneName>
+			</importTimeZone>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>5</ensembleMemberId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>5</ensembleMemberId>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="kg m-2"/>
+		<externUnit parameterId="TA.nwp" unit="K"/>
+	</import>
+	<import>
+		<general>
+			<importType>grib2</importType>
+			<folder>$IMPORT_FOLDER$/SREF</folder>
+			<fileNamePatternFilter>sref_arw.t??z.pgrb221.n6.*.grib2</fileNamePatternFilter>
+			<idMapId>IdImportSREF</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<importTimeZone>
+				<timeZoneName>GMT+0</timeZoneName>
+			</importTimeZone>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>6</ensembleMemberId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>6</ensembleMemberId>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="kg m-2"/>
+		<externUnit parameterId="TA.nwp" unit="K"/>
+	</import>
+	<import>
+		<general>
+			<importType>grib2</importType>
+			<folder>$IMPORT_FOLDER$/SREF</folder>
+			<fileNamePatternFilter>sref_arw.t??z.pgrb221.p1.*.grib2</fileNamePatternFilter>
+			<idMapId>IdImportSREF</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<importTimeZone>
+				<timeZoneName>GMT+0</timeZoneName>
+			</importTimeZone>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>7</ensembleMemberId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>7</ensembleMemberId>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="kg m-2"/>
+		<externUnit parameterId="TA.nwp" unit="K"/>
+	</import>
+	<import>
+		<general>
+			<importType>grib2</importType>
+			<folder>$IMPORT_FOLDER$/SREF</folder>
+			<fileNamePatternFilter>sref_arw.t??z.pgrb221.p2.*.grib2</fileNamePatternFilter>
+			<idMapId>IdImportSREF</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<importTimeZone>
+				<timeZoneName>GMT+0</timeZoneName>
+			</importTimeZone>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>8</ensembleMemberId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>8</ensembleMemberId>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="kg m-2"/>
+		<externUnit parameterId="TA.nwp" unit="K"/>
+	</import>
+	<import>
+		<general>
+			<importType>grib2</importType>
+			<folder>$IMPORT_FOLDER$/SREF</folder>
+			<fileNamePatternFilter>sref_arw.t??z.pgrb221.p3.*.grib2</fileNamePatternFilter>
+			<idMapId>IdImportSREF</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<importTimeZone>
+				<timeZoneName>GMT+0</timeZoneName>
+			</importTimeZone>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>9</ensembleMemberId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>9</ensembleMemberId>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="kg m-2"/>
+		<externUnit parameterId="TA.nwp" unit="K"/>
+	</import>
+	<import>
+		<general>
+			<importType>grib2</importType>
+			<folder>$IMPORT_FOLDER$/SREF</folder>
+			<fileNamePatternFilter>sref_arw.t??z.pgrb221.p4.*.grib2</fileNamePatternFilter>
+			<idMapId>IdImportSREF</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<importTimeZone>
+				<timeZoneName>GMT+0</timeZoneName>
+			</importTimeZone>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>10</ensembleMemberId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>10</ensembleMemberId>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="kg m-2"/>
+		<externUnit parameterId="TA.nwp" unit="K"/>
+	</import>
+	<import>
+		<general>
+			<importType>grib2</importType>
+			<folder>$IMPORT_FOLDER$/SREF</folder>
+			<fileNamePatternFilter>sref_arw.t??z.pgrb221.p5.*.grib2</fileNamePatternFilter>
+			<idMapId>IdImportSREF</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<importTimeZone>
+				<timeZoneName>GMT+0</timeZoneName>
+			</importTimeZone>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>11</ensembleMemberId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>11</ensembleMemberId>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="kg m-2"/>
+		<externUnit parameterId="TA.nwp" unit="K"/>
+	</import>
+	<import>
+		<general>
+			<importType>grib2</importType>
+			<folder>$IMPORT_FOLDER$/SREF</folder>
+			<fileNamePatternFilter>sref_arw.t??z.pgrb221.p6.*.grib2</fileNamePatternFilter>
+			<idMapId>IdImportSREF</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<importTimeZone>
+				<timeZoneName>GMT+0</timeZoneName>
+			</importTimeZone>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>12</ensembleMemberId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>12</ensembleMemberId>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="kg m-2"/>
+		<externUnit parameterId="TA.nwp" unit="K"/>
+	</import>
+	<import>
+		<general>
+			<importType>grib2</importType>
+			<folder>$IMPORT_FOLDER$/SREF</folder>
+			<fileNamePatternFilter>sref_nmb.t??z.pgrb221.ctl.*.grib2</fileNamePatternFilter>
+			<idMapId>IdImportSREF</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<importTimeZone>
+				<timeZoneName>GMT+0</timeZoneName>
+			</importTimeZone>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>13</ensembleMemberId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>13</ensembleMemberId>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="kg m-2"/>
+		<externUnit parameterId="TA.nwp" unit="K"/>
+	</import>
+	<import>
+		<general>
+			<importType>grib2</importType>
+			<folder>$IMPORT_FOLDER$/SREF</folder>
+			<fileNamePatternFilter>sref_nmb.t??z.pgrb221.n1.*.grib2</fileNamePatternFilter>
+			<idMapId>IdImportSREF</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<importTimeZone>
+				<timeZoneName>GMT+0</timeZoneName>
+			</importTimeZone>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>14</ensembleMemberId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>14</ensembleMemberId>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="kg m-2"/>
+		<externUnit parameterId="TA.nwp" unit="K"/>
+	</import>
+	<import>
+		<general>
+			<importType>grib2</importType>
+			<folder>$IMPORT_FOLDER$/SREF</folder>
+			<fileNamePatternFilter>sref_nmb.t??z.pgrb221.n2.*.grib2</fileNamePatternFilter>
+			<idMapId>IdImportSREF</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<importTimeZone>
+				<timeZoneName>GMT+0</timeZoneName>
+			</importTimeZone>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>15</ensembleMemberId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>15</ensembleMemberId>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="kg m-2"/>
+		<externUnit parameterId="TA.nwp" unit="K"/>
+	</import>
+	<import>
+		<general>
+			<importType>grib2</importType>
+			<folder>$IMPORT_FOLDER$/SREF</folder>
+			<fileNamePatternFilter>sref_nmb.t??z.pgrb221.n3.*.grib2</fileNamePatternFilter>
+			<idMapId>IdImportSREF</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<importTimeZone>
+				<timeZoneName>GMT+0</timeZoneName>
+			</importTimeZone>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>16</ensembleMemberId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>16</ensembleMemberId>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="kg m-2"/>
+		<externUnit parameterId="TA.nwp" unit="K"/>
+	</import>
+	<import>
+		<general>
+			<importType>grib2</importType>
+			<folder>$IMPORT_FOLDER$/SREF</folder>
+			<fileNamePatternFilter>sref_nmb.t??z.pgrb221.n4.*.grib2</fileNamePatternFilter>
+			<idMapId>IdImportSREF</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<importTimeZone>
+				<timeZoneName>GMT+0</timeZoneName>
+			</importTimeZone>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>17</ensembleMemberId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>17</ensembleMemberId>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="kg m-2"/>
+		<externUnit parameterId="TA.nwp" unit="K"/>
+	</import>
+	<import>
+		<general>
+			<importType>grib2</importType>
+			<folder>$IMPORT_FOLDER$/SREF</folder>
+			<fileNamePatternFilter>sref_nmb.t??z.pgrb221.n5.*.grib2</fileNamePatternFilter>
+			<idMapId>IdImportSREF</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<importTimeZone>
+				<timeZoneName>GMT+0</timeZoneName>
+			</importTimeZone>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>18</ensembleMemberId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>18</ensembleMemberId>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="kg m-2"/>
+		<externUnit parameterId="TA.nwp" unit="K"/>
+	</import>
+	<import>
+		<general>
+			<importType>grib2</importType>
+			<folder>$IMPORT_FOLDER$/SREF</folder>
+			<fileNamePatternFilter>sref_nmb.t??z.pgrb221.n6.*.grib2</fileNamePatternFilter>
+			<idMapId>IdImportSREF</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<importTimeZone>
+				<timeZoneName>GMT+0</timeZoneName>
+			</importTimeZone>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>19</ensembleMemberId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>19</ensembleMemberId>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="kg m-2"/>
+		<externUnit parameterId="TA.nwp" unit="K"/>
+	</import>
+	<import>
+		<general>
+			<importType>grib2</importType>
+			<folder>$IMPORT_FOLDER$/SREF</folder>
+			<fileNamePatternFilter>sref_nmb.t??z.pgrb221.p1.*.grib2</fileNamePatternFilter>
+			<idMapId>IdImportSREF</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<importTimeZone>
+				<timeZoneName>GMT+0</timeZoneName>
+			</importTimeZone>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>20</ensembleMemberId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>20</ensembleMemberId>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="kg m-2"/>
+		<externUnit parameterId="TA.nwp" unit="K"/>
+	</import>
+	<import>
+		<general>
+			<importType>grib2</importType>
+			<folder>$IMPORT_FOLDER$/SREF</folder>
+			<fileNamePatternFilter>sref_nmb.t??z.pgrb221.p2.*.grib2</fileNamePatternFilter>
+			<idMapId>IdImportSREF</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<importTimeZone>
+				<timeZoneName>GMT+0</timeZoneName>
+			</importTimeZone>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>21</ensembleMemberId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>21</ensembleMemberId>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="kg m-2"/>
+		<externUnit parameterId="TA.nwp" unit="K"/>
+	</import>
+	<import>
+		<general>
+			<importType>grib2</importType>
+			<folder>$IMPORT_FOLDER$/SREF</folder>
+			<fileNamePatternFilter>sref_nmb.t??z.pgrb221.p3.*.grib2</fileNamePatternFilter>
+			<idMapId>IdImportSREF</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<importTimeZone>
+				<timeZoneName>GMT+0</timeZoneName>
+			</importTimeZone>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>22</ensembleMemberId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>22</ensembleMemberId>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="kg m-2"/>
+		<externUnit parameterId="TA.nwp" unit="K"/>
+	</import>
+	<import>
+		<general>
+			<importType>grib2</importType>
+			<folder>$IMPORT_FOLDER$/SREF</folder>
+			<fileNamePatternFilter>sref_nmb.t??z.pgrb221.p4.*.grib2</fileNamePatternFilter>
+			<idMapId>IdImportSREF</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<importTimeZone>
+				<timeZoneName>GMT+0</timeZoneName>
+			</importTimeZone>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>23</ensembleMemberId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>23</ensembleMemberId>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="kg m-2"/>
+		<externUnit parameterId="TA.nwp" unit="K"/>
+	</import>
+	<import>
+		<general>
+			<importType>grib2</importType>
+			<folder>$IMPORT_FOLDER$/SREF</folder>
+			<fileNamePatternFilter>sref_nmb.t??z.pgrb221.p5.*.grib2</fileNamePatternFilter>
+			<idMapId>IdImportSREF</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<importTimeZone>
+				<timeZoneName>GMT+0</timeZoneName>
+			</importTimeZone>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>24</ensembleMemberId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>24</ensembleMemberId>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="kg m-2"/>
+		<externUnit parameterId="TA.nwp" unit="K"/>
+	</import>
+	<import>
+		<general>
+			<importType>grib2</importType>
+			<folder>$IMPORT_FOLDER$/SREF</folder>
+			<fileNamePatternFilter>sref_nmb.t??z.pgrb221.p6.*.grib2</fileNamePatternFilter>
+			<idMapId>IdImportSREF</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<importTimeZone>
+				<timeZoneName>GMT+0</timeZoneName>
+			</importTimeZone>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>25</ensembleMemberId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSREF</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>SREF</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+			<ensembleId>SREF</ensembleId>
+			<ensembleMemberId>25</ensembleMemberId>
+		</timeSeriesSet>
+		<externUnit parameterId="PC.nwp" unit="kg m-2"/>
+		<externUnit parameterId="TA.nwp" unit="K"/>
+	</import>
+</timeSeriesImportRun>

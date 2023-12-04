@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idMap version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/idMap.xsd">
+<!-- For Real Time Data Imports -->
+	<!-- For Historic Data Imports -->
+	<parameter internal="TA.obs" external="TEMP_DAILY_AVE"/>
+	<parameter internal="PC.obs" external="PRECIP"/>
+	<parameter internal="TAmin.obs" external="TEMP_DAILY_MIN"/>
+	<parameter internal="TAmax.obs" external="TEMP_DAILY_MAX"/>
+	<enableOneToOneMapping/>
+</idMap>

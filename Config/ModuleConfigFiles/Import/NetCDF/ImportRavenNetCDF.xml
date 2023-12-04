@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
+    <import>
+        <general>
+            <importType>NETCDF-CF_GRID</importType>
+            <folder>$IMPORT_FOLDER$/NETCDF</folder>
+            <failedFolder>$IMPORT_FAILED_FOLDER$/NETCDF</failedFolder>
+            <backupFolder>$IMPORT_BACKUP_FOLDER$/NETCDF</backupFolder>
+            <idMapId>IdImportRavenNetCDF</idMapId>
+            <unitConversionsId>ImportUnitConversions</unitConversionsId>
+        </general>
+        <timeSeriesSet>
+            <moduleInstanceId>ImportRavenNetCDF</moduleInstanceId>
+            <valueType>grid</valueType>
+            <parameterId>PC.nwp</parameterId>
+            <locationId>WoodRiverBasinGrid</locationId>
+            <timeSeriesType>external historical</timeSeriesType>
+            <timeStep id="$DAY_TIMESTEP$"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+         <timeSeriesSet>
+            <moduleInstanceId>ImportRavenNetCDF</moduleInstanceId>
+            <valueType>grid</valueType>
+            <parameterId>TA.nwp</parameterId>
+            <locationId>WoodRiverBasinGrid</locationId>
+            <timeSeriesType>external historical</timeSeriesType>
+            <timeStep id="$DAY_TIMESTEP$"/>
+            <readWriteMode>add originals</readWriteMode>
+        </timeSeriesSet>
+    </import>
+</timeSeriesImportRun>

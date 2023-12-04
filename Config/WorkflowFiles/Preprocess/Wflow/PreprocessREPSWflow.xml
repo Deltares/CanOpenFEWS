@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.1">
+	<!--Define Properties for Templates-->
+	<properties>
+		<!-- NWP Name-->
+		<string key="FORECAST" value="REPS"/>
+		<!-- NWP Timestep-->
+		<string key="TIMESTEP" value="3"/>
+		<!-- Expiry Timestep-->
+		<string key="EXPIRYTIME" value="7"/>
+		<!-- Input Grid-->
+		<string key="INPUTGRID" value="REPS"/>
+		<!-- Output Grid-->
+		<string key="OUTPUTGRID" value="BowGrid"/>
+		<!-- Module Instance ID to be given to  Timeseries-->
+		<string key="INPUTMODULEINSTANCE" value="ImportREPS"/>
+		<!-- EnsembleID if needed-->
+		<string key="ENSEMBLE" value="REPS"/>
+		<!--Basin Location-->
+		<string key="BASINLOCATIONS" value="ModelBasins"/>
+		<!--Station Locations-->
+		<string key="STATIONLOCATIONS" value="ECCCStations$REGION$"/>
+		<!--Time Series Type-->
+		<string key="TIMESERIESTYPE" value="external forecasting"/>
+	</properties>	
+<!-- Preprocess Precipitation-->
+	<activity>
+		<properties>
+			<string key="PARAMETER" value="PC.nwp"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PreprocessREPS</moduleInstanceId>
+		<moduleConfigFileName>PreprocessAccumulatedParametersNWPTemplate</moduleConfigFileName>
+	</activity>
+	<!-- Accumulate Precipitation-->
+		<activity>
+		<properties>
+			<string key="LOCATIONSET" value="ModelBasins"/>
+			<string key="INPUTMODULEINSTANCE" value="PreprocessREPS"/>
+			<string key="INPUTPARAMETER" value="PC.nwp"/>
+			<string key="ACCUMPARAMETER" value="PC.nwp.acc"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PreprocessREPS</moduleInstanceId>
+		<moduleConfigFileName>AccumulateForecastPrecipTemplate</moduleConfigFileName>
+	</activity>
+	<!-- Preprocess Temperature-->
+	<activity>
+		<properties>
+			<string key="PARAMETER" value="TA.nwp"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PreprocessREPS</moduleInstanceId>
+		<moduleConfigFileName>PreprocessInstantaneousParametersNWPTemplate</moduleConfigFileName>
+	</activity>
+		<!-- Ensemble Statistics Precipitation-->
+	<activity>
+		<properties>
+			<string key="LOCATIONSET" value="ModelBasins"/>
+			<string key="INPUTMODULEINSTANCE" value="PreprocessREPS"/>
+			<string key="PARAMETER" value="PC.nwp.acc"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PreprocessREPS</moduleInstanceId>
+		<moduleConfigFileName>CalculateEnsembleStatisticsTemplate</moduleConfigFileName>
+	</activity>
+	<!--Ensemble Statistics Temperature-->
+	<activity>
+		<properties>
+			<string key="LOCATIONSET" value="ModelBasins"/>
+			<string key="INPUTMODULEINSTANCE" value="PreprocessREPS"/>
+			<string key="PARAMETER" value="TA.nwp"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PreprocessREPS</moduleInstanceId>
+		<moduleConfigFileName>CalculateEnsembleStatisticsTemplate</moduleConfigFileName>
+	</activity>
+</workflow>

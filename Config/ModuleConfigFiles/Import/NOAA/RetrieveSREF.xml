@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<generalAdapterRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/generalAdapterRun.xsd">
+	<general>
+		<piVersion>1.8</piVersion>
+		<rootDir>%REGION_HOME%/modules/pyscripts</rootDir>
+		<workDir>%ROOT_DIR%/work</workDir>
+		<exportDir>$IMPORT_FOLDER$/SREF</exportDir>
+		<importDir>$IMPORT_FOLDER$/SREF</importDir>
+		<dumpFileDir>$GA_DUMPFILEDIR$</dumpFileDir>
+		<dumpDir>%ROOT_DIR%/work</dumpDir>
+		<diagnosticFile>%ROOT_DIR%/work/get_sref_forecasts_log.xml</diagnosticFile>
+		<convertDatum>false</convertDatum>
+	</general>
+	<activities>
+		<startUpActivities>
+			<purgeActivity>
+				<filter>%ROOT_DIR%/work/*.*</filter>
+			</purgeActivity>
+			<purgeActivity>
+				<filter>%REGION_HOME%/Import/SREF/*.ncx3</filter>
+			</purgeActivity>
+			<purgeActivity>
+				<filter>%REGION_HOME%/Import/SREF/*.gbx9</filter>
+			</purgeActivity>
+		</startUpActivities>
+		<exportActivities>
+			<exportRunFileActivity>
+				<exportFile>%WORK_DIR%/get_sref_forecasts_run.xml</exportFile>
+				<properties>
+					<string key="destinationDir" value="$IMPORT_FOLDER$/SREF" />
+				</properties>
+			</exportRunFileActivity>
+		</exportActivities>
+		<executeActivities>
+			<!--  Uncomment to run through python rather than as an exe (then comment the exe block below)	-->
+			<executeActivity>
+
+				<command>
+					<executable>$PYTHON_EXE$</executable>
+				</command>
+
+<!--				<command>
+					<executable>%ROOT_DIR%/bin/dist/get_sref_forecasts.exe</executable>
+				</command>-->
+				<arguments>
+					<argument>%ROOT_DIR%/bin/get_sref_forecasts.py</argument>
+					<argument>-r</argument>
+					<argument>%WORK_DIR%/get_sref_forecasts_run.xml</argument>
+					<argument>-m</argument>
+					<argument>SREF_ARW</argument>
+					<argument>-l</argument>
+					<argument>87</argument>
+					<argument>-f</argument>
+					<argument>3</argument>
+					<argument>-p</argument>
+					<argument>APCP</argument>
+					<argument>-d</argument>
+					<argument>4</argument>
+					<argument>-b</argument>
+					<argument>-130 -100 63 45</argument>
+					<argument>-t</argument>
+					<argument>0</argument>
+				</arguments>
+				<timeOut>10000000</timeOut>
+				<ignoreDiagnostics>true</ignoreDiagnostics>
+			</executeActivity>
+			<!--  Uncomment to run through python rather than as an exe (then comment the exe block below)	-->
+			<executeActivity>
+
+				<command>
+					<executable>$PYTHON_EXE$</executable>
+				</command>
+
+<!--				<command>
+					<executable>%ROOT_DIR%/bin/dist/get_sref_forecasts.exe</executable>
+				</command>-->
+				<arguments>
+					<argument>%ROOT_DIR%/bin/get_sref_forecasts.py</argument>
+					<argument>-r</argument>
+					<argument>%WORK_DIR%/get_sref_forecasts_run.xml</argument>
+					<argument>-m</argument>
+					<argument>SREF_ARW</argument>
+					<argument>-l</argument>
+					<argument>87</argument>
+					<argument>-f</argument>
+					<argument>0</argument>
+					<argument>-p</argument>
+					<argument>TMP</argument>
+					<argument>-d</argument>
+					<argument>4</argument>
+					<argument>-b</argument>
+					<argument>-130 -100 63 45</argument>
+					<argument>-t</argument>
+					<argument>0</argument>
+				</arguments>
+				<timeOut>10000000</timeOut>
+				<ignoreDiagnostics>true</ignoreDiagnostics>
+			</executeActivity>
+
+		</executeActivities>
+	</activities>
+</generalAdapterRun>

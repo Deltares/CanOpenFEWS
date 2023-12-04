@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modifierTypes xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/modifierTypes.xsd">
+	<rollbackOverlappingModifiers>false</rollbackOverlappingModifiers>
+	<timeSeriesModifier id="MultiplyPC_Historic" name="Multiply Precipitation (Historic)">
+		<timeSeries>
+			<moduleInstanceId>ModifyHistoricGrids</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.nwp.multiplier</parameterId>
+			<locationId>BowGrid</locationId>
+		</timeSeries>
+		<defaultStartTime>start run</defaultStartTime>
+		<defaultEndTime>time zero</defaultEndTime>
+		<defaultValidTime/>
+		<resolveInWorkflow>true</resolveInWorkflow>
+		<resolveInPlots>false</resolveInPlots>
+		<editInPlots>false</editInPlots>
+	</timeSeriesModifier>
+	<timeSeriesModifier id="AdjustTA_Historic" name="Add or Subtract Temperature (Historic)">
+		<timeSeries>
+			<moduleInstanceId>ModifyHistoricGrids</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.nwp.incrementer</parameterId>
+			<locationId>BowGrid</locationId>
+		</timeSeries>
+		<defaultStartTime>start run</defaultStartTime>
+		<defaultEndTime>time zero</defaultEndTime>
+		<defaultValidTime/>
+		<resolveInWorkflow>true</resolveInWorkflow>
+		<resolveInPlots>false</resolveInPlots>
+		<editInPlots>false</editInPlots>
+	</timeSeriesModifier>
+	<timeSeriesModifier id="MultiplyPC_RDPS" name="Multiply Precipitation (RDPS)">
+		<timeSeries>
+			<moduleInstanceId>ModifyRDPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.nwp.multiplier</parameterId>
+			<locationId>BowGrid</locationId>
+		</timeSeries>
+		<defaultStartTime>time zero</defaultStartTime>
+		<defaultEndTime>end run</defaultEndTime>
+		<defaultValidTime/>
+		<resolveInWorkflow>true</resolveInWorkflow>
+		<resolveInPlots>false</resolveInPlots>
+		<editInPlots>false</editInPlots>
+	</timeSeriesModifier>
+	<timeSeriesModifier id="MultiplyPC_GDPS" name="Multiply Precipitation (GDPS)">
+		<timeSeries>
+			<moduleInstanceId>ModifyGDPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.nwp.multiplier</parameterId>
+			<locationId>BowGrid</locationId>
+		</timeSeries>
+		<defaultStartTime>time zero</defaultStartTime>
+		<defaultEndTime>end run</defaultEndTime>
+		<defaultValidTime/>
+		<resolveInWorkflow>true</resolveInWorkflow>
+		<resolveInPlots>false</resolveInPlots>
+		<editInPlots>false</editInPlots>
+	</timeSeriesModifier>
+	<timeSeriesModifier id="MultiplyPC_REPS" name="Multiply Precipitation (REPS)">
+		<applyToEnsemble>REPS</applyToEnsemble>
+		<timeSeries>
+			<moduleInstanceId>ModifyREPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.nwp.multiplier</parameterId>
+			<locationId>BowGrid</locationId>
+		</timeSeries>
+		<defaultStartTime>time zero</defaultStartTime>
+		<defaultEndTime>end run</defaultEndTime>
+		<defaultValidTime/>
+		<resolveInWorkflow>true</resolveInWorkflow>
+		<resolveInPlots>false</resolveInPlots>
+		<editInPlots>false</editInPlots>
+	</timeSeriesModifier>
+	<timeSeriesModifier id="AdjustTA_RDPS" name="Add or Subtract Temperature (RDPS)">
+		<timeSeries>
+			<moduleInstanceId>ModifyRDPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.nwp.incrementer</parameterId>
+			<locationId>BowGrid</locationId>
+		</timeSeries>
+		<defaultStartTime>time zero</defaultStartTime>
+		<defaultEndTime>end run</defaultEndTime>
+		<defaultValidTime/>
+		<resolveInWorkflow>true</resolveInWorkflow>
+		<resolveInPlots>false</resolveInPlots>
+		<editInPlots>false</editInPlots>
+	</timeSeriesModifier>
+	<timeSeriesModifier id="AdjustTA_GDPS" name="Add or Subtract Temperature (GDPS)">
+		<timeSeries>
+			<moduleInstanceId>ModifyGDPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.nwp.incrementer</parameterId>
+			<locationId>BowGrid</locationId>
+		</timeSeries>
+		<defaultStartTime>time zero</defaultStartTime>
+		<defaultEndTime>end run</defaultEndTime>
+		<defaultValidTime/>
+		<resolveInWorkflow>true</resolveInWorkflow>
+		<resolveInPlots>false</resolveInPlots>
+		<editInPlots>false</editInPlots>
+	</timeSeriesModifier>
+	<timeSeriesModifier id="AdjustTA_REPS" name="Add or Subtract Temperature (REPS)">
+		<applyToEnsemble>REPS</applyToEnsemble>
+		<timeSeries>
+			<moduleInstanceId>ModifyREPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.nwp.incrementer</parameterId>
+			<locationId>BowGrid</locationId>
+		</timeSeries>
+		<defaultStartTime>time zero</defaultStartTime>
+		<defaultEndTime>end run</defaultEndTime>
+		<defaultValidTime/>
+		<resolveInWorkflow>true</resolveInWorkflow>
+		<resolveInPlots>false</resolveInPlots>
+		<editInPlots>false</editInPlots>
+	</timeSeriesModifier>
+	<spatialCopyModifier id="RDPSSpatialCopy" name="RDPS Spatial Copy">
+		<expiryTime unit="day" multiplier="2"/>
+		<timeSeries>
+			<moduleInstanceId>ImportRDPS</moduleInstanceId>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>RDPS</locationId>
+		</timeSeries>
+		<timeSeries>
+			<moduleInstanceId>ImportRDPS</moduleInstanceId>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>RDPS</locationId>
+		</timeSeries>
+	</spatialCopyModifier>
+	<spatialCopyModifier id="REPSSpatialCopy" name="REPS Spatial Copy">
+		<expiryTime unit="day" multiplier="2"/>
+		<timeSeries>
+			<moduleInstanceId>ImportREPS</moduleInstanceId>
+			<parameterId>PC.nwp</parameterId>
+			<locationId>REPS</locationId>
+		</timeSeries>
+		<timeSeries>
+			<moduleInstanceId>ImportREPS</moduleInstanceId>
+			<parameterId>TA.nwp</parameterId>
+			<locationId>REPS</locationId>
+		</timeSeries>
+	</spatialCopyModifier>
+	<spatialProfileModifier id="RDPSSpatialProfile" name="RDPS Spatial Profile">
+		<expiryTime unit="day" multiplier="2"/>
+		<userDefinedDescriptionField id="Comment" descriptionField="Comment"/>
+		<timeSeries>
+			<moduleInstanceId>ImportRDPS</moduleInstanceId>
+			<parameterId>PC.nwp</parameterId>
+		</timeSeries>
+		<descriptiveFunctionGroups>
+			<descriptiveFunctionGroup name="Basic statistics">
+				<descriptiveFunction function="startTime" ignoreMissings="true"/>
+				<descriptiveFunction function="endTime" ignoreMissings="true"/>
+				<descriptiveFunction function="timeLength" ignoreMissings="true"/>
+			</descriptiveFunctionGroup>
+			<descriptiveFunctionGroup name="Accumulation">
+				<descriptiveFunction function="movingAccumulationMax" ignoreMissings="true">
+					<timeSpan unit="hour" multiplier="1"/>
+					<timeSpan unit="hour" multiplier="2"/>
+					<timeSpan unit="hour" multiplier="3"/>
+					<timeSpan unit="hour" multiplier="4"/>
+					<timeSpan unit="hour" multiplier="6"/>
+					<timeSpan unit="hour" multiplier="12"/>
+					<timeSpan unit="hour" multiplier="24"/>
+					<timeSpan unit="hour" multiplier="48"/>
+				</descriptiveFunction>
+				<descriptiveFunction function="sum" ignoreMissings="true"/>
+			</descriptiveFunctionGroup>
+		</descriptiveFunctionGroups>
+	</spatialProfileModifier>
+	<spatialProfileModifier id="GDPSSpatialProfile" name="GDPS Spatial Profile">
+		<expiryTime unit="day" multiplier="2"/>
+		<userDefinedDescriptionField id="Comment" descriptionField="Comment"/>
+		<timeSeries>
+			<moduleInstanceId>ImportGDPS</moduleInstanceId>
+			<parameterId>PC.nwp</parameterId>
+		</timeSeries>
+		<timeSeries>
+			<moduleInstanceId>ImportGDPS</moduleInstanceId>
+			<parameterId>TA.nwp</parameterId>
+		</timeSeries>
+		<descriptiveFunctionGroups>
+			<descriptiveFunctionGroup name="Basic statistics">
+				<descriptiveFunction function="startTime" ignoreMissings="true"/>
+				<descriptiveFunction function="endTime" ignoreMissings="true"/>
+				<descriptiveFunction function="timeLength" ignoreMissings="true"/>
+			</descriptiveFunctionGroup>
+			<descriptiveFunctionGroup name="Accumulation">
+				<descriptiveFunction function="movingAccumulationMax" ignoreMissings="true">
+					<timeSpan unit="hour" multiplier="1"/>
+					<timeSpan unit="hour" multiplier="2"/>
+					<timeSpan unit="hour" multiplier="3"/>
+					<timeSpan unit="hour" multiplier="4"/>
+					<timeSpan unit="hour" multiplier="6"/>
+					<timeSpan unit="hour" multiplier="12"/>
+					<timeSpan unit="hour" multiplier="24"/>
+					<timeSpan unit="hour" multiplier="48"/>
+					<timeSpan unit="hour" multiplier="72"/>
+					<timeSpan unit="hour" multiplier="96"/>
+					<timeSpan unit="hour" multiplier="120"/>
+				</descriptiveFunction>
+				<descriptiveFunction function="sum" ignoreMissings="true"/>
+			</descriptiveFunctionGroup>
+		</descriptiveFunctionGroups>
+	</spatialProfileModifier>
+	<modifiersGroup id="MultiplyPC_Historic">
+		<modifierId>MultiplyPC_Historic</modifierId>
+	</modifiersGroup>
+	<modifiersGroup id="MultiplyPC_RDPS">
+		<modifierId>MultiplyPC_RDPS</modifierId>
+	</modifiersGroup>
+	<modifiersGroup id="MultiplyPC_GDPS">
+		<modifierId>MultiplyPC_GDPS</modifierId>
+	</modifiersGroup>
+	<modifiersGroup id="MultiplyPC_REPS">
+		<modifierId>MultiplyPC_REPS</modifierId>
+	</modifiersGroup>
+	<modifiersGroup id="AdjustTA_Historic">
+		<modifierId>AdjustTA_Historic</modifierId>
+	</modifiersGroup>
+	<modifiersGroup id="AdjustTA_RDPS">
+		<modifierId>AdjustTA_RDPS</modifierId>
+	</modifiersGroup>
+	<modifiersGroup id="AdjustTA_GDPS">
+		<modifierId>AdjustTA_GDPS</modifierId>
+	</modifiersGroup>
+	<modifiersGroup id="AdjustTA_REPS">
+		<modifierId>AdjustTA_REPS</modifierId>
+	</modifiersGroup>
+	<modifiersGroup id="RDPSSpatialProfile">
+		<modifierId>RDPSSpatialProfile</modifierId>
+	</modifiersGroup>
+	<modifiersGroup id="GDPSSpatialProfile">
+		<modifierId>GDPSSpatialProfile</modifierId>
+	</modifiersGroup>
+	<modifiersGroup id="RDPSSpatialCopy">
+		<modifierId>RDPSSpatialCopy</modifierId>
+	</modifiersGroup>
+	<modifiersGroup id="REPSSpatialCopy">
+		<modifierId>REPSSpatialCopy</modifierId>
+	</modifiersGroup>
+</modifierTypes>

@@ -1,0 +1,18 @@
+<validationRuleSets xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/validationRuleSets.xsd" version="1.1">
+	<validationRuleSet validationRuleSetId="MeteoStations_Precip" timeZone="0">
+		<extremeValues>
+			<hardMax constantLimit="500"/>
+			<hardMin constantLimit="0"/>
+			<softMax constantLimit="250"/>
+		</extremeValues>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.obs</parameterId>
+			<locationSetId>ECCCStations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="day"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</validationRuleSet>
+</validationRuleSets>

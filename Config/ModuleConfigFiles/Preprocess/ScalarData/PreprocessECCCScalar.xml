@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 sp1 (http://www.altova.com) by Afdeling ICT (Stichting Deltares) -->
+<transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd" version="1.0">
+	<!--Pre-processing of WISKI data from non-equidistant to equidistant data-->
+	<!--Input-->
+	<variable>
+		<variableId>TA_hourly_nonequi</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.obs</parameterId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME$" end="$ENDTIME$"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+	<variableId>TA_max_daily_nonequi</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmax.obs</parameterId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME$" end="$ENDTIME$"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+		<variable>
+		<variableId>TA_min_daily_nonequi</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmin.obs</parameterId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME$" end="$ENDTIME$"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+		<variable>
+	<variableId>PC_daily_nonequi</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.obs</parameterId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME$" end="$ENDTIME$"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<!--Output-->
+	<variable>
+		<variableId>TA_hourly</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.obs</parameterId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME$" end="$ENDTIME$"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+	<variableId>TA_max_daily</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmax.obs</parameterId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="$DAY_TIMESTEP$"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME$" end="$ENDTIME$"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+		<variable>
+		<variableId>TA_min_daily</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TAmin.obs</parameterId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="$DAY_TIMESTEP$"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME$" end="$ENDTIME$"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+		<variable>
+	<variableId>PC_daily</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.obs</parameterId>
+			<locationSetId>$LOCATIONSET$</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="$DAY_TIMESTEP$"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME$" end="$ENDTIME$"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<!--Transformations-->
+	<transformation id="TA_hourly_sample">
+		<sample>
+			<nonEquidistant>
+				<nonEquidistantInputVariable>
+					<variableId>TA_hourly_nonequi</variableId>
+				</nonEquidistantInputVariable>
+				<interpolationType>linearOrClosest</interpolationType>
+				<maxGapLength unit="hour" multiplier="1"/>
+				<outputVariable>
+					<variableId>TA_hourly</variableId>
+				</outputVariable>
+			</nonEquidistant>
+		</sample>
+	</transformation>
+	<transformation id="TA_max_daily_sample">
+		<sample>
+			<nonEquidistant>
+				<nonEquidistantInputVariable>
+					<variableId>TA_max_daily_nonequi</variableId>
+				</nonEquidistantInputVariable>
+				<interpolationType>linearOrClosest</interpolationType>
+				<maxGapLength unit="day" multiplier="1"/>
+				<outputVariable>
+					<variableId>TA_max_daily</variableId>
+				</outputVariable>
+			</nonEquidistant>
+		</sample>
+	</transformation>
+	<transformation id="TA_min_daily_sample">
+		<sample>
+			<nonEquidistant>
+				<nonEquidistantInputVariable>
+					<variableId>TA_min_daily_nonequi</variableId>
+				</nonEquidistantInputVariable>
+				<interpolationType>linearOrClosest</interpolationType>
+				<maxGapLength unit="day" multiplier="1"/>
+				<outputVariable>
+					<variableId>TA_min_daily</variableId>
+				</outputVariable>
+			</nonEquidistant>
+		</sample>
+	</transformation>
+	<transformation id="PC_daily_sample">
+		<sample>
+			<nonEquidistant>
+				<nonEquidistantInputVariable>
+					<variableId>PC_daily_nonequi</variableId>
+				</nonEquidistantInputVariable>
+				<interpolationType>linearOrClosest</interpolationType>
+				<maxGapLength unit="day" multiplier="1"/>
+				<outputVariable>
+					<variableId>PC_daily</variableId>
+				</outputVariable>
+			</nonEquidistant>
+		</sample>
+	</transformation>
+</transformationModule>

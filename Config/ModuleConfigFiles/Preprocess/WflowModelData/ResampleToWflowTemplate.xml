@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
+<transformationModule version="1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.wldelft.nl/fews" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd">
+	<variable>
+		<variableId>P_Input_radar</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$ModID_P_radar$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>$Par_P$</parameterId>
+			<locationId>$Grid_P$</locationId>
+			<timeSeriesType>$TYPE1$</timeSeriesType>
+			<timeStep unit="minute" multiplier="6"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME_UPDATE$" startOverrulable="true" end="$ENDTIME_UPDATE$" endOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>P_Input_radar_accum</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$ModID_P_radar$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>$Par_P_M$</parameterId>
+			<locationId>$Grid_M$</locationId>
+			<timeSeriesType>$TYPE2$</timeSeriesType>
+			<timeStep unit="minute" multiplier="6"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME_UPDATE$" startOverrulable="true" end="$ENDTIME_UPDATE$" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>P_wflow_radar</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>$Par_P_M$</parameterId>
+			<locationId>$Grid_M$</locationId>
+			<timeSeriesType>$TYPE2$</timeSeriesType>
+			<timeStep unit="minute" multiplier="6"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME_UPDATE$" startOverrulable="true" end="$ENDTIME_UPDATE$" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>T_Input</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$ModID_T$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>$Par_T$</parameterId>
+			<locationId>$Grid_T$</locationId>
+			<timeSeriesType>$TYPE1$</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME_UPDATE$" startOverrulable="true" end="$ENDTIME_UPDATE$" endOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>T_Input_6min</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$ModID_T$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>$Par_T_M$</parameterId>
+			<locationId>$Grid_T$</locationId>
+			<timeSeriesType>$TYPE1$</timeSeriesType>
+			<timeStep unit="minute" multiplier="6"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME_UPDATE$" startOverrulable="true" end="$ENDTIME_UPDATE$" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>T_wflow</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>$Par_T_M$</parameterId>
+			<locationId>$Grid_M$</locationId>
+			<timeSeriesType>$TYPE2$</timeSeriesType>
+			<timeStep unit="minute" multiplier="6"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME_UPDATE$" startOverrulable="true" end="$ENDTIME_UPDATE$" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>PET_Input</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$ModID_PET$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>$Par_PET$</parameterId>
+			<locationId>$Grid_PET$</locationId>
+			<timeSeriesType>$TYPE1$</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME_UPDATE$" startOverrulable="true" end="$ENDTIME_UPDATE$" endOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>PET_Input_6min</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>$Par_PET$</parameterId>
+			<locationId>$Grid_PET$</locationId>
+			<timeSeriesType>$TYPE2$</timeSeriesType>
+			<timeStep unit="minute" multiplier="6"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME_UPDATE$" startOverrulable="true" end="$ENDTIME_UPDATE$" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>PET_wflow</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>$Par_PET$</parameterId>
+			<locationId>$Grid_M$</locationId>
+			<timeSeriesType>$TYPE2$</timeSeriesType>
+			<timeStep unit="minute" multiplier="6"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME_UPDATE$" startOverrulable="true" end="$ENDTIME_UPDATE$" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<transformation id="ToAccumRainfall">
+		<user>
+			<simple>
+				<expression>P_Input_radar*0.1</expression>
+				<outputVariable>
+					<variableId>P_Input_radar_accum</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+	<transformation id="Pradar2ModelGrid">
+		<interpolationSpatial>
+			<closestDistance>
+				<inputVariable>
+					<variableId>P_Input_radar_accum</variableId>
+				</inputVariable>
+				<distanceGeoDatum>WGS 1984</distanceGeoDatum>
+				<outputVariable>
+					<variableId>P_wflow_radar</variableId>
+				</outputVariable>
+			</closestDistance>
+		</interpolationSpatial>
+	</transformation>
+	<transformation id="Disaggregate T to 6 min">
+		<disaggregation>
+			<meanToMean>
+				<inputVariable>
+					<variableId>T_Input</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>T_Input_6min</variableId>
+				</outputVariable>
+			</meanToMean>
+		</disaggregation>
+	</transformation>
+	<transformation id="T2ModelGrid">
+		<interpolationSpatial>
+			<closestDistance>
+				<inputVariable>
+					<variableId>T_Input_6min</variableId>
+				</inputVariable>
+				<distanceGeoDatum>WGS 1984</distanceGeoDatum>
+				<outputVariable>
+					<variableId>T_wflow</variableId>
+				</outputVariable>
+			</closestDistance>
+		</interpolationSpatial>
+	</transformation>
+	<transformation id="Disaggregate PET to 6 min">
+		<disaggregation>
+			<accumulative>
+				<inputVariable>
+					<variableId>PET_Input</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>PET_Input_6min</variableId>
+				</outputVariable>
+			</accumulative>
+		</disaggregation>
+	</transformation>
+	<transformation id="PET2ModelGrid">
+		<interpolationSpatial>
+			<closestDistance>
+				<inputVariable>
+					<variableId>PET_Input_6min</variableId>
+				</inputVariable>
+				<distanceGeoDatum>WGS 1984</distanceGeoDatum>
+				<outputVariable>
+					<variableId>PET_wflow</variableId>
+				</outputVariable>
+			</closestDistance>
+		</interpolationSpatial>
+	</transformation>
+</transformationModule>

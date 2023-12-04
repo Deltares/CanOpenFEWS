@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
+	<import>
+		<general>
+			<importType>NETCDF-CF_GRID</importType>
+			<folder>%REGION_HOME%/Import/ERA5</folder>
+			<deleteImportedFiles>true</deleteImportedFiles>
+			<idMapId>IdImportERA5</idMapId>
+			<unitConversionsId>ImportERA5Units</unitConversionsId>
+			<importTimeZone>
+				<timeZoneName>GMT+0</timeZoneName>
+			</importTimeZone>
+			<dataFeedId>ERA5</dataFeedId>
+		</general>
+		<tolerance locationId="ERA5" parameterId="PET.obs" timeUnit="hour" unitCount="2"/>
+		<tolerance locationId="ERA5" parameterId="PC.sim" timeUnit="hour" unitCount="2"/>
+		<tolerance locationId="ERA5" parameterId="TA.obs" timeUnit="hour" unitCount="2"/>
+		<tolerance locationId="ERA5" parameterId="RS" timeUnit="hour" unitCount="2"/>
+		<tolerance locationId="ERA5" parameterId="RSext" timeUnit="hour" unitCount="2"/>
+		<tolerance locationId="ERA5" parameterId="PA" timeUnit="hour" unitCount="2"/>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportERA5</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PA</parameterId>
+			<locationId>ERA5</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>1</synchLevel>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportERA5</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>RSext</parameterId>
+			<locationId>ERA5</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>1</synchLevel>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportERA5</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PET.obs</parameterId>
+			<locationId>ERA5</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>1</synchLevel>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportERA5</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.sim</parameterId>
+			<locationId>ERA5</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>1</synchLevel>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportERA5</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA.obs</parameterId>
+			<locationId>ERA5</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>1</synchLevel>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportERA5</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>RS</parameterId>
+			<locationId>ERA5</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>1</synchLevel>
+		</timeSeriesSet>
+		<externUnit parameterId="PET.obs" unit="m" cumulativeSum="true"/>
+		<externUnit parameterId="PC.sim" unit="m" cumulativeSum="true"/>
+		<externUnit parameterId="TA.obs" unit="K"/>
+		<externUnit parameterId="RS" unit="Jm-2" cumulativeSum="true"/>
+		<externUnit parameterId="RSext" unit="Jm-2" cumulativeSum="true"/>
+		<externUnit parameterId="PA" unit="Pa"/>
+	</import>
+</timeSeriesImportRun>
+
+

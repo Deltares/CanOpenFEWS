@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.1">
+    <properties>
+        <string key="STARTTIME" value="-10" />
+        <string key="ENDTIME" value="0" />
+		<string key="BASINLOCATION" value="ProcessBasins"/>
+		<string key="STATIONLOCATION" value="SnowStations"/>	
+	</properties>
+	<activity>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>RetrieveSnowcast</moduleInstanceId>
+	</activity>	
+	<activity>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>ImportSnowcast</moduleInstanceId>
+	</activity>
+	<!-- Process GWF swe data using basin shapes -->
+	<activity>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PreprocessSnowcast</moduleInstanceId>
+	</activity>
+</workflow>

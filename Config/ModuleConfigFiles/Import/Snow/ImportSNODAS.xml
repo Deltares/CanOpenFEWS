@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
+	<import>
+		<!-- SWE Import -->
+		<general>
+			<importType>grib2</importType>
+			<folder>$IMPORT_FOLDER$/SNODAS</folder>
+			<fileNamePatternFilter>zz_ssmv11034tS__T0001TTNATS*05HP001.grib2</fileNamePatternFilter>
+			<relativeViewPeriod unit="day" start="-7" end="0" startOverrulable="false" endOverrulable="false"/>
+			<idMapId>IdImportSNODAS</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<missingValue>-99999.0</missingValue>
+			<importTimeZone>
+				<timeZoneName>GMT+0</timeZoneName>
+			</importTimeZone>
+			<!--<gridStartPoint>SW</gridStartPoint>-->
+			<dataFeedId>SNODAS</dataFeedId>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSNODAS</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>SWE.sim</parameterId>
+			<locationId>SNODAS</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="6"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="15"/>
+		</timeSeriesSet>
+		<externUnit parameterId="SWE.sim" unit="kg.m-2"/>
+	</import>
+		<import>
+		<!-- Snow Depth Import -->
+		<general>
+			<importType>grib2</importType>
+			<folder>$IMPORT_FOLDER$/SNODAS</folder>
+			<fileNamePatternFilter>zz_ssmv11036tS__T0001TTNATS*05HP001.grib2</fileNamePatternFilter>
+			<relativeViewPeriod unit="day" start="-7" end="0" startOverrulable="false" endOverrulable="false"/>
+			<idMapId>IdImportSNODAS</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<missingValue>-99999.0</missingValue>
+			<importTimeZone>
+				<timeZoneName>GMT+0</timeZoneName>
+			</importTimeZone>
+			<dataFeedId>SNODAS</dataFeedId>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSNODAS</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>SD.sim</parameterId>
+			<locationId>SNODAS</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="6"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="15"/>
+		</timeSeriesSet>
+		<externUnit parameterId="SD.sim" unit="m"/>
+	</import>
+	<import>
+		<!-- Snow Temperature Import -->
+		<general>
+			<importType>grib2</importType>
+			<folder>$IMPORT_FOLDER$/SNODAS</folder>
+			<fileNamePatternFilter>zz_ssmv11038wS__A0006TTNATS*05HP001.grib2</fileNamePatternFilter>
+			<relativeViewPeriod unit="day" start="-7" end="0" startOverrulable="false" endOverrulable="false"/>
+			<idMapId>IdImportSNODAS</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<missingValue>-99999.0</missingValue>
+			<importTimeZone>
+				<timeZoneName>GMT+0</timeZoneName>
+			</importTimeZone>
+			<dataFeedId>SNODAS</dataFeedId>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSNODAS</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>SE.sim</parameterId>
+			<locationId>SNODAS</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="6"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="15"/>
+		</timeSeriesSet>
+		<externUnit parameterId="SE.sim" unit="K"/>
+	</import>
+	<import>
+		<!-- Snow Melt -->
+		<general>
+			<importType>grib2</importType>
+			<folder>$IMPORT_FOLDER$/SNODAS</folder>
+			<fileNamePatternFilter>zz_ssmv11044bS__T0006TTNATS*HP000.grib2</fileNamePatternFilter>
+			<relativeViewPeriod unit="day" start="-7" end="0" startOverrulable="false" endOverrulable="false"/>
+			<idMapId>IdImportSNODAS</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<missingValue>-99999.0</missingValue>
+			<importTimeZone>
+				<timeZoneName>GMT+0</timeZoneName>
+			</importTimeZone>
+			<dataFeedId>SNODAS</dataFeedId>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSNODAS</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>SM.sim</parameterId>
+			<locationId>SNODAS</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="6"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="15"/>
+		</timeSeriesSet>
+		<externUnit parameterId="SM.sim" unit="kg.m-2"/>
+	</import>
+</timeSeriesImportRun>

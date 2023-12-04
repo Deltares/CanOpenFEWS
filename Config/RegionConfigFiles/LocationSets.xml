@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<locationSets version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/locationSets.xsd">
+	<!-- All Location Sets Built from csv and shp files. See MapLayerFiles for source-->
+	<!--- Water Survey of Canada Hydrometric Stations - Available at https://dd.weather.gc.ca/hydrometric/doc/ -->
+	<locationSet id="WSCStations">
+		<sortingLocationAttributeId>ID</sortingLocationAttributeId>
+		<csvFile>
+			<file>hydrometric_StationList.csv</file>
+			<geoDatum>WGS 1984</geoDatum>
+			<id>%ID%</id>
+			<name>%Name / Nom%</name>
+			<x>%Longitude%</x>
+			<y>%Latitude%</y>
+			<attribute id="ID" name="Station Code">
+				<text>%ID%</text>
+			</attribute>
+			<attribute id="NAME" name="Name">
+				<text>%Name / Nom%</text>
+			</attribute>
+			<attribute id="X" name="Longitude">
+				<text>%Longitude%</text>
+			</attribute>
+			<attribute id="Y" name="Latitude">
+				<text>%Latitude%</text>
+			</attribute>
+			<attribute id="Region" name="Region">
+				<text>%Prov/Terr%</text>
+			</attribute>
+			<attribute id="wflow_code" name="wflow_code">
+				<text>%wflow_code%</text>
+			</attribute>
+			<!-- Add attribute files for each model-->
+			<attributeFile>
+				<csvFile>hydrometric_Bow.csv</csvFile>
+				<id>%ID%</id>
+				<attribute id="Bow">
+					<text>%Bow%</text>
+				</attribute>
+			</attributeFile>
+		</csvFile>
+	</locationSet>
+	<!--- ECCC Meteo Stations - Available at https://dd.weather.gc.ca/hydrometric/doc/ -->
+	<locationSet id="ECCCStations">
+		<csvFile>
+			<file>swob-xml_station_list.csv</file>
+			<geoDatum>WGS 1984</geoDatum>
+			<id>%MSC_ID%</id>
+			<name>%Name%</name>
+			<x>%Longitude%</x>
+			<y>%Latitude%</y>
+			<z>%Elevation(m)%</z>
+			<attribute id="ID" name="Station Code">
+				<text>%MSC_ID%</text>
+			</attribute>
+			<attribute id="Region" name="Region">
+				<text>%Province/Territory%</text>
+			</attribute>
+			<attributeFile>
+				<csvFile>meteorological_Bow.csv</csvFile>
+				<id>%MSC_ID%</id>
+				<attribute id="Bow">
+					<text>%Bow%</text>
+				</attribute>
+			</attributeFile>
+		</csvFile>
+	</locationSet>
+	<!--- ECCC Meteo Stations from Partners - Available at https://dd.weather.gc.ca/hydrometric/doc/ -->
+	<locationSet id="ECCCPartnerStations">
+		<csvFile>
+			<file>swob-xml_partner_station_list.csv</file>
+			<geoDatum>WGS 1984</geoDatum>
+			<id>%# MSC ID%</id>
+			<name>%EN name%</name>
+			<x>%Longitude%</x>
+			<y>%Latitude%</y>
+			<z>%Elevation%</z>
+			<attribute id="ID" name="Station Code">
+				<text>%# MSC ID%</text>
+			</attribute>
+			<attribute id="Region" name="Region">
+				<text>%Province%</text>
+			</attribute>
+		</csvFile>
+	</locationSet>
+	<!--- Snow Stations -->
+	<locationSet id="SnowStations">
+		<csvFile>
+			<file>snow_stations.csv</file>
+			<geoDatum>WGS 1984</geoDatum>
+			<id>%NUMBER%</id>
+			<name>%NAME%</name>
+			<x>%LONG%</x>
+			<y>%LAT%</y>
+			<z>%ELEV%</z>
+		</csvFile>
+	</locationSet>
+	<!--LocationSets built from ShapeFiles-->
+	<!--ShapeFiles for Bow-->
+	<locationSet id="BowWatershed">
+		<esriShapeFile>
+			<file>Bow_Watershed.shp</file>
+			<id>Bow_Watershed</id>
+			<name>Bow_Watershed</name>
+		</esriShapeFile>
+	</locationSet>
+	<!--ShapeFiles for Bow Basins-->
+	<locationSet id="BowBasins">
+		<esriShapeFile>
+			<file>Bow_Basins.shp</file>
+			<id>%FID%</id>
+			<name>%NAME%</name>
+		</esriShapeFile>
+	</locationSet>
+	<!--ShapeFiles for Bow Sub- Basins-->
+	<locationSet id="BowSubBasins">
+		<esriShapeFile>
+			<file>Bow_Subbasins.shp</file>
+			<id>%HRU_ID%</id>
+			<name>%HRU_ID%</name>
+		</esriShapeFile>
+	</locationSet>
+	<!-- Create LocationSets based on Attributes-->
+	<locationSet id="WSCStationsByRegion">
+		<subLocationSetIdFunction>WSCStations@Region@</subLocationSetIdFunction>
+		<locationSetId>WSCStations</locationSetId>
+	</locationSet>
+	<!-- Build LocationSets for Bow Catchment-->
+	<locationSet id="BowHydroStations">
+		<locationSetId>WSCStations</locationSetId>
+		<constraints>
+			<attributeTextEquals id="Bow" equals="Y"/>
+		</constraints>
+	</locationSet>
+	<!--Build LocationSets for Display-->
+	<locationSet id="ProcessBasins">
+		<locationSetId>BowBasins</locationSetId>
+		<locationSetId>BowSubBasins</locationSetId>
+	</locationSet>
+	<locationSet id="ModelBasins">
+		<locationSetId>BowSubBasins</locationSetId>
+	</locationSet>
+	<locationSet id="ModelMeteoStations">
+		<locationSetId>BowMeteoStations</locationSetId>
+	</locationSet>
+	<locationSet id="ModelHydroStations">
+		<locationSetId>BowHydroStations</locationSetId>
+	</locationSet>
+	<locationSet id="DownloadMeteoStations">
+		<locationSetId>BowMeteoStations</locationSetId>
+	</locationSet>
+	<locationSet id="DownloadHydroStations">
+		<locationSetId>BowHydroStations</locationSetId>
+	</locationSet>
+	<locationSet id="DisplayBasins">
+		<locationSetId>BowBasins</locationSetId>
+	</locationSet>
+	<locationSet id="DisplayMeteoStations">
+		<locationSetId>BowMeteoStations</locationSetId>
+	</locationSet>
+	<locationSet id="DisplayHydroStations">
+		<locationSetId>BowHydroStations</locationSetId>
+	</locationSet>
+	<locationSet id="DischargeDisplayLocationsBow">
+		<locationSetId>BowHydroStations</locationSetId>
+	</locationSet>
+	<locationSet id="DischargeDisplayLocationsElbow">
+		<locationSetId>BowHydroStations</locationSetId>
+	</locationSet>
+	<locationSet id="BowForecastLocations">
+		<locationSetId>BowHydroStations</locationSetId>
+	</locationSet>
+	<locationSet id="ModelForecastLocations">
+		<locationSetId>BowForecastLocations</locationSetId>
+	</locationSet>
+	<!--Build additional LocationSets-->
+	<locationSet id="ECCCAllStations">
+		<locationSetId>ECCCPartnerStations</locationSetId>
+		<locationSetId>ECCCStations</locationSetId>
+	</locationSet>
+	<locationSet id="BowMeteoStations">
+		<locationSetId>ECCCAllStations</locationSetId>
+		<constraints>
+			<attributeTextEquals id="Bow" equals="Y"/>
+		</constraints>
+	</locationSet>
+	<!--Comment-->
+	<locationSet id="ECCCStationsAB">
+		<locationSetId>ECCCAllStations</locationSetId>
+		<constraints>
+			<anyValid>
+				<attributeTextEquals id="Region" equals="Alberta"/>
+				<attributeTextEquals id="Region" equals="AB"/>
+			</anyValid>
+		</constraints>
+	</locationSet>
+</locationSets>

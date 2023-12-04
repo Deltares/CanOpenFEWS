@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idMap xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/idMap.xsd" version="1.1">
+	<parameter internal="PC.nwp" external="Total_precipitation_surface_6_Hour_Accumulation"/>
+	<parameter internal="TA.nwp" external="Temperature_height_above_ground"/>
+
+	<parameter internal="PC.nwp" external="apcpsfc"/>
+	<parameter internal="TA.nwp" external="tmp2m"/>
+<!--	<parameter internal="WS.u.forecast" external="u-component_of_wind_height_above_ground"/>
+	<parameter internal="WS.v.forecast" external="v-component_of_wind_height_above_ground"/>
+	<parameter internal="AirPressure.forecast" external="pressfc"/>
+	<parameter internal="WS.u.forecast" external="ugrd10m"/>
+	<parameter internal="WS.v.forecast" external="vgrd10m"/>-->
+</idMap>
