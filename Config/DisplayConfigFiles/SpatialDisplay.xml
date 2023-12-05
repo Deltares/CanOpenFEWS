@@ -258,9 +258,23 @@ http://fews.wldelft.nl/schemas/version1.0/gridDisplay.xsd">
 		</gridPlot>
 	</gridPlotGroup>
 	<gridPlotGroup id="ECCC_Nowcast" name="Nowcasting">
-		<gridPlot id="ECCCRadarNowcast" name="STEPS radar nowcast">
+		<gridPlot id="ECCCRadarNowcastSTEPS" name="STEPS radar nowcast">
 			<timeSeriesSet>
-				<moduleInstanceId>ECCCRadarNowcast</moduleInstanceId>
+				<moduleInstanceId>ECCCRadarNowcastSTEPS</moduleInstanceId>
+				<valueType>grid</valueType>
+				<parameterId>PC.forecast.acc</parameterId>
+				<locationId>BowRadarGrid</locationId>
+				<timeSeriesType>simulated forecasting</timeSeriesType>
+				<timeStep unit="minute" multiplier="6"/>
+				<relativeViewPeriod unit="hour" start="0" end="12"/>
+				<readWriteMode>read complete forecast</readWriteMode>
+				<ensembleId>RadarNowcast</ensembleId>
+			</timeSeriesSet>
+			<classBreaksId>PrecipitationRadarNowcast</classBreaksId>
+		</gridPlot>
+		<gridPlot id="ECCCRadarNowcastLINDA" name="LINDA radar nowcast">
+			<timeSeriesSet>
+				<moduleInstanceId>ECCCRadarNowcastLINDA</moduleInstanceId>
 				<valueType>grid</valueType>
 				<parameterId>PC.forecast.acc</parameterId>
 				<locationId>BowRadarGrid</locationId>

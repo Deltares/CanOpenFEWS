@@ -150,8 +150,12 @@
 		</node>
 	</nodes>
 	<nodes id="Nowcasting" name="Nowcasting">
-		<node id="ECCCRadarNowcast" name="STEPS rainfall nowcast using ECCC radar data">
-			<workflowId>ECCCRadarNowcast</workflowId>
+		<node id="ECCCRadarNowcastSTEPS" name="STEPS rainfall nowcast using ECCC radar data">
+			<workflowId>ECCCRadarNowcastSTEPS</workflowId>
+			<localRun>false</localRun>
+		</node>
+		<node id="ECCCRadarNowcastLINDA" name="LINDA rainfall nowcast using ECCC radar data">
+			<workflowId>ECCCRadarNowcastLINDA</workflowId>
 			<localRun>false</localRun>
 		</node>
 	</nodes>

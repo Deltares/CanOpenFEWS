@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews https://fewsdocs.deltares.nl/schemas/version1.0/workflow.xsd" version="1.1">
+	<activity>
+		<properties>
+			<string key="SOURCE_MODULEINSTANCE_ID" value="PreprocessECCCRadarBow"/>
+			<string key="TIMESERIES_TYPE" value="external historical"/>
+			<string key="IMPORT_PARAMETER_ID" value="PC.sim"/>
+			<string key="EXPORT_PARAMETER_ID" value="PC.forecast.acc"/>
+			<string key="ENSEMBLE_ID" value="RadarNowcast"/>
+			<string key="GRID" value="BowRadarGrid"/>
+			<string key="RUN_SCRIPT" value="EnsembleNowcast_pysteps_LINDA_FEWS.py"/>
+			<bool key="ENSEMBLE_BOOL" value="true"/>
+			<int key="ENSEMBLE_MEMBERS" value="1"/>
+			<int key="N_LEAD_TIMES_HR" value="1"/>
+			<int key="NUM_CORES" value="4"/>
+		</properties>
+		<runIndependent>false</runIndependent>
+		<moduleInstanceId>ECCCRadarNowcastLINDA</moduleInstanceId>
+		<moduleConfigFileName>RadarNowcastTemplate</moduleConfigFileName>
+	</activity>
+</workflow>

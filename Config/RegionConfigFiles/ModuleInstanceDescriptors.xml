@@ -392,7 +392,10 @@
 		<description>Wflow_sbm forecast run for the Bow River using 1-h HRDPS forecasts</description>
 	</moduleInstanceDescriptor>
 	<!--Nowcasting-->
-	<moduleInstanceDescriptor id="ECCCRadarNowcast">
-		<description>pysteps radar nowcast using the ECCC radar data</description>
+	<moduleInstanceDescriptor id="ECCCRadarNowcastSTEPS">
+		<description>pysteps STEPS radar nowcast using the ECCC radar data</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ECCCRadarNowcastLINDA">
+		<description>pysteps LINDA radar nowcast using the ECCC radar data</description>
 	</moduleInstanceDescriptor>
 </moduleInstanceDescriptors>

@@ -26,7 +26,7 @@
 			<string key="TYPE1" value="external forecasting"/>
 			<string key="TYPE2" value="temporary"/>
 			<string key="TYPE3" value="simulated forecasting"/>
-			<string key="ModID_P" value="ECCCRadarNowcast"/>
+			<string key="ModID_P" value="ECCCRadarNowcastSTEPS"/>
 			<string key="Par_P" value="PC.forecast.acc"/>
 			<string key="Par_P_M" value="PC.forecast.acc"/>
 			<string key="Grid_P" value="BowRadarGrid"/>

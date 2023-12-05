@@ -61,7 +61,7 @@
 					<executable>$PYTHON_EXE$</executable>
 				</command>
 				<arguments>
-					<argument>EnsembleNowcast_pysteps_FEWS.py</argument>
+					<argument>$RUN_SCRIPT$</argument>
 				</arguments>
 				<logFile>
 					<file>%ROOT_DIR%/Logs/%TIME0%_log.txt</file>

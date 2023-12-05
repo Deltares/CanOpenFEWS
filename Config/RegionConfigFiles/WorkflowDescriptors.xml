@@ -119,7 +119,10 @@
 		<cardinalTimeStep unit="hour" multiplier="1"/>
 	</workflowDescriptor>
 	<!--Nowcasting Workflow Descriptors -->
-	<workflowDescriptor id="ECCCRadarNowcast" name="Run STEPS rainfall nowcast using ECCC radar data" visible="true" forecast="true" autoApprove="true" allowApprove="true">
+	<workflowDescriptor id="ECCCRadarNowcastSTEPS" name="Run STEPS rainfall nowcast using ECCC radar data" visible="true" forecast="true" autoApprove="true" allowApprove="true">
+		<cardinalTimeStep unit="minute" multiplier="6"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="ECCCRadarNowcastLINDA" name="Run LINDA rainfall nowcast using ECCC radar data" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep unit="minute" multiplier="6"/>
 	</workflowDescriptor>
 	<rootNode>
@@ -184,7 +187,8 @@
 			<workflowId>BowWflowGDPSForecast1h</workflowId>
 		</node>
 		<node name="Run Model - Nowcasting">
-			<workflowId>ECCCRadarNowcast</workflowId>
+			<workflowId>ECCCRadarNowcastSTEPS</workflowId>
+			<workflowId>ECCCRadarNowcastLINDA</workflowId>
 		</node>
 	</rootNode>
 </workflowDescriptors>
