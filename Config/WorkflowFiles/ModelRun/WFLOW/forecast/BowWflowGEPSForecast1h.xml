@@ -24,8 +24,8 @@
 			<string key="TIMESTEP_NEW" value="1"/>
 		</properties>
 		<runIndependent>false</runIndependent>
-		<moduleInstanceId>PreprocessDisaggAccumParametersNWP</moduleInstanceId>
-		<moduleConfigFileName>PreprocessDisaggAccumParametersNWPTemplate</moduleConfigFileName>
+		<moduleInstanceId>PreprocessDisaggInstantParametersNWP</moduleInstanceId>
+		<moduleConfigFileName>PreprocessDisaggInstantParametersNWPTemplate</moduleConfigFileName>
 	</activity>	
 	<activity>
 		<properties>
