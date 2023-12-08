@@ -58,7 +58,7 @@
 		<timeSeriesSet>
 			<moduleInstanceId>$ModID_T$</moduleInstanceId>
 			<valueType>grid</valueType>
-			<parameterId>$Par_T_M$</parameterId>
+			<parameterId>$Par_T$</parameterId>
 			<locationId>$Grid_T$</locationId>
 			<timeSeriesType>$TYPE1$</timeSeriesType>
 			<timeStep unit="minute" multiplier="6"/>

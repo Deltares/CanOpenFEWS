@@ -68,6 +68,7 @@
 						<timeStep unit="hour" multiplier="1"/>
 						<relativeViewPeriod unit="hour" start="$STARTDATE$" end="$ENDDATE$" startOverrulable="false"/>
 						<readWriteMode>read only</readWriteMode>
+						<ensembleId>$ENS_ID$</ensembleId>
 					</timeSeriesSet>
 					<timeSeriesSet>
 						<moduleInstanceId>$TS_T$</moduleInstanceId>
@@ -78,6 +79,7 @@
 						<timeStep unit="hour" multiplier="1"/>
 						<relativeViewPeriod unit="hour" start="$STARTDATE$" end="$ENDDATE$" startOverrulable="false"/>
 						<readWriteMode>read only</readWriteMode>
+						<ensembleId>main</ensembleId>
 					</timeSeriesSet>
 					<timeSeriesSet>
 						<moduleInstanceId>$INPUTTIMESERIES_PET$</moduleInstanceId>
@@ -88,6 +90,7 @@
 						<timeStep unit="hour" multiplier="1"/>
 						<relativeViewPeriod unit="hour" start="$STARTDATE$" end="$ENDDATE$" startOverrulable="false"/>
 						<readWriteMode>read only</readWriteMode>
+						<ensembleId>main</ensembleId>
 					</timeSeriesSet>
 				</timeSeriesSets>
 			</exportNetcdfActivity>

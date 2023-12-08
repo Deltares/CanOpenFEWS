@@ -97,6 +97,9 @@
 	<workflowDescriptor id="BowWflowRadarUpdate" name="Run Bow Wflow 6-min Update (radar)" visible="true" forecast="false" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep unit="minute" multiplier="6"/>
 	</workflowDescriptor>
+	<workflowDescriptor id="BowWflowHRDPAHistorical1h" name="Run Bow Wflow 1-h Historical (HRDPA)" visible="true" forecast="false" autoApprove="true" allowApprove="true">
+		<cardinalTimeStep unit="hour" multiplier="1"/>
+	</workflowDescriptor>
 	<workflowDescriptor id="BowWflowHRDPAUpdate1h" name="Run Bow Wflow 1-h Update (HRDPA)" visible="true" forecast="false" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep unit="hour" multiplier="1"/>
 	</workflowDescriptor>
@@ -178,6 +181,7 @@
 		</node>
 		<node name="Run Model - Bow Wflow">
 			<workflowId>BowWflowRadarUpdate</workflowId>
+			<workflowId>BowWflowHRDPAHistorical1h</workflowId>
 			<workflowId>BowWflowHRDPAUpdate1h</workflowId>
 			<workflowId>BowWflowRadarForecast</workflowId>
 			<workflowId>BowWflowHRDPSForecast1h</workflowId>

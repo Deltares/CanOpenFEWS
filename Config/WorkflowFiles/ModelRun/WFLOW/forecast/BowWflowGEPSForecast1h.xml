@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.1">
+	<!-- First run the update run -->
+	<activity>
+		<runIndependent>false</runIndependent>
+		<workflowId>BowWflowHRDPAUpdate1h</workflowId>
+	</activity>
 	<!--Disaggregate GEPS 6-h forecast to hourly-->
 	<activity>
 		<properties>
@@ -9,6 +14,7 @@
 			<string key="TIMESERIESTYPE" value="external forecasting"/>
 			<string key="TIMESTEP" value="6"/>
 			<string key="TIMESTEP_NEW" value="1"/>
+			<string key="ENS_ID" value="GEPS"/>
 		</properties>
 		<runIndependent>false</runIndependent>
 		<moduleInstanceId>PreprocessDisaggAccumParametersNWP</moduleInstanceId>
@@ -22,6 +28,7 @@
 			<string key="TIMESERIESTYPE" value="external forecasting"/>
 			<string key="TIMESTEP" value="6"/>
 			<string key="TIMESTEP_NEW" value="1"/>
+			<string key="ENS_ID" value="main"/>
 		</properties>
 		<runIndependent>false</runIndependent>
 		<moduleInstanceId>PreprocessDisaggInstantParametersNWP</moduleInstanceId>
@@ -35,6 +42,7 @@
 			<string key="TIMESERIESTYPE" value="external forecasting"/>
 			<string key="TIMESTEP" value="6"/>
 			<string key="TIMESTEP_NEW" value="1"/>
+			<string key="ENS_ID" value="main"/>
 		</properties>
 		<runIndependent>false</runIndependent>
 		<moduleInstanceId>PreprocessDisaggInstantParametersNWP</moduleInstanceId>
@@ -48,6 +56,7 @@
 			<string key="TIMESERIESTYPE" value="external forecasting"/>
 			<string key="TIMESTEP" value="6"/>
 			<string key="TIMESTEP_NEW" value="1"/>
+			<string key="ENS_ID" value="main"/>
 		</properties>
 		<runIndependent>false</runIndependent>
 		<moduleInstanceId>PreprocessDisaggInstantParametersNWP</moduleInstanceId>
@@ -91,6 +100,7 @@
 			<string key="Grid_PET" value="GEPS"/>
 			<string key="ENDTIME_UPDATE" value="7"/>
 			<string key="STARTTIME_UPDATE" value="0"/>
+			<string key="ENS_ID" value="GEPS"/>
 		</properties>
 		<runIndependent>false</runIndependent>
 		<moduleInstanceId>WflowPrepareForecast1h</moduleInstanceId>
@@ -150,6 +160,7 @@
 			<string key="TOML" value="wflow_sbm_hour"/>
 			<string key="display_points" value="WSCStations"/>
 			<string key="MODEL_NAME" value="BowWflow"/>
+			<string key="ENS_ID" value="GEPS"/>
 			<string key="EXPIRY_TIME" value="14"/>
 		</properties>
 		<runIndependent>false</runIndependent>

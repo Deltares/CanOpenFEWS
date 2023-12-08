@@ -67,10 +67,7 @@ http://fews.wldelft.nl/schemas/version1.0/pcrTransformationSets.xsd" version="1.
 			# - p -> pressure at surface [kPa]
 			# constants
 			TimestepSecs=3600; 	# timestep in seconds
-			convmm = 1000; # conversion from meters to millimeters
 			cp = 1005;	# standard cp [J kg-1 K-1]
-			beta = 20;  # correction constant [W m-2]
-			Cs = 110;  # emperical constant [W m-2]
 			#p = 101325; # general mean surface level pressure [Pa]
 			# convert kPa to hPa
 			pha = p * 10;
@@ -86,7 +83,7 @@ http://fews.wldelft.nl/schemas/version1.0/pcrTransformationSets.xsd" version="1.
 			lambda = (2.502*10**6)-(2250* T);
 			Gamma = (cp * pha)/(0.622 * lambda);
 			# compute ref. evaporation (with global radiation, therefore calling it potential) in J m-2 over whole period
-			Ep_Joule = ((Slope/(Slope+Gamma))*(0.65*Kin);
+			Ep_Joule = (Slope/(Slope+Gamma))*(0.65*Kin);
 			Ep = max((Ep_Joule/lambda)*TimestepSecs,0);
 
 

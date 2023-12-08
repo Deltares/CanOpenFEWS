@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by ICT (Stichting Deltares) -->
+<transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd" version="1.0">
+	<!--Input-->
+	<variable>
+		<variableId>Input_T</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$INPUTTIMESERIES_T$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>$TEMP_PARAMETER$</parameterId>
+			<locationId>$GRID_ID$</locationId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Input_PET</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$INPUTTIMESERIES_PET$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>$PET_PARAMETER$</parameterId>
+			<locationId>$GRID_ID$</locationId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<!--Output-->
+	<variable>
+		<variableId>Output_T</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>$TEMP_PAR_OUT$</parameterId>
+			<locationId>$GRID_ID$</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Output_PET</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>$PET_PAR_OUT$</parameterId>
+			<locationId>$GRID_ID$</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<!--Transformations-->
+	<transformation id="Transform T">
+		<aggregation>
+			<instantaneous>
+				<inputVariable>
+					<variableId>Input_T</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Output_T</variableId>
+				</outputVariable>
+			</instantaneous>
+		</aggregation>
+	</transformation>
+	<transformation id="Transform PET">
+		<aggregation>
+			<instantaneous>
+				<inputVariable>
+					<variableId>Input_PET</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Output_PET</variableId>
+				</outputVariable>
+			</instantaneous>
+		</aggregation>
+	</transformation>
+</transformationModule>

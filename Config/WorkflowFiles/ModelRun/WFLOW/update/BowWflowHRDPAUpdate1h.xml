@@ -1,25 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2014 rel. 2 sp1 (http://www.altova.com) by Afdeling ICT (Stichting Deltares) -->
 <workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.1">
-	<!--Determine De Bruin PET-->
-	<activity>
-		<properties>
-			<string key="LOCATION_ID_IN" value="ERA5"/>
-			<string key="INPUTSERIES" value="ImportERA5"/>
-			<string key="PAR_PRESSURE" value="PA"/>
-			<string key="PAR_RS" value="RS"/>
-			<string key="PAR_KEXT" value="RSext"/>
-			<string key="PAR_TEMP" value="TA.obs"/>
-			<string key="PARAMETER_OUT" value="PET.obs"/>
-			<string key="TIMESERIES_TYPE" value="external historical"/>
-			<string key="START" value="-1"/>
-			<string key="END" value="0"/>
-			<string key="EXPIRY_TIME" value="7"/>
-		</properties>
-		<runIndependent>false</runIndependent>
-		<moduleInstanceId>DeBruinPET</moduleInstanceId>
-		<moduleConfigFileName>DeBruinPET</moduleConfigFileName>
-	</activity>
 	<!--Pre-process the all forcing data to the wflow model grid-->
 	<activity>
 		<properties>
@@ -30,67 +11,50 @@
 			<string key="Par_P_M" value="PC.obs"/>
 			<string key="Par_P" value="PC.sim"/>
 			<string key="Grid_P" value="HRDPA"/>
-			<string key="ModID_T" value="ImportERA5"/>
+			<string key="ModID_T" value="HRDPSVariables"/>
 			<string key="Par_T" value="TA.obs"/>
 			<string key="Par_T_M" value="TA.corr"/>
-			<string key="Grid_T" value="ERA5"/>
-			<string key="ModID_PET" value="DeBruinPET"/>
+			<string key="Grid_T" value="BowGrid"/>
+			<string key="ModID_PET" value="HRDPSVariables"/>
 			<string key="Par_PET" value="PET.obs"/>
-			<string key="Grid_PET" value="ERA5"/>
+			<string key="Grid_PET" value="BowGrid"/>
 			<string key="ENDTIME_UPDATE" value="0"/>
-			<string key="STARTTIME_UPDATE" value="-31"/>
+			<string key="STARTTIME_UPDATE" value="-2"/>
 		</properties>
 		<runIndependent>false</runIndependent>
 		<moduleInstanceId>WflowPrepare1h</moduleInstanceId>
 		<moduleConfigFileName>ResampleToWFlow1hTemplate</moduleConfigFileName>
 	</activity>
-	<!--Downscale temperature to the modelgrid using the lapse rate-->
+	<!-- Make sure there is always data -->
 	<activity>
 		<properties>
-			<string key="catchment" value="BowWflow"/>
-			<string key="grid_id" value="BowGrid"/>
-			<string key="timestep_unit" value="hour"/>
-			<string key="timestep" value="1"/>
-		</properties>
-		<runIndependent>false</runIndependent>
-		<moduleInstanceId>ImportDEM</moduleInstanceId>
-	</activity>
-	<activity>
-		<properties>
-			<string key="INPUTTIMESERIES_DEM" value="ImportDEM"/>
-			<string key="SERIES" value="WflowPrepare1h"/>
-			<string key="SERIES2" value="ImportERA5"/>
-			<string key="PARAMETER_DEM" value="TA.obs"/>
-			<string key="PARAMETER_RDRS" value="TA.corr"/>
-			<string key="TIMESERIESTYPE" value="temporary"/>
-			<string key="TIMESERIESTYPE2" value="external historical"/>
-			<string key="catchment" value="BowWflow"/>
-			<string key="grid_id" value="BowGrid"/>
-			<string key="coarse_dem" value="ERA5"/>
-			<string key="timestep_unit" value="hour"/>
-			<string key="timestep" value="1"/>
+			<string key="Grid_M" value="BowGrid"/>
+			<string key="TYPE" value="temporary"/>
+			<string key="ModID" value="WflowPrepare1h"/>
+			<string key="Par_P" value="PC.obs"/>
+			<string key="Par_T" value="TA.corr"/>
+			<string key="Par_PET" value="PET.obs"/>
+			<string key="TIME_UNIT" value="hour"/>
+			<string key="TIME_STEP" value="1"/>
 			<string key="ENDTIME_UPDATE" value="0"/>
-			<string key="STARTTIME_UPDATE" value="-31"/>
-			<string key="OUTPUTTIMESERIES" value="DownscaleTemperatureModelGrid1h"/>
+			<string key="STARTTIME_UPDATE" value="-2"/>
 		</properties>
 		<runIndependent>false</runIndependent>
-		<moduleInstanceId>DownscaleTemperatureModelGrid1h</moduleInstanceId>
-		<moduleConfigFileName>DownscaleTemperatureModelGridTemplate</moduleConfigFileName>
+		<moduleInstanceId>GapFilledVariables</moduleInstanceId>
+		<moduleConfigFileName>GapFillTemplate</moduleConfigFileName>
 	</activity>
 	<!--Run the simulation-->
 	<activity>
 		<properties>
 			<string key="LOCATION" value="BowGrid"/>
-			<string key="TYPE1" value="temporary"/>
-			<string key="TYPE2" value="simulated historical"/>
-			<string key="INPUTTIMESERIES" value="WflowPrepare1h"/>
-			<string key="TS_T" value="DownscaleTemperatureModelGrid1h"/>
+			<string key="INPUTTIMESERIES" value="GapFilledVariables"/>
+			<string key="TS_T" value="GapFilledVariables"/>
 			<string key="TEMP_PARAMETER" value="TA.corr"/>
 			<string key="PRECIP_PARAMETER" value="PC.obs"/>
 			<string key="PET_PARAMETER" value="PET.obs"/>
 			<string key="ENDDATE" value="0"/>
-			<string key="STARTDATE" value="-31"/>
-			<string key="STARTDATE_HOURS" value="-744"/>
+			<string key="STARTDATE" value="-2"/>
+			<string key="STARTDATE_HOURS" value="-48"/>
 			<string key="FORCING_TYPE" value="temporary"/>
 			<string key="OUTPUT_TYPE" value="simulated historical"/>
 			<string key="TOML" value="wflow_sbm_hour"/>

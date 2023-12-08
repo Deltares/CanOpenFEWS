@@ -363,6 +363,12 @@
 	<moduleInstanceDescriptor id="DownscaleTemperatureModelGrid1h">
 		<description>Downscale temperature forcing data on 1-h time step to the wflow model grid size</description>
 	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="HRDPSVariables">
+		<description>Store the HRDPS variables as external historical timeseries for update runs.</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="GapFilledVariables">
+		<description>Gap filled HRDPS variables for the update runs</description>
+	</moduleInstanceDescriptor>
 	<!-- Wflow Model Run Module Instances-->
 	<moduleInstanceDescriptor id="BowWflow">
 		<description>ModuleDataSet for wflow_sbm model of Bow River</description>
@@ -373,8 +379,11 @@
 	<moduleInstanceDescriptor id="BowWflowRadarForecast">
 		<description>Wflow_sbm forecast run for the Bow River using 6-min radar nowcasts</description>
 	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="BowWflowHRDPAHistorical1h">
+		<description>Wflow_sbm historical run for the Bow River using 1-h HRDPA + ERA5 reanalysis data</description>
+	</moduleInstanceDescriptor>
 	<moduleInstanceDescriptor id="BowWflowHRDPAUpdate1h">
-		<description>Wflow_sbm update run for the Bow River using 1-h HRDPA + ERA5 reanalysis data</description>
+		<description>Wflow_sbm update run for the Bow River using 1-h HRDPA + stored HRDPS temperature and PET</description>
 	</moduleInstanceDescriptor>
 	<moduleInstanceDescriptor id="BowWflowRDPSForecast1h">
 		<description>Wflow_sbm forecast run for the Bow River using 1-h RDPS forecasts</description>

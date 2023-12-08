@@ -12,6 +12,7 @@
 			<timeSeriesType>$TIMESERIESTYPE$</timeSeriesType>
 			<timeStep unit="hour" multiplier="$TIMESTEP$"/>
 			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>$ENS_ID$</ensembleId>
 		</timeSeriesSet>
 	</variable>
 	<!--Output-->
@@ -25,6 +26,7 @@
 			<timeSeriesType>$TIMESERIESTYPE$</timeSeriesType>
 			<timeStep unit="hour" multiplier="$TIMESTEP_NEW$"/>
 			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>$ENS_ID$</ensembleId>
 		</timeSeriesSet>
 	</variable>
 	<!--Transformations-->

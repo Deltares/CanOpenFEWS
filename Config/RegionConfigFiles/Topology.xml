@@ -172,6 +172,10 @@
 			<workflowId>BowWflowRadarUpdate</workflowId>
 			<localRun>false</localRun>
 		</node>
+		<node id="BowWflowHRDPAHistorical1h" name="Run Bow Wflow (HRDPA Historical)">
+			<workflowId>BowWflowHRDPAHistorical1h</workflowId>
+			<localRun>false</localRun>
+		</node>
 		<node id="BowWflowHRDPAUpdate1h" name="Run Bow Wflow (HRDPA Update)">
 			<workflowId>BowWflowHRDPAUpdate1h</workflowId>
 			<localRun>false</localRun>
