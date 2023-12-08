@@ -1,0 +1,15 @@
+# Ignore files that are produced by running Delft-FEWS
+*.txt
+*.log
+*.ini
+*.lnk
+*.jar
+
+# Ignore folders that are produced by running Delft-FEWS
+DumpFiles/
+localDataStore/
+MapsCache/
+temp/
+
+# Ignore python related files
+__pycache__
