@@ -52,12 +52,12 @@
 					</warmState>
 				</stateSelection>
 			</exportStateActivity>
- 			<exportDataSetActivity>
+			<exportDataSetActivity>
 				<moduleInstanceId>$MODEL_NAME$</moduleInstanceId>
 			</exportDataSetActivity>
 			<exportNetcdfActivity>
 				<exportFile>forcing.nc</exportFile>
-				 <netcdfFormat>netcdf4</netcdfFormat>
+				<netcdfFormat>netcdf4</netcdfFormat>
 				<timeSeriesSets>
 					<timeSeriesSet>
 						<moduleInstanceId>$INPUTTIMESERIES$</moduleInstanceId>
@@ -111,7 +111,7 @@
 		<importActivities>
 			<importStateActivity>
 				<stateFile>
-					<importFile>%WORK_DIR%/outstate/outstates.nc</importFile>
+					<importFile>%WORK_DIR%/run_default/outstate/outstates.nc</importFile>
 					<!-- Rename imported state file so that it can be used as input state for a future model run. -->
 					<relativeExportFile>instates.nc</relativeExportFile>
 				</stateFile>
@@ -130,26 +130,7 @@
 						<expiryTime unit="day" multiplier="$EXPIRY_TIME$"/>
 					</timeSeriesSet>
 				</timeSeriesSets>
-			</importNetcdfActivity> 
-		</importActivities> 
+			</importNetcdfActivity>
+		</importActivities>
 	</activities>
-</generalAdapterRun> 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</generalAdapterRun>

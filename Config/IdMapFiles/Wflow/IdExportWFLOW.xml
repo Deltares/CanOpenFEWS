@@ -4,6 +4,7 @@
 	<parameter internal="PC.sim.acc" external="precip"/>
 	<parameter internal="PC.obs" external="precip"/>
 	<parameter internal="TA.corr" external="temp"/>
+	<parameter internal="TA.obs" external="temp"/>
 	<parameter internal="PET.obs" external="pet"/>
 	<enableOneToOneMapping/>
 </idMap>

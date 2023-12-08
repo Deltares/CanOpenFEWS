@@ -61,7 +61,8 @@
 			<string key="SERIES" value="WflowPrepare1h"/>
 			<string key="SERIES2" value="ImportERA5"/>
 			<string key="PARAMETER_DEM" value="TA.obs"/>
-			<string key="PARAMETER_RDRS" value="TA.corr"/>
+			<string key="PARAMETER_ERA5" value="TA.obs"/>
+			<string key="PARAMETER_OUT" value="TA.corr"/>
 			<string key="TIMESERIESTYPE" value="temporary"/>
 			<string key="TIMESERIESTYPE2" value="external historical"/>
 			<string key="catchment" value="BowWflow"/>
@@ -77,6 +78,23 @@
 		<moduleInstanceId>DownscaleTemperatureModelGrid1h</moduleInstanceId>
 		<moduleConfigFileName>DownscaleTemperatureModelGridTemplate</moduleConfigFileName>
 	</activity>
+	<!-- Gap fill the precipitation data with ERA5 data -->
+	<activity>
+		<properties>
+			<string key="Grid_ERA5" value="ERA5"/>
+			<string key="INPUTSERIES_ERA5" value="ImportERA5"/>
+			<string key="Grid_M" value="BowGrid"/>
+			<string key="TYPE1" value="external historical"/>
+			<string key="TYPE2" value="temporary"/>
+			<string key="Par_P_ERA5" value="PC.sim"/>
+			<string key="Par_P_M" value="PC.obs"/>
+			<string key="ENDTIME_UPDATE" value="0"/>
+			<string key="STARTTIME_UPDATE" value="-31"/>
+		</properties>
+		<runIndependent>false</runIndependent>
+		<moduleInstanceId>WflowPrepare1h</moduleInstanceId>
+		<moduleConfigFileName>MergeWithERA5Template</moduleConfigFileName>
+	</activity>	
 	<!--Run the simulation-->
 	<activity>
 		<properties>

@@ -68,11 +68,6 @@
 			<graceTime unit="hour" multiplier="24"/>
 			<localRun>false</localRun>
 		</node>
-		<node id="ImportERA5" name="Import ERA5 Reanalysis Data">
-			<workflowId>ImportERA5</workflowId>
-			<graceTime unit="hour" multiplier="24"/>
-			<localRun>false</localRun>
-		</node>
 	</nodes>
 	<nodes id="PreprocessObs" name="Preprocess Observational Data">
 		<node id="PreprocessWSC" name="Preprocess Hydro Observations">
@@ -102,6 +97,11 @@
 		<node id="ImportRDPA" name="Import RDPA">
 			<workflowId>ImportRDPAGrids</workflowId>
 			<graceTime unit="hour" multiplier="6"/>
+			<localRun>false</localRun>
+		</node>
+		<node id="ImportERA5" name="Import ERA5 Reanalysis Data">
+			<workflowId>ImportERA5</workflowId>
+			<graceTime unit="hour" multiplier="24"/>
 			<localRun>false</localRun>
 		</node>
 	</nodes>

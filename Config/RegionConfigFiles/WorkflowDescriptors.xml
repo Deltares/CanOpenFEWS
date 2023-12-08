@@ -94,13 +94,13 @@
 		<cardinalTimeStep id="$DAY_TIMESTEP$"/>
 	</workflowDescriptor>-->
 	<!--Wflow_sbm Model Run Workflow Descriptors -->
-	<workflowDescriptor id="BowWflowRadarUpdate" name="Run Bow Wflow 6-min Update (radar)" visible="true" forecast="false" autoApprove="true" allowApprove="true">
+	<workflowDescriptor id="BowWflowRadarUpdate" name="Run Bow Wflow 6-min Update (radar)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep unit="minute" multiplier="6"/>
 	</workflowDescriptor>
-	<workflowDescriptor id="BowWflowHRDPAHistorical1h" name="Run Bow Wflow 1-h Historical (HRDPA)" visible="true" forecast="false" autoApprove="true" allowApprove="true">
+	<workflowDescriptor id="BowWflowHRDPAHistorical1h" name="Run Bow Wflow 1-h Historical (HRDPA)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep unit="hour" multiplier="1"/>
 	</workflowDescriptor>
-	<workflowDescriptor id="BowWflowHRDPAUpdate1h" name="Run Bow Wflow 1-h Update (HRDPA)" visible="true" forecast="false" autoApprove="true" allowApprove="true">
+	<workflowDescriptor id="BowWflowHRDPAUpdate1h" name="Run Bow Wflow 1-h Update (HRDPA)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep unit="hour" multiplier="1"/>
 	</workflowDescriptor>
 	<workflowDescriptor id="BowWflowRadarForecast" name="Run Bow Wflow 6-min forecast (nowcast)" visible="true" forecast="true" autoApprove="true" allowApprove="true">

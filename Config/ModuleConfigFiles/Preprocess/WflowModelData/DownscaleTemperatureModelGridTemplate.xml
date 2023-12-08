@@ -13,7 +13,6 @@
 			<cycle unit="$timestep_unit$" multiplier="$timestep$"/>
 			<relativeViewPeriod unit="day" start="$STARTTIME_UPDATE$" startOverrulable="true" end="$ENDTIME_UPDATE$"/>
 			<readWriteMode>read only</readWriteMode>
-			<ensembleId>main</ensembleId>
 		</timeSeriesSet>
 	</variable>
 	<variable>
@@ -27,7 +26,6 @@
 			<timeStep unit="$timestep_unit$" multiplier="$timestep$"/>
 			<relativeViewPeriod unit="day" start="$STARTTIME_UPDATE$" startOverrulable="true" end="$ENDTIME_UPDATE$"/>
 			<readWriteMode>add originals</readWriteMode>
-			<ensembleId>main</ensembleId>
 		</timeSeriesSet>
 	</variable>
 	<variable>
@@ -35,7 +33,7 @@
 		<timeSeriesSet>
 			<moduleInstanceId>$SERIES2$</moduleInstanceId>
 			<valueType>grid</valueType>
-			<parameterId>$PARAMETER_RDRS$</parameterId>
+			<parameterId>$PARAMETER_ERA5$</parameterId>
 			<locationId>$coarse_dem$</locationId>
 			<timeSeriesType>$TIMESERIESTYPE2$</timeSeriesType>
 			<timeStep unit="$timestep_unit$" multiplier="$timestep$"/>
@@ -46,11 +44,11 @@
 	<variable>
 		<variableId>T_Temp_coarse</variableId>
 		<timeSeriesSet>
-			<moduleInstanceId>$SERIES$</moduleInstanceId>
+			<moduleInstanceId>$SERIES2$</moduleInstanceId>
 			<valueType>grid</valueType>
-			<parameterId>$PARAMETER_RDRS$</parameterId>
+			<parameterId>$PARAMETER_ERA5$</parameterId>
 			<locationId>$coarse_dem$</locationId>
-			<timeSeriesType>$TIMESERIESTYPE$</timeSeriesType>
+			<timeSeriesType>$TIMESERIESTYPE2$</timeSeriesType>
 			<timeStep unit="$timestep_unit$" multiplier="$timestep$"/>
 			<relativeViewPeriod unit="day" start="$STARTTIME_UPDATE$" startOverrulable="true" end="$ENDTIME_UPDATE$"/>
 			<readWriteMode>add originals</readWriteMode>
@@ -61,9 +59,9 @@
 		<timeSeriesSet>
 			<moduleInstanceId>$SERIES$</moduleInstanceId>
 			<valueType>grid</valueType>
-			<parameterId>$PARAMETER_RDRS$</parameterId>
+			<parameterId>$PARAMETER_OUT$</parameterId>
 			<locationId>$grid_id$</locationId>
-			<timeSeriesType>$TIMESERIESTYPE$</timeSeriesType>
+			<timeSeriesType>$TIMESERIESTYPE2$</timeSeriesType>
 			<timeStep unit="$timestep_unit$" multiplier="$timestep$"/>
 			<relativeViewPeriod unit="day" start="$STARTTIME_UPDATE$" startOverrulable="true" end="$ENDTIME_UPDATE$"/>
 			<readWriteMode>add originals</readWriteMode>
@@ -74,7 +72,7 @@
 		<timeSeriesSet>
 			<moduleInstanceId>$OUTPUTTIMESERIES$</moduleInstanceId>
 			<valueType>grid</valueType>
-			<parameterId>$PARAMETER_RDRS$</parameterId>
+			<parameterId>$PARAMETER_OUT$</parameterId>
 			<locationId>$grid_id$</locationId>
 			<timeSeriesType>$TIMESERIESTYPE$</timeSeriesType>
 			<timeStep unit="$timestep_unit$" multiplier="$timestep$"/>

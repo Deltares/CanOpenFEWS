@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformationModule version="1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.wldelft.nl/fews" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd">
+	<!-- Transformation module to gap fill a variable with the ERA5 variable in two steps: -->
+	<!-- 1) regrid ERA5 to output grid -->
+	<!-- 2) merge ERA5 with main variable -->
+	<variable>
+		<variableId>ERA5_in</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$INPUTSERIES_ERA5$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>$Par_P_ERA5$</parameterId>
+			<locationId>$Grid_ERA5$</locationId>
+			<timeSeriesType>$TYPE1$</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME_UPDATE$" startOverrulable="true" end="$ENDTIME_UPDATE$" endOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>ERA5_regridded</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>$Par_P_ERA5$</parameterId>
+			<locationId>$Grid_M$</locationId>
+			<timeSeriesType>$TYPE2$</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME_UPDATE$" startOverrulable="true" end="$ENDTIME_UPDATE$" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Variable_in_1</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>$Par_P_M$</parameterId>
+			<locationId>$Grid_M$</locationId>
+			<timeSeriesType>$TYPE2$</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME_UPDATE$" startOverrulable="true" end="$ENDTIME_UPDATE$" endOverrulable="true"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>Variable_out</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>$Par_P_M$</parameterId>
+			<locationId>$Grid_M$</locationId>
+			<timeSeriesType>$TYPE2$</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="$STARTTIME_UPDATE$" startOverrulable="true" end="$ENDTIME_UPDATE$" endOverrulable="true"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<transformation id="ERA5 2 ModelGrid">
+		<interpolationSpatial>
+			<closestDistance>
+				<inputVariable>
+					<variableId>ERA5_in</variableId>
+				</inputVariable>
+				<distanceGeoDatum>WGS 1984</distanceGeoDatum>
+				<outputVariable>
+					<variableId>ERA5_regridded</variableId>
+				</outputVariable>
+			</closestDistance>
+		</interpolationSpatial>
+	</transformation>
+	<transformation id="Merge (gap fill) HRDPA with ERA5 rainfall">
+		<merge>
+			<simple>
+				<inputVariable>
+					<variableId>Variable_in_1</variableId>
+				</inputVariable>
+				<inputVariable>
+					<variableId>ERA5_regridded</variableId>
+				</inputVariable>
+				<outputVariable>
+					<variableId>Variable_out</variableId>
+				</outputVariable>
+			</simple>
+		</merge>
+	</transformation>
+</transformationModule>

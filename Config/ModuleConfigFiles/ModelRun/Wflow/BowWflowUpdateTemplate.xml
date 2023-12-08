@@ -110,7 +110,7 @@
 		<importActivities>
 			<importStateActivity>
 				<stateFile>
-					<importFile>%WORK_DIR%/outstate/outstates.nc</importFile>
+					<importFile>%WORK_DIR%/run_default/outstate/outstates.nc</importFile>
 					<!-- Rename imported state file so that it can be used as input state for a future model run. -->
 					<relativeExportFile>instates.nc</relativeExportFile>
 				</stateFile>

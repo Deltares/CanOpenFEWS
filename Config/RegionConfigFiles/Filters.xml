@@ -292,6 +292,112 @@
 			<readWriteMode>read complete forecast</readWriteMode>
 		</timeSeriesSet>
 	</timeSeriesSets>
+	<!--Bow Wflow Historic Runs-->
+	<timeSeriesSets id="BowWflowHistoric1h">
+		<timeSeriesSet>
+			<moduleInstanceId>BowWflowHRDPAHistorical1h</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim.hist</parameterId>
+			<locationSetId>WSCStations</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-31" end="0"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</timeSeriesSets>
+	<timeSeriesSets id="BowWflowUpdate1h">
+		<timeSeriesSet>
+			<moduleInstanceId>BowWflowHRDPAUpdate1h</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim.hist</parameterId>
+			<locationSetId>WSCStations</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<relativeViewPeriod unit="day" start="-7" end="0"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</timeSeriesSets>
+	<timeSeriesSets id="BowWflowRadarUpdate6min">
+		<timeSeriesSet>
+			<moduleInstanceId>BowWflowRadarUpdate</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim.hist</parameterId>
+			<locationSetId>WSCStations</locationSetId>
+			<timeSeriesType>simulated historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="6"/>
+			<relativeViewPeriod unit="day" start="-2" end="0"/>
+			<readWriteMode>read only</readWriteMode>
+		</timeSeriesSet>
+	</timeSeriesSets>
+	<!--Bow Wflow Forecast Runs-->
+	<timeSeriesSets id="BowWflowGDPS">
+		<timeSeriesSet>
+			<moduleInstanceId>BowWflowGDPSForecast1h</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim.fc</parameterId>
+			<locationSetId>WSCStations</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</timeSeriesSets>
+	<timeSeriesSets id="BowWflowGEPS">
+		<timeSeriesSet>
+			<moduleInstanceId>BowWflowGEPSForecast1h</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim.fc</parameterId>
+			<locationSetId>WSCStations</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>GEPS</ensembleId>
+		</timeSeriesSet>
+	</timeSeriesSets>
+	<timeSeriesSets id="BowWflowHRDPS">
+		<timeSeriesSet>
+			<moduleInstanceId>BowWflowHRDPSForecast1h</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim.fc</parameterId>
+			<locationSetId>WSCStations</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</timeSeriesSets>
+	<timeSeriesSets id="BowWflowRDPS">
+		<timeSeriesSet>
+			<moduleInstanceId>BowWflowRDPSForecast1h</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim.fc</parameterId>
+			<locationSetId>WSCStations</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</timeSeriesSets>
+	<timeSeriesSets id="BowWflowREPS">
+		<timeSeriesSet>
+			<moduleInstanceId>BowWflowREPSForecast1h</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim.fc</parameterId>
+			<locationSetId>WSCStations</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+			<ensembleId>REPS</ensembleId>
+		</timeSeriesSet>
+	</timeSeriesSets>
+	<timeSeriesSets id="BowWflowRadar">
+		<timeSeriesSet>
+			<moduleInstanceId>BowWflowRadarForecast</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim.fc</parameterId>
+			<locationSetId>WSCStations</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="minute" multiplier="6"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</timeSeriesSets>
 	<!-- First Level Filters -->
 	<filter id="MeasuredData" name="Hydro and Meteo Station Data">
 		<mapExtentId>$REGION$</mapExtentId>
@@ -320,6 +426,21 @@
 		<child foreignKey="RDPSBasins"/>
 		<child foreignKey="GDPSBasins"/>
 		<child foreignKey="REPSBasins"/>
+	</filter>
+	<filter id="BowWflowHistoric" name="BowWflow Historic">
+		<mapExtentId>$REGION$</mapExtentId>
+		<child foreignKey="BowWflowHistoric1h"/>
+		<child foreignKey="BowWflowUpdate1h"/>
+		<child foreignKey="BowWflowRadarUpdate6min"/>
+	</filter>
+	<filter id="BowWflowForecast" name="BowWflow Forecast">
+		<mapExtentId>$REGION$</mapExtentId>
+		<child foreignKey="BowWflowGDPS"/>
+		<child foreignKey="BowWflowGEPS"/>
+		<child foreignKey="BowWflowHRDPS"/>
+		<child foreignKey="BowWflowRDPS"/>
+		<child foreignKey="BowWflowREPS"/>
+		<child foreignKey="BowWflowRadar"/>
 	</filter>
 	<!-- Second Level Filters -->
 	<filter id="HydroStations" name="Hydro Stations">
@@ -382,5 +503,40 @@
 		<validationIconsVisible>false</validationIconsVisible>
 		<timeSeriesSetsId>SnowBasinsSNODAS</timeSeriesSetsId>
 	</filter>
-	
+	<filter id="BowWflowHistoric1h" name="BowWflow Historic (1h)">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>BowWflowHistoric1h</timeSeriesSetsId>
+	</filter>
+	<filter id="BowWflowUpdate1h" name="BowWflow Update (1h)">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>BowWflowUpdate1h</timeSeriesSetsId>
+	</filter>
+	<filter id="BowWflowRadarUpdate6min" name="BowWflow Radar Update">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>BowWflowRadarUpdate6min</timeSeriesSetsId>
+	</filter>
+	<filter id="BowWflowGDPS" name="BowWflow GDPS (1h)">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>BowWflowGDPS</timeSeriesSetsId>
+	</filter>
+	<filter id="BowWflowGEPS" name="BowWflow GEPS (1h)">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>BowWflowGEPS</timeSeriesSetsId>
+	</filter>
+	<filter id="BowWflowHRDPS" name="BowWflow HRDPS (1h)">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>BowWflowHRDPS</timeSeriesSetsId>
+	</filter>
+	<filter id="BowWflowRDPS" name="BowWflow RDPS (1h)">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>BowWflowRDPS</timeSeriesSetsId>
+	</filter>
+	<filter id="BowWflowREPS" name="BowWflow REPS (1h)">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>BowWflowREPS</timeSeriesSetsId>
+	</filter>
+	<filter id="BowWflowRadar" name="BowWflow Radar">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>BowWflowRadar</timeSeriesSetsId>
+	</filter>
 </filters>

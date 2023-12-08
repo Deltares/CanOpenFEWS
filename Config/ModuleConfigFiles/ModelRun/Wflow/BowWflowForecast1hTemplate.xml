@@ -124,6 +124,7 @@
 						<timeStep unit="hour" multiplier="1"/>
 						<readWriteMode>add originals</readWriteMode>
 						<expiryTime unit="day" multiplier="$EXPIRY_TIME$"/>
+						<ensembleId>main</ensembleId>
 					</timeSeriesSet>
 				</timeSeriesSets>
 			</importNetcdfActivity>
