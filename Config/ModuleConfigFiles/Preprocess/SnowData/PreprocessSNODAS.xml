@@ -14,6 +14,19 @@
 			<readWriteMode>read complete forecast</readWriteMode>
 		</timeSeriesSet>
 	</variable>
+	<!--Temp-->
+	<variable>
+		<variableId>RegridNonEquiTemp</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>Import$SOURCE$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>$PARAMETER$</parameterId>
+			<locationId>$DESTGRID$</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
 	<!--Output-->
 	<variable>
 		<variableId>Grid</variableId>
@@ -21,7 +34,7 @@
 			<moduleInstanceId>Import$SOURCE$</moduleInstanceId>
 			<valueType>grid</valueType>
 			<parameterId>$PARAMETER$</parameterId>
-			<locationId>$SOURCE$</locationId>
+			<locationId>$DESTGRID$</locationId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="day"/>
 			<readWriteMode>read complete forecast</readWriteMode>
@@ -54,11 +67,24 @@
 		</timeSeriesSet>
 	</variable>
 	<!-- Transformation-->
+	<transformation id="regrid">
+	<interpolationSpatial>
+	<closestDistance>
+		<inputVariable>
+				<variableId>GridNonEqui</variableId>
+			</inputVariable>
+			<distanceGeoDatum>$DISTANCEGEODATUM$</distanceGeoDatum>
+			<outputVariable>
+				<variableId>RegridNonEquiTemp</variableId>
+		</outputVariable>
+	</closestDistance>
+	</interpolationSpatial>
+	</transformation>
 	<transformation id="sample_equidistant">
 		<sample>
 			<nonEquidistant>
 				<nonEquidistantInputVariable>
-					<variableId>GridENonEqui</variableId>
+					<variableId>RegridNonEquiTemp</variableId>
 				</nonEquidistantInputVariable>
 				<interpolationType>linear</interpolationType>
 				<outputVariable>

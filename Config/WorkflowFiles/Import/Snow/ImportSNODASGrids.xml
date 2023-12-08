@@ -4,6 +4,7 @@
 	<properties>
 		<string key="SOURCE" value="SNODAS"/>
 		<string key="PARAMETER" value="SWE.sim"/>
+		<string key="DESTGRID" value="SNODAS"/>
 		<string key="BASINS" value="ProcessBasins"/>
 		<string key="STATIONS" value="SnowStations"/>
 	</properties>

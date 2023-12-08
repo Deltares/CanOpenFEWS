@@ -3,46 +3,6 @@
 <transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd" version="1.0">
 	<!--Input-->
 	<variable>
-		<variableId>Grid6Hour</variableId>
-		<timeSeriesSet>
-			<moduleInstanceId>Import$SOURCE$</moduleInstanceId>
-			<valueType>grid</valueType>
-			<parameterId>$PARAMETER$</parameterId>
-			<locationId>$SOURCE$</locationId>
-			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep unit="hour" multiplier="6"/>
-			<readWriteMode>read complete forecast</readWriteMode>
-		</timeSeriesSet>
-	</variable>
-	<!--Temp-->
-	<!--  SWE average / basin-->
-	<variable>
-		<variableId>Basin6Hour</variableId>
-		<timeSeriesSet>
-			<moduleInstanceId>Preprocess$SOURCE$</moduleInstanceId>
-			<valueType>scalar</valueType>
-			<parameterId>$PARAMETER$</parameterId>
-			<locationSetId>$BASINS$</locationSetId>
-			<timeSeriesType>temporary</timeSeriesType>
-			<timeStep unit="hour" multiplier="6"/>
-			<readWriteMode>read complete forecast</readWriteMode>
-		</timeSeriesSet>
-	</variable>
-	<!--  SWE average / station-->
-	<variable>
-		<variableId>Station6Hour</variableId>
-		<timeSeriesSet>
-			<moduleInstanceId>Preprocess$SOURCE$</moduleInstanceId>
-			<valueType>scalar</valueType>
-			<parameterId>$PARAMETER$</parameterId>
-			<locationSetId>SnowStations</locationSetId>
-			<timeSeriesType>temporary</timeSeriesType>
-			<timeStep unit="hour" multiplier="6"/>
-			<readWriteMode>read complete forecast</readWriteMode>
-		</timeSeriesSet>
-	</variable>
-	
-		<variable>
 		<variableId>Grid</variableId>
 		<timeSeriesSet>
 			<moduleInstanceId>Import$SOURCE$</moduleInstanceId>
@@ -85,10 +45,10 @@
 		<interpolationSpatial>
 			<average>
 				<inputVariable>
-					<variableId>Grid6Hour</variableId>
+					<variableId>Grid</variableId>
 				</inputVariable>
 				<outputVariable>
-					<variableId>Basin6Hour</variableId>
+					<variableId>Basin</variableId>
 				</outputVariable>
 			</average>
 		</interpolationSpatial>
@@ -97,48 +57,12 @@
 		<interpolationSpatial>
 			<closestDistance>
 				<inputVariable>
-					<variableId>Grid6Hour</variableId>
-				</inputVariable>
-				<outputVariable>
-					<variableId>Station6Hour</variableId>
-				</outputVariable>
-			</closestDistance>
-		</interpolationSpatial>
-	</transformation>
-	<transformation id="grid_to_daily">
-		<aggregation>
-			<instantaneousToMean>
-				<inputVariable>
-					<variableId>Grid6Hour</variableId>
-				</inputVariable>
-				<outputVariable>
 					<variableId>Grid</variableId>
-				</outputVariable>
-			</instantaneousToMean>
-		</aggregation>
-	</transformation>
-	<transformation id="basins_to_daily">
-		<aggregation>
-			<instantaneousToMean>
-				<inputVariable>
-					<variableId>Basin6Hour</variableId>
-				</inputVariable>
-				<outputVariable>
-					<variableId>Basin</variableId>
-				</outputVariable>
-			</instantaneousToMean>
-		</aggregation>
-	</transformation>
-	<transformation id="stations_to_daily">
-		<aggregation>
-			<instantaneousToMean>
-				<inputVariable>
-					<variableId>Station6Hour</variableId>
 				</inputVariable>
 				<outputVariable>
 					<variableId>Station</variableId>
 				</outputVariable>
-			</instantaneousToMean>
-		</aggregation>
+			</closestDistance>
+		</interpolationSpatial>
 	</transformation>
 </transformationModule>

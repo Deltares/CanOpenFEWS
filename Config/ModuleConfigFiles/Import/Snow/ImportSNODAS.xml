@@ -16,13 +16,14 @@
 			<!--<gridStartPoint>SW</gridStartPoint>-->
 			<dataFeedId>SNODAS</dataFeedId>
 		</general>
+		<tolerance parameterId="SWE.sim" timeUnit="day" unitCount="1"></tolerance>
 		<timeSeriesSet>
 			<moduleInstanceId>ImportSNODAS</moduleInstanceId>
 			<valueType>grid</valueType>
 			<parameterId>SWE.sim</parameterId>
 			<locationId>SNODAS</locationId>
 			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep unit="hour" multiplier="6"/>
+			<timeStep unit="day"/>
 			<readWriteMode>add originals</readWriteMode>
 			<synchLevel>6</synchLevel>
 			<expiryTime unit="day" multiplier="15"/>
@@ -44,13 +45,14 @@
 			</importTimeZone>
 			<dataFeedId>SNODAS</dataFeedId>
 		</general>
+		<tolerance parameterId="SD.sim" timeUnit="day" unitCount="1"></tolerance>
 		<timeSeriesSet>
 			<moduleInstanceId>ImportSNODAS</moduleInstanceId>
 			<valueType>grid</valueType>
 			<parameterId>SD.sim</parameterId>
 			<locationId>SNODAS</locationId>
 			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep unit="hour" multiplier="6"/>
+			<timeStep unit="day"/>
 			<readWriteMode>add originals</readWriteMode>
 			<synchLevel>6</synchLevel>
 			<expiryTime unit="day" multiplier="15"/>
@@ -72,13 +74,14 @@
 			</importTimeZone>
 			<dataFeedId>SNODAS</dataFeedId>
 		</general>
+		<tolerance parameterId="SE.sim" timeUnit="day" unitCount="1"></tolerance>
 		<timeSeriesSet>
 			<moduleInstanceId>ImportSNODAS</moduleInstanceId>
 			<valueType>grid</valueType>
 			<parameterId>SE.sim</parameterId>
 			<locationId>SNODAS</locationId>
 			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep unit="hour" multiplier="6"/>
+			<timeStep unit="day"/>
 			<readWriteMode>add originals</readWriteMode>
 			<synchLevel>6</synchLevel>
 			<expiryTime unit="day" multiplier="15"/>
@@ -100,13 +103,14 @@
 			</importTimeZone>
 			<dataFeedId>SNODAS</dataFeedId>
 		</general>
+		<tolerance parameterId="SM.sim" timeUnit="day" unitCount="1"></tolerance>
 		<timeSeriesSet>
 			<moduleInstanceId>ImportSNODAS</moduleInstanceId>
 			<valueType>grid</valueType>
 			<parameterId>SM.sim</parameterId>
 			<locationId>SNODAS</locationId>
 			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep unit="hour" multiplier="6"/>
+			<timeStep unit="day"/>
 			<readWriteMode>add originals</readWriteMode>
 			<synchLevel>6</synchLevel>
 			<expiryTime unit="day" multiplier="15"/>
