@@ -99,6 +99,7 @@
 	<locationSet id="BowWatershed">
 		<esriShapeFile>
 			<file>Bow_Watershed.shp</file>
+			<projectionFileAvailable>true</projectionFileAvailable>
 			<id>Bow_Watershed</id>
 			<name>Bow_Watershed</name>
 		</esriShapeFile>
@@ -107,6 +108,7 @@
 	<locationSet id="BowBasins">
 		<esriShapeFile>
 			<file>Bow_Basins.shp</file>
+			<projectionFileAvailable>true</projectionFileAvailable>
 			<id>%FID%</id>
 			<name>%NAME%</name>
 		</esriShapeFile>
@@ -115,6 +117,7 @@
 	<locationSet id="BowSubBasins">
 		<esriShapeFile>
 			<file>Bow_Subbasins.shp</file>
+			<projectionFileAvailable>true</projectionFileAvailable>
 			<id>%HRU_ID%</id>
 			<name>%HRU_ID%</name>
 		</esriShapeFile>

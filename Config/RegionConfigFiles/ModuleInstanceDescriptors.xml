@@ -289,26 +289,26 @@
 		<description>ModuleDataSet for Bow</description>
 	</moduleInstanceDescriptor>
 	<!-- Model Run Module Instances - Generic -->
-	<moduleInstanceDescriptor id="BowHistoricUpdate">
-		<description>ModuleInstanceId holder for Model</description>
+	<moduleInstanceDescriptor id="BowWflowHistoricUpdate">
+		<description>ModuleInstanceId holder for Wflow Model</description>
 	</moduleInstanceDescriptor>
-	<moduleInstanceDescriptor id="BowHistoric">
-		<description>Run the Bow model with Historic Data</description>
+	<moduleInstanceDescriptor id="BowWflowHistoric">
+		<description>Run the Bow model with Wflow Historic Data</description>
 	</moduleInstanceDescriptor>
-	<moduleInstanceDescriptor id="BowForecast">
-		<description>Run the Bow model with Forecast Data</description>
+	<moduleInstanceDescriptor id="BowWflowForecast">
+		<description>Run the Bow model with Wflow Forecast Data</description>
 	</moduleInstanceDescriptor>
-	<moduleInstanceDescriptor id="BowRDPSForecast">
-		<description>Run the Bow model with RDPS Forecast Data</description>
+	<moduleInstanceDescriptor id="BowWflowRDPSForecast">
+		<description>Run the Bow model with Wflow RDPS Forecast Data</description>
 	</moduleInstanceDescriptor>
-	<moduleInstanceDescriptor id="BowGDPSForecast">
-		<description>Run the Bow model with GDPS Forecast Data</description>
+	<moduleInstanceDescriptor id="BowWflowGDPSForecast">
+		<description>Run the Bow model with Wflow GDPS Forecast Data</description>
 	</moduleInstanceDescriptor>
-	<moduleInstanceDescriptor id="BowREPSForecast">
-		<description>Run the Bow model with REPS Forecast Data</description>
+	<moduleInstanceDescriptor id="BowWflowREPSForecast">
+		<description>Run the Bow model with Wflow REPS Forecast Data</description>
 	</moduleInstanceDescriptor>
-	<moduleInstanceDescriptor id="BowGEPSForecast">
-		<description>Run the Bow model with REPS Forecast Data</description>
+	<moduleInstanceDescriptor id="BowWflowGEPSForecast">
+		<description>Run the Bow model with Wflow REPS Forecast Data</description>
 	</moduleInstanceDescriptor>
 	<!-- Model Run Module Instances - Raven -->
 	<moduleInstanceDescriptor id="BowRavenHistoricUpdate">

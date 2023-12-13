@@ -21,7 +21,7 @@
 	<map internalLocation="NSRPS_reps" internalParameter="QR.fcst" internalEnsemble="REPS" externalLocation="NSRPS_reps" externalParameter="EHPS_1km_RiverDischarge_Mem19" internalEnsembleMemberId="19"/>
 	<map internalLocation="NSRPS_reps" internalParameter="QR.fcst" internalEnsemble="REPS" externalLocation="NSRPS_reps" externalParameter="EHPS_1km_RiverDischarge_Mem20" internalEnsembleMemberId="20"/>
 	<map internalLocation="NSRPS_reps" internalParameter="QR.fcst" internalEnsemble="REPS" externalLocation="NSRPS_reps" externalParameter="EHPS_1km_RiverDischarge_Mem21" internalEnsembleMemberId="21"/>
-	<map internalLocation="NSRPS" internalParameter="QR.fcst" externalLocation="NSRPS" externalParameter="DHPS_1km_RiverDischarge"/>
-	<map internalLocation="NSRPS" internalParameter="QR.sim" externalLocation="NSRPS" externalParameter="DHPS-Analysis_1km_RiverDischarge"/>
-	<map internalLocation="NSRPS" internalParameter="ROF.sim" externalLocation="NSRPS" externalParameter="DHPS-Analysis_1km_TotalRunoff-Avg12h"/>
+	<map internalLocation="NSRPS" internalParameter="QR.fcst" externalLocation="none" externalParameter="DHPS_1km_RiverDischarge"/>
+	<map internalLocation="NSRPS" internalParameter="QR.sim" externalLocation="none" externalParameter="DHPS-Analysis_1km_RiverDischarge"/>
+	<map internalLocation="NSRPS" internalParameter="ROF.sim" externalLocation="none" externalParameter="DHPS-Analysis_1km_TotalRunoff-Avg12h"/>
 </idMap>

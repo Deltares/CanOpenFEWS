@@ -48,8 +48,9 @@
 		<cardinalTimeStep unit="minute" multiplier="6"/>
 		<runExpiryTime unit="day" multiplier="7"/>
 	</workflowDescriptor>
-	<workflowDescriptor id="ImportNSRPSGrids" name="Import NSRPS " forecast="false" allowApprove="false" visible="true">
-		<description/>
+	<workflowDescriptor id="ImportNSRPSGrids" name="Import NSRPS (WCS Service)" forecast="false" allowApprove="false" visible="true">
+		<description>Retrieve Forecast Grids from Web Coverage Service (WCS)</description>
+		<cardinalTimeStep id="GMT_6hourly"/>
 		<runExpiryTime unit="day" multiplier="14"/>
 	</workflowDescriptor>
 	<!--Additional Gridded Data Imports -->

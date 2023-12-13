@@ -284,7 +284,19 @@
 		<xCellSize>0.00833333</xCellSize>
 		<yCellSize>0.00833333</yCellSize>
 	</regular>
-	<regular locationId="NSRPS">
+<regular locationId="NSRPS">
+        <rows>1767</rows>
+        <columns>1510</columns>
+        <geoDatum>WGS 1984</geoDatum>
+        <firstCellCenter>
+            <x>-121.99503311258277</x>
+            <y>61.99575551782682</y>
+            <z>0.0</z>
+        </firstCellCenter>
+        <xCellSize>0.00993377</xCellSize>
+        <yCellSize>0.00848896</yCellSize>
+    </regular>
+<!--	<regular locationId="NSRPS">
 		<rows>1800</rows>
 		<columns>1800</columns>
 		<geoDatum>WGS 1984</geoDatum>
@@ -295,7 +307,7 @@
 		</firstCellCenter>
 		<xCellSize>0.00833333</xCellSize>
 		<yCellSize>0.00833333</yCellSize>
-	</regular>
+	</regular>-->
 	<regular locationId="NSRPS_reps">
 		<rows>1200</rows>
 		<columns>2640</columns>
