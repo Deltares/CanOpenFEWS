@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2014 rel. 2 sp1 (http://www.altova.com) by Afdeling ICT (Stichting Deltares) -->
 <filters version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/filters.xsd">
 	<!-- Add default filter Id -->
 	<defaultFilterId>HydroStations</defaultFilterId>
@@ -84,7 +82,7 @@
 			<parameterId>PC.sim</parameterId>
 			<locationSetId>DisplayBasins</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep unit="hour" multiplier="1"/>
+			<timeStep unit="hour" multiplier="6"/>
 			<readWriteMode>read complete forecast</readWriteMode>
 		</timeSeriesSet>
 	</timeSeriesSets>
@@ -95,7 +93,7 @@
 			<parameterId>PC.sim</parameterId>
 			<locationSetId>DisplayBasins</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep unit="hour" multiplier="1"/>
+			<timeStep unit="hour" multiplier="6"/>
 			<readWriteMode>read complete forecast</readWriteMode>
 		</timeSeriesSet>
 	</timeSeriesSets>
@@ -169,7 +167,7 @@
 			<parameterId>PC.sim</parameterId>
 			<locationSetId>DisplayMeteoStations</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep unit="hour" multiplier="1"/>
+			<timeStep unit="hour" multiplier="6"/>
 			<readWriteMode>read complete forecast</readWriteMode>
 		</timeSeriesSet>
 	</timeSeriesSets>
@@ -180,7 +178,7 @@
 			<parameterId>PC.sim</parameterId>
 			<locationSetId>DisplayMeteoStations</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep unit="hour" multiplier="1"/>
+			<timeStep unit="hour" multiplier="6"/>
 			<readWriteMode>read complete forecast</readWriteMode>
 		</timeSeriesSet>
 	</timeSeriesSets>
@@ -413,7 +411,7 @@
 	</filter>
 	<filter id="ForecastDataStation" name="Forecast Data - By Station">
 		<mapExtentId>$REGION$</mapExtentId>
-		<child foreignKey="HRDPAStations"/>
+		<!--<child foreignKey="HRDPAStations"/>-->
 		<child foreignKey="RDPAStations"/>
 		<child foreignKey="RDPSStations"/>
 		<child foreignKey="GDPSStations"/>

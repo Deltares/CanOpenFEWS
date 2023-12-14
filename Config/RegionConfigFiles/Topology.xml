@@ -25,31 +25,6 @@
 			</node>
 		</nodes>
 	</nodes>
-	<!--	<nodes id="RScripts" name="R Scripts">
-		<node id="InstallUpdateRLibraries" name="Install or update R libraries">
-			<workflowId>InstallUpdateRLibraries</workflowId>
-		</node>
-		<node id="HelloWorld" name="Hello World Example!">
-			<workflowId>HelloWorld</workflowId>
-		</node>
-	</nodes>
-	<nodes id="HYDAT" name="Import Hydrological Data from HYDAT">
-		<node id="DownloadUpdateHYDAT" name="Download or Update HYDAT Database">
-			<workflowId>DownloadUpdateHYDAT</workflowId>
-			<graceTime unit="day" multiplier="30"/>
-		</node>
-		<node id="DownloadHistoricalHydrometricData" name="Import Historical Hydrometric Data from HYDAT">
-			<workflowId>DownloadHistoricalHydrometricData</workflowId>
-			<graceTime unit="hour" multiplier="24"/>
-			<localRun>false</localRun>
-		</node>
-		<node id="DownloadRealTimeHydrometricData" name="Import Real Time Hydrometric Data from HYDAT">
-			<workflowId>DownloadRealTimeHydrometricData</workflowId>
-			<graceTime unit="hour" multiplier="24"/>
-			<localRun>false</localRun>
-		</node>
-	</nodes>-->
-	<!-- Workflows below not included, in preference of the R Scripting. These workflows pull directly from the DataMart CSV files-->
 	<nodes id="ImportWSC" name="Import Hydrological Data from DataMart">
 		<node id="ImportWSCHourly" name="Import Past Days Hydrometric Data from DataMart">
 			<workflowId>ImportWSCHourly</workflowId>
@@ -65,18 +40,6 @@
 	<nodes id="ImportECCCStationNodes" name="Import Meteorological Data">
 		<node id="ImportECCCRecent" name="Import Recent Meteo Station Data from DataMart">
 			<workflowId>ImportECCCScalar</workflowId>
-			<graceTime unit="hour" multiplier="24"/>
-			<localRun>false</localRun>
-		</node>
-	</nodes>
-	<nodes id="PreprocessObs" name="Preprocess Observational Data">
-		<node id="PreprocessWSC" name="Preprocess Hydro Observations">
-			<workflowId>PreprocessWSC</workflowId>
-			<graceTime unit="hour" multiplier="24"/>
-			<localRun>false</localRun>
-		</node>
-		<node id="PreprocessECCCStationsRecent" name="Preprocess Meteo Observations (Last 30 Days)">
-			<workflowId>PreprocessECCCMeteoRecent</workflowId>
 			<graceTime unit="hour" multiplier="24"/>
 			<localRun>false</localRun>
 		</node>

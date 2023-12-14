@@ -120,6 +120,9 @@
 			<projectionFileAvailable>true</projectionFileAvailable>
 			<id>%HRU_ID%</id>
 			<name>%HRU_ID%</name>
+			<attribute id="RavenBasin">
+				<text>%HRU_ID%</text>
+			</attribute>
 		</esriShapeFile>
 	</locationSet>
 	<!-- Create LocationSets based on Attributes-->

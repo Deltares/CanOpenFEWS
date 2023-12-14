@@ -1,36 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.1">
-	<!-- Run MESH Model Historic -->
+	<!-- Run Raven Model Historic -->
+	<!-- General Properties -->
 	<properties>
-		<string key="MODEL" value="Raven"/>
+		<string key="MODEL" value="Bow"/>
 		<string key="STARTTIME" value="-25"/>
 		<string key="ENDTIME" value="0"/>
+	</properties>
+	
+	<!-- Preprocess Meteo Station Data -->
+	<activity>
+		<properties>
+			<string key="BASINLOCATIONS" value="ModelBasins"/>
+			<string key="STATIONLOCATIONS" value="ModelMeteoStations"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PreprocessECCCScalarRavenInput</moduleInstanceId>
+	</activity>
+	
+	<!-- Run Raven Historic-->
+	<activity>
+		<properties>
 		<string key="INPUTTIMESERIES" value="ImportECCCScalar"/>
-		<string key="PARAMETER2" value="PC.obs"/>
-		<string key="PARAMETER1" value="TA.obs"/>
-		<string key="OUTPUTTIMESERIES" value="RavenHistoric"/>
+		<string key="OUTPUTTIMESERIES" value="BowRavenHistoric"/>
 		<string key="INPUTMODULEINSTANCEMETEO" value="ImportECCCScalar"/>
 		<string key="PARAMETER3" value="QR.sim"/>
 		<string key="TYPE1" value="external historical"/>
 		<string key="TYPE2" value="simulated historical"/>
 	</properties>
-	<activity>
 		<runIndependent>true</runIndependent>
-		<moduleInstanceId>RavenHistoric</moduleInstanceId>
+		<moduleInstanceId>BowRavenHistoric</moduleInstanceId>
 		<moduleConfigFileName>RavenHistoricTemplate</moduleConfigFileName>
 	</activity>
+	
 	<!-- Postprocess Model Results-->
 	<activity>
 		<properties>
 			<string key="TIMESERIESTYPE" value="simulated historical"/>
 			<string key="PARAMETER" value="QR.sim"/>
 			<string key="ENSEMBLE" value="main"/>
-			<string key="MODELOUTPUTLOCATION" value="RavenSubBasins"/>
-			<string key="STATIONLOCATIONS" value="RavenHydroStations"/>
+			<string key="MODELOUTPUTLOCATION" value="ModelBasins"/>
+			<string key="STATIONLOCATIONS" value="ModelHydroStations"/>
 			<string key="TIMESTEP" value="$DAY_TIMESTEP$"/>
 		</properties>
 		<runIndependent>true</runIndependent>
-		<moduleInstanceId>RavenHistoric</moduleInstanceId>
+		<moduleInstanceId>BowRavenHistoric</moduleInstanceId>
 		<moduleConfigFileName>PostprocessModelBasinOutputToStationTemplate</moduleConfigFileName>
 	</activity>
 </workflow>

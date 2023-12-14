@@ -39,7 +39,7 @@
 		</startUpActivities>
 		<exportActivities>
 			<exportStateActivity>
-				<moduleInstanceId>$MODEL$Historic</moduleInstanceId>
+				<moduleInstanceId>$MODEL$RavenHistoric</moduleInstanceId>
 				<stateExportDir>%ROOT_DIR%/$MODEL$/work</stateExportDir>
 				<stateConfigFile>%ROOT_DIR%/$MODEL$/work/stateInfo.xml</stateConfigFile>
 				<stateLocations type="file">
@@ -55,7 +55,7 @@
 				</stateSelection>
 			</exportStateActivity>
 			<exportDataSetActivity>
-				<moduleInstanceId>$MODEL$Historic</moduleInstanceId>
+				<moduleInstanceId>$MODEL$RavenHistoric</moduleInstanceId>
 			</exportDataSetActivity>
 			<exportNetcdfActivity>
 				<exportFile>inputs.nc</exportFile>
@@ -64,7 +64,7 @@
 						<moduleInstanceId>$INPUTMODULEINSTANCEMETEO$</moduleInstanceId>
 						<valueType>scalar</valueType>
 						<parameterId>PC.obs</parameterId>
-						<locationSetId>LiardSubBasins</locationSetId>
+						<locationSetId>$MODEL$SubBasins</locationSetId>
 						<timeSeriesType>external historical</timeSeriesType>
 						<timeStep id="$DAY_TIMESTEP$"/>
 						<relativeViewPeriod unit="hour" end="0" startOverrulable="true"/>
@@ -74,7 +74,7 @@
 						<moduleInstanceId>$INPUTMODULEINSTANCEMETEO$</moduleInstanceId>
 						<valueType>scalar</valueType>
 						<parameterId>TAmax.obs</parameterId>
-						<locationSetId>LiardSubBasins</locationSetId>
+						<locationSetId>$MODEL$SubBasins</locationSetId>
 						<timeSeriesType>external historical</timeSeriesType>
 						<timeStep id="$DAY_TIMESTEP$"/>
 						<relativeViewPeriod unit="hour" end="0" startOverrulable="true"/>
@@ -84,7 +84,7 @@
 						<moduleInstanceId>$INPUTMODULEINSTANCEMETEO$</moduleInstanceId>
 						<valueType>scalar</valueType>
 						<parameterId>TAmin.obs</parameterId>
-						<locationSetId>LiardSubBasins</locationSetId>
+						<locationSetId>$MODEL$SubBasins</locationSetId>
 						<timeSeriesType>external historical</timeSeriesType>
 						<timeStep id="$DAY_TIMESTEP$"/>
 						<relativeViewPeriod unit="hour" end="0" startOverrulable="true"/>
@@ -126,7 +126,7 @@
 			<importStateActivity>
 				<stateFile>
 					<importFile>%ROOT_DIR%\$MODEL$\output\$MODEL$_solution.rvc</importFile>
-					<relativeExportFile>Liard.rvc</relativeExportFile>
+					<relativeExportFile>$MODEL$.rvc</relativeExportFile>
 				</stateFile>
 				<synchLevel>20</synchLevel>
 			</importStateActivity>
@@ -138,7 +138,7 @@
 						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
 						<valueType>scalar</valueType>
 						<parameterId>QR.sim</parameterId>
-						<locationSetId>LiardSubBasins</locationSetId>
+						<locationSetId>$MODEL$SubBasins</locationSetId>
 						<timeSeriesType>simulated historical</timeSeriesType>
 						<timeStep unit="day"/>
 						<readWriteMode>add originals</readWriteMode>
@@ -146,13 +146,13 @@
 				</timeSeriesSets>
 			</importNetcdfActivity>
 			<importNetcdfActivity>
-				<importFile>SNOW_Continuous_Average_BySubbasin.nc</importFile>
+				<importFile>SNOW_Continuous_Average_ByHRU.nc</importFile>
 				<timeSeriesSets>
 					<timeSeriesSet>
 						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
 						<valueType>scalar</valueType>
 						<parameterId>SWE.sim</parameterId>
-						<locationSetId>LiardSubBasins</locationSetId>
+						<locationSetId>$MODEL$SubBasins</locationSetId>
 						<timeSeriesType>simulated historical</timeSeriesType>
 						<timeStep unit="day"/>
 						<readWriteMode>add originals</readWriteMode>
@@ -160,13 +160,13 @@
 				</timeSeriesSets>
 			</importNetcdfActivity>
 			<importNetcdfActivity>
-				<importFile>SNOW_LIQ_Continuous_Average_BySubbasin.nc</importFile>
+				<importFile>SNOW_LIQ_Continuous_Average_ByHRU.nc</importFile>
 				<timeSeriesSets>
 					<timeSeriesSet>
 						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
 						<valueType>scalar</valueType>
 						<parameterId>SWE.mlt</parameterId>
-						<locationSetId>LiardSubBasins</locationSetId>
+						<locationSetId>$MODEL$SubBasins</locationSetId>
 						<timeSeriesType>simulated historical</timeSeriesType>
 						<timeStep unit="day"/>
 						<readWriteMode>add originals</readWriteMode>
@@ -174,13 +174,13 @@
 				</timeSeriesSets>
 			</importNetcdfActivity>
 			<importNetcdfActivity>
-				<importFile>SOIL[0]_Continuous_Average_BySubbasin.nc</importFile>
+				<importFile>SOIL[0]_Continuous_Average_ByHRU.nc</importFile>
 				<timeSeriesSets>
 					<timeSeriesSet>
 						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
 						<valueType>scalar</valueType>
 						<parameterId>SMI.sim</parameterId>
-						<locationSetId>LiardSubBasins</locationSetId>
+						<locationSetId>$MODEL$SubBasins</locationSetId>
 						<timeSeriesType>simulated historical</timeSeriesType>
 						<timeStep unit="day"/>
 						<readWriteMode>add originals</readWriteMode>

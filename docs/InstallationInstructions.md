@@ -16,3 +16,7 @@ Download and installation instructions are available [at this webpage, at the bo
 A complete functioning configuration is available on this GitHub repository.
 
 If you don't plan on contributing back to the repository, it can simply be downloaded from the main page. If you do plan on contributing, which is very welcome, you will need to use git, or a program like GitHub Desktop.
+
+## NetCDF installation
+
+https://docs.unidata.ucar.edu/netcdf-c/current/winbin.html
