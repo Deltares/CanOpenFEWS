@@ -35,7 +35,7 @@ Both are flexible hydrological modelling frameworks, with supporting tools for m
 ### Raven Hydrological Framework
 
 
-[Raven](http://raven.uwaterloo.ca/) is flexible hydrological modelling framework, allowing flexibility in spatial discretization, interpolation, process representation, and forcing function generation. In this repository, a semi-distributed HBC-EC concept model is implemented to demonstrate the model bindings and connections.
+[Raven](http://raven.uwaterloo.ca/) is flexible hydrological modelling framework, allowing flexibility in spatial discretization, interpolation, process representation, and forcing function generation. In this repository, a semi-distributed HBV-EC concept model is implemented to demonstrate the model bindings and connections.
 
 This repository is intended for those with some experience with the Delft-FEWS software.
 It is hosted on GitHub so that users can access workflows, model connections and displays for their own use.
@@ -44,7 +44,7 @@ It is hosted on GitHub so that users can access workflows, model connections and
 
 ## Getting Started
 
-If you are truely new to this software, it may be better to begin with the information [available on the Delft-FEWS website](https://oss.deltares.nl/web/delft-fews). At this link, you can find the latest information, instructions and community developments.
+If you are truly new to this software, it may be better to begin with the information [available on the Delft-FEWS website](https://oss.deltares.nl/web/delft-fews). At this link, you can find the latest information, instructions and community developments.
 
 ### Installation of Delft-FEWS
 
