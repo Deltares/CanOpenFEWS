@@ -4,7 +4,7 @@
 	<moduleInstanceId>$FORECASTMODULEINSTANCE$</moduleInstanceId>
 	<valueType>scalar</valueType>
 	<parameterId>PC.nwp</parameterId>
-	<locationId>LiardExtent</locationId>
+	<locationSetId>$FORECASTLOCATIONSET$</locationSetId>
 	<timeSeriesType>external forecasting</timeSeriesType>
 	<timeStep id="$DAY_TIMESTEP$"/>
 	<readWriteMode>read complete forecast</readWriteMode>

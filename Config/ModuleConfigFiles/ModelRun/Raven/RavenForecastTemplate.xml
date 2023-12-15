@@ -2,19 +2,19 @@
 <!-- edited with XMLSpy v2014 rel. 2 (x64) (http://www.altova.com) by Deltares USA (Deltares USA) -->
 <generalAdapterRun xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/generalAdapterRun.xsd" xmlns="http://www.wldelft.nl/fews">
 	<general>
-		<description>Raven Model for Liard</description>
+		<description>Raven Model for $MODEL$</description>
 		<piVersion>1.5</piVersion>
 		<rootDir>%REGION_HOME%/Modules/Raven/</rootDir>
-		<workDir>%ROOT_DIR%/Liard/work</workDir>
-		<exportDir>%ROOT_DIR%/Liard/input</exportDir>
-		<exportDataSetDir>%ROOT_DIR%/Liard/work</exportDataSetDir>
+		<workDir>%ROOT_DIR%/$MODEL$/work</workDir>
+		<exportDir>%ROOT_DIR%/$MODEL$/input</exportDir>
+		<exportDataSetDir>%ROOT_DIR%/$MODEL$/work</exportDataSetDir>
 		<exportIdMap>IdExportRaven</exportIdMap>
 		<exportUnitConversionsId>ExportRaven</exportUnitConversionsId>
-		<importDir>%ROOT_DIR%/Liard/output</importDir>
+		<importDir>%ROOT_DIR%/$MODEL$/output</importDir>
 		<importIdMap>IdImportRaven</importIdMap>
 		<dumpFileDir>$GA_DUMPFILEDIR$</dumpFileDir>
 		<dumpDir>%ROOT_DIR%</dumpDir>
-		<diagnosticFile>%ROOT_DIR%/Liard/output/diag.xml</diagnosticFile>
+		<diagnosticFile>%ROOT_DIR%/$MODEL$/output/diag.xml</diagnosticFile>
 		<missVal>-1.2345</missVal>
 		<timeZone>
 			<timeZoneName>$TIMEZONE$</timeZoneName>
@@ -28,24 +28,24 @@
 				<filter>%ROOT_DIR%/*.*</filter>
 			</purgeActivity>
 			<purgeActivity>
-				<filter>%ROOT_DIR%//Liard/input/*.*</filter>
+				<filter>%ROOT_DIR%//$MODEL$/input/*.*</filter>
 			</purgeActivity>
 			<purgeActivity>
-				<filter>%ROOT_DIR%//Liard/output/*.*</filter>
+				<filter>%ROOT_DIR%//$MODEL$/output/*.*</filter>
 			</purgeActivity>
 			<purgeActivity>
-				<filter>%ROOT_DIR%/Liard/work/*.*</filter>
+				<filter>%ROOT_DIR%/$MODEL$/work/*.*</filter>
 			</purgeActivity>
 		</startUpActivities>
 		<exportActivities>
 			<exportStateActivity>
-				<moduleInstanceId>LiardHistoric</moduleInstanceId>
-				<stateExportDir>%ROOT_DIR%/Liard/work</stateExportDir>
-				<stateConfigFile>%ROOT_DIR%/Liard/work/stateInfo.xml</stateConfigFile>
+				<moduleInstanceId>$MODEL$RavenHistoric</moduleInstanceId>
+				<stateExportDir>%ROOT_DIR%/$MODEL$/work</stateExportDir>
+				<stateConfigFile>%ROOT_DIR%/$MODEL$/work/stateInfo.xml</stateConfigFile>
 				<stateLocations type="file">
 					<stateLocation>
-						<readLocation>Liard.rvc</readLocation>
-						<writeLocation>../output/Liard.rvc</writeLocation>
+						<readLocation>$MODEL$.rvc</readLocation>
+						<writeLocation>../output/$MODEL$.rvc</writeLocation>
 					</stateLocation>
 				</stateLocations>
 				<stateSelection>
@@ -64,7 +64,7 @@
 						<moduleInstanceId>$INPUTMODULEINSTANCEMETEO$</moduleInstanceId>
 						<valueType>scalar</valueType>
 						<parameterId>PC.nwp</parameterId>
-						<locationSetId>LiardSubBasins</locationSetId>
+						<locationSetId>$MODEL$SubBasins</locationSetId>
 						<timeSeriesType>simulated forecasting</timeSeriesType>
 						<timeStep id="$DAY_TIMESTEP$"/>
 						<readWriteMode>read complete forecast</readWriteMode>
@@ -74,7 +74,7 @@
 						<valueType>scalar</valueType>
 						<parameterId>TA.nwp</parameterId>
 						<qualifierId>min</qualifierId>
-						<locationSetId>LiardSubBasins</locationSetId>
+						<locationSetId>$MODEL$SubBasins</locationSetId>
 						<timeSeriesType>simulated forecasting</timeSeriesType>
 						<timeStep id="$DAY_TIMESTEP$"/>
 						<readWriteMode>read complete forecast</readWriteMode>
@@ -84,7 +84,7 @@
 						<valueType>scalar</valueType>
 						<parameterId>TA.nwp</parameterId>
 						<qualifierId>max</qualifierId>
-						<locationSetId>LiardSubBasins</locationSetId>
+						<locationSetId>$MODEL$SubBasins</locationSetId>
 						<timeSeriesType>simulated forecasting</timeSeriesType>
 						<timeStep id="$DAY_TIMESTEP$"/>
 						<readWriteMode>read complete forecast</readWriteMode>
@@ -93,11 +93,11 @@
 				<omitMissingValues>true</omitMissingValues>
 			</exportNetcdfActivity>
 			<exportNetcdfRunFileActivity>
-				<exportFile>%ROOT_DIR%/Liard/run_info.nc</exportFile>
+				<exportFile>%ROOT_DIR%/$MODEL$/run_info.nc</exportFile>
 				<properties>
-					<string key="RunName" value="Liard"/>
-<!--					<locationAttribute key="BlockRavenCustomOutput" locationId="Liard" attributeId="BlockRavenCustomOutput"/>
-					<locationAttribute key="BlockRavenWarnings" locationId="Liard" attributeId="BlockRavenWarnings"/>-->
+					<string key="RunName" value="$MODEL$"/>
+<!--					<locationAttribute key="BlockRavenCustomOutput" locationId="$MODEL$" attributeId="BlockRavenCustomOutput"/>
+					<locationAttribute key="BlockRavenWarnings" locationId="$MODEL$" attributeId="BlockRavenWarnings"/>-->
 				</properties>
 			</exportNetcdfRunFileActivity>
 		</exportActivities>
@@ -107,10 +107,10 @@
 					<executable>%ROOT_DIR%/bin/Raven.exe</executable>
 				</command>
 				<arguments>
-					<argument>Liard</argument>
+					<argument>$MODEL$</argument>
 				</arguments>
 				<logFile>
-					<file>%ROOT_DIR%/Liard/output/Raven_errors.txt</file>
+					<file>%ROOT_DIR%/$MODEL$/output/Raven_errors.txt</file>
 					<!-- Import every line as a separate FEWS error log message. -->
 					<errorLinePattern>ERROR*</errorLinePattern>
 					<warningLinePattern>WARNING*</warningLinePattern>
@@ -123,14 +123,14 @@
 		</executeActivities>
 		<importActivities>
 			<importNetcdfActivity>
-				<importFile>Liard_Hydrographs.nc</importFile>
+				<importFile>$MODEL$_Hydrographs.nc</importFile>
 				<timeSeriesSets>
 					<!--hydrographs-->
 					<timeSeriesSet>
 						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
 						<valueType>scalar</valueType>
 						<parameterId>QR.sim</parameterId>
-						<locationSetId>LiardSubBasins</locationSetId>
+						<locationSetId>$MODEL$Basins</locationSetId>
 						<timeSeriesType>simulated forecasting</timeSeriesType>
 						<timeStep unit="day"/>
 						<readWriteMode>add originals</readWriteMode>
@@ -138,14 +138,14 @@
 				</timeSeriesSets>
 			</importNetcdfActivity>
 			<importNetcdfActivity>
-				<importFile>SNOW_Continuous_Average_BySubbasin.nc</importFile>
+				<importFile>SNOW_Continuous_Average_ByHRU.nc</importFile>
 				<timeSeriesSets>
 					<!--Custom Output in .rvi-->
 					<timeSeriesSet>
 						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
 						<valueType>scalar</valueType>
 						<parameterId>SWE.sim</parameterId>
-						<locationSetId>LiardSubBasins</locationSetId>
+						<locationSetId>$MODEL$SubBasins</locationSetId>
 						<timeSeriesType>simulated forecasting</timeSeriesType>
 						<timeStep unit="day"/>
 						<readWriteMode>add originals</readWriteMode>
@@ -153,14 +153,14 @@
 				</timeSeriesSets>
 			</importNetcdfActivity>
 			<importNetcdfActivity>
-				<importFile>SNOW_LIQ_Continuous_Average_BySubbasin.nc</importFile>
+				<importFile>SNOW_LIQ_Continuous_Average_ByHRU.nc</importFile>
 				<timeSeriesSets>
 					<!--Custom Output in .rvi-->
 					<timeSeriesSet>
 						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
 						<valueType>scalar</valueType>
 						<parameterId>SWE.mlt</parameterId>
-						<locationSetId>LiardSubBasins</locationSetId>
+						<locationSetId>$MODEL$SubBasins</locationSetId>
 						<timeSeriesType>simulated forecasting</timeSeriesType>
 						<timeStep unit="day"/>
 						<readWriteMode>add originals</readWriteMode>
@@ -168,14 +168,14 @@
 				</timeSeriesSets>
 			</importNetcdfActivity>
 			<importNetcdfActivity>
-				<importFile>SOIL[0]_Continuous_Average_BySubbasin.nc</importFile>
+				<importFile>SOIL[0]_Continuous_Average_ByHRU.nc</importFile>
 				<timeSeriesSets>
 					<!--Custom Output in .rvi-->
 					<timeSeriesSet>
 						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
 						<valueType>scalar</valueType>
 						<parameterId>SMI.sim</parameterId>
-						<locationSetId>LiardSubBasins</locationSetId>
+						<locationSetId>$MODEL$SubBasins</locationSetId>
 						<timeSeriesType>simulated forecasting</timeSeriesType>
 						<timeStep unit="day"/>
 						<readWriteMode>add originals</readWriteMode>

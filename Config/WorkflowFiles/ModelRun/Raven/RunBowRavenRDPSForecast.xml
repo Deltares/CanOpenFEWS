@@ -2,17 +2,17 @@
 <workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.1">
 	<!-- Run Model Forecast -->
 	<properties>
+		<string key="MODEL" value="Bow"/>
 		<string key="FORECAST" value="RDPS"/>
 		<string key="STARTTIME" value="-5"/>
 		<string key="ENDTIME" value="3"/>
 		<string key="TIMESTEP" value="DAY_TIMESTEP"/>
-		 <string key="HISTORICMODULEINSTANCE" value="ImportECCCScalar"/>
+		<string key="HISTORICMODULEINSTANCE" value="ImportECCCScalar"/>
 		<string key="FORECASTMODULEINSTANCE" value="PreprocessRDPS"/>
-		<string key="MODEL" value="Raven"/>
 		<string key="ENSEMBLE" value="main"/>
-		<string key="EXPORTDATASET" value="RavenForecast"/>
+		<string key="EXPORTDATASET" value="BowRavenForecast"/>
+		<string key="FORECASTLOCATIONSET" value="ModelBasins"/>
 	</properties>
-	
 <!--Set Forecast Length-->
 	<activity>
 		<runIndependent>true</runIndependent>
@@ -22,7 +22,7 @@
 	<!--Set Merge Historic and Forecast Data-->
 	<activity>
 		<properties>
-		<string key="LOCATIONSET" value="RavenBasins"/>
+		<string key="LOCATIONSET" value="BowSubBasins"/>
 	</properties>
 		<runIndependent>true</runIndependent>
 		<moduleInstanceId>PreprocessRDPS</moduleInstanceId>
@@ -34,7 +34,7 @@
 		<string key="INPUTMODULEINSTANCEMETEO" value="PreprocessRDPS"/>
 	</properties>
 		<runIndependent>true</runIndependent>
-		<moduleInstanceId>RavenRDPSForecast</moduleInstanceId>
+		<moduleInstanceId>BowRavenRDPSForecast</moduleInstanceId>
 		<moduleConfigFileName>RavenForecastTemplate</moduleConfigFileName>
 	</activity>
 	<!-- Postprocess Model Results-->
@@ -43,12 +43,12 @@
 		<string key="TIMESERIESTYPE" value="simulated forecasting"/>
 		<string key="PARAMETER" value="QR.sim"/>
 		<string key="ENSEMBLE" value="main"/>
-		<string key="MODELOUTPUTLOCATION" value="RavenSubBasins"/>
-		<string key="STATIONLOCATIONS" value="RavenHydroStations"/>
+		<string key="MODELOUTPUTLOCATION" value="BowSubBasins"/>
+		<string key="STATIONLOCATIONS" value="ModelHydroStations"/>
 		<string key="TIMESTEP" value="$DAY_TIMESTEP$"/>
 	</properties>
 		<runIndependent>true</runIndependent>
-		<moduleInstanceId>RavenRDPSForecast</moduleInstanceId>
+		<moduleInstanceId>BowRavenRDPSForecast</moduleInstanceId>
 		<moduleConfigFileName>PostprocessModelBasinOutputToStationTemplate</moduleConfigFileName>
 	</activity>
 </workflow>

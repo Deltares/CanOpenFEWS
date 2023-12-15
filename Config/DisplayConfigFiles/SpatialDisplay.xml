@@ -804,4 +804,172 @@ http://fews.wldelft.nl/schemas/version1.0/gridDisplay.xsd">
 			</gridPlot>
 		</gridPlotGroup>
 	</gridPlotGroup>
+	<gridPlotGroup id="BowRavenResults" name="Bow Raven Results">
+		<gridPlotGroup id="BowRavenHistoric" name="Historic Model Run">
+			<gridPlotGroup id="HistoricInputBowRaven" name="Input Data">
+				<gridPlot id="HistoricPrecipitationInputBowRaven" name="Precipitation (mm)">
+					<timeSeriesSet>
+						<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>PC.obs</parameterId>
+						<locationSetId>BowSubBasins</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep id="$DAY_TIMESTEP$"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<classBreaksId>Class.Precipitation</classBreaksId>
+				</gridPlot>
+				<gridPlot id="HistoricTemperatureInput MaxBowRaven" name="Max Temperature (degC)">
+					<timeSeriesSet>
+						<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>TAmax.obs</parameterId>
+						<locationSetId>BowSubBasins</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep id="$DAY_TIMESTEP$"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<classBreaksId>Class.Temperature</classBreaksId>
+				</gridPlot>
+				<gridPlot id="HistoricTemperatureInputMinBowRaven" name="Min Temperature (degC)">
+					<timeSeriesSet>
+						<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>TAmin.obs</parameterId>
+						<locationSetId>BowSubBasins</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep id="$DAY_TIMESTEP$"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<classBreaksId>Class.Temperature</classBreaksId>
+				</gridPlot>
+			</gridPlotGroup>
+			<gridPlotGroup id="HistoricGridResultBowRaven" name="Gridded Results">
+				<gridPlot id="HistoricGridResultQRBowRaven" name="Outflow [m3/s]">
+					<timeSeriesSet>
+						<moduleInstanceId>BowRavenHistoric</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>QR.sim</parameterId>
+						<locationSetId>BowBasins</locationSetId>
+						<timeSeriesType>simulated historical</timeSeriesType>
+						<timeStep unit="day"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<classBreaksId>Class.Discharge</classBreaksId>
+				</gridPlot>
+				<gridPlot id="HistoricGridResultSWEBowRaven" name="SWE [mm]">
+					<timeSeriesSet>
+						<moduleInstanceId>BowRavenHistoric</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>SWE.sim</parameterId>
+						<locationSetId>BowSubBasins</locationSetId>
+						<timeSeriesType>simulated historical</timeSeriesType>
+						<timeStep unit="day"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<classBreaksId>Class.SWE</classBreaksId>
+				</gridPlot>
+				<gridPlot id="HistoricGridResultSWELiquidBowRaven" name="SWE Melt [mm]">
+					<timeSeriesSet>
+						<moduleInstanceId>BowRavenHistoric</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>SWE.mlt</parameterId>
+						<locationSetId>BowSubBasins</locationSetId>
+						<timeSeriesType>simulated historical</timeSeriesType>
+						<timeStep unit="day"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<classBreaksId>Class.SWE</classBreaksId>
+				</gridPlot>
+				<gridPlot id="HistoricGridResultSMIBowRaven" name="Soil Moisture [mm]">
+					<timeSeriesSet>
+						<moduleInstanceId>BowRavenHistoric</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>SMI.sim</parameterId>
+						<locationSetId>BowSubBasins</locationSetId>
+						<timeSeriesType>simulated historical</timeSeriesType>
+						<timeStep unit="day"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+				</gridPlot>
+			</gridPlotGroup>
+		</gridPlotGroup>
+		<gridPlotGroup id="BowRavenRDPSForecast" name="RDPS Model Run">
+			<gridPlotGroup id="ForecastInputBow" name="Input Data">
+				<gridPlot id="ForecastRDPSPrecipitationInputBow" name="Precipitation (mm)">
+					<timeSeriesSet>
+						<moduleInstanceId>PreprocessRDPS</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>PC.nwp</parameterId>
+						<locationSetId>BowSubBasins</locationSetId>
+						<timeSeriesType>external forecasting</timeSeriesType>
+						<timeStep id="$DAY_TIMESTEP$"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<classBreaksId>Class.Precipitation</classBreaksId>
+				</gridPlot>
+				<gridPlot id="ForecastRDPSTemperatureInputBow" name="Temperature  (degC)">
+					<timeSeriesSet>
+						<moduleInstanceId>PreprocessRDPS</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>TA.nwp</parameterId>
+						<locationSetId>BowSubBasins</locationSetId>
+						<timeSeriesType>external forecasting</timeSeriesType>
+						<timeStep id="$DAY_TIMESTEP$"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<classBreaksId>Class.Temperature</classBreaksId>
+				</gridPlot>
+			</gridPlotGroup>
+			<gridPlotGroup id="RDPSForecastResultBow" name="Forecast Results">
+				<gridPlot id="ForecastRDPSResultQRBow" name="Outflow [m3/s]">
+					<timeSeriesSet>
+						<moduleInstanceId>BowRavenRDPSForecast</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>QR.sim</parameterId>
+						<locationSetId>BowSubBasins</locationSetId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep unit="day"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<classBreaksId>Class.Discharge</classBreaksId>
+				</gridPlot>
+				<gridPlot id="ForecastRDPSResultSWEBow" name="SWE [mm]">
+					<timeSeriesSet>
+						<moduleInstanceId>BowRavenRDPSForecast</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>SWE.sim</parameterId>
+						<locationSetId>BowSubBasins</locationSetId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep unit="day"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<classBreaksId>Class.SWE</classBreaksId>
+				</gridPlot>
+				<gridPlot id="ForecastRDPSResultSWELiquidBow" name="SWE Melt [mm]">
+					<timeSeriesSet>
+						<moduleInstanceId>BowRavenRDPSForecast</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>SWE.mlt</parameterId>
+						<locationSetId>BowSubBasins</locationSetId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep unit="day"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<classBreaksId>Class.SWE</classBreaksId>
+				</gridPlot>
+				<gridPlot id="ForecastRDPSResultSMIBow" name="Soil Moisture [mm]">
+					<timeSeriesSet>
+						<moduleInstanceId>BowRavenRDPSForecast</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>SMI.sim</parameterId>
+						<locationSetId>BowSubBasins</locationSetId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep unit="day"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+				</gridPlot>
+			</gridPlotGroup>
+		</gridPlotGroup>
+	</gridPlotGroup>
 </gridDisplay>

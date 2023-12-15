@@ -138,7 +138,7 @@
 						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
 						<valueType>scalar</valueType>
 						<parameterId>QR.sim</parameterId>
-						<locationSetId>$MODEL$SubBasins</locationSetId>
+						<locationSetId>$MODEL$Basins</locationSetId>
 						<timeSeriesType>simulated historical</timeSeriesType>
 						<timeStep unit="day"/>
 						<readWriteMode>add originals</readWriteMode>

@@ -2,10 +2,10 @@
 <!-- edited with XMLSpy v2014 rel. 2 (x64) (http://www.altova.com) by Deltares USA (Deltares USA) -->
 <idMap version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/idMap.xsd">
 	<!-- Simulated Discharge Mapping -->
-	<function internalLocationSet="ModelBasins" externalLocationFunction="@RavenBasin@" externalParameterFunction="q_sim" internalParameter="QR.sim"/>
+	<function internalLocationSet="BowBasins" externalLocationFunction="@RavenBasin@" externalParameterFunction="q_sim" internalParameter="QR.sim"/>
 	<!-- Custom Output Mapping -->
-	<function internalLocationSet="ModelBasins" externalLocationFunction="@RavenBasin@" externalParameterFunction="Average_SNOW" internalParameter="SWE.sim"/>
-	<function internalLocationSet="ModelBasins" externalLocationFunction="@RavenBasin@" externalParameterFunction="Average_SNOW_LIQ" internalParameter="SWE.mlt"/>
-	<function internalLocationSet="ModelBasins" externalLocationFunction="@RavenBasin@" externalParameterFunction="Average_SOIL[0]" internalParameter="SMI.sim"/>
+	<function internalLocationSet="ModelBasins" externalLocationFunction="@RavenHRU@" externalParameterFunction="Average_SNOW" internalParameter="SWE.sim"/>
+	<function internalLocationSet="ModelBasins" externalLocationFunction="@RavenHRU@" externalParameterFunction="Average_SNOW_LIQ" internalParameter="SWE.mlt"/>
+	<function internalLocationSet="ModelBasins" externalLocationFunction="@RavenHRU@" externalParameterFunction="Average_SOIL[0]" internalParameter="SMI.sim"/>
 	<enableOneToOneMapping/>
 </idMap>
