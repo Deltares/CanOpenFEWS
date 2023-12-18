@@ -35,7 +35,7 @@
     </activity>
 	<!-- Preprocess Forecast for Model -->
 	<activity>
-		<workflowId>PreprocessREPSWflow</workflowId>
+		<workflowId>PreprocessREPS</workflowId>
 	</activity>
 	<!-- Preprocess Forecast for Model -->
 	<activity>

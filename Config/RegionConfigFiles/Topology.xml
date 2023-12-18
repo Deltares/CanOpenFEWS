@@ -95,6 +95,13 @@
 			<localRun>false</localRun>
 		</node>
 	</nodes>
+	<nodes id="ImportNRSPSGridNodes" name="Import NSRPS">
+		<node id="ImportNSRPS" name="Import NRDPS Discharge">
+			<workflowId>ImportNSRPSGrids</workflowId>
+			<graceTime unit="hour" multiplier="24"/>
+			<localRun>false</localRun>
+		</node>
+	</nodes>
 	<nodes id="ImportSnow" name="Import Snow Data">
 		<node id="ImportSnowCast" name="Import SnowCast">
 			<workflowId>ImportSnowcastGrids</workflowId>

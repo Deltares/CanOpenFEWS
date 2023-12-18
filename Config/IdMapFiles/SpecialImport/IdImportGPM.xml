@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<idMap xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/idMap.xsd" version="1.1">
-	<map internalParameter="PC.obs" internalLocation="IMERG_world" externalParameter="Grid/precipitationCal" externalLocation="IMERG_world"/>
-</idMap>

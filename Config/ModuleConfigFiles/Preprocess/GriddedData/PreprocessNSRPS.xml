@@ -3,7 +3,19 @@
 <transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd" version="1.0">
 	<!--Input-->
 	<variable>
-		<variableId>grid</variableId>
+		<variableId>grid_an</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportNSRPS</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationId>NSRPS</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>grid_det</variableId>
 		<timeSeriesSet>
 			<moduleInstanceId>ImportNSRPS</moduleInstanceId>
 			<valueType>grid</valueType>
@@ -29,12 +41,24 @@
 	</variable>
 	<!--Output-->
 	<variable>
-		<variableId>stations</variableId>
+		<variableId>stations_an</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessNSRPS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim</parameterId>
+			<locationSetId>ModelHydroStations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>stations_det</variableId>
 		<timeSeriesSet>
 			<moduleInstanceId>PreprocessNSRPS</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>QR.fcst</parameterId>
-			<locationSetId>ModelStations</locationSetId>
+			<locationSetId>ModelHydroStations</locationSetId>
 			<timeSeriesType>external forecasting</timeSeriesType>
 			<timeStep unit="hour" multiplier="3"/>
 			<readWriteMode>read complete forecast</readWriteMode>
@@ -46,7 +70,7 @@
 			<moduleInstanceId>PreprocessNSRPS</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>QR.fcst</parameterId>
-			<locationSetId>ModelStations</locationSetId>
+			<locationSetId>ModelHydroStations</locationSetId>
 			<timeSeriesType>external forecasting</timeSeriesType>
 			<timeStep unit="hour" multiplier="3"/>
 			<readWriteMode>read complete forecast</readWriteMode>
@@ -60,7 +84,7 @@
 			<valueType>scalar</valueType>
 			<parameterId>QR.fcst</parameterId>
 			<qualifierId>min</qualifierId>
-			<locationSetId>ModelStations</locationSetId>
+			<locationSetId>ModelHydroStations</locationSetId>
 			<timeSeriesType>external forecasting</timeSeriesType>
 			<timeStep unit="hour" multiplier="3"/>
 			<readWriteMode>read complete forecast</readWriteMode>
@@ -73,7 +97,7 @@
 			<valueType>scalar</valueType>
 			<parameterId>QR.fcst</parameterId>
 			<qualifierId>25%</qualifierId>
-			<locationSetId>ModelStations</locationSetId>
+			<locationSetId>ModelHydroStations</locationSetId>
 			<timeSeriesType>external forecasting</timeSeriesType>
 			<timeStep unit="hour" multiplier="3"/>
 			<readWriteMode>read complete forecast</readWriteMode>
@@ -86,7 +110,7 @@
 			<valueType>scalar</valueType>
 			<parameterId>QR.fcst</parameterId>
 			<qualifierId>50%</qualifierId>
-			<locationSetId>ModelStations</locationSetId>
+			<locationSetId>ModelHydroStations</locationSetId>
 			<timeSeriesType>external forecasting</timeSeriesType>
 			<timeStep unit="hour" multiplier="3"/>
 			<readWriteMode>read complete forecast</readWriteMode>
@@ -99,7 +123,7 @@
 			<valueType>scalar</valueType>
 			<parameterId>QR.fcst</parameterId>
 			<qualifierId>75%</qualifierId>
-			<locationSetId>ModelStations</locationSetId>
+			<locationSetId>ModelHydroStations</locationSetId>
 			<timeSeriesType>external forecasting</timeSeriesType>
 			<timeStep unit="hour" multiplier="3"/>
 			<readWriteMode>read complete forecast</readWriteMode>
@@ -112,20 +136,36 @@
 			<valueType>scalar</valueType>
 			<parameterId>QR.fcst</parameterId>
 			<qualifierId>max</qualifierId>
-			<locationSetId>ModelStations</locationSetId>
+			<locationSetId>ModelHydroStations</locationSetId>
 			<timeSeriesType>external forecasting</timeSeriesType>
 			<timeStep unit="hour" multiplier="3"/>
 			<readWriteMode>read complete forecast</readWriteMode>
 		</timeSeriesSet>
 	</variable>
-	<transformation id="sample_precip_basins">
+	<transformation id="sample_an_stations">
 		<interpolationSpatial>
 			<closestDistance>
 				<inputVariable>
-					<variableId>grid</variableId>
+					<variableId>grid_an</variableId>
 				</inputVariable>
+				<overrulingXAttribute>NSRPS_LONGITUDE</overrulingXAttribute>
+				<overrulingYAttribute>NSRPS_LATITUDE</overrulingYAttribute>
 				<outputVariable>
-					<variableId>stations</variableId>
+					<variableId>stations_an</variableId>
+				</outputVariable>
+			</closestDistance>
+		</interpolationSpatial>
+	</transformation>
+	<transformation id="sample_det_stations">
+		<interpolationSpatial>
+			<closestDistance>
+				<inputVariable>
+					<variableId>grid_det</variableId>
+				</inputVariable>
+				<overrulingXAttribute>NSRPS_LONGITUDE</overrulingXAttribute>
+				<overrulingYAttribute>NSRPS_LATITUDE</overrulingYAttribute>
+				<outputVariable>
+					<variableId>stations_det</variableId>
 				</outputVariable>
 			</closestDistance>
 		</interpolationSpatial>
