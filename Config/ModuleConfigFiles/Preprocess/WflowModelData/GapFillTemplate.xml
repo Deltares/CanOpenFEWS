@@ -90,7 +90,6 @@
 				<outputVariable>
 					<variableId>P_out</variableId>
 				</outputVariable>
-				<outputCustomFlagSourceId>INTP</outputCustomFlagSourceId>
 			</linear>
 		</interpolationSerial>
 	</transformation>
@@ -105,7 +104,6 @@
 				<outputVariable>
 					<variableId>T_out</variableId>
 				</outputVariable>
-				<outputCustomFlagSourceId>INTP</outputCustomFlagSourceId>
 			</linear>
 		</interpolationSerial>
 	</transformation>
@@ -120,7 +118,6 @@
 				<outputVariable>
 					<variableId>PET_out</variableId>
 				</outputVariable>
-				<outputCustomFlagSourceId>INTP</outputCustomFlagSourceId>
 			</linear>
 		</interpolationSerial>
 	</transformation>

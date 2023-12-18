@@ -11,7 +11,7 @@
 			<string key="RUN_SCRIPT" value="EnsembleNowcast_pysteps_LINDA_FEWS.py"/>
 			<bool key="ENSEMBLE_BOOL" value="true"/>
 			<int key="ENSEMBLE_MEMBERS" value="1"/>
-			<int key="N_LEAD_TIMES_HR" value="1"/>
+			<int key="N_LEAD_TIMES_HR" value="3"/>
 			<int key="NUM_CORES" value="4"/>
 		</properties>
 		<runIndependent>false</runIndependent>

@@ -11,11 +11,11 @@
 			<string key="Par_P_M" value="PC.obs"/>
 			<string key="Par_P" value="PC.sim"/>
 			<string key="Grid_P" value="HRDPA"/>
-			<string key="ModID_T" value="HRDPSVariables"/>
+			<string key="ModID_T" value="GDPSVariables"/>
 			<string key="Par_T" value="TA.obs"/>
 			<string key="Par_T_M" value="TA.corr"/>
 			<string key="Grid_T" value="BowGrid"/>
-			<string key="ModID_PET" value="HRDPSVariables"/>
+			<string key="ModID_PET" value="GDPSVariables"/>
 			<string key="Par_PET" value="PET.obs"/>
 			<string key="Grid_PET" value="BowGrid"/>
 			<string key="ENDTIME_UPDATE" value="0"/>

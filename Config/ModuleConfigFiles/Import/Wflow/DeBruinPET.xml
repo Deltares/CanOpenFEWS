@@ -18,6 +18,7 @@ http://fews.wldelft.nl/schemas/version1.0/pcrTransformationSets.xsd" version="1.
 					<timeStep unit="hour" multiplier="1"/>
 					<relativeViewPeriod unit="day" start="$START$" startOverrulable="true" end="$END$"/>
 					<readWriteMode>read only</readWriteMode>
+					<ensembleId>$ENS_ID$</ensembleId>
 				</timeSeriesSet>
 			</inputVariable>			
 			<inputVariable variableId="Rs" dataType="scalar" convertDatum="false" spatialType="spatial">
@@ -30,6 +31,7 @@ http://fews.wldelft.nl/schemas/version1.0/pcrTransformationSets.xsd" version="1.
 					<timeStep unit="hour" multiplier="1"/>
 					<relativeViewPeriod unit="day" start="$START$" startOverrulable="true" end="$END$"/>
 					<readWriteMode>read only</readWriteMode>
+					<ensembleId>$ENS_ID$</ensembleId>
 				</timeSeriesSet>
 			</inputVariable>
 			<inputVariable variableId="Kext" dataType="scalar" convertDatum="false" spatialType="spatial">
@@ -42,6 +44,7 @@ http://fews.wldelft.nl/schemas/version1.0/pcrTransformationSets.xsd" version="1.
 					<timeStep unit="hour" multiplier="1"/>
 					<relativeViewPeriod unit="day" start="$START$" startOverrulable="true" end="$END$"/>
 					<readWriteMode>read only</readWriteMode>
+					<ensembleId>$ENS_ID$</ensembleId>
 				</timeSeriesSet>
 			</inputVariable>
 			<inputVariable variableId="T" dataType="scalar" convertDatum="false" spatialType="spatial">
@@ -54,6 +57,7 @@ http://fews.wldelft.nl/schemas/version1.0/pcrTransformationSets.xsd" version="1.
 					<timeStep unit="hour" multiplier="1"/>
 					<relativeViewPeriod unit="day" start="$START$" startOverrulable="true" end="$END$"/>
 					<readWriteMode>read only</readWriteMode>
+					<ensembleId>$ENS_ID$</ensembleId>
 				</timeSeriesSet>
 			</inputVariable>		
 			<outputVariable variableId="Ep" dataType="scalar" convertDatum="false">
@@ -67,6 +71,7 @@ http://fews.wldelft.nl/schemas/version1.0/pcrTransformationSets.xsd" version="1.
 					<relativeViewPeriod unit="day" start="$START$" startOverrulable="true" end="$END$"/>
 					<readWriteMode>add originals</readWriteMode>
 					<expiryTime unit="day" multiplier="$EXPIRY_TIME$"/>
+					<ensembleId>$ENS_ID$</ensembleId>
 				</timeSeriesSet>
 			</outputVariable>
 		</definitions>

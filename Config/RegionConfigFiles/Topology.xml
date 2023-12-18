@@ -155,10 +155,6 @@
 			<workflowId>BowWflowRDPSForecast1h</workflowId>
 			<localRun>false</localRun>
 		</node>
-		<node id="BowWflowREPSForecast1h" name="Run Bow Wflow (REPS Forecast)">
-			<workflowId>BowWflowREPSForecast1h</workflowId>
-			<localRun>false</localRun>
-		</node>
 		<node id="BowWflowHRDPSForecast1h" name="Run Bow Wflow (HRDPS Forecast)">
 			<workflowId>BowWflowHRDPSForecast1h</workflowId>
 			<localRun>false</localRun>

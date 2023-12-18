@@ -41,6 +41,7 @@
 			<timeStep unit="$timestep_unit$" multiplier="$timestep$"/>
 			<relativeViewPeriod unit="hour" start="$STARTTIME_UPDATE$" startOverrulable="true" end="$ENDTIME_UPDATE$"/>
 			<readWriteMode>read only</readWriteMode>
+			<ensembleId>$ENS_ID$</ensembleId>
 		</timeSeriesSet>
 	</variable>
 	<variable>
@@ -54,6 +55,7 @@
 			<timeStep unit="$timestep_unit$" multiplier="$timestep$"/>
 			<relativeViewPeriod unit="hour" start="$STARTTIME_UPDATE$" startOverrulable="true" end="$ENDTIME_UPDATE$"/>
 			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>$ENS_ID$</ensembleId>
 		</timeSeriesSet>
 	</variable>
 	<variable>
@@ -67,6 +69,7 @@
 			<timeStep unit="$timestep_unit$" multiplier="$timestep$"/>
 			<relativeViewPeriod unit="hour" start="$STARTTIME_UPDATE$" startOverrulable="true" end="$ENDTIME_UPDATE$"/>
 			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>$ENS_ID$</ensembleId>
 		</timeSeriesSet>
 	</variable>
 	<variable>
@@ -80,6 +83,7 @@
 			<timeStep unit="$timestep_unit$" multiplier="$timestep$"/>
 			<relativeViewPeriod unit="hour" start="$STARTTIME_UPDATE$" startOverrulable="true" end="$ENDTIME_UPDATE$"/>
 			<readWriteMode>add originals</readWriteMode>
+			<ensembleId>$ENS_ID$</ensembleId>
 		</timeSeriesSet>
 	</variable>
 	<transformation id="fine2coarse">

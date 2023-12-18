@@ -2,7 +2,7 @@
 <workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.1">
 	<!-- First run the update run -->
 	<activity>
-		<runIndependent>false</runIndependent>
+		<runIndependent>true</runIndependent>
 		<workflowId>BowWflowHRDPAUpdate1h</workflowId>
 	</activity>
 	<!--Determine De Bruin PET-->
@@ -19,6 +19,7 @@
 			<string key="START" value="0"/>
 			<string key="END" value="2"/>
 			<string key="EXPIRY_TIME" value="7"/>
+			<string key="ENS_ID" value="main"/>
 		</properties>
 		<runIndependent>false</runIndependent>
 		<moduleInstanceId>DeBruinPET</moduleInstanceId>
@@ -47,7 +48,7 @@
 			<string key="ENS_ID" value="main"/>
 		</properties>
 		<runIndependent>false</runIndependent>
-		<moduleInstanceId>WflowPrepareForecast1h</moduleInstanceId>
+		<moduleInstanceId>WflowPrepareForecast1hHRDPS</moduleInstanceId>
 		<moduleConfigFileName>ResampleToWFlowForecast1hTemplate</moduleConfigFileName>
 	</activity>
 	<!--Downscale temperature to the modelgrid using the lapse rate-->
@@ -64,7 +65,7 @@
 	<activity>
 		<properties>
 			<string key="INPUTTIMESERIES_DEM" value="ImportDEM"/>
-			<string key="SERIES" value="WflowPrepareForecast1h"/>
+			<string key="SERIES" value="WflowPrepareForecast1hHRDPS"/>
 			<string key="SERIES2" value="ImportHRDPS"/>
 			<string key="PARAMETER_DEM" value="TA.obs"/>
 			<string key="PARAMETER_NWP" value="TA.nwp"/>
@@ -79,36 +80,21 @@
 			<string key="timestep" value="1"/>
 			<string key="ENDTIME_UPDATE" value="48"/>
 			<string key="STARTTIME_UPDATE" value="0"/>
-			<string key="OUTPUTTIMESERIES" value="DownscaleTemperatureModelGridForecast1h"/>
+			<string key="OUTPUTTIMESERIES" value="DownscaleTemperatureModelGridForecast1hHRDPS"/>
+			<string key="ENS_ID" value="main"/>
 		</properties>
 		<runIndependent>false</runIndependent>
-		<moduleInstanceId>DownscaleTemperatureModelGridForecast1h</moduleInstanceId>
+		<moduleInstanceId>DownscaleTemperatureModelGridForecast1hHRDPS</moduleInstanceId>
 		<moduleConfigFileName>DownscaleTemperatureModelGridForecastTemplate</moduleConfigFileName>
-	</activity>
-	<!-- Store HRDPS PET and temperature, as this is will be used for the update runs of all wflow forecasts -->
-	<!-- This is necessary, because the scalar and gridded ECCC observations and reanalyses data do not contain any radiation data-->
-	<activity>
-		<properties>
-			<string key="INPUTTIMESERIES_PET" value="WflowPrepareForecast1h"/>
-			<string key="INPUTTIMESERIES_T" value="DownscaleTemperatureModelGridForecast1h"/>
-			<string key="TEMP_PARAMETER" value="TA.forecast"/>
-			<string key="PET_PARAMETER" value="PET.forecast"/>
-			<string key="PET_PAR_OUT" value="PET.obs"/>
-			<string key="TEMP_PAR_OUT" value="TA.obs"/>
-			<string key="GRID_ID" value="BowGrid"/>
-		</properties>
-		<runIndependent>false</runIndependent>
-		<moduleInstanceId>HRDPSVariables</moduleInstanceId>
-		<moduleConfigFileName>StoreTempPetWflowTemplate</moduleConfigFileName>
 	</activity>
 	<!--Run the forecast per forecast type-->
 	<activity>
 		<properties>
 			<string key="LOCATION" value="BowGrid"/>
-			<string key="INPUTTIMESERIES_P" value="WflowPrepareForecast1h"/>
-			<string key="INPUTTIMESERIES_PET" value="WflowPrepareForecast1h"/>
+			<string key="INPUTTIMESERIES_P" value="WflowPrepareForecast1hHRDPS"/>
+			<string key="INPUTTIMESERIES_PET" value="WflowPrepareForecast1hHRDPS"/>
 			<string key="STATE_TIMESERIES" value="BowWflowHRDPAUpdate1h"/>
-			<string key="TS_T" value="DownscaleTemperatureModelGridForecast1h"/>
+			<string key="TS_T" value="DownscaleTemperatureModelGridForecast1hHRDPS"/>
 			<string key="TEMP_PARAMETER" value="TA.forecast"/>
 			<string key="PRECIP_PARAMETER" value="PC.forecast.acc"/>
 			<string key="PET_PARAMETER" value="PET.forecast"/>

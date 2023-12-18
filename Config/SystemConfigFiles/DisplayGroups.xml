@@ -1378,19 +1378,6 @@
 				</timeSeriesSet>
 			</line>
 			<line>
-				<label>REPS Forecast @ID@</label>
-				<timeSeriesSet>
-					<moduleInstanceId>BowWflowREPSForecast</moduleInstanceId>
-					<valueType>scalar</valueType>
-					<parameterId>QR.sim</parameterId>
-					<locationSetId>BowHydroStations</locationSetId>
-					<timeSeriesType>simulated forecasting</timeSeriesType>
-					<timeStep id="$DAY_TIMESTEP$"/>
-					<readWriteMode>read complete forecast</readWriteMode>
-					<ensembleId>REPS</ensembleId>
-				</timeSeriesSet>
-			</line>
-			<line>
 				<label>GEPS Forecast @ID@</label>
 				<timeSeriesSet>
 					<moduleInstanceId>BowWflowGEPSForecast</moduleInstanceId>

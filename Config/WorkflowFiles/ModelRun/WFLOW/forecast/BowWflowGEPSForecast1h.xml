@@ -2,7 +2,7 @@
 <workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.1">
 	<!-- First run the update run -->
 	<activity>
-		<runIndependent>false</runIndependent>
+		<runIndependent>true</runIndependent>
 		<workflowId>BowWflowHRDPAUpdate1h</workflowId>
 	</activity>
 	<!--Disaggregate GEPS 6-h forecast to hourly-->
@@ -42,7 +42,7 @@
 			<string key="TIMESERIESTYPE" value="external forecasting"/>
 			<string key="TIMESTEP" value="6"/>
 			<string key="TIMESTEP_NEW" value="1"/>
-			<string key="ENS_ID" value="main"/>
+			<string key="ENS_ID" value="GEPS"/>
 		</properties>
 		<runIndependent>false</runIndependent>
 		<moduleInstanceId>PreprocessDisaggInstantParametersNWP</moduleInstanceId>
@@ -75,6 +75,7 @@
 			<string key="START" value="0"/>
 			<string key="END" value="7"/>
 			<string key="EXPIRY_TIME" value="14"/>
+			<string key="ENS_ID" value="GEPS"/>
 		</properties>
 		<runIndependent>false</runIndependent>
 		<moduleInstanceId>RevisedMakkinkPET</moduleInstanceId>
@@ -103,7 +104,7 @@
 			<string key="ENS_ID" value="GEPS"/>
 		</properties>
 		<runIndependent>false</runIndependent>
-		<moduleInstanceId>WflowPrepareForecast1h</moduleInstanceId>
+		<moduleInstanceId>WflowPrepareForecast1hGEPS</moduleInstanceId>
 		<moduleConfigFileName>ResampleToWFlowForecast1hTemplate</moduleConfigFileName>
 	</activity>
 	<!--Downscale temperature to the modelgrid using the lapse rate-->
@@ -120,7 +121,7 @@
 	<activity>
 		<properties>
 			<string key="INPUTTIMESERIES_DEM" value="ImportDEM"/>
-			<string key="SERIES" value="WflowPrepareForecast1h"/>
+			<string key="SERIES" value="WflowPrepareForecast1hGEPS"/>
 			<string key="SERIES2" value="ImportGEPS"/>
 			<string key="PARAMETER_DEM" value="TA.obs"/>
 			<string key="PARAMETER_NWP" value="TA.nwp"/>
@@ -135,20 +136,21 @@
 			<string key="timestep" value="1"/>
 			<string key="ENDTIME_UPDATE" value="168"/>
 			<string key="STARTTIME_UPDATE" value="0"/>
-			<string key="OUTPUTTIMESERIES" value="DownscaleTemperatureModelGridForecast1h"/>
+			<string key="OUTPUTTIMESERIES" value="DownscaleTemperatureModelGridForecast1hGEPS"/>
+			<string key="ENS_ID" value="GEPS"/>
 		</properties>
 		<runIndependent>false</runIndependent>
-		<moduleInstanceId>DownscaleTemperatureModelGridForecast1h</moduleInstanceId>
+		<moduleInstanceId>DownscaleTemperatureModelGridForecast1hGEPS</moduleInstanceId>
 		<moduleConfigFileName>DownscaleTemperatureModelGridForecastTemplate</moduleConfigFileName>
 	</activity>
 	<!--Run the forecast per forecast type-->
 	<activity>
 		<properties>
 			<string key="LOCATION" value="BowGrid"/>
-			<string key="INPUTTIMESERIES_P" value="WflowPrepareForecast1h"/>
-			<string key="INPUTTIMESERIES_PET" value="WflowPrepareForecast1h"/>
+			<string key="INPUTTIMESERIES_P" value="WflowPrepareForecast1hGEPS"/>
+			<string key="INPUTTIMESERIES_PET" value="WflowPrepareForecast1hGEPS"/>
 			<string key="STATE_TIMESERIES" value="BowWflowHRDPAUpdate1h"/>
-			<string key="TS_T" value="DownscaleTemperatureModelGridForecast1h"/>
+			<string key="TS_T" value="DownscaleTemperatureModelGridForecast1hGEPS"/>
 			<string key="TEMP_PARAMETER" value="TA.forecast"/>
 			<string key="PRECIP_PARAMETER" value="PC.forecast.acc"/>
 			<string key="PET_PARAMETER" value="PET.forecast"/>
@@ -164,7 +166,11 @@
 			<string key="EXPIRY_TIME" value="14"/>
 		</properties>
 		<runIndependent>false</runIndependent>
-		<moduleInstanceId>BowWflowHRDPSForecast1h</moduleInstanceId>
+		<moduleInstanceId>BowWflowGEPSForecast1h</moduleInstanceId>
 		<moduleConfigFileName>BowWflowForecast1hTemplate</moduleConfigFileName>
+		<ensemble>
+			<ensembleId>GEPS</ensembleId>
+			<runInLoop>true</runInLoop>
+		</ensemble>
 	</activity>
 </workflow>

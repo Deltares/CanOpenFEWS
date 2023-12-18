@@ -335,7 +335,7 @@ http://fews.wldelft.nl/schemas/version1.0/gridDisplay.xsd">
 					<timeStep unit="hour" multiplier="1"/>
 					<readWriteMode>read complete forecast</readWriteMode>
 				</timeSeriesSet>
-				<classBreaksId>Class.Precipitation</classBreaksId>
+				<classBreaksId>PrecipitationRadarNowcast</classBreaksId>
 			</gridPlot>
 			<gridPlot id="HRDPSTemperature " name="Temperature (C)">
 				<timeSeriesSet>
@@ -373,7 +373,7 @@ http://fews.wldelft.nl/schemas/version1.0/gridDisplay.xsd">
 					<timeStep unit="hour" multiplier="1"/>
 					<readWriteMode>read complete forecast</readWriteMode>
 				</timeSeriesSet>
-				<classBreaksId>Class.Precipitation</classBreaksId>
+				<classBreaksId>PrecipitationRadarNowcast</classBreaksId>
 			</gridPlot>
 			<gridPlot id="RDPSTemperature " name="Temperature (C)">
 				<timeSeriesSet>
@@ -400,7 +400,7 @@ http://fews.wldelft.nl/schemas/version1.0/gridDisplay.xsd">
 					<readWriteMode>read complete forecast</readWriteMode>
 				</timeSeriesSet>
 				<movieFrameDurationMillis>200</movieFrameDurationMillis>
-				<classBreaksId>Class.Precipitation</classBreaksId>
+				<classBreaksId>PrecipitationRadarNowcast</classBreaksId>
 			</gridPlot>
 			<gridPlot id="GDPSTemperature " name="Temperature (degC)">
 				<timeSeriesSet>
@@ -428,7 +428,7 @@ http://fews.wldelft.nl/schemas/version1.0/gridDisplay.xsd">
 					<ensembleId>REPS</ensembleId>
 				</timeSeriesSet>
 				<movieFrameDurationMillis>200</movieFrameDurationMillis>
-				<classBreaksId>Class.Precipitation</classBreaksId>
+				<classBreaksId>PrecipitationRadarNowcast</classBreaksId>
 			</gridPlot>
 			<gridPlot id="REPSTemperature " name="Temperature (degC)">
 				<timeSeriesSet>
@@ -457,7 +457,7 @@ http://fews.wldelft.nl/schemas/version1.0/gridDisplay.xsd">
 					<ensembleId>GEPS</ensembleId>
 				</timeSeriesSet>
 				<movieFrameDurationMillis>200</movieFrameDurationMillis>
-				<classBreaksId>Class.Precipitation</classBreaksId>
+				<classBreaksId>PrecipitationRadarNowcast</classBreaksId>
 			</gridPlot>
 			<gridPlot id="GEPSTemperature " name="Temperature (degC)">
 				<timeSeriesSet>

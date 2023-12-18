@@ -2,7 +2,7 @@
 <workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.1">
 	<!-- First run the update run -->
 	<activity>
-		<runIndependent>false</runIndependent>
+		<runIndependent>true</runIndependent>
 		<workflowId>BowWflowRadarUpdate</workflowId>
 	</activity>
 	<!--Determine De Bruin PET-->
@@ -19,6 +19,7 @@
 			<string key="START" value="0"/>
 			<string key="END" value="1"/>
 			<string key="EXPIRY_TIME" value="7"/>
+			<string key="ENS_ID" value="main"/>
 		</properties>
 		<runIndependent>false</runIndependent>
 		<moduleInstanceId>DeBruinPET</moduleInstanceId>
@@ -80,6 +81,7 @@
 			<string key="ENDTIME_UPDATE" value="3"/>
 			<string key="STARTTIME_UPDATE" value="0"/>
 			<string key="OUTPUTTIMESERIES" value="DownscaleTemperatureModelGridForecast"/>
+			<string key="ENS_ID" value="main"/>
 		</properties>
 		<runIndependent>false</runIndependent>
 		<moduleInstanceId>DownscaleTemperatureModelGridForecast</moduleInstanceId>

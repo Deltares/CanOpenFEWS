@@ -304,9 +304,6 @@
 	<moduleInstanceDescriptor id="BowWflowGDPSForecast">
 		<description>Run the Bow model with Wflow GDPS Forecast Data</description>
 	</moduleInstanceDescriptor>
-	<moduleInstanceDescriptor id="BowWflowREPSForecast">
-		<description>Run the Bow model with Wflow REPS Forecast Data</description>
-	</moduleInstanceDescriptor>
 	<moduleInstanceDescriptor id="BowWflowGEPSForecast">
 		<description>Run the Bow model with Wflow REPS Forecast Data</description>
 	</moduleInstanceDescriptor>
@@ -348,8 +345,17 @@
 	<moduleInstanceDescriptor id="WflowPrepare1h">
 		<description>Prepare forcing data for wflow on 1-h time step</description>
 	</moduleInstanceDescriptor>
-	<moduleInstanceDescriptor id="WflowPrepareForecast1h">
-		<description>Prepare forcing data for wflow forecast on 1-h time step</description>
+	<moduleInstanceDescriptor id="WflowPrepareForecast1hGDPS">
+		<description>Prepare GDPS data for wflow forecast on 1-h time step</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="WflowPrepareForecast1hGEPS">
+		<description>Prepare GEPS data for wflow forecast on 1-h time step</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="WflowPrepareForecast1hHRDPS">
+		<description>Prepare HRDPS data for wflow forecast on 1-h time step</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="WflowPrepareForecast1hRDPS">
+		<description>Prepare RDPS data for wflow forecast on 1-h time step</description>
 	</moduleInstanceDescriptor>
 	<moduleInstanceDescriptor id="DownscaleTemperatureModelGrid">
 		<description>Downscale temperature forcing data on 6-min time step to the wflow model grid size</description>
@@ -357,17 +363,26 @@
 	<moduleInstanceDescriptor id="DownscaleTemperatureModelGridForecast">
 		<description>Downscale temperature forecast data on 6-min time step to the wflow model grid size</description>
 	</moduleInstanceDescriptor>
-	<moduleInstanceDescriptor id="DownscaleTemperatureModelGridForecast1h">
-		<description>Downscale temperature forecast data on 1-h time step to the wflow model grid size</description>
+	<moduleInstanceDescriptor id="DownscaleTemperatureModelGridForecast1hGDPS">
+		<description>Downscale GDPS temperature forecast data on 1-h time step to the wflow model grid size</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="DownscaleTemperatureModelGridForecast1hGEPS">
+		<description>Downscale GEPS temperature forecast data on 1-h time step to the wflow model grid size</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="DownscaleTemperatureModelGridForecast1hHRDPS">
+		<description>Downscale HRDPS temperature forecast data on 1-h time step to the wflow model grid size</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="DownscaleTemperatureModelGridForecast1hRDPS">
+		<description>Downscale RDPS temperature forecast data on 1-h time step to the wflow model grid size</description>
 	</moduleInstanceDescriptor>
 	<moduleInstanceDescriptor id="DownscaleTemperatureModelGrid1h">
 		<description>Downscale temperature forcing data on 1-h time step to the wflow model grid size</description>
 	</moduleInstanceDescriptor>
-	<moduleInstanceDescriptor id="HRDPSVariables">
-		<description>Store the HRDPS variables as external historical timeseries for update runs.</description>
+	<moduleInstanceDescriptor id="GDPSVariables">
+		<description>Store the GDPS variables as external historical timeseries for update runs.</description>
 	</moduleInstanceDescriptor>
 	<moduleInstanceDescriptor id="GapFilledVariables">
-		<description>Gap filled HRDPS variables for the update runs</description>
+		<description>Gap filled GDPS variables for the update runs</description>
 	</moduleInstanceDescriptor>
 	<!-- Wflow Model Run Module Instances-->
 	<moduleInstanceDescriptor id="BowWflow">

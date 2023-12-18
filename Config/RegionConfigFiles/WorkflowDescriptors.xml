@@ -116,9 +116,6 @@
 	<workflowDescriptor id="BowWflowRDPSForecast1h" name="Run Bow Wflow 1-h forecast (RDPS)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep unit="hour" multiplier="1"/>
 	</workflowDescriptor>
-	<workflowDescriptor id="BowWflowREPSForecast1h" name="Run Bow Wflow 1-h forecast (REPS)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
-		<cardinalTimeStep unit="hour" multiplier="1"/>
-	</workflowDescriptor>
 	<workflowDescriptor id="BowWflowGDPSForecast1h" name="Run Bow Wflow 1-h forecast (GDPS)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep unit="hour" multiplier="1"/>
 	</workflowDescriptor>
@@ -188,7 +185,6 @@
 			<workflowId>BowWflowHRDPSForecast1h</workflowId>
 			<workflowId>BowWflowGEPSForecast1h</workflowId>
 			<workflowId>BowWflowRDPSForecast1h</workflowId>
-			<workflowId>BowWflowREPSForecast1h</workflowId>
 			<workflowId>BowWflowGDPSForecast1h</workflowId>
 		</node>
 		<node name="Run Model - Nowcasting">

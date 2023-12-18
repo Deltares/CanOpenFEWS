@@ -12,9 +12,10 @@
 			<string key="PAR_TEMP" value="TA.obs"/>
 			<string key="PARAMETER_OUT" value="PET.obs"/>
 			<string key="TIMESERIES_TYPE" value="external historical"/>
-			<string key="START" value="-31"/>
+			<string key="START" value="-7"/>
 			<string key="END" value="0"/>
 			<string key="EXPIRY_TIME" value="60"/>
+			<string key="ENS_ID" value="main"/>
 		</properties>
 		<runIndependent>false</runIndependent>
 		<moduleInstanceId>DeBruinPET</moduleInstanceId>
@@ -38,7 +39,7 @@
 			<string key="Par_PET" value="PET.obs"/>
 			<string key="Grid_PET" value="ERA5"/>
 			<string key="ENDTIME_UPDATE" value="0"/>
-			<string key="STARTTIME_UPDATE" value="-31"/>
+			<string key="STARTTIME_UPDATE" value="-7"/>
 		</properties>
 		<runIndependent>false</runIndependent>
 		<moduleInstanceId>WflowPrepare1h</moduleInstanceId>
@@ -71,7 +72,7 @@
 			<string key="timestep_unit" value="hour"/>
 			<string key="timestep" value="1"/>
 			<string key="ENDTIME_UPDATE" value="0"/>
-			<string key="STARTTIME_UPDATE" value="-31"/>
+			<string key="STARTTIME_UPDATE" value="-7"/>
 			<string key="OUTPUTTIMESERIES" value="DownscaleTemperatureModelGrid1h"/>
 		</properties>
 		<runIndependent>false</runIndependent>
@@ -89,7 +90,7 @@
 			<string key="Par_P_ERA5" value="PC.sim"/>
 			<string key="Par_P_M" value="PC.obs"/>
 			<string key="ENDTIME_UPDATE" value="0"/>
-			<string key="STARTTIME_UPDATE" value="-31"/>
+			<string key="STARTTIME_UPDATE" value="-7"/>
 		</properties>
 		<runIndependent>false</runIndependent>
 		<moduleInstanceId>WflowPrepare1h</moduleInstanceId>
@@ -107,8 +108,8 @@
 			<string key="PRECIP_PARAMETER" value="PC.obs"/>
 			<string key="PET_PARAMETER" value="PET.obs"/>
 			<string key="ENDDATE" value="0"/>
-			<string key="STARTDATE" value="-31"/>
-			<string key="STARTDATE_HOURS" value="-744"/>
+			<string key="STARTDATE" value="-7"/>
+			<string key="STARTDATE_HOURS" value="-168"/>
 			<string key="FORCING_TYPE" value="temporary"/>
 			<string key="OUTPUT_TYPE" value="simulated historical"/>
 			<string key="TOML" value="wflow_sbm_hour"/>
