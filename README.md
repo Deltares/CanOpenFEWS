@@ -16,6 +16,9 @@ Please feel free to use the configuration to develop and improve your own applic
 
 ** Put description and images of Nowcasting
 
+![NowcastingDisplayExample](docs/gif_nowcast_20231218.gif)
+
+
 ## Snow Monitoring
 
 CanOpenFEWS contains bindings to a variety of snow data products, and aims to connect measurement to modelling for snowmelt driven streamflow forecasting. The use of snow data within the system remains largely qualitative, also comparison of multiple products such as [Snowcast](http://www.snowcast.ca/), [SNODAS](https://nsidc.org/data/g02158/versions/1), [GlobSnow](https://www.globsnow.info/) and [in-situ observations](https://rivers.alberta.ca/). This suite of products will be expanded, and in consultation with end-users, methods added to connect snow measurement to model.
