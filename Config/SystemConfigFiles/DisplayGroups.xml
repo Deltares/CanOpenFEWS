@@ -252,6 +252,67 @@
 			</area>
 		</subplot>
 	</plot>
+	<!--Plot Template - NSRPS Data Data-->
+	<plot id="NSRPSTemplate">
+		<subplot>
+			<line>
+				<color>red</color>
+				<lineStyle>constant</lineStyle>
+				<label>NRT (5-min) Data  @ID@</label>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportWSC</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.obs</parameterId>
+					<locationSetId>ModelHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="minute" multiplier="5"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<color>black</color>
+				<lineStyle>constant</lineStyle>
+				<label>Daily Data @ID@</label>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportWSC</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.obs</parameterId>
+					<locationSetId>ModelHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="$DAY_TIMESTEP$"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<color>green</color>
+				<lineStyle>constant</lineStyle>
+				<label>NRSPS Analysis @ID@</label>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessNSRPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.sim</parameterId>
+					<locationSetId>ModelHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<color>red</color>
+				<lineStyle>constant</lineStyle>
+				<label>NRSPS Forecast @ID@</label>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessNSRPS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.fcst</parameterId>
+					<locationSetId>ModelHydroStations</locationSetId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+		</subplot>
+	</plot>
 	<!--Plot Template - ECCC Data-->
 	<plot id="ECCCMeteoHistoricTemplate">
 		<subplot>
@@ -1773,6 +1834,16 @@
 			<singleLocationDisplays>
 				<locationSetId>ModelMeteoStations</locationSetId>
 				<plotId>GEPSTemplate</plotId>
+			</singleLocationDisplays>
+		</displayGroup>
+	</displayGroup>
+	<displayGroup name="NSRPS">
+		<nodeId>NSRPS</nodeId>
+		<displayGroup id="NSRPS" name="NSRPS">
+			<nodeId>ImportNSRPS</nodeId>
+			<singleLocationDisplays>
+				<locationSetId>ModelHydroStations</locationSetId>
+				<plotId>NSRPSTemplate</plotId>
 			</singleLocationDisplays>
 		</displayGroup>
 	</displayGroup>

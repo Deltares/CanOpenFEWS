@@ -6,6 +6,7 @@
 	<qualifier id="max" name="max"/>
 	<qualifier id="min" name="min"/>
 	<qualifier id="25%" name="25%"/>
+	<qualifier id="50%" name="50%"/>
 	<qualifier id="75%" name="75%"/>
 	<qualifier id="10" name="25%"/>
 	<qualifier id="25" name="75%"/>

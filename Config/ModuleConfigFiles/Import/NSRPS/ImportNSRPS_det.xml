@@ -6,9 +6,13 @@
 			<serverUrl>https://geo.weather.gc.ca/geomet?SERVICE=WCS&amp;VERSION=2.0.1&amp;REQUEST=GetCoverage</serverUrl>
 			<user>$NSRPS_USER$</user>
 			<password>$NSRPS_PASS$</password>
-			<relativeViewPeriod unit="day" start="0" end="3" startOverrulable="true" endOverrulable="true"/>
+			<relativeViewPeriod unit="hour" start="0" end="72" startOverrulable="true" endOverrulable="true"/>
 			<idMapId>IdImportNSRPS</idMapId>
 		</general>
+<!--		<startTimeShift>
+			<parameterId>QR.fcst</parameterId>
+			<relativePeriod start="-3" end="0" unit="hour"/>
+		</startTimeShift>-->
 		<properties>
 			<string key="subsettingCrs" value="EPSG:4326"/>
 		</properties>

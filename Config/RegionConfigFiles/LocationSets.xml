@@ -37,6 +37,17 @@
 					<text>%Bow%</text>
 				</attribute>
 			</attributeFile>
+			<!-- Add attribute files for NSRPS-->
+			<attributeFile>
+				<csvFile>nsrps_stn_locations.csv</csvFile>
+				<id>%STATION_NUMBER%</id>
+				<attribute id="NSRPS_LATITUDE">
+					<number>%MODEL_LATITUDE%</number>
+				</attribute>
+				<attribute id="NSRPS_LONGITUDE">
+					<number>%MODEL_LONGITUDE%</number>
+				</attribute>
+			</attributeFile>
 		</csvFile>
 	</locationSet>
 	<!--- ECCC Meteo Stations - Available at https://dd.weather.gc.ca/hydrometric/doc/ -->
