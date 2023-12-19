@@ -85,24 +85,24 @@ TO DO
 ## Citations
 
 ### Delft-FEWS
-Werner, M., Schellekens, J., Gijsbers, P., van Dijk, M., van den Akker, O., and Heynert, K. (2013). The Delft-FEWS flow forecasting system. *Environ Modell Softw*, 40, 65–77. doi: `10.1016/j.envsoft.2012.07.010 <https://doi.org/10.1016/j.envsoft.2012.07.010>`_.
+Werner, M., Schellekens, J., Gijsbers, P., van Dijk, M., van den Akker, O., and Heynert, K. (2013). The Delft-FEWS flow forecasting system. *Environ Modell Softw*, 40, 65–77. doi: [10.1016/j.envsoft.2012.07.010](https://doi.org/10.1016/j.envsoft.2012.07.010).
 
 ### Nowcasting
 The overall pysteps library is described in:
 
-Pulkkinen, S., D. Nerini, A. Perez Hortal, C. Velasco-Forero, U. Germann, A. Seed, and L. Foresti (2019). Pysteps: an open-source Python library for probabilistic precipitation nowcasting (v1.0). *Geosci. Model Dev.*, 12 (10), 4185–4219, doi:`10.5194/gmd-12-4185-2019 <https://doi.org/10.5194/gmd-12-4185-2019>`_.
+Pulkkinen, S., D. Nerini, A. Perez Hortal, C. Velasco-Forero, U. Germann, A. Seed, and L. Foresti (2019). Pysteps: an open-source Python library for probabilistic precipitation nowcasting (v1.0). *Geosci. Model Dev.*, 12 (10), 4185–4219, doi:[10.5194/gmd-12-4185-2019](https://doi.org/10.5194/gmd-12-4185-2019).
 
 While the more recent blending module in pysteps is described in:
 
 Imhoff, R.O., L. De Cruz, W. Dewettinck, C.C. Brauer, R. Uijlenhoet, K-J. van Heeringen, 
-C. Velasco-Forero, D. Nerini, M. Van Ginderachter, and A.H. Weerts (2023). Scale-dependent blending of ensemble rainfall nowcasts and NWP in the open-source pysteps library. *Q J R Meteorol Soc.*, 1-30, doi: `10.1002/qj.4461 <https://doi.org/10.1002/qj.4461>`_.
+C. Velasco-Forero, D. Nerini, M. Van Ginderachter, and A.H. Weerts (2023). Scale-dependent blending of ensemble rainfall nowcasts and NWP in the open-source pysteps library. *Q J R Meteorol Soc.*, 1-30, doi: [10.1002/qj.4461](https://doi.org/10.1002/qj.4461).
 
 The STEPS method is described in:
 
-Bowler, N.E., Pierce, C.E., and Seed, A.W. (2006). STEPS: A probabilistic precipitation forecasting scheme which merges an extrapolation nowcast with downscaled NWP. *Q J R Meteorol Soc.*, 132(620), 2127–2155, doi: `10.1256/qj.04.100 <https://doi.org/10.1256/qj.04.100>`_.
+Bowler, N.E., Pierce, C.E., and Seed, A.W. (2006). STEPS: A probabilistic precipitation forecasting scheme which merges an extrapolation nowcast with downscaled NWP. *Q J R Meteorol Soc.*, 132(620), 2127–2155, doi: [10.1256/qj.04.100](https://doi.org/10.1256/qj.04.100).
 
 The LINDA method is described in:
-Pulkkinen, S., Chandrasekar, V., and Niemi, T. (2021). Lagrangian Integro-Difference Equation Model for Precipitation Nowcasting. *J Atmos Ocean Tech*, 38(12), 2125-2145, doi: `10.1175/JTECH-D-21-0013.1 <https://doi.org/10.1175/JTECH-D-21-0013.1>`_.
+Pulkkinen, S., Chandrasekar, V., and Niemi, T. (2021). Lagrangian Integro-Difference Equation Model for Precipitation Nowcasting. *J Atmos Ocean Tech*, 38(12), 2125-2145, doi: [10.1175/JTECH-D-21-0013.1](https://doi.org/10.1175/JTECH-D-21-0013.1).
 
 ### Snow data
-National Operational Hydrologic Remote Sensing Center (2004). Snow Data Assimilation System (SNODAS) Data Products at NSIDC, Version 1 [Data Set]. Boulder, Colorado USA. National Snow and Ice Data Center. https://doi.org/10.7265/N5TB14TC. Date Accessed 12-08-2023.
+National Operational Hydrologic Remote Sensing Center (2004). Snow Data Assimilation System (SNODAS) Data Products at NSIDC, Version 1 [Data Set]. Boulder, Colorado USA. National Snow and Ice Data Center. doi: [10.7265/N5TB14TC](https://doi.org/10.7265/N5TB14TC). Date Accessed 12-08-2023.
