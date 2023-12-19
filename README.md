@@ -60,21 +60,19 @@ A complete functioning configuration is available on this GitHub repository. Com
 If you do not plan on contributing back to the repository, it can simply be downloaded from the main page. If you do plan on contributing, which is very welcome, you will need to use git, or a program like GitHub Desktop.
 
 ### Collaborators
-TO DO: Clean this section up
-
-This configuration is the collaboration of researchers, engineers and end-users.
-
-
-Deltares (the Netherlands), Deltares USA, Dave Casson (SWFTResponse / University of Calgary) and several Canadian partners and Delft-FEWS users (TODO: fill in this list).
-
-Special thanks for the Alberta River Forecast Center and to the City of Calgary Water Resources department for feedback and contributions. Also to Rob Chlumsky of [Heron Hydrologic](https://heronhydrologic.ca/) for providing the base Raven model and description.
+This collaborative configuration initiative was started by a collaboration of researchers, engineers and end-users from Deltares (the Netherlands), Deltares USA, SWFTResponse / University of Calgary (through Dave Casson) and several Canadian partners and Delft-FEWS users. We especially would like to thank the Alberta River Forecast Center and the City of Calgary Water Resources department for feedback and contributions. Also special thanks to Rob Chlumsky of [Heron Hydrologic](https://heronhydrologic.ca/) for providing the base Raven model and description.
 
 ## License
 
 CanOpenFEWS is licensed under an MIT license, which generally is quite open and permissive. Please see the LICENSE file for details.
 
 ## How to contribute?
-TO DO
+Contributions to CanOpenFEWS are much appreciated. However, to ensure continuity and a stable code base, we ask you to do the following when you plan to contribute with changes, new config or new models:
+*(1) Fork the repository*
+*(2) Create a new branch*
+All contributions should be made in a new branch under your forked repository. Working on the master branch is reserved for Core Contributors only. Core Contributors are developers that actively work and maintain the repository. They are the only ones who accept pull requests and push commits directly to the pysteps repository.For more information on how to create and work with branches, see [Branches in a Nutshell](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell) in the Git documentation.
+*(3) Create a pull request based on the changes in your branch*
+The pull requests are checked by the main contributors and merged with the main repository once accepted.
 
 ## Citations
 
