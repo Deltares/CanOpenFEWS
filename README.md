@@ -11,6 +11,7 @@ The technical focus is on rainfall nowcasting and snow monitoring for operationa
 
 This repository is intended for those with some experience with the Delft-FEWS software. It is hosted on GitHub so that users can access workflows, model connections and displays for their own use. Please feel free to use the configuration to develop and improve your own applications. Also make contributions back! New data, methods, models and displays are all welcome.
 
+![CanOpenFEWS_screenshot](docs/CanOpenFEWS_screenshot.png)
 
 ## Rainfall Nowcasting
 
@@ -95,6 +96,7 @@ The STEPS method is described in:
 Bowler, N.E., Pierce, C.E., and Seed, A.W. (2006). STEPS: A probabilistic precipitation forecasting scheme which merges an extrapolation nowcast with downscaled NWP. *Q J R Meteorol Soc.*, 132(620), 2127–2155, doi: [10.1256/qj.04.100](https://doi.org/10.1256/qj.04.100).
 
 The LINDA method is described in:
+
 Pulkkinen, S., Chandrasekar, V., and Niemi, T. (2021). Lagrangian Integro-Difference Equation Model for Precipitation Nowcasting. *J Atmos Ocean Tech*, 38(12), 2125-2145, doi: [10.1175/JTECH-D-21-0013.1](https://doi.org/10.1175/JTECH-D-21-0013.1).
 
 ### Snow data
