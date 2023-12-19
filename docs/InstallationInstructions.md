@@ -15,7 +15,7 @@ The fully functioning CanOpenFEWS configuration can be downloaded from this GitH
 
 After cloning the repository to your own computer, make sure to make a so-called Delft-FEWS shortcut through `/[Loc_fews_distribution]/bin/[operator_system]/createShortcuts.exe]`, which places a `CanOpenFEWS.lnk` in your CanOpenFEWS folder. With this link, you can launch the CanOpenFEWS Delft-FEWS. The Delft-FEWS createShortcuts functionality will open the display in the figure below. Point to `/clientConfig.xml` in the CanOpenFEWS folder and the link will be automatically created. 
 
-![createShortcuts_example](/Delft-FEWS_Shortcuts.png)
+![createShortcuts_example](../Delft-FEWS_Shortcuts.png)
 
 
 ### External modules
