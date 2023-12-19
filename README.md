@@ -49,7 +49,7 @@ If you are truly new to this software, it may be better to begin with the inform
 
 ### Installation of Delft-FEWS
 
-Download and installation instructions are available [at this webpage, at the bottom](https://oss.deltares.nl/web/delft-fews/about-delft-fews). Delft-FEWS is free to use, but please note that a end-user license agreement is required. For further detail on obtaining Delft-FEWS, including new releases, please contact fews-pm@deltares.nl. The newest Delft-FEWS versions are only available through fews-pm@deltares.nl, but older versions can be directly downloaded from the website. This configuration has been tested with the v2023.01 of Delft-FEWS. It is possible that some functionalities do not work with other (older) versions of Delft-FEWS.
+Download and installation instructions are available [at this webpage, at the bottom](https://oss.deltares.nl/web/delft-fews/about-delft-fews). Delft-FEWS is free to use, but please note that a end-user license agreement is required. For further detail on obtaining Delft-FEWS, including new releases, please contact [fews-pm email](fews-pm@deltares.nl). The newest Delft-FEWS versions are only available through [fews-pm email](fews-pm@deltares.nl), but older versions can be directly downloaded from the website. This configuration has been tested with the v2023.01 of Delft-FEWS. It is possible that some functionalities do not work with other (older) versions of Delft-FEWS.
 
 Please note that Delft-FEWS runs on Windows and Linux, and is not normally run on Mac OS.
 
@@ -68,10 +68,15 @@ CanOpenFEWS is licensed under an MIT license, which generally is quite open and 
 
 ## How to contribute?
 Contributions to CanOpenFEWS are much appreciated. However, to ensure continuity and a stable code base, we ask you to do the following when you plan to contribute with changes, new config or new models:
+
 *(1) Fork the repository*
+
 *(2) Create a new branch*
+
 All contributions should be made in a new branch under your forked repository. Working on the master branch is reserved for Core Contributors only. Core Contributors are developers that actively work and maintain the repository. They are the only ones who accept pull requests and push commits directly to the pysteps repository.For more information on how to create and work with branches, see [Branches in a Nutshell](https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell) in the Git documentation.
+
 *(3) Create a pull request based on the changes in your branch*
+
 The pull requests are checked by the main contributors and merged with the main repository once accepted.
 
 ## Citations
