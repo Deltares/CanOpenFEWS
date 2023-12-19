@@ -13,9 +13,14 @@ Please note that Delft-FEWS runs on Windows and Linux, and is not normally run o
 
 The fully functioning CanOpenFEWS configuration can be downloaded from this GitHub repository. If you do not plan on contributing back to the repository, it can simply be downloaded from the main page. If you do plan on contributing, which is very welcome, you will need to use git, or a program like GitHub Desktop, to clone the repository into your own environment.
 
-TO DO: Expand
+After cloning the repository to your own computer, make sure to make a so-called Delft-FEWS shortcut through `/[Loc_fews_distribution]/bin/[operator_system]/createShortcuts.exe]`, which places a `CanOpenFEWS.lnk` in your CanOpenFEWS folder. With this link, you can launch the CanOpenFEWS Delft-FEWS. The Delft-FEWS createShortcuts functionality will open the display in the figure below. Point to `/clientConfig.xml` in the CanOpenFEWS folder and the link will be automatically created. 
 
-Say something about where to download Python, R, etc.
+![createShortcuts_example](docs/Delft-FEWS_Shortcuts.png)
+
+
+### External modules
+Several external modules are used in CanOpenFEWS. Many of these modules are already present in the ModuleDataSetFiles (/Config/ModuleDataSetFiles) of the configuration and will be automatically found by the configuration upon launching Delft-FEWS and/or the specific workflow that calls them in a model run. However, the distribution of Python (with all modules and pysteps already installed), R (with all packages installed) and wflow are too large to store on github. Instead, we have stored these distributions elsewhere. If you are planning to use them to download ECCC data, run wflow, run pysteps, etc., then you can download these distributions at the following locations: [Python and R](https://zenodo.org/doi/10.5281/zenodo.10369454), and [wflow](https://download.deltares.nl/en/wflow). Make sure to unpack the zip files in the `/Modules` folder under the folder names: Python311 (for Python), R-4.1.1 (for R) and wflow_cli (for wflow). These module names can be changed, but in case you decide to do so, make sure to change the executable directory names in `/sa_global.properties` as well.
+
 
 ## NetCDF installation
 
