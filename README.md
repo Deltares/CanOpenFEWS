@@ -9,7 +9,7 @@ This repository is meant to share developments and receive input from the foreca
 
 The technical focus is on rainfall nowcasting and snow monitoring for operational forecasting, applied in a mountainous environment. The data sources are primarily [Meteorological Service of Canada Open Data](https://eccc-msc.github.io/open-data/readme_en/), but include a variety of remote sensing and re-analysis products.
 
-Please feel free to use the configuration to develop and improve your own applications. Also make contributions back! New data, methods, models and displays are all welcome.
+This repository is intended for those with some experience with the Delft-FEWS software. It is hosted on GitHub so that users can access workflows, model connections and displays for their own use. Please feel free to use the configuration to develop and improve your own applications. Also make contributions back! New data, methods, models and displays are all welcome.
 
 
 ## Rainfall Nowcasting
@@ -35,16 +35,11 @@ Both are flexible hydrological modelling frameworks, with supporting tools for m
 
 ### wflow
 
-[wflow](https://deltares.github.io/Wflow.jl/stable/) allows multiple distributed model concepts are available, allowing the use of open earth observation data, making it the hydrological model of choice for data scarce environments. Based on gridded topography, soil, land use and climate data, wflow calculates all hydrological fluxes at any given grid cell in the model at a given time step. Creation of wflow models is enabled by the [HydroMT](https://deltares.github.io/hydromt/latest/) python package
+[wflow](https://deltares.github.io/Wflow.jl/stable/) allows multiple distributed model concepts are available, allowing the use of open earth observation data, making it the hydrological model of choice for data scarce environments. Based on gridded topography, soil, land use and climate data, wflow calculates all hydrological fluxes at any given grid cell in the model at a given time step. Creation of wflow models is enabled by the [HydroMT](https://deltares.github.io/hydromt/latest/) python package. In CanOpenFEWS, a wflow_sbm model is included for the Bow River. The parameterization of this model is automatically derived using HydroMT, by making use of transfer functions that relate open geographic data (soil, land use, land cover, etc.) to a parameter value. The model can be further improved by calibrating its most sensitive parameters. 
 
 ### Raven Hydrological Framework
 
-
 [Raven](http://raven.uwaterloo.ca/) is flexible hydrological modelling framework, allowing flexibility in spatial discretization, interpolation, process representation, and forcing function generation. In this repository, a semi-distributed HBV-EC concept model is implemented to demonstrate the model bindings and connections.
-
-This repository is intended for those with some experience with the Delft-FEWS software.
-It is hosted on GitHub so that users can access workflows, model connections and displays for their own use.
-
 
 
 ## Getting Started
@@ -106,3 +101,9 @@ Pulkkinen, S., Chandrasekar, V., and Niemi, T. (2021). Lagrangian Integro-Differ
 
 ### Snow data
 National Operational Hydrologic Remote Sensing Center (2004). Snow Data Assimilation System (SNODAS) Data Products at NSIDC, Version 1 [Data Set]. Boulder, Colorado USA. National Snow and Ice Data Center. doi: [10.7265/N5TB14TC](https://doi.org/10.7265/N5TB14TC). Date Accessed 12-08-2023.
+
+### wflow
+van Verseveld, W.J., Weerts, A.H., Visser, M., Buitink, J., Imhoff, R.O., Boisgontier, H., Bouaziz, L., Eilander, D., Hegnauer, M., ten Velden, C., and Russell, B. (2022). Wflow_sbm v0.6.1, a spatially distributed hydrologic model: from global data to local applications. *Hydrol Earth Syst Sc Discussion*. doi: [10.5194/gmd-2022-182](https://doi.org/10.5194/gmd-2022-182). 
+
+### Raven
+**To do, add Raven citation
