@@ -44,21 +44,19 @@ Both are flexible hydrological modelling frameworks, with supporting tools for m
 
 ## Getting Started
 
-If you are truly new to this software, it may be better to begin with the information [available on the Delft-FEWS website](https://oss.deltares.nl/web/delft-fews). At this link, you can find the latest information, instructions and community developments.
+If you are truly new to this software, it may be better to begin with the information [available on the Delft-FEWS website](https://oss.deltares.nl/web/delft-fews). At this link, you can find the latest information, instructions and community developments. Configuring Delft-FEWS comes with a steep learning curve, but once you are familiar with it, this repository can help to minimize reinventing the wheel by sharing configuration and it is a great way to test and share new developments (models, code, etc.).
 
 ### Installation of Delft-FEWS
 
-Download and installation instructions are available [at this webpage, at the bottom](https://oss.deltares.nl/web/delft-fews/about-delft-fews). Please note that a end-user license agreement is required. For further detail on obtaining Delft-FEWS, including new releases, please contact fews-pm@deltares.nl
+Download and installation instructions are available [at this webpage, at the bottom](https://oss.deltares.nl/web/delft-fews/about-delft-fews). Delft-FEWS is free to use, but please note that a end-user license agreement is required. For further detail on obtaining Delft-FEWS, including new releases, please contact fews-pm@deltares.nl. The newest Delft-FEWS versions are only available through fews-pm@deltares.nl, but older versions can be directly downloaded from the website. This configuration has been tested with the v2023.01 of Delft-FEWS. It is possible that some functionalities do not work with other (older) versions of Delft-FEWS.
 
 Please note that Delft-FEWS runs on Windows and Linux, and is not normally run on Mac OS.
 
 ### Using the CanOpenFEWS configuration
 
-A complete functioning configuration is available on this GitHub repository.
+A complete functioning configuration is available on this GitHub repository. Complete installation instructions and where to download Python, R and wflow distributions are described in [/docs/InstallationInstructions.md](https://github.com/Deltares/CanOpenFEWS/blob/main/docs/InstallationInstructions.md).
 
-If you don't plan on contributing back to the repository, it can simply be downloaded from the main page. If you do plan on contributing, which is very welcome, you will need to use git, or a program like GitHub Desktop.
-
-TO DO: Expand
+If you do not plan on contributing back to the repository, it can simply be downloaded from the main page. If you do plan on contributing, which is very welcome, you will need to use git, or a program like GitHub Desktop.
 
 ### Collaborators
 TO DO: Clean this section up
