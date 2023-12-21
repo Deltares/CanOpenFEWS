@@ -146,7 +146,7 @@
 			</closestDistance>
 		</interpolationSpatial>
 	</transformation>
-	<transformation id="Disaggregate PET to 5 min">
+	<transformation id="Disaggregate PET to 6 min">
 		<disaggregation>
 			<accumulative>
 				<inputVariable>

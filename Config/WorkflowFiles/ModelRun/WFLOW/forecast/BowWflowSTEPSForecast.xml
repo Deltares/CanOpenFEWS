@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.1">
+	<!-- First run the update run -->
+	<activity>
+		<runIndependent>true</runIndependent>
+		<workflowId>BowWflowRadarUpdate</workflowId>
+	</activity>
+	<!--Determine De Bruin PET-->
+	<activity>
+		<properties>
+			<string key="LOCATION_ID_IN" value="HRDPS"/>
+			<string key="INPUTSERIES" value="ImportHRDPS"/>
+			<string key="PAR_PRESSURE" value="PA.nwp"/>
+			<string key="PAR_RS" value="RS.nwp"/>
+			<string key="PAR_KEXT" value="RSext.nwp"/>
+			<string key="PAR_TEMP" value="TA.nwp"/>
+			<string key="PARAMETER_OUT" value="PET.forecast"/>
+			<string key="TIMESERIES_TYPE" value="external forecasting"/>
+			<string key="START" value="0"/>
+			<string key="END" value="1"/>
+			<string key="EXPIRY_TIME" value="7"/>
+			<string key="ENS_ID" value="main"/>
+		</properties>
+		<runIndependent>false</runIndependent>
+		<moduleInstanceId>DeBruinPET</moduleInstanceId>
+		<moduleConfigFileName>DeBruinPET</moduleConfigFileName>
+	</activity>
+	<!--Pre-process the temperature and PET forecast data to the wflow model grid-->
+	<activity>
+		<properties>
+			<string key="Grid_M" value="BowGrid"/>
+			<string key="TYPE1" value="external forecasting"/>
+			<string key="TYPE2" value="temporary"/>
+			<string key="TYPE3" value="simulated forecasting"/>
+			<string key="ModID_P" value="ECCCRadarNowcastSTEPS"/>
+			<string key="Par_P" value="PC.forecast.acc"/>
+			<string key="Par_P_M" value="PC.forecast.acc"/>
+			<string key="Grid_P" value="BowRadarGrid"/>
+			<string key="ModID_T" value="ImportHRDPS"/>
+			<string key="Par_T" value="TA.nwp"/>
+			<string key="Par_T_M" value="TA.forecast"/>
+			<string key="Grid_T" value="HRDPS"/>
+			<string key="ModID_PET" value="DeBruinPET"/>
+			<string key="Par_PET" value="PET.forecast"/>
+			<string key="Grid_PET" value="HRDPS"/>
+			<string key="ENDTIME_UPDATE" value="3"/>
+			<string key="STARTTIME_UPDATE" value="0"/>
+			<string key="ENS_ID" value="RadarNowcast"/>
+		</properties>
+		<runIndependent>false</runIndependent>
+		<moduleInstanceId>WflowPrepareForecast</moduleInstanceId>
+		<moduleConfigFileName>ResampleToWflowForecastTemplate</moduleConfigFileName>
+	</activity>
+	<!--Downscale temperature to the modelgrid using the lapse rate-->
+	<activity>
+		<properties>
+			<string key="catchment" value="BowWflow"/>
+			<string key="grid_id" value="BowGrid"/>
+			<string key="timestep_unit" value="minute"/>
+			<string key="timestep" value="6"/>
+		</properties>
+		<runIndependent>false</runIndependent>
+		<moduleInstanceId>ImportDEM</moduleInstanceId>
+	</activity>
+	<activity>
+		<properties>
+			<string key="INPUTTIMESERIES_DEM" value="ImportDEM"/>
+			<string key="SERIES" value="WflowPrepareForecast"/>
+			<string key="SERIES2" value="ImportHRDPS"/>
+			<string key="PARAMETER_DEM" value="TA.obs"/>
+			<string key="PARAMETER_NWP" value="TA.nwp"/>
+			<string key="PARAMETER_OUT" value="TA.forecast"/>
+			<string key="TIMESERIESTYPE" value="temporary"/>
+			<string key="TIMESERIESTYPE2" value="external forecasting"/>
+			<string key="TIMESERIESTYPE3" value="simulated forecasting"/>
+			<string key="catchment" value="BowWflow"/>
+			<string key="grid_id" value="BowGrid"/>
+			<string key="coarse_dem" value="HRDPS"/>
+			<string key="timestep_unit" value="minute"/>
+			<string key="timestep" value="6"/>
+			<string key="ENDTIME_UPDATE" value="3"/>
+			<string key="STARTTIME_UPDATE" value="0"/>
+			<string key="OUTPUTTIMESERIES" value="DownscaleTemperatureModelGridForecast"/>
+			<string key="ENS_ID" value="main"/>
+		</properties>
+		<runIndependent>false</runIndependent>
+		<moduleInstanceId>DownscaleTemperatureModelGridForecast</moduleInstanceId>
+		<moduleConfigFileName>DownscaleTemperatureModelGridForecastTemplate</moduleConfigFileName>
+	</activity>
+	<!--Run the forecast per forecast type-->
+	<activity>
+		<properties>
+			<string key="LOCATION" value="BowGrid"/>
+			<string key="INPUTTIMESERIES_P" value="WflowPrepareForecast"/>
+			<string key="INPUTTIMESERIES_PET" value="WflowPrepareForecast"/>
+			<string key="STATE_TIMESERIES" value="BowWflowRadarUpdate"/>
+			<string key="TS_T" value="DownscaleTemperatureModelGridForecast"/>
+			<string key="TEMP_PARAMETER" value="TA.forecast"/>
+			<string key="PRECIP_PARAMETER" value="PC.forecast.acc"/>
+			<string key="PET_PARAMETER" value="PET.forecast"/>
+			<string key="ENDDATE" value="3"/>
+			<string key="STARTDATE" value="0"/>
+			<string key="STARTDATE_MINUTES" value="-2880"/>
+			<string key="FORCING_TYPE" value="simulated forecasting"/>
+			<string key="OUTPUT_TYPE" value="simulated forecasting"/>
+			<string key="TOML" value="wflow_sbm_6min"/>
+			<string key="display_points" value="WSCStations"/>
+			<string key="MODEL_NAME" value="BowWflow"/>
+			<string key="ENS_ID" value="RadarNowcast"/>
+			<string key="EXPIRY_TIME" value="7"/>
+		</properties>
+		<runIndependent>false</runIndependent>
+		<moduleInstanceId>BowWflowSTEPSForecast</moduleInstanceId>
+		<moduleConfigFileName>BowWflowForecastTemplate</moduleConfigFileName>
+		<ensemble>
+			<ensembleId>RadarNowcast</ensembleId>
+			<runInLoop>true</runInLoop>
+		</ensemble>
+	</activity>
+</workflow>

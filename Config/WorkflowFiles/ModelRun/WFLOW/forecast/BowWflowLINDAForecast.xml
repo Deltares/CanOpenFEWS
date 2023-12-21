@@ -32,7 +32,7 @@
 			<string key="TYPE1" value="external forecasting"/>
 			<string key="TYPE2" value="temporary"/>
 			<string key="TYPE3" value="simulated forecasting"/>
-			<string key="ModID_P" value="ECCCRadarNowcastSTEPS"/>
+			<string key="ModID_P" value="ECCCRadarNowcastLINDA"/>
 			<string key="Par_P" value="PC.forecast.acc"/>
 			<string key="Par_P_M" value="PC.forecast.acc"/>
 			<string key="Grid_P" value="BowRadarGrid"/>
@@ -110,7 +110,7 @@
 			<string key="EXPIRY_TIME" value="7"/>
 		</properties>
 		<runIndependent>false</runIndependent>
-		<moduleInstanceId>BowWflowRadarForecast</moduleInstanceId>
+		<moduleInstanceId>BowWflowLINDAForecast</moduleInstanceId>
 		<moduleConfigFileName>BowWflowForecastTemplate</moduleConfigFileName>
 		<ensemble>
 			<ensembleId>RadarNowcast</ensembleId>

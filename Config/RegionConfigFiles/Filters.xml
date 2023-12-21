@@ -361,9 +361,20 @@
 			<readWriteMode>read complete forecast</readWriteMode>
 		</timeSeriesSet>
 	</timeSeriesSets>
-	<timeSeriesSets id="BowWflowRadar">
+	<timeSeriesSets id="BowWflowSTEPS">
 		<timeSeriesSet>
-			<moduleInstanceId>BowWflowRadarForecast</moduleInstanceId>
+			<moduleInstanceId>BowWflowSTEPSForecast</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.sim.fc</parameterId>
+			<locationSetId>BowHydroStations</locationSetId>
+			<timeSeriesType>simulated forecasting</timeSeriesType>
+			<timeStep unit="minute" multiplier="6"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</timeSeriesSets>
+	<timeSeriesSets id="BowWflowLINDA">
+		<timeSeriesSet>
+			<moduleInstanceId>BowWflowLINDAForecast</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>QR.sim.fc</parameterId>
 			<locationSetId>BowHydroStations</locationSetId>
@@ -412,7 +423,8 @@
 		<child foreignKey="BowWflowGEPS"/>
 		<child foreignKey="BowWflowHRDPS"/>
 		<child foreignKey="BowWflowRDPS"/>
-		<child foreignKey="BowWflowRadar"/>
+		<child foreignKey="BowWflowSTEPS"/>
+		<child foreignKey="BowWflowLINDA"/>
 	</filter>
 	<!-- Second Level Filters -->
 	<filter id="HydroStations" name="Hydro Stations">
@@ -499,8 +511,12 @@
 		<validationIconsVisible>false</validationIconsVisible>
 		<timeSeriesSetsId>BowWflowRDPS</timeSeriesSetsId>
 	</filter>
-	<filter id="BowWflowRadar" name="BowWflow Radar">
+	<filter id="BowWflowSTEPS" name="BowWflow STEPS">
 		<validationIconsVisible>false</validationIconsVisible>
-		<timeSeriesSetsId>BowWflowRadar</timeSeriesSetsId>
+		<timeSeriesSetsId>BowWflowSTEPS</timeSeriesSetsId>
+	</filter>
+	<filter id="BowWflowLINDA" name="BowWflow LINDA">
+		<validationIconsVisible>false</validationIconsVisible>
+		<timeSeriesSetsId>BowWflowLINDA</timeSeriesSetsId>
 	</filter>
 </filters>

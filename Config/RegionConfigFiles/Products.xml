@@ -1,5 +1,20 @@
 <products xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/products.xsd">
 	<productCategory id="Meteo">
+		<product id="HRDPSForecast">
+			<expiryTime unit="day" multiplier="7"/>
+			<timeSeriesFilter>
+				<moduleInstanceId>ImportHRDPS</moduleInstanceId>
+				<locationId>HRDPS</locationId>
+			</timeSeriesFilter>
+			<timeSeriesFilter>
+				<moduleInstanceId>BowWflowHRDPSForecast1h</moduleInstanceId>
+				<locationId>BowGrid</locationId>
+			</timeSeriesFilter>
+			<timeSeriesFilter>
+				<moduleInstanceId>BowWflowHRDPSForecast1h</moduleInstanceId>
+				<locationSetId>BowHydroStations</locationSetId>
+			</timeSeriesFilter>
+		</product>
 		<product id="RDPSForecast">
 			<expiryTime unit="day" multiplier="7"/>
 			<timeSeriesFilter>
@@ -7,11 +22,11 @@
 				<locationId>RDPS</locationId>
 			</timeSeriesFilter>
 			<timeSeriesFilter>
-				<moduleInstanceId>BowWflowRDPSForecast</moduleInstanceId>
+				<moduleInstanceId>BowWflowRDPSForecast1h</moduleInstanceId>
 				<locationId>BowGrid</locationId>
 			</timeSeriesFilter>
 			<timeSeriesFilter>
-				<moduleInstanceId>BowWflowRDPSForecast</moduleInstanceId>
+				<moduleInstanceId>BowWflowRDPSForecast1h</moduleInstanceId>
 				<locationSetId>BowHydroStations</locationSetId>
 			</timeSeriesFilter>
 		</product>
@@ -22,11 +37,26 @@
 				<locationId>GDPS</locationId>
 			</timeSeriesFilter>
 			<timeSeriesFilter>
-				<moduleInstanceId>BowWflowGDPSForecast</moduleInstanceId>
+				<moduleInstanceId>BowWflowGDPSForecast1h</moduleInstanceId>
 				<locationId>BowGrid</locationId>
 			</timeSeriesFilter>
 				<timeSeriesFilter>
-				<moduleInstanceId>BowWflowGDPSForecast</moduleInstanceId>
+				<moduleInstanceId>BowWflowGDPSForecast1h</moduleInstanceId>
+				<locationSetId>BowHydroStations</locationSetId>
+			</timeSeriesFilter>
+		</product>
+		<product id="GEPSForecast">
+			<expiryTime unit="day" multiplier="7"/>
+			<timeSeriesFilter>
+				<moduleInstanceId>ImportGEPS</moduleInstanceId>
+				<locationId>GEPS</locationId>
+			</timeSeriesFilter>
+			<timeSeriesFilter>
+				<moduleInstanceId>BowWflowGEPSForecast1h</moduleInstanceId>
+				<locationId>BowGrid</locationId>
+			</timeSeriesFilter>
+				<timeSeriesFilter>
+				<moduleInstanceId>BowWflowGEPSForecast1h</moduleInstanceId>
 				<locationSetId>BowHydroStations</locationSetId>
 			</timeSeriesFilter>
 		</product>
@@ -36,12 +66,34 @@
 				<moduleInstanceId>ImportREPS</moduleInstanceId>
 				<locationId>REPS</locationId>
 			</timeSeriesFilter>
+		</product>
+		<product id="STEPSNowcast">
+			<expiryTime unit="day" multiplier="7"/>
 			<timeSeriesFilter>
-				<moduleInstanceId>BowWflowREPSForecast</moduleInstanceId>
-				<locationId>BowGrid</locationId>
+				<moduleInstanceId>ECCCRadarNowcastSTEPS</moduleInstanceId>
+				<locationId>BowRadarGrid</locationId>
 			</timeSeriesFilter>
 			<timeSeriesFilter>
-				<moduleInstanceId>BowWflowREPSForecast</moduleInstanceId>
+				<moduleInstanceId>BowWflowSTEPSForecast</moduleInstanceId>
+				<locationId>BowGrid</locationId>
+			</timeSeriesFilter>
+				<timeSeriesFilter>
+				<moduleInstanceId>BowWflowSTEPSForecast</moduleInstanceId>
+				<locationSetId>BowHydroStations</locationSetId>
+			</timeSeriesFilter>
+		</product>
+		<product id="LindaNowcast">
+			<expiryTime unit="day" multiplier="7"/>
+			<timeSeriesFilter>
+				<moduleInstanceId>ECCCRadarNowcastLINDA</moduleInstanceId>
+				<locationId>BowRadarGrid</locationId>
+			</timeSeriesFilter>
+			<timeSeriesFilter>
+				<moduleInstanceId>BowWflowLINDAForecast</moduleInstanceId>
+				<locationId>BowGrid</locationId>
+			</timeSeriesFilter>
+				<timeSeriesFilter>
+				<moduleInstanceId>BowWflowLINDAForecast</moduleInstanceId>
 				<locationSetId>BowHydroStations</locationSetId>
 			</timeSeriesFilter>
 		</product>

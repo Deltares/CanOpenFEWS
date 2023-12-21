@@ -55,7 +55,7 @@
 			<string key="PET_PARAMETER" value="PET.obs"/>
 			<string key="ENDDATE" value="0"/>
 			<string key="STARTDATE" value="-2"/>
-			<string key="STARTDATE_MINUTES" value="-2880"/>
+			<string key="STARTDATE_MINUTE" value="-2880"/>
 			<string key="FORCING_TYPE" value="temporary"/>
 			<string key="OUTPUT_TYPE" value="simulated historical"/>
 			<string key="TOML" value="wflow_sbm_6min"/>

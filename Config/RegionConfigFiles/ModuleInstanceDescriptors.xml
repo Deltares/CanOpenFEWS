@@ -391,8 +391,11 @@
 	<moduleInstanceDescriptor id="BowWflowRadarUpdate">
 		<description>Wflow_sbm update run for the Bow River using 6-min radar data</description>
 	</moduleInstanceDescriptor>
-	<moduleInstanceDescriptor id="BowWflowRadarForecast">
-		<description>Wflow_sbm forecast run for the Bow River using 6-min radar nowcasts</description>
+	<moduleInstanceDescriptor id="BowWflowSTEPSForecast">
+		<description>Wflow_sbm forecast run for the Bow River using 6-min STEPS nowcasts</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="BowWflowLINDAForecast">
+		<description>Wflow_sbm forecast run for the Bow River using 6-min LINDA nowcasts</description>
 	</moduleInstanceDescriptor>
 	<moduleInstanceDescriptor id="BowWflowHRDPAHistorical1h">
 		<description>Wflow_sbm historical run for the Bow River using 1-h HRDPA + ERA5 reanalysis data</description>

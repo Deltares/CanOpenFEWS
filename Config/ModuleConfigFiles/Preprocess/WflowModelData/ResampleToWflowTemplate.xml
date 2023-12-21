@@ -20,7 +20,7 @@
 			<moduleInstanceId>$ModID_P_radar$</moduleInstanceId>
 			<valueType>grid</valueType>
 			<parameterId>$Par_P_M$</parameterId>
-			<locationId>$Grid_M$</locationId>
+			<locationId>$Grid_P$</locationId>
 			<timeSeriesType>$TYPE2$</timeSeriesType>
 			<timeStep unit="minute" multiplier="6"/>
 			<relativeViewPeriod unit="day" start="$STARTTIME_UPDATE$" startOverrulable="true" end="$ENDTIME_UPDATE$" endOverrulable="true"/>

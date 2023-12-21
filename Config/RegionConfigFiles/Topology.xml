@@ -166,8 +166,12 @@
 			<workflowId>BowWflowHRDPSForecast1h</workflowId>
 			<localRun>false</localRun>
 		</node>
-		<node id="BowWflowRadarForecast" name="Run Bow Wflow (Radar Forecast)">
-			<workflowId>BowWflowRadarForecast</workflowId>
+		<node id="BowWflowSTEPSForecast" name="Run Bow Wflow (STEPS Forecast)">
+			<workflowId>BowWflowSTEPSForecast</workflowId>
+			<localRun>false</localRun>
+		</node>
+		<node id="BowWflowLINDAForecast" name="Run Bow Wflow (LINDA Forecast)">
+			<workflowId>BowWflowLINDAForecast</workflowId>
 			<localRun>false</localRun>
 		</node>
 	</nodes>

@@ -104,7 +104,10 @@
 	<workflowDescriptor id="BowWflowHRDPAUpdate1h" name="Run Bow Wflow 1-h Update (HRDPA)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep unit="hour" multiplier="1"/>
 	</workflowDescriptor>
-	<workflowDescriptor id="BowWflowRadarForecast" name="Run Bow Wflow 6-min forecast (nowcast)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
+	<workflowDescriptor id="BowWflowSTEPSForecast" name="Run Bow Wflow 6-min forecast (STEPS nowcast)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
+		<cardinalTimeStep unit="minute" multiplier="6"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="BowWflowLINDAForecast" name="Run Bow Wflow 6-min forecast (LINDA nowcast)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep unit="minute" multiplier="6"/>
 	</workflowDescriptor>
 	<workflowDescriptor id="BowWflowHRDPSForecast1h" name="Run Bow Wflow 1-h forecast (HRDPS)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
@@ -181,7 +184,8 @@
 			<workflowId>BowWflowRadarUpdate</workflowId>
 			<workflowId>BowWflowHRDPAHistorical1h</workflowId>
 			<workflowId>BowWflowHRDPAUpdate1h</workflowId>
-			<workflowId>BowWflowRadarForecast</workflowId>
+			<workflowId>BowWflowSTEPSForecast</workflowId>
+			<workflowId>BowWflowLINDAForecast</workflowId>
 			<workflowId>BowWflowHRDPSForecast1h</workflowId>
 			<workflowId>BowWflowGEPSForecast1h</workflowId>
 			<workflowId>BowWflowRDPSForecast1h</workflowId>
