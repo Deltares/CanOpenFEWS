@@ -4,10 +4,10 @@
 	<!--Determine De Bruin PET-->
 	<activity>
 		<properties>
-			<string key="LOCATION_ID_IN" value="ERA5"/>
+			<string key="LOCATION_ID_IN" value="ERA5Bow"/>
 			<string key="INPUTSERIES" value="ImportERA5"/>
 			<string key="PAR_PRESSURE" value="PA"/>
-			<string key="PAR_RS" value="RS"/>
+			<string key="PAR_RS" value="RS.sim"/>
 			<string key="PAR_KEXT" value="RSext"/>
 			<string key="PAR_TEMP" value="TA.obs"/>
 			<string key="PARAMETER_OUT" value="PET.obs"/>
@@ -68,7 +68,7 @@
 			<string key="TIMESERIESTYPE2" value="external historical"/>
 			<string key="catchment" value="BowWflow"/>
 			<string key="grid_id" value="BowGrid"/>
-			<string key="coarse_dem" value="ERA5"/>
+			<string key="coarse_dem" value="ERA5Bow"/>
 			<string key="timestep_unit" value="hour"/>
 			<string key="timestep" value="1"/>
 			<string key="ENDTIME_UPDATE" value="0"/>
@@ -82,7 +82,7 @@
 	<!-- Gap fill the precipitation data with ERA5 data -->
 	<activity>
 		<properties>
-			<string key="Grid_ERA5" value="ERA5"/>
+			<string key="Grid_ERA5" value="ERA5Bow"/>
 			<string key="INPUTSERIES_ERA5" value="ImportERA5"/>
 			<string key="Grid_M" value="BowGrid"/>
 			<string key="TYPE1" value="external historical"/>

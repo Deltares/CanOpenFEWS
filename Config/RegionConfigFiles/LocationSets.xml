@@ -122,7 +122,7 @@
 			<projectionFileAvailable>true</projectionFileAvailable>
 			<id>%FID%</id>
 			<name>%NAME%</name>
-			<attribute id="RavenBasin">
+			<attribute id="Basin">
 				<text>%FID%</text>
 			</attribute>
 		</esriShapeFile>
@@ -134,8 +134,8 @@
 			<projectionFileAvailable>true</projectionFileAvailable>
 			<id>%HRU_ID%</id>
 			<name>%HRU_ID%</name>
-			<attribute id="RavenHRU">
-				<text>%HRU_ID%</text>
+			<attribute id="HRU">
+				<number>%HRU_ID%</number>
 			</attribute>
 		</esriShapeFile>
 	</locationSet>

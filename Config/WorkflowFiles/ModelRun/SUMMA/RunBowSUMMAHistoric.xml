@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.1">
+	<!-- Run Raven Model Historic -->
+	<!-- General Properties -->
+	<properties>
+		<string key="MODEL" value="Bow"/>
+		<string key="STARTTIME" value="-25"/>
+		<string key="ENDTIME" value="0"/>
+		<string key="HOUR_TIMESTEP" value="1"/>
+	</properties>
+	
+	<!-- Run Raven Historic-->
+	<activity>
+		<properties>
+		<string key="INPUTMODULEINSTANCEMETEO" value="PreprocessERA5"/>
+		<string key="OUTPUTTIMESERIES" value="BowSUMMAHistoric"/>
+	</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>BowSUMMAHistoric</moduleInstanceId>
+		<moduleConfigFileName>SUMMAHistoricTemplate</moduleConfigFileName>
+	</activity>
+	
+</workflow>

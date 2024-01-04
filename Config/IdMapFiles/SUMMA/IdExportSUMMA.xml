@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2020 sp1 (x64) (http://www.altova.com) by Mandy Getz (Deltares USA) -->
+<idMap version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/idMap.xsd">
+	<function internalLocationSet="ModelBasins" externalLocationFunction="@HRU@" externalParameterFunction="pptrate" internalParameter="PC"/>
+	<function internalLocationSet="ModelBasins" externalLocationFunction="@HRU@" externalParameterFunction="airtemp" internalParameter="TA"/>
+	<function internalLocationSet="ModelBasins" externalLocationFunction="@HRU@" externalParameterFunction="airpres" internalParameter="PA"/>
+	<function internalLocationSet="ModelBasins" externalLocationFunction="@HRU@" externalParameterFunction="LWRadAtm" internalParameter="RL"/>
+	<function internalLocationSet="ModelBasins" externalLocationFunction="@HRU@" externalParameterFunction="SWRadAtm" internalParameter="RS"/>
+	<function internalLocationSet="ModelBasins" externalLocationFunction="@HRU@" externalParameterFunction="spechum" internalParameter="RH"/>
+	<function internalLocationSet="ModelBasins" externalLocationFunction="@HRU@" externalParameterFunction="windspd" internalParameter="US"/>
+</idMap>

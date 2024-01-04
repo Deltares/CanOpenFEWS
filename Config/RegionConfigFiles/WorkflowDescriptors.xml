@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2014 rel. 2 sp1 (http://www.altova.com) by Afdeling ICT (Stichting Deltares) -->
 <workflowDescriptors xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflowDescriptors.xsd" version="1.0">
-	<!--R Script Workflows-->
-	<workflowDescriptor id="HelloWorld" name="Hello World (R Script Example Run)" visible="true" forecast="false" autoApprove="false" allowApprove="false"/>
-	<workflowDescriptor id="InstallUpdateRLibraries" name="Install or Update Required R Libraries (R Script)" visible="true" forecast="false" autoApprove="false" allowApprove="false"/>
-	<workflowDescriptor id="DownloadUpdateHYDAT" name="Download or Update HYDAT Database (R Script)" visible="true" forecast="false" autoApprove="false" allowApprove="false"/>
-	<workflowDescriptor id="DownloadHistoricalHydrometricData" name="Download Historical Hydrometric Data (R Script)" visible="true" forecast="false" autoApprove="false" allowApprove="false"/>
-	<workflowDescriptor id="DownloadRealTimeHydrometricData" name="Download Real Time Hydrometric Data (R Script)" visible="true" forecast="false" autoApprove="false" allowApprove="false"/>
 	<!--Import Scalar Data Workflows-->
 	<workflowDescriptor id="ImportWSCHistoric" name="Import WSC Historic Data" visible="true" forecast="false" autoApprove="false" allowApprove="false"/>
 	<workflowDescriptor id="ImportWSCDaily" name="Import WSC Daily Hydro Station Data" visible="true" forecast="false" autoApprove="false" allowApprove="false"/>
@@ -91,6 +85,19 @@
 	<workflowDescriptor id="RunBowRavenREPSForecast" name="Run Bow Raven (REPS)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep id="$DAY_TIMESTEP$"/>
 	</workflowDescriptor>
+	<!--SUMMA Model Run Workflow Descriptors -->
+	<workflowDescriptor id="RunBowSUMMAHistoric" name="Run Bow SUMMA (Historical)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
+		<cardinalTimeStep id="$DAY_TIMESTEP$"/>
+	</workflowDescriptor>
+	<!--<workflowDescriptor id="RunBowSUMMARDPSForecast" name="Run Bow SUMMA (RDPS)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
+		<cardinalTimeStep id="$DAY_TIMESTEP$"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="RunBowSUMMAGDPSForecast" name="Run Bow SUMMA (GDPS)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
+		<cardinalTimeStep id="$DAY_TIMESTEP$"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="RunBowSUMMAREPSForecast" name="Run Bow SUMMA (REPS)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
+		<cardinalTimeStep id="$DAY_TIMESTEP$"/>
+	</workflowDescriptor>-->
 	<!--	<workflowDescriptor id="RunBowRavenGEPSForecast" name="Run Bow Raven (GEPS)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep id="$DAY_TIMESTEP$"/>
 	</workflowDescriptor>-->
@@ -130,16 +137,6 @@
 		<cardinalTimeStep unit="minute" multiplier="6"/>
 	</workflowDescriptor>
 	<rootNode>
-		<node name="RScriptWorkflows">
-			<workflowId>InstallUpdateRLibraries</workflowId>
-			<workflowId>HelloWorld</workflowId>
-		</node>
-		<node name="Import Hydrological Data from HYDAT">
-			<workflowId>DownloadUpdateHYDAT</workflowId>
-			<workflowId>DownloadHistoricalHydrometricData</workflowId>
-			<workflowId>DownloadRealTimeHydrometricData</workflowId>
-			<workflowId>PreprocessWSC</workflowId>
-		</node>
 		<node name="Import Hydrological Data from DataMart">
 			<workflowId>ImportWSCDaily</workflowId>
 			<workflowId>ImportWSCHourly</workflowId>
@@ -150,6 +147,9 @@
 			<workflowId>ImportECCCHistoric</workflowId>
 			<workflowId>PreprocessECCCMeteoHistoric</workflowId>
 			<workflowId>PreprocessECCCMeteoRecent</workflowId>
+			<workflowId>ImportERA5</workflowId>
+		</node>
+		<node name="Import ERA5 Reanalysis Data">
 			<workflowId>ImportERA5</workflowId>
 		</node>
 		<node name="Import Radar Data">
@@ -179,6 +179,9 @@
 			<workflowId>RunBowRavenRDPSForecast</workflowId>
 			<workflowId>RunBowRavenGDPSForecast</workflowId>
 			<workflowId>RunBowRavenREPSForecast</workflowId>
+		</node>
+		<node name="Run Model - Bow SUMMA">
+			<workflowId>RunBowSUMMAHistoric</workflowId>
 		</node>
 		<node name="Run Model - Bow Wflow">
 			<workflowId>BowWflowRadarUpdate</workflowId>

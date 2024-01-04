@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2020 sp1 (x64) (http://www.altova.com) by Mandy Getz (Deltares USA) -->
 <idMap version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/idMap.xsd">
-	<function internalLocationSet="ModelBasins" externalLocationFunction="@RavenHRU@" externalParameterFunction="PRECIP" internalParameter="PC.nwp"/>
-	<function internalLocationSet="ModelBasins" externalLocationFunction="@RavenHRU@" externalParameterFunction="MAX_TEMPERATURE" internalParameter="TA.nwp" internalQualifier="max"/>
-	<function internalLocationSet="ModelBasins" externalLocationFunction="@RavenHRU@" externalParameterFunction="MIN_TEMPERATURE" internalParameter="TA.nwp" internalQualifier="min"/>
+	<function internalLocationSet="ModelBasins" externalLocationFunction="@HRU@" externalParameterFunction="PRECIP" internalParameter="PC.nwp"/>
+	<function internalLocationSet="ModelBasins" externalLocationFunction="@HRU@" externalParameterFunction="MAX_TEMPERATURE" internalParameter="TA.nwp" internalQualifier="max"/>
+	<function internalLocationSet="ModelBasins" externalLocationFunction="@HRU@" externalParameterFunction="MIN_TEMPERATURE" internalParameter="TA.nwp" internalQualifier="min"/>
 </idMap>

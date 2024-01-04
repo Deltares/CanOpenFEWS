@@ -42,6 +42,11 @@
 		<x>0</x>
 		<y>0</y>
 	</location>
+	<location id="ERA5Bow" name="ERA5Bow">
+		<shortName>ERA5Bow</shortName>
+		<x>0</x>
+		<y>0</y>
+	</location>
 	<!--NOAA Grid Locations-->
 	<location id="GFS" name="GFS Forecast">
 		<x>0</x>

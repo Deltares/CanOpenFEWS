@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 sp1 (http://www.altova.com) by Afdeling ICT (Stichting Deltares) -->
+<generalAdapterRun xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/generalAdapterRun.xsd" xmlns="http://www.wldelft.nl/fews">
+	<general>
+		<description>SUMMA Model for $MODEL$</description>
+		<piVersion>1.5</piVersion>
+		<rootDir>%REGION_HOME%/Modules/SUMMA/</rootDir>
+		<workDir>%ROOT_DIR%/$MODEL$/settings</workDir>
+		<exportDir>%ROOT_DIR%/$MODEL$/input</exportDir>
+		<exportDataSetDir>%ROOT_DIR%/$MODEL$/settings</exportDataSetDir>
+		<exportIdMap>IdExportSUMMA</exportIdMap>
+		<!--<exportUnitConversionsId>ExportSUMMA</exportUnitConversionsId>-->
+		<importDir>%ROOT_DIR%/$MODEL$/output</importDir>
+		<importIdMap>IdImportSUMMA</importIdMap>
+		<dumpFileDir>$GA_DUMPFILEDIR$</dumpFileDir>
+		<dumpDir>%ROOT_DIR%</dumpDir>
+		<diagnosticFile>%ROOT_DIR%/$MODEL$/output/diag.xml</diagnosticFile>
+		<missVal>-9999</missVal>
+		<timeZone>
+			<timeZoneName>$TIMEZONE$</timeZoneName>
+		</timeZone>
+		<startDateTimeFormat>yyyy-MM-dd hh:mm:ss</startDateTimeFormat>
+	</general>
+	<activities>
+		<startUpActivities>
+			<purgeActivity>
+				<filter>%ROOT_DIR%/*.*</filter>
+			</purgeActivity>
+			<purgeActivity>
+				<filter>%ROOT_DIR%//$MODEL$/input/*.*</filter>
+			</purgeActivity>
+			<purgeActivity>
+				<filter>%ROOT_DIR%//$MODEL$/output/*.*</filter>
+			</purgeActivity>
+			<purgeActivity>
+				<filter>%ROOT_DIR%/$MODEL$/settings/*.*</filter>
+			</purgeActivity>
+		</startUpActivities>
+		<exportActivities>
+			<exportStateActivity>
+				<moduleInstanceId>$MODEL$SUMMAHistoric</moduleInstanceId>
+				<stateExportDir>%ROOT_DIR%/$MODEL$/settings</stateExportDir>
+				<stateConfigFile>%ROOT_DIR%/$MODEL$/settings/stateInfo.xml</stateConfigFile>
+				<stateLocations type="file">
+					<stateLocation>
+						<readLocation>coldState.nc</readLocation>
+						<writeLocation>coldState.nc</writeLocation>
+					</stateLocation>
+				</stateLocations>
+				<stateSelection>
+					<warmState>
+						<stateSearchPeriod startOverrulable="true" start="$STARTTIME$" end="0" unit="day"/>
+					</warmState>
+				</stateSelection>
+			</exportStateActivity>
+			<exportDataSetActivity>
+				<moduleInstanceId>$MODEL$SUMMA</moduleInstanceId>
+			</exportDataSetActivity>
+			<exportNetcdfActivity>
+				<exportFile>inputs.nc</exportFile>
+				<timeSeriesSets>
+					<timeSeriesSet>
+						<moduleInstanceId>$INPUTMODULEINSTANCEMETEO$</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>PC</parameterId>
+						<locationSetId>$MODEL$SubBasins</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour" multiplier="$HOUR_TIMESTEP$"/>
+						<relativeViewPeriod unit="hour" end="0" startOverrulable="true"/>
+						<readWriteMode>add originals</readWriteMode>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>$INPUTMODULEINSTANCEMETEO$</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>TA</parameterId>
+						<locationSetId>$MODEL$SubBasins</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour" multiplier="$HOUR_TIMESTEP$"/>
+						<relativeViewPeriod unit="hour" end="0" startOverrulable="true"/>
+						<readWriteMode>add originals</readWriteMode>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>$INPUTMODULEINSTANCEMETEO$</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>RS</parameterId>
+						<locationSetId>$MODEL$SubBasins</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour" multiplier="$HOUR_TIMESTEP$"/>
+						<relativeViewPeriod unit="hour" end="0" startOverrulable="true"/>
+						<readWriteMode>add originals</readWriteMode>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>$INPUTMODULEINSTANCEMETEO$</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>RL</parameterId>
+						<locationSetId>$MODEL$SubBasins</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour" multiplier="$HOUR_TIMESTEP$"/>
+						<relativeViewPeriod unit="hour" end="0" startOverrulable="true"/>
+						<readWriteMode>add originals</readWriteMode>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>$INPUTMODULEINSTANCEMETEO$</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>PA</parameterId>
+						<locationSetId>$MODEL$SubBasins</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour" multiplier="$HOUR_TIMESTEP$"/>
+						<relativeViewPeriod unit="hour" end="0" startOverrulable="true"/>
+						<readWriteMode>add originals</readWriteMode>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>$INPUTMODULEINSTANCEMETEO$</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>RH</parameterId>
+						<locationSetId>$MODEL$SubBasins</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour" multiplier="$HOUR_TIMESTEP$"/>
+						<relativeViewPeriod unit="hour" end="0" startOverrulable="true"/>
+						<readWriteMode>add originals</readWriteMode>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>$INPUTMODULEINSTANCEMETEO$</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>US</parameterId>
+						<locationSetId>$MODEL$SubBasins</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour" multiplier="$HOUR_TIMESTEP$"/>
+						<relativeViewPeriod unit="hour" end="0" startOverrulable="true"/>
+						<readWriteMode>add originals</readWriteMode>
+					</timeSeriesSet>
+				</timeSeriesSets>
+				<omitMissingValues>true</omitMissingValues>
+			</exportNetcdfActivity>
+			<exportNetcdfRunFileActivity>
+				<exportFile>%ROOT_DIR%/$MODEL$/run_info.nc</exportFile>
+				<properties>
+					<string key="Model" value="$MODEL$"/>
+				</properties>
+			</exportNetcdfRunFileActivity>
+		</exportActivities>
+		<executeActivities>
+			<executeActivity>
+				<command>
+					<executable>$PYTHON_EXE$</executable>
+				</command>
+				<arguments>
+					<argument>%ROOT_DIR%\$MODEL$\summa_fews_adaptor.py</argument>
+					<argument>--work-dir</argument>
+					<argument>%ROOT_DIR%\$MODEL$\</argument>
+					<argument>--run-info-file</argument>
+					<argument>%ROOT_DIR%/$MODEL$/run_info.nc</argument>
+					<argument>--summa-exe</argument>
+					<argument>%ROOT_DIR%\bin\summa.exe</argument>
+					<argument>--file-manager</argument>
+					<argument>%ROOT_DIR%\$MODEL$\settings\fileManager.txt</argument>
+				</arguments>
+				<timeOut>36000000</timeOut>
+				<ignoreDiagnostics>true</ignoreDiagnostics>
+			</executeActivity>
+<!--			<executeActivity>
+				<command>
+					<executable>%ROOT_DIR%\bin\summa.exe</executable>
+				</command>
+				<arguments>
+					<argument>-m</argument>
+					<argument>%ROOT_DIR%\$MODEL$\settings\.pysumma\pysumma_run\fileManager.txt</argument>
+				</arguments>
+				<timeOut>36000000</timeOut>
+				<ignoreDiagnostics>true</ignoreDiagnostics>
+			</executeActivity>-->
+			
+		</executeActivities>
+		<importActivities>
+			<!--<importStateActivity>
+				<stateFile>
+					<importFile>%ROOT_DIR%\$MODEL$\output\$MODEL$_solution.rvc</importFile>
+					<relativeExportFile>$MODEL$.rvc</relativeExportFile>
+				</stateFile>
+				<synchLevel>20</synchLevel>
+			</importStateActivity> 
+			-->
+			<importNetcdfActivity>
+				<importFile>summa_output.nc</importFile>
+				<timeSeriesSets>
+					<timeSeriesSet>
+						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>SWE.sim</parameterId>
+						<locationSetId>$MODEL$SubBasins</locationSetId>
+						<timeSeriesType>simulated historical</timeSeriesType>
+						<timeStep unit="nonequidistant"/>
+						<readWriteMode>add originals</readWriteMode>
+					</timeSeriesSet>
+				</timeSeriesSets>
+			</importNetcdfActivity>
+		</importActivities>
+	</activities>
+</generalAdapterRun>

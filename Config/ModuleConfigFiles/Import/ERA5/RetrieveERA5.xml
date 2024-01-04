@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<generalAdapterRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/generalAdapterRun.xsd">
+	<general>
+		<piVersion>1.8</piVersion>
+		<rootDir>%REGION_HOME%/modules/pyscripts</rootDir>
+		<workDir>%ROOT_DIR%/work</workDir>
+		<exportDir>$IMPORT_FOLDER$/ERA5</exportDir>
+		<importDir>$IMPORT_FOLDER$/ERA5</importDir>
+		<dumpFileDir>$GA_DUMPFILEDIR$</dumpFileDir>
+		<dumpDir>%ROOT_DIR%/work</dumpDir>
+		<diagnosticFile>%ROOT_DIR%/workfews_data_download_log.xml</diagnosticFile>
+		<convertDatum>false</convertDatum>
+	</general>
+	<activities>
+		<startUpActivities>
+			<purgeActivity>
+				<filter>%ROOT_DIR%/work/*.*</filter>
+			</purgeActivity>
+		</startUpActivities>
+		<exportActivities>
+			<exportRunFileActivity>
+				<exportFile>%WORK_DIR%/fews_data_download_run_info.xml</exportFile>
+				<properties>
+					<string key="destinationDir" value="$IMPORT_FOLDER$/ERA5"/>
+				</properties>
+			</exportRunFileActivity>
+		</exportActivities>
+		<executeActivities>
+			<!--  Uncomment to run through python rather than as an exe (then comment the exe block below)	-->
+			<executeActivity>
+				<command>
+					<executable>$PYTHON_EXE$</executable>
+				</command>
+				<!--				<command>
+					<executable>%ROOT_DIR%/bin/dist/data_download_main.exe</executable>
+				</command>-->
+				<arguments>
+					<argument>%ROOT_DIR%\bin\data_download_main.py</argument>
+					<argument>--run_info_file</argument>
+					<argument>%WORK_DIR%\fews_data_download_run_info.xml</argument>
+					<argument>--data-source</argument>
+					<argument>ERA5</argument>
+				</arguments>
+				<timeOut>36000000</timeOut>
+				<ignoreDiagnostics>true</ignoreDiagnostics>
+			</executeActivity>
+		</executeActivities>
+	</activities>
+</generalAdapterRun>
+
+
+

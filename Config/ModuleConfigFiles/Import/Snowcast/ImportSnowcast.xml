@@ -13,7 +13,7 @@
 		</general>-->
 		<general>
 			<importType>ArcInfoAsciiGrid</importType>
-			<folder>IMPORT_FOLDER$/Snowcast</folder>
+			<folder>$IMPORT_FOLDER$/Snowcast</folder>
 			<!--<fileNameObservationDateTimePattern>'swe_2500x2500_'yyyyMMddHHmm'.tif'</fileNameObservationDateTimePattern>-->
 			<idMapId>idImportSnowcast</idMapId>
 			<geoDatum>WGS 1984</geoDatum>

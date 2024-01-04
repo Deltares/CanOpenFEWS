@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <idMap xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/idMap.xsd" version="1.1">
-	<map internalParameter="RSext" internalLocation="ERA5" externalParameter="tisr" externalLocation="ERA5"/>
-	<map internalParameter="PA" internalLocation="ERA5" externalParameter="sp" externalLocation="ERA5"/>
-	<map internalParameter="PC.sim" internalLocation="ERA5" externalParameter="tp" externalLocation="ERA5"/>
-	<map internalParameter="TA.obs" internalLocation="ERA5" externalParameter="t2m" externalLocation="ERA5"/>
-	<map internalParameter="PET.obs" internalLocation="ERA5" externalParameter="pev" externalLocation="ERA5"/>
-	<map internalParameter="RS" internalLocation="ERA5" externalParameter="ssrd" externalLocation="ERA5"/>
+	<!-- Updated variables for wflow-->	
+	
+	<map internalParameter="RSext" internalLocation="ERA5Bow" externalParameter="tisr" externalLocation="ERA5Bow"/>
+	<map internalParameter="PA" internalLocation="ERA5Bow" externalParameter="sp" externalLocation="ERA5Bow"/>
+	<map internalParameter="PC.sim" internalLocation="ERA5Bow" externalParameter="tp" externalLocation="ERA5Bow"/>
+	<map internalParameter="TA.obs" internalLocation="ERA5Bow" externalParameter="t2m" externalLocation="ERA5Bow"/>
+	<map internalParameter="PET.obs" internalLocation="ERA5Bow" externalParameter="pev" externalLocation="ERA5Bow"/>
+	<map internalParameter="RS.sim" internalLocation="ERA5Bow" externalParameter="ssrd" externalLocation="ERA5Bow"/>
+	
+	<!-- Updated variables for SUMMA-->
+	<!--Surface Level Parameters-->
+	<map internalParameter="TA" internalLocation="ERA5Bow"  externalParameter="t" externalLocation="ERA5Bow"/>
+	<map internalParameter="RH" internalLocation="ERA5Bow" externalParameter="q" externalLocation="ERA5Bow"/>
+	<map internalParameter="US" internalLocation="ERA5Bow" internalQualifier="U" externalParameter="u" externalLocation="ERA5Bow"/>
+	<map internalParameter="US" internalLocation="ERA5Bow" internalQualifier="V" externalParameter="v" externalLocation="ERA5Bow"/>
+	<!--Pressure Level Parameters -->
+	<map internalParameter="PC" internalLocation="ERA5Bow" externalParameter="mtpr" externalLocation="ERA5Bow"/>
+	<map internalParameter="RS" internalLocation="ERA5Bow" externalParameter="msdwswrf" externalLocation="ERA5Bow"/>
+	<map internalParameter="RL" internalLocation="ERA5Bow" externalParameter="msdwlwrf" externalLocation="ERA5Bow"/>
+	<map internalParameter="PA" internalLocation="ERA5Bow" externalParameter="sp" externalLocation="ERA5Bow"/>
+	
 </idMap>

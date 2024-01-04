@@ -20,4 +20,8 @@
 	<qualifier id="snowonly" name="snowonly"/>
 	<qualifier id="historic" name="historic"/>
 	<qualifier id="nrt" name="nrt"/>
+	<!-- Wind Component Qualifiers -->
+	<qualifier id="U" name="U"/>
+	<qualifier id="V" name="V"/>
+	
 </qualifiers>

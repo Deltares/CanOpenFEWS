@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.1">
+	<!--Define Properties for Templates-->
+	<properties>
+		<!-- Module Instance ID for Input Timeseries-->
+		<string key="INPUTMODULEINSTANCE" value="ImportERA5"/>
+		<!-- Hourly Timestep-->
+		<string key="TIMESTEP" value="1"/>
+		<!-- Expiry Timestep-->
+		<string key="EXPIRYTIME" value="7"/>
+		<!-- EnsembleID if needed-->
+		<string key="ENSEMBLE" value="main"/>
+		<!--Input Grid-->
+		<string key="INPUTGRID" value="ERA5Bow"/>
+		<!--Basin Location-->
+		<string key="BASINLOCATIONS" value="ProcessBasins"/>
+		<!--Time Series Type-->
+		<string key="TIMESERIESTYPE" value="external historical"/>
+	</properties>
+	<!-- Preprocess Forecast Data for Input to SUMMA-->
+	<!-- Preprocess Wind Data -->
+	<activity>
+		<properties>
+			<!-- Parameter to process for Input Timeseries-->
+			<string key="PARAMETER" value="US"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>ImportERA5</moduleInstanceId>
+		<moduleConfigFileName>PreprocessWindTemplate</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<!-- Parameter to process for Input Timeseries-->
+			<string key="PARAMETER" value="US"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PreprocessERA5</moduleInstanceId>
+		<moduleConfigFileName>PreprocessGridtoBasinTemplate</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<!-- Parameter to process for Input Timeseries-->
+			<string key="PARAMETER" value="PC"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PreprocessERA5</moduleInstanceId>
+		<moduleConfigFileName>PreprocessGridtoBasinTemplate</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<!-- Parameter to process for Input Timeseries-->
+			<string key="PARAMETER" value="RS"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PreprocessERA5</moduleInstanceId>
+		<moduleConfigFileName>PreprocessGridtoBasinTemplate</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<!-- Parameter to process for Input Timeseries-->
+			<string key="PARAMETER" value="RL"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PreprocessERA5</moduleInstanceId>
+		<moduleConfigFileName>PreprocessGridtoBasinTemplate</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<!-- Parameter to process for Input Timeseries-->
+			<string key="PARAMETER" value="PA"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PreprocessERA5</moduleInstanceId>
+		<moduleConfigFileName>PreprocessGridtoBasinTemplate</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<!-- Parameter to process for Input Timeseries-->
+			<string key="PARAMETER" value="TA"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PreprocessERA5</moduleInstanceId>
+		<moduleConfigFileName>PreprocessGridtoBasinTemplate</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<!-- Parameter to process for Input Timeseries-->
+			<string key="PARAMETER" value="RH"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PreprocessERA5</moduleInstanceId>
+		<moduleConfigFileName>PreprocessGridtoBasinTemplate</moduleConfigFileName>
+	</activity>
+</workflow>

@@ -180,10 +180,13 @@
 		<description>Import North American Meso-scale Data from NOAA</description>
 	</moduleInstanceDescriptor>
 	<!--Import ERA5 Reanalysis data-->
-	<moduleInstanceDescriptor id="DownloadERA5Slice">
+	<moduleInstanceDescriptor id="RetrieveERA5">
 		<description>Download the ERA5 data</description>
 	</moduleInstanceDescriptor>
 	<moduleInstanceDescriptor id="ImportERA5">
+		<description>Import the ERA5 variables on the predefined grid</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="PreprocessERA5">
 		<description>Import the ERA5 variables on the predefined grid</description>
 	</moduleInstanceDescriptor>
 	<!--Preprocess NWP Inputs-->
@@ -329,6 +332,35 @@
 	<moduleInstanceDescriptor id="BowRavenGEPSForecast">
 		<description>Run the Bow model with REPS Forecast Data</description>
 	</moduleInstanceDescriptor>
+		<!-- Model Run Module Instances - SUMMA -->
+	<moduleInstanceDescriptor id="SUMMABinaries">
+		<description>Run the Bow SUMMA model</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="BowSUMMA">
+		<description>Run the Bow SUMMA model</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="BowSUMMAHistoricUpdate">
+		<description>ModuleInstanceId holder for Model</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="BowSUMMAHistoric">
+		<description>Run the Bow model with Historic Data</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="BowSUMMAForecast">
+		<description>Run the Bow model with Forecast Data</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="BowSUMMARDPSForecast">
+		<description>Run the Bow model with RDPS Forecast Data</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="BowSUMMAGDPSForecast">
+		<description>Run the Bow model with GDPS Forecast Data</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="BowSUMMAREPSForecast">
+		<description>Run the Bow model with REPS Forecast Data</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="BowSUMMAGEPSForecast">
+		<description>Run the Bow model with REPS Forecast Data</description>
+	</moduleInstanceDescriptor>
+
 	<!-- Wflow Model Preprocessing-->
 	<moduleInstanceDescriptor id="DeBruinPET">
 		<description>PET estimation using the De Bruin method</description>

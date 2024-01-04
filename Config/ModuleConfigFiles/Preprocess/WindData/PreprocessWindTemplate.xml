@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2019 rel. 3 sp1 (x64) (http://www.altova.com) by colleen.walford (Service Alberta - IMT Admin Svcs Ent Svcs) -->
+<transformationModule xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/transformationModule.xsd" version="1.0">
+	<!--Input-->
+	<variable>
+		<variableId>WindU</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$INPUTMODULEINSTANCE$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>$PARAMETER$</parameterId>
+			<qualifierId>U</qualifierId>
+			<locationId>$INPUTGRID$</locationId>
+			<timeSeriesType>$TIMESERIESTYPE$</timeSeriesType>
+			<timeStep unit="hour" multiplier="$TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<variable>
+		<variableId>WindV</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$INPUTMODULEINSTANCE$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>$PARAMETER$</parameterId>
+			<qualifierId>V</qualifierId>
+			<locationId>$INPUTGRID$</locationId>
+			<timeSeriesType>$TIMESERIESTYPE$</timeSeriesType>
+			<timeStep unit="hour" multiplier="$TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<!--  SWE average / basin-->
+	<variable>
+		<variableId>WindSpeed</variableId>
+		<timeSeriesSet>
+			<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>$PARAMETER$</parameterId>
+			<locationId>$INPUTGRID$</locationId>
+			<timeSeriesType>$TIMESERIESTYPE$</timeSeriesType>
+			<timeStep unit="hour" multiplier="$TIMESTEP$"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</variable>
+	<!-- Transformation-->
+	<transformation id="calculate_wind_speed">
+		<user>
+			<simple>
+				<expression>sqrt(pow(WindU, 2) + pow(WindV, 2))</expression>
+				<outputVariable>
+					<variableId>WindSpeed</variableId>
+				</outputVariable>
+			</simple>
+		</user>
+	</transformation>
+</transformationModule>

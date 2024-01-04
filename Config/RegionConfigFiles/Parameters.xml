@@ -110,6 +110,10 @@ http://fews.wldelft.nl/schemas/version1.0/parameters.xsd">
 		<parameterType>accumulative</parameterType>
 		<unit>mm</unit>
 		<valueResolution>0.0001</valueResolution>
+		<parameter id="PC" name="PC">
+			<shortName>PC</shortName>
+			<description>Precipitation</description>
+		</parameter>
 		<parameter id="PC.obs" name="PC.obs">
 			<shortName>PC.obs</shortName>
 			<description>Precipitation, accumulator - summation of precipitation collected beginning at a specified date</description>
@@ -285,6 +289,9 @@ http://fews.wldelft.nl/schemas/version1.0/parameters.xsd">
 		<parameterType>instantaneous</parameterType>
 		<unit>oC</unit>
 		<valueResolution>0.1</valueResolution>
+		<parameter id="TA" name="TA">
+			<shortName>TA</shortName>
+		</parameter>
 		<parameter id="TA.obs" name="TA.obs">
 			<shortName>TA.obs</shortName>
 		</parameter>
@@ -389,6 +396,9 @@ http://fews.wldelft.nl/schemas/version1.0/parameters.xsd">
 		<parameter id="RS" name="Shortwave Radiation">
 			<shortName>RS</shortName>
 		</parameter>
+		<parameter id="RS.sim" name="Shortwave Radiation - Downwards">
+			<shortName>RS.sim</shortName>
+		</parameter>
 		<parameter id="RSext" name="Extraterrestial Shortwave Radiation (NWP)">
 			<shortName>RSext</shortName>
 		</parameter>
@@ -442,8 +452,8 @@ http://fews.wldelft.nl/schemas/version1.0/parameters.xsd">
 		<parameterType>instantaneous</parameterType>
 		<unit>kg/kg</unit>
 		<valueResolution>0.00000000000000000001</valueResolution>
-		<parameter id="XR" name="Relative humidity">
-			<shortName>XR</shortName>
+		<parameter id="RH" name="Relative humidity">
+			<shortName>RH</shortName>
 		</parameter>
 	</parameterGroup>
 	<parameterGroup id="Dimensionless">
