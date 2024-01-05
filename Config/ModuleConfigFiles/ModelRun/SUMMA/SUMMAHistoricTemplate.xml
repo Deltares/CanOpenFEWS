@@ -189,7 +189,7 @@
 						<parameterId>SWE.sim</parameterId>
 						<locationSetId>$MODEL$SubBasins</locationSetId>
 						<timeSeriesType>simulated historical</timeSeriesType>
-						<timeStep unit="nonequidistant"/>
+						<timeStep unit="hour" multiplier="1"/>
 						<readWriteMode>add originals</readWriteMode>
 					</timeSeriesSet>
 				</timeSeriesSets>

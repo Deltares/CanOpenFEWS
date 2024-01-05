@@ -23,6 +23,12 @@
 			<node id="WSC" name="Water Survey of Canada">
 				<url>https://wateroffice.ec.gc.ca/</url>
 			</node>
+<!--			<node id="ERA5" name="ECMWF - ERA5">
+				<url>https://confluence.ecmwf.int/display/CKB/ERA5/</url>
+			</node>
+			<node id="Snowcast" name="Snowcast">
+				<url>http://www.snowcast.ca/</url>
+			</node>-->
 		</nodes>
 	</nodes>
 	<nodes id="ImportWSC" name="Import Hydrological Data from DataMart">
@@ -51,6 +57,13 @@
 			<localRun>false</localRun>
 		</node>
 	</nodes>
+	<nodes id="ImportERA5Nodes" name="Import ERA5 Re-Analysis">
+		<node id="ImportERA5" name="Import ERA5">
+			<workflowId>ImportERA5</workflowId>
+			<graceTime unit="hour" multiplier="24"/>
+			<localRun>false</localRun>
+		</node>
+	</nodes>
 	<nodes id="ImportECCCPrecipNodes" name="Import Re-Analysis Precipitation">
 		<node id="ImportHRDPA" name="Import HRDPA">
 			<workflowId>ImportHRDPAGrids</workflowId>
@@ -60,11 +73,6 @@
 		<node id="ImportRDPA" name="Import RDPA">
 			<workflowId>ImportRDPAGrids</workflowId>
 			<graceTime unit="hour" multiplier="6"/>
-			<localRun>false</localRun>
-		</node>
-		<node id="ImportERA5" name="Import ERA5 Reanalysis Data">
-			<workflowId>ImportERA5</workflowId>
-			<graceTime unit="hour" multiplier="24"/>
 			<localRun>false</localRun>
 		</node>
 	</nodes>
@@ -137,7 +145,7 @@
 		<node id="SummaryPlotPrecip" name="Precipitation Summary Plots"/>
 		<node id="SummaryPlotTemp" name="Temperature Summary Plots"/>
 	</nodes>
-	<nodes id="ModelNodes" name="Run Bow Wflow Models">
+	<nodes id="WflowModelNodes" name="Run Bow Wflow Models">
 		<node id="BowWflowRadarUpdate" name="Run Bow Wflow (Radar Update)">
 			<workflowId>BowWflowRadarUpdate</workflowId>
 			<localRun>false</localRun>
@@ -172,6 +180,32 @@
 		</node>
 		<node id="BowWflowLINDAForecast" name="Run Bow Wflow (LINDA Forecast)">
 			<workflowId>BowWflowLINDAForecast</workflowId>
+			<localRun>false</localRun>
+		</node>
+	</nodes>
+	<!-- Raven Model Nodes-->
+	<nodes id="RavenModelNodes" name="Run Bow Raven Models">
+		<node id="BowRavenHistoric" name="Run Bow Raven (Historic Update)">
+			<workflowId>RunBowRavenHistoric</workflowId>
+			<localRun>false</localRun>
+		</node>
+		<node id="BowRavenHRDPSForecast" name="Run Bow Raven (HRDPS)">
+			<workflowId>RunBowRavenHRDPSForecast</workflowId>
+			<localRun>false</localRun>
+		</node>
+		<node id="BowRavenRDPSForecast" name="Run Bow Wflow (RDPS)">
+			<workflowId>RunBowRavenHRDPSForecast</workflowId>
+			<localRun>false</localRun>
+		</node>
+		<node id="BowRavenGDPSForecast" name="Run Bow Wflow (GDPS)">
+			<workflowId>RunBowRavenGDPSForecast</workflowId>
+			<localRun>false</localRun>
+		</node>
+	</nodes>
+	<!-- SUMMA Model Nodes-->
+	<nodes id="SUMMAModelNodes" name="Run Bow SUMMA Models">
+		<node id="BowSUMMAHistoric" name="Run Bow SUMMA (Historic Update)">
+			<workflowId>RunBowSUMMAHistoric</workflowId>
 			<localRun>false</localRun>
 		</node>
 	</nodes>

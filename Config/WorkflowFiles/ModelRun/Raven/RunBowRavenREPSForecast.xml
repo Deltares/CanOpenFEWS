@@ -25,7 +25,7 @@
 	<!--Set Merge Historic and Forecast Data-->
 	<activity>
 		<properties>
-			<string key="LOCATIONSET" value="RavenBasins"/>
+			<string key="LOCATIONSET" value="BowSubBasins"/>
 		</properties>
 		<runIndependent>true</runIndependent>
 		<moduleInstanceId>PreprocessREPS</moduleInstanceId>
@@ -42,7 +42,7 @@
 			<string key="MODULEDATASET" value="RavenForecastEns"/>
 		</properties>
 		<runIndependent>true</runIndependent>
-		<moduleInstanceId>RavenREPSForecast</moduleInstanceId>
+		<moduleInstanceId>BowRavenREPSForecast</moduleInstanceId>
 		<moduleConfigFileName>RavenForecastTemplate</moduleConfigFileName>
 		<ensemble>
 			<ensembleId>REPS</ensembleId>
@@ -55,12 +55,12 @@
 			<string key="TIMESERIESTYPE" value="simulated forecasting"/>
 			<string key="PARAMETER" value="QR.sim"/>
 			<string key="ENSEMBLE" value="REPS"/>
-			<string key="MODELOUTPUTLOCATION" value="RavenSubBasins"/>
+			<string key="MODELOUTPUTLOCATION" value="BowSubBasins"/>
 			<string key="STATIONLOCATIONS" value="RavenHydroStations"/>
 			<string key="TIMESTEP" value="$DAY_TIMESTEP$"/>
 		</properties>
 		<runIndependent>true</runIndependent>
-		<moduleInstanceId>RavenREPSForecast</moduleInstanceId>
+		<moduleInstanceId>BowRavenREPSForecast</moduleInstanceId>
 		<moduleConfigFileName>PostprocessModelBasinOutputToStationTemplate</moduleConfigFileName>
 		<ensemble>
 			<ensembleId>REPS</ensembleId>

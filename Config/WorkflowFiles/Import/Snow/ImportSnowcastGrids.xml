@@ -14,6 +14,10 @@
 		<runIndependent>true</runIndependent>
 		<moduleInstanceId>ImportSnowcast</moduleInstanceId>
 	</activity>
+		<activity>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>ImportSnowcastHighRes</moduleInstanceId>
+	</activity>
 	<!-- Process GWF swe data using basin shapes -->
 	<activity>
 		<runIndependent>true</runIndependent>

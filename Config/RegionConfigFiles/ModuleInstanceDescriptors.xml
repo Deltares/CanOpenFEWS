@@ -231,6 +231,9 @@
 		<description>Preprocess the ECCC radar data to a smaller grid around the Bow River</description>
 	</moduleInstanceDescriptor>
 	<!--Set Forecast Length for Forecasts -->
+	<moduleInstanceDescriptor id="SetForecastLengthHRDPS">
+		<description>Set Forecast Length based on available HRDPS data</description>
+	</moduleInstanceDescriptor>
 	<moduleInstanceDescriptor id="SetForecastLengthRDPS">
 		<description>Set Forecast Length based on available RDPS data</description>
 	</moduleInstanceDescriptor>
@@ -264,6 +267,9 @@
 		<description>Import for GlobSnow grids from Finnish Meteorological Institute</description>
 	</moduleInstanceDescriptor>
 	<moduleInstanceDescriptor id="ImportSnowcast">
+		<description>Import swe data from Snowcast GeoTIF files</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportSnowcastHighRes">
 		<description>Import swe data from Snowcast GeoTIF files</description>
 	</moduleInstanceDescriptor>
 	<moduleInstanceDescriptor id="ImportNETCDF">
@@ -319,6 +325,9 @@
 	</moduleInstanceDescriptor>
 	<moduleInstanceDescriptor id="BowRavenForecast">
 		<description>Run the Bow model with Forecast Data</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="BowRavenHRDPSForecast">
+		<description>Run the Bow model with HRDPS Forecast Data</description>
 	</moduleInstanceDescriptor>
 	<moduleInstanceDescriptor id="BowRavenRDPSForecast">
 		<description>Run the Bow model with RDPS Forecast Data</description>

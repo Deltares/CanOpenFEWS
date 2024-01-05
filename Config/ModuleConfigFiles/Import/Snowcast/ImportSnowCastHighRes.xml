@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
+	<import>
+		<general>
+			<importType>GeoTiff</importType>
+			<folder>$IMPORT_FOLDER$\Snowcast</folder>
+			<fileNameObservationDateTimePattern>'swe-0.002x0.002_'yyyyMMdd'T'HHmmss</fileNameObservationDateTimePattern>
+			<idMapId>IdImportSnowcast</idMapId>
+			<importTimeZone>
+				<timeZoneName>MST</timeZoneName>
+			</importTimeZone>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSnowcast</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>SWE.sim</parameterId>
+			<locationId>SnowcastHighRes</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+		</timeSeriesSet>
+		<externUnit parameterId="SWE.sim" unit="-" />
+	</import>
+</timeSeriesImportRun>

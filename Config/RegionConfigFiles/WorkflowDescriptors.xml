@@ -76,6 +76,9 @@
 	<workflowDescriptor id="RunBowRavenHistoric" name="Run Bow Raven (Historical)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep id="$DAY_TIMESTEP$"/>
 	</workflowDescriptor>
+	<workflowDescriptor id="RunBowRavenHRDPSForecast" name="Run Bow Raven (HRDPS)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
+		<cardinalTimeStep id="$DAY_TIMESTEP$"/>
+	</workflowDescriptor>
 	<workflowDescriptor id="RunBowRavenRDPSForecast" name="Run Bow Raven (RDPS)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep id="$DAY_TIMESTEP$"/>
 	</workflowDescriptor>

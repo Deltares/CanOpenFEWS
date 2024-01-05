@@ -2,43 +2,42 @@
 <workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.1">
 	<!-- Run Model Forecast -->
 	<properties>
-		<string key="FORECAST" value="GDPS"/>
+		<string key="MODEL" value="Bow"/>
+		<string key="FORECAST" value="HRDPS"/>
 		<string key="STARTTIME" value="-5"/>
-		<string key="ENDTIME" value="7"/>
+		<string key="ENDTIME" value="3"/>
 		<string key="TIMESTEP" value="DAY_TIMESTEP"/>
-		 <string key="HISTORICMODULEINSTANCE" value="ImportECCCScalar"/>
-		<string key="FORECASTMODULEINSTANCE" value="PreprocessGDPS"/>
-		<string key="MODEL" value="Raven"/>
+		<string key="HISTORICMODULEINSTANCE" value="ImportECCCScalar"/>
+		<string key="FORECASTMODULEINSTANCE" value="PreprocessHRDPS"/>
 		<string key="ENSEMBLE" value="main"/>
-		<string key="EXPORTDATASET" value="RavenForecast"/>
+		<string key="EXPORTDATASET" value="BowRavenForecast"/>
+		<string key="FORECASTLOCATIONSET" value="ModelBasins"/>
 	</properties>
-	
 <!--Set Forecast Length-->
 	<activity>
 		<runIndependent>true</runIndependent>
-		<moduleInstanceId>SetForecastLengthGDPS</moduleInstanceId>
+		<moduleInstanceId>SetForecastLengthHRDPS</moduleInstanceId>
 		<moduleConfigFileName>SetForecastLengthTemplate</moduleConfigFileName>
 	</activity>
-<!--Set Merge Historic and Forecast Data-->
+	<!--Set Merge Historic and Forecast Data-->
 	<activity>
 		<properties>
 		<string key="LOCATIONSET" value="BowSubBasins"/>
 	</properties>
 		<runIndependent>true</runIndependent>
-		<moduleInstanceId>PreprocessGDPS</moduleInstanceId>
+		<moduleInstanceId>PreprocessHRDPS</moduleInstanceId>
 		<moduleConfigFileName>MergeForecastGridsTemplate</moduleConfigFileName>
 	</activity>
-<!--Run model in for GDPS Forecast --> 
+<!--Run model in for HRDPS Forecast --> 
 	<activity>
 	<properties>
-		<string key="INPUTMODULEINSTANCEMETEO" value="PreprocessGDPS"/>
+		<string key="INPUTMODULEINSTANCEMETEO" value="PreprocessHRDPS"/>
 	</properties>
 		<runIndependent>true</runIndependent>
-		<moduleInstanceId>BowRavenGDPSForecast</moduleInstanceId>
+		<moduleInstanceId>BowRavenHRDPSForecast</moduleInstanceId>
 		<moduleConfigFileName>RavenForecastTemplate</moduleConfigFileName>
 	</activity>
-	
-<!-- Postprocess Model Results-->
+	<!-- Postprocess Model Results-->
 	<activity>
 	<properties>
 		<string key="TIMESERIESTYPE" value="simulated forecasting"/>
@@ -49,7 +48,7 @@
 		<string key="TIMESTEP" value="$DAY_TIMESTEP$"/>
 	</properties>
 		<runIndependent>true</runIndependent>
-		<moduleInstanceId>BowRavenGDPSForecast</moduleInstanceId>
+		<moduleInstanceId>BowRavenHRDPSForecast</moduleInstanceId>
 		<moduleConfigFileName>PostprocessModelBasinOutputToStationTemplate</moduleConfigFileName>
 	</activity>
 </workflow>

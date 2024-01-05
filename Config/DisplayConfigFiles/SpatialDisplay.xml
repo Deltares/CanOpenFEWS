@@ -691,6 +691,21 @@ http://fews.wldelft.nl/schemas/version1.0/gridDisplay.xsd">
 				<movieFrameDurationMillis>200</movieFrameDurationMillis>
 				<classBreaksId>Class.SWE</classBreaksId>
 			</gridPlot>
+			<gridPlot id="Snow Water Equivalent - Snowcast High Res [mm]">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportSnowcast</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>SWE.sim</parameterId>
+					<locationId>SnowcastHighRes</locationId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="nonequidistant"/>
+					<relativeViewPeriod unit="day" end="0" start="-60"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+				<showThumbnailsPanel>false</showThumbnailsPanel>
+				<movieFrameDurationMillis>200</movieFrameDurationMillis>
+				<classBreaksId>Class.SWE</classBreaksId>
+			</gridPlot>
 			<gridPlot id="SWE Basin Average - Snowcast [mm]">
 				<timeSeriesSet>
 					<moduleInstanceId>PreprocessSnowcast</moduleInstanceId>
@@ -819,7 +834,7 @@ http://fews.wldelft.nl/schemas/version1.0/gridDisplay.xsd">
 					</timeSeriesSet>
 					<classBreaksId>Class.Precipitation</classBreaksId>
 				</gridPlot>
-				<gridPlot id="HistoricTemperatureInput MaxBowRaven" name="Max Temperature (degC)">
+				<gridPlot id="HistoricTemperatureInputMaxBowRaven" name="Max Temperature (degC)">
 					<timeSeriesSet>
 						<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
 						<valueType>scalar</valueType>
@@ -968,6 +983,50 @@ http://fews.wldelft.nl/schemas/version1.0/gridDisplay.xsd">
 						<timeStep unit="day"/>
 						<readWriteMode>read complete forecast</readWriteMode>
 					</timeSeriesSet>
+				</gridPlot>
+			</gridPlotGroup>
+		</gridPlotGroup>
+	</gridPlotGroup>
+	<gridPlotGroup id="BowSUMMAResults" name="Bow SUMMA Results">
+		<gridPlotGroup id="BowSUMMAHistoric" name="Historic Model Run">
+			<gridPlotGroup id="HistoricInputBowSUMMA" name="Input Data (ERA5)">
+				<gridPlot id="ERA5PrecipitationInputBowSUMMA" name="Precipitation (mm)">
+					<timeSeriesSet>
+						<moduleInstanceId>ImportERA5</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>PC</parameterId>
+						<locationId>ERA5Bow</locationId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour" multiplier="1"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<classBreaksId>Class.Precipitation</classBreaksId>
+				</gridPlot>
+				<gridPlot id="ERA5TemperatureInputBowSUMMA" name="Temperature (degC)">
+					<timeSeriesSet>
+						<moduleInstanceId>ImportERA5</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>TA</parameterId>
+						<locationId>ERA5Bow</locationId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour" multiplier="1"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<classBreaksId>Class.Temperature</classBreaksId>
+				</gridPlot>
+			</gridPlotGroup>
+			<gridPlotGroup id="HistoricResultBowSUMMA" name="Results">
+				<gridPlot id="HistoricResultSWEBowSUMMA" name="SWE [mm]">
+					<timeSeriesSet>
+						<moduleInstanceId>BowSUMMAHistoric</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>SWE.sim</parameterId>
+						<locationSetId>BowSubBasins</locationSetId>
+						<timeSeriesType>simulated historical</timeSeriesType>
+						<timeStep unit="hour" multiplier="1"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<classBreaksId>Class.SWE</classBreaksId>
 				</gridPlot>
 			</gridPlotGroup>
 		</gridPlotGroup>

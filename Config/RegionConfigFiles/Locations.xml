@@ -83,6 +83,16 @@
 		<!--UpperRight y-->
 		<y>55.998059701484</y>
 	</location>
+		<location id="SnowcastHighRes" name="SnowcastHighRes ">
+		<shortName>SnowcastHighRes</shortName>
+		<!--original domain 
+              <x>-118.891692796615018</x>
+              <y>52.867749118272918</y>-->
+		<!--UpperLeft x-->
+		<x>-131.995202834714</x>
+		<!--UpperRight y-->
+		<y>55.998059701484</y>
+	</location>
 	<location id="ECCCRadarComposite" name="ECCCRadarComposite">
 		<x>0</x>
 		<y>0</y>

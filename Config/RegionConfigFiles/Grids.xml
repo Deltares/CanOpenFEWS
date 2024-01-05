@@ -250,6 +250,18 @@
 		<xCellSize>0.024034932267</xCellSize>
 		<yCellSize>0.024034932267</yCellSize>-->
 	</regular>
+    <regular locationId="SnowcastHighRes">
+        <rows>4768</rows>
+        <columns>11096</columns>
+        <geoDatum>WGS 1984</geoDatum>
+        <firstCellCenter>
+            <x>-131.99420281482176</x>
+            <y>55.997059647864596</y>
+            <z>0.0</z>
+        </firstCellCenter>
+        <xCellSize>0.002000039783617576</xCellSize>
+        <yCellSize>0.0020001072380545263</yCellSize>
+    </regular>
 	<regular locationId="ECCCRadarComposite">
 		<rows>5584</rows>
 		<columns>6525</columns>

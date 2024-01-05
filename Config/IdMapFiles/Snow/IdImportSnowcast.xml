@@ -2,4 +2,5 @@
 <idMap xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/idMap.xsd" version="1.1">
 	<!--<map internalParameter="SWE.gwf" internalLocation="Snowcast_GWF" externalParameter="image" externalLocation="image"/>-->
 	<map internalParameter="SWE.sim" internalLocation="Snowcast_GWF" externalParameter="swe" externalLocation="ARC_INFO_LOC"/>
+	<map internalParameter="SWE.sim" internalLocation="SnowcastHighRes" externalParameter="3-dimensional Scientific Dataset" externalLocation="SnowcastHighRes"/>
 </idMap>
