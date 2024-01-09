@@ -8,7 +8,7 @@
 		<string key="TIMESTEP" value="DAY_TIMESTEP"/>
 		 <string key="HISTORICMODULEINSTANCE" value="ImportECCCScalar"/>
 		<string key="FORECASTMODULEINSTANCE" value="PreprocessGDPS"/>
-		<string key="MODEL" value="Raven"/>
+		<string key="MODEL" value="Bow"/>
 		<string key="ENSEMBLE" value="main"/>
 		<string key="EXPORTDATASET" value="RavenForecast"/>
 	</properties>

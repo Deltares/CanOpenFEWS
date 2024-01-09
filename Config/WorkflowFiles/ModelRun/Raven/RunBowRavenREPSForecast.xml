@@ -56,7 +56,7 @@
 			<string key="PARAMETER" value="QR.sim"/>
 			<string key="ENSEMBLE" value="REPS"/>
 			<string key="MODELOUTPUTLOCATION" value="BowSubBasins"/>
-			<string key="STATIONLOCATIONS" value="RavenHydroStations"/>
+			<string key="STATIONLOCATIONS" value="BowHydroStations"/>
 			<string key="TIMESTEP" value="$DAY_TIMESTEP$"/>
 		</properties>
 		<runIndependent>true</runIndependent>

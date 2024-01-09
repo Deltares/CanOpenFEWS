@@ -51,6 +51,12 @@
 	<moduleInstanceDescriptor id="ImportRavenNetCDF">
 		<description>Import Raven NetCDF from Local Source</description>
 	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="RetrieveAlbertaAPI">
+		<description>Retrieve data from Alberta API</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportAlbertaAPI">
+		<description>Import data from Alberta API</description>
+	</moduleInstanceDescriptor>
 	<!-- Export-->
 	<moduleInstanceDescriptor id="ExportHYDATtoCSV">
 		<description>Export HYDAT data to CSV to generate reports</description>

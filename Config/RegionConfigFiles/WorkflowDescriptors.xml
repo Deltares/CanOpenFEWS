@@ -8,6 +8,7 @@
 	<workflowDescriptor id="ImportECCCScalar" name="Import Real Time ECCC Meteo Station Data" visible="true" forecast="false" autoApprove="true" allowApprove="true"/>
 	<workflowDescriptor id="ImportECCCHistoric" name="Import Historic ECCC Meteo Station Data" visible="true" forecast="false" autoApprove="true" allowApprove="true"/>
 	<workflowDescriptor id="ImportRecentObservations" name="Import Recent Observations (Test)" visible="true" forecast="false" autoApprove="true" allowApprove="true"/>
+		<workflowDescriptor id="ImportAlbertaAPI" name="Import Snow Data from Alberta API" visible="true" forecast="false" autoApprove="true" allowApprove="true"/>
 	<!-- Retrieve and Import ECCC  from GeoMet WebCoverage Service -->
 	<workflowDescriptor id="ImportHRDPAGrids" name="Import HRDPA" forecast="false" allowApprove="false" visible="true">
 		<description>Retrieve Forecast Grids from Web Coverage Service (WCS)</description>
@@ -159,6 +160,7 @@
 			<workflowId>RetrieveECCCRadarComposite</workflowId>
 		</node>
 		<node name="Import Snow Data">
+			<workflowId>ImportAlbertaAPI</workflowId>
 			<workflowId>ImportSnowcastGrids</workflowId>
 			<workflowId>ImportSNODASGrids</workflowId>
 			<workflowId>ImportGLOBSNOWGrids</workflowId>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews
+http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
+	<import>
+		<general>
+			<importType>generalCSV</importType>
+			<folder>$IMPORT_FOLDER$\AlbertaAPI</folder>
+			<table>
+				<locationColumn name="stationNumber"/>
+				<dateTimeColumn name="measurementTimeStamp" pattern="yyyy-MM-dd'T'HH:mm:ss"/>
+				<valueColumn name="measurementValue" unit="mm" parameterId="SWE.obs"/>
+			</table>
+			<idMapId>IdImportAlbertaAPI</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<importTimeZone>
+				<timeZoneOffset>+00:00</timeZoneOffset>
+			</importTimeZone>
+			<expiryTime unit="day" multiplier="365"/>
+			<skipFirstLinesCount>0</skipFirstLinesCount>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportAlbertaAPI</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>SWE.obs</parameterId>
+			<locationSetId>SnowStations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="day"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</import>
+</timeSeriesImportRun>

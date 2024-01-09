@@ -1123,6 +1123,21 @@
 					<readWriteMode>read complete forecast</readWriteMode>
 				</timeSeriesSet>
 			</line>
+			<line>
+				<color>black</color>
+				<lineStyle>dashdot;thick</lineStyle>
+				<axis>left</axis>
+				<label>SnowPillow</label>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportAlbertaAPI</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>SWE.obs</parameterId>
+					<locationSetId>SnowStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="day"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
 		</subplot>
 	</plot>
 	<plot id="SnowBasinsTemplate">

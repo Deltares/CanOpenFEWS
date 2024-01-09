@@ -5,13 +5,13 @@
 
 CanOpenFEWS is an open and shareable configuration for an operational hydrological forecasting system with [Delft-FEWS](https://oss.deltares.nl/web/delft-fews).
 
-This repository is meant to share developments and receive input from the forecasting community.
+This repository is meant to share developments and receive input from the forecasting community. It is experimental and demonstration only.
 
 The technical focus is on [rainfall nowcasting](#rainfall_nowcasting) and [snow monitoring](#snow_monitoring) for operational forecasting, applied in a mountainous environment. It contains complete examples for data access, processing, visualization and application with [hydrological modelling frameworks](#hydrological_models).
 
-The repository contains data access and processing for a number of public data sources. Primary data sources are the [Meteorological Service of Canada Open Data](https://eccc-msc.github.io/open-data/readme_en/), but include a variety of snow and meterological re-analysis products, such as ERA5.
+The workflows allow data access and processing for a number of public data sources. Primary data sources are the [Meteorological Service of Canada Open Data](https://eccc-msc.github.io/open-data/readme_en/), but include a variety of snow and meterological re-analysis products, such as ERA5.
 
-This repository is intended for those with some experience with the Delft-FEWS software. It is hosted on GitHub so that users can access workflows, model connections and displays for their own use. Please feel free to use the configuration to develop and improve your own applications. Also make contributions back! New data, methods, models and displays are all welcome.
+This repo is intended for those with some experience with the Delft-FEWS software. It is hosted on GitHub so that users can access workflows, model connections and displays for their own use. Please feel free to use the configuration to develop and improve your own applications. Also make contributions back! New data, methods, models and displays are all welcome.
 
 ![CanOpenFEWS_screenshot](docs/CanOpenFEWS_screenshot.png)
 
@@ -32,9 +32,9 @@ CanOpenFEWS contains bindings to a variety of snow data products, and aims to co
 
 ## Hydrological Models
 
-CanOpenFEWS currently contains two hydrological models over the Bow Basin in Alberta, Canada. The two models (both open source) are included to demonstrate connections to a distributed (grid-based) and semi-distributed (vector based) conceptual model. Both models contain a variety of options for discretizations, and conceptual process representation.
+CanOpenFEWS currently contains three hydrological modelling frameworks over the Bow Basin in Alberta, Canada. The three models are open source, and included to demonstrate connections to a distributed (grid-based) and semi-distributed (vector based) conceptual models, along with a more physically based modelling approach. All models contain a variety of options for discretizations, and varied process representation.
 
-Both are flexible hydrological modelling frameworks, with supporting tools for model creation, implementation and evaluation.
+These are flexible hydrological modelling frameworks, with supporting tools for model creation, implementation and evaluation.
 
 ### wflow
 
@@ -73,7 +73,7 @@ If you do not plan on contributing back to the repository, it can simply be down
 This collaborative configuration initiative was started by a collaboration of researchers, engineers and end-users from:
 - Deltares (the Netherlands) and Deltares USA
 - SWFT Response / University of Calgary via [Dave Casson](mailto:davecasson@swftresponse.ca)
-- several Canadian partners and Delft-FEWS users.
+- Several Canadian partners and Delft-FEWS users.
 
 We especially would like to thank the Alberta River Forecast Center and the City of Calgary Water Resources department for feedback and contributions. Also special thanks to Rob Chlumsky of [Heron Hydrologic](https://heronhydrologic.ca/) for providing the base Raven model and description.
 

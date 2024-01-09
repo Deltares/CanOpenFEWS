@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<generalAdapterRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/generalAdapterRun.xsd">
+	<general>
+		<piVersion>1.8</piVersion>
+		<rootDir>%REGION_HOME%/modules/pyscripts</rootDir>
+		<workDir>%ROOT_DIR%/work</workDir>
+		<exportDir>$IMPORT_FOLDER$/AlbertaAPI</exportDir>
+		<importDir>$IMPORT_FOLDER$/AlbertaAPI</importDir>
+		<dumpFileDir>$GA_DUMPFILEDIR$</dumpFileDir>
+		<dumpDir>%ROOT_DIR%/work</dumpDir>
+		<diagnosticFile>%ROOT_DIR%/work/fews_data_download_log.xml</diagnosticFile>
+		<convertDatum>false</convertDatum>
+	</general>
+	<activities>
+		<startUpActivities>
+			<purgeActivity>
+				<filter>%ROOT_DIR%/work/*.*</filter>
+			</purgeActivity>
+		</startUpActivities>
+		<exportActivities>
+			<exportRunFileActivity>
+				<exportFile>%WORK_DIR%/fews_data_download_run_info.xml</exportFile>
+				<properties>
+					<string key="destinationDir" value="$IMPORT_FOLDER$/AlbertaAPI"/>
+				</properties>
+			</exportRunFileActivity>
+		</exportActivities>
+		<executeActivities>
+			<!--Download of ECCC NWP data-->
+			<!--  Uncomment to run through python rather than as an exe (then comment the exe block below)	-->
+			<executeActivity>
+				<command>
+					<executable>$PYTHON_EXE$</executable>
+				</command>
+				<!--				<command>
+					<executable>%ROOT_DIR%/bin/dist/get_ec_forecasts.exe</executable>
+				</command>-->
+				<arguments>
+					<argument>%ROOT_DIR%\bin\alberta_api.py</argument>
+					<argument>--output-dir</argument>
+					<argument>$IMPORT_FOLDER$/AlbertaAPI</argument>
+				</arguments>
+				<timeOut>900000</timeOut>
+				<ignoreDiagnostics>true</ignoreDiagnostics>
+			</executeActivity>
+		</executeActivities>
+	</activities>
+</generalAdapterRun>
