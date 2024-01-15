@@ -14,7 +14,7 @@ Composite radar data is available as an experimental data set from [Environment 
 
 Steps to access the data are:
 
-  1. Contact sandrine.edouard@ec.gc.ca for password specific to this product
+  1. Contact dps-client@ec.gc.ca for password specific to this product
 
   2. Add the username and password to the global.properties file
 
@@ -22,7 +22,7 @@ Steps to access the data are:
 
 National Surface and River Prediction System is available as an experimental data set from [Environment Canada and Climate Change GeoMet Services](https://eccc-msc.github.io/open-data/msc-geomet/readme_en/).
 
-  1. Contact sandrine.edouard@ec.gc.ca for password specific to this product
+  1. Contact dps-client@ec.gc.ca for password specific to this product
 
   2. Add the username and password to the global.properties file
 

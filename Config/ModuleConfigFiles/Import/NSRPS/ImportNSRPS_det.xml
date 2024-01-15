@@ -9,10 +9,10 @@
 			<relativeViewPeriod unit="hour" start="0" end="72" startOverrulable="true" endOverrulable="true"/>
 			<idMapId>IdImportNSRPS</idMapId>
 		</general>
-<!--		<startTimeShift>
+		<startTimeShift>
 			<parameterId>QR.fcst</parameterId>
 			<relativePeriod start="-3" end="0" unit="hour"/>
-		</startTimeShift>-->
+		</startTimeShift>
 		<properties>
 			<string key="subsettingCrs" value="EPSG:4326"/>
 		</properties>
