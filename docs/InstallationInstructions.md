@@ -3,6 +3,22 @@
 
 If you are truly new to this software, it may be better to begin with the information [available on the Delft-FEWS website](https://oss.deltares.nl/web/delft-fews). At this link, you can find the latest information, instructions and community developments. Configuring Delft-FEWS comes with a steep learning curve, but once you are familiar with it, this repository can help to minimize reinventing the wheel by sharing configuration and it is a great way to test and share new developments (models, code, etc.).
 
+## Pulling the repository to your own environment
+
+The first time you are using CanOpenFEWS, you will have to pull the contents of the repository to your own computer environment. Go the folder where you want the CanOpenFEWS folder to end up and either download and unpack the CanOpenFEWS zip file in this folder or type in a (git) command line:
+
+`git clone https://github.com/Deltares/CanOpenFEWS.git`
+
+Now, you are ready to go. Every time you plan to work on and make changes to the repository, make sure to first update your CanOpenFEWS to the latest version of the repository. In a (git) command line, navigate to the CanOpenFEWS folder and type:
+
+`git fetch`
+
+followed by:
+
+`git pull`
+
+You are up to date now and ready to make changes and commit them. Contributing to CanOpenFEWS is explained in [How to contribute?](https://github.com/Deltares/CanOpenFEWS).
+
 ## Installation of Delft-FEWS
 
 Download and installation instructions of Delft-FEWS are available [at this webpage, at the bottom](https://oss.deltares.nl/web/delft-fews/about-delft-fews). Delft-FEWS is free to use, but please note that a end-user license agreement is required. For further detail on obtaining Delft-FEWS, including new releases, please contact [fews-pm email](fews-pm@deltares.nl). The newest Delft-FEWS versions are only available through [fews-pm email](fews-pm@deltares.nl), but older versions can be directly downloaded from the website. This configuration has been tested with the v2023.01 of Delft-FEWS. It is possible that some functionalities do not work with other (older) versions of Delft-FEWS.
