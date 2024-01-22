@@ -3,7 +3,7 @@
 	<clientType>Stand alone</clientType>
 	<jvmOption>-Xmx8192m</jvmOption>
 	<jvmOption>-DautoRollingBarrel=false</jvmOption>
-	#<autoExportModuleDataSet name="jcef" exportDir="Modules"/>
+	<autoExportModuleDataSet name="jcef" exportDir="Modules"/>
 	<autoExportModuleDataSet name="RavenBinaries" exportDir="Modules"/>
 	<autoExportModuleDataSet name="PyscriptsBinaries" exportDir="Modules"/>
 	<autoExportModuleDataSet name="pcraster" exportDir="Modules"/>
