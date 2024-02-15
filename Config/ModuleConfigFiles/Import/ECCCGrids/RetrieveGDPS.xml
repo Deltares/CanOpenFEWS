@@ -9,7 +9,7 @@
 		<importDir>$IMPORT_FOLDER$/GDPS</importDir>
 		<dumpFileDir>$GA_DUMPFILEDIR$</dumpFileDir>
 		<dumpDir>%ROOT_DIR%/work</dumpDir>
-		<diagnosticFile>%ROOT_DIR%/workfews_data_download_log.xml</diagnosticFile>
+		<diagnosticFile>%ROOT_DIR%/work/fews_data_download_log.xml</diagnosticFile>
 		<convertDatum>false</convertDatum>
 	</general>
 	<activities>
