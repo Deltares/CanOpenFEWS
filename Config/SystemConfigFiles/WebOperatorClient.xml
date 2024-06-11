@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<webOperatorClient xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews https://fewsdocs.deltares.nl/schemas/version1.0/webOperatorClient.xsd">
+    <general>
+        <title>Delft FEWS Web Operator Client</title>
+        <icons>
+            <logo>deltares_logo.png</logo>
+            <favicon>deltares_favicon.svg</favicon>
+        </icons>
+        <defaultComponent>topologyDisplay</defaultComponent>
+        <customStyleSheet>weboc-default-style.css</customStyleSheet>
+        <splashScreen>image.png</splashScreen>
+        <helpMenu>
+            <url name="Help entry links to external url">https://example.com</url>
+            <path name="Help entry links to path in Web OC">terms-of-use</path>
+        </helpMenu>
+    </general>
+    <components>
+        <topologyDisplay>
+            <title>Topology Display</title>
+            <defaultPath>
+                <nodeId>ImportWSCHourly</nodeId>
+            </defaultPath>
+            <showLeafNodesAsButtons>true</showLeafNodesAsButtons>
+        </topologyDisplay>
+        <htmlDisplay>
+            <title>Terms of Use page</title>
+            <path>terms-of-use</path>
+            <viewPermission>public</viewPermission>
+            <url>terms-of-use.html</url>
+        </htmlDisplay>
+    </components>
+</webOperatorClient>
