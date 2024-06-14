@@ -19,6 +19,5 @@
 	<map internalParameter="PC" internalLocation="ERA5Bow" externalParameter="mtpr" externalLocation="ERA5Bow"/>
 	<map internalParameter="RS" internalLocation="ERA5Bow" externalParameter="msdwswrf" externalLocation="ERA5Bow"/>
 	<map internalParameter="RL" internalLocation="ERA5Bow" externalParameter="msdwlwrf" externalLocation="ERA5Bow"/>
-	<map internalParameter="PA" internalLocation="ERA5Bow" externalParameter="sp" externalLocation="ERA5Bow"/>
 	
 </idMap>
