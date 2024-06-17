@@ -20,31 +20,27 @@ You can always come back.
      ![alt text](./images/DirectoryStructure.png)
 
 
-
-
-
-
 3. Go to the CanOpenFEWS GitHub [here](https://github.com/Deltares/canopenfews).
 
-  Optional: If you are interested to contribute, and are familiar with GitHub, fork and clone the GitHub repository.
+  Optional: If you are interested to contribute, and are familiar with GitHub, fork and clone the GitHub repository. Instructions for this at at the bottom of this document.
 
-5. Download the configuration as a .zip file, unzip the contents in CWRA_FEWS/CanOpenFEWS/.
+4. Download the configuration as a .zip file, unzip the contents in CWRA_FEWS/CanOpenFEWS/.
 
- ![alt text](./images/GitAccess.png)
+    ![alt text](./images/GitAccess.png)
 
 5. From the provided link, unzip the patch.jar into the ./CWRA_FEWS/CanOpenFEWS/ directory
 
-6. Unzip the LocalDataStore.zip into the ./CWRA_FEWS/CanOpenFEWS/ directory
+    ![alt text](./images/PatchAndLDS.png)
 
- ![alt text](./images/PatchAndLDS.png)
+6. Unzip the LocalDataStore.zip into the ./CWRA_FEWS/CanOpenFEWS/ directory (as above)
 
 7. Unzip the Delft-FEWS binaries into the ./CWRA_FEWS/bin/ directory
 
 8. Go into the ./CWRA_FEWS/bin/windows/ directory, and open create_shortcuts.exe
 
-  ![alt text](./images/DelftFEWSShortcuts.png)
+    ![alt text](./images/DelftFEWSShortcuts.png)
 
-9. Once the shortcut has been created, open the CanOpenFEWS.lnk from the ./CWRA_FEWS/CanOpenFEWS directory
+9. Once the shortcut has been created, open the CanOpenFEWS.lnk from the ./CWRA_FEWS/CanOpenFEWS/ directory
 
 10. CanOpenFEWS should open to the landing page, you're in! Explore to see the data available.
 
@@ -55,13 +51,14 @@ You can always come back.
 1. What was the most recent discharge at the Bow River at Calgary?
 
   - Find this in the Data Viewer on the Right Side, Hydro and Meto Station Data
+  - You will need to location and parameter, then open the Data Display
 
   ![alt text](./images/Task1and2.png)
 
 2. Is there snow still in the mountains?
 
   - Go to the Spatial Display, and check the SnowCast and SNODAS results.
-
+  - Can you find the melt rate (under SNODAS)?
 
 3. What was the forecasted temperature for Saskatoon?
 
@@ -81,7 +78,7 @@ You can always come back.
 
 
 5. Make the most beautiful Dashboard that you can.
-  - On the top of FEWS, select the Dashboard, and create a new one and give it a unique name.
+  - On the top of FEWS, select the Dashboard (see image above) and create a new one and give it a unique name.
   - Then navigate to the Spatial Display, and add any active display with the Dashboard icon (or Alt+Insert)
   - This is a competition! Try to add charts, focus on a specific theme (i.e. rain or snow), or just make it beautiful!
   - Once complete, submit your user_settings.ini (in ./CWRA_FEWS/CanOpenFEWS) to davecasson@swftresponse.ca.
@@ -103,7 +100,7 @@ You can always come back.
   - Ctrl F12+M, Start TomCat WebServices
   - In a local browser, open http://localhost:8080/
 
-  ![alt text](./images/weboc.png)
+      ![alt text](./images/weboc.png)
 
 
 3. Follow the instructions to contribute to the GitHub!!!
