@@ -81,7 +81,7 @@ You can always come back.
   - On the top of FEWS, select the Dashboard (see image above) and create a new one and give it a unique name.
   - Then navigate to the Spatial Display, and add any active display with the Dashboard icon (or Alt+Insert)
   - This is a competition! Try to add charts, focus on a specific theme (i.e. rain or snow), or just make it beautiful!
-  - Once complete, submit your user_settings.ini (in ./CWRA_FEWS/CanOpenFEWS) to davecasson@swftresponse.ca.
+  - Once complete, submit your user_settings.ini (in ./CWRA_FEWS/CanOpenFEWS) to Matthijs.Lemans@deltares.nl
   - We'll add the favorite one to the repository :)
 
 
