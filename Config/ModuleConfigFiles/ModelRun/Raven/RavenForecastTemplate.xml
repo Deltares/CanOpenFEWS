@@ -138,7 +138,7 @@
 				</timeSeriesSets>
 			</importNetcdfActivity>
 			<importNetcdfActivity>
-				<importFile>SNOW_Continuous_Average_ByHRU.nc</importFile>
+				<importFile>$MODEL$_SNOW_Continuous_Average_ByHRU.nc</importFile>
 				<timeSeriesSets>
 					<!--Custom Output in .rvi-->
 					<timeSeriesSet>
@@ -153,7 +153,7 @@
 				</timeSeriesSets>
 			</importNetcdfActivity>
 			<importNetcdfActivity>
-				<importFile>SNOW_LIQ_Continuous_Average_ByHRU.nc</importFile>
+				<importFile>$MODEL$_SNOW_LIQ_Continuous_Average_ByHRU.nc</importFile>
 				<timeSeriesSets>
 					<!--Custom Output in .rvi-->
 					<timeSeriesSet>
@@ -168,7 +168,7 @@
 				</timeSeriesSets>
 			</importNetcdfActivity>
 			<importNetcdfActivity>
-				<importFile>SOIL[0]_Continuous_Average_ByHRU.nc</importFile>
+				<importFile>$MODEL$_SOIL[0]_Continuous_Average_ByHRU.nc</importFile>
 				<timeSeriesSets>
 					<!--Custom Output in .rvi-->
 					<timeSeriesSet>

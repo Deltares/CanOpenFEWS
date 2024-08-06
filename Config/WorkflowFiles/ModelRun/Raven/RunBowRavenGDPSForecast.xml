@@ -10,7 +10,8 @@
 		<string key="FORECASTMODULEINSTANCE" value="PreprocessGDPS"/>
 		<string key="MODEL" value="Bow"/>
 		<string key="ENSEMBLE" value="main"/>
-		<string key="EXPORTDATASET" value="RavenForecast"/>
+		<string key="EXPORTDATASET" value="BowRavenForecast"/>
+		<string key="FORECASTLOCATIONSET" value="ModelBasins"/>
 	</properties>
 	
 <!--Set Forecast Length-->

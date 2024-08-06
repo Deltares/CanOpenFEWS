@@ -193,11 +193,11 @@
 			<workflowId>RunBowRavenHRDPSForecast</workflowId>
 			<localRun>false</localRun>
 		</node>
-		<node id="BowRavenRDPSForecast" name="Run Bow Wflow (RDPS)">
-			<workflowId>RunBowRavenHRDPSForecast</workflowId>
+		<node id="BowRavenRDPSForecast" name="Run Bow Raven (RDPS)">
+			<workflowId>RunBowRavenRDPSForecast</workflowId>
 			<localRun>false</localRun>
 		</node>
-		<node id="BowRavenGDPSForecast" name="Run Bow Wflow (GDPS)">
+		<node id="BowRavenGDPSForecast" name="Run Bow Raven (GDPS)">
 			<workflowId>RunBowRavenGDPSForecast</workflowId>
 			<localRun>false</localRun>
 		</node>
