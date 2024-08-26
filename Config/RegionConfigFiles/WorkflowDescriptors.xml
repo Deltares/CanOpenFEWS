@@ -7,8 +7,14 @@
 	<workflowDescriptor id="ImportWSCHourly" name="Import WSC Hourly Hydro Station Data " visible="true" forecast="false" autoApprove="false" allowApprove="false"/>
 	<workflowDescriptor id="ImportECCCScalar" name="Import Real Time ECCC Meteo Station Data" visible="true" forecast="false" autoApprove="true" allowApprove="true"/>
 	<workflowDescriptor id="ImportECCCHistoric" name="Import Historic ECCC Meteo Station Data" visible="true" forecast="false" autoApprove="true" allowApprove="true"/>
+	<workflowDescriptor id="ImportECCCAPIRecent" name="Import Recent ECCC API Station Data" visible="true" forecast="false" autoApprove="true" allowApprove="true"/>
+	<workflowDescriptor id="ImportECCCAPIHistoric" name="Import Historic ECCC API Station Data" visible="true" forecast="false" autoApprove="true" allowApprove="true"/>
+	<workflowDescriptor id="ImportUSGS" name="Import USGS Station Data" visible="true" forecast="false" autoApprove="true" allowApprove="true"/>
 	<workflowDescriptor id="ImportRecentObservations" name="Import Recent Observations (Test)" visible="true" forecast="false" autoApprove="true" allowApprove="true"/>
-		<workflowDescriptor id="ImportAlbertaAPI" name="Import Snow Data from Alberta API" visible="true" forecast="false" autoApprove="true" allowApprove="true"/>
+	<workflowDescriptor id="ImportSNOTEL" name="Import Data from SNOTEL" visible="true" forecast="false" autoApprove="true" allowApprove="true"/>
+	<workflowDescriptor id="ImportAlbertaAPI" name="Import Snow Data from Alberta API" visible="true" forecast="false" autoApprove="true" allowApprove="true">
+		<viewPermission>AlbertaForecaster</viewPermission>
+	</workflowDescriptor>
 	<!-- Retrieve and Import ECCC  from GeoMet WebCoverage Service -->
 	<workflowDescriptor id="ImportHRDPAGrids" name="Import HRDPA" forecast="false" allowApprove="false" visible="true">
 		<description>Retrieve Forecast Grids from Web Coverage Service (WCS)</description>
@@ -48,8 +54,34 @@
 		<cardinalTimeStep id="GMT_6hourly"/>
 		<runExpiryTime unit="day" multiplier="14"/>
 	</workflowDescriptor>
+	<!-- Retrieve and Import NOAA  from Server Workflows -->
+	<workflowDescriptor id="ImportGFSGrids" name="Import GFS" forecast="false" allowApprove="false" visible="true">
+		<description>Retrieve Forecast Grids from FTP and Websites</description>
+		<cardinalTimeStep timeZone="GMT" unit="hour" multiplier="12"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="ImportNAMGrids" name="Import NAM" forecast="false" allowApprove="false" visible="true">
+		<description>Retrieve Forecast Grids from FTP and Websites</description>
+		<cardinalTimeStep timeZone="GMT" unit="hour" multiplier="6"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="ImportHRRRGrids" name="Import HRRR" forecast="false" allowApprove="false" visible="true">
+		<description>Retrieve Forecast Grids from FTP and Websites</description>
+		<cardinalTimeStep timeZone="GMT" unit="hour" multiplier="6"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="ImportMRMSGrids" name="Import MRMS" forecast="false" allowApprove="false" visible="true">
+		<description>Retrieve Forecast Grids from FTP and Websites</description>
+		<cardinalTimeStep timeZone="GMT" unit="hour" multiplier="6"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="ImportSREFGrids" name="Import SREF forecasts" forecast="false" allowApprove="false" visible="true">
+		<description>Retrieve Forecast Grids from FTP and Websites</description>
+	</workflowDescriptor>
+	<workflowDescriptor id="ImportNOAAGrids" name="Retrieve All NOAA Grids" forecast="false" allowApprove="false" visible="true">
+		<description>Retrieve Forecast Grids from FTP and Websites</description>
+	</workflowDescriptor>
 	<!--Additional Gridded Data Imports -->
-	<workflowDescriptor id="ImportERA5" name="Import ERA5 data" visible="true" forecast="false" autoApprove="true" allowApprove="false"/>
+	<workflowDescriptor id="ImportERA5Yukon" name="Import ERA5 Yukon data" visible="true" forecast="false" autoApprove="true" allowApprove="false"/>
+	<workflowDescriptor id="ImportERA5Chena" name="Import ERA5 Chena data" visible="true" forecast="false" autoApprove="true" allowApprove="false"/>
+	<workflowDescriptor id="ImportERA5Ross" name="Import ERA5 Ross data" visible="true" forecast="false" autoApprove="true" allowApprove="false"/>
+	<workflowDescriptor id="ImportERA5Bow" name="Import ERA5 Bow data" visible="true" forecast="false" autoApprove="true" allowApprove="false"/>
 	<workflowDescriptor id="ImportSNODASGrids" name="Import SNODAS" visible="true" forecast="false" autoApprove="true" allowApprove="false"/>
 	<workflowDescriptor id="ImportGLOBSNOWGrids" name="Import GlobSnow" visible="true" forecast="false" autoApprove="true" allowApprove="false"/>
 	<workflowDescriptor id="ImportSnowcastGrids" name="Import Snowcast" forecast="false" allowApprove="false" visible="true">
@@ -57,41 +89,79 @@
 		<runExpiryTime unit="day" multiplier="90"/>
 	</workflowDescriptor>
 	<!--Preprocess Data Workflows -->
-	<workflowDescriptor id="PreprocessWSC" name="Preprocess WSC Hydrological Data" visible="true" forecast="false" autoApprove="true" allowApprove="false"/>
-	<workflowDescriptor id="PreprocessECCCMeteoHistoric" name="Preprocess ECCC Meteo (Long Term Historic)" visible="true" forecast="false" autoApprove="true" allowApprove="false"/>
+	<workflowDescriptor id="PreprocessWSC" name="Preprocess WSC Hydrological Data" visible="true" forecast="false" autoApprove="true" allowApprove="false">
+		<viewPermission/>
+	</workflowDescriptor>
+	<workflowDescriptor id="PreprocessECCCMeteoHistoric" name="Preprocess ECCC Meteo (Long Term Historic)" visible="true" forecast="false" autoApprove="true" allowApprove="false">
+		<viewPermission/>
+	</workflowDescriptor>
 	<workflowDescriptor id="PreprocessECCCMeteoRecent" name="Preprocess ECCC Meteo (Last 30 Days)" visible="true" forecast="false" autoApprove="true" allowApprove="false"/>
 	<workflowDescriptor id="PreprocessRDPS" name="Preprocess RDPS" visible="false" forecast="false" autoApprove="true" allowApprove="false"/>
 	<workflowDescriptor id="PreprocessHRDPS" name="Preprocess HRDPS" visible="false" forecast="false" autoApprove="true" allowApprove="false"/>
 	<workflowDescriptor id="PreprocessGDPS" name="Preprocess GDPS" visible="false" forecast="false" autoApprove="true" allowApprove="false"/>
 	<workflowDescriptor id="PreprocessREPS" name="Preprocess REPS" visible="false" forecast="false" autoApprove="true" allowApprove="false"/>
 	<workflowDescriptor id="PreprocessGEPS" name="Preprocess GEPS" visible="false" forecast="false" autoApprove="true" allowApprove="false"/>
-	<workflowDescriptor id="PreprocessHRDPSRaven" name="Preprocess HRDPS Raven" visible="false" forecast="false" autoApprove="true" allowApprove="false"/>
-	<workflowDescriptor id="PreprocessRDPSRaven" name="Preprocess RDPS Raven" visible="false" forecast="false" autoApprove="true" allowApprove="false"/>
-	<workflowDescriptor id="PreprocessGDPSRaven" name="Preprocess GDPS Raven" visible="false" forecast="false" autoApprove="true" allowApprove="false"/>
-	<workflowDescriptor id="PreprocessREPSRaven" name="Preprocess REPS Raven" visible="false" forecast="false" autoApprove="true" allowApprove="false"/>
-	<workflowDescriptor id="PreprocessGEPSRaven" name="Preprocess GEPS Raven" visible="false" forecast="false" autoApprove="true" allowApprove="false"/>
+	<workflowDescriptor id="PreprocessHRDPSRaven" name="Preprocess HRDPS Raven" visible="false" forecast="false" autoApprove="true" allowApprove="false">
+		<viewPermission>AlbertaForecaster</viewPermission>
+	</workflowDescriptor>
+	<workflowDescriptor id="PreprocessRDPSRaven" name="Preprocess RDPS Raven" visible="false" forecast="false" autoApprove="true" allowApprove="false">
+		<viewPermission>AlbertaForecaster</viewPermission>
+	</workflowDescriptor>
+	<workflowDescriptor id="PreprocessGDPSRaven" name="Preprocess GDPS Raven" visible="false" forecast="false" autoApprove="true" allowApprove="false">
+		<viewPermission>AlbertaForecaster</viewPermission>
+	</workflowDescriptor>
+	<workflowDescriptor id="PreprocessREPSRaven" name="Preprocess REPS Raven" visible="false" forecast="false" autoApprove="true" allowApprove="false">
+		<viewPermission>AlbertaForecaster</viewPermission>
+	</workflowDescriptor>
+	<workflowDescriptor id="PreprocessGEPSRaven" name="Preprocess GEPS Raven" visible="false" forecast="false" autoApprove="true" allowApprove="false">
+		<viewPermission>AlbertaForecaster</viewPermission>
+	</workflowDescriptor>
 	<!--<workflowDescriptor id="RunBowWflowGEPSForecast" name="Run Bow Wflow (GEPS)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep id="$DAY_TIMESTEP$"/>
 	</workflowDescriptor>-->
 	<!--Raven Model Run Workflow Descriptors -->
 	<workflowDescriptor id="RunBowRavenHistoric" name="Run Bow Raven (Historical)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep id="$DAY_TIMESTEP$"/>
+		<viewPermission>AlbertaForecaster</viewPermission>
 	</workflowDescriptor>
 	<workflowDescriptor id="RunBowRavenHRDPSForecast" name="Run Bow Raven (HRDPS)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep id="$DAY_TIMESTEP$"/>
+		<viewPermission>AlbertaForecaster</viewPermission>
 	</workflowDescriptor>
 	<workflowDescriptor id="RunBowRavenRDPSForecast" name="Run Bow Raven (RDPS)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep id="$DAY_TIMESTEP$"/>
+		<viewPermission>AlbertaForecaster</viewPermission>
 	</workflowDescriptor>
 	<workflowDescriptor id="RunBowRavenGDPSForecast" name="Run Bow Raven (GDPS)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep id="$DAY_TIMESTEP$"/>
+		<viewPermission>AlbertaForecaster</viewPermission>
 	</workflowDescriptor>
 	<workflowDescriptor id="RunBowRavenREPSForecast" name="Run Bow Raven (REPS)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep id="$DAY_TIMESTEP$"/>
+		<viewPermission>AlbertaForecaster</viewPermission>
 	</workflowDescriptor>
 	<!--SUMMA Model Run Workflow Descriptors -->
 	<workflowDescriptor id="RunBowSUMMAHistoric" name="Run Bow SUMMA (Historical)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep id="$DAY_TIMESTEP$"/>
+		<viewPermission>AlbertaForecaster</viewPermission>
+	</workflowDescriptor>
+	<workflowDescriptor id="RunChenaSUMMAHistoric" name="Run Chena SUMMA (Historical)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
+		<cardinalTimeStep id="$DAY_TIMESTEP$"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="RunChenaSUMMAGDPSForecast" name="Run Chena SUMMA (GDPS Forecast)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
+		<cardinalTimeStep id="GMT_6hourly"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="RunChenaSUMMAGEPSForecast" name="Run Chena SUMMA (GEPS Forecast)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
+		<cardinalTimeStep id="GMT_6hourly"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="RunRossSUMMAHistoric" name="Run Ross SUMMA (Historical)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
+		<cardinalTimeStep id="$DAY_TIMESTEP$"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="RunRossSUMMAGDPSForecast" name="Run Ross SUMMA (GDPS Forecast)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
+		<cardinalTimeStep id="GMT_6hourly"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="RunRossSUMMAGEPSForecast" name="Run Ross SUMMA (GEPS Forecast)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
+		<cardinalTimeStep id="GMT_6hourly"/>
 	</workflowDescriptor>
 	<!--<workflowDescriptor id="RunBowSUMMARDPSForecast" name="Run Bow SUMMA (RDPS)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep id="$DAY_TIMESTEP$"/>
@@ -108,42 +178,56 @@
 	<!--Wflow_sbm Model Run Workflow Descriptors -->
 	<workflowDescriptor id="BowWflowRadarUpdate" name="Run Bow Wflow 6-min Update (radar)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep unit="minute" multiplier="6"/>
+		<viewPermission>AlbertaForecaster</viewPermission>
 	</workflowDescriptor>
 	<workflowDescriptor id="BowWflowHRDPAHistorical1h" name="Run Bow Wflow 1-h Historical (HRDPA)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep unit="hour" multiplier="1"/>
+		<viewPermission>AlbertaForecaster</viewPermission>
 	</workflowDescriptor>
 	<workflowDescriptor id="BowWflowHRDPAUpdate1h" name="Run Bow Wflow 1-h Update (HRDPA)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep unit="hour" multiplier="1"/>
+		<viewPermission>AlbertaForecaster</viewPermission>
 	</workflowDescriptor>
 	<workflowDescriptor id="BowWflowSTEPSForecast" name="Run Bow Wflow 6-min forecast (STEPS nowcast)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep unit="minute" multiplier="6"/>
+		<viewPermission>AlbertaForecaster</viewPermission>
 	</workflowDescriptor>
 	<workflowDescriptor id="BowWflowLINDAForecast" name="Run Bow Wflow 6-min forecast (LINDA nowcast)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep unit="minute" multiplier="6"/>
+		<viewPermission>AlbertaForecaster</viewPermission>
 	</workflowDescriptor>
 	<workflowDescriptor id="BowWflowHRDPSForecast1h" name="Run Bow Wflow 1-h forecast (HRDPS)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep unit="hour" multiplier="1"/>
+		<viewPermission>AlbertaForecaster</viewPermission>
 	</workflowDescriptor>
 	<workflowDescriptor id="BowWflowGEPSForecast1h" name="Run Bow Wflow 1-h forecast (GEPS)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep unit="hour" multiplier="1"/>
+		<viewPermission>AlbertaForecaster</viewPermission>
 	</workflowDescriptor>
 	<workflowDescriptor id="BowWflowRDPSForecast1h" name="Run Bow Wflow 1-h forecast (RDPS)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep unit="hour" multiplier="1"/>
+		<viewPermission>AlbertaForecaster</viewPermission>
 	</workflowDescriptor>
 	<workflowDescriptor id="BowWflowGDPSForecast1h" name="Run Bow Wflow 1-h forecast (GDPS)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep unit="hour" multiplier="1"/>
+		<viewPermission>AlbertaForecaster</viewPermission>
 	</workflowDescriptor>
 	<!--Nowcasting Workflow Descriptors -->
 	<workflowDescriptor id="ECCCRadarNowcastSTEPS" name="Run STEPS rainfall nowcast using ECCC radar data" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep unit="minute" multiplier="6"/>
+		<viewPermission>AlbertaForecaster</viewPermission>
 	</workflowDescriptor>
 	<workflowDescriptor id="ECCCRadarNowcastLINDA" name="Run LINDA rainfall nowcast using ECCC radar data" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep unit="minute" multiplier="6"/>
+		<viewPermission>AlbertaForecaster</viewPermission>
 	</workflowDescriptor>
 	<rootNode>
-		<node name="Import Hydrological Data from DataMart">
+		<node name="Import Hydrological Data">
 			<workflowId>ImportWSCDaily</workflowId>
 			<workflowId>ImportWSCHourly</workflowId>
+			<workflowId>ImportECCCAPIRecent</workflowId>
+			<workflowId>ImportECCCAPIHistoric</workflowId>
+			<workflowId>ImportUSGS</workflowId>
 			<workflowId>PreprocessWSC</workflowId>
 		</node>
 		<node name="Import Meteorological Data">
@@ -151,10 +235,12 @@
 			<workflowId>ImportECCCHistoric</workflowId>
 			<workflowId>PreprocessECCCMeteoHistoric</workflowId>
 			<workflowId>PreprocessECCCMeteoRecent</workflowId>
-			<workflowId>ImportERA5</workflowId>
 		</node>
 		<node name="Import ERA5 Reanalysis Data">
-			<workflowId>ImportERA5</workflowId>
+			<workflowId>ImportERA5Yukon</workflowId>
+			<workflowId>ImportERA5Bow</workflowId>
+			<workflowId>ImportERA5Chena</workflowId>
+			<workflowId>ImportERA5Ross</workflowId>
 		</node>
 		<node name="Import Radar Data">
 			<workflowId>RetrieveECCCRadarComposite</workflowId>
@@ -164,6 +250,7 @@
 			<workflowId>ImportSnowcastGrids</workflowId>
 			<workflowId>ImportSNODASGrids</workflowId>
 			<workflowId>ImportGLOBSNOWGrids</workflowId>
+			<workflowId>ImportSNOTEL</workflowId>
 		</node>
 		<node name="ECCC Re-Analysis Precipitation Input">
 			<workflowId>ImportHRDPAGrids</workflowId>
@@ -176,6 +263,13 @@
 			<workflowId>ImportREPSGrids</workflowId>
 			<workflowId>ImportGEPSGrids</workflowId>
 		</node>
+		<node name="NOAA NWP Forecast Import">
+			<workflowId>ImportGFSGrids</workflowId>
+			<workflowId>ImportNAMGrids</workflowId>
+			<workflowId>ImportSREFGrids</workflowId>
+			<workflowId>ImportHRRRGrids</workflowId>
+			<workflowId>ImportMRMSGrids</workflowId>
+		</node>
 		<node name="ECCC NSRPS Import">
 			<workflowId>ImportNSRPSGrids</workflowId>
 		</node>
@@ -187,6 +281,16 @@
 		</node>
 		<node name="Run Model - Bow SUMMA">
 			<workflowId>RunBowSUMMAHistoric</workflowId>
+		</node>
+		<node name="Run Model - Chena SUMMA">
+			<workflowId>RunChenaSUMMAHistoric</workflowId>
+			<workflowId>RunChenaSUMMAGDPSForecast</workflowId>
+			<workflowId>RunChenaSUMMAGEPSForecast</workflowId>
+		</node>
+		<node name="Run Model - Ross SUMMA">
+			<workflowId>RunRossSUMMAHistoric</workflowId>
+			<workflowId>RunRossSUMMAGDPSForecast</workflowId>
+			<workflowId>RunRossSUMMAGEPSForecast</workflowId>
 		</node>
 		<node name="Run Model - Bow Wflow">
 			<workflowId>BowWflowRadarUpdate</workflowId>

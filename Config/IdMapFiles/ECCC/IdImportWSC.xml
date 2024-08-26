@@ -3,5 +3,7 @@
 	<parameter internal="HG.obs" external="Water Level / Niveau d'eau (m)"/>
 	<parameter internal="QR.obs" external="Discharge / D�bit (cms)"/>
 	<parameter internal="QR.obs" external="Discharge"/>
+	<parameter internal="QR.obs" external="DISCHARGE"/>
+	<parameter internal="HG.obs" external="LEVEL"/>
 	<enableOneToOneMapping/>
 </idMap>

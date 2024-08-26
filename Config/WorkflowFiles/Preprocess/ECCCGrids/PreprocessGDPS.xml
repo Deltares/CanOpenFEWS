@@ -22,8 +22,8 @@
 		<string key="STATIONLOCATIONS" value="ECCCStations$REGION$"/>
 		<!--Time Series Type-->
 		<string key="TIMESERIESTYPE" value="external forecasting"/>
-	</properties>	
-<!-- Preprocess Precipitation-->
+	</properties>
+	<!-- Preprocess Precipitation-->
 	<activity>
 		<properties>
 			<string key="PARAMETER" value="PC.nwp"/>
@@ -33,7 +33,7 @@
 		<moduleConfigFileName>PreprocessAccumulatedParametersNWPTemplate</moduleConfigFileName>
 	</activity>
 	<!-- Accumulate Precipitation-->
-		<activity>
+	<activity>
 		<properties>
 			<string key="LOCATIONSET" value="ProcessBasins"/>
 			<string key="INPUTMODULEINSTANCE" value="PreprocessGDPS"/>
@@ -53,7 +53,7 @@
 		<moduleInstanceId>PreprocessGDPS</moduleInstanceId>
 		<moduleConfigFileName>PreprocessInstantaneousParametersNWPTemplate</moduleConfigFileName>
 	</activity>
-		<!-- Preprocess Shortwave incoming radiation at surface-->
+	<!-- Preprocess Shortwave incoming radiation at surface-->
 	<activity>
 		<properties>
 			<string key="PARAMETER" value="RS.nwp"/>
@@ -62,7 +62,7 @@
 		<moduleInstanceId>PreprocessGDPS</moduleInstanceId>
 		<moduleConfigFileName>PreprocessInstantaneousParametersNWPTemplate</moduleConfigFileName>
 	</activity>
-		<!-- Preprocess Shortwave incoming radiation at top of atmosphere - Extaterrestial Radiation-->
+	<!-- Preprocess Shortwave incoming radiation at top of atmosphere - Extaterrestial Radiation-->
 	<activity>
 		<properties>
 			<string key="PARAMETER" value="RSext.nwp"/>
@@ -71,10 +71,18 @@
 		<moduleInstanceId>PreprocessGDPS</moduleInstanceId>
 		<moduleConfigFileName>PreprocessInstantaneousParametersNWPTemplate</moduleConfigFileName>
 	</activity>
-		<!-- Preprocess pressure at surface-->
+	<!-- Preprocess pressure at surface-->
 	<activity>
 		<properties>
 			<string key="PARAMETER" value="PA.nwp"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PreprocessGDPS</moduleInstanceId>
+		<moduleConfigFileName>PreprocessInstantaneousParametersNWPTemplate</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<string key="PARAMETER" value="US.nwp"/>
 		</properties>
 		<runIndependent>true</runIndependent>
 		<moduleInstanceId>PreprocessGDPS</moduleInstanceId>

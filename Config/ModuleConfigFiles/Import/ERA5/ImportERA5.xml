@@ -14,14 +14,14 @@
 			</importTimeZone>
 			<dataFeedId>ERA5</dataFeedId>
 		</general>
-		<tolerance locationId="ERA5Bow" parameterId="TA" timeUnit="hour" unitCount="2"/>
-		<tolerance locationId="ERA5Bow" parameterId="RH" timeUnit="hour" unitCount="2"/>
-		<tolerance locationId="ERA5Bow" parameterId="US" timeUnit="hour" unitCount="2"/>
+		<tolerance locationId="$INPUTGRID$" parameterId="TA" timeUnit="hour" unitCount="2"/>
+		<tolerance locationId="$INPUTGRID$" parameterId="RH" timeUnit="hour" unitCount="2"/>
+		<tolerance locationId="$INPUTGRID$" parameterId="US" timeUnit="hour" unitCount="2"/>
 		<timeSeriesSet>
 			<moduleInstanceId>ImportERA5</moduleInstanceId>
 			<valueType>grid</valueType>
 			<parameterId>TA</parameterId>
-			<locationId>ERA5Bow</locationId>
+			<locationId>$INPUTGRID$</locationId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="hour" multiplier="1"/>
 			<readWriteMode>add originals</readWriteMode>
@@ -31,7 +31,7 @@
 			<moduleInstanceId>ImportERA5</moduleInstanceId>
 			<valueType>grid</valueType>
 			<parameterId>RH</parameterId>
-			<locationId>ERA5Bow</locationId>
+			<locationId>$INPUTGRID$</locationId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="hour" multiplier="1"/>
 			<readWriteMode>add originals</readWriteMode>
@@ -42,7 +42,7 @@
 			<valueType>grid</valueType>
 			<parameterId>US</parameterId>
 			<qualifierId>U</qualifierId>
-			<locationId>ERA5Bow</locationId>
+			<locationId>$INPUTGRID$</locationId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="hour" multiplier="1"/>
 			<readWriteMode>add originals</readWriteMode>
@@ -53,7 +53,7 @@
 			<valueType>grid</valueType>
 			<parameterId>US</parameterId>
 			<qualifierId>V</qualifierId>
-			<locationId>ERA5Bow</locationId>
+			<locationId>$INPUTGRID$</locationId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="hour" multiplier="1"/>
 			<readWriteMode>add originals</readWriteMode>
@@ -78,23 +78,22 @@
 			<dataFeedId>ERA5</dataFeedId>
 		</general>
 		<!-- summa variables tolerance -->
-		<tolerance locationId="ERA5Bow" parameterId="PC" timeUnit="hour" unitCount="2"/>
-		<tolerance locationId="ERA5Bow" parameterId="RS" timeUnit="hour" unitCount="2"/>
-		<tolerance locationId="ERA5Bow" parameterId="RL" timeUnit="hour" unitCount="2"/>
-		<tolerance locationId="ERA5Bow" parameterId="PA" timeUnit="hour" unitCount="2"/>
+		<tolerance locationId="$INPUTGRID$" parameterId="PC" timeUnit="hour" unitCount="2"/>
+		<tolerance locationId="$INPUTGRID$" parameterId="RS" timeUnit="hour" unitCount="2"/>
+		<tolerance locationId="$INPUTGRID$" parameterId="RL" timeUnit="hour" unitCount="2"/>
+		<tolerance locationId="$INPUTGRID$" parameterId="PA" timeUnit="hour" unitCount="2"/>
 		<!-- wflow variables tolerance -->
-		<tolerance locationId="ERA5Bow" parameterId="PET.obs" timeUnit="hour" unitCount="2"/>
-		<tolerance locationId="ERA5Bow" parameterId="PC.sim" timeUnit="hour" unitCount="2"/>
-		<tolerance locationId="ERA5Bow" parameterId="TA.obs" timeUnit="hour" unitCount="2"/>
-		<tolerance locationId="ERA5Bow" parameterId="RS.sim" timeUnit="hour" unitCount="2"/>
-		<tolerance locationId="ERA5Bow" parameterId="RSext" timeUnit="hour" unitCount="2"/>
-		<tolerance locationId="ERA5Bow" parameterId="PA" timeUnit="hour" unitCount="2"/>
+		<tolerance locationId="$INPUTGRID$" parameterId="PET.obs" timeUnit="hour" unitCount="2"/>
+		<tolerance locationId="$INPUTGRID$" parameterId="PC.sim" timeUnit="hour" unitCount="2"/>
+		<tolerance locationId="$INPUTGRID$" parameterId="TA.obs" timeUnit="hour" unitCount="2"/>
+		<tolerance locationId="$INPUTGRID$" parameterId="RS.sim" timeUnit="hour" unitCount="2"/>
+		<tolerance locationId="$INPUTGRID$" parameterId="RSext" timeUnit="hour" unitCount="2"/>
 		<!-- summa variables -->
 		<timeSeriesSet>
 			<moduleInstanceId>ImportERA5</moduleInstanceId>
 			<valueType>grid</valueType>
 			<parameterId>PC</parameterId>
-			<locationId>ERA5Bow</locationId>
+			<locationId>$INPUTGRID$</locationId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="hour" multiplier="1"/>
 			<readWriteMode>add originals</readWriteMode>
@@ -104,7 +103,7 @@
 			<moduleInstanceId>ImportERA5</moduleInstanceId>
 			<valueType>grid</valueType>
 			<parameterId>RS</parameterId>
-			<locationId>ERA5Bow</locationId>
+			<locationId>$INPUTGRID$</locationId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="hour" multiplier="1"/>
 			<readWriteMode>add originals</readWriteMode>
@@ -114,7 +113,7 @@
 			<moduleInstanceId>ImportERA5</moduleInstanceId>
 			<valueType>grid</valueType>
 			<parameterId>RL</parameterId>
-			<locationId>ERA5Bow</locationId>
+			<locationId>$INPUTGRID$</locationId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="hour" multiplier="1"/>
 			<readWriteMode>add originals</readWriteMode>
@@ -124,7 +123,7 @@
 			<moduleInstanceId>ImportERA5</moduleInstanceId>
 			<valueType>grid</valueType>
 			<parameterId>PA</parameterId>
-			<locationId>ERA5Bow</locationId>
+			<locationId>$INPUTGRID$</locationId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="hour" multiplier="1"/>
 			<readWriteMode>add originals</readWriteMode>
@@ -135,7 +134,7 @@
 			<moduleInstanceId>ImportERA5</moduleInstanceId>
 			<valueType>grid</valueType>
 			<parameterId>PA</parameterId>
-			<locationId>ERA5Bow</locationId>
+			<locationId>$INPUTGRID$</locationId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="hour" multiplier="1"/>
 			<readWriteMode>add originals</readWriteMode>
@@ -145,7 +144,7 @@
 			<moduleInstanceId>ImportERA5</moduleInstanceId>
 			<valueType>grid</valueType>
 			<parameterId>RSext</parameterId>
-			<locationId>ERA5Bow</locationId>
+			<locationId>$INPUTGRID$</locationId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="hour" multiplier="1"/>
 			<readWriteMode>add originals</readWriteMode>
@@ -155,7 +154,7 @@
 			<moduleInstanceId>ImportERA5</moduleInstanceId>
 			<valueType>grid</valueType>
 			<parameterId>PET.obs</parameterId>
-			<locationId>ERA5Bow</locationId>
+			<locationId>$INPUTGRID$</locationId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="hour" multiplier="1"/>
 			<readWriteMode>add originals</readWriteMode>
@@ -165,7 +164,7 @@
 			<moduleInstanceId>ImportERA5</moduleInstanceId>
 			<valueType>grid</valueType>
 			<parameterId>PC.sim</parameterId>
-			<locationId>ERA5Bow</locationId>
+			<locationId>$INPUTGRID$</locationId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="hour" multiplier="1"/>
 			<readWriteMode>add originals</readWriteMode>
@@ -175,7 +174,7 @@
 			<moduleInstanceId>ImportERA5</moduleInstanceId>
 			<valueType>grid</valueType>
 			<parameterId>TA.obs</parameterId>
-			<locationId>ERA5Bow</locationId>
+			<locationId>$INPUTGRID$</locationId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="hour" multiplier="1"/>
 			<readWriteMode>add originals</readWriteMode>
@@ -185,7 +184,7 @@
 			<moduleInstanceId>ImportERA5</moduleInstanceId>
 			<valueType>grid</valueType>
 			<parameterId>RS.sim</parameterId>
-			<locationId>ERA5Bow</locationId>
+			<locationId>$INPUTGRID$</locationId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="hour" multiplier="1"/>
 			<readWriteMode>add originals</readWriteMode>
@@ -202,7 +201,6 @@
 		<externUnit parameterId="TA.obs" unit="K"/>
 		<externUnit parameterId="RS.sim" unit="Jm-2" cumulativeSum="true"/>
 		<externUnit parameterId="RSext" unit="Jm-2" cumulativeSum="true"/>
-		<externUnit parameterId="PA" unit="Pa"/>
 	</import>
 </timeSeriesImportRun>
 

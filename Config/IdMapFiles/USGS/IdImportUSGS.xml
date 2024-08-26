@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idMap xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/idMap.xsd" version="1.1">
+	<!-- Id mapping for import from WaterML 2 service
+        Required fields:
+         externalLocation: maps to featureId. Enter value that is inserted in URL request
+         externalParameter: maps to observedProperty. Enter value that is inserted in URL request
+ 
+       Optional fields:
+         externalQualifier: maps to procedure. Enter value that is inserted in URL request.
+         If not required but 'offering' is required then fill in 'unknown'.
+         externalQualifier1: maps to offering.  Enter value that is inserted in URL request.
+         If not required can be omitted or fill in 'unknown'.
+     -->
+	<!--<map internalLocation="05051522" internalParameter="QR.obs" externalLocation="05051522" externalParameter="00060"/>-->
+	<parameter internal="QR.obs" external="00060"/>
+	<parameter internal="HG.obs" external="00065"/>
+<!--	<parameter internal="HP.obs" external="62615"/>
+	<parameter internal="TW.obs" external="00010"/>-->
+	<!--<map internalLocation="05051522" internalParameter="QR.obs" externalLocation="05051522" externalParameter="Streamflow" externalQualifier="procedure" externalQualifier1="offering"/>-->
+	<!-- Here some examples to configure Procedure and Offering -->
+	<!--<map internalLocation="LOC-001" internalParameter="PAR-001" externalLocation="featureId" externalParameter="observedProperty" externalQualifier="procedure"/>
+	<map internalLocation="LOC-001" internalParameter="PAR-001" externalLocation="featureId" externalParameter="observedProperty" externalQualifier="unknown" externalQualifier1="offering"/>
+	<map internalLocation="LOC-001" internalParameter="PAR-001" externalLocation="featureId" externalParameter="observedProperty"/>-->
+	<enableOneToOneMapping/>
+</idMap>

@@ -23,29 +23,33 @@
 			<node id="WSC" name="Water Survey of Canada">
 				<url>https://wateroffice.ec.gc.ca/</url>
 			</node>
-<!--			<node id="ERA5" name="ECMWF - ERA5">
-				<url>https://confluence.ecmwf.int/display/CKB/ERA5/</url>
-			</node>
-			<node id="Snowcast" name="Snowcast">
-				<url>http://www.snowcast.ca/</url>
-			</node>-->
 		</nodes>
 	</nodes>
-	<nodes id="ImportWSC" name="Import Hydrological Data from DataMart">
-		<node id="ImportWSCHourly" name="Import Past Days Hydrometric Data from DataMart">
-			<workflowId>ImportWSCHourly</workflowId>
+	<nodes id="ImportWSC" name="Import Hydrological Data">
+		<node id="ImportWSCHourly" name="Import NRT Yukon Hydrometric Data">
+			<workflowId>ImportECCCAPIRecent</workflowId>
 			<graceTime unit="hour" multiplier="24"/>
 			<localRun>false</localRun>
 		</node>
-		<node id="ImportWSCDaily" name="Import Past Month Hydrometric Data from DataMart">
-			<workflowId>ImportWSCDaily</workflowId>
+		<node id="ImportWSCDaily" name="Import Historic Yukon Hydrometric Data">
+			<workflowId>ImportECCCAPIHistoric</workflowId>
+			<graceTime unit="hour" multiplier="24"/>
+			<localRun>false</localRun>
+		</node>
+		<node id="ImportUSGS" name="Import NRT Alaska Hydrometric Data from USGS">
+			<workflowId>ImportUSGS</workflowId>
 			<graceTime unit="hour" multiplier="24"/>
 			<localRun>false</localRun>
 		</node>
 	</nodes>
-	<nodes id="ImportECCCStationNodes" name="Import Meteorological Data">
-		<node id="ImportECCCRecent" name="Import Recent Meteo Station Data from DataMart">
+	<nodes id="ImportMeteoData" name="Import Meteorological Data">
+		<node id="ImportECCCRecent" name="Import ECCC Meteo Station Data">
 			<workflowId>ImportECCCScalar</workflowId>
+			<graceTime unit="hour" multiplier="24"/>
+			<localRun>false</localRun>
+		</node>
+		<node id="ImportSNOTEL" name="Import SNOTEL Station Data">
+			<workflowId>ImportSNOTEL</workflowId>
 			<graceTime unit="hour" multiplier="24"/>
 			<localRun>false</localRun>
 		</node>
@@ -56,10 +60,31 @@
 			<graceTime unit="hour" multiplier="6"/>
 			<localRun>false</localRun>
 		</node>
+		<node id="ImportMRMS" name="Import MRMS">
+			<workflowId>ImportMRMSGrids</workflowId>
+			<graceTime unit="hour" multiplier="6"/>
+			<localRun>false</localRun>
+		</node>
 	</nodes>
 	<nodes id="ImportERA5Nodes" name="Import ERA5 Re-Analysis">
-		<node id="ImportERA5" name="Import ERA5">
-			<workflowId>ImportERA5</workflowId>
+		<node id="ImportERA5Yukon" name="Import ERA5 for Entire Yukon Basin">
+			<workflowId>ImportERA5Yukon</workflowId>
+			<graceTime unit="hour" multiplier="24"/>
+			<localRun>false</localRun>
+		</node>
+		<node id="ImportERA5Chena" name="Import ERA5 for Chena">
+			<workflowId>ImportERA5Chena</workflowId>
+			<graceTime unit="hour" multiplier="24"/>
+			<localRun>false</localRun>
+		</node>
+		<node id="ImportERA5Ross" name="Import ERA5 for Ross">
+			<workflowId>ImportERA5Ross</workflowId>
+			<graceTime unit="hour" multiplier="24"/>
+			<localRun>false</localRun>
+		</node>
+		<node id="ImportERA5Bow" name="Import ERA5 Bow">
+			<workflowId>ImportERA5Bow</workflowId>
+			<viewPermission>AlbertaForecaster</viewPermission>
 			<graceTime unit="hour" multiplier="24"/>
 			<localRun>false</localRun>
 		</node>
@@ -103,6 +128,23 @@
 			<localRun>false</localRun>
 		</node>
 	</nodes>
+	<nodes id="ImportNOAAGridNodes" name="Import NOAA NWP Forecasts">
+		<node id="ImportGFS" name="Import GFS Forecast">
+			<workflowId>ImportGFSGrids</workflowId>
+			<graceTime unit="hour" multiplier="24"/>
+			<localRun>false</localRun>
+		</node>
+		<node id="ImportNAM" name="Import NAM Forecast">
+			<workflowId>ImportNAMGrids</workflowId>
+			<graceTime unit="hour" multiplier="24"/>
+			<localRun>false</localRun>
+		</node>
+		<node id="ImportHRRR" name="Import HRRR Forecast">
+			<workflowId>ImportHRRRGrids</workflowId>
+			<graceTime unit="hour" multiplier="24"/>
+			<localRun>false</localRun>
+		</node>
+	</nodes>
 	<nodes id="ImportNRSPSGridNodes" name="Import NSRPS">
 		<node id="ImportNSRPS" name="Import NRDPS Discharge">
 			<workflowId>ImportNSRPSGrids</workflowId>
@@ -113,6 +155,7 @@
 	<nodes id="ImportSnow" name="Import Snow Data">
 		<node id="ImportSnowCast" name="Import SnowCast">
 			<workflowId>ImportSnowcastGrids</workflowId>
+			<viewPermission>AlbertaForecaster</viewPermission>
 			<graceTime unit="hour" multiplier="24"/>
 			<localRun>false</localRun>
 		</node>
@@ -136,14 +179,17 @@
 			<workflowId>ECCCRadarNowcastLINDA</workflowId>
 			<localRun>false</localRun>
 		</node>
+		<viewPermission>AlbertaForecaster</viewPermission>
 	</nodes>
 	<nodes id="SnowSummaryPlots" name="Snow Summary Plots">
 		<node id="SummarySnowStation" name="Snow @ Stations"/>
 		<node id="SummarySnowBasin" name="Snow @ Basins"/>
+		<viewPermission>AlbertaForecaster</viewPermission>
 	</nodes>
 	<nodes id="BasinSummaryPlots" name="Precip and Temp Summary Plots">
 		<node id="SummaryPlotPrecip" name="Precipitation Summary Plots"/>
 		<node id="SummaryPlotTemp" name="Temperature Summary Plots"/>
+		<viewPermission>AlbertaForecaster</viewPermission>
 	</nodes>
 	<nodes id="WflowModelNodes" name="Run Bow Wflow Models">
 		<node id="BowWflowRadarUpdate" name="Run Bow Wflow (Radar Update)">
@@ -182,6 +228,7 @@
 			<workflowId>BowWflowLINDAForecast</workflowId>
 			<localRun>false</localRun>
 		</node>
+		<viewPermission>AlbertaForecaster</viewPermission>
 	</nodes>
 	<!-- Raven Model Nodes-->
 	<nodes id="RavenModelNodes" name="Run Bow Raven Models">
@@ -201,11 +248,43 @@
 			<workflowId>RunBowRavenGDPSForecast</workflowId>
 			<localRun>false</localRun>
 		</node>
+		<viewPermission>AlbertaForecaster</viewPermission>
 	</nodes>
 	<!-- SUMMA Model Nodes-->
-	<nodes id="SUMMAModelNodes" name="Run Bow SUMMA Models">
+	<nodes id="SUMMABowModelNodes" name="Run Bow SUMMA Models">
 		<node id="BowSUMMAHistoric" name="Run Bow SUMMA (Historic Update)">
 			<workflowId>RunBowSUMMAHistoric</workflowId>
+			<localRun>false</localRun>
+		</node>
+		<viewPermission>AlbertaForecaster</viewPermission>
+	</nodes>
+	<nodes id="SUMMARossModelNodes" name="Run Ross SUMMA Model">
+		<node id="RossSUMMAHistoric" name="Run Ross SUMMA (Historic Update)">
+			<workflowId>RunRossSUMMAHistoric</workflowId>
+			<visibleModifierGroup>AdjustStates_SUMMA</visibleModifierGroup>
+			<localRun>false</localRun>
+		</node>
+		<node id="RossSUMMAGDPS" name="Run Ross SUMMA (GDPS)">
+			<workflowId>RunRossSUMMAGDPSForecast</workflowId>
+			<localRun>false</localRun>
+		</node>
+		<node id="RossSUMMAGEPS" name="Run Ross SUMMA (GEPS)">
+			<workflowId>RunRossSUMMAGEPSForecast</workflowId>
+			<localRun>false</localRun>
+		</node>
+	</nodes>
+	<nodes id="SUMMAChenaModelNodes" name="Run Chena SUMMA Model">
+		<node id="ChenaSUMMAHistoric" name="Run Chena SUMMA (Historic Update)">
+			<workflowId>RunChenaSUMMAHistoric</workflowId>
+			<visibleModifierGroup>AdjustStates_SUMMA</visibleModifierGroup>
+			<localRun>false</localRun>
+		</node>
+		<node id="ChenaSUMMAGDPS" name="Run Chena SUMMA (GDPS)">
+			<workflowId>RunChenaSUMMAGDPSForecast</workflowId>
+			<localRun>false</localRun>
+		</node>
+		<node id="ChenaSUMMAGEPS" name="Run Chena SUMMA (GEPS)">
+			<workflowId>RunChenaSUMMAGEPSForecast</workflowId>
 			<localRun>false</localRun>
 		</node>
 	</nodes>

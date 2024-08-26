@@ -3,7 +3,7 @@
 	<import>
 		<general>
 			<importType>NETCDF-CF_GRID</importType>
-<serverUrl>https://nomads.ncep.noaa.gov/dods/gfs_0p25/gfs%RELATIVE_TIME_IN_SECONDS(yyyyMMdd, -18000 )%/gfs_0p25_%RELATIVE_TIME_IN_SECONDS(HH,-18000)%z</serverUrl>
+			<serverUrl>https://nomads.ncep.noaa.gov/dods/gfs_0p25/gfs%TIME_ZERO(yyyyMMdd)%/gfs_0p25_%TIME_ZERO(HH)%z</serverUrl>
 			<idMapId>IdImportGFS</idMapId>
 			<unitConversionsId>ImportUnitConversions</unitConversionsId>
 			<missingValue>-3.402823E38</missingValue>
@@ -14,7 +14,7 @@
 		</general>
 		<startTimeShift>
 			<parameterId>PC.nwp</parameterId>
-			<relativePeriod unit="hour" start="-3" end="0"></relativePeriod>
+			<relativePeriod unit="hour" start="-3" end="0"/>
 		</startTimeShift>
 		<timeSeriesSet>
 			<moduleInstanceId>ImportGFS</moduleInstanceId>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 (x64) (http://www.altova.com) by Deltares USA (Deltares USA) -->
+<parameters xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.wldelft.nl/fews/PI" xsi:schemaLocation="http://www.wldelft.nl/fews/PI http://fews.wldelft.nl/schemas/version1.0/pi-schemas/pi_modelparameters.xsd" version="1.5">
+	<modifierType>HISTORICWATERYEARS</modifierType>
+	<group id="default">
+		<parameter id="startYear">
+			<intValue>2001</intValue>
+		</parameter>
+		<parameter id="firstEnsembleMemberIndex">
+			<intValue>2001</intValue>
+		</parameter>
+		<parameter id="ensembleMemberCount">
+			<!-- NOTE: This value has to be increased at the beginning of every year-->
+			<intValue>19</intValue>
+		</parameter>
+		<parameter id="startWaterYear">
+			<stringValue>--10-01</stringValue>
+		</parameter>
+	</group>
+</parameters>

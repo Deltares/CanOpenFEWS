@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews
+http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
+	<import>
+		<general>
+			<importType>generalCSV</importType>
+			<folder>%REGION_HOME%/Import/SNOTEL/</folder>
+			<fileNamePatternFilter>$LOOP_LOCATION_ID$.csv</fileNamePatternFilter>
+			<table>
+				<dateTimeColumn name="Date" pattern="yyyy-MM-dd"/>
+				<valueColumn name="Snow Water Equivalent (in) Start of Day Values" unit="IN" parameterId="SWE.obs"/>
+				<valueColumn name="Precipitation Increment (in)" unit="IN" parameterId="PC.obs"/>
+				<valueColumn name="Air Temperature Average (degF)" unit="deg F" parameterId="TA.obs"/>
+				<valueColumn name="Wind Speed Average (mph)" unit="mph" parameterId="US.obs"/>
+				<valueColumn name="Snow Depth (in) Start of Day Values" unit="IN" parameterId="SD.obs"/>
+			</table>
+			<idMapId>IdImportSNOTEL</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<importTimeZone>
+				<timeZoneName>GMT</timeZoneName>
+			</importTimeZone>
+			<expiryTime unit="day" multiplier="365"/>
+			<skipFirstLinesCount>66</skipFirstLinesCount>
+		</general>
+		<tolerance timeUnit="day" unitCount="1" parameterId="SWE.obs"/>
+		<tolerance timeUnit="day" unitCount="1" parameterId="PC.obs"/>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSNOTEL</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>SWE.obs</parameterId>
+			<locationId>$LOOP_LOCATION_ID$</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="day_GMT"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSNOTEL</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.obs</parameterId>
+			<locationId>$LOOP_LOCATION_ID$</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="day_GMT"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSNOTEL</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.obs</parameterId>
+			<locationId>$LOOP_LOCATION_ID$</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="day_GMT"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+			<timeSeriesSet>
+			<moduleInstanceId>ImportSNOTEL</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>US.obs</parameterId>
+			<locationId>$LOOP_LOCATION_ID$</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="day_GMT"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportSNOTEL</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>SD.obs</parameterId>
+			<locationId>$LOOP_LOCATION_ID$</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep id="day_GMT"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</import>
+</timeSeriesImportRun>

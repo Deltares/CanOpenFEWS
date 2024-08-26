@@ -3,7 +3,7 @@
 	<import>
 		<general>
 			<importType>NETCDF-CF_GRID</importType>
-			<serverUrl>https://nomads.ncep.noaa.gov/dods/nam/nam%RELATIVE_TIME_IN_SECONDS(yyyyMMdd, -10800 )%/nam_%RELATIVE_TIME_IN_SECONDS(HH, -10800 )%z</serverUrl>
+			<serverUrl>https://nomads.ncep.noaa.gov/dods/nam/nam%TIME_ZERO(yyyyMMdd)%/nam_ak_%TIME_ZERO(HH)%z</serverUrl>
 			<idMapId>IdImportNAM</idMapId>
 			<unitConversionsId>ImportUnitConversions</unitConversionsId>
 			<missingValue>-3.402823E38</missingValue>

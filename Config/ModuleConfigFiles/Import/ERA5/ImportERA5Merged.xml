@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
+	<import>
+		<!-- Pressure level variables-->
+		<general>
+			<importType>NETCDF-CF_GRID</importType>
+			<folder>%REGION_HOME%/Import/ERA5</folder>
+			<fileNamePatternFilter>*merged*</fileNamePatternFilter>
+			<deleteImportedFiles>false</deleteImportedFiles>
+			<idMapId>IdImportERA5</idMapId>
+			<unitConversionsId>ImportERA5Units</unitConversionsId>
+			<importTimeZone>
+				<timeZoneName>GMT+0</timeZoneName>
+			</importTimeZone>
+			<dataFeedId>ERA5</dataFeedId>
+		</general>
+		<tolerance locationId="$INPUTGRID$" parameterId="TA" timeUnit="hour" unitCount="2"/>
+		<tolerance locationId="$INPUTGRID$" parameterId="RH" timeUnit="hour" unitCount="2"/>
+		<tolerance locationId="$INPUTGRID$" parameterId="US" timeUnit="hour" unitCount="2"/>
+		<!-- summa variables tolerance -->
+		<tolerance locationId="$INPUTGRID$" parameterId="PC" timeUnit="hour" unitCount="2"/>
+		<tolerance locationId="$INPUTGRID$" parameterId="RS" timeUnit="hour" unitCount="2"/>
+		<tolerance locationId="$INPUTGRID$" parameterId="RL" timeUnit="hour" unitCount="2"/>
+		<tolerance locationId="$INPUTGRID$" parameterId="PA" timeUnit="hour" unitCount="2"/>
+		<!-- wflow variables tolerance -->
+		<tolerance locationId="$INPUTGRID$" parameterId="PET.obs" timeUnit="hour" unitCount="2"/>
+		<tolerance locationId="$INPUTGRID$" parameterId="PC.sim" timeUnit="hour" unitCount="2"/>
+		<tolerance locationId="$INPUTGRID$" parameterId="TA.obs" timeUnit="hour" unitCount="2"/>
+		<tolerance locationId="$INPUTGRID$" parameterId="RS.sim" timeUnit="hour" unitCount="2"/>
+		<tolerance locationId="$INPUTGRID$" parameterId="RSext" timeUnit="hour" unitCount="2"/>
+		<!-- summa variables -->
+		<timeSeriesSet>
+			<moduleInstanceId>ImportERA5</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>TA</parameterId>
+			<locationId>$INPUTGRID$</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>1</synchLevel>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportERA5</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>RH</parameterId>
+			<locationId>$INPUTGRID$</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>1</synchLevel>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportERA5</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>US</parameterId>
+			<locationId>$INPUTGRID$</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>1</synchLevel>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportERA5</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC</parameterId>
+			<locationId>$INPUTGRID$</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>1</synchLevel>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportERA5</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>RS</parameterId>
+			<locationId>$INPUTGRID$</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>1</synchLevel>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportERA5</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>RL</parameterId>
+			<locationId>$INPUTGRID$</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>1</synchLevel>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportERA5</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PA</parameterId>
+			<locationId>$INPUTGRID$</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>1</synchLevel>
+		</timeSeriesSet>
+		<!-- summa variables externunit -->
+		<externUnit parameterId="TA" unit="K"/>
+		<externUnit parameterId="RH" unit="kg/kg"/>
+		<externUnit parameterId="US" unit="ms-1"/>
+		<externUnit parameterId="PC" unit="m"/>
+		<externUnit parameterId="RS" unit="Jm-2"/>
+		<externUnit parameterId="RL" unit="Jm-2"/>
+		<externUnit parameterId="PA" unit="Pa"/>
+	</import>
+</timeSeriesImportRun>

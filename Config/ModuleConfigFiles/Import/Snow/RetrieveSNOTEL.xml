@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<generalAdapterRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/generalAdapterRun.xsd">
+	<general>
+		<piVersion>1.8</piVersion>
+		<rootDir>%REGION_HOME%/modules/pyscripts</rootDir>
+		<workDir>%ROOT_DIR%/work</workDir>
+		<exportDir>$IMPORT_FOLDER$/SNOTEL</exportDir>
+		<importDir>$IMPORT_FOLDER$/SNOTEL</importDir>
+		<dumpFileDir>$GA_DUMPFILEDIR$</dumpFileDir>
+		<dumpDir>%ROOT_DIR%/work</dumpDir>
+		<diagnosticFile>%ROOT_DIR%/work/fews_data_download_log.xml</diagnosticFile>
+		<convertDatum>false</convertDatum>
+	</general>
+	<activities>
+		<startUpActivities>
+			<purgeActivity>
+				<filter>%ROOT_DIR%/work/*.*</filter>
+			</purgeActivity>
+			<purgeActivity>
+				<filter>$IMPORT_FOLDER$/SNOTEL/*.*</filter>
+			</purgeActivity>
+		</startUpActivities>
+		<exportActivities>
+			<exportLocationAttributesCsvActivity>
+				<exportFile>SNOTELStations.csv</exportFile>
+				<locationSetId>$STATIONLOCATIONS$</locationSetId>
+				<attributeColumn columnName="SITE_ID" attributeId="SITE_ID"/>
+				<attributeColumn columnName="SITE_NAME" attributeId="SITE_NAME"/>
+				<attributeColumn columnName="STATE" attributeId="STATE"/>
+			</exportLocationAttributesCsvActivity>
+			<exportRunFileActivity>
+				<exportFile>%WORK_DIR%/fews_data_download_run_info.xml</exportFile>
+				<properties>
+					<string key="destinationDir" value="$IMPORT_FOLDER$/SNOTEL"/>
+					<string key="stations" value="$IMPORT_FOLDER$\SNOTEL_Alaska.csv"/>
+				</properties>
+			</exportRunFileActivity>
+		</exportActivities>
+		<executeActivities>
+			<executeActivity>
+				<command>
+					<executable>$PYTHON_EXE$</executable>
+				</command>
+				<arguments>
+					<argument>%ROOT_DIR%\bin\data_download_main.py</argument>
+					<argument>--run_info_file</argument>
+					<argument>%WORK_DIR%\fews_data_download_run_info.xml</argument>
+					<argument>--data-source</argument>
+					<argument>SNOTEL</argument>
+				</arguments>
+				<timeOut>900000</timeOut>
+				<ignoreDiagnostics>true</ignoreDiagnostics>
+			</executeActivity>
+		</executeActivities>
+	</activities>
+</generalAdapterRun>

@@ -18,9 +18,8 @@
 			<parameterId>PC.nwp</parameterId>
 			<locationId>GEPS</locationId>
 			<timeSeriesType>external forecasting</timeSeriesType>
-			<timeStep unit="hour" multiplier="6"/>
+			<timeStep unit="hour" multiplier="3"/>
 			<readWriteMode>add originals</readWriteMode>
-			<synchLevel>6</synchLevel>
 			<expiryTime unit="day" multiplier="$FORECAST_IMPORT_EXPIRY_TIME$"/>
 			<ensembleId>GEPS</ensembleId>
 		</timeSeriesSet>
@@ -30,9 +29,8 @@
 			<parameterId>TA.nwp</parameterId>
 			<locationId>GEPS</locationId>
 			<timeSeriesType>external forecasting</timeSeriesType>
-			<timeStep unit="hour" multiplier="6"/>
+			<timeStep unit="hour" multiplier="3"/>
 			<readWriteMode>add originals</readWriteMode>
-			<synchLevel>6</synchLevel>
 			<expiryTime unit="day" multiplier="$FORECAST_IMPORT_EXPIRY_TIME$"/>
 			<ensembleId>GEPS</ensembleId>
 		</timeSeriesSet>
@@ -42,10 +40,10 @@
 			<parameterId>RS.nwp</parameterId>
 			<locationId>GEPS</locationId>
 			<timeSeriesType>external forecasting</timeSeriesType>
-			<timeStep unit="hour" multiplier="6"/>
+			<timeStep unit="hour" multiplier="3"/>
 			<readWriteMode>add originals</readWriteMode>
-			<synchLevel>6</synchLevel>
 			<expiryTime unit="day" multiplier="$FORECAST_IMPORT_EXPIRY_TIME$"/>
+			<ensembleId>GEPS</ensembleId>
 		</timeSeriesSet>
 		<timeSeriesSet>
 			<moduleInstanceId>ImportGEPS</moduleInstanceId>
@@ -53,14 +51,50 @@
 			<parameterId>PA.nwp</parameterId>
 			<locationId>GEPS</locationId>
 			<timeSeriesType>external forecasting</timeSeriesType>
-			<timeStep unit="hour" multiplier="6"/>
+			<timeStep unit="hour" multiplier="3"/>
 			<readWriteMode>add originals</readWriteMode>
-			<synchLevel>6</synchLevel>
 			<expiryTime unit="day" multiplier="$FORECAST_IMPORT_EXPIRY_TIME$"/>
+			<ensembleId>GEPS</ensembleId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportGEPS</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>XS.nwp</parameterId>
+			<locationId>GEPS</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<expiryTime unit="day" multiplier="$FORECAST_IMPORT_EXPIRY_TIME$"/>
+			<ensembleId>GEPS</ensembleId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportGEPS</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>RL.nwp</parameterId>
+			<locationId>GEPS</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<expiryTime unit="day" multiplier="$FORECAST_IMPORT_EXPIRY_TIME$"/>
+			<ensembleId>GEPS</ensembleId>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportGEPS</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>US.nwp</parameterId>
+			<locationId>GEPS</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+			<expiryTime unit="day" multiplier="$FORECAST_IMPORT_EXPIRY_TIME$"/>
+			<ensembleId>GEPS</ensembleId>
 		</timeSeriesSet>
 		<externUnit parameterId="PC.nwp" unit="kg m-2" cumulativeSum="true"/>
 		<externUnit parameterId="TA.nwp" unit="K"/>
-		<externUnit parameterId="RS.nwp" unit="J/m2" cumulativeSum="true"/>
+		<externUnit parameterId="XS.nwp" unit="kg/kg"/>
 		<externUnit parameterId="PA.nwp" unit="Pa"/>
+		<externUnit parameterId="RS.nwp" unit="J/m2" cumulativeSum="true"/>
+		<externUnit parameterId="RL.nwp" unit="J/m2" cumulativeSum="true"/>
+		<externUnit parameterId="US.nwp" unit="m/s"/>
 	</import>
 </timeSeriesImportRun>

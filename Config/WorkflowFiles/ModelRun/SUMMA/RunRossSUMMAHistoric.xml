@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.1">
+	<!-- Run SUMMA Model Historic -->
+	<!-- General Properties -->
+	<properties>
+		<string key="MODEL" value="Ross"/>
+		<string key="STARTTIME" value="-25"/>
+		<string key="ENDTIME" value="0"/>
+		<string key="TIMESTEP" value="1"/>
+		<string key="ENSEMBLE" value="main"/>
+		<string key="TIMESTEPUNIT" value="hour"/>
+		<string key="MULTIPLIER" value="1"/>
+		<string key="OUTPUTTIMESERIESTYPE" value="external historical"/>
+		<string key="NONEQUIINPUTMODULEINSTANCE" value="RossSUMMAHistoric"/>
+	</properties>
+	<!-- Run SUMMA Historic-->
+	<activity>
+		<properties>
+			<string key="INPUTMODULEINSTANCEMETEO" value="PreprocessERA5"/>
+			<string key="OUTPUTTIMESERIES" value="RossSUMMAHistoric"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>RossSUMMAHistoric</moduleInstanceId>
+		<moduleConfigFileName>SUMMAHistoricTemplate</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<string key="PARAMETER" value="QR.sim"/>
+			<string key="LOCATIONSET" value="RossSubBasins"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>RossSUMMAHistoric</moduleInstanceId>
+		<moduleConfigFileName>PostprocessNonEquiParameter</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<string key="PARAMETER" value="SWE.sim"/>
+			<string key="LOCATIONSET" value="RossSubBasins"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>RossSUMMAHistoric</moduleInstanceId>
+		<moduleConfigFileName>PostprocessNonEquiParameter</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<string key="PARAMETER" value="SD.sim"/>
+			<string key="LOCATIONSET" value="RossSubBasins"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>RossSUMMAHistoric</moduleInstanceId>
+		<moduleConfigFileName>PostprocessNonEquiParameter</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<string key="PARAMETER" value="SCA.sim"/>
+			<string key="LOCATIONSET" value="RossSubBasins"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>RossSUMMAHistoric</moduleInstanceId>
+		<moduleConfigFileName>PostprocessNonEquiParameter</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<string key="PARAMETER" value="RT.sim"/>
+			<string key="LOCATIONSET" value="RossSubBasins"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>RossSUMMAHistoric</moduleInstanceId>
+		<moduleConfigFileName>PostprocessNonEquiParameter</moduleConfigFileName>
+	</activity>
+</workflow>

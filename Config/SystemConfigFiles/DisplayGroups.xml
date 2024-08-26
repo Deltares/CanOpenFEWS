@@ -28,7 +28,7 @@
 					<parameterId>QR.obs</parameterId>
 					<locationSetId>DownloadHydroStations</locationSetId>
 					<timeSeriesType>external historical</timeSeriesType>
-					<timeStep id="$DAY_TIMESTEP$"/>
+					<timeStep id="day_GMT"/>
 					<readWriteMode>read complete forecast</readWriteMode>
 				</timeSeriesSet>
 			</line>
@@ -43,7 +43,7 @@
 					<qualifierId>mean</qualifierId>
 					<locationSetId>DownloadHydroStations</locationSetId>
 					<timeSeriesType>external historical</timeSeriesType>
-					<timeStep id="$DAY_TIMESTEP$"/>
+					<timeStep id="day_GMT"/>
 					<cycle unit="year"/>
 					<readWriteMode>read only</readWriteMode>
 				</timeSeriesSet>
@@ -58,7 +58,7 @@
 					<qualifierId>max</qualifierId>
 					<locationSetId>DownloadHydroStations</locationSetId>
 					<timeSeriesType>external historical</timeSeriesType>
-					<timeStep id="$DAY_TIMESTEP$"/>
+					<timeStep id="day_GMT"/>
 					<cycle unit="year"/>
 					<readWriteMode>add originals</readWriteMode>
 				</timeSeriesSet>
@@ -69,7 +69,7 @@
 					<qualifierId>min</qualifierId>
 					<locationSetId>DownloadHydroStations</locationSetId>
 					<timeSeriesType>external historical</timeSeriesType>
-					<timeStep id="$DAY_TIMESTEP$"/>
+					<timeStep id="day_GMT"/>
 					<cycle unit="year"/>
 					<readWriteMode>add originals</readWriteMode>
 				</timeSeriesSet>
@@ -84,7 +84,7 @@
 					<qualifierId>90</qualifierId>
 					<locationSetId>DownloadHydroStations</locationSetId>
 					<timeSeriesType>external historical</timeSeriesType>
-					<timeStep id="$DAY_TIMESTEP$"/>
+					<timeStep id="day_GMT"/>
 					<cycle unit="year"/>
 					<readWriteMode>add originals</readWriteMode>
 				</timeSeriesSet>
@@ -95,7 +95,7 @@
 					<qualifierId>10</qualifierId>
 					<locationSetId>DownloadHydroStations</locationSetId>
 					<timeSeriesType>external historical</timeSeriesType>
-					<timeStep id="$DAY_TIMESTEP$"/>
+					<timeStep id="day_GMT"/>
 					<cycle unit="year"/>
 					<readWriteMode>add originals</readWriteMode>
 				</timeSeriesSet>
@@ -110,7 +110,7 @@
 					<qualifierId>75</qualifierId>
 					<locationSetId>DownloadHydroStations</locationSetId>
 					<timeSeriesType>external historical</timeSeriesType>
-					<timeStep id="$DAY_TIMESTEP$"/>
+					<timeStep id="day_GMT"/>
 					<cycle unit="year"/>
 					<readWriteMode>add originals</readWriteMode>
 				</timeSeriesSet>
@@ -121,7 +121,7 @@
 					<qualifierId>25</qualifierId>
 					<locationSetId>DownloadHydroStations</locationSetId>
 					<timeSeriesType>external historical</timeSeriesType>
-					<timeStep id="$DAY_TIMESTEP$"/>
+					<timeStep id="day_GMT"/>
 					<cycle unit="year"/>
 					<readWriteMode>add originals</readWriteMode>
 				</timeSeriesSet>
@@ -152,7 +152,7 @@
 					<parameterId>HG.obs</parameterId>
 					<locationSetId>DownloadHydroStations</locationSetId>
 					<timeSeriesType>external historical</timeSeriesType>
-					<timeStep id="$DAY_TIMESTEP$"/>
+					<timeStep id="day_GMT"/>
 					<readWriteMode>read complete forecast</readWriteMode>
 				</timeSeriesSet>
 			</line>
@@ -167,7 +167,7 @@
 					<qualifierId>mean</qualifierId>
 					<locationSetId>DownloadHydroStations</locationSetId>
 					<timeSeriesType>external historical</timeSeriesType>
-					<timeStep id="$DAY_TIMESTEP$"/>
+					<timeStep id="day_GMT"/>
 					<cycle unit="year"/>
 					<readWriteMode>read only</readWriteMode>
 				</timeSeriesSet>
@@ -182,7 +182,7 @@
 					<qualifierId>max</qualifierId>
 					<locationSetId>DownloadHydroStations</locationSetId>
 					<timeSeriesType>external historical</timeSeriesType>
-					<timeStep id="$DAY_TIMESTEP$"/>
+					<timeStep id="day_GMT"/>
 					<cycle unit="year"/>
 					<readWriteMode>add originals</readWriteMode>
 				</timeSeriesSet>
@@ -193,7 +193,7 @@
 					<qualifierId>min</qualifierId>
 					<locationSetId>DownloadHydroStations</locationSetId>
 					<timeSeriesType>external historical</timeSeriesType>
-					<timeStep id="$DAY_TIMESTEP$"/>
+					<timeStep id="day_GMT"/>
 					<cycle unit="year"/>
 					<readWriteMode>add originals</readWriteMode>
 				</timeSeriesSet>
@@ -208,7 +208,7 @@
 					<qualifierId>90</qualifierId>
 					<locationSetId>DownloadHydroStations</locationSetId>
 					<timeSeriesType>external historical</timeSeriesType>
-					<timeStep id="$DAY_TIMESTEP$"/>
+					<timeStep id="day_GMT"/>
 					<cycle unit="year"/>
 					<readWriteMode>add originals</readWriteMode>
 				</timeSeriesSet>
@@ -219,7 +219,7 @@
 					<qualifierId>10</qualifierId>
 					<locationSetId>DownloadHydroStations</locationSetId>
 					<timeSeriesType>external historical</timeSeriesType>
-					<timeStep id="$DAY_TIMESTEP$"/>
+					<timeStep id="day_GMT"/>
 					<cycle unit="year"/>
 					<readWriteMode>add originals</readWriteMode>
 				</timeSeriesSet>
@@ -234,7 +234,7 @@
 					<qualifierId>75</qualifierId>
 					<locationSetId>DownloadHydroStations</locationSetId>
 					<timeSeriesType>external historical</timeSeriesType>
-					<timeStep id="$DAY_TIMESTEP$"/>
+					<timeStep id="day_GMT"/>
 					<cycle unit="year"/>
 					<readWriteMode>add originals</readWriteMode>
 				</timeSeriesSet>
@@ -245,7 +245,257 @@
 					<qualifierId>25</qualifierId>
 					<locationSetId>DownloadHydroStations</locationSetId>
 					<timeSeriesType>external historical</timeSeriesType>
-					<timeStep id="$DAY_TIMESTEP$"/>
+					<timeStep id="day_GMT"/>
+					<cycle unit="year"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+			</area>
+		</subplot>
+	</plot>
+	<plot id="USGSTemplate">
+		<subplot>
+			<line>
+				<color>red</color>
+				<lineStyle>constant</lineStyle>
+				<label>NRT (5-min) Data  @ID@</label>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportUSGS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.obs</parameterId>
+					<locationSetId>DownloadHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="minute" multiplier="5"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<color>black</color>
+				<lineStyle>constant</lineStyle>
+				<label>Daily Data @ID@</label>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportUSGS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.obs</parameterId>
+					<locationSetId>DownloadHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="day_GMT"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<color>slate gray</color>
+				<lineStyle>dashed</lineStyle>
+				<label>Historic Mean @ID@</label>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessUSGS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.obs</parameterId>
+					<qualifierId>mean</qualifierId>
+					<locationSetId>DownloadHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="day_GMT"/>
+					<cycle unit="year"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<area>
+				<color>slate gray1</color>
+				<opaquenessPercentage>30</opaquenessPercentage>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessUSGS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.obs</parameterId>
+					<qualifierId>max</qualifierId>
+					<locationSetId>DownloadHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="day_GMT"/>
+					<cycle unit="year"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessUSGS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.obs</parameterId>
+					<qualifierId>min</qualifierId>
+					<locationSetId>DownloadHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="day_GMT"/>
+					<cycle unit="year"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+			</area>
+			<area>
+				<color>slate gray2</color>
+				<opaquenessPercentage>30</opaquenessPercentage>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessUSGS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.obs</parameterId>
+					<qualifierId>90</qualifierId>
+					<locationSetId>DownloadHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="day_GMT"/>
+					<cycle unit="year"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessUSGS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.obs</parameterId>
+					<qualifierId>10</qualifierId>
+					<locationSetId>DownloadHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="day_GMT"/>
+					<cycle unit="year"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+			</area>
+			<area>
+				<color>slate gray3</color>
+				<opaquenessPercentage>30</opaquenessPercentage>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessUSGS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.obs</parameterId>
+					<qualifierId>75</qualifierId>
+					<locationSetId>DownloadHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="day_GMT"/>
+					<cycle unit="year"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessUSGS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.obs</parameterId>
+					<qualifierId>25</qualifierId>
+					<locationSetId>DownloadHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="day_GMT"/>
+					<cycle unit="year"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+			</area>
+		</subplot>
+		<subplot>
+			<line>
+				<color>red</color>
+				<lineStyle>constant</lineStyle>
+				<label>NRT (5-min) Data  @ID@</label>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportUSGS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>HG.obs</parameterId>
+					<locationSetId>DownloadHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="minute" multiplier="5"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<color>black</color>
+				<lineStyle>constant</lineStyle>
+				<label>Daily Data @ID@</label>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportUSGS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>HG.obs</parameterId>
+					<locationSetId>DownloadHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="day_GMT"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<color>light blue</color>
+				<lineStyle>dashed</lineStyle>
+				<label>HG.obs mean @ID@</label>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessUSGS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>HG.obs</parameterId>
+					<qualifierId>mean</qualifierId>
+					<locationSetId>DownloadHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="day_GMT"/>
+					<cycle unit="year"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<area>
+				<color>slate blue1</color>
+				<opaquenessPercentage>30</opaquenessPercentage>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessUSGS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>HG.obs</parameterId>
+					<qualifierId>max</qualifierId>
+					<locationSetId>DownloadHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="day_GMT"/>
+					<cycle unit="year"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessUSGS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>HG.obs</parameterId>
+					<qualifierId>min</qualifierId>
+					<locationSetId>DownloadHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="day_GMT"/>
+					<cycle unit="year"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+			</area>
+			<area>
+				<color>slate blue2</color>
+				<opaquenessPercentage>30</opaquenessPercentage>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessUSGS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>HG.obs</parameterId>
+					<qualifierId>90</qualifierId>
+					<locationSetId>DownloadHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="day_GMT"/>
+					<cycle unit="year"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessUSGS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>HG.obs</parameterId>
+					<qualifierId>10</qualifierId>
+					<locationSetId>DownloadHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="day_GMT"/>
+					<cycle unit="year"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+			</area>
+			<area>
+				<color>slate blue3</color>
+				<opaquenessPercentage>30</opaquenessPercentage>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessUSGS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>HG.obs</parameterId>
+					<qualifierId>75</qualifierId>
+					<locationSetId>DownloadHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="day_GMT"/>
+					<cycle unit="year"/>
+					<readWriteMode>add originals</readWriteMode>
+				</timeSeriesSet>
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessUSGS</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>HG.obs</parameterId>
+					<qualifierId>25</qualifierId>
+					<locationSetId>DownloadHydroStations</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep id="day_GMT"/>
 					<cycle unit="year"/>
 					<readWriteMode>add originals</readWriteMode>
 				</timeSeriesSet>
@@ -473,6 +723,92 @@
 					<readWriteMode>read only</readWriteMode>
 				</timeSeriesSet>
 			</area>
+		</subplot>
+	</plot>
+	<!--Plot Template - SNOTEL Data-->
+	<plot id="SNOTELTemplate">
+		<subplot>
+			<line>
+				<color>purple</color>
+				<label>Precipitation [mm]</label>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportSNOTEL</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>PC.obs</parameterId>
+					<locationSetId>SNOTELStationsAlaska</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="day"/>
+					<relativeViewPeriod unit="day" start="-30" end="0"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+			</line>
+		</subplot>
+		<subplot>
+			<line>
+				<color>red</color>
+				<lineStyle>dashed;thick</lineStyle>
+				<label>Temperature (mean) [C]</label>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportSNOTEL</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>TA.obs</parameterId>
+					<locationSetId>SNOTELStationsAlaska</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="day"/>
+					<relativeViewPeriod unit="day" start="-30" end="0"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+			</line>
+		</subplot>
+		<subplot>
+			<line>
+				<color>black</color>
+				<lineStyle>dashed;thick</lineStyle>
+				<label>SWE (Observed)</label>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportSNOTEL</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>SWE.obs</parameterId>
+					<locationSetId>SNOTELStationsAlaska</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="day"/>
+					<relativeViewPeriod unit="day" start="-30" end="0"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+			</line>
+			<line>
+				<color>blue</color>
+				<lineStyle>dashed;thick</lineStyle>
+				<axis>right</axis>
+				<label>Snow Depth (Observed)</label>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportSNOTEL</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>SD.obs</parameterId>
+					<locationSetId>SNOTELStationsAlaska</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="day"/>
+					<relativeViewPeriod unit="day" start="-30" end="0"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+			</line>
+		</subplot>
+		<subplot>
+			<line>
+				<color>green</color>
+				<lineStyle>solid</lineStyle>
+				<label>Wind Speed (m/s)</label>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportSNOTEL</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>US.obs</parameterId>
+					<locationSetId>SNOTELStationsAlaska</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="day"/>
+					<relativeViewPeriod unit="day" start="-30" end="0"/>
+					<readWriteMode>read only</readWriteMode>
+				</timeSeriesSet>
+			</line>
 		</subplot>
 	</plot>
 	<!--Plot Template - RDPA Data-->
@@ -1764,6 +2100,13 @@
 			<plotId>WSCTemplate</plotId>
 		</singleLocationDisplays>
 	</displayGroup>
+	<displayGroup id="ImportUSGS" name="USGS Stations">
+		<nodeId>ImportUSGS</nodeId>
+		<singleLocationDisplays>
+			<locationSetId>USGSStations</locationSetId>
+			<plotId>USGSTemplate</plotId>
+		</singleLocationDisplays>
+	</displayGroup>
 	<displayGroup id="ImportWSCDaily" name="WSC Stations Recent">
 		<nodeId>ImportWSCDaily</nodeId>
 		<singleLocationDisplays>
@@ -1801,6 +2144,13 @@
 		<display>
 			<plotId>ECCCMeteoProcessedTemplate</plotId>
 		</display>
+	</displayGroup>
+	<displayGroup id="ImportSNOTEL" name="SNOTEL Stations">
+		<nodeId>ImportSNOTEL</nodeId>
+		<singleLocationDisplays>
+			<locationSetId>SNOTELStationsAlaska</locationSetId>
+			<plotId>SNOTELTemplate</plotId>
+		</singleLocationDisplays>
 	</displayGroup>
 	<displayGroup name="RDPA">
 		<nodeId>RDPA</nodeId>

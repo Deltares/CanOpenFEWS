@@ -7,8 +7,13 @@
 		<locationSetId>ECCCStations</locationSetId>
 	</locationIcon>
 	<locationIcon>
-		<description>Hydro Stations</description>
+		<description>WSC Hydro Stations</description>
 		<iconId>hydro_site_data</iconId>
-		<locationSetId>WSCStations</locationSetId>
+		<locationSetId>YukonHydroStations</locationSetId>
+	</locationIcon>
+	<locationIcon>
+		<description>USGS Hydro Stations</description>
+		<iconId>hydro_site_data</iconId>
+		<locationSetId>USGSStations</locationSetId>
 	</locationIcon>
 </locationIcons>

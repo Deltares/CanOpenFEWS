@@ -79,4 +79,10 @@
 		<multiplier>0.001</multiplier>
 		<incrementer>0</incrementer>
 	</unitConversion>
+	<unitConversion>
+		<inputUnitType>mph</inputUnitType>
+		<outputUnitType>m/s</outputUnitType>
+		<multiplier>0.44704</multiplier>
+		<incrementer>0</incrementer>
+	</unitConversion>
 </unitConversions>

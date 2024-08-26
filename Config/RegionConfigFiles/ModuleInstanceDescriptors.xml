@@ -42,11 +42,26 @@
 	<moduleInstanceDescriptor id="ImportWSC">
 		<description>ID assigned  to WSC imports</description>
 	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportUSGS">
+		<description>ID assigned  to USGS imports</description>
+	</moduleInstanceDescriptor>
 	<moduleInstanceDescriptor id="ImportECCCScalar">
 		<description>Import Station data from dd.meteo.gc.ca server</description>
 	</moduleInstanceDescriptor>
 	<moduleInstanceDescriptor id="ImportECCCHistoric">
 		<description>Import Station data from dd.meteo.gc.ca server</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="RetrieveECCCAPIRecent">
+		<description>Retrieve Recent Station from ECCC API</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="RetrieveECCCAPIHistoric">
+		<description>Retrieve Historic Station from ECCC API</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportECCCAPIRecent">
+		<description>Import Station from ECCC API</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportECCCAPIHistoric">
+		<description>Import Station from ECCC API</description>
 	</moduleInstanceDescriptor>
 	<moduleInstanceDescriptor id="ImportRavenNetCDF">
 		<description>Import Raven NetCDF from Local Source</description>
@@ -57,6 +72,12 @@
 	<moduleInstanceDescriptor id="ImportAlbertaAPI">
 		<description>Import data from Alberta API</description>
 	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="RetrieveSNOTEL">
+		<description>Retrieve data from SNOTEL stations</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportSNOTEL">
+		<description>Import data from SNOTEL stations</description>
+	</moduleInstanceDescriptor>
 	<!-- Export-->
 	<moduleInstanceDescriptor id="ExportHYDATtoCSV">
 		<description>Export HYDAT data to CSV to generate reports</description>
@@ -64,6 +85,9 @@
 	<!--Preprocess Scalar Data-->
 	<moduleInstanceDescriptor id="PreprocessECCCScalar">
 		<description>Preprocess Station data from dd.meteo.gc.ca server</description>
+	</moduleInstanceDescriptor>
+		<moduleInstanceDescriptor id="PreprocessUSGS">
+		<description>Preprocess USGS Station Data</description>
 	</moduleInstanceDescriptor>
 	<!--ModuleDataSets-->
 	<moduleInstanceDescriptor id="SnowDownload">
@@ -185,12 +209,24 @@
 	<moduleInstanceDescriptor id="ImportNAM">
 		<description>Import North American Meso-scale Data from NOAA</description>
 	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportHRRR">
+		<description>Import HRRR from NOAA</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportMRMS">
+		<description>Import MRMS from NOAA</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportMRMSOpenDAP">
+		<description>Import MRMS from NOAA</description>
+	</moduleInstanceDescriptor>
 	<!--Import ERA5 Reanalysis data-->
 	<moduleInstanceDescriptor id="RetrieveERA5">
 		<description>Download the ERA5 data</description>
 	</moduleInstanceDescriptor>
 	<moduleInstanceDescriptor id="ImportERA5">
 		<description>Import the ERA5 variables on the predefined grid</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportERA5Merged">
+		<description>Import the ERA5 variables merged into a single file on the predefined grid</description>
 	</moduleInstanceDescriptor>
 	<moduleInstanceDescriptor id="PreprocessERA5">
 		<description>Import the ERA5 variables on the predefined grid</description>
@@ -347,9 +383,12 @@
 	<moduleInstanceDescriptor id="BowRavenGEPSForecast">
 		<description>Run the Bow model with REPS Forecast Data</description>
 	</moduleInstanceDescriptor>
-		<!-- Model Run Module Instances - SUMMA -->
+	<!-- Model Run Module Instances - SUMMA -->
 	<moduleInstanceDescriptor id="SUMMABinaries">
 		<description>Run the Bow SUMMA model</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="YukonSUMMAHistoric">
+		<description>Run the Yukon SUMMA model</description>
 	</moduleInstanceDescriptor>
 	<moduleInstanceDescriptor id="BowSUMMA">
 		<description>Run the Bow SUMMA model</description>
@@ -375,7 +414,56 @@
 	<moduleInstanceDescriptor id="BowSUMMAGEPSForecast">
 		<description>Run the Bow model with REPS Forecast Data</description>
 	</moduleInstanceDescriptor>
-
+	<!-- Ross Model Runs-->
+	<moduleInstanceDescriptor id="RossSUMMA">
+		<description>Run the Ross SUMMA model</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="RossSUMMAHistoricUpdate">
+		<description>ModuleInstanceId holder for Model</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="RossSUMMAHistoric">
+		<description>Run the Ross model with Historic Data</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="RossSUMMAForecast">
+		<description>Run the Ross model with Forecast Data</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="RossSUMMARDPSForecast">
+		<description>Run the Ross model with RDPS Forecast Data</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="RossSUMMAGDPSForecast">
+		<description>Run the Ross model with GDPS Forecast Data</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="RossSUMMAREPSForecast">
+		<description>Run the Ross model with REPS Forecast Data</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="RossSUMMAGEPSForecast">
+		<description>Run the Ross model with REPS Forecast Data</description>
+	</moduleInstanceDescriptor>
+	<!-- Chena Model Runs-->
+	<moduleInstanceDescriptor id="ChenaSUMMA">
+		<description>Run the Chena SUMMA model</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ChenaSUMMAHistoricUpdate">
+		<description>ModuleInstanceId holder for Model</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ChenaSUMMAHistoric">
+		<description>Run the Chena model with Historic Data</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ChenaSUMMAForecast">
+		<description>Run the Chena model with Forecast Data</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ChenaSUMMARDPSForecast">
+		<description>Run the Chena model with RDPS Forecast Data</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ChenaSUMMAGDPSForecast">
+		<description>Run the Chena model with GDPS Forecast Data</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ChenaSUMMAREPSForecast">
+		<description>Run the Chena model with REPS Forecast Data</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ChenaSUMMAGEPSForecast">
+		<description>Run the Chena model with REPS Forecast Data</description>
+	</moduleInstanceDescriptor>
 	<!-- Wflow Model Preprocessing-->
 	<moduleInstanceDescriptor id="DeBruinPET">
 		<description>PET estimation using the De Bruin method</description>

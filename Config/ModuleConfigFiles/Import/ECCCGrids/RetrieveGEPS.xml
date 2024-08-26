@@ -46,7 +46,7 @@
 					<argument>GEPS</argument>
 				</arguments>
 				<timeOut>900000</timeOut>
-				<ignoreDiagnostics>true</ignoreDiagnostics>
+				<ignoreDiagnostics>false</ignoreDiagnostics>
 			</executeActivity>
 		</executeActivities>
 	</activities>

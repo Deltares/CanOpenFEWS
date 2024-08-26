@@ -7,7 +7,7 @@
 		<rootDir>%REGION_HOME%/Modules/SUMMA/</rootDir>
 		<workDir>%ROOT_DIR%/$MODEL$/settings</workDir>
 		<exportDir>%ROOT_DIR%/$MODEL$/input</exportDir>
-		<exportDataSetDir>%ROOT_DIR%/$MODEL$/settings</exportDataSetDir>
+		<exportDataSetDir>%ROOT_DIR%</exportDataSetDir>
 		<exportIdMap>IdExportSUMMA</exportIdMap>
 		<!--<exportUnitConversionsId>ExportSUMMA</exportUnitConversionsId>-->
 		<importDir>%ROOT_DIR%/$MODEL$/output</importDir>
@@ -24,7 +24,7 @@
 	<activities>
 		<startUpActivities>
 			<purgeActivity>
-				<filter>%ROOT_DIR%/*.*</filter>
+				<filter>%ROOT_DIR%/$MODEL/*.*</filter>
 			</purgeActivity>
 			<purgeActivity>
 				<filter>%ROOT_DIR%//$MODEL$/input/*.*</filter>
@@ -65,7 +65,7 @@
 						<parameterId>PC</parameterId>
 						<locationSetId>$MODEL$SubBasins</locationSetId>
 						<timeSeriesType>external historical</timeSeriesType>
-						<timeStep unit="hour" multiplier="$HOUR_TIMESTEP$"/>
+						<timeStep unit="hour" multiplier="$TIMESTEP$"/>
 						<relativeViewPeriod unit="hour" end="0" startOverrulable="true"/>
 						<readWriteMode>add originals</readWriteMode>
 					</timeSeriesSet>
@@ -75,7 +75,7 @@
 						<parameterId>TA</parameterId>
 						<locationSetId>$MODEL$SubBasins</locationSetId>
 						<timeSeriesType>external historical</timeSeriesType>
-						<timeStep unit="hour" multiplier="$HOUR_TIMESTEP$"/>
+						<timeStep unit="hour" multiplier="$TIMESTEP$"/>
 						<relativeViewPeriod unit="hour" end="0" startOverrulable="true"/>
 						<readWriteMode>add originals</readWriteMode>
 					</timeSeriesSet>
@@ -85,7 +85,7 @@
 						<parameterId>RS</parameterId>
 						<locationSetId>$MODEL$SubBasins</locationSetId>
 						<timeSeriesType>external historical</timeSeriesType>
-						<timeStep unit="hour" multiplier="$HOUR_TIMESTEP$"/>
+						<timeStep unit="hour" multiplier="$TIMESTEP$"/>
 						<relativeViewPeriod unit="hour" end="0" startOverrulable="true"/>
 						<readWriteMode>add originals</readWriteMode>
 					</timeSeriesSet>
@@ -95,7 +95,7 @@
 						<parameterId>RL</parameterId>
 						<locationSetId>$MODEL$SubBasins</locationSetId>
 						<timeSeriesType>external historical</timeSeriesType>
-						<timeStep unit="hour" multiplier="$HOUR_TIMESTEP$"/>
+						<timeStep unit="hour" multiplier="$TIMESTEP$"/>
 						<relativeViewPeriod unit="hour" end="0" startOverrulable="true"/>
 						<readWriteMode>add originals</readWriteMode>
 					</timeSeriesSet>
@@ -105,7 +105,7 @@
 						<parameterId>PA</parameterId>
 						<locationSetId>$MODEL$SubBasins</locationSetId>
 						<timeSeriesType>external historical</timeSeriesType>
-						<timeStep unit="hour" multiplier="$HOUR_TIMESTEP$"/>
+						<timeStep unit="hour" multiplier="$TIMESTEP$"/>
 						<relativeViewPeriod unit="hour" end="0" startOverrulable="true"/>
 						<readWriteMode>add originals</readWriteMode>
 					</timeSeriesSet>
@@ -115,7 +115,7 @@
 						<parameterId>RH</parameterId>
 						<locationSetId>$MODEL$SubBasins</locationSetId>
 						<timeSeriesType>external historical</timeSeriesType>
-						<timeStep unit="hour" multiplier="$HOUR_TIMESTEP$"/>
+						<timeStep unit="hour" multiplier="$TIMESTEP$"/>
 						<relativeViewPeriod unit="hour" end="0" startOverrulable="true"/>
 						<readWriteMode>add originals</readWriteMode>
 					</timeSeriesSet>
@@ -125,7 +125,7 @@
 						<parameterId>US</parameterId>
 						<locationSetId>$MODEL$SubBasins</locationSetId>
 						<timeSeriesType>external historical</timeSeriesType>
-						<timeStep unit="hour" multiplier="$HOUR_TIMESTEP$"/>
+						<timeStep unit="hour" multiplier="$TIMESTEP$"/>
 						<relativeViewPeriod unit="hour" end="0" startOverrulable="true"/>
 						<readWriteMode>add originals</readWriteMode>
 					</timeSeriesSet>
@@ -136,6 +136,10 @@
 				<exportFile>%ROOT_DIR%/$MODEL$/run_info.nc</exportFile>
 				<properties>
 					<string key="Model" value="$MODEL$"/>
+					<string key="forcing_file" value="%ROOT_DIR%//$MODEL$//input//inputs.nc"/>
+					<int key="hour_timestep" value="$TIMESTEP$"/>
+<!--					<locationAttribute key="sno_add_offset" locationId="$MODEL$Basin" attributeId="State_scalarSfcMeltPond_mult"/>
+					<locationAttribute key="sno_scale_factor" locationId="$MODEL$Basin" attributeId="State_scalarSfcMeltPond_incr"/>-->
 				</properties>
 			</exportNetcdfRunFileActivity>
 		</exportActivities>
@@ -145,7 +149,7 @@
 					<executable>$PYTHON_EXE$</executable>
 				</command>
 				<arguments>
-					<argument>%ROOT_DIR%\$MODEL$\summa_fews_adaptor.py</argument>
+					<argument>%ROOT_DIR%\summa_fews_adaptor.py</argument>
 					<argument>--work-dir</argument>
 					<argument>%ROOT_DIR%\$MODEL$\</argument>
 					<argument>--run-info-file</argument>
@@ -158,7 +162,7 @@
 				<timeOut>36000000</timeOut>
 				<ignoreDiagnostics>true</ignoreDiagnostics>
 			</executeActivity>
-<!--			<executeActivity>
+			<!--			<executeActivity>
 				<command>
 					<executable>%ROOT_DIR%\bin\summa.exe</executable>
 				</command>
@@ -169,17 +173,15 @@
 				<timeOut>36000000</timeOut>
 				<ignoreDiagnostics>true</ignoreDiagnostics>
 			</executeActivity>-->
-			
 		</executeActivities>
 		<importActivities>
-			<!--<importStateActivity>
+			<importStateActivity>
 				<stateFile>
-					<importFile>%ROOT_DIR%\$MODEL$\output\$MODEL$_solution.rvc</importFile>
-					<relativeExportFile>$MODEL$.rvc</relativeExportFile>
+					<importFile>%ROOT_DIR%\$MODEL$\output\state_update.nc</importFile>
+					<relativeExportFile>coldState.nc</relativeExportFile>
 				</stateFile>
 				<synchLevel>20</synchLevel>
-			</importStateActivity> 
-			-->
+			</importStateActivity>
 			<importNetcdfActivity>
 				<importFile>summa_output.nc</importFile>
 				<timeSeriesSets>
@@ -188,8 +190,53 @@
 						<valueType>scalar</valueType>
 						<parameterId>SWE.sim</parameterId>
 						<locationSetId>$MODEL$SubBasins</locationSetId>
-						<timeSeriesType>simulated historical</timeSeriesType>
-						<timeStep unit="hour" multiplier="1"/>
+						<timeSeriesType>temporary</timeSeriesType>
+						<timeStep unit="nonequidistant"/>
+						<readWriteMode>add originals</readWriteMode>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>QR.sim</parameterId>
+						<locationSetId>$MODEL$Basins</locationSetId>
+						<timeSeriesType>temporary</timeSeriesType>
+						<timeStep unit="nonequidistant"/>
+						<readWriteMode>add originals</readWriteMode>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>QR.sim</parameterId>
+						<locationSetId>$MODEL$SubBasins</locationSetId>
+						<timeSeriesType>temporary</timeSeriesType>
+						<timeStep unit="nonequidistant"/>
+						<readWriteMode>add originals</readWriteMode>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>SCA.sim</parameterId>
+						<locationSetId>$MODEL$SubBasins</locationSetId>
+						<timeSeriesType>temporary</timeSeriesType>
+						<timeStep unit="nonequidistant"/>
+						<readWriteMode>add originals</readWriteMode>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>SD.sim</parameterId>
+						<locationSetId>$MODEL$SubBasins</locationSetId>
+						<timeSeriesType>temporary</timeSeriesType>
+						<timeStep unit="nonequidistant"/>
+						<readWriteMode>add originals</readWriteMode>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>RT.sim</parameterId>
+						<locationSetId>$MODEL$SubBasins</locationSetId>
+						<timeSeriesType>temporary</timeSeriesType>
+						<timeStep unit="nonequidistant"/>
 						<readWriteMode>add originals</readWriteMode>
 					</timeSeriesSet>
 				</timeSeriesSets>

@@ -6,19 +6,25 @@ http://fews.wldelft.nl/schemas/version1.0/gridDisplay.xsd">
 		<geoMap>
 			<geoDatum>WGS 1984</geoDatum>
 			<projection>web_mercator</projection>
-			<defaultExtent id="Alberta" name="Alberta">
+			<defaultExtent id="YukonRiverBasin" name="Yukon River Basin">
+				<left>-165</left>
+				<right>-128</right>
+				<top>70</top>
+				<bottom>58</bottom>
+			</defaultExtent>
+			<extraExtent id="Alberta" name="Alberta">
 				<left>-128</left>
 				<right>-107</right>
 				<top>58</top>
 				<bottom>49.5</bottom>
-			</defaultExtent>
+			</extraExtent>
 			<extraExtent id="Bow Watershed">
 				<left>-117</left>
 				<right>-111</right>
 				<top>53</top>
 				<bottom>50</bottom>
 			</extraExtent>
-			<extraExtent id="Canada">
+			<extraExtent id="North America">
 				<left>-152</left>
 				<right>-47</right>
 				<top>40</top>
@@ -105,6 +111,49 @@ http://fews.wldelft.nl/schemas/version1.0/gridDisplay.xsd">
 					<int key="tileSize" value="256"/>
 				</properties>
 			</layer>
+			<esriShapeLayer id="Yukon River Basin">
+				<description>Yukon River Basin</description>
+				<file>Yukon_River_Basin.shp</file>
+				<geoDatum>WGS 1984</geoDatum>
+				<visible>true</visible>
+				<lineColor>black</lineColor>
+				<fillRgbColor>FFFFFF</fillRgbColor>
+				<opaquenessPercentage>20</opaquenessPercentage>
+			</esriShapeLayer>
+			<esriShapeLayer id="Chena Near Two Rivers Basins">
+				<description>Chena_Near_Two_Rivers_Basins</description>
+				<file>Chena_Near_Two_Rivers_Basins_WGS84.shp</file>
+				<geoDatum>WGS 1984</geoDatum>
+				<visible>true</visible>
+				<lineColor>black</lineColor>
+				<fillRgbColor>FFFFFF</fillRgbColor>
+				<opaquenessPercentage>20</opaquenessPercentage>
+			</esriShapeLayer>
+			<esriShapeLayer id="Chena Near Two Rivers Network">
+				<description>Chena Near Two Rivers Network</description>
+				<file>Chena_Near_Two_Rivers_Network_WGS84.shp</file>
+				<geoDatum>WGS 1984</geoDatum>
+				<visible>true</visible>
+				<lineColor>blue</lineColor>
+				<opaquenessPercentage>10</opaquenessPercentage>
+			</esriShapeLayer>
+			<esriShapeLayer id="Ross Basins">
+				<description>Ross Basins</description>
+				<file>Ross_basins.shp</file>
+				<geoDatum>WGS 1984</geoDatum>
+				<visible>true</visible>
+				<lineColor>black</lineColor>
+				<fillRgbColor>FFFFFF</fillRgbColor>
+				<opaquenessPercentage>20</opaquenessPercentage>
+			</esriShapeLayer>
+			<esriShapeLayer id="Ross Network">
+				<description>Ross Network</description>
+				<file>Ross_network.shp</file>
+				<geoDatum>WGS 1984</geoDatum>
+				<visible>true</visible>
+				<lineColor>blue</lineColor>
+				<opaquenessPercentage>10</opaquenessPercentage>
+			</esriShapeLayer>
 			<esriShapeLayer id="Bow Basins">
 				<description>Bow Basins</description>
 				<file>Bow_Basins.shp</file>
@@ -131,7 +180,7 @@ http://fews.wldelft.nl/schemas/version1.0/gridDisplay.xsd">
 				<geoDatum>WGS 1984</geoDatum>
 				<visible>true</visible>
 				<lineColor>blue</lineColor>
-				<opaquenessPercentage>50</opaquenessPercentage>
+				<opaquenessPercentage>10</opaquenessPercentage>
 			</esriShapeLayer>
 			<esriShapeLayer id="World Countries">
 				<description>World</description>
@@ -150,7 +199,7 @@ http://fews.wldelft.nl/schemas/version1.0/gridDisplay.xsd">
 		<commentPositioning>topLeft</commentPositioning>
 	</defaults>
 	<gridPlotGroup id="WSC_Scalar_Download" name="Hydro Stations">
-		<gridPlot id="RecentObservedDischarge" name="Recent Discharge[m3/s]">
+		<gridPlot id="RecentObservedDischargeWSC" name="WSC Discharge [m3/s]">
 			<timeSeriesSet>
 				<moduleInstanceId>ImportWSC</moduleInstanceId>
 				<valueType>scalar</valueType>
@@ -159,26 +208,40 @@ http://fews.wldelft.nl/schemas/version1.0/gridDisplay.xsd">
 				<timeSeriesType>external historical</timeSeriesType>
 				<timeStep unit="minute" multiplier="5"/>
 				<relativeViewPeriod unit="day" start="-30" end="0"/>
+				<readWriteMode>read complete forecast</readWriteMode>
+			</timeSeriesSet>
+			<showThumbnailsPanel>false</showThumbnailsPanel>
+			<classBreaksId>Class.Discharge</classBreaksId>
+		</gridPlot>
+		<gridPlot id="RecentObservedDischargeUSGS" name="USGS Discharge [m3/s]">
+			<timeSeriesSet>
+				<moduleInstanceId>ImportUSGS</moduleInstanceId>
+				<valueType>scalar</valueType>
+				<parameterId>QR.obs</parameterId>
+				<locationSetId>USGSStations</locationSetId>
+				<timeSeriesType>external historical</timeSeriesType>
+				<timeStep unit="minute" multiplier="15"/>
+				<relativeViewPeriod unit="day" start="-30" end="0"/>
 				<readWriteMode>add originals</readWriteMode>
 			</timeSeriesSet>
 			<showThumbnailsPanel>false</showThumbnailsPanel>
 			<classBreaksId>Class.Discharge</classBreaksId>
 		</gridPlot>
-		<gridPlot id="HistoricObservedDischarge" name="Historic Daily Discharge  [m3/s]">
+		<gridPlot id="HistoricObservedDischargeWSC" name="Yukon Historic Discharge  [m3/s]">
 			<timeSeriesSet>
 				<moduleInstanceId>ImportWSC</moduleInstanceId>
 				<valueType>scalar</valueType>
 				<parameterId>QR.obs</parameterId>
 				<locationSetId>DisplayHydroStations</locationSetId>
 				<timeSeriesType>external historical</timeSeriesType>
-				<timeStep id="$DAY_TIMESTEP$"/>
+				<timeStep unit="day"/>
 				<readWriteMode>read complete forecast</readWriteMode>
 			</timeSeriesSet>
 			<showThumbnailsPanel>false</showThumbnailsPanel>
 			<classBreaksId>Class.Discharge</classBreaksId>
 		</gridPlot>
 	</gridPlotGroup>
-	<gridPlotGroup id="ECCC_Scalar_Download" name="Meteo Stations">
+	<gridPlotGroup id="ECCC_Scalar_Download" name="ECCC Meteo Stations">
 		<gridPlot id="PrecipitationECCC" name="Precipitation Daily @ Stations [mm]">
 			<dataLayer>
 				<onlyCircles>false</onlyCircles>
@@ -242,7 +305,107 @@ http://fews.wldelft.nl/schemas/version1.0/gridDisplay.xsd">
 			<classBreaksId>Class.Temperature</classBreaksId>
 		</gridPlot>
 	</gridPlotGroup>
-	<gridPlotGroup id="Radar" name="Radar">
+	<gridPlotGroup id="SNOTEL_Scalar_Download" name="SNOTEL Stations">
+		<gridPlot id="PrecipitationSNOTEL" name="Precipitation Daily @ Stations [mm]">
+			<dataLayer>
+				<onlyCircles>false</onlyCircles>
+				<circleSizeFunction>12</circleSizeFunction>
+				<circleBorderSize>1</circleBorderSize>
+				<circleBorderColor>gray</circleBorderColor>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportSNOTEL</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>PC.obs</parameterId>
+					<locationSetId>SNOTELStationsAlaska</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="day"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</dataLayer>
+			<showThumbnailsPanel>false</showThumbnailsPanel>
+			<movieFrameDurationMillis>200</movieFrameDurationMillis>
+			<movingAccumulationTimeSpan unit="day" multiplier="1"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="2"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="3"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="4"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="5"/>
+			<movingAccumulationTimeSpan unit="day" multiplier="8"/>
+			<classBreaksId>Class.Precipitation</classBreaksId>
+		</gridPlot>
+		<gridPlot id="TemperatureSNOTEL" name="Temperature @ Stations [oC]">
+			<dataLayer>
+				<onlyCircles>false</onlyCircles>
+				<circleSizeFunction>12</circleSizeFunction>
+				<circleBorderSize>1</circleBorderSize>
+				<circleBorderColor>gray</circleBorderColor>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportSNOTEL</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>TA.obs</parameterId>
+					<locationSetId>SNOTELStationsAlaska</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="day"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</dataLayer>
+			<classBreaksId>Class.Temperature</classBreaksId>
+		</gridPlot>
+		<gridPlot id="SWESNOTEL" name="Temperature Min Daily @ Stations [oC]">
+			<dataLayer>
+				<onlyCircles>false</onlyCircles>
+				<circleSizeFunction>12</circleSizeFunction>
+				<circleBorderSize>1</circleBorderSize>
+				<circleBorderColor>gray</circleBorderColor>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportSNOTEL</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>SWE.obs</parameterId>
+					<locationSetId>SNOTELStationsAlaska</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="day"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</dataLayer>
+			<classBreaksId>Class.Temperature</classBreaksId>
+		</gridPlot>
+		<gridPlot id="SDSNOTEL" name="Temperature Min Daily @ Stations [oC]">
+			<dataLayer>
+				<onlyCircles>false</onlyCircles>
+				<circleSizeFunction>12</circleSizeFunction>
+				<circleBorderSize>1</circleBorderSize>
+				<circleBorderColor>gray</circleBorderColor>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportSNOTEL</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>SD.obs</parameterId>
+					<locationSetId>SNOTELStationsAlaska</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="day"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</dataLayer>
+			<classBreaksId>Class.Temperature</classBreaksId>
+		</gridPlot>
+		<gridPlot id="WindSpeedSNOTEL" name="Temperature Min Daily @ Stations [oC]">
+			<dataLayer>
+				<onlyCircles>false</onlyCircles>
+				<circleSizeFunction>12</circleSizeFunction>
+				<circleBorderSize>1</circleBorderSize>
+				<circleBorderColor>gray</circleBorderColor>
+				<timeSeriesSet>
+					<moduleInstanceId>ImportSNOTEL</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>US.obs</parameterId>
+					<locationSetId>SNOTELStationsAlaska</locationSetId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="day"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+			</dataLayer>
+			<classBreaksId>Class.Temperature</classBreaksId>
+		</gridPlot>
+	</gridPlotGroup>
+	<gridPlotGroup id="Radar" name="Radar Products">
 		<gridPlot id="MSC_Radar" name="Radar North American Composite">
 			<timeSeriesSet>
 				<moduleInstanceId>ImportECCCRadarComposite</moduleInstanceId>
@@ -251,13 +414,27 @@ http://fews.wldelft.nl/schemas/version1.0/gridDisplay.xsd">
 				<locationId>ECCCRadarComposite</locationId>
 				<timeSeriesType>external historical</timeSeriesType>
 				<timeStep unit="minute" multiplier="6"/>
-				<relativeViewPeriod unit="hour" start="-24" end="1"/>
+				<relativeViewPeriod unit="hour" start="-3" end="1"/>
+				<readWriteMode>add originals</readWriteMode>
+			</timeSeriesSet>
+			<classBreaksId>PrecipitationRadarMSC</classBreaksId>
+		</gridPlot>
+		<gridPlot id="MRMS_Radar" name="MRMS">
+			<timeSeriesSet>
+				<moduleInstanceId>ImportMRMS</moduleInstanceId>
+				<valueType>grid</valueType>
+				<parameterId>PC.sim</parameterId>
+				<locationId>MRMS</locationId>
+				<timeSeriesType>external historical</timeSeriesType>
+				<timeStep unit="hour" multiplier="1"/>
+				<relativeViewPeriod unit="hour" start="-3" end="1"/>
 				<readWriteMode>add originals</readWriteMode>
 			</timeSeriesSet>
 			<classBreaksId>PrecipitationRadarMSC</classBreaksId>
 		</gridPlot>
 	</gridPlotGroup>
 	<gridPlotGroup id="ECCC_Nowcast" name="Nowcasting">
+		<viewPermission>AlbertaForecaster</viewPermission>
 		<gridPlot id="ECCCRadarNowcastSTEPS" name="STEPS radar nowcast">
 			<timeSeriesSet>
 				<moduleInstanceId>ECCCRadarNowcastSTEPS</moduleInstanceId>
@@ -323,7 +500,7 @@ http://fews.wldelft.nl/schemas/version1.0/gridDisplay.xsd">
 			</gridPlot>
 		</gridPlotGroup>
 	</gridPlotGroup>
-	<gridPlotGroup id="ECCC_Forecast" name="NWP Forecast Grids">
+	<gridPlotGroup id="ECCC_Forecast" name="ECCC NWP Forecast Grids">
 		<gridPlotGroup id="HRDPS" name="HRDPS Forecast">
 			<gridPlot id="HRDPSPrecipitation " name="Precipitation (mm)">
 				<timeSeriesSet>
@@ -474,7 +651,347 @@ http://fews.wldelft.nl/schemas/version1.0/gridDisplay.xsd">
 			</gridPlot>
 		</gridPlotGroup>
 	</gridPlotGroup>
-	<gridPlotGroup id="ECCC_Processed" name="Catchment Data">
+	<gridPlotGroup id="NOAA_Forecast" name="NOAA NWP Forecast Grids">
+		<gridPlotGroup id="HRRR" name="HRRR Forecast">
+			<gridPlot id="HRRRPrecipitation " name="Precipitation (mm)">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportHRRR</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>PC.nwp</parameterId>
+					<locationId>HRRR</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.Precipitation</classBreaksId>
+			</gridPlot>
+			<gridPlot id="HRRRTemperature " name="Temperature (C)">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportHRRR</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>TA.nwp</parameterId>
+					<locationId>HRRR</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.Temperature</classBreaksId>
+			</gridPlot>
+		</gridPlotGroup>
+		<gridPlotGroup id="NAM" name="NAM Forecast">
+			<gridPlot id="NAMPrecipitation " name="Precipitation (mm)">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportNAM</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>PC.nwp</parameterId>
+					<locationId>NAM</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.Precipitation</classBreaksId>
+			</gridPlot>
+			<gridPlot id="NAMTemperature " name="Temperature (C)">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportNAM</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>TA.nwp</parameterId>
+					<locationId>NAM</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.Temperature</classBreaksId>
+			</gridPlot>
+		</gridPlotGroup>
+		<gridPlotGroup id="GFS" name="GFS Forecast">
+			<gridPlot id="GFSPrecipitation " name="Precipitation (mm)">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportGFS</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>PC.nwp</parameterId>
+					<locationId>GFS</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.Precipitation</classBreaksId>
+			</gridPlot>
+			<gridPlot id="GFSTemperature " name="Temperature (C)">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportGFS</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>TA.nwp</parameterId>
+					<locationId>GFS</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.Temperature</classBreaksId>
+			</gridPlot>
+		</gridPlotGroup>
+	</gridPlotGroup>
+	<gridPlotGroup id="ERA5" name="ERA5">
+		<gridPlotGroup id="ERA5Yukon" name="ERA5 Yukon">
+			<gridPlot id="ERA5YukonPrecip" name="Precipitation (mm)">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportERA5</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>PC</parameterId>
+					<locationId>ERA5Yukon</locationId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="hour"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.Precipitation</classBreaksId>
+			</gridPlot>
+			<gridPlot id="ERA5YukonTemperature " name="Temperature (C)">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportERA5</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>TA</parameterId>
+					<locationId>ERA5Yukon</locationId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="hour"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.Temperature</classBreaksId>
+			</gridPlot>
+			<gridPlot id="ERA5YukonPressure" name="Pressure (kPA)">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportERA5</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>PA</parameterId>
+					<locationId>ERA5Yukon</locationId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.Pressure</classBreaksId>
+			</gridPlot>
+			<gridPlot id="ERA5YukonRelativeHumidity" name="Relative Humidity (kg/kg)">
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessERA5</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>TA</parameterId>
+					<locationId>ERA5Yukon</locationId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="hour"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.SpecificHumidity</classBreaksId>
+			</gridPlot>
+			<gridPlot id="ERA5YukonWindSpeed" name="Wind Speed (m/s)">
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessERA5</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>US</parameterId>
+					<locationId>ERA5Yukon</locationId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="hour"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.Windspeed</classBreaksId>
+			</gridPlot>
+			<gridPlot id="ERA5YukonLongRadiation" name="Longwave Radiation (W/ms-h)">
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessERA5</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>RL</parameterId>
+					<locationId>ERA5Yukon</locationId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="hour"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.ShortWaveRadiation</classBreaksId>
+			</gridPlot>
+			<gridPlot id="ERA5YukonShortRadiation" name="Shortwave Radiation (W/ms-h)">
+				<timeSeriesSet>
+					<moduleInstanceId>PreprocessERA5</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>RS</parameterId>
+					<locationId>ERA5Yukon</locationId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="hour"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.LongWaveRadiation</classBreaksId>
+			</gridPlot>
+		</gridPlotGroup>
+		<gridPlotGroup id="ERA5Chena" name="ERA5 Chena">
+			<gridPlot id="ERA5ChenaPrecip" name="Precipitation (mm)">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportERA5</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>PC</parameterId>
+					<locationId>ERA5Chena</locationId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="hour"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.Precipitation</classBreaksId>
+			</gridPlot>
+			<gridPlot id="ERA5ChenaTemperature " name="Temperature (C)">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportERA5</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>TA</parameterId>
+					<locationId>ERA5Chena</locationId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="hour"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.Temperature</classBreaksId>
+			</gridPlot>
+			<gridPlot id="ERA5ChenaPressure" name="Pressure (kPA)">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportERA5</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>PA</parameterId>
+					<locationId>ERA5Chena</locationId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="hour"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.Pressure</classBreaksId>
+			</gridPlot>
+			<gridPlot id="ERA5ChenaRelativeHumidity" name="Relative Humidity (kg/kg)">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportERA5</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>RH</parameterId>
+					<locationId>ERA5Chena</locationId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="hour"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.SpecificHumidity</classBreaksId>
+			</gridPlot>
+			<gridPlot id="ERA5ChenaWindSpeed" name="Wind Speed (m/s)">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportERA5</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>US</parameterId>
+					<locationId>ERA5Chena</locationId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="hour"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.Windspeed</classBreaksId>
+			</gridPlot>
+			<gridPlot id="ERA5ChenaLongRadiation" name="Longwave Radiation (W/ms-h)">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportERA5</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>RL</parameterId>
+					<locationId>ERA5Chena</locationId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="hour"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.ShortWaveRadiation</classBreaksId>
+			</gridPlot>
+			<gridPlot id="ERA5ChenaShortRadiation" name="Shortwave Radiation (W/ms-h)">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportERA5</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>RS</parameterId>
+					<locationId>ERA5Chena</locationId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="hour"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.LongWaveRadiation</classBreaksId>
+			</gridPlot>
+		</gridPlotGroup>
+		<gridPlotGroup id="ERA5Ross" name="ERA5 Ross">
+			<gridPlot id="ERA5RossPrecip" name="Precipitation (mm)">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportERA5</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>PC</parameterId>
+					<locationId>ERA5Ross</locationId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="hour"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.Precipitation</classBreaksId>
+			</gridPlot>
+			<gridPlot id="ERA5RossTemperature " name="Temperature (C)">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportERA5</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>TA</parameterId>
+					<locationId>ERA5Ross</locationId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="hour"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.Temperature</classBreaksId>
+			</gridPlot>
+			<gridPlot id="ERA5RossPressure" name="Pressure (kPA)">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportERA5</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>PA</parameterId>
+					<locationId>ERA5Ross</locationId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="hour"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.Pressure</classBreaksId>
+			</gridPlot>
+			<gridPlot id="ERA5RossRelativeHumidity" name="Relative Humidity (kg/kg)">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportERA5</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>RH</parameterId>
+					<locationId>ERA5Ross</locationId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="hour"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.SpecificHumidity</classBreaksId>
+			</gridPlot>
+			<gridPlot id="ERA5RossWindSpeed" name="Wind Speed (m/s)">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportERA5</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>US</parameterId>
+					<locationId>ERA5Ross</locationId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="hour"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.Windspeed</classBreaksId>
+			</gridPlot>
+			<gridPlot id="ERA5RossLongRadiation" name="Longwave Radiation (W/ms-h)">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportERA5</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>RL</parameterId>
+					<locationId>ERA5Ross</locationId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="hour"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.ShortWaveRadiation</classBreaksId>
+			</gridPlot>
+			<gridPlot id="ERA5RossShortRadiation" name="Shortwave Radiation (W/ms-h)">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportERA5</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>RS</parameterId>
+					<locationId>ERA5Ross</locationId>
+					<timeSeriesType>external historical</timeSeriesType>
+					<timeStep unit="hour"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.LongWaveRadiation</classBreaksId>
+			</gridPlot>
+		</gridPlotGroup>
+	</gridPlotGroup>
+	<gridPlotGroup id="ECCC_Processed" name="ECCC Catchment Data">
 		<gridPlotGroup id="HRDPAPreprocess" name="HRDPA">
 			<gridPlot id="HRDPAPreprocessPrecipitation" name="Precipitation [mm]">
 				<timeSeriesSet>
@@ -676,6 +1193,7 @@ http://fews.wldelft.nl/schemas/version1.0/gridDisplay.xsd">
 			</gridPlot>
 		</gridPlotGroup>
 		<gridPlotGroup id="Snowcast" name="Snowcast">
+			<viewPermission>AlbertaForecaster</viewPermission>
 			<gridPlot id="Snow Water Equivalent - Snowcast [mm]">
 				<timeSeriesSet>
 					<moduleInstanceId>ImportSnowcast</moduleInstanceId>
@@ -820,6 +1338,7 @@ http://fews.wldelft.nl/schemas/version1.0/gridDisplay.xsd">
 		</gridPlotGroup>
 	</gridPlotGroup>
 	<gridPlotGroup id="BowRavenResults" name="Bow Raven Results">
+		<viewPermission>AlbertaForecaster</viewPermission>
 		<gridPlotGroup id="BowRavenHistoric" name="Historic Model Run">
 			<gridPlotGroup id="HistoricInputBowRaven" name="Input Data">
 				<gridPlot id="HistoricPrecipitationInputBowRaven" name="Precipitation (mm)">
@@ -1184,6 +1703,7 @@ http://fews.wldelft.nl/schemas/version1.0/gridDisplay.xsd">
 		</gridPlotGroup>
 	</gridPlotGroup>
 	<gridPlotGroup id="BowSUMMAResults" name="Bow SUMMA Results">
+		<viewPermission>AlbertaForecaster</viewPermission>
 		<gridPlotGroup id="BowSUMMAHistoric" name="Historic Model Run">
 			<gridPlotGroup id="HistoricInputBowSUMMA" name="Input Data (ERA5)">
 				<gridPlot id="ERA5PrecipitationInputBowSUMMA" name="Precipitation (mm)">
@@ -1225,6 +1745,434 @@ http://fews.wldelft.nl/schemas/version1.0/gridDisplay.xsd">
 					<classBreaksId>Class.SWE</classBreaksId>
 				</gridPlot>
 			</gridPlotGroup>
+		</gridPlotGroup>
+	</gridPlotGroup>
+	<gridPlotGroup id="ChenaSUMMAResults" name="Chena SUMMA Results">
+		<gridPlotGroup id="ChenaSUMMAHistoric" name="Historic Model Run">
+			<gridPlotGroup id="HistoricInputChenaSUMMA" name="Input Data (ERA5)">
+				<gridPlot id="ERA5PrecipitationInputChenaSUMMA" name="Precipitation (mm)">
+					<timeSeriesSet>
+						<moduleInstanceId>PreprocessERA5</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>PC</parameterId>
+						<locationSetId>ModelBasins</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<classBreaksId>Class.Precipitation</classBreaksId>
+				</gridPlot>
+				<gridPlot id="ERA5TemperatureInputChenaSUMMA" name="Temperature (degC)">
+					<timeSeriesSet>
+						<moduleInstanceId>PreprocessERA5</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>TA</parameterId>
+						<locationSetId>ModelBasins</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<classBreaksId>Class.Temperature</classBreaksId>
+				</gridPlot>
+				<gridPlot id="ERA5PressureInputChenaSUMMA" name="Pressure (degC)">
+					<timeSeriesSet>
+						<moduleInstanceId>PreprocessERA5</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>PA</parameterId>
+						<locationSetId>ModelBasins</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<classBreaksId>Class.Pressure</classBreaksId>
+				</gridPlot>
+				<gridPlot id="ERA5RelativeHumidityInputChenaSUMMA" name="Relative Humidity (kg/kg)">
+					<timeSeriesSet>
+						<moduleInstanceId>PreprocessERA5</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>TA</parameterId>
+						<locationSetId>ModelBasins</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<classBreaksId>Class.SpecificHumidity</classBreaksId>
+				</gridPlot>
+				<gridPlot id="ERA5WindSpeedInputChenaSUMMA" name="Wind Speed (m/s)">
+					<timeSeriesSet>
+						<moduleInstanceId>PreprocessERA5</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>US</parameterId>
+						<locationSetId>ModelBasins</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<classBreaksId>Class.Windspeed</classBreaksId>
+				</gridPlot>
+				<gridPlot id="ERA5Long RadiationInputChenaSUMMA" name="Longwave Radiation (W/ms-h)">
+					<timeSeriesSet>
+						<moduleInstanceId>PreprocessERA5</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>RL</parameterId>
+						<locationSetId>ModelBasins</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<classBreaksId>Class.ShortWaveRadiation</classBreaksId>
+				</gridPlot>
+				<gridPlot id="ERA5ShortRadiationInputChenaSUMMA" name="Shortwave Radiation (W/ms-h)">
+					<timeSeriesSet>
+						<moduleInstanceId>PreprocessERA5</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>RS</parameterId>
+						<locationSetId>ModelBasins</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<classBreaksId>Class.LongWaveRadiation</classBreaksId>
+				</gridPlot>
+			</gridPlotGroup>
+			<gridPlotGroup id="HistoricResultChenaSUMMA" name="Historic Results">
+				<gridPlot id="HistoricResultQRChenaSUMMA" name="QR [m3/s]">
+					<timeSeriesSet>
+						<moduleInstanceId>ChenaSUMMAHistoric</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>QR.sim</parameterId>
+						<locationSetId>ChenaSubBasins</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour" multiplier="1"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<classBreaksId>Class.Discharge</classBreaksId>
+				</gridPlot>
+				<gridPlot id="HistoricResultSWEChenaSUMMA" name="SWE [mm]">
+					<timeSeriesSet>
+						<moduleInstanceId>ChenaSUMMAHistoric</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>SWE.sim</parameterId>
+						<locationSetId>ChenaSubBasins</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour" multiplier="1"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<classBreaksId>Class.SWE</classBreaksId>
+				</gridPlot>
+				<gridPlot id="HistoricResultSDChenaSUMMA" name="SD [m]">
+					<timeSeriesSet>
+						<moduleInstanceId>ChenaSUMMAHistoric</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>SD.sim</parameterId>
+						<locationSetId>ChenaSubBasins</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour" multiplier="1"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<classBreaksId>Class.SD</classBreaksId>
+				</gridPlot>
+				<gridPlot id="HistoricResultSCAEChenaSUMMA" name="SCA [%]">
+					<timeSeriesSet>
+						<moduleInstanceId>ChenaSUMMAHistoric</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>SCA.sim</parameterId>
+						<locationSetId>ChenaSubBasins</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour" multiplier="1"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<!--<classBreaksId>Class.SWE</classBreaksId>-->
+				</gridPlot>
+				<gridPlot id="HistoricResultRTChenaSUMMA" name="Total Radiation">
+					<timeSeriesSet>
+						<moduleInstanceId>ChenaSUMMAHistoric</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>RT.sim</parameterId>
+						<locationSetId>ChenaSubBasins</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour" multiplier="1"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<!--<classBreaksId>Class.SWE</classBreaksId-->
+				</gridPlot>
+			</gridPlotGroup>
+		</gridPlotGroup>
+		<gridPlotGroup id="GDPSResultChenaSUMMA" name="GDPS Forecast Results">
+			<gridPlot id="ForecastGDPSResultQRChenaSUMMA" name="QR [m3/s]">
+				<timeSeriesSet>
+					<moduleInstanceId>ChenaSUMMAGDPSForecast</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.sim</parameterId>
+					<locationSetId>ChenaSubBasins</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.Discharge</classBreaksId>
+			</gridPlot>
+			<gridPlot id="ForecastGDPSResultSWEChenaSUMMA" name="SWE [mm]">
+				<timeSeriesSet>
+					<moduleInstanceId>ChenaSUMMAGDPSForecast</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>SWE.sim</parameterId>
+					<locationSetId>ChenaSubBasins</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.SWE</classBreaksId>
+			</gridPlot>
+			<gridPlot id="ForecastGDPSResultSDChenaSUMMA" name="SD [m]">
+				<timeSeriesSet>
+					<moduleInstanceId>ChenaSUMMAGDPSForecast</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>SD.sim</parameterId>
+					<locationSetId>ChenaSubBasins</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.SD</classBreaksId>
+			</gridPlot>
+			<gridPlot id="ForecastGDPSResultSCAEChenaSUMMA" name="SCA [%]">
+				<timeSeriesSet>
+					<moduleInstanceId>ChenaSUMMAGDPSForecast</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>SCA.sim</parameterId>
+					<locationSetId>ChenaSubBasins</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<!--<classBreaksId>Class.SWE</classBreaksId>-->
+			</gridPlot>
+			<gridPlot id="ForecastGDPSResultRTChenaSUMMA" name="Total Radiation">
+				<timeSeriesSet>
+					<moduleInstanceId>ChenaSUMMAGDPSForecast</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>RT.sim</parameterId>
+					<locationSetId>ChenaSubBasins</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<!--<classBreaksId>Class.SWE</classBreaksId-->
+			</gridPlot>
+		</gridPlotGroup>
+	</gridPlotGroup>
+	<gridPlotGroup id="RossSUMMAResults" name="Ross SUMMA Results">
+		<gridPlotGroup id="RossSUMMAHistoric" name="Historic Model Run">
+			<gridPlotGroup id="HistoricInputRossSUMMA" name="Input Data (ERA5)">
+				<gridPlot id="ERA5PrecipitationInputRossSUMMA" name="Precipitation (mm)">
+					<timeSeriesSet>
+						<moduleInstanceId>PreprocessERA5</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>PC</parameterId>
+						<locationSetId>ModelBasins</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<classBreaksId>Class.Precipitation</classBreaksId>
+				</gridPlot>
+				<gridPlot id="ERA5TemperatureInputRossSUMMA" name="Temperature (degC)">
+					<timeSeriesSet>
+						<moduleInstanceId>PreprocessERA5</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>TA</parameterId>
+						<locationSetId>ModelBasins</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<classBreaksId>Class.Temperature</classBreaksId>
+				</gridPlot>
+				<gridPlot id="ERA5PressureInputRossSUMMA" name="Pressure (degC)">
+					<timeSeriesSet>
+						<moduleInstanceId>PreprocessERA5</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>PA</parameterId>
+						<locationSetId>ModelBasins</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<classBreaksId>Class.Pressure</classBreaksId>
+				</gridPlot>
+				<gridPlot id="ERA5RelativeHumidityInputRossSUMMA" name="Relative Humidity (kg/kg)">
+					<timeSeriesSet>
+						<moduleInstanceId>PreprocessERA5</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>TA</parameterId>
+						<locationSetId>ModelBasins</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<classBreaksId>Class.SpecificHumidity</classBreaksId>
+				</gridPlot>
+				<gridPlot id="ERA5WindSpeedInputRossSUMMA" name="Wind Speed (m/s)">
+					<timeSeriesSet>
+						<moduleInstanceId>PreprocessERA5</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>US</parameterId>
+						<locationSetId>ModelBasins</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<classBreaksId>Class.Windspeed</classBreaksId>
+				</gridPlot>
+				<gridPlot id="ERA5Long RadiationInputRossSUMMA" name="Longwave Radiation (W/ms-h)">
+					<timeSeriesSet>
+						<moduleInstanceId>PreprocessERA5</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>RL</parameterId>
+						<locationSetId>ModelBasins</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<classBreaksId>Class.ShortWaveRadiation</classBreaksId>
+				</gridPlot>
+				<gridPlot id="ERA5ShortRadiationInputRossSUMMA" name="Shortwave Radiation (W/ms-h)">
+					<timeSeriesSet>
+						<moduleInstanceId>PreprocessERA5</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>RS</parameterId>
+						<locationSetId>ModelBasins</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<classBreaksId>Class.LongWaveRadiation</classBreaksId>
+				</gridPlot>
+			</gridPlotGroup>
+			<gridPlotGroup id="HistoricResultRossSUMMA" name="Historic Results">
+				<gridPlot id="HistoricResultQRRossSUMMA" name="QR [m3/s]">
+					<timeSeriesSet>
+						<moduleInstanceId>RossSUMMAHistoric</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>QR.sim</parameterId>
+						<locationSetId>RossSubBasins</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour" multiplier="1"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<classBreaksId>Class.Discharge</classBreaksId>
+				</gridPlot>
+				<gridPlot id="HistoricResultSWERossSUMMA" name="SWE [mm]">
+					<timeSeriesSet>
+						<moduleInstanceId>RossSUMMAHistoric</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>SWE.sim</parameterId>
+						<locationSetId>RossSubBasins</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour" multiplier="1"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<classBreaksId>Class.SWE</classBreaksId>
+				</gridPlot>
+				<gridPlot id="HistoricResultSDRossSUMMA" name="SD [m]">
+					<timeSeriesSet>
+						<moduleInstanceId>RossSUMMAHistoric</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>SD.sim</parameterId>
+						<locationSetId>RossSubBasins</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour" multiplier="1"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<classBreaksId>Class.SD</classBreaksId>
+				</gridPlot>
+				<gridPlot id="HistoricResultSCAERossSUMMA" name="SCA [%]">
+					<timeSeriesSet>
+						<moduleInstanceId>RossSUMMAHistoric</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>SCA.sim</parameterId>
+						<locationSetId>RossSubBasins</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour" multiplier="1"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<!--<classBreaksId>Class.SWE</classBreaksId>-->
+				</gridPlot>
+				<gridPlot id="HistoricResultRTRossSUMMA" name="Total Radiation">
+					<timeSeriesSet>
+						<moduleInstanceId>RossSUMMAHistoric</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>RT.sim</parameterId>
+						<locationSetId>RossSubBasins</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour" multiplier="1"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<!--<classBreaksId>Class.SWE</classBreaksId>-->
+				</gridPlot>
+			</gridPlotGroup>
+		</gridPlotGroup>
+		<gridPlotGroup id="GDPSResultRossSUMMA" name="GDPS Forecast Results">
+			<gridPlot id="ForecastGDPSResultQRRossSUMMA" name="QR [m3/s]">
+				<timeSeriesSet>
+					<moduleInstanceId>RossSUMMAGDPSForecast</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>QR.sim</parameterId>
+					<locationSetId>RossSubBasins</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.Discharge</classBreaksId>
+			</gridPlot>
+			<gridPlot id="ForecastGDPSResultSWERossSUMMA" name="SWE [mm]">
+				<timeSeriesSet>
+					<moduleInstanceId>RossSUMMAGDPSForecast</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>SWE.sim</parameterId>
+					<locationSetId>RossSubBasins</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.SWE</classBreaksId>
+			</gridPlot>
+			<gridPlot id="ForecastGDPSResultSDRossSUMMA" name="SD [m]">
+				<timeSeriesSet>
+					<moduleInstanceId>RossSUMMAGDPSForecast</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>SD.sim</parameterId>
+					<locationSetId>RossSubBasins</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.SD</classBreaksId>
+			</gridPlot>
+			<gridPlot id="ForecastGDPSResultSCAERossSUMMA" name="SCA [%]">
+				<timeSeriesSet>
+					<moduleInstanceId>RossSUMMAGDPSForecast</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>SCA.sim</parameterId>
+					<locationSetId>RossSubBasins</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<!--<classBreaksId>Class.SWE</classBreaksId>-->
+			</gridPlot>
+			<gridPlot id="ForecastGDPSResultRTRossSUMMA" name="Total Radiation">
+				<timeSeriesSet>
+					<moduleInstanceId>RossSUMMAGDPSForecast</moduleInstanceId>
+					<valueType>scalar</valueType>
+					<parameterId>RT.sim</parameterId>
+					<locationSetId>RossSubBasins</locationSetId>
+					<timeSeriesType>simulated forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="3"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<!--<classBreaksId>Class.SWE</classBreaksId-->
+			</gridPlot>
 		</gridPlotGroup>
 	</gridPlotGroup>
 </gridDisplay>

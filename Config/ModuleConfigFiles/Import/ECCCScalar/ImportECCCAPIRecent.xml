@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews
+http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
+	<import>
+		<general>
+			<importType>generalCSV</importType>
+			<folder>%REGION_HOME%/Import/ECCCAPI/hydrometric-realtime/</folder>
+			<fileNamePatternFilter>$LOOP_LOCATION_ID$.csv</fileNamePatternFilter>
+			<table>
+				<dateTimeColumn name="DATETIME" pattern="yyyy-MM-dd'T'HH:mm:ss'Z'"/>
+				<valueColumn name="DISCHARGE" unit="m3/s" parameterId="QR.obs"/>
+				<valueColumn name="LEVEL" unit="m" parameterId="HG.obs"/>
+			</table>
+			<idMapId>IdImportWSC</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<importTimeZone>
+				<timeZoneName>$TIMEZONE$</timeZoneName>
+			</importTimeZone>
+			<expiryTime unit="day" multiplier="365"/>
+			<!--<skipFirstLinesCount>0</skipFirstLinesCount>-->
+		</general>
+		<tolerance timeUnit="day" unitCount="1" parameterId="QR.obs"/>
+		<tolerance timeUnit="day" unitCount="1" parameterId="HG.obs"/>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportWSC</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.obs</parameterId>
+			<locationId>$LOOP_LOCATION_ID$</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="5"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportWSC</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>HG.obs</parameterId>
+			<locationId>$LOOP_LOCATION_ID$</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="5"/>
+			<readWriteMode>read complete forecast</readWriteMode>
+		</timeSeriesSet>
+	</import>
+</timeSeriesImportRun>

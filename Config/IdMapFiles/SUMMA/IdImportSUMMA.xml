@@ -4,9 +4,32 @@
 	<!-- Simulated Discharge Mapping -->
 	<!--<function internalLocationSet="BowBasins" externalLocationFunction="@Basin@" externalParameterFunction="averageRoutedRunoff" internalParameter="QR.sim"/>-->
 	<!-- Custom Output Mapping -->
-
-	<parameter internal="SWE.sim" external="scalarSWE"/>
-	<locationIdFunction internalLocationSet="BowSubBasins" externalLocationFunction="@HRU@"/>
+	<!--	<parameter internal="SWE.sim" external="scalarSWE"/>
+	<parameter internal="QR.sim" external="averageRoutedRunoff"/>
+	<parameter internal="SD.sim" external="scalarSnowDepth"/>
+	<parameter internal="RT.sim" external="scalarNetRadiation"/>
+	<parameter internal="SCA.sim" external="scalarGroundSnowFraction"/>
+	<locationIdFunction internalLocationSet="ChenaSubBasins" externalLocationFunction="@HRU_ID@"/>-->
+	<!-- Chena Mapping -->
+	<function internalLocationSet="ChenaBasins" externalLocationFunction="@Basin@" externalParameterFunction="averageRoutedRunoff" internalParameter="QR.sim"/>
+	<function internalLocationSet="ChenaSubBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="scalarTotalRunoff" internalParameter="QR.sim"/>
+	<function internalLocationSet="ChenaSubBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="scalarSWE" internalParameter="SWE.sim"/>
+	<function internalLocationSet="ChenaSubBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="scalarSnowDepth" internalParameter="SD.sim"/>
+	<function internalLocationSet="ChenaSubBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="scalarNetRadiation" internalParameter="RT.sim"/>
+	<function internalLocationSet="ChenaSubBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="scalarGroundSnowFraction" internalParameter="SCA.sim"/>
+	<!-- Ross Mapping -->
+	<function internalLocationSet="RossBasins" externalLocationFunction="@Basin@" externalParameterFunction="averageRoutedRunoff" internalParameter="QR.sim"/>
+	<function internalLocationSet="RossSubBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="scalarTotalRunoff" internalParameter="QR.sim"/>
+	<function internalLocationSet="RossSubBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="scalarSWE" internalParameter="SWE.sim"/>
+	<function internalLocationSet="RossSubBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="scalarSnowDepth" internalParameter="SD.sim"/>
+	<function internalLocationSet="RossSubBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="scalarNetRadiation" internalParameter="RT.sim"/>
+	<function internalLocationSet="RossSubBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="scalarGroundSnowFraction" internalParameter="SCA.sim"/>
+	<!-- Bow Mapping -->
+	<function internalLocationSet="BowBasins" externalLocationFunction="@Basin@" externalParameterFunction="averageRoutedRunoff" internalParameter="QR.sim"/>
+	<function internalLocationSet="BowSubBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="scalarTotalRunoff" internalParameter="QR.sim"/>
+	<function internalLocationSet="BowSubBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="scalarSWE" internalParameter="SWE.sim"/>
+	<function internalLocationSet="BowSubBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="scalarSnowDepth" internalParameter="SD.sim"/>
+	<function internalLocationSet="BowSubBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="scalarNetRadiation" internalParameter="RT.sim"/>
+	<function internalLocationSet="BowSubBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="scalarGroundSnowFraction" internalParameter="SCA.sim"/>
 	<enableOneToOneMapping/>
-	
 </idMap>

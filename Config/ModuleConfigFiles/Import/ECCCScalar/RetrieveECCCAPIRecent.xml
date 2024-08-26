@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<generalAdapterRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/generalAdapterRun.xsd">
+	<general>
+		<piVersion>1.8</piVersion>
+		<rootDir>%REGION_HOME%/modules/pyscripts</rootDir>
+		<workDir>%ROOT_DIR%/work</workDir>
+		<exportDir>$IMPORT_FOLDER$/ECCCAPI</exportDir>
+		<importDir>$IMPORT_FOLDER$/ECCCAPI</importDir>
+		<dumpFileDir>$GA_DUMPFILEDIR$</dumpFileDir>
+		<dumpDir>%ROOT_DIR%/work</dumpDir>
+		<diagnosticFile>%ROOT_DIR%/work/fews_data_download_log.xml</diagnosticFile>
+		<convertDatum>false</convertDatum>
+	</general>
+	<activities>
+		<startUpActivities>
+			<purgeActivity>
+				<filter>%ROOT_DIR%/work/*.*</filter>
+			</purgeActivity>
+		</startUpActivities>
+		<exportActivities>
+			<exportLocationAttributesCsvActivity>
+				<exportFile>ECCC_API_Stations.csv</exportFile>
+				<locationSetId>YukonHydroStations</locationSetId>
+				<attributeColumn columnName="ID" attributeId="ID"/>
+				<attributeColumn columnName="NAME" attributeId="NAME"/>
+				<attributeColumn columnName="X" attributeId="X"/>
+				<attributeColumn columnName="Y" attributeId="Y"/>
+			</exportLocationAttributesCsvActivity>
+			<exportRunFileActivity>
+				<exportFile>%WORK_DIR%/fews_data_download_run_info.xml</exportFile>
+				<properties>
+					<string key="destinationDir" value="$IMPORT_FOLDER$/ECCCAPI"/>
+					<string key="stations" value="$IMPORT_FOLDER$\ECCC_API_Locations.csv"/>
+					<string key="collection" value="hydrometric-realtime"/>
+				</properties>
+			</exportRunFileActivity>
+		</exportActivities>
+		<executeActivities>
+			<!--Download of ECCC NWP data-->
+			<!--  Uncomment to run through python rather than as an exe (then comment the exe block below)	-->
+			<executeActivity>
+				<command>
+					<executable>$PYTHON_EXE$</executable>
+				</command>
+				<arguments>
+					<argument>%ROOT_DIR%\bin\data_download_main.py</argument>
+					<argument>--run_info_file</argument>
+					<argument>%WORK_DIR%\fews_data_download_run_info.xml</argument>
+					<argument>--data-source</argument>
+					<argument>ECCC_API</argument>
+					<argument>--model</argument>
+					<argument>hydrometric-realtime</argument>
+				</arguments>
+				<timeOut>900000</timeOut>
+				<ignoreDiagnostics>false</ignoreDiagnostics>
+			</executeActivity>
+		</executeActivities>
+	</activities>
+</generalAdapterRun>

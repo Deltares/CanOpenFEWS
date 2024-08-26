@@ -1,61 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2014 rel. 2 (x64) (http://www.altova.com) by Deltares USA (Deltares USA) -->
+<!-- edited with XMLSpy v2014 rel. 2 sp1 (http://www.altova.com) by Afdeling ICT (Stichting Deltares) -->
 <generalAdapterRun xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/generalAdapterRun.xsd" xmlns="http://www.wldelft.nl/fews">
 	<general>
-		<description>Raven Model for $MODEL$</description>
+		<description>SUMMA Model for $MODEL$</description>
 		<piVersion>1.5</piVersion>
-		<rootDir>%REGION_HOME%/Modules/Raven/</rootDir>
-		<workDir>%ROOT_DIR%/$MODEL$/work</workDir>
-		<exportDir>%ROOT_DIR%/$MODEL$/input</exportDir>
-		<exportDataSetDir>%ROOT_DIR%/$MODEL$/work</exportDataSetDir>
-		<exportIdMap>IdExportRaven</exportIdMap>
-		<exportUnitConversionsId>ExportRaven</exportUnitConversionsId>
+		<rootDir>%REGION_HOME%/Modules/SUMMA/</rootDir>
+		<workDir>%ROOT_DIR%/$MODEL$/settings</workDir>
+		<exportDir>%ROOT_DIR%//$MODEL$//input/</exportDir>
+		<exportDataSetDir>%ROOT_DIR%</exportDataSetDir>
+		<exportIdMap>IdExportSUMMA</exportIdMap>
+		<!--<exportUnitConversionsId>ExportSUMMA</exportUnitConversionsId>-->
 		<importDir>%ROOT_DIR%/$MODEL$/output</importDir>
-		<importIdMap>IdImportRaven</importIdMap>
+		<importIdMap>IdImportSUMMA</importIdMap>
 		<dumpFileDir>$GA_DUMPFILEDIR$</dumpFileDir>
 		<dumpDir>%ROOT_DIR%</dumpDir>
 		<diagnosticFile>%ROOT_DIR%/$MODEL$/output/diag.xml</diagnosticFile>
-		<missVal>-1.2345</missVal>
+		<missVal>-9999</missVal>
 		<timeZone>
 			<timeZoneName>$TIMEZONE$</timeZoneName>
 		</timeZone>
 		<startDateTimeFormat>yyyy-MM-dd hh:mm:ss</startDateTimeFormat>
-		<modelTimeStep id="$DAY_TIMESTEP$"/>
 	</general>
 	<activities>
 		<startUpActivities>
-			<purgeActivity>
-				<filter>%ROOT_DIR%/*.*</filter>
+					<purgeActivity>
+				<filter>%ROOT_DIR%/$MODEL/*.*</filter>
 			</purgeActivity>
 			<purgeActivity>
-				<filter>%ROOT_DIR%//$MODEL$/input/*.*</filter>
+				<filter>%ROOT_DIR%/$MODEL$/input/*.*</filter>
 			</purgeActivity>
 			<purgeActivity>
-				<filter>%ROOT_DIR%//$MODEL$/output/*.*</filter>
+				<filter>%ROOT_DIR%/$MODEL$/output/*.*</filter>
 			</purgeActivity>
 			<purgeActivity>
-				<filter>%ROOT_DIR%/$MODEL$/work/*.*</filter>
+				<filter>%ROOT_DIR%/$MODEL$/settings/*.*</filter>
 			</purgeActivity>
 		</startUpActivities>
 		<exportActivities>
 			<exportStateActivity>
-				<moduleInstanceId>$MODEL$RavenHistoric</moduleInstanceId>
-				<stateExportDir>%ROOT_DIR%/$MODEL$/work</stateExportDir>
-				<stateConfigFile>%ROOT_DIR%/$MODEL$/work/stateInfo.xml</stateConfigFile>
+				<moduleInstanceId>$MODEL$SUMMAHistoric</moduleInstanceId>
+				<stateExportDir>%ROOT_DIR%/$MODEL$/settings</stateExportDir>
+				<stateConfigFile>%ROOT_DIR%/$MODEL$/settings/stateInfo.xml</stateConfigFile>
 				<stateLocations type="file">
 					<stateLocation>
-						<readLocation>$MODEL$.rvc</readLocation>
-						<writeLocation>../output/$MODEL$.rvc</writeLocation>
+						<readLocation>coldState.nc</readLocation>
+						<writeLocation>coldState.nc</writeLocation>
 					</stateLocation>
 				</stateLocations>
 				<stateSelection>
-					<warmState>
-						<stateSearchPeriod start="-10" end="0" unit="day"/>
-					</warmState>
+				<coldState>
+				<startDate unit="day" multiplier="0"/>
+				</coldState>
+<!--					<warmState>
+						<stateSearchPeriod startOverrulable="true" start="$STARTTIME$" end="0" unit="day"/>
+					</warmState>-->
 				</stateSelection>
 			</exportStateActivity>
 			<exportDataSetActivity>
-				<moduleInstanceId>$EXPORTDATASET$</moduleInstanceId>
+				<moduleInstanceId>$MODEL$SUMMA</moduleInstanceId>
 			</exportDataSetActivity>
 			<exportNetcdfActivity>
 				<exportFile>inputs.nc</exportFile>
@@ -65,28 +67,62 @@
 						<valueType>scalar</valueType>
 						<parameterId>PC.nwp</parameterId>
 						<locationSetId>$MODEL$SubBasins</locationSetId>
-						<timeSeriesType>simulated forecasting</timeSeriesType>
-						<timeStep id="$DAY_TIMESTEP$"/>
+						<timeSeriesType>external forecasting</timeSeriesType>
+						<timeStep unit="hour" multiplier="$TIMESTEP$"/>
 						<readWriteMode>read complete forecast</readWriteMode>
 					</timeSeriesSet>
 					<timeSeriesSet>
 						<moduleInstanceId>$INPUTMODULEINSTANCEMETEO$</moduleInstanceId>
 						<valueType>scalar</valueType>
 						<parameterId>TA.nwp</parameterId>
-						<qualifierId>min</qualifierId>
 						<locationSetId>$MODEL$SubBasins</locationSetId>
-						<timeSeriesType>simulated forecasting</timeSeriesType>
-						<timeStep id="$DAY_TIMESTEP$"/>
+						<timeSeriesType>external forecasting</timeSeriesType>
+						<timeStep unit="hour" multiplier="$TIMESTEP$"/>
 						<readWriteMode>read complete forecast</readWriteMode>
 					</timeSeriesSet>
 					<timeSeriesSet>
 						<moduleInstanceId>$INPUTMODULEINSTANCEMETEO$</moduleInstanceId>
 						<valueType>scalar</valueType>
-						<parameterId>TA.nwp</parameterId>
-						<qualifierId>max</qualifierId>
+						<parameterId>RS.nwp</parameterId>
 						<locationSetId>$MODEL$SubBasins</locationSetId>
-						<timeSeriesType>simulated forecasting</timeSeriesType>
-						<timeStep id="$DAY_TIMESTEP$"/>
+						<timeSeriesType>external forecasting</timeSeriesType>
+						<timeStep unit="hour" multiplier="$TIMESTEP$"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>$INPUTMODULEINSTANCEMETEO$</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>RL.nwp</parameterId>
+						<locationSetId>$MODEL$SubBasins</locationSetId>
+						<timeSeriesType>external forecasting</timeSeriesType>
+						<timeStep unit="hour" multiplier="$TIMESTEP$"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>$INPUTMODULEINSTANCEMETEO$</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>PA.nwp</parameterId>
+						<locationSetId>$MODEL$SubBasins</locationSetId>
+						<timeSeriesType>external forecasting</timeSeriesType>
+						<timeStep unit="hour" multiplier="$TIMESTEP$"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>$INPUTMODULEINSTANCEMETEO$</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>US.nwp</parameterId>
+						<locationSetId>$MODEL$SubBasins</locationSetId>
+						<timeSeriesType>external forecasting</timeSeriesType>
+						<timeStep unit="hour" multiplier="$TIMESTEP$"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>$INPUTMODULEINSTANCEMETEO$</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>XS.nwp</parameterId>
+						<locationSetId>$MODEL$SubBasins</locationSetId>
+						<timeSeriesType>external forecasting</timeSeriesType>
+						<timeStep unit="hour" multiplier="$TIMESTEP$"/>
 						<readWriteMode>read complete forecast</readWriteMode>
 					</timeSeriesSet>
 				</timeSeriesSets>
@@ -95,89 +131,95 @@
 			<exportNetcdfRunFileActivity>
 				<exportFile>%ROOT_DIR%/$MODEL$/run_info.nc</exportFile>
 				<properties>
-					<string key="RunName" value="$MODEL$"/>
-<!--					<locationAttribute key="BlockRavenCustomOutput" locationId="$MODEL$" attributeId="BlockRavenCustomOutput"/>
-					<locationAttribute key="BlockRavenWarnings" locationId="$MODEL$" attributeId="BlockRavenWarnings"/>-->
+					<string key="Model" value="$MODEL$"/>
+					<string key="forcing_file" value="%ROOT_DIR%//$MODEL$//input//inputs.nc"/>
+					<int key="hour_timestep" value="3"/>
 				</properties>
 			</exportNetcdfRunFileActivity>
 		</exportActivities>
 		<executeActivities>
 			<executeActivity>
 				<command>
-					<executable>%ROOT_DIR%/bin/Raven.exe</executable>
+					<executable>$PYTHON_EXE$</executable>
 				</command>
 				<arguments>
-					<argument>$MODEL$</argument>
+					<argument>%ROOT_DIR%\summa_fews_adaptor.py</argument>
+					<argument>--work-dir</argument>
+					<argument>%ROOT_DIR%\$MODEL$\</argument>
+					<argument>--run-info-file</argument>
+					<argument>%ROOT_DIR%/$MODEL$/run_info.nc</argument>
+					<argument>--summa-exe</argument>
+					<argument>%ROOT_DIR%\bin\summa.exe</argument>
+					<argument>--file-manager</argument>
+					<argument>%ROOT_DIR%\$MODEL$\settings\fileManager.txt</argument>
 				</arguments>
-				<logFile>
-					<file>%ROOT_DIR%/$MODEL$/output/Raven_errors.txt</file>
-					<!-- Import every line as a separate FEWS error log message. -->
-					<errorLinePattern>ERROR*</errorLinePattern>
-					<warningLinePattern>WARNING*</warningLinePattern>
-					<infoLinePattern>ADVISORY*</infoLinePattern>
-					<debugLinePattern>DEBUG*</debugLinePattern>
-				</logFile>
-				<timeOut>3000000</timeOut>
+				<timeOut>36000000</timeOut>
 				<ignoreDiagnostics>true</ignoreDiagnostics>
 			</executeActivity>
 		</executeActivities>
 		<importActivities>
+			<importStateActivity>
+				<stateFile>
+					<importFile>%ROOT_DIR%\$MODEL$\output\state_update.nc</importFile>
+					<relativeExportFile>coldState.nc</relativeExportFile>
+				</stateFile>
+				<synchLevel>20</synchLevel>
+			</importStateActivity>
 			<importNetcdfActivity>
-				<importFile>$MODEL$_Hydrographs.nc</importFile>
+				<importFile>summa_output.nc</importFile>
 				<timeSeriesSets>
-					<!--hydrographs-->
-					<timeSeriesSet>
-						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
-						<valueType>scalar</valueType>
-						<parameterId>QR.sim</parameterId>
-						<locationSetId>$MODEL$Basins</locationSetId>
-						<timeSeriesType>simulated forecasting</timeSeriesType>
-						<timeStep unit="day"/>
-						<readWriteMode>add originals</readWriteMode>
-					</timeSeriesSet>
-				</timeSeriesSets>
-			</importNetcdfActivity>
-			<importNetcdfActivity>
-				<importFile>SNOW_Continuous_Average_ByHRU.nc</importFile>
-				<timeSeriesSets>
-					<!--Custom Output in .rvi-->
 					<timeSeriesSet>
 						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
 						<valueType>scalar</valueType>
 						<parameterId>SWE.sim</parameterId>
 						<locationSetId>$MODEL$SubBasins</locationSetId>
-						<timeSeriesType>simulated forecasting</timeSeriesType>
-						<timeStep unit="day"/>
+						<timeSeriesType>temporary</timeSeriesType>
+						<timeStep unit="nonequidistant"/>
 						<readWriteMode>add originals</readWriteMode>
 					</timeSeriesSet>
-				</timeSeriesSets>
-			</importNetcdfActivity>
-			<importNetcdfActivity>
-				<importFile>SNOW_LIQ_Continuous_Average_ByHRU.nc</importFile>
-				<timeSeriesSets>
-					<!--Custom Output in .rvi-->
 					<timeSeriesSet>
 						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
 						<valueType>scalar</valueType>
-						<parameterId>SWE.mlt</parameterId>
-						<locationSetId>$MODEL$SubBasins</locationSetId>
-						<timeSeriesType>simulated forecasting</timeSeriesType>
-						<timeStep unit="day"/>
+						<parameterId>QR.sim</parameterId>
+						<locationSetId>$MODEL$Basins</locationSetId>
+						<timeSeriesType>temporary</timeSeriesType>
+						<timeStep unit="nonequidistant"/>
 						<readWriteMode>add originals</readWriteMode>
 					</timeSeriesSet>
-				</timeSeriesSets>
-			</importNetcdfActivity>
-			<importNetcdfActivity>
-				<importFile>SOIL[0]_Continuous_Average_ByHRU.nc</importFile>
-				<timeSeriesSets>
-					<!--Custom Output in .rvi-->
 					<timeSeriesSet>
 						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
 						<valueType>scalar</valueType>
-						<parameterId>SMI.sim</parameterId>
+						<parameterId>QR.sim</parameterId>
 						<locationSetId>$MODEL$SubBasins</locationSetId>
-						<timeSeriesType>simulated forecasting</timeSeriesType>
-						<timeStep unit="day"/>
+						<timeSeriesType>temporary</timeSeriesType>
+						<timeStep unit="nonequidistant"/>
+						<readWriteMode>add originals</readWriteMode>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>SCA.sim</parameterId>
+						<locationSetId>$MODEL$SubBasins</locationSetId>
+						<timeSeriesType>temporary</timeSeriesType>
+						<timeStep unit="nonequidistant"/>
+						<readWriteMode>add originals</readWriteMode>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>SD.sim</parameterId>
+						<locationSetId>$MODEL$SubBasins</locationSetId>
+						<timeSeriesType>temporary</timeSeriesType>
+						<timeStep unit="nonequidistant"/>
+						<readWriteMode>add originals</readWriteMode>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>RT.sim</parameterId>
+						<locationSetId>$MODEL$SubBasins</locationSetId>
+						<timeSeriesType>temporary</timeSeriesType>
+						<timeStep unit="nonequidistant"/>
 						<readWriteMode>add originals</readWriteMode>
 					</timeSeriesSet>
 				</timeSeriesSets>

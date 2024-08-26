@@ -19,8 +19,6 @@
 			<timeSeriesType>external forecasting</timeSeriesType>
 			<timeStep unit="hour" multiplier="3"/>
 			<readWriteMode>add originals</readWriteMode>
-			<synchLevel>6</synchLevel>
-			<expiryTime unit="day" multiplier="$FORECAST_IMPORT_EXPIRY_TIME$"/>
 		</timeSeriesSet>
 		<timeSeriesSet>
 			<moduleInstanceId>ImportGDPS</moduleInstanceId>
@@ -30,8 +28,24 @@
 			<timeSeriesType>external forecasting</timeSeriesType>
 			<timeStep unit="hour" multiplier="3"/>
 			<readWriteMode>add originals</readWriteMode>
-			<synchLevel>6</synchLevel>
-			<expiryTime unit="day" multiplier="$FORECAST_IMPORT_EXPIRY_TIME$"/>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportGDPS</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>XS.nwp</parameterId>
+			<locationId>GDPS</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+			<timeSeriesSet>
+			<moduleInstanceId>ImportGDPS</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PA.nwp</parameterId>
+			<locationId>GDPS</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 		<timeSeriesSet>
 			<moduleInstanceId>ImportGDPS</moduleInstanceId>
@@ -41,35 +55,31 @@
 			<timeSeriesType>external forecasting</timeSeriesType>
 			<timeStep unit="hour" multiplier="3"/>
 			<readWriteMode>add originals</readWriteMode>
-			<synchLevel>6</synchLevel>
-			<expiryTime unit="day" multiplier="$FORECAST_IMPORT_EXPIRY_TIME$"/>
 		</timeSeriesSet>
 		<timeSeriesSet>
 			<moduleInstanceId>ImportGDPS</moduleInstanceId>
 			<valueType>grid</valueType>
-			<parameterId>RSext.nwp</parameterId>
+			<parameterId>RL.nwp</parameterId>
 			<locationId>GDPS</locationId>
 			<timeSeriesType>external forecasting</timeSeriesType>
 			<timeStep unit="hour" multiplier="3"/>
 			<readWriteMode>add originals</readWriteMode>
-			<synchLevel>6</synchLevel>
-			<expiryTime unit="day" multiplier="$FORECAST_IMPORT_EXPIRY_TIME$"/>
 		</timeSeriesSet>
 		<timeSeriesSet>
 			<moduleInstanceId>ImportGDPS</moduleInstanceId>
 			<valueType>grid</valueType>
-			<parameterId>PA.nwp</parameterId>
+			<parameterId>US.nwp</parameterId>
 			<locationId>GDPS</locationId>
 			<timeSeriesType>external forecasting</timeSeriesType>
 			<timeStep unit="hour" multiplier="3"/>
 			<readWriteMode>add originals</readWriteMode>
-			<synchLevel>6</synchLevel>
-			<expiryTime unit="day" multiplier="$FORECAST_IMPORT_EXPIRY_TIME$"/>
 		</timeSeriesSet>
 		<externUnit parameterId="PC.nwp" unit="kg m-2" cumulativeSum="true"/>
 		<externUnit parameterId="TA.nwp" unit="K"/>
-		<externUnit parameterId="RS.nwp" unit="J/m2" cumulativeSum="true"/>
-		<externUnit parameterId="RSext.nwp" unit="J/m2" cumulativeSum="true"/>
+		<externUnit parameterId="XS.nwp" unit="kg/kg"/>
 		<externUnit parameterId="PA.nwp" unit="Pa"/>
+		<externUnit parameterId="RS.nwp" unit="J/m2" cumulativeSum="true"/>
+		<externUnit parameterId="RL.nwp" unit="J/m2" cumulativeSum="true"/>
+		<externUnit parameterId="US.nwp" unit="m/s"/>
 	</import>
 </timeSeriesImportRun>

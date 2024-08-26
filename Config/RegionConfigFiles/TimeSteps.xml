@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <timeSteps xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSteps.xsd">
+	<!--<timeStep id="day_GMT" unit="day" timeZone="GMT"/-->
 	<timeStep id="daily" unit="day" timeZone="GMT"/>
 	<timeStep id="weekly" unit="week" timeZone="GMT"/>
 	<timeStep id="monthly" unit="month" timeZone="GMT"/>

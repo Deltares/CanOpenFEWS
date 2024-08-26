@@ -1,0 +1,3 @@
+id,name,shortName,Description,x,y,State_scalarSfcMeltPond_incr,State_scalarSfcMeltPond_mult
+RossBasin,RossBasin,RossBasin,First Grid point of the MESH Model,0,0,0,1
+ChenaBasin,ChenaBasin,ChenaBasin,First Grid point of the MESH Model,0,0,0,1

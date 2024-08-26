@@ -6,4 +6,5 @@
 	<autoExportModuleDataSet name="RavenBinaries" exportDir="Modules"/>
 	<autoExportModuleDataSet name="PyscriptsBinaries" exportDir="Modules"/>
 	<autoExportModuleDataSet name="pcraster" exportDir="Modules"/>
+	<autoExportModuleDataSet name="SUMMABinaries" exportDir="Modules"/>
 </clientConfiguration>

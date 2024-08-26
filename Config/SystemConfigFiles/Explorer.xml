@@ -9,24 +9,30 @@
 	<map>
 		<geoDatum>WGS 1984</geoDatum>
 		<projection>mercator</projection>
-		<defaultExtent id="Alberta" name="Alberta">
-			<left>-128</left>
-			<right>-107</right>
-			<top>58</top>
-			<bottom>49.5</bottom>
-		</defaultExtent>
-		<extraExtent id="Bow Watershed">
-			<left>-117</left>
-			<right>-111</right>
-			<top>53</top>
-			<bottom>50</bottom>
-		</extraExtent>
-		<extraExtent id="Canada">
-			<left>-152</left>
-			<right>-47</right>
-			<top>40</top>
-			<bottom>75</bottom>
-		</extraExtent>
+			<defaultExtent id="YukonRiverBasin" name="Yukon River Basin">
+				<left>-165</left>
+				<right>-128</right>
+				<top>70</top>
+				<bottom>58</bottom>
+			</defaultExtent>
+			<extraExtent id="Alberta" name="Alberta">
+				<left>-128</left>
+				<right>-107</right>
+				<top>58</top>
+				<bottom>49.5</bottom>
+			</extraExtent>
+			<extraExtent id="Bow Watershed">
+				<left>-117</left>
+				<right>-111</right>
+				<top>53</top>
+				<bottom>50</bottom>
+			</extraExtent>
+			<extraExtent id="North America">
+				<left>-152</left>
+				<right>-47</right>
+				<top>40</top>
+				<bottom>75</bottom>
+			</extraExtent>
 		<scaleBarVisible>true</scaleBarVisible>
 		<northArrowVisible>true</northArrowVisible>
 		<labelsVisible>true</labelsVisible>
@@ -120,6 +126,49 @@
 				<int key="tileSize" value="256"/>
 			</properties>
 		</layer>
+		<esriShapeLayer id="Yukon River Basin">
+				<description>Yukon River Basin</description>
+				<file>Yukon_River_Basin.shp</file>
+				<geoDatum>WGS 1984</geoDatum>
+				<visible>true</visible>
+				<lineColor>black</lineColor>
+				<fillRgbColor>FFFFFF</fillRgbColor>
+				<opaquenessPercentage>20</opaquenessPercentage>
+			</esriShapeLayer>
+			<esriShapeLayer id="Chena Near Two Rivers Basins">
+				<description>Chena_Near_Two_Rivers_Basins</description>
+				<file>Chena_Near_Two_Rivers_Basins_WGS84.shp</file>
+				<geoDatum>WGS 1984</geoDatum>
+				<visible>true</visible>
+				<lineColor>black</lineColor>
+				<fillRgbColor>FFFFFF</fillRgbColor>
+				<opaquenessPercentage>20</opaquenessPercentage>
+			</esriShapeLayer>
+			<esriShapeLayer id="Chena Near Two Rivers Network">
+				<description>Chena Near Two Rivers Network</description>
+				<file>Chena_Near_Two_Rivers_Network_WGS84.shp</file>
+				<geoDatum>WGS 1984</geoDatum>
+				<visible>true</visible>
+				<lineColor>blue</lineColor>
+				<opaquenessPercentage>50</opaquenessPercentage>
+			</esriShapeLayer>
+			<esriShapeLayer id="Ross Basins">
+				<description>Ross Basins</description>
+				<file>Ross_basins.shp</file>
+				<geoDatum>WGS 1984</geoDatum>
+				<visible>true</visible>
+				<lineColor>black</lineColor>
+				<fillRgbColor>FFFFFF</fillRgbColor>
+				<opaquenessPercentage>20</opaquenessPercentage>
+			</esriShapeLayer>
+			<esriShapeLayer id="Ross Network">
+				<description>Ross Network</description>
+				<file>Ross_network.shp</file>
+				<geoDatum>WGS 1984</geoDatum>
+				<visible>true</visible>
+				<lineColor>blue</lineColor>
+				<opaquenessPercentage>50</opaquenessPercentage>
+			</esriShapeLayer>
 		<esriShapeLayer id="BowBasins">
 			<description>Bow Basins</description>
 			<file>Bow_Basins.shp</file>

@@ -42,8 +42,23 @@
 		<x>0</x>
 		<y>0</y>
 	</location>
+	<location id="ERA5Yukon" name="ERA5Yukon">
+		<shortName>ERA5Yukon</shortName>
+		<x>0</x>
+		<y>0</y>
+	</location>
 	<location id="ERA5Bow" name="ERA5Bow">
 		<shortName>ERA5Bow</shortName>
+		<x>0</x>
+		<y>0</y>
+	</location>
+	<location id="ERA5Chena" name="ERA5Chena">
+		<shortName>ERA5Chena</shortName>
+		<x>0</x>
+		<y>0</y>
+	</location>
+	<location id="ERA5Ross" name="ERA5Ross">
+		<shortName>ERA5Ross</shortName>
 		<x>0</x>
 		<y>0</y>
 	</location>
@@ -57,6 +72,14 @@
 		<y>0</y>
 	</location>
 	<location id="SREF" name="SREF Forecast">
+		<x>0</x>
+		<y>0</y>
+	</location>
+	<location id="HRRR" name="HRRR Forecast">
+		<x>0</x>
+		<y>0</y>
+	</location>
+	<location id="MRMS" name="MRMS Forecast">
 		<x>0</x>
 		<y>0</y>
 	</location>
@@ -119,4 +142,14 @@
 		<x>0</x>
 		<y>0</y>
 	</location>
+<!--	<location id="RossBasin" name="RossBasin">
+		<shortName>RossBasin</shortName>
+		<x>0</x>
+		<y>0</y>
+	</location>
+	<location id="ChenaBasin" name="ChenaBasin">
+		<shortName>ChenaBasin</shortName>
+		<x>0</x>
+		<y>0</y>
+	</location>-->
 </locations>

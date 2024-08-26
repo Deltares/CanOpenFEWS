@@ -344,6 +344,10 @@ http://fews.wldelft.nl/schemas/version1.0/parameters.xsd">
 			<shortName>US</shortName>
 			<description>Wind, speed – 2 minute average before the top of the hour – at 10 m height</description>
 		</parameter>
+		<parameter id="US.obs" name="Wind, speed observed">
+			<shortName>US.obs</shortName>
+			<description>Wind, speed – observed</description>
+		</parameter>
 		<parameter id="US.nwp" name="Wind, speed">
 			<shortName>US.nwp</shortName>
 			<description>Wind, speed – 2 minute average before the top of the hour – at 10 m height (NWP)</description>
@@ -396,6 +400,9 @@ http://fews.wldelft.nl/schemas/version1.0/parameters.xsd">
 		<parameter id="RS" name="Shortwave Radiation">
 			<shortName>RS</shortName>
 		</parameter>
+		<parameter id="RT.sim" name="Total Net Radiation">
+			<shortName>RT.sim</shortName>
+		</parameter>
 		<parameter id="RS.sim" name="Shortwave Radiation - Downwards">
 			<shortName>RS.sim</shortName>
 		</parameter>
@@ -440,7 +447,7 @@ http://fews.wldelft.nl/schemas/version1.0/parameters.xsd">
 	<parameterGroup id="Specific humidity">
 		<parameterType>instantaneous</parameterType>
 		<unit>kg/kg</unit>
-		<valueResolution>0.00000000000000000001</valueResolution>
+		<valueResolution>0.01</valueResolution>
 		<parameter id="XS" name="Specific humidity">
 			<shortName>XS</shortName>
 		</parameter>
@@ -451,7 +458,7 @@ http://fews.wldelft.nl/schemas/version1.0/parameters.xsd">
 	<parameterGroup id="Relative humidity">
 		<parameterType>instantaneous</parameterType>
 		<unit>kg/kg</unit>
-		<valueResolution>0.00000000000000000001</valueResolution>
+		<valueResolution>0.01</valueResolution>
 		<parameter id="RH" name="Relative humidity">
 			<shortName>RH</shortName>
 		</parameter>

@@ -10,10 +10,6 @@
 		<string key="EXPIRYTIME" value="7"/>
 		<!-- EnsembleID if needed-->
 		<string key="ENSEMBLE" value="main"/>
-		<!--Input Grid-->
-		<string key="INPUTGRID" value="ERA5Bow"/>
-		<!--Basin Location-->
-		<string key="BASINLOCATIONS" value="ProcessBasins"/>
 		<!--Time Series Type-->
 		<string key="TIMESERIESTYPE" value="external historical"/>
 	</properties>

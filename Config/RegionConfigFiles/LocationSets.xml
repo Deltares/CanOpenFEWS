@@ -29,7 +29,15 @@
 			<attribute id="wflow_code" name="wflow_code">
 				<text>%wflow_code%</text>
 			</attribute>
-			<!-- Add attribute files for each model-->
+			<!-- Add attribute files for Bow-->
+			<attributeFile>
+				<csvFile>hydrometric_Yukon.csv</csvFile>
+				<id>%ID%</id>
+				<attribute id="Yukon">
+					<text>%Yukon%</text>
+				</attribute>
+			</attributeFile>
+			<!-- Add attribute files for Bow-->
 			<attributeFile>
 				<csvFile>hydrometric_Bow.csv</csvFile>
 				<id>%ID%</id>
@@ -37,7 +45,7 @@
 					<text>%Bow%</text>
 				</attribute>
 			</attributeFile>
-			<!-- Add attribute files for NSRPS-->
+			<!-- Add attribute files for Yukon River Basin-->
 			<attributeFile>
 				<csvFile>nsrps_stn_locations.csv</csvFile>
 				<id>%STATION_NUMBER%</id>
@@ -48,6 +56,16 @@
 					<number>%MODEL_LONGITUDE%</number>
 				</attribute>
 			</attributeFile>
+		</csvFile>
+	</locationSet>
+	<locationSet id="USGSStations">
+		<csvFile>
+			<file>USGS_gauges.csv</file>
+			<geoDatum>WGS 1984</geoDatum>
+			<id>%SiteNumber%</id>
+			<name>%SiteName%</name>
+			<x>%SiteLongit%</x>
+			<y>%SiteLatitu%</y>
 		</csvFile>
 	</locationSet>
 	<!--- ECCC Meteo Stations - Available at https://dd.weather.gc.ca/hydrometric/doc/ -->
@@ -73,6 +91,13 @@
 					<text>%Bow%</text>
 				</attribute>
 			</attributeFile>
+			<attributeFile>
+				<csvFile>meteorological_Yukon.csv</csvFile>
+				<id>%MSC_ID%</id>
+				<attribute id="Yukon">
+					<text>%Yukon%</text>
+				</attribute>
+			</attributeFile>
 		</csvFile>
 	</locationSet>
 	<!--- ECCC Meteo Stations from Partners - Available at https://dd.weather.gc.ca/hydrometric/doc/ -->
@@ -94,15 +119,36 @@
 		</csvFile>
 	</locationSet>
 	<!--- Snow Stations -->
-	<locationSet id="SnowStations">
+	<locationSet id="SnowStationsBow">
 		<csvFile>
-			<file>snow_stations.csv</file>
+			<file>snow_stations_bow.csv</file>
 			<geoDatum>WGS 1984</geoDatum>
 			<id>%NUMBER%</id>
 			<name>%NAME%</name>
 			<x>%LONG%</x>
 			<y>%LAT%</y>
 			<z>%ELEV%</z>
+		</csvFile>
+	</locationSet>
+	<locationSet id="SNOTELStationsAlaska">
+		<csvFile>
+			<file>snotel_stations_alaska.csv</file>
+			<geoDatum>WGS 1984</geoDatum>
+			<id>%Station Name%</id>
+			<name>%Station Name%</name>
+			<toolTip>%Station Name%</toolTip>
+			<x>%Longitude%</x>
+			<y>%Latitude%</y>
+			<z>%Elevation%</z>
+			<attribute id="SITE_NAME" name="SITE_NAME">
+				<text>%Station Name%</text>
+			</attribute>
+			<attribute id="SITE_ID" name="SITE_ID">
+				<text>%Station ID%</text>
+			</attribute>
+			<attribute id="STATE" name="STATE">
+				<text>%State%</text>
+			</attribute>
 		</csvFile>
 	</locationSet>
 	<!--LocationSets built from ShapeFiles-->
@@ -134,8 +180,77 @@
 			<projectionFileAvailable>true</projectionFileAvailable>
 			<id>%HRU_ID%</id>
 			<name>%HRU_ID%</name>
-			<attribute id="HRU">
-				<number>%HRU_ID%</number>
+			<attribute id="HRU_ID">
+				<text>%HRU_ID%</text>
+			</attribute>
+		</esriShapeFile>
+	</locationSet>
+	<!--ShapeFiles for YukonRiverBasin-->
+	<locationSet id="YukonRiverBasin">
+		<esriShapeFile>
+			<file>Yukon_River_Basin.shp</file>
+			<projectionFileAvailable>true</projectionFileAvailable>
+			<id>YukonRiverBasin</id>
+			<name>YukonRiverBasin</name>
+		</esriShapeFile>
+	</locationSet>
+	<!--ShapeFiles for Yukon Basins-->
+	<!--	<locationSet id="YukonBasins">
+		<esriShapeFile>
+			<file>Yukon_Merit_Basins_fixed.shp</file>
+			<projectionFileAvailable>true</projectionFileAvailable>
+			<id>%COMID%</id>
+			<name>%OMID%</name>
+			<attribute id="Basin">
+				<text>%COMID%</text>
+			</attribute>
+		</esriShapeFile>
+	</locationSet>-->
+	<!--ShapeFiles for Ross-->
+	<locationSet id="RossBasins">
+		<esriShapeFile>
+			<file>Ross_basins.shp</file>
+			<projectionFileAvailable>true</projectionFileAvailable>
+			<id>%COMID%</id>
+			<name>%COMID%</name>
+			<attribute id="Basin">
+				<text>%COMID%</text>
+			</attribute>
+		</esriShapeFile>
+	</locationSet>
+	<!--ShapeFiles for Ross Sub-Basins-->
+	<locationSet id="RossSubBasins">
+		<esriShapeFile>
+			<file>Ross_distributed_elevation_zone.shp</file>
+			<projectionFileAvailable>true</projectionFileAvailable>
+			<id>%RossHRU_ID%</id>
+			<name>%RossHRU_ID%</name>
+			<attribute id="HRU_ID">
+				<text>%HRU_ID%</text>
+			</attribute>
+		</esriShapeFile>
+	</locationSet>
+	<!--ShapeFiles for Chena -->
+	<locationSet id="ChenaBasins">
+		<esriShapeFile>
+			<file>Chena_Near_Two_Rivers_Basins.shp</file>
+			<projectionFileAvailable>true</projectionFileAvailable>
+			<id>%COMID%</id>
+			<name>%COMID%</name>
+			<attribute id="Basin">
+				<text>%COMID%</text>
+			</attribute>
+		</esriShapeFile>
+	</locationSet>
+	<!--ShapeFiles for Chena Sub-Basins-->
+	<locationSet id="ChenaSubBasins">
+		<esriShapeFile>
+			<file>Chena_Near_Two_Rivers_HRUs.shp</file>
+			<projectionFileAvailable>true</projectionFileAvailable>
+			<id>%ChenaHRU%</id>
+			<name>%ChenaHRU%</name>
+			<attribute id="HRU_ID">
+				<text>%HRU_ID%</text>
 			</attribute>
 		</esriShapeFile>
 	</locationSet>
@@ -151,34 +266,62 @@
 			<attributeTextEquals id="Bow" equals="Y"/>
 		</constraints>
 	</locationSet>
+	<locationSet id="YukonHydroStations">
+		<locationSetId>WSCStations</locationSetId>
+		<constraints>
+			<attributeTextEquals id="Yukon" equals="Y"/>
+		</constraints>
+	</locationSet>
 	<!--Build LocationSets for Display-->
 	<locationSet id="ProcessBasins">
+		<locationSetId>ChenaProcessBasins</locationSetId>
+		<locationSetId>RossProcessBasins</locationSetId>
+		<locationSetId>BowProcessBasins</locationSetId>
+	</locationSet>
+		<locationSet id="RossProcessBasins">
+		<locationSetId>RossBasins</locationSetId>
+		<locationSetId>RossSubBasins</locationSetId>
+	</locationSet>
+	<locationSet id="ChenaProcessBasins">
+		<locationSetId>ChenaBasins</locationSetId>
+		<locationSetId>ChenaSubBasins</locationSetId>
+	</locationSet>
+		<locationSet id="BowProcessBasins">
 		<locationSetId>BowBasins</locationSetId>
 		<locationSetId>BowSubBasins</locationSetId>
 	</locationSet>
+
 	<locationSet id="ModelBasins">
-		<locationSetId>BowSubBasins</locationSetId>
+		<!--<locationSetId>BowSubBasins</locationSetId>-->
+		<locationSetId>ChenaSubBasins</locationSetId>
+		<locationSetId>RossSubBasins</locationSetId>
 	</locationSet>
 	<locationSet id="ModelMeteoStations">
-		<locationSetId>BowMeteoStations</locationSetId>
+		<!--<locationSetId>BowMeteoStations</locationSetId>-->
+		<locationSetId>YukonMeteoStations</locationSetId>
 	</locationSet>
 	<locationSet id="ModelHydroStations">
-		<locationSetId>BowHydroStations</locationSetId>
+		<!--<locationSetId>BowHydroStations</locationSetId>-->
+		<locationSetId>YukonHydroStations</locationSetId>
 	</locationSet>
 	<locationSet id="DownloadMeteoStations">
-		<locationSetId>BowMeteoStations</locationSetId>
+		<locationSetId>YukonMeteoStations</locationSetId>
 	</locationSet>
 	<locationSet id="DownloadHydroStations">
-		<locationSetId>BowHydroStations</locationSetId>
+		<locationSetId>YukonHydroStations</locationSetId>
 	</locationSet>
 	<locationSet id="DisplayBasins">
-		<locationSetId>BowBasins</locationSetId>
+		<locationSetId>ChenaBasins</locationSetId>
+		<locationSetId>RossBasins</locationSetId>
 	</locationSet>
 	<locationSet id="DisplayMeteoStations">
-		<locationSetId>BowMeteoStations</locationSetId>
+		<!--<locationSetId>BowMeteoStations</locationSetId>-->
+		<locationSetId>YukonMeteoStations</locationSetId>
 	</locationSet>
 	<locationSet id="DisplayHydroStations">
-		<locationSetId>BowHydroStations</locationSetId>
+		<!--<locationSetId>BowHydroStations</locationSetId>-->
+		<locationSetId>YukonHydroStations</locationSetId>
+		<locationSetId>USGSStations</locationSetId>
 	</locationSet>
 	<locationSet id="DischargeDisplayLocationsBow">
 		<locationSetId>BowHydroStations</locationSetId>
@@ -192,6 +335,9 @@
 	<locationSet id="ModelForecastLocations">
 		<locationSetId>BowForecastLocations</locationSetId>
 	</locationSet>
+	<locationSet id="SnowStations">
+		<locationSetId>SnowStationsBow</locationSetId>
+	</locationSet>
 	<!--Build additional LocationSets-->
 	<locationSet id="ECCCAllStations">
 		<locationSetId>ECCCPartnerStations</locationSetId>
@@ -203,6 +349,12 @@
 			<attributeTextEquals id="Bow" equals="Y"/>
 		</constraints>
 	</locationSet>
+	<locationSet id="YukonMeteoStations">
+		<locationSetId>ECCCAllStations</locationSetId>
+		<constraints>
+			<attributeTextEquals id="Yukon" equals="Y"/>
+		</constraints>
+	</locationSet>
 	<!--Comment-->
 	<locationSet id="ECCCStationsAB">
 		<locationSetId>ECCCAllStations</locationSetId>
@@ -212,5 +364,134 @@
 				<attributeTextEquals id="Region" equals="AB"/>
 			</anyValid>
 		</constraints>
+	</locationSet>
+	<locationSet id="ECCCStationsYK">
+		<locationSetId>ECCCAllStations</locationSetId>
+		<constraints>
+			<anyValid>
+				<attributeTextEquals id="Region" equals="Yukon"/>
+				<attributeTextEquals id="Region" equals="YK"/>
+			</anyValid>
+		</constraints>
+	</locationSet>
+	<locationSet id="alaska_locations">
+		<csvFile>
+			<file>alaska_locations.csv</file>
+			<id>%id%</id>
+			<name>%name%</name>
+			<description>%description%</description>
+			<shortName>%shortname%</shortName>
+			<parentLocationId>%parentid%</parentLocationId>
+			<x>%x%</x>
+			<y>%y%</y>
+			<z>%z%</z>
+			<attribute id="catchment">
+				<text>%catchment%</text>
+			</attribute>
+			<attribute id="fgroup">
+				<text>%fgroup%</text>
+			</attribute>
+			<attribute id="fcst_pp">
+				<text>%fcst_pp%</text>
+			</attribute>
+			<attribute id="esp">
+				<text>%esp%</text>
+			</attribute>
+			<attribute id="hefs">
+				<text>%hefs%</text>
+			</attribute>
+			<attribute id="snowupdate">
+				<text>%snowupdate%</text>
+			</attribute>
+			<attribute id="spatial_display">
+				<text>%spatial_display%</text>
+			</attribute>
+			<attribute id="gage">
+				<text>%gage%</text>
+			</attribute>
+			<attribute id="gage_fcst">
+				<text>%gage_fcst%</text>
+			</attribute>
+			<attribute id="precip">
+				<text>%precip%</text>
+			</attribute>
+			<attribute id="nwm">
+				<text>%nwm%</text>
+			</attribute>
+			<attribute id="snotel">
+				<text>%snotel%</text>
+			</attribute>
+			<attribute id="snowcourse">
+				<text>%snowcourse%</text>
+			</attribute>
+		</csvFile>
+	</locationSet>
+	<locationSet id="Gages_Chena">
+		<locationSetId>alaska_locations</locationSetId>
+		<constraints>
+			<attributeTextEquals id="fgroup" equals="Tanana"/>
+			<attributeTextEquals id="gage_fcst" equals="Y"/>
+			<attributeTextEquals id="gage" equals="Y"/>
+		</constraints>
+	</locationSet>
+	<locationSet id="Catchments_Chena">
+		<locationId>UCHA2UPR</locationId>
+		<locationId>UCHA2LWR</locationId>
+		<locationId>CRHA2UPR</locationId>
+		<locationId>CRHA2LWR</locationId>
+		<locationId>MCDA2LOC</locationId>
+		<locationId>CHLA2UPR</locationId>
+		<locationId>CHLA2LWR</locationId>
+		<locationId>CHFA2LOC</locationId>
+	</locationSet>
+	<locationSet id="Basins_Chena">
+		<locationId>UCHA2</locationId>
+		<locationId>CRHA2</locationId>
+		<locationId>MCDA2</locationId>
+		<locationId>CHLA2</locationId>
+		<locationId>CHFA2</locationId>
+	</locationSet>
+	<locationSet id="Catchments_Chena_HEFS">
+		<locationId>UCHA2UPR</locationId>
+		<locationId>UCHA2LWR</locationId>
+		<locationId>CRHA2UPR</locationId>
+		<locationId>CRHA2LWR</locationId>
+		<locationId>MCDA2LOC</locationId>
+		<locationId>SALA2UPR</locationId>
+		<locationId>SALA2LWR</locationId>
+	</locationSet>
+	<locationSet id="COE_Basins_Chena">
+		<locationId>CNFOR</locationId>
+		<locationId>LICHE</locationId>
+		<locationId>CSLOC</locationId>
+		<locationId>CMFOR</locationId>
+		<locationId>CSFOR</locationId>
+		<locationId>FBLOW</locationId>
+		<locationId>CTRLO</locationId>
+		<locationId>CHLOC</locationId>
+		<locationId>CMCLO</locationId>
+		<locationId>CMCUP</locationId>
+		<locationId>FBUPP</locationId>
+		<locationId>UCHA2</locationId>
+		<locationId>CRHA2</locationId>
+		<locationId>MCDA2</locationId>
+		<locationId>CHLA2</locationId>
+		<locationId>CHFA2</locationId>
+	</locationSet>
+	<locationSet id="SUMMABasins">
+		<csvFile>
+			<file>BasinList.csv</file>
+			<geoDatum>WGS 1984</geoDatum>
+			<id>%ID%</id>
+			<description>%Description%</description>
+			<x>%x%</x>
+			<y>%y%</y>
+			<attribute id="State_scalarSfcMeltPond_incr" name="scalarSfcMeltPond_incrementer">
+				<number>%State_scalarSfcMeltPond_incr%</number>
+			</attribute>
+			<attribute id="State_scalarSfcMeltPond_mult" name="scalarSfcMeltPond_multiplier">
+				<number>%State_scalarSfcMeltPond_mult%</number>
+			</attribute>
+		</csvFile>
 	</locationSet>
 </locationSets>

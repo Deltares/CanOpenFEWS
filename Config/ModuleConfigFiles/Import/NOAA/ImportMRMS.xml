@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 (x64) (http://www.altova.com) by Deltares USA (Deltares USA) -->
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
+	<import>
+		<general>
+			<importType>NETCDF-CF_GRID</importType>
+			<serverUrl>https://thredds.ucar.edu/thredds/dodsC/grib/NCEP/MRMS/ALASKA/Precip/</serverUrl>
+			<relativeViewPeriod unit="hour" startOverrulable="true" start="-60" end="0"/>
+			<logWarningsToSeparateFile>true</logWarningsToSeparateFile>
+			<idMapId>IdImportMRMSOpenDAP</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<missingValue>-9999.00</missingValue>
+			<importTimeZone>
+				<timeZoneName>GMT</timeZoneName>
+			</importTimeZone>
+			<dataFeedId>MRMSOpenDAP</dataFeedId>
+			<expiryTime unit="day" multiplier="30"/>
+		</general>
+		<tolerance parameterId="PC.sim" timeUnit="minute" unitCount="1"/>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportMRMS</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PC.sim</parameterId>
+			<locationId>MRMS</locationId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+	</import>
+</timeSeriesImportRun>

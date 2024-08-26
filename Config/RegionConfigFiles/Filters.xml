@@ -26,9 +26,31 @@
 			<readWriteMode>add originals</readWriteMode>
 			<synchLevel>5</synchLevel>
 		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportUSGS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>HG.obs</parameterId>
+			<locationSetId>DisplayHydroStations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="15"/>
+			<relativeViewPeriod unit="day" start="-5" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>5</synchLevel>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportUSGS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.obs</parameterId>
+			<locationSetId>DisplayHydroStations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="15"/>
+			<relativeViewPeriod unit="day" start="-5" end="0"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>5</synchLevel>
+		</timeSeriesSet>
 	</timeSeriesSets>
 	<!-- Timeseries Sets - ECCC Meteo Stations -->
-	<timeSeriesSets id="MeteoStations">
+	<timeSeriesSets id="ECCCMeteoStations">
 		<timeSeriesSet>
 			<moduleInstanceId>ImportECCCScalar</moduleInstanceId>
 			<valueType>scalar</valueType>
@@ -387,7 +409,7 @@
 	<filter id="MeasuredData" name="Hydro and Meteo Station Data">
 		<mapExtentId>$REGION$</mapExtentId>
 		<child foreignKey="HydroStations"/>
-		<child foreignKey="MeteoStations"/>
+		<child foreignKey="ECCCMeteoStations"/>
 	</filter>
 	<filter id="Snow Data" name="Snow Data">
 		<mapExtentId>$REGION$</mapExtentId>
@@ -406,6 +428,7 @@
 	</filter>
 	<filter id="ForecastDataBasin" name="Forecast Data - By Basin">
 		<mapExtentId>$REGION$</mapExtentId>
+		<viewPermission>AlbertaForecaster</viewPermission>
 		<child foreignKey="HRDPABasins"/>
 		<child foreignKey="RDPABasins"/>
 		<child foreignKey="RDPSBasins"/>
@@ -431,9 +454,9 @@
 		<validationIconsVisible>false</validationIconsVisible>
 		<timeSeriesSetsId>HydroStations</timeSeriesSetsId>
 	</filter>
-	<filter id="MeteoStations" name="Meteo Stations">
+	<filter id="ECCCMeteoStations" name="Meteo Stations">
 		<validationIconsVisible>false</validationIconsVisible>
-		<timeSeriesSetsId>MeteoStations</timeSeriesSetsId>
+		<timeSeriesSetsId>ECCCMeteoStations</timeSeriesSetsId>
 	</filter>
 	<filter id="RDPAStations" name="RDPA @ Stations">
 		<validationIconsVisible>false</validationIconsVisible>

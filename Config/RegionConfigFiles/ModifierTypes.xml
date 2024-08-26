@@ -204,6 +204,67 @@
 			</descriptiveFunctionGroup>
 		</descriptiveFunctionGroups>
 	</spatialProfileModifier>
+	<attributeModifiers>
+<!--	<locationAttributeModifier id="SUMMAmodeldecisions" name="SUMMA Model Decisions">
+			<userDefinedDescriptionField id="details" descriptionField="Details"/>
+			<modifiableGroup name="SUMMA Model Decisions">
+				<locationSetId>ChenaBasins</locationSetId>
+				<attribute id="SUMMAmodeldecisions">
+				<selection></selection>
+					<comment>Test for Model Decisions</comment>
+				</attribute>
+				<tabularLayout>
+					<showOriginalValues>false</showOriginalValues>
+					<locationOrientation>row</locationOrientation>
+				</tabularLayout>
+			</modifiableGroup>
+		</locationAttributeModifier>-->
+		<locationAttributeModifier id="AdjustStates_SUMMA" name="Adjust SUMMA model states">
+			<expiryTime unit="hour" multiplier="12"/>
+			<modifiableGroup name="Add or Multiply SUMMA states">
+				<locationSetId>ProcessBasins</locationSetId>
+				<attribute id="State_scalarSfcMeltPond_mult">
+					<comment>value replacing the 'add_offset' attribute with default value 0. Note: new_value = (original_value + add_offset) * scale_factor</comment>
+				</attribute>
+				<attribute id="State_scalarSfcMeltPond_incr">
+					<comment>value replacing the scale_factor attribute with default value 1 Note: new_value = (original_value + add_offset) * scale_factor</comment>
+				</attribute>
+<!--				<attribute id="State_ZPND_incr">
+					<comment>value replacing the 'add_offset' attribute with default value 0 Note: new_value = (original_value + add_offset) * scale_factor</comment>
+				</attribute>-->
+<!--				<attribute id="State_ZPND_mult">
+					<comment>value replacing the scale_factor attribute with default value 1 Note: new_value = (original_value + add_offset) * scale_factor</comment>
+				</attribute>-->
+				<panelLayout>
+					<tableLayout id="scalarSfcMeltPond">
+						<title>PondedWater</title>
+						<attributeId>State_scalarSfcMeltPond_mult</attributeId>
+						<attributeId>State_scalarSfcMeltPond_incr</attributeId>
+						<locationOrientation>column</locationOrientation>
+					</tableLayout>
+<!--					<tableLayout id="State_ZPND">
+						<title>ZPND</title>
+						<attributeId>State_ZPND_incr</attributeId>
+						<attributeId>State_ZPND_mult</attributeId>
+						<locationOrientation>column</locationOrientation>
+					</tableLayout>-->
+				</panelLayout>
+<!--				<tabularLayout>
+					<showOriginalValues>false</showOriginalValues>
+					<locationOrientation>column</locationOrientation>
+				</tabularLayout>-->
+			</modifiableGroup>
+			<template id="State_panel" name="State_panel">
+				<panel>
+					<panelId>scalarSfcMeltPond</panelId>
+					<position column="1" row="1"/>
+				</panel>			
+				</template>
+		</locationAttributeModifier>
+	</attributeModifiers>
+	<modifiersGroup id="AdjustStates_SUMMA">
+		<modifierId>AdjustStates_SUMMA</modifierId>
+	</modifiersGroup>
 	<modifiersGroup id="MultiplyPC_Historic">
 		<modifierId>MultiplyPC_Historic</modifierId>
 	</modifiersGroup>
@@ -240,4 +301,7 @@
 	<modifiersGroup id="REPSSpatialCopy">
 		<modifierId>REPSSpatialCopy</modifierId>
 	</modifiersGroup>
+<!--	<modifiersGroup id="SUMMAmodeldecisions">
+		<modifierId>SUMMAmodeldecisions</modifierId>
+	</modifiersGroup>-->
 </modifierTypes>

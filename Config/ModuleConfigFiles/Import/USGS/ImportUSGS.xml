@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
+	<import>
+		<general>
+			<importTypeStandard>wml2_server</importTypeStandard>
+			<serverUrl>https://nwis.waterservices.usgs.gov/nwis/iv</serverUrl>
+			<relativeViewPeriod unit="day" start="$STARTTIME$" end="$ENDTIME$" startOverrulable="true" endOverrulable="true"/>
+			<idMapId>IdImportUSGS</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<importTimeZone>
+				<timeZoneName>GMT</timeZoneName>
+			</importTimeZone>
+			<dataFeedId>USGS_server</dataFeedId>
+			<!--if convertingDatum then need negative datum values in Locations.csv-->
+			<!--<convertDatum>true</convertDatum>-->
+			<expiryTime unit="day" multiplier="120"/>
+		</general>
+		<properties>
+			<!-- Optional: Use this option to write request and response messages to file. -->
+			<!--<string key="RequestsOutputDirectory" value="%REGION_HOME%/Temp/"/>-->
+			<!-- Optional: Use this option to define what the request string must look like. This depends on how the WaterML2 webservice is setup. By using tags in the
+                 request template it is possible to insert the import parameters at run-time.
+                 The following tags can be set:
+                 @starttime@ = start time request period
+                 @endtime@ = end time of request period
+                 @locationid@ = location identifier
+                 @parameterid@ = parameter identifier
+                 @qualifier0@ = qualifier value 0 (can be used freely for additional purposes if required)
+                 @qualifier1@ = qualifier value 1
+                 @qualifier2@ = qualifier value 2
+                 @qualifier3@ = qualifier value 3
+            -->
+			<string key="requestTemplate" value="format=waterml,2.0&amp;sites=@locationid@&amp;startDT=@starttime@&amp;endDT=@endtime@&amp;parameterCd=@parameterid@&amp;siteStatus=all"/>
+			<!-- Optional: Maximum time in millis before a read action times-out. Read time is defined by the time betweend sending a request and start reading the response -->
+			<int key="ReadTimeoutMillis" value="100000"/>
+			<!-- Optional: Maximum time in millis for making the connection to the WaterML2 service. -->
+			<int key="ConnectionTimeoutMillis" value="10000"/>
+			<!-- Optional: Option to import multiple locations in single request. -->
+			<!--<bool key="RequestMultipleLocations" value="true"/>-->
+		</properties>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportUSGS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>QR.obs</parameterId>
+			<locationSetId>USGSStations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="15"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>1</synchLevel>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportUSGS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>HG.obs</parameterId>
+			<locationSetId>USGSStations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="minute" multiplier="15"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>1</synchLevel>
+		</timeSeriesSet>
+<!--		<timeSeriesSet>
+			<moduleInstanceId>ImportUSGS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>HP.obs</parameterId>
+			<locationSetId>USGS_Stations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>1</synchLevel>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportUSGS</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TW.obs</parameterId>
+			<locationSetId>USGS_Stations</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="nonequidistant"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>1</synchLevel>
+		</timeSeriesSet>-->
+		<externUnit parameterId="QR.obs" unit="ft3/s"/>
+		<externUnit parameterId="HG.obs" unit="ft"/>
+<!--		<externUnit parameterId="HP.obs" unit="ft"/>
+		<externUnit parameterId="TW.obs" unit="oC"/>-->
+	</import>
+</timeSeriesImportRun>
