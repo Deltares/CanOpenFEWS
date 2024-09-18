@@ -27,10 +27,10 @@
 				<filter>%ROOT_DIR%/*.*</filter>
 			</purgeActivity>
 			<purgeActivity>
-				<filter>%ROOT_DIR%//$MODEL$/input/*.*</filter>
+				<filter>%ROOT_DIR%/$MODEL$/input/*.*</filter>
 			</purgeActivity>
 			<purgeActivity>
-				<filter>%ROOT_DIR%//$MODEL$/output/*.*</filter>
+				<filter>%ROOT_DIR%/$MODEL$/output/*.*</filter>
 			</purgeActivity>
 			<purgeActivity>
 				<filter>%ROOT_DIR%/$MODEL$/settings/*.*</filter>
@@ -139,8 +139,8 @@
 				<exportFile>%ROOT_DIR%/$MODEL$/run_info.nc</exportFile>
 				<properties>
 					<string key="Model" value="$MODEL$"/>
-					<string key="forcing_file" value="%ROOT_DIR%//$MODEL$//input//inputs.nc"/>
-					<int key="hour_timestep" value="3"/>
+					<string key="forcing_file" value="%ROOT_DIR%/$MODEL$/input/inputs.nc"/>
+					<int key="hour_timestep" value="$TIMESTEP$"/>
 				</properties>
 			</exportNetcdfRunFileActivity>
 		</exportActivities>
@@ -150,15 +150,15 @@
 					<executable>$PYTHON_EXE$</executable>
 				</command>
 				<arguments>
-					<argument>%ROOT_DIR%\summa_fews_adaptor.py</argument>
+					<argument>%ROOT_DIR%/summa_fews_adaptor.py</argument>
 					<argument>--work-dir</argument>
-					<argument>%ROOT_DIR%\$MODEL$\</argument>
+					<argument>%ROOT_DIR%/$MODEL$/</argument>
 					<argument>--run-info-file</argument>
 					<argument>%ROOT_DIR%/$MODEL$/run_info.nc</argument>
 					<argument>--summa-exe</argument>
-					<argument>%ROOT_DIR%\bin\summa.exe</argument>
+					<argument>%ROOT_DIR%/bin/summa.exe</argument>
 					<argument>--file-manager</argument>
-					<argument>%ROOT_DIR%\$MODEL$\settings\fileManager.txt</argument>
+					<argument>%ROOT_DIR%/$MODEL$/settings/fileManager.txt</argument>
 				</arguments>
 				<timeOut>36000000</timeOut>
 				<ignoreDiagnostics>true</ignoreDiagnostics>
@@ -167,7 +167,7 @@
 		<importActivities>
 			<importStateActivity>
 				<stateFile>
-					<importFile>%ROOT_DIR%\$MODEL$\output\state_update.nc</importFile>
+					<importFile>%ROOT_DIR%/$MODEL$/output/state_update.nc</importFile>
 					<relativeExportFile>coldState.nc</relativeExportFile>
 				</stateFile>
 				<synchLevel>20</synchLevel>
