@@ -11,7 +11,8 @@
 	<parameter internal="SCA.sim" external="scalarGroundSnowFraction"/>
 	<locationIdFunction internalLocationSet="ChenaSubBasins" externalLocationFunction="@HRU_ID@"/>-->
 	<!-- Chena Mapping -->
-	<function internalLocationSet="ChenaBasins" externalLocationFunction="@Basin@" externalParameterFunction="averageRoutedRunoff" internalParameter="QR.sim"/>
+	<!--<function internalLocationSet="ChenaBasins" externalLocationFunction="@Basin@" externalParameterFunction="averageRoutedRunoff" internalParameter="QR.sim"/>-->
+	<function internalLocationSet="ChenaBasins" externalLocationFunction="@Basin@" externalParameterFunction="IRFroutedRunoff" internalParameter="QR.sim"/>
 	<function internalLocationSet="ChenaSubBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="scalarTotalRunoff" internalParameter="QR.sim"/>
 	<function internalLocationSet="ChenaSubBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="scalarSWE" internalParameter="SWE.sim"/>
 	<function internalLocationSet="ChenaSubBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="scalarSnowDepth" internalParameter="SD.sim"/>

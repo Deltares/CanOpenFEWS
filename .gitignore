@@ -1,6 +1,7 @@
 # Ignore files that are produced by running Delft-FEWS
 *.txt
 *.log
+*.old
 *.ini
 *.lnk
 *.jar
@@ -21,3 +22,6 @@ Modules/
 
 # Ignore python related files
 __pycache__
+
+# Shortcut Files
+CanOpenFEWS.sh

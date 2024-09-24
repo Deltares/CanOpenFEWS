@@ -162,17 +162,25 @@
 				<timeOut>36000000</timeOut>
 				<ignoreDiagnostics>true</ignoreDiagnostics>
 			</executeActivity>
-			<!--			<executeActivity>
+			<executeActivity>
 				<command>
-					<executable>%ROOT_DIR%/bin/summa.exe</executable>
+					<executable>$PYTHON_EXE$</executable>
 				</command>
 				<arguments>
-					<argument>-m</argument>
-					<argument>%ROOT_DIR%/$MODEL$/settings/.pysumma/pysumma_run/fileManager.txt</argument>
+					<argument>%ROOT_DIR%/mizuroute_adaptor.py</argument>
+					<argument>--work-dir</argument>
+					<argument>%ROOT_DIR%/$MODEL$/</argument>
+					<argument>--run-info-file</argument>
+					<argument>%ROOT_DIR%/$MODEL$/run_info.nc</argument>
+					<argument>--model-exe</argument>
+					<argument>%ROOT_DIR%/bin/mizuroute.exe</argument>
+					<argument>--file-manager</argument>
+					<argument>%ROOT_DIR%/$MODEL$/mizuroute/mizuroute.control</argument>
 				</arguments>
 				<timeOut>36000000</timeOut>
 				<ignoreDiagnostics>true</ignoreDiagnostics>
-			</executeActivity>-->
+			</executeActivity>
+
 		</executeActivities>
 		<importActivities>
 			<importStateActivity>
@@ -194,7 +202,7 @@
 						<timeStep unit="nonequidistant"/>
 						<readWriteMode>add originals</readWriteMode>
 					</timeSeriesSet>
-					<timeSeriesSet>
+					<!--<timeSeriesSet>
 						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
 						<valueType>scalar</valueType>
 						<parameterId>QR.sim</parameterId>
@@ -202,7 +210,7 @@
 						<timeSeriesType>temporary</timeSeriesType>
 						<timeStep unit="nonequidistant"/>
 						<readWriteMode>add originals</readWriteMode>
-					</timeSeriesSet>
+					</timeSeriesSet>-->
 					<timeSeriesSet>
 						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
 						<valueType>scalar</valueType>
@@ -236,6 +244,20 @@
 						<parameterId>RT.sim</parameterId>
 						<locationSetId>$MODEL$SubBasins</locationSetId>
 						<timeSeriesType>temporary</timeSeriesType>
+						<timeStep unit="nonequidistant"/>
+						<readWriteMode>add originals</readWriteMode>
+					</timeSeriesSet>
+				</timeSeriesSets>
+			</importNetcdfActivity>
+			<importNetcdfActivity>
+				<importFile>mizuroute_output.nc</importFile>
+				<timeSeriesSets>
+					<timeSeriesSet>
+						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>QR.sim</parameterId>
+						<locationSetId>$MODEL$Basins</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
 						<timeStep unit="nonequidistant"/>
 						<readWriteMode>add originals</readWriteMode>
 					</timeSeriesSet>

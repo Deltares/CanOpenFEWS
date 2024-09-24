@@ -12,8 +12,6 @@
 		<string key="MULTIPLIER" value="1"/>
 		<string key="OUTPUTTIMESERIESTYPE" value="external historical"/>
 		<string key="NONEQUIINPUTMODULEINSTANCE" value="ChenaSUMMAHistoric"/>
-		<locationAttribute key="sno_add_offset" locationId="ChenaBasin" attributeId="State_scalarSfcMeltPond_mult"/>
-		<locationAttribute key="sno_scale_factor" locationId="ChenaBasin" attributeId="State_scalarSfcMeltPond_incr"/>
 	</properties>
 	<!-- Run SUMMA Historic-->
 	<activity>
