@@ -104,7 +104,6 @@ http://fews.wldelft.nl/schemas/version1.0/parameters.xsd">
 			<shortName>QR.fcst</shortName>
 			<description>Discharge - Forecast</description>
 		</parameter>
-
 	</parameterGroup>
 	<parameterGroup id="Precipitation">
 		<parameterType>accumulative</parameterType>
@@ -131,6 +130,19 @@ http://fews.wldelft.nl/schemas/version1.0/parameters.xsd">
 		</parameter>
 		<parameter id="PC.nwp" name="PC.nwp">
 			<shortName>PC.nwp</shortName>
+		</parameter>
+	</parameterGroup>
+	<parameterGroup id="PrecipitationRate">
+		<parameterType>mean</parameterType>
+		<unit>mm/s</unit>
+		<valueResolution>0.0001</valueResolution>
+		<parameter id="PR" name="PR">
+			<shortName>PR</shortName>
+			<description>Precipitation Rate</description>
+		</parameter>
+		<parameter id="PR.nwp" name="PR.nwp">
+			<shortName>PR.nwp</shortName>
+			<description>Precipitation Rate (NWP)</description>
 		</parameter>
 	</parameterGroup>
 	<parameterGroup id="Precipitation (acc)">
@@ -395,7 +407,7 @@ http://fews.wldelft.nl/schemas/version1.0/parameters.xsd">
 	</parameterGroup>
 	<parameterGroup id="Radiation">
 		<parameterType>accumulative</parameterType>
-		<unit>W/m2-h</unit>
+		<unit>W/m2</unit>
 		<valueResolution>0.01</valueResolution>
 		<parameter id="RS" name="Shortwave Radiation">
 			<shortName>RS</shortName>

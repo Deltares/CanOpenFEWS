@@ -151,6 +151,9 @@
 	<workflowDescriptor id="RunChenaSUMMAGDPSForecast" name="Run Chena SUMMA (GDPS Forecast)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep id="GMT_6hourly"/>
 	</workflowDescriptor>
+	<workflowDescriptor id="RunChenaSUMMAHRRRForecast" name="Run Chena SUMMA (HRRR Forecast)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
+		<cardinalTimeStep id="GMT_6hourly"/>
+	</workflowDescriptor>
 	<workflowDescriptor id="RunChenaSUMMAGEPSForecast" name="Run Chena SUMMA (GEPS Forecast)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep id="GMT_6hourly"/>
 	</workflowDescriptor>
@@ -158,6 +161,9 @@
 		<cardinalTimeStep id="$DAY_TIMESTEP$"/>
 	</workflowDescriptor>
 	<workflowDescriptor id="RunRossSUMMAGDPSForecast" name="Run Ross SUMMA (GDPS Forecast)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
+		<cardinalTimeStep id="GMT_6hourly"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="RunRossSUMMAHRRRForecast" name="Run Ross SUMMA (HRRR Forecast)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep id="GMT_6hourly"/>
 	</workflowDescriptor>
 	<workflowDescriptor id="RunRossSUMMAGEPSForecast" name="Run Ross SUMMA (GEPS Forecast)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
@@ -284,11 +290,13 @@
 		</node>
 		<node name="Run Model - Chena SUMMA">
 			<workflowId>RunChenaSUMMAHistoric</workflowId>
+			<workflowId>RunChenaSUMMAHRRRForecast</workflowId>
 			<workflowId>RunChenaSUMMAGDPSForecast</workflowId>
 			<workflowId>RunChenaSUMMAGEPSForecast</workflowId>
 		</node>
 		<node name="Run Model - Ross SUMMA">
 			<workflowId>RunRossSUMMAHistoric</workflowId>
+			<workflowId>RunRossSUMMAHRRRForecast</workflowId>
 			<workflowId>RunRossSUMMAGDPSForecast</workflowId>
 			<workflowId>RunRossSUMMAGEPSForecast</workflowId>
 		</node>

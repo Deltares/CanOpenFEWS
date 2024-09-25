@@ -26,7 +26,7 @@
 	<activity>
 		<properties>
 			<string key="PARAMETER" value="QR.sim"/>
-			<string key="LOCATIONSET" value="ChenaSubBasins"/>
+			<string key="LOCATIONSET" value="ChenaBasins"/>
 		</properties>
 		<runIndependent>true</runIndependent>
 		<moduleInstanceId>ChenaSUMMAHistoric</moduleInstanceId>

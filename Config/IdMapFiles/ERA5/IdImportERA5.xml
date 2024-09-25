@@ -9,15 +9,15 @@
 	<!-- Updated variables for SUMMA-->
 	<!--Surface Level Parameters-->
 	<parameter internal="TA" external="t"/>
-	<parameter internal="RH" external="q"/>
+	<parameter internal="XS" external="q"/>
 	<parameter internal="US" internalQualifier="U" external="u"/>
 	<parameter internal="US" internalQualifier="V" external="v"/>
 	<!--Pressure Level Parameters -->
-	<parameter internal="PC" external="mtpr"/>
+	<parameter internal="PR" external="mtpr"/>
 	<parameter internal="RS" external="msdwswrf"/>
 	<parameter internal="RL" external="msdwlwrf"/>
 	<!--Merged / Processed ERA5 Import -->
-	<parameter internal="PC" external="pptrate"/>
+	<parameter internal="PR" external="pptrate"/>
 	<parameter internal="TA" external="airtemp"/>
 	<parameter internal="PA" external="airpres"/>
 	<parameter internal="RL" external="LWRadAtm"/>

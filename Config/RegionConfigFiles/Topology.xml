@@ -264,6 +264,10 @@
 			<visibleModifierGroup>AdjustStates_SUMMA</visibleModifierGroup>
 			<localRun>false</localRun>
 		</node>
+		<node id="RossSUMMAHRRR" name="Run Ross SUMMA (HRRR)">
+			<workflowId>RunRossSUMMAHRRRForecast</workflowId>
+			<localRun>false</localRun>
+		</node>
 		<node id="RossSUMMAGDPS" name="Run Ross SUMMA (GDPS)">
 			<workflowId>RunRossSUMMAGDPSForecast</workflowId>
 			<localRun>false</localRun>
@@ -277,6 +281,10 @@
 		<node id="ChenaSUMMAHistoric" name="Run Chena SUMMA (Historic Update)">
 			<workflowId>RunChenaSUMMAHistoric</workflowId>
 			<visibleModifierGroup>AdjustStates_SUMMA</visibleModifierGroup>
+			<localRun>false</localRun>
+		</node>
+		<node id="ChenaSUMMAHRRR" name="Run Chena SUMMA (HRRR)">
+			<workflowId>RunChenaSUMMAHRRRForecast</workflowId>
 			<localRun>false</localRun>
 		</node>
 		<node id="ChenaSUMMAGDPS" name="Run Chena SUMMA (GDPS)">

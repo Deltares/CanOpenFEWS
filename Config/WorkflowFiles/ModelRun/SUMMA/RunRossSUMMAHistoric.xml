@@ -26,7 +26,7 @@
 	<activity>
 		<properties>
 			<string key="PARAMETER" value="QR.sim"/>
-			<string key="LOCATIONSET" value="RossSubBasins"/>
+			<string key="LOCATIONSET" value="RossBasins"/>
 		</properties>
 		<runIndependent>true</runIndependent>
 		<moduleInstanceId>RossSUMMAHistoric</moduleInstanceId>

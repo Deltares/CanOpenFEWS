@@ -18,7 +18,7 @@
 		<tolerance locationId="$INPUTGRID$" parameterId="RH" timeUnit="hour" unitCount="2"/>
 		<tolerance locationId="$INPUTGRID$" parameterId="US" timeUnit="hour" unitCount="2"/>
 		<!-- summa variables tolerance -->
-		<tolerance locationId="$INPUTGRID$" parameterId="PC" timeUnit="hour" unitCount="2"/>
+		<tolerance locationId="$INPUTGRID$" parameterId="PR" timeUnit="hour" unitCount="2"/>
 		<tolerance locationId="$INPUTGRID$" parameterId="RS" timeUnit="hour" unitCount="2"/>
 		<tolerance locationId="$INPUTGRID$" parameterId="RL" timeUnit="hour" unitCount="2"/>
 		<tolerance locationId="$INPUTGRID$" parameterId="PA" timeUnit="hour" unitCount="2"/>
@@ -62,7 +62,7 @@
 		<timeSeriesSet>
 			<moduleInstanceId>ImportERA5</moduleInstanceId>
 			<valueType>grid</valueType>
-			<parameterId>PC</parameterId>
+			<parameterId>PR</parameterId>
 			<locationId>$INPUTGRID$</locationId>
 			<timeSeriesType>external historical</timeSeriesType>
 			<timeStep unit="hour" multiplier="1"/>
@@ -102,10 +102,10 @@
 		<!-- summa variables externunit -->
 		<externUnit parameterId="TA" unit="K"/>
 		<externUnit parameterId="RH" unit="kg/kg"/>
-		<externUnit parameterId="US" unit="ms-1"/>
-		<externUnit parameterId="PC" unit="m"/>
-		<externUnit parameterId="RS" unit="Jm-2"/>
-		<externUnit parameterId="RL" unit="Jm-2"/>
+		<externUnit parameterId="US" unit="m/s"/>
+		<externUnit parameterId="PR" unit="kg/m2/s"/>
+		<externUnit parameterId="RS" unit="W/m2"/>
+		<externUnit parameterId="RL" unit="W/m2"/>
 		<externUnit parameterId="PA" unit="Pa"/>
 	</import>
 </timeSeriesImportRun>

@@ -62,7 +62,7 @@
 					<timeSeriesSet>
 						<moduleInstanceId>$INPUTMODULEINSTANCEMETEO$</moduleInstanceId>
 						<valueType>scalar</valueType>
-						<parameterId>PC</parameterId>
+						<parameterId>PR</parameterId>
 						<locationSetId>$MODEL$SubBasins</locationSetId>
 						<timeSeriesType>external historical</timeSeriesType>
 						<timeStep unit="hour" multiplier="$TIMESTEP$"/>

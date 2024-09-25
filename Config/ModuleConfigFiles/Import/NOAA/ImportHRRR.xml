@@ -15,13 +15,13 @@
 		<timeSeriesSet>
 			<moduleInstanceId>ImportHRRR</moduleInstanceId>
 			<valueType>grid</valueType>
-			<parameterId>PC.nwp</parameterId>
+			<parameterId>PR.nwp</parameterId>
 			<locationId>HRRR</locationId>
 			<timeSeriesType>external forecasting</timeSeriesType>
-			<timeStep unit="hour" multiplier="3"/>
+			<timeStep unit="hour" multiplier="1"/>
 			<readWriteMode>add originals</readWriteMode>
 			<synchLevel>6</synchLevel>
-			<expiryTime unit="day" multiplier="2"/>
+			<expiryTime unit="day" multiplier="7"/>
 		</timeSeriesSet>
 		<timeSeriesSet>
 			<moduleInstanceId>ImportHRRR</moduleInstanceId>
@@ -29,48 +29,73 @@
 			<parameterId>TA.nwp</parameterId>
 			<locationId>HRRR</locationId>
 			<timeSeriesType>external forecasting</timeSeriesType>
-			<timeStep unit="hour" multiplier="3"/>
-			<readWriteMode>add originals</readWriteMode>
-			<synchLevel>6</synchLevel>
-			<expiryTime unit="day" multiplier="2"/>
-		</timeSeriesSet>
-<!--		<timeSeriesSet>
-			<moduleInstanceId>ImportHRRR</moduleInstanceId>
-			<valueType>grid</valueType>
-			<parameterId>US.u.nwp</parameterId>
-			<locationId>HRRR</locationId>
-			<timeSeriesType>external forecasting</timeSeriesType>
 			<timeStep unit="hour" multiplier="1"/>
 			<readWriteMode>add originals</readWriteMode>
 			<synchLevel>6</synchLevel>
-			<expiryTime unit="day" multiplier="2"/>
+			<expiryTime unit="day" multiplier="7"/>
 		</timeSeriesSet>
 		<timeSeriesSet>
 			<moduleInstanceId>ImportHRRR</moduleInstanceId>
 			<valueType>grid</valueType>
-			<parameterId>US.v.nwp</parameterId>
+			<parameterId>XS.nwp</parameterId>
 			<locationId>HRRR</locationId>
 			<timeSeriesType>external forecasting</timeSeriesType>
 			<timeStep unit="hour" multiplier="1"/>
 			<readWriteMode>add originals</readWriteMode>
 			<synchLevel>6</synchLevel>
-			<expiryTime unit="day" multiplier="2"/>
-		</timeSeriesSet>-->
+			<expiryTime unit="day" multiplier="7"/>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportHRRR</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>RS.nwp</parameterId>
+			<locationId>HRRR</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportHRRR</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>RL.nwp</parameterId>
+			<locationId>HRRR</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+		</timeSeriesSet>
 		<timeSeriesSet>
 			<moduleInstanceId>ImportHRRR</moduleInstanceId>
 			<valueType>grid</valueType>
 			<parameterId>US.nwp</parameterId>
 			<locationId>HRRR</locationId>
 			<timeSeriesType>external forecasting</timeSeriesType>
-			<timeStep unit="hour" multiplier="3"/>
+			<timeStep unit="hour" multiplier="1"/>
 			<readWriteMode>add originals</readWriteMode>
 			<synchLevel>6</synchLevel>
-			<expiryTime unit="day" multiplier="2"/>
+			<expiryTime unit="day" multiplier="7"/>
 		</timeSeriesSet>
-		<externUnit parameterId="PC.nwp" unit="mm"/>
+			<timeSeriesSet>
+			<moduleInstanceId>ImportHRRR</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PA.nwp</parameterId>
+			<locationId>HRRR</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+			<synchLevel>6</synchLevel>
+			<expiryTime unit="day" multiplier="7"/>
+		</timeSeriesSet>
+		<externUnit parameterId="PR.nwp" unit="kg/m2/s"/>
 		<externUnit parameterId="TA.nwp" unit="K"/>
-<!--		<externUnit parameterId="US.u.nwp" unit="m/s"/>
-		<externUnit parameterId="US.v.nwp" unit="m/s"/>-->
+		<externUnit parameterId="XS.nwp" unit="kg/kg"/>
+		<externUnit parameterId="RS.nwp" unit="W/m2"/>
+		<externUnit parameterId="RL.nwp" unit="W/m2"/>
 		<externUnit parameterId="US.nwp" unit="m/s"/>
+		<externUnit parameterId="PA.nwp" unit="Pa"/>
+		
 	</import>
 </timeSeriesImportRun>

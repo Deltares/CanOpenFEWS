@@ -12,4 +12,10 @@
 		<multiplier>0.001</multiplier>
 		<incrementer>0</incrementer>
 	</unitConversion>
+	<unitConversion>
+		<inputUnitType>mm/s</inputUnitType>
+		<outputUnitType>kg/m2/s</outputUnitType>
+		<multiplier>0.001</multiplier>
+		<incrementer>0</incrementer>
+	</unitConversion>
 </unitConversions>

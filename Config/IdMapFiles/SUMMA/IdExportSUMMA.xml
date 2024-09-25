@@ -10,7 +10,7 @@
 	<parameter internal="US" external="windspd"/>
 	<enableOneToOneMapping/>-->
 	<!-- Chena -->
-	<function internalLocationSet="ChenaSubBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="pptrate" internalParameter="PC"/>
+	<function internalLocationSet="ChenaSubBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="pptrate" internalParameter="PR"/>
 	<function internalLocationSet="ChenaSubBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="airtemp" internalParameter="TA"/>
 	<function internalLocationSet="ChenaSubBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="airpres" internalParameter="PA"/>
 	<function internalLocationSet="ChenaSubBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="LWRadAtm" internalParameter="RL"/>
@@ -18,7 +18,7 @@
 	<function internalLocationSet="ChenaSubBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="spechum" internalParameter="RH"/>
 	<function internalLocationSet="ChenaSubBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="windspd" internalParameter="US"/>
 	<!-- Chena -->
-	<function internalLocationSet="ChenaSubBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="pptrate" internalParameter="PC.nwp"/>
+	<function internalLocationSet="ChenaSubBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="pptrate" internalParameter="PR.nwp"/>
 	<function internalLocationSet="ChenaSubBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="airtemp" internalParameter="TA.nwp"/>
 	<function internalLocationSet="ChenaSubBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="airpres" internalParameter="PA.nwp"/>
 	<function internalLocationSet="ChenaSubBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="LWRadAtm" internalParameter="RL.nwp"/>
@@ -26,7 +26,7 @@
 	<function internalLocationSet="ChenaSubBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="spechum" internalParameter="XS.nwp"/>
 	<function internalLocationSet="ChenaSubBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="windspd" internalParameter="US.nwp"/>
 	<!-- Ross -->
-	<function internalLocationSet="RossSubBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="pptrate" internalParameter="PC"/>
+	<function internalLocationSet="RossSubBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="pptrate" internalParameter="PR"/>
 	<function internalLocationSet="RossSubBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="airtemp" internalParameter="TA"/>
 	<function internalLocationSet="RossSubBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="airpres" internalParameter="PA"/>
 	<function internalLocationSet="RossSubBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="LWRadAtm" internalParameter="RL"/>
@@ -34,7 +34,7 @@
 	<function internalLocationSet="RossSubBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="spechum" internalParameter="RH"/>
 	<function internalLocationSet="RossSubBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="windspd" internalParameter="US"/>
 	<!-- Bow -->
-	<function internalLocationSet="BowSubBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="pptrate" internalParameter="PC"/>
+	<function internalLocationSet="BowSubBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="pptrate" internalParameter="PR"/>
 	<function internalLocationSet="BowSubBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="airtemp" internalParameter="TA"/>
 	<function internalLocationSet="BowSubBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="airpres" internalParameter="PA"/>
 	<function internalLocationSet="BowSubBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="LWRadAtm" internalParameter="RL"/>

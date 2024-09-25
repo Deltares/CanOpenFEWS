@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.1">
+	<!-- Run SUMMA Model Historic -->
+	<!-- General Properties -->
+	<properties>
+		<!-- Properties for Grid Preprocessing-->
+		<string key="INPUTGRID" value="HRRR"/>
+		<string key="INPUTMODULEINSTANCE" value="ImportHRRR"/>
+		<string key="TIMESERIESTYPE" value="external forecasting"/>
+		<string key="BASINLOCATIONS" value="RossSubBasins"/>
+		<!-- Properties for SUMMA Model Run -->
+		<string key="MODEL" value="Ross"/>
+		<int key="TIMESTEP" value="1"/>
+		<string key="TIMESTEPUNIT" value="hour"/>
+		<string key="ENSEMBLE" value="main"/>
+		<string key="OUTPUTTIMESERIESTYPE" value="simulated forecasting"/>
+		<string key="STARTTIME" value="0"/>
+		<!-- Properties for Post-processing -->
+		<string key="NONEQUIINPUTMODULEINSTANCE" value="RossSUMMAHRRRForecast"/>
+	</properties>
+	<!-- Preprocess Precipitation-->
+	<activity>
+		<properties>
+			<string key="PARAMETER" value="PR.nwp"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PreprocessHRRR</moduleInstanceId>
+		<moduleConfigFileName>PreprocessGridtoBasinTemplate</moduleConfigFileName>
+	</activity>
+	<!-- Preprocess Temperature-->
+	<activity>
+		<properties>
+			<string key="PARAMETER" value="TA.nwp"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PreprocessHRRR</moduleInstanceId>
+		<moduleConfigFileName>PreprocessGridtoBasinTemplate</moduleConfigFileName>
+	</activity>
+	<!-- Preprocess Shortwave incoming radiation at surface-->
+	<activity>
+		<properties>
+			<string key="PARAMETER" value="RS.nwp"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PreprocessHRRR</moduleInstanceId>
+		<moduleConfigFileName>PreprocessGridtoBasinMinZeroTemplate</moduleConfigFileName>
+	</activity>
+	<!-- Preprocess Longwave radiation at surface-->
+	<activity>
+		<properties>
+			<string key="PARAMETER" value="RL.nwp"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PreprocessHRRR</moduleInstanceId>
+		<moduleConfigFileName>PreprocessGridtoBasinMinZeroTemplate</moduleConfigFileName>
+	</activity>
+	<!-- Preprocess pressure at surface-->
+	<activity>
+		<properties>
+			<string key="PARAMETER" value="PA.nwp"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PreprocessHRRR</moduleInstanceId>
+		<moduleConfigFileName>PreprocessGridtoBasinTemplate</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<string key="PARAMETER" value="US.nwp"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PreprocessHRRR</moduleInstanceId>
+		<moduleConfigFileName>PreprocessGridtoBasinTemplate</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<string key="PARAMETER" value="XS.nwp"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PreprocessHRRR</moduleInstanceId>
+		<moduleConfigFileName>PreprocessGridtoBasinTemplate</moduleConfigFileName>
+	</activity>
+	<!-- Run SUMMA Historic-->
+	<activity>
+		<properties>
+			<string key="INPUTMODULEINSTANCEMETEO" value="PreprocessHRRR"/>
+			<string key="OUTPUTTIMESERIES" value="RossSUMMAHRRRForecast"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>RossSUMMAHRRRForecast</moduleInstanceId>
+		<moduleConfigFileName>SUMMAForecastTemplate</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<string key="PARAMETER" value="QR.sim"/>
+			<string key="LOCATIONSET" value="RossBasins"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>RossSUMMAHRRRForecast</moduleInstanceId>
+		<moduleConfigFileName>PostprocessNonEquiParameter</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<string key="PARAMETER" value="SWE.sim"/>
+			<string key="LOCATIONSET" value="RossSubBasins"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>RossSUMMAHRRRForecast</moduleInstanceId>
+		<moduleConfigFileName>PostprocessNonEquiParameter</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<string key="PARAMETER" value="SD.sim"/>
+			<string key="LOCATIONSET" value="RossSubBasins"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>RossSUMMAHRRRForecast</moduleInstanceId>
+		<moduleConfigFileName>PostprocessNonEquiParameter</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<string key="PARAMETER" value="SCA.sim"/>
+			<string key="LOCATIONSET" value="RossSubBasins"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>RossSUMMAHRRRForecast</moduleInstanceId>
+		<moduleConfigFileName>PostprocessNonEquiParameter</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<string key="PARAMETER" value="RT.sim"/>
+			<string key="LOCATIONSET" value="RossSubBasins"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>RossSUMMAHRRRForecast</moduleInstanceId>
+		<moduleConfigFileName>PostprocessNonEquiParameter</moduleConfigFileName>
+	</activity>
+</workflow>

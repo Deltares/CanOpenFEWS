@@ -9,7 +9,7 @@
 		<exportDir>%ROOT_DIR%/$MODEL$/input/</exportDir>
 		<exportDataSetDir>%ROOT_DIR%</exportDataSetDir>
 		<exportIdMap>IdExportSUMMA</exportIdMap>
-		<!--<exportUnitConversionsId>ExportSUMMA</exportUnitConversionsId>-->
+		<exportUnitConversionsId>ExportSUMMA</exportUnitConversionsId>
 		<importDir>%ROOT_DIR%/$MODEL$/output</importDir>
 		<importIdMap>IdImportSUMMA</importIdMap>
 		<dumpFileDir>$GA_DUMPFILEDIR$</dumpFileDir>
@@ -65,7 +65,7 @@
 					<timeSeriesSet>
 						<moduleInstanceId>$INPUTMODULEINSTANCEMETEO$</moduleInstanceId>
 						<valueType>scalar</valueType>
-						<parameterId>PC.nwp</parameterId>
+						<parameterId>PR.nwp</parameterId>
 						<locationSetId>$MODEL$SubBasins</locationSetId>
 						<timeSeriesType>external forecasting</timeSeriesType>
 						<timeStep unit="hour" multiplier="$TIMESTEP$"/>

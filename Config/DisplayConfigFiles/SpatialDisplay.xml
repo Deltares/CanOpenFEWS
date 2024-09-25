@@ -657,10 +657,10 @@ http://fews.wldelft.nl/schemas/version1.0/gridDisplay.xsd">
 				<timeSeriesSet>
 					<moduleInstanceId>ImportHRRR</moduleInstanceId>
 					<valueType>grid</valueType>
-					<parameterId>PC.nwp</parameterId>
+					<parameterId>PR.nwp</parameterId>
 					<locationId>HRRR</locationId>
 					<timeSeriesType>external forecasting</timeSeriesType>
-					<timeStep unit="hour" multiplier="3"/>
+					<timeStep unit="hour" multiplier="1"/>
 					<readWriteMode>read complete forecast</readWriteMode>
 				</timeSeriesSet>
 				<classBreaksId>Class.Precipitation</classBreaksId>
@@ -672,10 +672,70 @@ http://fews.wldelft.nl/schemas/version1.0/gridDisplay.xsd">
 					<parameterId>TA.nwp</parameterId>
 					<locationId>HRRR</locationId>
 					<timeSeriesType>external forecasting</timeSeriesType>
-					<timeStep unit="hour" multiplier="3"/>
+					<timeStep unit="hour" multiplier="1"/>
 					<readWriteMode>read complete forecast</readWriteMode>
 				</timeSeriesSet>
 				<classBreaksId>Class.Temperature</classBreaksId>
+			</gridPlot>
+			<gridPlot id="HRRRPressure" name="Pressure (kPA)">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportHRRR</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>PA.nwp</parameterId>
+					<locationId>HRRR</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour" multiplier="1"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.Pressure</classBreaksId>
+			</gridPlot>
+			<gridPlot id="HRRRSpecificHumidity" name="Specific Humidity (kg/kg)">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportHRRR</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>TA.nwp</parameterId>
+					<locationId>HRRR</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.SpecificHumidity</classBreaksId>
+			</gridPlot>
+			<gridPlot id="HRRRWindSpeed" name="Wind Speed (m/s)">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportHRRR</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>US.nwp</parameterId>
+					<locationId>HRRR</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.Windspeed</classBreaksId>
+			</gridPlot>
+			<gridPlot id="HRRRLongRadiation" name="Longwave Radiation (W/ms-h)">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportHRRR</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>RL.nwp</parameterId>
+					<locationId>HRRR</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.LongWaveRadiation</classBreaksId>
+			</gridPlot>
+			<gridPlot id="HRRRYShortRadiation" name="Shortwave Radiation (W/ms-h)">
+				<timeSeriesSet>
+					<moduleInstanceId>ImportHRRR</moduleInstanceId>
+					<valueType>grid</valueType>
+					<parameterId>RS.nwp</parameterId>
+					<locationId>HRRR</locationId>
+					<timeSeriesType>external forecasting</timeSeriesType>
+					<timeStep unit="hour"/>
+					<readWriteMode>read complete forecast</readWriteMode>
+				</timeSeriesSet>
+				<classBreaksId>Class.ShortWaveRadiation</classBreaksId>
 			</gridPlot>
 		</gridPlotGroup>
 		<gridPlotGroup id="NAM" name="NAM Forecast">
@@ -737,7 +797,7 @@ http://fews.wldelft.nl/schemas/version1.0/gridDisplay.xsd">
 				<timeSeriesSet>
 					<moduleInstanceId>ImportERA5</moduleInstanceId>
 					<valueType>grid</valueType>
-					<parameterId>PC</parameterId>
+					<parameterId>PR</parameterId>
 					<locationId>ERA5Yukon</locationId>
 					<timeSeriesType>external historical</timeSeriesType>
 					<timeStep unit="hour"/>
@@ -823,7 +883,7 @@ http://fews.wldelft.nl/schemas/version1.0/gridDisplay.xsd">
 				<timeSeriesSet>
 					<moduleInstanceId>ImportERA5</moduleInstanceId>
 					<valueType>grid</valueType>
-					<parameterId>PC</parameterId>
+					<parameterId>PR</parameterId>
 					<locationId>ERA5Chena</locationId>
 					<timeSeriesType>external historical</timeSeriesType>
 					<timeStep unit="hour"/>
@@ -909,7 +969,7 @@ http://fews.wldelft.nl/schemas/version1.0/gridDisplay.xsd">
 				<timeSeriesSet>
 					<moduleInstanceId>ImportERA5</moduleInstanceId>
 					<valueType>grid</valueType>
-					<parameterId>PC</parameterId>
+					<parameterId>PR</parameterId>
 					<locationId>ERA5Ross</locationId>
 					<timeSeriesType>external historical</timeSeriesType>
 					<timeStep unit="hour"/>
@@ -1754,7 +1814,7 @@ http://fews.wldelft.nl/schemas/version1.0/gridDisplay.xsd">
 					<timeSeriesSet>
 						<moduleInstanceId>PreprocessERA5</moduleInstanceId>
 						<valueType>scalar</valueType>
-						<parameterId>PC</parameterId>
+						<parameterId>PR</parameterId>
 						<locationSetId>ModelBasins</locationSetId>
 						<timeSeriesType>external historical</timeSeriesType>
 						<timeStep unit="hour"/>
@@ -1841,7 +1901,7 @@ http://fews.wldelft.nl/schemas/version1.0/gridDisplay.xsd">
 						<moduleInstanceId>ChenaSUMMAHistoric</moduleInstanceId>
 						<valueType>scalar</valueType>
 						<parameterId>QR.sim</parameterId>
-						<locationSetId>ChenaSubBasins</locationSetId>
+						<locationSetId>ChenaBasins</locationSetId>
 						<timeSeriesType>external historical</timeSeriesType>
 						<timeStep unit="hour" multiplier="1"/>
 						<readWriteMode>read complete forecast</readWriteMode>
@@ -1904,7 +1964,7 @@ http://fews.wldelft.nl/schemas/version1.0/gridDisplay.xsd">
 					<moduleInstanceId>ChenaSUMMAGDPSForecast</moduleInstanceId>
 					<valueType>scalar</valueType>
 					<parameterId>QR.sim</parameterId>
-					<locationSetId>ChenaSubBasins</locationSetId>
+					<locationSetId>ChenaBasins</locationSetId>
 					<timeSeriesType>simulated forecasting</timeSeriesType>
 					<timeStep unit="hour" multiplier="3"/>
 					<readWriteMode>read complete forecast</readWriteMode>

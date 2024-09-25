@@ -253,6 +253,10 @@
 	<moduleInstanceDescriptor id="PreprocessGEPS">
 		<description>Preprocess for Global Ensemble Prediction System</description>
 	</moduleInstanceDescriptor>
+	<!-- Preprocess NOAA grids-->
+	<moduleInstanceDescriptor id="PreprocessHRRR">
+		<description>Preprocess HRRR data</description>
+	</moduleInstanceDescriptor>
 	<moduleInstanceDescriptor id="PreprocessWSC">
 		<description>Preprocess WSC data</description>
 	</moduleInstanceDescriptor>
@@ -430,6 +434,9 @@
 	<moduleInstanceDescriptor id="RossSUMMARDPSForecast">
 		<description>Run the Ross model with RDPS Forecast Data</description>
 	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="RossSUMMAHRRRForecast">
+		<description>Run the Ross model with RDPS Forecast Data</description>
+	</moduleInstanceDescriptor>
 	<moduleInstanceDescriptor id="RossSUMMAGDPSForecast">
 		<description>Run the Ross model with GDPS Forecast Data</description>
 	</moduleInstanceDescriptor>
@@ -451,6 +458,9 @@
 	</moduleInstanceDescriptor>
 	<moduleInstanceDescriptor id="ChenaSUMMAForecast">
 		<description>Run the Chena model with Forecast Data</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ChenaSUMMAHRRRForecast">
+		<description>Run the Chena model with RDPS Forecast Data</description>
 	</moduleInstanceDescriptor>
 	<moduleInstanceDescriptor id="ChenaSUMMARDPSForecast">
 		<description>Run the Chena model with RDPS Forecast Data</description>

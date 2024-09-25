@@ -9,8 +9,8 @@
 	</unitConversion>
 	<unitConversion>
 		<inputUnitType>kg/m2/s</inputUnitType>
-		<outputUnitType>mm</outputUnitType>
-		<multiplier>10800</multiplier>
+		<outputUnitType>m/s</outputUnitType>
+		<multiplier>0.001</multiplier>
 		<incrementer>0</incrementer>
 	</unitConversion>
 	<unitConversion>
