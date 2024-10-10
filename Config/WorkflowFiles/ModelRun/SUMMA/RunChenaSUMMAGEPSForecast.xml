@@ -4,19 +4,19 @@
 	<!-- General Properties -->
 	<properties>
 		<!-- Properties for Grid Preprocessing-->
-		<string key="INPUTGRID" value="GDPS"/>
-		<string key="INPUTMODULEINSTANCE" value="ImportGDPS"/>
+		<string key="INPUTGRID" value="GEPS"/>
+		<string key="INPUTMODULEINSTANCE" value="ImportGEPS"/>
 		<string key="TIMESERIESTYPE" value="external forecasting"/>
 		<string key="BASINLOCATIONS" value="ChenaSubBasins"/>
 		<!-- Properties for SUMMA Model Run -->
 		<string key="MODEL" value="Chena"/>
-		<int key="TIMESTEP" value="6"/>
+		<int key="TIMESTEP" value="3"/>
 		<string key="TIMESTEPUNIT" value="hour"/>
 		<string key="ENSEMBLE" value="GEPS"/>
 		<string key="OUTPUTTIMESERIESTYPE" value="simulated forecasting"/>
 		<string key="STARTTIME" value="-3"/>
 		<!-- Properties for Post-processing -->
-		<string key="NONEQUIINPUTMODULEINSTANCE" value="ChenaSUMMAGDPSForecast"/>
+		<string key="NONEQUIINPUTMODULEINSTANCE" value="ChenaSUMMAGEPSForecast"/>
 	</properties>
 	<!-- Preprocess Precipitation-->
 	<activity>
@@ -42,7 +42,7 @@
 			<string key="PARAMETER" value="RS.nwp"/>
 		</properties>
 		<runIndependent>true</runIndependent>
-		<moduleInstanceId>PreprocessGDPS</moduleInstanceId>
+		<moduleInstanceId>PreprocessGEPS</moduleInstanceId>
 		<moduleConfigFileName>PreprocessGridtoBasinMinZeroTemplate</moduleConfigFileName>
 	</activity>
 	<!-- Preprocess Longwave radiation at surface-->
@@ -51,7 +51,7 @@
 			<string key="PARAMETER" value="RL.nwp"/>
 		</properties>
 		<runIndependent>true</runIndependent>
-		<moduleInstanceId>PreprocessGDPS</moduleInstanceId>
+		<moduleInstanceId>PreprocessGEPS</moduleInstanceId>
 		<moduleConfigFileName>PreprocessGridtoBasinMinZeroTemplate</moduleConfigFileName>
 	</activity>
 	<!-- Preprocess pressure at surface-->
@@ -60,7 +60,7 @@
 			<string key="PARAMETER" value="PA.nwp"/>
 		</properties>
 		<runIndependent>true</runIndependent>
-		<moduleInstanceId>PreprocessGDPS</moduleInstanceId>
+		<moduleInstanceId>PreprocessGEPS</moduleInstanceId>
 		<moduleConfigFileName>PreprocessGridtoBasinTemplate</moduleConfigFileName>
 	</activity>
 	<activity>
@@ -68,7 +68,7 @@
 			<string key="PARAMETER" value="US.nwp"/>
 		</properties>
 		<runIndependent>true</runIndependent>
-		<moduleInstanceId>PreprocessGDPS</moduleInstanceId>
+		<moduleInstanceId>PreprocessGEPS</moduleInstanceId>
 		<moduleConfigFileName>PreprocessGridtoBasinTemplate</moduleConfigFileName>
 	</activity>
 	<activity>
@@ -76,18 +76,22 @@
 			<string key="PARAMETER" value="XS.nwp"/>
 		</properties>
 		<runIndependent>true</runIndependent>
-		<moduleInstanceId>PreprocessGDPS</moduleInstanceId>
+		<moduleInstanceId>PreprocessGEPS</moduleInstanceId>
 		<moduleConfigFileName>PreprocessGridtoBasinTemplate</moduleConfigFileName>
 	</activity>
 	<!-- Run SUMMA Historic-->
 	<activity>
 		<properties>
-			<string key="INPUTMODULEINSTANCEMETEO" value="PreprocessGDPS"/>
-			<string key="OUTPUTTIMESERIES" value="ChenaSUMMAGDPSForecast"/>
+			<string key="INPUTMODULEINSTANCEMETEO" value="PreprocessGEPS"/>
+			<string key="OUTPUTTIMESERIES" value="ChenaSUMMAGEPSForecast"/>
 		</properties>
 		<runIndependent>true</runIndependent>
-		<moduleInstanceId>ChenaSUMMAGDPSForecast</moduleInstanceId>
-		<moduleConfigFileName>SUMMAForecastTemplate</moduleConfigFileName>
+		<moduleInstanceId>ChenaSUMMAGEPSForecast</moduleInstanceId>
+		<moduleConfigFileName>SUMMAForecastEnsTemplate</moduleConfigFileName>
+		<ensemble>
+			<ensembleId>GEPS</ensembleId>
+			<runInLoop>true</runInLoop>
+		</ensemble>
 	</activity>
 	<activity>
 		<properties>
@@ -95,7 +99,7 @@
 			<string key="LOCATIONSET" value="ChenaSubBasins"/>
 		</properties>
 		<runIndependent>true</runIndependent>
-		<moduleInstanceId>ChenaSUMMAHistoric</moduleInstanceId>
+		<moduleInstanceId>ChenaSUMMAGEPSForecast</moduleInstanceId>
 		<moduleConfigFileName>PostprocessNonEquiParameter</moduleConfigFileName>
 	</activity>
 	<activity>
@@ -104,7 +108,7 @@
 			<string key="LOCATIONSET" value="ChenaSubBasins"/>
 		</properties>
 		<runIndependent>true</runIndependent>
-		<moduleInstanceId>ChenaSUMMAHistoric</moduleInstanceId>
+		<moduleInstanceId>ChenaSUMMAGEPSForecast</moduleInstanceId>
 		<moduleConfigFileName>PostprocessNonEquiParameter</moduleConfigFileName>
 	</activity>
 	<activity>
@@ -113,7 +117,7 @@
 			<string key="LOCATIONSET" value="ChenaSubBasins"/>
 		</properties>
 		<runIndependent>true</runIndependent>
-		<moduleInstanceId>ChenaSUMMAHistoric</moduleInstanceId>
+		<moduleInstanceId>ChenaSUMMAGEPSForecast</moduleInstanceId>
 		<moduleConfigFileName>PostprocessNonEquiParameter</moduleConfigFileName>
 	</activity>
 	<activity>
@@ -122,7 +126,7 @@
 			<string key="LOCATIONSET" value="ChenaSubBasins"/>
 		</properties>
 		<runIndependent>true</runIndependent>
-		<moduleInstanceId>ChenaSUMMAHistoric</moduleInstanceId>
+		<moduleInstanceId>ChenaSUMMAGEPSForecast</moduleInstanceId>
 		<moduleConfigFileName>PostprocessNonEquiParameter</moduleConfigFileName>
 	</activity>
 	<activity>
@@ -131,7 +135,7 @@
 			<string key="LOCATIONSET" value="ChenaSubBasins"/>
 		</properties>
 		<runIndependent>true</runIndependent>
-		<moduleInstanceId>ChenaSUMMAHistoric</moduleInstanceId>
+		<moduleInstanceId>ChenaSUMMAGEPSForecast</moduleInstanceId>
 		<moduleConfigFileName>PostprocessNonEquiParameter</moduleConfigFileName>
 	</activity>
 </workflow>
