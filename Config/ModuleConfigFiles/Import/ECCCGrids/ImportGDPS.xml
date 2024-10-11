@@ -5,7 +5,7 @@
 			<importType>grib2</importType>
 			<folder>$IMPORT_FOLDER$/GDPS</folder>
 			<idMapId>IdImportGDPS</idMapId>
-			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+			<unitConversionsId>ImportECCCNWPUnitConversions</unitConversionsId>
 			<importTimeZone>
 				<timeZoneName>GMT+0</timeZoneName>
 			</importTimeZone>
@@ -15,6 +15,15 @@
 			<moduleInstanceId>ImportGDPS</moduleInstanceId>
 			<valueType>grid</valueType>
 			<parameterId>PC.nwp</parameterId>
+			<locationId>GDPS</locationId>
+			<timeSeriesType>external forecasting</timeSeriesType>
+			<timeStep unit="hour" multiplier="3"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>ImportGDPS</moduleInstanceId>
+			<valueType>grid</valueType>
+			<parameterId>PR.nwp</parameterId>
 			<locationId>GDPS</locationId>
 			<timeSeriesType>external forecasting</timeSeriesType>
 			<timeStep unit="hour" multiplier="3"/>
@@ -75,6 +84,7 @@
 			<readWriteMode>add originals</readWriteMode>
 		</timeSeriesSet>
 		<externUnit parameterId="PC.nwp" unit="kg m-2" cumulativeSum="true"/>
+		<externUnit parameterId="PR.nwp" unit="mm/s"/>
 		<externUnit parameterId="TA.nwp" unit="K"/>
 		<externUnit parameterId="XS.nwp" unit="kg/kg"/>
 		<externUnit parameterId="PA.nwp" unit="Pa"/>

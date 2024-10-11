@@ -5,4 +5,6 @@
 	<parameter internal="PC.obs" external="total_precipitation"/>
 	<parameter internal="TAmax.obs" internalQualifier="max" external="air_temperature_yesterday_high"/>
 	<parameter internal="TAmin.obs" internalQualifier="min" external="air_temperature_yesterday_low"/>
+	<parameter internal="TAmax.obs" internalQualifier="max" external="air_temperature_today_high"/>
+	<parameter internal="TAmin.obs" internalQualifier="min" external="air_temperature_today_low"/>
 </idMap>

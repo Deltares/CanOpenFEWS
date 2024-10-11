@@ -3,6 +3,6 @@
 	<clientType>Stand alone</clientType>
 	<jvmOption>-Xmx8192m</jvmOption>
 	<jvmOption>-DautoRollingBarrel=false</jvmOption>
-	<autoExportModuleDataSet name="PyscriptsBinaries" exportDir="Modules"/>
-	<autoExportModuleDataSet name="SUMMABinaries" exportDir="Modules"/>
+<!--	<autoExportModuleDataSet name="PyscriptsBinaries" exportDir="Modules"/>
+	<autoExportModuleDataSet name="SUMMABinaries" exportDir="Modules"/>-->
 </clientConfiguration>

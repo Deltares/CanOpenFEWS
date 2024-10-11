@@ -61,7 +61,7 @@
 			<locationSetId>DownloadHydroStations</locationSetId>
 			<timeSeriesType>temporary</timeSeriesType>
 			<timeStep id="day_GMT"/>
-			<readWriteMode>read complete forecast</readWriteMode>
+			<readWriteMode>read only</readWriteMode>
 		</timeSeriesSet>
 	</variable>
 	<variable>
@@ -73,7 +73,7 @@
 			<locationSetId>DownloadHydroStations</locationSetId>
 			<timeSeriesType>temporary</timeSeriesType>
 			<timeStep id="day_GMT"/>
-			<readWriteMode>read complete forecast</readWriteMode>
+			<readWriteMode>read only</readWriteMode>
 		</timeSeriesSet>
 	</variable>
 	<variable>
@@ -327,10 +327,10 @@
 		<merge>
 			<simple>
 				<inputVariable>
-					<variableId>QR_day_temp</variableId>
+					<variableId>QR_day</variableId>
 				</inputVariable>
 				<inputVariable>
-					<variableId>QR_day</variableId>
+					<variableId>QR_day_temp</variableId>
 				</inputVariable>
 				<outputVariable>
 					<variableId>QR_day_merge</variableId>
@@ -354,10 +354,10 @@
 		<merge>
 			<simple>
 				<inputVariable>
-					<variableId>HG_day_temp</variableId>
+					<variableId>HG_day</variableId>
 				</inputVariable>
 				<inputVariable>
-					<variableId>HG_day</variableId>
+					<variableId>HG_day_temp</variableId>
 				</inputVariable>
 				<outputVariable>
 					<variableId>HG_day_merge</variableId>

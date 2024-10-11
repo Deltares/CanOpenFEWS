@@ -27,77 +27,29 @@
 			<readWriteMode>read complete forecast</readWriteMode>
 		</timeSeriesSet>
 	</variable>
-	<variable>
-		<variableId>HG_day</variableId>
-		<timeSeriesSet>
-			<moduleInstanceId>ImportUSGS</moduleInstanceId>
-			<valueType>scalar</valueType>
-			<parameterId>HG.obs</parameterId>
-			<locationSetId>USGSStations</locationSetId>
-			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep id="$DAY_TIMESTEP$"/>
-			<readWriteMode>read complete forecast</readWriteMode>
-		</timeSeriesSet>
-	</variable>
+	<!--Output-->
 	<variable>
 		<variableId>QR_day</variableId>
 		<timeSeriesSet>
-			<moduleInstanceId>ImportUSGS</moduleInstanceId>
+			<moduleInstanceId>PreprocessUSGS</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>QR.obs</parameterId>
 			<locationSetId>USGSStations</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep id="$DAY_TIMESTEP$"/>
-			<readWriteMode>read complete forecast</readWriteMode>
-		</timeSeriesSet>
-	</variable>
-	<!--Output-->
-	<variable>
-		<variableId>HG_day_temp</variableId>
-		<timeSeriesSet>
-			<moduleInstanceId>PreprocessWSC</moduleInstanceId>
-			<valueType>scalar</valueType>
-			<parameterId>HG.obs</parameterId>
-			<locationSetId>USGSStations</locationSetId>
-			<timeSeriesType>temporary</timeSeriesType>
-			<timeStep id="$DAY_TIMESTEP$"/>
-			<readWriteMode>read complete forecast</readWriteMode>
-		</timeSeriesSet>
-	</variable>
-	<variable>
-		<variableId>QR_day_temp</variableId>
-		<timeSeriesSet>
-			<moduleInstanceId>PreprocessWSC</moduleInstanceId>
-			<valueType>scalar</valueType>
-			<parameterId>QR.obs</parameterId>
-			<locationSetId>USGSStations</locationSetId>
-			<timeSeriesType>temporary</timeSeriesType>
-			<timeStep id="$DAY_TIMESTEP$"/>
-			<readWriteMode>read complete forecast</readWriteMode>
-		</timeSeriesSet>
-	</variable>
-	<variable>
-		<variableId>QR_day_merge</variableId>
-		<timeSeriesSet>
-			<moduleInstanceId>PreprocessWSC</moduleInstanceId>
-			<valueType>scalar</valueType>
-			<parameterId>QR.obs</parameterId>
-			<locationSetId>USGSStations</locationSetId>
-			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep id="$DAY_TIMESTEP$"/>
+			<timeStep id="day_GMT"/>
 			<readWriteMode>read complete forecast</readWriteMode>
 		</timeSeriesSet>
 	</variable>
 	<variable>
 		<variableId>QR_day_mean</variableId>
 		<timeSeriesSet>
-			<moduleInstanceId>PreprocessWSC</moduleInstanceId>
+			<moduleInstanceId>PreprocessUSGS</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>QR.obs</parameterId>
 			<qualifierId>mean</qualifierId>
 			<locationSetId>USGSStations</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep id="$DAY_TIMESTEP$"/>
+			<timeStep id="day_GMT"/>
 			<cycle unit="year"/>
 			<relativeViewPeriod unit="day" start="-365" end="0"/>
 			<readWriteMode>read only</readWriteMode>
@@ -106,13 +58,13 @@
 	<variable>
 		<variableId>QR_day_max</variableId>
 		<timeSeriesSet>
-			<moduleInstanceId>PreprocessWSC</moduleInstanceId>
+			<moduleInstanceId>PreprocessUSGS</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>QR.obs</parameterId>
 			<qualifierId>max</qualifierId>
 			<locationSetId>USGSStations</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep id="$DAY_TIMESTEP$"/>
+			<timeStep id="day_GMT"/>
 			<cycle unit="year"/>
 			<relativeViewPeriod unit="day" start="-365" end="0"/>
 			<readWriteMode>read only</readWriteMode>
@@ -121,13 +73,13 @@
 	<variable>
 		<variableId>QR_day_min</variableId>
 		<timeSeriesSet>
-			<moduleInstanceId>PreprocessWSC</moduleInstanceId>
+			<moduleInstanceId>PreprocessUSGS</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>QR.obs</parameterId>
 			<qualifierId>min</qualifierId>
 			<locationSetId>USGSStations</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep id="$DAY_TIMESTEP$"/>
+			<timeStep id="day_GMT"/>
 			<cycle unit="year"/>
 			<relativeViewPeriod unit="day" start="-365" end="0"/>
 			<readWriteMode>read only</readWriteMode>
@@ -136,13 +88,13 @@
 	<variable>
 		<variableId>QR_day_10</variableId>
 		<timeSeriesSet>
-			<moduleInstanceId>PreprocessWSC</moduleInstanceId>
+			<moduleInstanceId>PreprocessUSGS</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>QR.obs</parameterId>
 			<qualifierId>10</qualifierId>
 			<locationSetId>USGSStations</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep id="$DAY_TIMESTEP$"/>
+			<timeStep id="day_GMT"/>
 			<cycle unit="year"/>
 			<relativeViewPeriod unit="day" start="-365" end="0"/>
 			<readWriteMode>read only</readWriteMode>
@@ -151,13 +103,13 @@
 	<variable>
 		<variableId>QR_day_25</variableId>
 		<timeSeriesSet>
-			<moduleInstanceId>PreprocessWSC</moduleInstanceId>
+			<moduleInstanceId>PreprocessUSGS</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>QR.obs</parameterId>
 			<qualifierId>25</qualifierId>
 			<locationSetId>USGSStations</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep id="$DAY_TIMESTEP$"/>
+			<timeStep id="day_GMT"/>
 			<cycle unit="year"/>
 			<relativeViewPeriod unit="day" start="-365" end="0"/>
 			<readWriteMode>read only</readWriteMode>
@@ -166,13 +118,13 @@
 	<variable>
 		<variableId>QR_day_75</variableId>
 		<timeSeriesSet>
-			<moduleInstanceId>PreprocessWSC</moduleInstanceId>
+			<moduleInstanceId>PreprocessUSGS</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>QR.obs</parameterId>
 			<qualifierId>75</qualifierId>
 			<locationSetId>USGSStations</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep id="$DAY_TIMESTEP$"/>
+			<timeStep id="day_GMT"/>
 			<cycle unit="year"/>
 			<relativeViewPeriod unit="day" start="-365" end="0"/>
 			<readWriteMode>read only</readWriteMode>
@@ -181,40 +133,40 @@
 	<variable>
 		<variableId>QR_day_90</variableId>
 		<timeSeriesSet>
-			<moduleInstanceId>PreprocessWSC</moduleInstanceId>
+			<moduleInstanceId>PreprocessUSGS</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>QR.obs</parameterId>
 			<qualifierId>90</qualifierId>
 			<locationSetId>USGSStations</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep id="$DAY_TIMESTEP$"/>
+			<timeStep id="day_GMT"/>
 			<cycle unit="year"/>
 			<relativeViewPeriod unit="day" start="-365" end="0"/>
 			<readWriteMode>read only</readWriteMode>
 		</timeSeriesSet>
 	</variable>
 	<variable>
-		<variableId>HG_day_merge</variableId>
+		<variableId>HG_day</variableId>
 		<timeSeriesSet>
-			<moduleInstanceId>PreprocessWSC</moduleInstanceId>
+			<moduleInstanceId>PreprocessUSGS</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>HG.obs</parameterId>
 			<locationSetId>USGSStations</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep id="$DAY_TIMESTEP$"/>
+			<timeStep id="day_GMT"/>
 			<readWriteMode>read complete forecast</readWriteMode>
 		</timeSeriesSet>
 	</variable>
 	<variable>
 		<variableId>HG_day_mean</variableId>
 		<timeSeriesSet>
-			<moduleInstanceId>PreprocessWSC</moduleInstanceId>
+			<moduleInstanceId>PreprocessUSGS</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>HG.obs</parameterId>
 			<qualifierId>mean</qualifierId>
 			<locationSetId>USGSStations</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep id="$DAY_TIMESTEP$"/>
+			<timeStep id="day_GMT"/>
 			<cycle unit="year"/>
 			<relativeViewPeriod unit="day" start="-365" end="0"/>
 			<readWriteMode>read only</readWriteMode>
@@ -223,13 +175,13 @@
 	<variable>
 		<variableId>HG_day_max</variableId>
 		<timeSeriesSet>
-			<moduleInstanceId>PreprocessWSC</moduleInstanceId>
+			<moduleInstanceId>PreprocessUSGS</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>HG.obs</parameterId>
 			<qualifierId>max</qualifierId>
 			<locationSetId>USGSStations</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep id="$DAY_TIMESTEP$"/>
+			<timeStep id="day_GMT"/>
 			<cycle unit="year"/>
 			<relativeViewPeriod unit="day" start="-365" end="0"/>
 			<readWriteMode>read only</readWriteMode>
@@ -238,13 +190,13 @@
 	<variable>
 		<variableId>HG_day_min</variableId>
 		<timeSeriesSet>
-			<moduleInstanceId>PreprocessWSC</moduleInstanceId>
+			<moduleInstanceId>PreprocessUSGS</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>HG.obs</parameterId>
 			<qualifierId>min</qualifierId>
 			<locationSetId>USGSStations</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep id="$DAY_TIMESTEP$"/>
+			<timeStep id="day_GMT"/>
 			<cycle unit="year"/>
 			<relativeViewPeriod unit="day" start="-365" end="0"/>
 			<readWriteMode>read only</readWriteMode>
@@ -253,13 +205,13 @@
 	<variable>
 		<variableId>HG_day_10</variableId>
 		<timeSeriesSet>
-			<moduleInstanceId>PreprocessWSC</moduleInstanceId>
+			<moduleInstanceId>PreprocessUSGS</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>HG.obs</parameterId>
 			<qualifierId>10</qualifierId>
 			<locationSetId>USGSStations</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep id="$DAY_TIMESTEP$"/>
+			<timeStep id="day_GMT"/>
 			<cycle unit="year"/>
 			<relativeViewPeriod unit="day" start="-365" end="0"/>
 			<readWriteMode>read only</readWriteMode>
@@ -268,13 +220,13 @@
 	<variable>
 		<variableId>HG_day_25</variableId>
 		<timeSeriesSet>
-			<moduleInstanceId>PreprocessWSC</moduleInstanceId>
+			<moduleInstanceId>PreprocessUSGS</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>HG.obs</parameterId>
 			<qualifierId>25</qualifierId>
 			<locationSetId>USGSStations</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep id="$DAY_TIMESTEP$"/>
+			<timeStep id="day_GMT"/>
 			<cycle unit="year"/>
 			<relativeViewPeriod unit="day" start="-365" end="0"/>
 			<readWriteMode>read only</readWriteMode>
@@ -283,13 +235,13 @@
 	<variable>
 		<variableId>HG_day_75</variableId>
 		<timeSeriesSet>
-			<moduleInstanceId>PreprocessWSC</moduleInstanceId>
+			<moduleInstanceId>PreprocessUSGS</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>HG.obs</parameterId>
 			<qualifierId>75</qualifierId>
 			<locationSetId>USGSStations</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep id="$DAY_TIMESTEP$"/>
+			<timeStep id="day_GMT"/>
 			<cycle unit="year"/>
 			<relativeViewPeriod unit="day" start="-365" end="0"/>
 			<readWriteMode>read only</readWriteMode>
@@ -298,13 +250,13 @@
 	<variable>
 		<variableId>HG_day_90</variableId>
 		<timeSeriesSet>
-			<moduleInstanceId>PreprocessWSC</moduleInstanceId>
+			<moduleInstanceId>PreprocessUSGS</moduleInstanceId>
 			<valueType>scalar</valueType>
 			<parameterId>HG.obs</parameterId>
 			<qualifierId>90</qualifierId>
 			<locationSetId>USGSStations</locationSetId>
 			<timeSeriesType>external historical</timeSeriesType>
-			<timeStep id="$DAY_TIMESTEP$"/>
+			<timeStep id="day_GMT"/>
 			<cycle unit="year"/>
 			<relativeViewPeriod unit="day" start="-365" end="0"/>
 			<readWriteMode>read only</readWriteMode>
@@ -318,26 +270,12 @@
 					<variableId>QR_5min</variableId>
 				</inputVariable>
 				<outputVariable>
-					<variableId>QR_day_temp</variableId>
+					<variableId>QR_day</variableId>
 				</outputVariable>
 			</mean>
 		</statisticsSerial>
 	</transformation>
-	<transformation id="QR_Daily_Merge">
-		<merge>
-			<simple>
-				<inputVariable>
-					<variableId>QR_day_temp</variableId>
-				</inputVariable>
-				<inputVariable>
-					<variableId>QR_day</variableId>
-				</inputVariable>
-				<outputVariable>
-					<variableId>QR_day_merge</variableId>
-				</outputVariable>
-			</simple>
-		</merge>
-	</transformation>
+
 	<transformation id="HG_Daily_Mean">
 		<statisticsSerial>
 			<mean>
@@ -345,31 +283,17 @@
 					<variableId>HG_5min</variableId>
 				</inputVariable>
 				<outputVariable>
-					<variableId>HG_day_temp</variableId>
+					<variableId>HG_day</variableId>
 				</outputVariable>
 			</mean>
 		</statisticsSerial>
 	</transformation>
-	<transformation id="HG_Daily_Merge">
-		<merge>
-			<simple>
-				<inputVariable>
-					<variableId>HG_day_temp</variableId>
-				</inputVariable>
-				<inputVariable>
-					<variableId>HG_day</variableId>
-				</inputVariable>
-				<outputVariable>
-					<variableId>HG_day_merge</variableId>
-				</outputVariable>
-			</simple>
-		</merge>
-	</transformation>
+
 	<transformation id="QR_min">
 		<statisticsPeriodic>
 			<min>
 				<inputVariable>
-					<variableId>QR_day_merge</variableId>
+					<variableId>QR_day</variableId>
 				</inputVariable>
 				<outputVariable>
 					<variableId>QR_day_min</variableId>
@@ -381,7 +305,7 @@
 		<statisticsPeriodic>
 			<max>
 				<inputVariable>
-					<variableId>QR_day_merge</variableId>
+					<variableId>QR_day</variableId>
 				</inputVariable>
 				<outputVariable>
 					<variableId>QR_day_max</variableId>
@@ -393,7 +317,7 @@
 		<statisticsPeriodic>
 			<mean>
 				<inputVariable>
-					<variableId>QR_day_merge</variableId>
+					<variableId>QR_day</variableId>
 				</inputVariable>
 				<outputVariable>
 					<variableId>QR_day_mean</variableId>
@@ -405,7 +329,7 @@
 		<statisticsPeriodic>
 			<percentileNonExceedence>
 				<inputVariable>
-					<variableId>QR_day_merge</variableId>
+					<variableId>QR_day</variableId>
 				</inputVariable>
 				<value>10</value>
 				<outputVariable>
@@ -418,7 +342,7 @@
 		<statisticsPeriodic>
 			<percentileNonExceedence>
 				<inputVariable>
-					<variableId>QR_day_merge</variableId>
+					<variableId>QR_day</variableId>
 				</inputVariable>
 				<value>25</value>
 				<outputVariable>
@@ -431,7 +355,7 @@
 		<statisticsPeriodic>
 			<percentileNonExceedence>
 				<inputVariable>
-					<variableId>QR_day_merge</variableId>
+					<variableId>QR_day</variableId>
 				</inputVariable>
 				<value>75</value>
 				<outputVariable>
@@ -444,7 +368,7 @@
 		<statisticsPeriodic>
 			<percentileNonExceedence>
 				<inputVariable>
-					<variableId>QR_day_merge</variableId>
+					<variableId>QR_day</variableId>
 				</inputVariable>
 				<value>90</value>
 				<outputVariable>
@@ -457,7 +381,7 @@
 		<statisticsPeriodic>
 			<min>
 				<inputVariable>
-					<variableId>HG_day_merge</variableId>
+					<variableId>HG_day</variableId>
 				</inputVariable>
 				<outputVariable>
 					<variableId>HG_day_min</variableId>
@@ -469,7 +393,7 @@
 		<statisticsPeriodic>
 			<max>
 				<inputVariable>
-					<variableId>HG_day_merge</variableId>
+					<variableId>HG_day</variableId>
 				</inputVariable>
 				<outputVariable>
 					<variableId>HG_day_max</variableId>
@@ -481,7 +405,7 @@
 		<statisticsPeriodic>
 			<mean>
 				<inputVariable>
-					<variableId>HG_day_merge</variableId>
+					<variableId>HG_day</variableId>
 				</inputVariable>
 				<outputVariable>
 					<variableId>HG_day_mean</variableId>
@@ -493,7 +417,7 @@
 		<statisticsPeriodic>
 			<percentileNonExceedence>
 				<inputVariable>
-					<variableId>HG_day_merge</variableId>
+					<variableId>HG_day</variableId>
 				</inputVariable>
 				<value>10</value>
 				<outputVariable>
@@ -506,7 +430,7 @@
 		<statisticsPeriodic>
 			<percentileNonExceedence>
 				<inputVariable>
-					<variableId>HG_day_merge</variableId>
+					<variableId>HG_day</variableId>
 				</inputVariable>
 				<value>25</value>
 				<outputVariable>
@@ -519,7 +443,7 @@
 		<statisticsPeriodic>
 			<percentileNonExceedence>
 				<inputVariable>
-					<variableId>HG_day_merge</variableId>
+					<variableId>HG_day</variableId>
 				</inputVariable>
 				<value>75</value>
 				<outputVariable>
@@ -532,7 +456,7 @@
 		<statisticsPeriodic>
 			<percentileNonExceedence>
 				<inputVariable>
-					<variableId>HG_day_merge</variableId>
+					<variableId>HG_day</variableId>
 				</inputVariable>
 				<value>90</value>
 				<outputVariable>

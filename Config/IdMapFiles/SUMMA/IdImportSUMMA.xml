@@ -13,7 +13,9 @@
 	<!-- Chena Mapping -->
 	<!--<function internalLocationSet="ChenaBasins" externalLocationFunction="@Basin@" externalParameterFunction="averageRoutedRunoff" internalParameter="QR.sim"/>-->
 	<function internalLocationSet="ChenaBasins" externalLocationFunction="@Basin@" externalParameterFunction="IRFroutedRunoff" internalParameter="QR.sim"/>
-	<function internalLocationSet="ChenaSubBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="scalarTotalRunoff" internalParameter="QR.sim"/>
+	<function internalLocationSet="ChenaSubBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="pptrate" internalParameter="PR.sim"/>
+	<function internalLocationSet="ChenaSubBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="airtemp" internalParameter="TA.sim"/>
+	<function internalLocationSet="ChenaSubBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="scalarTotalRunoff" internalParameter="ROF.sim"/>
 	<function internalLocationSet="ChenaSubBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="scalarSWE" internalParameter="SWE.sim"/>
 	<function internalLocationSet="ChenaSubBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="scalarSnowDepth" internalParameter="SD.sim"/>
 	<function internalLocationSet="ChenaSubBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="scalarNetRadiation" internalParameter="RT.sim"/>

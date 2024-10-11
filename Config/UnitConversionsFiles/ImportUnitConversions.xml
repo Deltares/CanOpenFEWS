@@ -69,8 +69,8 @@
 	</unitConversion>
 	<unitConversion>
 		<inputUnitType>J/m2</inputUnitType>
-		<outputUnitType>W/m2-h</outputUnitType>
-		<multiplier>2.77777E-4</multiplier>
+		<outputUnitType>W/m2</outputUnitType>
+		<multiplier>0.00002314814</multiplier>
 		<incrementer>0</incrementer>
 	</unitConversion>
 	<unitConversion>

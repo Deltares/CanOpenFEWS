@@ -144,6 +144,10 @@ http://fews.wldelft.nl/schemas/version1.0/parameters.xsd">
 			<shortName>PR.nwp</shortName>
 			<description>Precipitation Rate (NWP)</description>
 		</parameter>
+		<parameter id="PR.sim" name="PR.sim">
+			<shortName>PR.sim</shortName>
+			<description>Precipitation Rate (Simulated)</description>
+		</parameter>
 	</parameterGroup>
 	<parameterGroup id="Precipitation (acc)">
 		<parameterType>accumulative</parameterType>
@@ -173,8 +177,8 @@ http://fews.wldelft.nl/schemas/version1.0/parameters.xsd">
 	</parameterGroup>
 	<parameterGroup id="Runoff">
 		<parameterType>instantaneous</parameterType>
-		<unit>mm</unit>
-		<valueResolution>0.01</valueResolution>
+		<unit>m/s</unit>
+		<valueResolution>0.0001</valueResolution>
 		<parameter id="ROF.sim" name="ROF (Total runoff from the surface and subsurface)">
 			<shortName>ROF.sim</shortName>
 			<description>Total runoff from the surface and subsurface</description>
@@ -459,7 +463,7 @@ http://fews.wldelft.nl/schemas/version1.0/parameters.xsd">
 	<parameterGroup id="Specific humidity">
 		<parameterType>instantaneous</parameterType>
 		<unit>kg/kg</unit>
-		<valueResolution>0.01</valueResolution>
+		<valueResolution>0.0001</valueResolution>
 		<parameter id="XS" name="Specific humidity">
 			<shortName>XS</shortName>
 		</parameter>
@@ -470,7 +474,7 @@ http://fews.wldelft.nl/schemas/version1.0/parameters.xsd">
 	<parameterGroup id="Relative humidity">
 		<parameterType>instantaneous</parameterType>
 		<unit>kg/kg</unit>
-		<valueResolution>0.01</valueResolution>
+		<valueResolution>0.0001</valueResolution>
 		<parameter id="RH" name="Relative humidity">
 			<shortName>RH</shortName>
 		</parameter>

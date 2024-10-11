@@ -6,7 +6,7 @@
         <columns>2538</columns>
         <rotatedNorthPole>
             <latitude>36.08852005004883</latitude>
-            <longitude>-114.6948852546</longitude>
+            <longitude>114.694885254</longitude>
         </rotatedNorthPole>
         <firstCellCenter>
             <x>-14.7987060546875</x>
@@ -16,13 +16,13 @@
         <xCellSize>0.0225</xCellSize>
         <yCellSize>0.0225</yCellSize>
     </regular>
-	<regular locationId="RDPA">
-        <rows>1045</rows>
+	<regular locationId="RDPA">	<!--New rotated Pole coordinate system-->
+		<rows>1045</rows>
         <columns>1140</columns>
-        <rotatedNorthPole>
-            <latitude>31.758312225341797</latitude>
+		<rotatedNorthPole>
+			<latitude>31.758312225341797</latitude>
             <longitude>-92.40298461914062</longitude> 
-        </rotatedNorthPole>
+		</rotatedNorthPole>
         <firstCellCenter>
             <x>-53.85858154296875</x>
             <y>45.46516036987305</y>

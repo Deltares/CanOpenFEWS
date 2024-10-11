@@ -21,7 +21,7 @@
 	<!-- Preprocess Precipitation-->
 	<activity>
 		<properties>
-			<string key="PARAMETER" value="PC.nwp"/>
+			<string key="PARAMETER" value="PR.nwp"/>
 		</properties>
 		<runIndependent>true</runIndependent>
 		<moduleInstanceId>PreprocessGDPS</moduleInstanceId>
@@ -91,7 +91,25 @@
 	</activity>
 	<activity>
 		<properties>
-			<string key="PARAMETER" value="QR.sim"/>
+			<string key="PARAMETER" value="ROF.sim"/>
+			<string key="LOCATIONSET" value="ChenaSubBasins"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>ChenaSUMMAGDPSForecast</moduleInstanceId>
+		<moduleConfigFileName>PostprocessNonEquiParameter</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<string key="PARAMETER" value="PR.sim"/>
+			<string key="LOCATIONSET" value="ChenaSubBasins"/>
+		</properties>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>ChenaSUMMAGDPSForecast</moduleInstanceId>
+		<moduleConfigFileName>PostprocessNonEquiParameter</moduleConfigFileName>
+	</activity>
+	<activity>
+		<properties>
+			<string key="PARAMETER" value="TA.sim"/>
 			<string key="LOCATIONSET" value="ChenaSubBasins"/>
 		</properties>
 		<runIndependent>true</runIndependent>

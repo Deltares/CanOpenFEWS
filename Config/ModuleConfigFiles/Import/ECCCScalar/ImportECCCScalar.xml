@@ -16,7 +16,7 @@
 			<!--Optional configuration field. Value is a comma separated string of the region folder to be included.-->
 			<!--If it is not configured, data will be fetched from all folders for the specified time. Case sensitive.-->
 			<!--Possible choices: AB, BC, MB, NB, NL, NS, NT, NU, ON, PE, QC, SK, YT-->
-			<string key="RegionDirectory" value="AB"/>
+			<string key="RegionDirectory" value="YT"/>
 			<!--Optional configuration field. Value is a comma separated string of the time folders to be included.-->
 			<!--If it is not configured, data will be fetched from all folders for the specified time.-->
 			<!--Possible choices: "hourly", "today", "yesterday"-->

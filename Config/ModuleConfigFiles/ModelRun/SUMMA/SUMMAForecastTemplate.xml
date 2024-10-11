@@ -12,6 +12,7 @@
 		<exportUnitConversionsId>ExportSUMMA</exportUnitConversionsId>
 		<importDir>%ROOT_DIR%/$MODEL$/output</importDir>
 		<importIdMap>IdImportSUMMA</importIdMap>
+		<importUnitConversionsId>ImportSUMMA</importUnitConversionsId>
 		<dumpFileDir>$GA_DUMPFILEDIR$</dumpFileDir>
 		<dumpDir>%ROOT_DIR%</dumpDir>
 		<diagnosticFile>%ROOT_DIR%/$MODEL$/output/diag.xml</diagnosticFile>
@@ -171,6 +172,24 @@
 					<timeSeriesSet>
 						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
 						<valueType>scalar</valueType>
+						<parameterId>PR.sim</parameterId>
+						<locationSetId>$MODEL$SubBasins</locationSetId>
+						<timeSeriesType>temporary</timeSeriesType>
+						<timeStep unit="nonequidistant"/>
+						<readWriteMode>add originals</readWriteMode>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>TA.sim</parameterId>
+						<locationSetId>$MODEL$SubBasins</locationSetId>
+						<timeSeriesType>temporary</timeSeriesType>
+						<timeStep unit="nonequidistant"/>
+						<readWriteMode>add originals</readWriteMode>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+						<valueType>scalar</valueType>
 						<parameterId>SWE.sim</parameterId>
 						<locationSetId>$MODEL$SubBasins</locationSetId>
 						<timeSeriesType>temporary</timeSeriesType>
@@ -189,7 +208,7 @@
 					<timeSeriesSet>
 						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
 						<valueType>scalar</valueType>
-						<parameterId>QR.sim</parameterId>
+						<parameterId>ROF.sim</parameterId>
 						<locationSetId>$MODEL$SubBasins</locationSetId>
 						<timeSeriesType>temporary</timeSeriesType>
 						<timeStep unit="nonequidistant"/>

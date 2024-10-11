@@ -4,6 +4,7 @@
 	<map internalParameter="XS.nwp" internalLocation="GDPS" externalParameter="Specific_humidity_isobaric" externalLocation="GDPS"/>
 	<map internalParameter="PA.nwp" internalLocation="GDPS" externalParameter="Pressure_surface" externalLocation="GDPS"/>
 	<map internalParameter="US.nwp" internalLocation="GDPS" externalParameter="Wind_speed_height_above_ground" externalLocation="GDPS"/>
+	<map internalParameter="PR.nwp" internalLocation="GDPS" externalParameter="Precipitation_rate_surface" externalLocation="GDPS"/>
 	<map internalParameter="PC.nwp" internalLocation="GDPS" externalParameter="Total_precipitation_surface_3_Hour_Accumulation" externalLocation="GDPS"/>
 	<map internalParameter="PC.nwp" internalLocation="GDPS" externalParameter="Total_precipitation_surface_6_Hour_Accumulation" externalLocation="GDPS"/>
 	<map internalParameter="PC.nwp" internalLocation="GDPS" externalParameter="Total_precipitation_surface_9_Hour_Accumulation" externalLocation="GDPS"/>

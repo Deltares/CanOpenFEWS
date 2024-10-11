@@ -17,6 +17,20 @@
 			<color color="FF0080" opaquenessPercentage="40" lowerValue="32.0"/>
 			<color color="FFFFFF" opaquenessPercentage="40" lowerValue="64.0"/>
 		</classBreaks>
+		<classBreaks id="Class.PrecipitationRate">
+			<color color="white" opaquenessPercentage="30" lowerValue="0"/>
+			<color color="070268" opaquenessPercentage="40" lowerValue="0.001"/>
+			<color color="0900AE" opaquenessPercentage="40" lowerValue="0.002"/>
+			<color color="4040FF" opaquenessPercentage="40" lowerValue="0.0025"/>
+			<color color="0080C0" opaquenessPercentage="40" lowerValue="0.005"/>
+			<color color="129FFE" opaquenessPercentage="40" lowerValue="0.01"/>
+			<color color="00FF40" opaquenessPercentage="40" lowerValue="0.02"/>
+			<color color="FFFF00" opaquenessPercentage="40" lowerValue="0.03"/>
+			<color color="FF8000" opaquenessPercentage="40" lowerValue="0.04"/>
+			<color color="FF0000" opaquenessPercentage="40" lowerValue="0.05"/>
+			<color color="FF0080" opaquenessPercentage="40" lowerValue="0.06"/>
+			<color color="FFFFFF" opaquenessPercentage="40" lowerValue="0.1"/>
+		</classBreaks>
 		<classBreaks id="Class.Temperature">
 			<lowerColor>blue3</lowerColor>
 			<upperColor>light blue1</upperColor>

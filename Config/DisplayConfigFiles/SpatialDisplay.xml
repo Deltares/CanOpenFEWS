@@ -663,7 +663,7 @@ http://fews.wldelft.nl/schemas/version1.0/gridDisplay.xsd">
 					<timeStep unit="hour" multiplier="1"/>
 					<readWriteMode>read complete forecast</readWriteMode>
 				</timeSeriesSet>
-				<classBreaksId>Class.Precipitation</classBreaksId>
+				<classBreaksId>Class.PrecipitationRate</classBreaksId>
 			</gridPlot>
 			<gridPlot id="HRRRTemperature " name="Temperature (C)">
 				<timeSeriesSet>
