@@ -368,6 +368,10 @@ http://fews.wldelft.nl/schemas/version1.0/parameters.xsd">
 			<shortName>US.nwp</shortName>
 			<description>Wind, speed – 2 minute average before the top of the hour – at 10 m height (NWP)</description>
 		</parameter>
+		<parameter id="US.sim" name="Wind, speed">
+			<shortName>US.sim</shortName>
+			<description>Wind, speed – simulated</description>
+		</parameter>
 		<parameter id="US2" name="Wind, speed">
 			<shortName>US2</shortName>
 			<description>Wind, speed – 2 minute average before the top of the hour – at 10 m height</description>
@@ -408,6 +412,9 @@ http://fews.wldelft.nl/schemas/version1.0/parameters.xsd">
 		<parameter id="PA.nwp" name="Pressure (NWP)">
 			<shortName>PA.nwp</shortName>
 		</parameter>
+		<parameter id="PA.sim" name="Pressure (sim)">
+			<shortName>PA.sim</shortName>
+		</parameter>
 	</parameterGroup>
 	<parameterGroup id="Radiation">
 		<parameterType>accumulative</parameterType>
@@ -436,6 +443,9 @@ http://fews.wldelft.nl/schemas/version1.0/parameters.xsd">
 		</parameter>
 		<parameter id="RL.nwp" name="Longwave Radiation (NWP)">
 			<shortName>RL.nwp</shortName>
+		</parameter>
+		<parameter id="RL.sim" name="Longwave Radiation (sim)">
+			<shortName>RL.sim</shortName>
 		</parameter>
 	</parameterGroup>
 	<parameterGroup id="Open water percentage">
@@ -467,8 +477,11 @@ http://fews.wldelft.nl/schemas/version1.0/parameters.xsd">
 		<parameter id="XS" name="Specific humidity">
 			<shortName>XS</shortName>
 		</parameter>
-		<parameter id="XS.nwp" name="Specific humidity (NWP">
+		<parameter id="XS.nwp" name="Specific humidity (NWP)">
 			<shortName>XS.nwp</shortName>
+		</parameter>
+		<parameter id="XS.sim" name="Specific humidity (sim)">
+			<shortName>XS.sim</shortName>
 		</parameter>
 	</parameterGroup>
 	<parameterGroup id="Relative humidity">

@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2015 rel. 4 (x64) (http://www.altova.com) by Ben Balk (Deltares USA, Inc.) -->
+<generalAdapterRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/generalAdapterRun.xsd">
+	<general>
+		<!--Define initial properties and paths -->
+		<rootDir>$REGION_HOME$/Modules/MESH/$MODEL$</rootDir>
+		<workDir>%ROOT_DIR%</workDir>
+		<exportDir>%ROOT_DIR%</exportDir>
+		<exportDataSetDir>%ROOT_DIR%</exportDataSetDir>
+		<exportIdMap>IdExportMESH</exportIdMap>
+		<exportUnitConversionsId>ExportUnitConversions</exportUnitConversionsId>
+		<importDir>%ROOT_DIR%</importDir>
+		<importIdMap>IdImportMESH</importIdMap>
+		<importUnitConversionsId>ImportUnitConversions</importUnitConversionsId>
+		<dumpFileDir>$GA_DUMPFILEDIR$</dumpFileDir>
+		<dumpDir>%ROOT_DIR%</dumpDir>
+		<diagnosticFile>%ROOT_DIR%/MESH_diag.xml</diagnosticFile>
+		<missVal>-999</missVal>
+		<convertDatum>true</convertDatum>
+		<timeZone>
+			<timeZoneName>GMT</timeZoneName>
+		</timeZone>
+	</general>
+	<activities>
+		<startUpActivities>
+			<purgeActivity>
+				<filter>%ROOT_DIR%/*.*</filter>
+			</purgeActivity>
+			<purgeActivity>
+				<filter>%ROOT_DIR%/output/*.*</filter>
+			</purgeActivity>
+		</startUpActivities>
+		<exportActivities>
+			<exportStateActivity>
+				<moduleInstanceId>$MODEL$MESHHistoric</moduleInstanceId>
+				<stateExportDir>%ROOT_DIR%</stateExportDir>
+				<stateSelection>
+					<warmState>
+						<stateSearchPeriod unit="day" start="$STARTTIME$" end="-1" startOverrulable="true"/>
+					</warmState>
+				</stateSelection>
+			</exportStateActivity>
+			<exportDataSetActivity>
+				<moduleInstanceId>MESHBinaries</moduleInstanceId>
+			</exportDataSetActivity>
+			<exportDataSetActivity>
+				<moduleInstanceId>$MODEL$MESH</moduleInstanceId>
+			</exportDataSetActivity>
+			<exportNetcdfActivity>
+				<exportFile>MESH_FEWS_output.nc</exportFile>
+				<timeSeriesSets>
+					<timeSeriesSet>
+						<moduleInstanceId>PreprocessMESHHistoric</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>PC.sim</parameterId>
+						<locationSetId>$MODELBASINS$</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour"/>
+						<relativeViewPeriod unit="day" start="$STARTTIME$" end="0" startOverrulable="true"/>
+						<readWriteMode>read only</readWriteMode>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>PreprocessMESHHistoric</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>TA.sim</parameterId>
+						<locationSetId>$MODELBASINS$</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour"/>
+						<relativeViewPeriod unit="day" start="$STARTTIME$" end="0" startOverrulable="true"/>
+						<readWriteMode>read only</readWriteMode>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>PreprocessMESHHistoric</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>PA.sim</parameterId>
+						<locationSetId>$MODELBASINS$</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour"/>
+						<relativeViewPeriod unit="day" start="$STARTTIME$" end="0" startOverrulable="true"/>
+						<readWriteMode>read only</readWriteMode>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>PreprocessMESHHistoric</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>XS.sim</parameterId>
+						<locationSetId>$MODELBASINS$</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour"/>
+						<relativeViewPeriod unit="day" start="$STARTTIME$" end="0" startOverrulable="true"/>
+						<readWriteMode>read only</readWriteMode>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>PreprocessMESHHistoric</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>RL.sim</parameterId>
+						<locationSetId>$MODELBASINS$</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour"/>
+						<relativeViewPeriod unit="day" start="$STARTTIME$" end="0" startOverrulable="true"/>
+						<readWriteMode>read only</readWriteMode>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>PreprocessMESHHistoric</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>RS.sim</parameterId>
+						<locationSetId>$MODELBASINS$</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour"/>
+						<relativeViewPeriod unit="day" start="$STARTTIME$" end="0" startOverrulable="true"/>
+						<readWriteMode>read only</readWriteMode>
+					</timeSeriesSet>
+					<timeSeriesSet>
+						<moduleInstanceId>PreprocessMESHHistoric</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>US.sim</parameterId>
+						<locationSetId>$MODELBASINS$</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour"/>
+						<relativeViewPeriod unit="day" start="$STARTTIME$" end="0" startOverrulable="true"/>
+						<readWriteMode>read only</readWriteMode>
+					</timeSeriesSet>
+				</timeSeriesSets>
+			</exportNetcdfActivity>
+			<exportNetcdfRunFileActivity>
+			<!--<exportNetcdfActivity>
+				<exportFile>basin_rain.nc</exportFile>
+				<timeSeriesSets>
+					<timeSeriesSet>
+						<moduleInstanceId>PreprocessMESHHistoric</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>PC.sim</parameterId>
+						<locationSetId>$MODELBASINS$</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour"/>
+						<relativeViewPeriod unit="day" start="$STARTTIME$" end="0" startOverrulable="true"/>
+						<readWriteMode>read only</readWriteMode>
+					</timeSeriesSet>
+				</timeSeriesSets>
+			</exportNetcdfActivity>
+			<exportNetcdfActivity>
+				<exportFile>basin_temperature.nc</exportFile>
+				<timeSeriesSets>
+					<timeSeriesSet>
+						<moduleInstanceId>PreprocessMESHHistoric</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>TA.sim</parameterId>
+						<locationSetId>$MODELBASINS$</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour"/>
+						<relativeViewPeriod unit="day" start="$STARTTIME$" end="0" startOverrulable="true"/>
+						<readWriteMode>read only</readWriteMode>
+					</timeSeriesSet>
+				</timeSeriesSets>
+			</exportNetcdfActivity>
+			<exportNetcdfActivity>
+				<exportFile>basin_pres.nc</exportFile>
+				<timeSeriesSets>
+					<timeSeriesSet>
+						<moduleInstanceId>PreprocessMESHHistoric</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>PA.sim</parameterId>
+						<locationSetId>$MODELBASINS$</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour"/>
+						<relativeViewPeriod unit="day" start="$STARTTIME$" end="0" startOverrulable="true"/>
+						<readWriteMode>read only</readWriteMode>
+					</timeSeriesSet>
+				</timeSeriesSets>
+			</exportNetcdfActivity>
+			<exportNetcdfActivity>
+				<exportFile>basin_humidity.nc</exportFile>
+				<timeSeriesSets>
+					<timeSeriesSet>
+						<moduleInstanceId>PreprocessMESHHistoric</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>XS.sim</parameterId>
+						<locationSetId>$MODELBASINS$</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour"/>
+						<relativeViewPeriod unit="day" start="$STARTTIME$" end="0" startOverrulable="true"/>
+						<readWriteMode>read only</readWriteMode>
+					</timeSeriesSet>
+				</timeSeriesSets>
+			</exportNetcdfActivity>
+			<exportNetcdfActivity>
+				<exportFile>basin_longwave.nc</exportFile>
+				<timeSeriesSets>
+					<timeSeriesSet>
+						<moduleInstanceId>PreprocessMESHHistoric</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>RL.sim</parameterId>
+						<locationSetId>$MODELBASINS$</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour"/>
+						<relativeViewPeriod unit="day" start="$STARTTIME$" end="0" startOverrulable="true"/>
+						<readWriteMode>read only</readWriteMode>
+					</timeSeriesSet>
+				</timeSeriesSets>
+			</exportNetcdfActivity>
+			<exportNetcdfActivity>
+				<exportFile>basin_shortwave.nc</exportFile>
+				<timeSeriesSets>
+					<timeSeriesSet>
+						<moduleInstanceId>PreprocessMESHHistoric</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>RS.sim</parameterId>
+						<locationSetId>$MODELBASINS$</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour"/>
+						<relativeViewPeriod unit="day" start="$STARTTIME$" end="0" startOverrulable="true"/>
+						<readWriteMode>read only</readWriteMode>
+					</timeSeriesSet>
+				</timeSeriesSets>
+			</exportNetcdfActivity>
+			<exportNetcdfActivity>
+				<exportFile>basin_wind.nc</exportFile>
+				<timeSeriesSets>
+					<timeSeriesSet>
+						<moduleInstanceId>PreprocessMESHHistoric</moduleInstanceId>
+						<valueType>scalar</valueType>
+						<parameterId>US.sim</parameterId>
+						<locationSetId>$MODELBASINS$</locationSetId>
+						<timeSeriesType>external historical</timeSeriesType>
+						<timeStep unit="hour"/>
+						<relativeViewPeriod unit="day" start="$STARTTIME$" end="0" startOverrulable="true"/>
+						<readWriteMode>read only</readWriteMode>
+					</timeSeriesSet>
+				</timeSeriesSets>
+			</exportNetcdfActivity>
+			<exportNetcdfRunFileActivity>-->
+				<exportFile>runinfo.nc</exportFile>
+				<properties>
+					<description>Run Info file for MESH</description>
+<!--					<string key="inputDir_example" value="/input"/>
+					<string key="outputDir_example" value="/output"/>-->
+					<int key="time_shift" value="$TIMESHIFT$"/>
+<!--					<locationAttribute key="sno_add_offset" locationId="$MODELGRID$" attributeId="State_SNO_incr"/>
+					<locationAttribute key="sno_scale_factor" locationId="$MODELGRID$" attributeId="State_SNO_mult"/>
+					<locationAttribute key="zpnd_add_offset" locationId="$MODELGRID$" attributeId="State_ZPND_incr"/>
+					<locationAttribute key="zpnd_scale_factor" locationId="$MODELGRID$" attributeId="State_ZPND_mult"/>-->
+				</properties>
+			</exportNetcdfRunFileActivity>
+		</exportActivities>
+		<executeActivities>
+			<executeActivity>
+				<description>Run State Update Script</description>
+				<command>
+					<executable>$PYTHON_EXE$</executable>
+				</command>
+				<arguments>
+					<argument>%ROOT_DIR%/mesh_preadaptor.py</argument>
+					<argument>%ROOT_DIR%/MESH_FEWS_output.nc</argument>
+					<argument>%ROOT_DIR%/MESH_forcing.nc</argument>
+					<argument>%ROOT_DIR%/MESH_drainage_database.nc</argument>
+					<argument>%ROOT_DIR%/MESH_preadapter_logs.log</argument>
+					
+				</arguments>
+				<logFile>
+					<file>MESH_preadapter_logs.log</file>
+					<infoLinePattern>*INFO*</infoLinePattern>
+					<debugLinePattern>*READING*</debugLinePattern>
+					<warningLinePattern>*WARNING*</warningLinePattern>
+					<warningLinePattern>*ERROR*</warningLinePattern>
+				</logFile>
+				<timeOut>14400000</timeOut>
+				<ignoreDiagnostics>true</ignoreDiagnostics>
+			</executeActivity>
+			<executeActivity>
+				<description>Run MESH Model</description>
+				<command>
+					<executable>$BAT_FILE$</executable>
+				</command>
+				<logFile>
+					<file>screen_output.txt</file>
+					<infoLinePattern>*REMARK*</infoLinePattern>
+					<debugLinePattern>*READING*</debugLinePattern>
+					<warningLinePattern>*WARNING*</warningLinePattern>
+					<warningLinePattern>*ERROR*</warningLinePattern>
+					<!--<errorLinePattern>*ERROR*</errorLinePattern>-->
+				</logFile>
+				<timeOut>14400000</timeOut>
+				<waitForOtherRun>false</waitForOtherRun>
+				<ignoreDiagnostics>true</ignoreDiagnostics>
+			</executeActivity>
+		</executeActivities>
+		<importActivities>
+			<importStateActivity>
+				<stateImportDir>%ROOT_DIR%</stateImportDir>
+				<stateFile>
+					<importFile>MESH_initial_values.nc</importFile>
+					<relativeExportFile>MESH_initial_values.nc</relativeExportFile>
+				</stateFile>
+			</importStateActivity>
+			<importNetcdfActivity>
+				<importFile>%ROOT_DIR%/output/QO_H_GRD.nc</importFile>
+				<timeSeriesSets>
+					<timeSeriesSet>
+						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>QR.sim</parameterId>
+						<locationSetId>$MODELBASINS$</locationSetId>
+						<timeSeriesType>simulated historical</timeSeriesType>
+						<timeStep unit="hour" multiplier="1"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+				</timeSeriesSets>
+			</importNetcdfActivity>
+			<importNetcdfActivity>
+				<importFile>%ROOT_DIR%/output/ROF_H_GRD.nc</importFile>
+				<timeSeriesSets>
+					<timeSeriesSet>
+						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>ROF.sim</parameterId>
+						<locationSetId>$MODELBASINS$</locationSetId>
+						<timeSeriesType>simulated historical</timeSeriesType>
+						<timeStep unit="hour" multiplier="1"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+				</timeSeriesSets>
+			</importNetcdfActivity>
+			<importNetcdfActivity>
+				<importFile>%ROOT_DIR%/output/RFF_H_GRD.nc</importFile>
+				<timeSeriesSets>
+					<timeSeriesSet>
+						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>RFF.sim</parameterId>
+						<locationSetId>$MODELBASINS$</locationSetId>
+						<timeSeriesType>simulated historical</timeSeriesType>
+						<timeStep unit="hour" multiplier="1"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+				</timeSeriesSets>
+			</importNetcdfActivity>
+			<importNetcdfActivity>
+				<importFile>%ROOT_DIR%/output/RCHG_H_GRD.nc</importFile>
+				<timeSeriesSets>
+					<timeSeriesSet>
+						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>RCHG.sim</parameterId>
+						<locationSetId>$MODELBASINS$</locationSetId>
+						<timeSeriesType>simulated historical</timeSeriesType>
+						<timeStep unit="hour" multiplier="1"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+				</timeSeriesSets>
+			</importNetcdfActivity>
+
+			<importNetcdfActivity>
+				<importFile>%ROOT_DIR%/output/SNO_H_GRD.nc</importFile>
+				<timeSeriesSets>
+					<timeSeriesSet>
+						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>SWE.sim</parameterId>
+						<locationSetId>$MODELBASINS$</locationSetId>
+						<timeSeriesType>simulated historical</timeSeriesType>
+						<timeStep unit="hour" multiplier="1"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+					</timeSeriesSet>
+				</timeSeriesSets>
+			</importNetcdfActivity>
+		</importActivities>
+	</activities>
+</generalAdapterRun>

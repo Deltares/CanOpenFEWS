@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timeSeriesImportRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/timeSeriesImportRun.xsd">
+	<import>
+		<general>
+			<importType>NETCDF-CF_TIMESERIES</importType>
+			<folder>$IMPORT_FOLDER$/MESH</folder>
+			<failedFolder>$IMPORT_FAILED_FOLDER$/MESH</failedFolder>
+			<backupFolder>$IMPORT_BACKUP_FOLDER$/MESH</backupFolder>
+			<deleteImportedFiles>false</deleteImportedFiles>
+			<idMapId>IdImportMESHHistoric</idMapId>
+			<unitConversionsId>ImportUnitConversions</unitConversionsId>
+		</general>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessMESHHistoric</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PC.sim</parameterId>
+			<locationSetId>BowMESHBasins</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessMESHHistoric</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>TA.sim</parameterId>
+			<locationSetId>BowMESHBasins</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessMESHHistoric</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>XS.sim</parameterId>
+			<locationSetId>BowMESHBasins</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessMESHHistoric</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>US.sim</parameterId>
+			<locationSetId>BowMESHBasins</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessMESHHistoric</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>RS.sim</parameterId>
+			<locationSetId>BowMESHBasins</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessMESHHistoric</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>RL.sim</parameterId>
+			<locationSetId>BowMESHBasins</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<timeSeriesSet>
+			<moduleInstanceId>PreprocessMESHHistoric</moduleInstanceId>
+			<valueType>scalar</valueType>
+			<parameterId>PA.sim</parameterId>
+			<locationSetId>BowMESHBasins</locationSetId>
+			<timeSeriesType>external historical</timeSeriesType>
+			<timeStep unit="hour" multiplier="1"/>
+			<readWriteMode>add originals</readWriteMode>
+		</timeSeriesSet>
+		<externUnit parameterId="TA.sim" unit="K"/>
+		<externUnit parameterId="PA.sim" unit="Pa"/>
+		<externUnit parameterId="RL.sim" unit="W/m2"/>
+		<externUnit parameterId="RS.sim" unit="W/m2"/>
+	</import>
+</timeSeriesImportRun>

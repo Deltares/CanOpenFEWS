@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 sp1 (http://www.altova.com) by Afdeling ICT (Stichting Deltares) -->
+<generalAdapterRun xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/generalAdapterRun.xsd">
+	<general>
+		<!--Define initial properties and paths -->
+		<rootDir>$REGION_HOME$/Modules/MESH/$MODEL$</rootDir>
+		<workDir>%ROOT_DIR%</workDir>
+		<exportDir>%ROOT_DIR%</exportDir>
+		<exportDataSetDir>%ROOT_DIR%</exportDataSetDir>
+		<exportIdMap>IdExportMESH</exportIdMap>
+		<exportUnitConversionsId>ExportUnitConversions</exportUnitConversionsId>
+		<importDir>%ROOT_DIR%</importDir>
+		<importIdMap>IdImportMESH</importIdMap>
+		<importUnitConversionsId>ImportUnitConversions</importUnitConversionsId>
+		<dumpFileDir>$GA_DUMPFILEDIR$</dumpFileDir>
+		<dumpDir>%ROOT_DIR%</dumpDir>
+		<diagnosticFile>%ROOT_DIR%/MESH_diag.xml</diagnosticFile>
+		<missVal>-999</missVal>
+		<convertDatum>true</convertDatum>
+		<timeZone>
+			<timeZoneName>GMT</timeZoneName>
+		</timeZone>
+	</general>
+	<activities>
+		<startUpActivities>
+			<purgeActivity>
+				<filter>%ROOT_DIR%/*.*</filter>
+			</purgeActivity>
+			<purgeActivity>
+				<filter>%ROOT_DIR%/output/*.*</filter>
+			</purgeActivity>
+		</startUpActivities>
+		<exportActivities>
+			<exportStateActivity>
+				<moduleInstanceId>MESH$MODEL$Historic</moduleInstanceId>
+				<stateExportDir>%ROOT_DIR%</stateExportDir>
+				<stateSelection>
+					<warmState>
+						<stateSearchPeriod unit="day" start="$STARTTIME$" end="0"/>
+					</warmState>
+				</stateSelection>
+			</exportStateActivity>
+			<exportDataSetActivity>
+				<moduleInstanceId>MESHBinaries</moduleInstanceId>
+			</exportDataSetActivity>
+			<exportDataSetActivity>
+				<moduleInstanceId>MESH$MODEL$Model</moduleInstanceId>
+			</exportDataSetActivity>
+			<exportNetcdfActivity>
+				<exportFile>basin_rain.nc</exportFile>
+				<timeSeriesSets>
+					<timeSeriesSet>
+						<moduleInstanceId>$INPUT_GRID_MODULE$</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>PC.nwp</parameterId>
+						<locationId>$MODELGRID$</locationId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep unit="hour"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+						<ensembleId>$ENSEMBLE$</ensembleId>
+					</timeSeriesSet>
+				</timeSeriesSets>
+			</exportNetcdfActivity>
+			<exportNetcdfActivity>
+				<exportFile>basin_temperature.nc</exportFile>
+				<timeSeriesSets>
+					<timeSeriesSet>
+						<moduleInstanceId>$INPUT_GRID_MODULE$</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>TA.nwp</parameterId>
+						<locationId>$MODELGRID$</locationId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep unit="hour"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+						<ensembleId>$ENSEMBLE$</ensembleId>
+					</timeSeriesSet>
+				</timeSeriesSets>
+			</exportNetcdfActivity>
+			<exportNetcdfActivity>
+				<exportFile>basin_pres.nc</exportFile>
+				<timeSeriesSets>
+					<timeSeriesSet>
+						<moduleInstanceId>$INPUT_GRID_MODULE$</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>PA.nwp</parameterId>
+						<locationId>$MODELGRID$</locationId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep unit="hour"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+						<ensembleId>$ENSEMBLE$</ensembleId>
+					</timeSeriesSet>
+				</timeSeriesSets>
+			</exportNetcdfActivity>
+			<exportNetcdfActivity>
+				<exportFile>basin_humidity.nc</exportFile>
+				<timeSeriesSets>
+					<timeSeriesSet>
+						<moduleInstanceId>$INPUT_GRID_MODULE$</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>XS.nwp</parameterId>
+						<locationId>$MODELGRID$</locationId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep unit="hour"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+						<ensembleId>$ENSEMBLE$</ensembleId>
+					</timeSeriesSet>
+				</timeSeriesSets>
+			</exportNetcdfActivity>
+			<exportNetcdfActivity>
+				<exportFile>basin_longwave.nc</exportFile>
+				<timeSeriesSets>
+					<timeSeriesSet>
+						<moduleInstanceId>$INPUT_GRID_MODULE$</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>RL.nwp</parameterId>
+						<locationId>$MODELGRID$</locationId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep unit="hour"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+						<ensembleId>$ENSEMBLE$</ensembleId>
+					</timeSeriesSet>
+				</timeSeriesSets>
+			</exportNetcdfActivity>
+			<exportNetcdfActivity>
+				<exportFile>basin_shortwave.nc</exportFile>
+				<timeSeriesSets>
+					<timeSeriesSet>
+						<moduleInstanceId>$INPUT_GRID_MODULE$</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>RS.nwp</parameterId>
+						<locationId>$MODELGRID$</locationId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep unit="hour"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+						<ensembleId>$ENSEMBLE$</ensembleId>
+					</timeSeriesSet>
+				</timeSeriesSets>
+			</exportNetcdfActivity>
+			<exportNetcdfActivity>
+				<exportFile>basin_wind.nc</exportFile>
+				<timeSeriesSets>
+					<timeSeriesSet>
+						<moduleInstanceId>$INPUT_GRID_MODULE$</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>US.nwp</parameterId>
+						<locationId>$MODELGRID$</locationId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep unit="hour"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+						<ensembleId>$ENSEMBLE$</ensembleId>
+					</timeSeriesSet>
+				</timeSeriesSets>
+			</exportNetcdfActivity>
+			<exportNetcdfRunFileActivity>
+				<exportFile>runinfo.nc</exportFile>
+				<properties>
+					<description>Run Info file for MESH</description>
+					<string key="inputDir_example" value="%ROOT_DIR%/input"/>
+					<string key="outputDir_example" value="%ROOT_DIR%/output"/>
+					<int key="time_shift" value="-8"/>
+				</properties>
+			</exportNetcdfRunFileActivity>
+		</exportActivities>
+		<executeActivities>
+			<executeActivity>
+				<description>Run MESH Model</description>
+				<command>
+					<executable>$BAT_FILE$</executable>
+				</command>
+				<logFile>
+					<file>screen_output.txt</file>
+					<infoLinePattern>*REMARK*</infoLinePattern>
+					<debugLinePattern>*READING*</debugLinePattern>
+					<warningLinePattern>*WARNING*</warningLinePattern>
+					<warningLinePattern>*ERROR*</warningLinePattern>
+					<!--<errorLinePattern>*ERROR*</errorLinePattern>-->
+				</logFile>
+				<timeOut>14400000</timeOut>
+				<ignoreDiagnostics>true</ignoreDiagnostics>
+			</executeActivity>
+		</executeActivities>
+		<importActivities>
+			<importNetcdfActivity>
+				<importFile>%ROOT_DIR%/output/QO_H_GRD.nc</importFile>
+				<timeSeriesSets>
+					<timeSeriesSet>
+						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>QR.sim</parameterId>
+						<locationId>$MODELGRID$</locationId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep unit="hour" multiplier="1"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+						<expiryTime unit="day" multiplier="3"/>
+					</timeSeriesSet>
+				</timeSeriesSets>
+			</importNetcdfActivity>
+			<importNetcdfActivity>
+				<importFile>%ROOT_DIR%/output/ROF_H_GRD.nc</importFile>
+				<timeSeriesSets>
+					<timeSeriesSet>
+						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>ROF.sim</parameterId>
+						<locationId>$MODELGRID$</locationId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep unit="hour" multiplier="1"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+						<expiryTime unit="day" multiplier="3"/>
+					</timeSeriesSet>
+				</timeSeriesSets>
+			</importNetcdfActivity>
+			<importNetcdfActivity>
+				<importFile>%ROOT_DIR%/output/RFF_H_GRD.nc</importFile>
+				<timeSeriesSets>
+					<timeSeriesSet>
+						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>RFF.sim</parameterId>
+						<locationId>$MODELGRID$</locationId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep unit="hour" multiplier="1"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+						<expiryTime unit="day" multiplier="3"/>
+					</timeSeriesSet>
+				</timeSeriesSets>
+			</importNetcdfActivity>
+			<importNetcdfActivity>
+				<importFile>%ROOT_DIR%/output/RCHG_H_GRD.nc</importFile>
+				<timeSeriesSets>
+					<timeSeriesSet>
+						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>RCHG.sim</parameterId>
+						<locationId>$MODELGRID$</locationId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep unit="hour" multiplier="1"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+						<expiryTime unit="day" multiplier="3"/>
+					</timeSeriesSet>
+				</timeSeriesSets>
+			</importNetcdfActivity>
+			<importNetcdfActivity>
+				<importFile>%ROOT_DIR%/output/ET_H_GRD.nc</importFile>
+				<timeSeriesSets>
+					<timeSeriesSet>
+						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>ET.sim</parameterId>
+						<locationId>$MODELGRID$</locationId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep unit="hour" multiplier="1"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+						<expiryTime unit="day" multiplier="3"/>
+					</timeSeriesSet>
+				</timeSeriesSets>
+			</importNetcdfActivity>
+			<importNetcdfActivity>
+				<importFile>%ROOT_DIR%/output/SNO_H_GRD.nc</importFile>
+				<timeSeriesSets>
+					<timeSeriesSet>
+						<moduleInstanceId>$MODULE_INSTANCE_ID$</moduleInstanceId>
+						<valueType>grid</valueType>
+						<parameterId>SW.sim</parameterId>
+						<locationId>$MODELGRID$</locationId>
+						<timeSeriesType>simulated forecasting</timeSeriesType>
+						<timeStep unit="hour" multiplier="1"/>
+						<readWriteMode>read complete forecast</readWriteMode>
+						<expiryTime unit="day" multiplier="3"/>
+					</timeSeriesSet>
+				</timeSeriesSets>
+			</importNetcdfActivity>
+		</importActivities>
+	</activities>
+</generalAdapterRun>

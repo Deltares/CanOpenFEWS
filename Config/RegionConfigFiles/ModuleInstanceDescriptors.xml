@@ -78,6 +78,9 @@
 	<moduleInstanceDescriptor id="ImportSNOTEL">
 		<description>Import data from SNOTEL stations</description>
 	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="ImportMESHHistoric">
+		<description>Import historic data for the MESH model</description>
+	</moduleInstanceDescriptor>
 	<!-- Export-->
 	<moduleInstanceDescriptor id="ExportHYDATtoCSV">
 		<description>Export HYDAT data to CSV to generate reports</description>
@@ -88,6 +91,9 @@
 	</moduleInstanceDescriptor>
 		<moduleInstanceDescriptor id="PreprocessUSGS">
 		<description>Preprocess USGS Station Data</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="PreprocessMESHHistoric">
+		<description>Preprocess MESH Historic Data</description>
 	</moduleInstanceDescriptor>
 	<!--ModuleDataSets-->
 	<moduleInstanceDescriptor id="SnowDownload">
@@ -472,6 +478,37 @@
 		<description>Run the Chena model with REPS Forecast Data</description>
 	</moduleInstanceDescriptor>
 	<moduleInstanceDescriptor id="ChenaSUMMAGEPSForecast">
+		<description>Run the Chena model with REPS Forecast Data</description>
+	</moduleInstanceDescriptor>
+	<!-- Bow MESH Model Runs-->
+	<moduleInstanceDescriptor id="MESHBinaries">
+		<description>Binaries for MESH model</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="BowMESH">
+		<description>Run the Bow MESH Historic model</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="BowMESHHistoric">
+		<description>Run the Bow MESH Historic model</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="BowMESHHistoricUpdate">
+		<description>ModuleInstanceId holder for Model</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="BowMESHForecast">
+		<description>Run the Chena model with Forecast Data</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="BowMESHHRRRForecast">
+		<description>Run the Chena model with RDPS Forecast Data</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="BowMESHRDPSForecast">
+		<description>Run the Chena model with RDPS Forecast Data</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="BowMESHGDPSForecast">
+		<description>Run the Chena model with GDPS Forecast Data</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="BowMESHREPSForecast">
+		<description>Run the Chena model with REPS Forecast Data</description>
+	</moduleInstanceDescriptor>
+	<moduleInstanceDescriptor id="BowMESHGEPSForecast">
 		<description>Run the Chena model with REPS Forecast Data</description>
 	</moduleInstanceDescriptor>
 	<!-- Wflow Model Preprocessing-->

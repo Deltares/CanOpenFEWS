@@ -296,4 +296,19 @@
 			<localRun>false</localRun>
 		</node>
 	</nodes>
+	<nodes id="BowMESHModelNodes" name="Run Bow MESH Model">
+		<node id="BowMESHHistoric" name="Run Bow MESH (Historic Update)">
+			<workflowId>RunBowMESHHistoric</workflowId>
+			<!--<visibleModifierGroup>AdjustStates_SUMMA</visibleModifierGroup>-->
+			<localRun>false</localRun>
+		</node>
+		<node id="BowMESHHRRR" name="Run Bow MESH (HRRR)">
+			<workflowId>RunBowMESHHRRRForecast</workflowId>
+			<localRun>false</localRun>
+		</node>
+		<node id="BowMESHGDPS" name="Run Bow MESH (GDPS)">
+			<workflowId>RunBowMESHGDPSForecast</workflowId>
+			<localRun>false</localRun>
+		</node>
+	</nodes>
 </topology>

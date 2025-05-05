@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/workflow.xsd" version="1.1">
+	<!-- Run MESH Model Historic -->
+	<properties>
+		<string key="STARTTIME" value="-30"/>
+		<string key="ENDTIME" value="0"/>
+		<string key="METEO_TIMESTEP" value="1"/>
+		<string key="MODELBASINS" value="BowMESHBasins"/>
+		<string key="BAT_FILE" value="run_mesh.bat"/>
+		<string key="MODEL" value="Bow"/>
+		<int key="TIMESHIFT" value="8"/>
+	</properties>
+	<!-- Run Historic Model to Create Updated State-->
+	<activity>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>BowMESHHistoric</moduleInstanceId>
+		<moduleConfigFileName>MESHHistoricTemplate</moduleConfigFileName>
+	</activity>
+	<!-- Postprocess Model Results-->
+<!--	<activity>
+		<runIndependent>true</runIndependent>
+		<moduleInstanceId>PostprocessBowMESHHistoric</moduleInstanceId>
+		<moduleConfigFileName>PostprocessMESHHistoricTemplate</moduleConfigFileName>
+	</activity>-->
+	<!-- Import Scalar Results-->
+<!--	<activity>
+		<properties>
+			<string key="TIMESERIES_TYPE" value="simulated historical"/>
+			<string key="LAKE_LOCATIONS" value="MESHYukonReservoirs"/>
+		</properties>
+		<moduleInstanceId>MESHYukonEagle10KHistoric</moduleInstanceId>
+		<moduleConfigFileName>ImportMESHScalarOutputYukonTemplate</moduleConfigFileName>
+	</activity>-->
+</workflow>

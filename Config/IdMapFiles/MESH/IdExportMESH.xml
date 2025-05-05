@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2014 rel. 2 sp1 (http://www.altova.com) by Afdeling ICT (Stichting Deltares) -->
+<idMap version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/idMap.xsd">
+	<parameter internal="PC.nwp" external="PRE"/>
+	<parameter internal="XS.nwp" external="QA"/>
+	<parameter internal="RL.nwp" external="FLIN"/>
+	<parameter internal="PA.nwp" external="PRES"/>
+	<parameter internal="RS.nwp" external="FSIN"/>
+	<parameter internal="TA.nwp" external="TA"/>
+	<parameter internal="US.nwp" external="UV"/>
+	<parameter internal="PC.sim" external="PRE"/>
+	<parameter internal="XS.sim" external="QA"/>
+	<parameter internal="RL.sim" external="FLIN"/>
+	<parameter internal="PA.sim" external="PRES"/>
+	<parameter internal="RS.sim" external="FSIN"/>
+	<parameter internal="TA.sim" external="TA"/>
+	<parameter internal="US.sim" external="UV"/>
+</idMap>

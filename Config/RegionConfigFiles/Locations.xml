@@ -142,6 +142,11 @@
 		<x>0</x>
 		<y>0</y>
 	</location>
+	<location id="MESHHistoricBowGrid" name="MESHHistoricBowGrid">
+		<shortName>MESHHistoricBowGrid</shortName>
+		<x>0</x>
+		<y>0</y>
+	</location>
 <!--	<location id="RossBasin" name="RossBasin">
 		<shortName>RossBasin</shortName>
 		<x>0</x>

@@ -12,6 +12,7 @@
 	<workflowDescriptor id="ImportUSGS" name="Import USGS Station Data" visible="true" forecast="false" autoApprove="true" allowApprove="true"/>
 	<workflowDescriptor id="ImportRecentObservations" name="Import Recent Observations (Test)" visible="true" forecast="false" autoApprove="true" allowApprove="true"/>
 	<workflowDescriptor id="ImportSNOTEL" name="Import Data from SNOTEL" visible="true" forecast="false" autoApprove="true" allowApprove="true"/>
+	<workflowDescriptor id="ImportMESHHistoric" name="Import MESH Historic Data" visible="true" forecast="false" autoApprove="true" allowApprove="true"/>
 	<workflowDescriptor id="ImportAlbertaAPI" name="Import Snow Data from Alberta API" visible="true" forecast="false" autoApprove="true" allowApprove="true">
 		<viewPermission>AlbertaForecaster</viewPermission>
 	</workflowDescriptor>
@@ -169,6 +170,16 @@
 	<workflowDescriptor id="RunRossSUMMAGEPSForecast" name="Run Ross SUMMA (GEPS Forecast)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep id="GMT_6hourly"/>
 	</workflowDescriptor>
+		<!--SUMMA Model Run Workflow Descriptors -->
+	<workflowDescriptor id="RunBowMESHHistoric" name="Run Bow MESH (Historical)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
+		<cardinalTimeStep id="$DAY_TIMESTEP$"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="RunBowMESHGDPSForecast" name="Run Bow MESH (GDPS Forecast)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
+		<cardinalTimeStep id="GMT_6hourly"/>
+	</workflowDescriptor>
+	<workflowDescriptor id="RunBowMESHHRRRForecast" name="Run Bow MESH (HRRR Forecast)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
+		<cardinalTimeStep id="GMT_6hourly"/>
+	</workflowDescriptor>
 	<!--<workflowDescriptor id="RunBowSUMMARDPSForecast" name="Run Bow SUMMA (RDPS)" visible="true" forecast="true" autoApprove="true" allowApprove="true">
 		<cardinalTimeStep id="$DAY_TIMESTEP$"/>
 	</workflowDescriptor>
@@ -299,6 +310,11 @@
 			<workflowId>RunRossSUMMAHRRRForecast</workflowId>
 			<workflowId>RunRossSUMMAGDPSForecast</workflowId>
 			<workflowId>RunRossSUMMAGEPSForecast</workflowId>
+		</node>
+		<node name="Run Model - Bow MESH">
+			<workflowId>RunBowMESHHistoric</workflowId>
+			<workflowId>RunBowMESHHRRRForecast</workflowId>
+			<workflowId>RunBowMESHGDPSForecast</workflowId>
 		</node>
 		<node name="Run Model - Bow Wflow">
 			<workflowId>BowWflowRadarUpdate</workflowId>

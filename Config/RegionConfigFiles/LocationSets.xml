@@ -185,6 +185,20 @@
 			</attribute>
 		</esriShapeFile>
 	</locationSet>
+	<!--ShapeFiles for Bow Sub- Basins-->
+	<locationSet id="BowMESHBasins">
+		<esriShapeFile>
+			<file>BowMESHBasins.shp</file>
+			<!--<projectionFileAvailable>true</projectionFileAvailable>-->
+			<id>%COMID%</id>
+			<name>%COMID%</name>
+			<x>%MESHBow_lo%</x>
+			<y>%MESHBow_la%</y>
+			<attribute id="HRU_ID">
+				<text>%COMID%</text>
+			</attribute>
+		</esriShapeFile>
+	</locationSet>
 	<!--ShapeFiles for YukonRiverBasin-->
 	<locationSet id="YukonRiverBasin">
 		<esriShapeFile>
@@ -494,4 +508,5 @@
 			</attribute>
 		</csvFile>
 	</locationSet>
+	
 </locationSets>

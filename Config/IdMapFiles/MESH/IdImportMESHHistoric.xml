@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idMap version="1.1" xmlns="http://www.wldelft.nl/fews" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wldelft.nl/fews http://fews.wldelft.nl/schemas/version1.0/idMap.xsd">
+	<!--MESH Model Output Input Mapping-->
+<!--	<parameter internal="PA.sim" external="P_P0_SFC"/> --><!--pressure--><!--
+	<parameter internal="XS.sim" external="P_HU_09944"/> --><!--specific humidity--><!--
+	<parameter internal="TA.sim" external="P_TT_09944"/> --><!--temperature--><!--
+	<parameter internal="US.sim" external="P_UVC_09944"/> --><!--wind speed--><!--
+	<parameter internal="RS.sim" external="P_FI_SFC"/> --><!--short wave radiation--><!--
+	<parameter internal="PC.sim" external="A_PR0_SFC"/> --><!--precipitation--><!--
+	<parameter internal="RL.sim" external="P_FB_SFC"/> --><!-- long wave radiation-->
+	<function internalLocationSet="BowMESHBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="P_P0_SFC" internalParameter="PA.sim"/>
+	<function internalLocationSet="BowMESHBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="P_HU_09944" internalParameter="XS.sim"/>
+	<function internalLocationSet="BowMESHBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="P_TT_09944" internalParameter="TA.sim"/>
+	<function internalLocationSet="BowMESHBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="P_UVC_09944" internalParameter="US.sim"/>
+	<function internalLocationSet="BowMESHBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="P_FI_SFC" internalParameter="RS.sim"/>
+	<function internalLocationSet="BowMESHBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="A_PR0_SFC" internalParameter="PC.sim"/>
+	<function internalLocationSet="BowMESHBasins" externalLocationFunction="@HRU_ID@" externalParameterFunction="P_FB_SFC" internalParameter="RL.sim"/>
+	<enableOneToOneMapping></enableOneToOneMapping>
+</idMap>

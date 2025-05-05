@@ -385,4 +385,19 @@
 		<xCellSize>0.00833333</xCellSize>
 		<yCellSize>0.00833333</yCellSize>
 	</regular>
+    <regular locationId="MESHHistoricBowGrid">
+        <rows>21</rows>
+        <columns>23</columns>
+        <rotatedNorthPole>
+            <latitude>31.758316040039062</latitude>
+            <longitude>87.59703063964844</longitude>
+        </rotatedNorthPole>
+        <firstCellCenter>
+            <x>344.852783203125</x>
+            <y>-3.7800002098083496</y>
+            <z>0.0</z>
+        </firstCellCenter>
+        <xCellSize>0.0900005</xCellSize>
+        <yCellSize>0.08999999</yCellSize>
+    </regular>
 </grids>
