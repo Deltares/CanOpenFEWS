@@ -36,7 +36,7 @@
 	<activity>
 		<properties>
 			<!-- Parameter to process for Input Timeseries-->
-			<string key="PARAMETER" value="PC"/>
+			<string key="PARAMETER" value="PR"/>
 		</properties>
 		<runIndependent>true</runIndependent>
 		<moduleInstanceId>PreprocessERA5</moduleInstanceId>

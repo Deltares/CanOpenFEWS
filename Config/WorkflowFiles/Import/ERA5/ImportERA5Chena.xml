@@ -4,11 +4,11 @@
 		<string key="INPUTGRID" value="ERA5Chena"/>
 		<string key="BASINLOCATIONS" value="ChenaProcessBasins"/>
 	</properties>
-	<!--	<activity>
+	<activity>
 		<runIndependent>true</runIndependent>
 		<moduleInstanceId>RetrieveERA5</moduleInstanceId>
 		<moduleConfigFileName>RetrieveERA5</moduleConfigFileName>
-	</activity>-->
+	</activity>
 	<activity>
 		<runIndependent>true</runIndependent>
 		<moduleInstanceId>ImportERA5</moduleInstanceId>
